@@ -1,4 +1,8 @@
 {
   "hello": "Hello",
-  "selectLanguage": "Select Language"
+  "selectLanguage": "Select Language",
+  "displaysIndepthDescriptionsAndDirections": "Displays indepth descriptions and directions",
+  "SelectConfiguratorDisplayMode": "Select Configurator Display Mode",
+  "Novice": "Novice",
+  "Expert": "Expert"
 }

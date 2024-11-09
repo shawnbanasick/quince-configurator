@@ -1,0 +1,8 @@
+{
+  "hello": "こんにちは",
+  "selectLanguage": "言語を選択",
+  "displaysIndepthDescriptionsAndDirections": "詳細な説明と指示を表示します",
+  "SelectConfiguratorDisplayMode": "コンフィギュレータ表示モードを選択",
+  "Novice": "初心者",
+  "Expert": "専門家"
+}
