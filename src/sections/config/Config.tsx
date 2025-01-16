@@ -4,34 +4,38 @@ import Button from "../utils/Button.jsx";
 // @ts-ignore
 import { useStore } from "../../globalState/useStore.js";
 import { useTranslation } from "react-i18next";
+import UploadAndReadXML from "./UploadAndReadXml.js";
 
-const getShowDescriptionPro = (state) => state.showDescriptionPro;
-const getShowDescriptionBeginner = (state) => state.showDescriptionBeginner;
-const getSetShowDescriptionPro = (state) => state.setShowDescriptionPro;
-const getSetShowDescriptionBeginner = (state) =>
-  state.setShowDescriptionBeginner;
-const getSetDisplayMode = (state) => state.setDisplayMode;
+const getDisplayMode = (state) => state.displayMode;
 
 const Config = () => {
   const { t } = useTranslation();
-  const showDescriptionPro = useStore(getShowDescriptionPro);
-  const showDescriptionBeginner = useStore(getShowDescriptionBeginner);
-  const setShowDescriptionPro = useStore(getSetShowDescriptionPro);
-  const setShowDescriptionBeginner = useStore(getSetShowDescriptionBeginner);
-  const setDisplayMode = useStore(getSetDisplayMode);
+  const displayMode = useStore(getDisplayMode);
+  let display;
+  if (displayMode === "beginner") {
+    display = true;
+  } else {
+    display = false;
+  }
 
-  const setMode = (e) => {
-    const mode = e.target.id;
-    if (mode === "pro") {
-      setShowDescriptionPro(true);
-      setShowDescriptionBeginner(false);
-      setDisplayMode("pro");
-    } else {
-      setShowDescriptionPro(false);
-      setShowDescriptionBeginner(true);
-      setDisplayMode("beginner");
-    }
-  };
+  // const handleClick = () => {
+  //   console.log("uploadXmlConfigButton clicked");
+  //   const input = document.createElement("input");
+  //   input.type = "file";
+  //   input.accept = ".json";
+  //   input.onchange = (e) => {
+  //     const file = e.target.files[0];
+  //     const reader = new FileReader();
+  //     reader.onload = (e) => {
+  //       const result = e.target.result;
+  //       console.log(result);
+  //       const json = JSON.parse(result);
+  //       console.log(json);
+  //       alert("config.json file data imported successfully");
+  //     };
+  //     reader.readAsText(file);
+  //   };
+  // };
 
   return (
     <>
@@ -51,6 +55,37 @@ const Config = () => {
         configuration files and offers increased control over the design of the
         Q sort. To test your setup before hosting it on the web, use the Ken-Q
         Tools Mini-Server available here.
+      </div>
+
+      <UploadAndReadXML />
+
+      <h1 className="justify-self-center mt-4 mb-6">config.json</h1>
+      {display && (
+        <div className="flex, flex-col, justify-center pl-20 pr-20 pt-2 pb-8">
+          <div className="justify-self-center">
+            {t("configPara1")}
+            <br />
+            <br />
+            {t("configPara2")}
+            <br />
+            <br />
+            {t("configPara3")}
+          </div>
+        </div>
+      )}
+      <div id="uploadButtonContainer" className="justify-self-center">
+        <div id="uploadXmlConfigButton" className="justify-self-center">
+          <Button
+            id="uploadXmlConfigButton"
+            styleClass={`bg-orange-700  hover:bg-blue-700`}
+            label={"import config.json file data"}
+            onClick={() => {
+              handleClick();
+            }}
+          >
+            {t("uploadXmlConfigButton")}
+          </Button>
+        </div>
       </div>
     </>
   );

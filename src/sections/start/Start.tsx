@@ -35,10 +35,10 @@ const Start = () => {
 
   return (
     <>
-      <h1 className="text-center">Quincey-Q</h1>
+      <h1 className="text-center">Quincey-Q Configurator</h1>
       <img
         src={Image}
-        className=" w-1/5 justify-self-center"
+        className=" w-1/12 justify-self-center"
         alt="Configurator Hero Image"
       />
       <div className="mt-4 w-9/12 justify-self-center text-base">
