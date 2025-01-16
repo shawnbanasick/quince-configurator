@@ -4,6 +4,9 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import Start from "../sections/start/Start.js";
 import { v4 as uuidv4 } from "uuid";
+import { Config } from "../sections/config/Config";
+import { Language } from "../sections/language/Language";
+import { Map } from "../sections/map/Map";
 // Add the following import statement for the declaration file
 
 const languages = ["en", "ru", "tm", "ja", "ko", "zh", "es", "fr", "de"];
@@ -20,11 +23,12 @@ export const MainPage = () => {
     <main className="w-screen h-screen flex flex-col space-y-4 items-center justify-center">
       <Tabs className="h-screen w-screen p-2">
         <TabList>
-          <Tab>1. Start</Tab>
-          <Tab>2. General Settings</Tab>
-          <Tab>3. Q Sort Design Settings</Tab>
-          <Tab>4. Statement Settings</Tab>
-          <Tab>5. Language Settings</Tab>
+          <Tab>Welcome</Tab>
+          <Tab>1. Setup For Editing</Tab>
+          <Tab>2. Config.xml</Tab>
+          <Tab>3. Statements.xml</Tab>
+          <Tab>4. Map.xml</Tab>
+          <Tab>5. Language.xml</Tab>
           <Tab>6. Database Setup</Tab>
           <Tab>7. Web Host Setup</Tab>
         </TabList>
@@ -63,19 +67,24 @@ export const MainPage = () => {
           </a> */}
         </TabPanel>
         <TabPanel>
-          <h2>Any content 2</h2>
+          <div className="flex flex-col justify-center w-full, text-center">
+            <h2>Server Setup</h2>
+          </div>
         </TabPanel>
         <TabPanel>
-          <h2>Any content 3</h2>
-        </TabPanel>
-        <TabPanel>
-          <h2>Any content 4</h2>
+          <Config />
         </TabPanel>
         <TabPanel>
           <h2>Any content 5</h2>
         </TabPanel>
         <TabPanel>
-          <h2>Any content 6</h2>
+          <Map />
+        </TabPanel>
+        <TabPanel>
+          <Language />
+        </TabPanel>
+        <TabPanel>
+          <h2>Any content 7</h2>
         </TabPanel>
         <TabPanel>
           <h2>Any content 7</h2>
