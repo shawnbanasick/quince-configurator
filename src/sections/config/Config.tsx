@@ -5,12 +5,17 @@ import Button from "../utils/Button.jsx";
 import { useStore } from "../../globalState/useStore.js";
 import { useTranslation } from "react-i18next";
 import UploadAndReadXML from "./UploadAndReadXml.js";
+import UserTextInput from "../utils/UserTextInput.js";
+
+const getStudyTitle = (state) => state.studyTitle;
 
 const getDisplayMode = (state) => state.displayMode;
 
 const Config = () => {
   const { t } = useTranslation();
   const displayMode = useStore(getDisplayMode);
+  const studyTitle = useStore(getStudyTitle);
+
   let display;
   if (displayMode === "beginner") {
     display = true;
@@ -18,48 +23,16 @@ const Config = () => {
     display = false;
   }
 
-  // const handleClick = () => {
-  //   console.log("uploadXmlConfigButton clicked");
-  //   const input = document.createElement("input");
-  //   input.type = "file";
-  //   input.accept = ".json";
-  //   input.onchange = (e) => {
-  //     const file = e.target.files[0];
-  //     const reader = new FileReader();
-  //     reader.onload = (e) => {
-  //       const result = e.target.result;
-  //       console.log(result);
-  //       const json = JSON.parse(result);
-  //       console.log(json);
-  //       alert("config.json file data imported successfully");
-  //     };
-  //     reader.readAsText(file);
-  //   };
-  // };
+  /*
+  highlight,   label,   placeholder,   width,   left,   name,  value, onChange
+  */
 
   return (
     <>
       <h1 className="text-center">Config.xml</h1>
 
-      <div className="mt-4 w-9/12 justify-self-center text-base">
-        Quincey-Q Configurator simplifies the set-up and testing of an{" "}
-        <a
-          className="text-blue-600 underline underline-offset-2 decoration-4 decoration-blue-300 hover:decoration-blue-400"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/shawnbanasick/eq-web-sort"
-        >
-          Quincey-Q
-        </a>{" "}
-        project for online Q sorting. It provides guided editing of the Q sort
-        configuration files and offers increased control over the design of the
-        Q sort. To test your setup before hosting it on the web, use the Ken-Q
-        Tools Mini-Server available here.
-      </div>
-
       <UploadAndReadXML />
 
-      <h1 className="justify-self-center mt-4 mb-6">config.json</h1>
       {display && (
         <div className="flex, flex-col, justify-center pl-20 pr-20 pt-2 pb-8">
           <div className="justify-self-center">
@@ -73,20 +46,15 @@ const Config = () => {
           </div>
         </div>
       )}
-      <div id="uploadButtonContainer" className="justify-self-center">
-        <div id="uploadXmlConfigButton" className="justify-self-center">
-          <Button
-            id="uploadXmlConfigButton"
-            styleClass={`bg-orange-700  hover:bg-blue-700`}
-            label={"import config.json file data"}
-            onClick={() => {
-              handleClick();
-            }}
-          >
-            {t("uploadXmlConfigButton")}
-          </Button>
-        </div>
-      </div>
+      <UserTextInput
+        highlight="true"
+        label="1. Study Title:"
+        placeholder="Enter Study Title"
+        width="50"
+        left="0"
+        name="configPara4"
+        value={studyTitle}
+        onChange=""
     </>
   );
 };

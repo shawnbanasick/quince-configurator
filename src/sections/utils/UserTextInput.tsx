@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import debounce from "lodash/debounce";
 
 const UserTextInput = (props) => {
   // props = label, stateId, sectionName, width, left, value, onChange, highlight, placeholder
@@ -9,13 +10,8 @@ const UserTextInput = (props) => {
   const handleChange = (event) => {
     event.preventDefault();
     props.onChange(event.target.value);
-    // const value = event.target.value;
-    // appState[key] = value;
-    // localStorage.setItem(key, value);
-    // // console.log(value);
+    debounce(props.onChange(event.target.value), 1000);
   };
-
-  //  appState[key] = localStorage.getItem(key);
 
   if (props.highlight === "true") {
     return (

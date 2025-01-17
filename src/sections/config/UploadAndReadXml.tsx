@@ -128,13 +128,18 @@ const UploadAndReadXML: React.FC = () => {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h2>Upload and Read XML</h2>
+    <div className="flex flex-col items-center mt-8">
+      <h2>Upload Config.xml file into memory</h2>
       <input
         type="file"
         accept=".xml"
         onChange={handleFileUpload}
-        style={{ marginBottom: "10px" }}
+        className="mt-8 mb-8 text-sm text-stone-500
+        file:mr-5 file:py-1 file:px-3 file:border-[1px]
+        file:text-xs file:font-medium
+        file:bg-stone-50 file:text-stone-700
+        hover:file:cursor-pointer hover:file:bg-blue-500
+        hover:file:text-white"
       />
       {error && <p style={{ color: "red" }}>{error}</p>}
       {xmlContent && (
