@@ -1,20 +1,18 @@
-import Image from "../../assets/images/qq-brand-image.png";
-// @ts-ignore
-import Button from "../utils/Button.jsx";
 // @ts-ignore
 import { useStore } from "../../globalState/useStore.js";
 import { useTranslation } from "react-i18next";
 import UploadAndReadXML from "./UploadAndReadXml.js";
-import UserTextInput from "../utils/UserTextInput.js";
+import { UserTextInput } from "../utils/UserTextInput.js";
 
 const getStudyTitle = (state) => state.studyTitle;
-
+const getSetStudyTitle = (state) => state.setStudyTitle;
 const getDisplayMode = (state) => state.displayMode;
 
-const Config = () => {
+const Config: React.FC = () => {
   const { t } = useTranslation();
   const displayMode = useStore(getDisplayMode);
   const studyTitle = useStore(getStudyTitle);
+  const setStudyTitle = useStore(getSetStudyTitle);
 
   let display;
   if (displayMode === "beginner") {
@@ -22,6 +20,13 @@ const Config = () => {
   } else {
     display = false;
   }
+
+  const handleStudyTitleChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    console.log(event.target.value);
+    setStudyTitle(event.target.value);
+  };
 
   /*
   highlight,   label,   placeholder,   width,   left,   name,  value, onChange
@@ -46,15 +51,17 @@ const Config = () => {
           </div>
         </div>
       )}
-      <UserTextInput
-        highlight="true"
-        label="1. Study Title:"
-        placeholder="Enter Study Title"
-        width="50"
-        left="0"
-        name="configPara4"
-        value={studyTitle}
-        onChange=""
+      <div className="flex, flex-col, justify-self-center w-2/3 pl-20 pr-20 pt-2 pb-8 outline outline-red-300">
+        <UserTextInput
+          classNameText={`mt-1 block w-[800px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}
+          highlight={true}
+          label={`1. ${t("studyTitle")}:`}
+          placeholder={t("enterStudyTitle")}
+          name="studyNameInput"
+          value={studyTitle}
+          onChange={handleStudyTitleChange}
+        />
+      </div>
     </>
   );
 };

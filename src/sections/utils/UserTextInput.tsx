@@ -1,56 +1,50 @@
-import { useTranslation } from "react-i18next";
-import debounce from "lodash/debounce";
+// import debounce from "lodash/debounce";
 
-const UserTextInput = (props) => {
+interface UserTextInputProps {
+  classNameText: string;
+  highlight: boolean;
+  label: string;
+  placeholder: string;
+  name: string;
+  value: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+const UserTextInput: React.FC<UserTextInputProps> = ({
+  highlight,
+  label,
+  placeholder,
+  classNameText,
+  name,
+  value,
+  onChange,
+}) => {
   // props = label, stateId, sectionName, width, left, value, onChange, highlight, placeholder
-  const { t } = useTranslation();
 
-  const key = `${props.stateId}`;
-
-  const handleChange = (event) => {
-    event.preventDefault();
-    props.onChange(event.target.value);
-    debounce(props.onChange(event.target.value), 1000);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(event.target.value);
+    onChange(event);
   };
 
-  if (props.highlight === "true") {
+  if (highlight === true) {
     return (
-      <div>
-        <div>{`${t(props.label)} `}</div>
+      <div className="flex, flex-row w-500px">
+        <label htmlFor={name}>{label}</label>
         <input
-          tabindex="0"
+          className={classNameText}
           type="text"
-          placeholder={props.placeholder}
-          width={props.width}
-          left={props.left}
-          name={props.name}
-          value={props.value || ""}
+          id={name}
+          name={name}
+          placeholder={placeholder}
+          value={value}
           onChange={handleChange}
-          className="optionsInput"
-        />
-      </div>
-    );
-  } else {
-    return (
-      <div>
-        <div>{`${t(props.label)} `}</div>
-        <input
-          tabindex="0"
-          type="text"
-          placeholder={props.placeholder}
-          width={props.width}
-          left={props.left}
-          name={props.name}
-          value={props.value || ""}
-          onChange={handleChange}
-          className="optionsInput"
         />
       </div>
     );
   }
 };
 
-export default { UserTextInput };
+export { UserTextInput };
 
 /*
 const UserText = styled.input((props) => ({
