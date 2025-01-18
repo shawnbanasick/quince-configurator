@@ -2,6 +2,7 @@
 
 interface UserTextInputProps {
   classNameText: string;
+  classNameLabel: string;
   highlight: boolean;
   label: string;
   placeholder: string;
@@ -15,6 +16,7 @@ const UserTextInput: React.FC<UserTextInputProps> = ({
   label,
   placeholder,
   classNameText,
+  classNameLabel,
   name,
   value,
   onChange,
@@ -28,8 +30,10 @@ const UserTextInput: React.FC<UserTextInputProps> = ({
 
   if (highlight === true) {
     return (
-      <div className="flex, flex-row w-500px">
-        <label htmlFor={name}>{label}</label>
+      <div className="flex flex-row w-500px">
+        <label htmlFor={name} className={classNameLabel}>
+          {label}
+        </label>
         <input
           className={classNameText}
           type="text"
