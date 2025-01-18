@@ -1,10 +1,9 @@
-// import debounce from "lodash/debounce";
-
 interface UserTextInputProps {
   classNameText: string;
   classNameLabel: string;
   highlight: boolean;
   label: string;
+  disabled: boolean;
   placeholder: string;
   name: string;
   value: string;
@@ -12,11 +11,11 @@ interface UserTextInputProps {
 }
 
 const UserTextInput: React.FC<UserTextInputProps> = ({
-  highlight,
   label,
   placeholder,
   classNameText,
   classNameLabel,
+  disabled,
   name,
   value,
   onChange,
@@ -24,28 +23,26 @@ const UserTextInput: React.FC<UserTextInputProps> = ({
   // props = label, stateId, sectionName, width, left, value, onChange, highlight, placeholder
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(event.target.value);
     onChange(event);
   };
 
-  if (highlight === true) {
-    return (
-      <div className="flex flex-row w-500px">
-        <label htmlFor={name} className={classNameLabel}>
-          {label}
-        </label>
-        <input
-          className={classNameText}
-          type="text"
-          id={name}
-          name={name}
-          placeholder={placeholder}
-          value={value}
-          onChange={handleChange}
-        />
-      </div>
-    );
-  }
+  return (
+    <div className="flex flex-row w-500px">
+      <label htmlFor={name} className={classNameLabel}>
+        {label}
+      </label>
+      <input
+        className={classNameText}
+        type="text"
+        id={name}
+        disabled={disabled}
+        name={name}
+        placeholder={placeholder}
+        value={value}
+        onChange={handleChange}
+      />
+    </div>
+  );
 };
 
 export { UserTextInput };

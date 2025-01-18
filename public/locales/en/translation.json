@@ -1,4 +1,9 @@
 {
+  "MULTI-USE": "MULTI-USE TERMS",
+  "true": "true",
+  "false": "false",
+
+  "WELCOME": "WELCOME PAGE",
   "hello": "Hello",
   "selectLanguage": "Select Language",
   "displaysIndepthDescriptionsAndDirections": "Displays indepth descriptions and directions",
@@ -11,5 +16,16 @@
 
   "SECTION1": "Section 1: Project Settings",
   "studyTitle": "Study Title",
-  "enterStudyTitle": "Enter Study Title"
+  "enterStudyTitle": "Input Study Title",
+  "setupTarget": "Setup Target",
+  "baserow+email": "Baserow + Email",
+  "emailOnly": "Email Only",
+  "emailAddress": "Email Address",
+  "enterEmailAddress": "Input Email Address",
+  "emailSubjectLine": "Email Subject Line Text",
+  "enterEmailSubjectLineText": "Input Email Subject Text",
+  "linkToSecondProject": "Link to Second Project",
+  "secondProjectUrlAddress": "Second Project Email Address",
+  "enterSecondProjectUrlAddress": "Input Second Project Email Address",
+  "sortImages": "Sort Images / Pictures Instead of Text Statements"
 }

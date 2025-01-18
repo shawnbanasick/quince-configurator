@@ -1,4 +1,5 @@
 import React from "react";
+import clsx from "clsx";
 
 export interface RadioProps {
   name?: string;
@@ -25,7 +26,14 @@ export const Radio: React.FC<RadioProps> = ({
     <div className={`content-center`}>
       <div className="">
         <label
-          className="bg-gray-100 border-gray-100 p-4 outline outline-1 outline-slate-300 has-[:checked]:text-green-500 has-[:checked]:bg-green-100 has-[:checked]:border-green-700 rounded-lg h-4 "
+          className={clsx(
+            "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
+            {
+              "bg-opacity-100": isChecked,
+              "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-2 outline-zinc-600":
+                !isChecked,
+            }
+          )}
           htmlFor={value}
         >
           <input

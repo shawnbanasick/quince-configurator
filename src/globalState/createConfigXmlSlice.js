@@ -132,7 +132,7 @@ const createConfigXmlSlice = (set, get) => ({
     set(() => ({ numImages: num }));
   },
   setUseImages: (bool) => {
-    set(() => ({ configUseImages: bool }));
+    set(() => ({ useImages: bool }));
   },
   setSecondProjectUrl: (url) => {
     set(() => ({ secondProjectUrl: url }));

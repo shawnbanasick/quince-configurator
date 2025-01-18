@@ -34,14 +34,14 @@ const Start = () => {
   };
 
   return (
-    <>
-      <h1 className="text-center">Quincey-Q Configurator</h1>
+    <div className="flex flex-col items-center justify-center">
+      <h1 className="text-center mt-8">Quincey-Q Configurator</h1>
       <img
         src={Image}
         className=" w-1/12 justify-self-center"
         alt="Configurator Hero Image"
       />
-      <div className="mt-4 w-9/12 justify-self-center text-base">
+      <div className="mt-4 w-9/12 align-self-center text-base">
         Quincey-Q Configurator simplifies the set-up and testing of an{" "}
         <a
           className="text-blue-600 underline underline-offset-2 decoration-4 decoration-blue-300 hover:decoration-blue-400"
@@ -89,7 +89,7 @@ const Start = () => {
           <p>{t("displaysIndepthDescriptionsAndDirections")}</p>
         )}
       </div>
-    </>
+    </div>
   );
 };
 
