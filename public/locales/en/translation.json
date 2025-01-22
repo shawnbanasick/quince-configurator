@@ -14,7 +14,7 @@
   "configPara2": "If you have a config.xml file from another EQ Web Sort project made with this version of the configurator, you can load its data for editing by clicking the orange - Load 'config.json' File Data - button below. If you don't have a file from a previous project, you can load the default config.xml file from the settings folder, or you can create a new file by inputting all of the data yourself.",
   "configPara3": "After you have added your data, click the orange button at the bottom of the page to save the information as 'config.json' in the settings folder (replacing the default file).",
 
-  "SECTION1": "Section 1: Project Settings",
+  "*** CONFIG TEXT ***": "*** CONFIG TEXT ***",
   "studyTitle": "Study Title",
   "enterStudyTitle": "Input Study Title",
   "setupTarget": "Setup Target",
@@ -25,7 +25,8 @@
   "emailSubjectLine": "Email Subject Line Text",
   "enterEmailSubjectLineText": "Input Email Subject Text",
   "linkToSecondProject": "Link to Second Project",
-  "secondProjectUrlAddress": "Second Project Email Address",
+  "secondProjectUrlAddress": "Second Project URL Address",
   "enterSecondProjectUrlAddress": "Input Second Project Email Address",
-  "sortImages": "Sort Images / Pictures Instead of Text Statements"
+  "sortImages": "Sort Images / Pictures Instead of Text Statements",
+  "statementSortVsImageSort": "Statement Sort vs. Image Sort"
 }

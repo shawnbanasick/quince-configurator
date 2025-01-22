@@ -39,6 +39,7 @@ const UserNumInput: React.FC<UserTextInputProps> = ({
 
   const handleChange = (e) => {
     let value = e.target.value;
+
     if (isNaN(value)) {
       return null;
     }
@@ -80,6 +81,7 @@ const UserNumInput: React.FC<UserTextInputProps> = ({
         className={classNameNum}
         type="number"
         tabIndex={0}
+        disabled={disabled}
         placeholder={placeholder}
         name={name}
         step={step}

@@ -18,6 +18,9 @@ export default {
         "8xl": "6rem",
       },
     },
+    fontFamily: {
+      title: ["Inter", "sans-serif"],
+    },
   },
   plugins: [
     plugin(function ({ addBase, theme }) {

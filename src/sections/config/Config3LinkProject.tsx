@@ -2,6 +2,7 @@ import React from "react";
 import { useStore } from "../../globalState/useStore";
 import { useTranslation } from "react-i18next";
 import { UserTextInput } from "../utils/UserTextInput";
+import Image from "../../assets/images/infoIcon.svg";
 import clsx from "clsx";
 
 const getLinkToSecondProject = (state) => state.linkToSecondProject;
@@ -22,7 +23,9 @@ const Config3LinkProject: React.FC = () => {
     setSecondProjectUrl(event.target.value);
   };
 
-  const handleLinkSecondProjectChange = (event: any) => {
+  const handleLinkSecondProjectChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     if (event.target.value === "true") {
       setLinkToSecondProject(true);
     } else {
@@ -31,7 +34,18 @@ const Config3LinkProject: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col hover:bg-gray-100 hover:outline outline-2 outline-zinc-600 p-2 hover:rounded-md">
+    <div className="flex flex-col  pt-6 pb-2 hover:bg-gray-100 hover:outline outline-2 outline-zinc-600 p-2 hover:rounded-md">
+      <div className="flex flex-row content-center gap-5 mt-3">
+        <span className="text-lg font-title font-semibold">
+          {t("Link to Second Project")}
+        </span>
+        <img
+          src={Image}
+          className=" w-[25px] h-[25px] justify-self-center"
+          onClick={() => alert("This is a tooltip")}
+          alt="info icon"
+        />
+      </div>
       <div className="flex flex-row h-[60px] content-center items-center gap-5 mt-3">
         <span className="content-center">{`3a. ${t(
           "linkToSecondProject"
@@ -42,7 +56,7 @@ const Config3LinkProject: React.FC = () => {
               "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
               {
                 "bg-opacity-100": linkToSecondProject,
-                "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-2 outline-zinc-600":
+                "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                   !linkToSecondProject,
               }
             )}
@@ -66,7 +80,7 @@ const Config3LinkProject: React.FC = () => {
               "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
               {
                 "bg-opacity-100": !linkToSecondProject,
-                "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-2 outline-zinc-600":
+                "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                   linkToSecondProject,
               }
             )}

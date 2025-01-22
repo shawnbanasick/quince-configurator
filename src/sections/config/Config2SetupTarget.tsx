@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useStore } from "../../globalState/useStore";
 import { useTranslation } from "react-i18next";
 import { UserTextInput } from "../utils/UserTextInput";
@@ -24,11 +24,10 @@ const Config2SetupTarget: React.FC = () => {
     setEmailAddress(event.target.value);
   };
 
-  const handleEmailAddressChange = (
+  const handleEmailSubjectTextChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    console.log(event.target.value);
-    // setEmailSubjectLine(event.target.value);
+    setEmailSubjectLine(event.target.value);
   };
 
   const handleSetupTargetChange = (inputValue: any) => {
@@ -36,7 +35,10 @@ const Config2SetupTarget: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col hover:bg-gray-100 hover:outline outline-2 outline-zinc-600 p-2 hover:rounded-md">
+    <div className="flex flex-col pt-6 pb-2 hover:bg-gray-100 hover:outline outline-2 outline-zinc-600 p-2 hover:rounded-md">
+      <h3 className="text-lg font-title font-semibold">
+        {t("statementSortVsImageSort")}
+      </h3>
       <div className="flex flex-row h-[70px] content-center gap-5 mt-1">
         <span className="content-center">{`2a. ${t("setupTarget")}:`}</span>
         <Radio
@@ -79,8 +81,8 @@ const Config2SetupTarget: React.FC = () => {
           placeholder={t("enterEmailSubjectLineText")}
           disabled={false}
           name="emailAddress"
-          value={"value"}
-          onChange={handleEmailAddressChange}
+          value={emailSubjectLine}
+          onChange={handleEmailSubjectTextChange}
         />
       </div>
     </div>

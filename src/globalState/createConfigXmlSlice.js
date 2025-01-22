@@ -5,7 +5,7 @@ const createConfigXmlSlice = (set, get) => ({
   emailSubjectLine: "Your Study Results",
   linkToSecondProject: false,
   secondProjectUrl: "",
-  useImages: true,
+  useImages: false,
   numImages: 0,
   imageFileType: "jpg",
   imageFormat: "letterbox",

@@ -6,6 +6,7 @@ export interface RadioProps {
   label?: string;
   value?: string;
   isChecked?: boolean;
+  disabled?: boolean;
   handleChange?: any;
   align?: "left" | "center" | "right";
 }
@@ -15,6 +16,7 @@ export const Radio: React.FC<RadioProps> = ({
   label,
   value,
   isChecked,
+  disabled,
   handleChange,
 }) => {
   const handleRadioChange = (e: any) => {
@@ -22,16 +24,20 @@ export const Radio: React.FC<RadioProps> = ({
     handleChange(id); // Send back id to radio group for comparison
   };
 
+  console.log(disabled);
+
   return (
-    <div className={`content-center`}>
-      <div className="">
+    <div className={`content-center disabled:bg-gray-200`}>
+      <button className="">
         <label
           className={clsx(
-            "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
+            "flex items-center content-center  bg-blue-500 hover:bg-opacity-50 text-white px-4 pt-[8px] pb-[9px] rounded-md select-none",
             {
               "bg-opacity-100": isChecked,
-              "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-2 outline-zinc-600":
+              "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                 !isChecked,
+              "bg-opacity-50": disabled,
+              "outline-gray-300 text-gray-300": !isChecked && disabled,
             }
           )}
           htmlFor={value}
@@ -40,6 +46,7 @@ export const Radio: React.FC<RadioProps> = ({
             type="radio"
             className="hidden"
             name={name}
+            disabled={disabled}
             id={value} // htlmlFor targets this id.
             value={value}
             checked={isChecked}
@@ -47,7 +54,7 @@ export const Radio: React.FC<RadioProps> = ({
           />
           {label}
         </label>
-      </div>
+      </button>
     </div>
   );
 };

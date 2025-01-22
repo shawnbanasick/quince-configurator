@@ -14,7 +14,7 @@
   "configPara2": "このバージョンのコンフィギュレータで作成された他のEQ Web Sortプロジェクトのconfig.xmlファイルがある場合は、下のオレンジ色の「config.xmlファイルのデータを読み込む」ボタンをクリックして編集用にそのデータを読み込むことができます。以前のプロジェクトからファイルを持っていない場合は、settingsフォルダからデフォルトのconfig.jsonファイルを読み込むか、すべてのデータを自分で入力して新しいファイルを作成することができます。",
   "configPara3": "データの追加が完了したら、ページの下部にあるオレンジ色のボタンをクリックして、情報を「config.json」としてsettingsフォルダに保存してください（デフォルトのファイルを置き換えます）。",
 
-  "SECTION1": "SECTION 1: PROJECT SETTINGS",
+  "*** CONFIG TEXT ***": "*** CONFIG TEXT ***",
   "studyTitle": "プロジェクト名",
   "enterStudyTitle": "入力 プロジェクト名",
   "setupTarget": "目標設定",
@@ -27,5 +27,6 @@
   "linkToSecondProject": "第2プロジェクトへのリンク",
   "secondProjectUrlAddress": "第2プロジェクトのURLアドレス",
   "enterSecondProjectUrlAddress": "第2プロジェクトのURLアドレスを入力",
-  "sortImages": "テキストステートメントの代わりに画像/写真を並べ替える"
+  "sortImages": "テキストステートメントの代わりに画像/写真を並べ替える",
+  "statementSortVsImageSort": "ステートメントソート vs. 画像ソート"
 }
