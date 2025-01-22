@@ -117,7 +117,9 @@ const Config4SortImages: React.FC = () => {
       </div>
       <UserNumInput
         classNameNum={`mt-2 block min-w-[80px] px-3 py-2 outline outline-1 outline-black-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 select-none sm:text-sm disabled:opacity-50 outline outline-2 outline-zinc-600 ml-4`}
-        classNameLabel={`flex flex-row content-center min-w-[170px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+        classNameLabel={`flex flex-row content-center ${
+          useImages ? "" : "text-slate-400"
+        } min-w-[170px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
         highlight={true}
         label={`4b. Number of Images:`}
         placeholder={t("enterSecondProjectUrlAddress")}
