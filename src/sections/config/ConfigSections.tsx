@@ -4,6 +4,7 @@ import { Config1StudyTitle } from "./Config1StudyTitle";
 import { Config2SetupTarget } from "./Config2SetupTarget";
 import { Config3LinkProject } from "./Config3LinkProject";
 import { Config4SortImages } from "./Config4SortImages";
+import { Config5LandingPageOptions } from "./Config5LandingPageOptions";
 // import { useTranslation } from "react-i18next";
 
 const getDisplayMode = (state) => state.displayMode;
@@ -26,6 +27,7 @@ const ConfigSections: React.FC = () => {
         <Config2SetupTarget />
         <Config3LinkProject />
         <Config4SortImages />
+        <Config5LandingPageOptions />
       </div>
     </>
   );

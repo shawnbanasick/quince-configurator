@@ -1,9 +1,9 @@
 {
-  "MULTI-USE": "MULTI-USE TERMS",
+  "*** MULTI-USE ***": "*** MULTI-USE TERMS ***",
   "true": "true",
   "false": "false",
 
-  "WELCOME": "WELCOME PAGE",
+  "*** WELCOME ***": "*** WELCOME PAGE ***",
   "hello": "こんにちは",
   "selectLanguage": "言語を選択",
   "displaysIndepthDescriptionsAndDirections": "詳細な説明と指示を表示します",
@@ -28,5 +28,13 @@
   "secondProjectUrlAddress": "第2プロジェクトのURLアドレス",
   "enterSecondProjectUrlAddress": "第2プロジェクトのURLアドレスを入力",
   "sortImages": "テキストステートメントの代わりに画像/写真を並べ替える",
-  "statementSortVsImageSort": "ステートメントソート vs. 画像ソート"
+  "statementSortVsImageSort": "ステートメントソート vs. 画像ソート",
+  "numberOfImages": "画像の数",
+  "imageFileType": "画像ファイルタイプ",
+  "imageFormat": "画像フォーマット",
+
+  "*** CONFIG - LANDING PAGE OPTIONS ***": "*** CONFIG TEXT LANDING PAGE OPTIONS ***",
+  "landingPageOptions": "ランディングページオプション",
+  "showConsentPage": "同意ページを表示",
+  "showConsentPageHelpModal": "同意ページヘルプモーダルを表示"
 }

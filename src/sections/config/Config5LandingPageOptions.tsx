@@ -16,7 +16,7 @@ const getSetImageFileType = (state) => state.setImageFileType;
 const getImageFormat = (state) => state.imageFormat;
 const getSetImageFormat = (state) => state.setImageFormat;
 
-const Config4SortImages: React.FC = () => {
+const Config5LandingPageOptions: React.FC = () => {
   const useImages = useStore(getUseImages);
   const setUseImages = useStore(getSetUseImages);
   const numImages = useStore(getNumImages);
@@ -55,7 +55,7 @@ const Config4SortImages: React.FC = () => {
     <div className="flex flex-col  pt-6 pb-2 hover:bg-gray-100 hover:outline outline-2 outline-zinc-600 p-2 hover:rounded-md">
       <div className="flex flex-row content-center gap-5 mt-3">
         <span className="text-lg font-title font-semibold">
-          {t("statementSortVsImageSort")}
+          {t("landingPageOptions")}
         </span>{" "}
         <img
           src={Image}
@@ -65,7 +65,7 @@ const Config4SortImages: React.FC = () => {
         />
       </div>
       <div className="flex flex-row h-[60px] content-center gap-5 mt-3">
-        <span className="content-center">{`4a. ${t("sortImages")}:`}</span>
+        <span className="content-center">{`5a. ${t("showConsentPage")}:`}</span>
         <div className="content-center">
           <label
             className={clsx(
@@ -115,26 +115,11 @@ const Config4SortImages: React.FC = () => {
           </label>
         </div>
       </div>
-      <UserNumInput
-        classNameNum={`mt-2 block min-w-[80px] px-3 py-2 outline outline-1 outline-black-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 select-none sm:text-sm disabled:opacity-50 outline outline-2 outline-zinc-600 ml-4`}
-        classNameLabel={`flex flex-row content-center ${
-          useImages ? "" : "text-slate-400"
-        } min-w-[170px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-        highlight={true}
-        label={`4b. ${t("numberOfImages")}:`}
-        placeholder={t("enterSecondProjectUrlAddress")}
-        upperLimit={199}
-        lowerLimit={0}
-        step={1}
-        disabled={!useImages}
-        name="linkToSecondProjectEmailInput"
-        value={numImages}
-        onChange={handleNumberInput}
-      />
+
       <div className="flex flex-row h-[70px] content-center gap-5 mt-1">
         <span
           className={`content-center ${useImages ? "" : "text-slate-400"} `}
-        >{`4c. ${t("imageFileType")}:`}</span>
+        >{`4c. ${t("showConsentPageHelpModal")}:`}</span>
         <Radio
           name="imageFileType"
           value="jpg"
@@ -156,7 +141,7 @@ const Config4SortImages: React.FC = () => {
       <div className="flex flex-row h-[70px] content-center gap-5 mt-1">
         <span
           className={`content-center ${useImages ? "" : "text-slate-400"}`}
-        >{`4d. ${t("imageFormat")}:`}</span>
+        >{`4d. ${t("Image Format")}:`}</span>
         <Radio
           name="imageFormat"
           value="letterbox"
@@ -179,4 +164,4 @@ const Config4SortImages: React.FC = () => {
   );
 };
 
-export { Config4SortImages };
+export { Config5LandingPageOptions };

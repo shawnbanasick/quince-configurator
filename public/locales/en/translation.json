@@ -1,9 +1,9 @@
 {
-  "MULTI-USE": "MULTI-USE TERMS",
+  "*** MULTI-USE ***": "*** MULTI-USE TERMS ***",
   "true": "true",
   "false": "false",
 
-  "WELCOME": "WELCOME PAGE",
+  "*** WELCOME ***": "*** WELCOME PAGE ***",
   "hello": "Hello",
   "selectLanguage": "Select Language",
   "displaysIndepthDescriptionsAndDirections": "Displays indepth descriptions and directions",
@@ -28,5 +28,13 @@
   "secondProjectUrlAddress": "Second Project URL Address",
   "enterSecondProjectUrlAddress": "Input Second Project Email Address",
   "sortImages": "Sort Images / Pictures Instead of Text Statements",
-  "statementSortVsImageSort": "Statement Sort vs. Image Sort"
+  "statementSortVsImageSort": "Statement Sort vs. Image Sort",
+  "numberOfImages": "Number of Images",
+  "imageFileType": "Image File Type",
+  "imageFormat": "Image Format",
+
+  "*** CONFIG - LANDING PAGE OPTIONS ***": "*** CONFIG TEXT LANDING PAGE OPTIONS ***",
+  "landingPageOptions": "Landing Page Options",
+  "showConsentPage": "Show Consent Page",
+  "showConsentPageHelpModal": "Show Consent Page Help Modal"
 }
