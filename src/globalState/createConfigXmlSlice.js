@@ -1,4 +1,6 @@
 const createConfigXmlSlice = (set, get) => ({
+  devMode: false,
+
   studyTitle: "My Study Title",
   setupTarget: "baserow",
   emailAddress: "",
@@ -12,21 +14,23 @@ const createConfigXmlSlice = (set, get) => ({
 
   showConsentPage: false,
   showConsentPageHelpModal: true,
+
   initialScreen: "anonymous",
   accessCode: "",
   headerBarColor: "#337ab7",
+
+  shuffleCards: true,
+  traceSorts: true,
   greenCardColor: "#ccffcc",
   yellowCardColor: "#e0e0e0",
   pinkCardColor: "#ffe0e0",
   defaultFontColor: "#2a2a2a",
   defaultFontSizePresort: 22,
 
-  devMode: false,
-  shuffleCards: true,
   useThinProcess: true,
   thinGuidanceModalMaxIterations: 2,
+
   condOfInstFontSize: 20,
-  traceSorts: true,
   useMobileMode: true,
   allowUnforcedSorts: false,
   warnOverloadedColumn: true,

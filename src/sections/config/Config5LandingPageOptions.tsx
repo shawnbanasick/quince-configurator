@@ -1,7 +1,6 @@
 import React from "react";
 import { useStore } from "../../globalState/useStore";
 import { useTranslation } from "react-i18next";
-import { UserNumInput } from "../utils/UserNumInput";
 import { Radio } from "../utils/RadioButtons";
 import Image from "../../assets/images/infoIcon.svg";
 
@@ -15,6 +14,11 @@ const getImageFileType = (state) => state.imageFileType;
 const getSetImageFileType = (state) => state.setImageFileType;
 const getImageFormat = (state) => state.imageFormat;
 const getSetImageFormat = (state) => state.setImageFormat;
+const getShowConsetPage = (state) => state.showConsentPage;
+const getSetShowConsentPage = (state) => state.setShowConsentPage;
+const getShowConsentPageHelpModal = (state) => state.showConsentPageHelpModal;
+const getSetShowConsentPageHelpModal = (state) =>
+  state.setShowConsentPageHelpModal;
 
 const Config5LandingPageOptions: React.FC = () => {
   const useImages = useStore(getUseImages);
@@ -25,30 +29,25 @@ const Config5LandingPageOptions: React.FC = () => {
   const setImageFileType = useStore(getSetImageFileType);
   const imageFormat = useStore(getImageFormat);
   const setImageFormat = useStore(getSetImageFormat);
+  const showConsentPageHelpModal = useStore(getShowConsentPageHelpModal);
+  const setShowConsentPageHelpModal = useStore(getSetShowConsentPageHelpModal);
+
+  const showConsentPage = useStore(getShowConsetPage);
+  const setShowConsentPage = useStore(getSetShowConsentPage);
   const { t } = useTranslation();
 
-  const handleNumberInput = (input: any) => {
-    setNumImages(input);
+  const handleShowConsentPageChange = (input: any) => {
+    setShowConsentPage(input);
   };
 
-  const handleImageFileTypeChange = (inputValue: any) => {
+  const handleShowConsentPageHelpModalChange = (inputValue: any) => {
     console.log(inputValue);
-    setImageFileType(inputValue);
+    setShowConsentPageHelpModal(inputValue);
   };
 
   const handleImageFormatChange = (inputValue: any) => {
     console.log(inputValue);
     setImageFormat(inputValue);
-  };
-
-  const handleUseImagesChange = (
-    inputValue: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    if (inputValue.target.value === "true") {
-      setUseImages(true);
-    } else {
-      setUseImages(false);
-    }
   };
 
   return (
@@ -71,9 +70,9 @@ const Config5LandingPageOptions: React.FC = () => {
             className={clsx(
               "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
               {
-                "bg-opacity-100": useImages,
+                "bg-opacity-100": showConsentPage,
                 "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
-                  !useImages,
+                  !showConsentPage,
               }
             )}
             htmlFor="useImagesTrue"
@@ -81,11 +80,10 @@ const Config5LandingPageOptions: React.FC = () => {
             <input
               type="radio"
               className="hidden"
-              name="useImages"
-              id="useImagesTrue" // htlmlFor targets this id.
+              name="showConsentPage"
+              id="showConsentPageTrue" // htlmlFor targets this id.
               value="true"
-              checked={useImages}
-              onChange={handleUseImagesChange}
+              onChange={handleShowConsentPageChange}
             />
             {t("true")}
           </label>
@@ -95,9 +93,9 @@ const Config5LandingPageOptions: React.FC = () => {
             className={clsx(
               "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
               {
-                "bg-opacity-100": !useImages,
+                "bg-opacity-100": !showConsentPage,
                 "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
-                  useImages,
+                  showConsentPage,
               }
             )}
             htmlFor="useImagesFalse"
@@ -105,11 +103,64 @@ const Config5LandingPageOptions: React.FC = () => {
             <input
               type="radio"
               className="hidden"
-              name="useImages"
+              name="showConsentPage"
               id="useImagesFalse" // htlmlFor targets this id.
               value="false"
-              checked={!useImages}
-              onChange={handleUseImagesChange}
+              checked={!showConsentPage}
+              onChange={handleShowConsentPageChange}
+            />
+            {t("false")}
+          </label>
+        </div>
+      </div>
+
+      <div className="flex flex-row h-[60px] content-center gap-5 mt-3">
+        <span className="content-center">{`5b. ${t(
+          "showConsentPageHelpModal"
+        )}:`}</span>
+        <div className="content-center">
+          <label
+            className={clsx(
+              "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
+              {
+                "bg-opacity-100": showConsentPageHelpModal,
+                "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
+                  !showConsentPageHelpModal,
+              }
+            )}
+            htmlFor="useImagesTrue"
+          >
+            <input
+              type="radio"
+              className="hidden"
+              name="showConsentPageHelpModal"
+              id="showConsentPageHelpModalTrue" // htlmlFor targets this id.
+              value="true"
+              onChange={handleShowConsentPageHelpModalChange}
+            />
+            {t("true")}
+          </label>
+        </div>
+        <div className="content-center">
+          <label
+            className={clsx(
+              "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
+              {
+                "bg-opacity-100": !showConsentPage,
+                "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
+                  showConsentPage,
+              }
+            )}
+            htmlFor="useImagesFalse"
+          >
+            <input
+              type="radio"
+              className="hidden"
+              name="showConsentPageHelpModal"
+              id="showConsentPageHelpModalFalse" // htlmlFor targets this id.
+              value="false"
+              checked={!showConsentPage}
+              onChange={handleShowConsentPageHelpModalChange}
             />
             {t("false")}
           </label>
@@ -127,7 +178,7 @@ const Config5LandingPageOptions: React.FC = () => {
           align="left"
           disabled={!useImages}
           isChecked={imageFileType === "jpg"}
-          handleChange={handleImageFileTypeChange}
+          handleChange={console.log("help")}
         />
         <Radio
           name="imageFileType"
@@ -135,7 +186,7 @@ const Config5LandingPageOptions: React.FC = () => {
           label={"png"}
           disabled={!useImages}
           isChecked={imageFileType === "png"}
-          handleChange={handleImageFileTypeChange}
+          handleChange={console.log("help")}
         />
       </div>
       <div className="flex flex-row h-[70px] content-center gap-5 mt-1">
@@ -149,7 +200,7 @@ const Config5LandingPageOptions: React.FC = () => {
           disabled={!useImages}
           align="left"
           isChecked={imageFormat === "letterbox"}
-          handleChange={handleImageFormatChange}
+          handleChange={console.log("help")}
         />
         <Radio
           name="imageFormat"
@@ -157,7 +208,7 @@ const Config5LandingPageOptions: React.FC = () => {
           label={"4x3"}
           disabled={!useImages}
           isChecked={imageFormat === "4x3"}
-          handleChange={handleImageFormatChange}
+          handleChange={console.log("help")}
         />
       </div>
     </div>
