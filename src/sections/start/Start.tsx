@@ -1,7 +1,5 @@
 import Image from "../../assets/images/qq-brand-image.png";
-// @ts-ignore
 import Button from "../utils/Button";
-// @ts-ignore
 import { useStore } from "../../globalState/useStore.js";
 import { useTranslation } from "react-i18next";
 

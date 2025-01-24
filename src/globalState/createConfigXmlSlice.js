@@ -1,5 +1,7 @@
 const createConfigXmlSlice = (set, get) => ({
   devMode: false,
+  useMobileMode: true,
+  traceSorts: true,
 
   studyTitle: "My Study Title",
   setupTarget: "baserow",
@@ -17,24 +19,24 @@ const createConfigXmlSlice = (set, get) => ({
 
   initialScreen: "anonymous",
   accessCode: "",
-  headerBarColor: "#337ab7",
 
-  shuffleCards: true,
-  traceSorts: true,
+  headerBarColor: "#337ab7",
   greenCardColor: "#ccffcc",
   yellowCardColor: "#e0e0e0",
   pinkCardColor: "#ffe0e0",
   defaultFontColor: "#2a2a2a",
+
+  shuffleCards: true,
   defaultFontSizePresort: 22,
 
   useThinProcess: true,
   thinGuidanceModalMaxIterations: 2,
 
   condOfInstFontSize: 20,
-  useMobileMode: true,
   allowUnforcedSorts: false,
   warnOverloadedColumn: true,
   sortDirection: "positive",
+
   showPostSort: true,
   showSecondPosColumn: false,
   showSecondNegColumn: false,
@@ -42,6 +44,7 @@ const createConfigXmlSlice = (set, get) => ({
   postsortCommentsRequired: true,
   defaultFontSizePostsort: 16,
   minCardHeightPostsort: 120,
+
   showSurvey: true,
 
   setShowSurvey: (bool) => {

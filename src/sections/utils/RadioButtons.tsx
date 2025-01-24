@@ -24,8 +24,6 @@ export const Radio: React.FC<RadioProps> = ({
     handleChange(id); // Send back id to radio group for comparison
   };
 
-  console.log(disabled);
-
   return (
     <div className={`content-center disabled:bg-gray-200`}>
       <button className="">

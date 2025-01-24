@@ -33,8 +33,16 @@
   "imageFileType": "画像ファイルタイプ",
   "imageFormat": "画像フォーマット",
 
+  "*** CONFIG - CONSENT PAGE OPTIONS ***": "*** CONFIG TEXT LANDING PAGE OPTIONS ***",
+  "consentPageOptions": "同意ページオプション",
+  "showConsentPage": "同意ページを表示",
+  "showConsentPageHelpModal": "同意ページヘルプモーダルを表示",
+
   "*** CONFIG - LANDING PAGE OPTIONS ***": "*** CONFIG TEXT LANDING PAGE OPTIONS ***",
   "landingPageOptions": "ランディングページオプション",
-  "showConsentPage": "同意ページを表示",
-  "showConsentPageHelpModal": "同意ページヘルプモーダルを表示"
+  "accessMode": "アクセスモード",
+  "anonymous": "匿名",
+  "partId": "参加者ID",
+  "accessCode": "アクセスコード",
+  "inputAccessCode": "アクセスコードを入力"
 }
