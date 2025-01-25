@@ -33,9 +33,9 @@ const createConfigXmlSlice = (set, get) => ({
   thinGuidanceModalMaxIterations: 2,
 
   condOfInstFontSize: 20,
+  sortDirection: "positive",
   allowUnforcedSorts: false,
   warnOverloadedColumn: true,
-  sortDirection: "positive",
 
   showPostSort: true,
   showSecondPosColumn: false,

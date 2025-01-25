@@ -77,6 +77,7 @@ const Config6LandingPageOptions: React.FC = () => {
           handleChange={handleInitialScreenChange}
         />
       </div>
+
       <UserTextInput
         classNameText={`mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
         classNameLabel={`min-w-[130px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}

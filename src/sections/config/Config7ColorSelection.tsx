@@ -77,7 +77,7 @@ const Config7ColorSelection: React.FC = () => {
       <div
         className={`flex flex-row h-[40px] content-center items-center gap-5 mt-1`}
       >
-        <span className={`content-center`}>{`7a. ${t(
+        <span className={`content-center`}>{`7b. ${t(
           "greenCardColor"
         )}:`}</span>
         <div
@@ -94,7 +94,7 @@ const Config7ColorSelection: React.FC = () => {
       <div
         className={`flex flex-row h-[40px] content-center items-center gap-5 mt-1`}
       >
-        <span className={`content-center`}>{`7a. ${t(
+        <span className={`content-center`}>{`7c. ${t(
           "yellowCardColor"
         )}:`}</span>
         <div
@@ -111,7 +111,7 @@ const Config7ColorSelection: React.FC = () => {
       <div
         className={`flex flex-row h-[40px] content-center items-center gap-5 mt-1`}
       >
-        <span className={`content-center`}>{`7a. ${t("pinkCardColor")}:`}</span>
+        <span className={`content-center`}>{`7d. ${t("pinkCardColor")}:`}</span>
         <div
           className="w-10 h-5 rounded-md outline outline-1 outline-zinc-600"
           style={{ backgroundColor: pinkCardColor }}
@@ -123,7 +123,7 @@ const Config7ColorSelection: React.FC = () => {
       <div
         className={`flex flex-row h-[40px] content-center items-center gap-5 mt-1`}
       >
-        <span className={`content-center`}>{`7a. ${t(
+        <span className={`content-center`}>{`7e. ${t(
           "defaultFontColor"
         )}:`}</span>
         <div

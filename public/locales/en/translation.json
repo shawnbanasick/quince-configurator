@@ -2,6 +2,8 @@
   "*** MULTI-USE ***": "*** MULTI-USE TERMS ***",
   "true": "true",
   "false": "false",
+  "upperlimit": "Upper Limit",
+  "lowerlimit": "Lower Limit",
 
   "*** WELCOME ***": "*** WELCOME PAGE ***",
   "hello": "Hello",
@@ -58,10 +60,19 @@
   "greenCardColor": "Green Card Color",
   "yellowCardColor": "Yellow Card Color",
   "pinkCardColor": "Pink Card Color",
-  "defaultFontColor": "Default Font Color",
+  "defaultFontColor": "Default Font Color (all pages)",
 
   "*** CONFIG - PRESORT OPTIONS ***": "*** CONFIG PRESORT OPTIONS ***",
   "presortPageOptions": "Pre-Sorting Options",
   "shuffleCards": "Shuffle Statement Order",
-  "defaultFontSizePresort": "Default Font Size"
+  "defaultFontSizePresort": "Default Font Size",
+
+  "*** CONFIG - SORT OPTIONS ***": "*** CONFIG SORT OPTIONS ***",
+  "sortPageOptions": "Sort Page Options",
+  "condOfInstFontSize": "Condition of Instruction Font Size",
+  "sortDirection": "Sort Direction",
+  "negativeFirst": "Negative First",
+  "positiveFirst": "Positive First",
+  "allowUnforcedSorts": "Allow Unforced Sorts",
+  "warnOverloadedColumns": "Warn Overloaded Columns"
 }

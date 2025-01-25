@@ -2,6 +2,8 @@
   "*** MULTI-USE ***": "*** MULTI-USE TERMS ***",
   "true": "はい",
   "false": "いいえ",
+  "upperlimit": "上限値",
+  "lowerlimit": "下限値",
 
   "*** WELCOME ***": "*** WELCOME PAGE ***",
   "hello": "こんにちは",
@@ -59,10 +61,19 @@
   "greenCardColor": "グリーンカードの色",
   "yellowCardColor": "イエローカードの色",
   "pinkCardColor": "ピンクカードの色",
-  "defaultFontColor": "デフォルトのフォントの色",
+  "defaultFontColor": "デフォルトのフォントの色（すべてのページ）",
 
   "*** CONFIG - PRESORT OPTIONS ***": "*** CONFIG PRESORT OPTIONS ***",
   "presortPageOptions": "事前ソートオプション",
   "shuffleCards": "ステートメントの順序をシャッフル",
-  "defaultFontSizePresort": "デフォルトフォントサイズ"
+  "defaultFontSizePresort": "デフォルトフォントサイズ",
+
+  "*** CONFIG - SORT OPTIONS ***": "*** CONFIG SORT OPTIONS ***",
+  "sortPageOptions": "ソートページオプション",
+  "condOfInstFontSize": "指示文フォントサイズ",
+  "sortDirection": "ソート方向",
+  "negativeFirst": "マイナスカード優先",
+  "positiveFirst": "プラスカード優先",
+  "allowUnforcedSorts": "自由ソートを許可",
+  "warnOverloadedColumns": "オーバーロードされた列を警告"
 }
