@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { CompactPicker, ColorResult } from "react-color";
+import { BlockPicker as Picker, ColorResult } from "react-color";
 
 interface ColorPickerProps {
   baseColor: string;
@@ -15,6 +15,10 @@ const ColorPicker: React.FC<ColorPickerProps> = (props) => {
     setColor(color.hex);
     props.onChange(color.hex);
   };
+
+  useEffect(() => {
+    setColor(props.baseColor);
+  }, [props.baseColor]);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -36,17 +40,14 @@ const ColorPicker: React.FC<ColorPickerProps> = (props) => {
   }, [showPicker]);
 
   return (
-    <div
-      className="w-10 h-5 rounded-md outline outline-1 outline-zinc-600"
-      onClick={() => setShowPicker(!showPicker)}
-    >
+    <div className="w-10 h-5 rounded-md" onClick={() => setShowPicker(true)}>
       {showPicker && (
-        <div
-          className="ml-20"
-          ref={pickerRef}
-          onClick={() => setShowPicker(!showPicker)}
-        >
-          <CompactPicker color={color} onChange={handleColorChange} />
+        <div className="mt-8" ref={pickerRef}>
+          <Picker
+            className="border border-1 border-slate-400"
+            color={color}
+            onChangeComplete={handleColorChange}
+          />
         </div>
       )}
     </div>

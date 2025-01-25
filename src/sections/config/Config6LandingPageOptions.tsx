@@ -31,7 +31,7 @@ const Config6LandingPageOptions: React.FC = () => {
     <div className="flex flex-col  pt-6 pb-2 hover:bg-gray-100 hover:outline outline-2 outline-zinc-600 p-2 hover:rounded-md">
       <div className="flex flex-row content-center gap-5 mt-3">
         <span className="text-lg font-title font-semibold">
-          {t("landingPageOptions")}
+          {t("projectAccessOptions")}
         </span>{" "}
         <img
           src={Image}

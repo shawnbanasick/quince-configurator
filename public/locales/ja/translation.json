@@ -38,11 +38,21 @@
   "showConsentPage": "同意ページを表示",
   "showConsentPageHelpModal": "同意ページヘルプモーダルを表示",
 
-  "*** CONFIG - LANDING PAGE OPTIONS ***": "*** CONFIG TEXT LANDING PAGE OPTIONS ***",
+  "*** CONFIG - PROJECT ACCESS OPTIONS ***": "*** CONFIG PROJECT ACCESS OPTIONS ***",
+  "projectAccessOptions": "プロジェクトアクセスオプション",
   "landingPageOptions": "ランディングページオプション",
   "accessMode": "アクセスモード",
   "anonymous": "匿名",
   "partId": "参加者ID",
   "accessCode": "アクセスコード",
-  "inputAccessCode": "アクセスコードを入力"
+  "inputAccessCode": "アクセスコードを入力",
+
+  "*** CONFIG - COLOR OPTIONS ***": "*** CONFIG COLOR OPTIONS ***",
+  "colorSettings": "カラー設定",
+  "restoreDefaultColors": "デフォルトの色に戻す",
+  "headerBarColor": "ヘッダーバーの色（すべてのページ）",
+  "greenCardColor": "グリーンカードの色",
+  "yellowCardColor": "イエローカードの色",
+  "pinkCardColor": "ピンクカードの色",
+  "defaultFontColor": "デフォルトのフォントの色"
 }

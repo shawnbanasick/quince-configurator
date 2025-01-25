@@ -38,11 +38,20 @@
   "showConsentPage": "Show Consent Page",
   "showConsentPageHelpModal": "Show Consent Page Help Modal",
 
-  "*** CONFIG - LANDING PAGE OPTIONS ***": "*** CONFIG TEXT LANDING PAGE OPTIONS ***",
-  "landingPageOptions": "Landing Page Options",
+  "*** CONFIG - PROJECT ACCESS OPTIONS ***": "*** CONFIG PROJECT ACCESS OPTIONS ***",
+  "projectAccessOptions": "Project Access Options",
   "accessMode": "Access Mode",
   "anonymous": "Anonymous",
   "partId": "Part. ID",
   "accessCode": "Access Code",
-  "inputAccessCode": "Input Access Code"
+  "inputAccessCode": "Input Access Code",
+
+  "*** CONFIG - COLOR OPTIONS ***": "*** CONFIG COLOR OPTIONS ***",
+  "colorSettings": "Color Settings",
+  "restoreDefaultColors": "Restore Default Colors",
+  "headerBarColor": "Header Bar Color (all pages)",
+  "greenCardColor": "Green Card Color",
+  "yellowCardColor": "Yellow Card Color",
+  "pinkCardColor": "Pink Card Color",
+  "defaultFontColor": "Default Font Color"
 }
