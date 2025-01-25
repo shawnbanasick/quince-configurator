@@ -1,7 +1,7 @@
 {
   "*** MULTI-USE ***": "*** MULTI-USE TERMS ***",
-  "true": "true",
-  "false": "false",
+  "true": "はい",
+  "false": "いいえ",
 
   "*** WELCOME ***": "*** WELCOME PAGE ***",
   "hello": "こんにちは",
@@ -24,9 +24,14 @@
   "enterEmailAddress": "メールアドレス入力",
   "emailSubjectLine": "メール件名テキスト",
   "enterEmailSubjectLineText": "メール件名テキストを入力",
+
+  "*** CONFIG - LINK TO SECOND PROJECT ***": "*** CONFIG LINK TO SECOND PROJECT ***",
+  "projectLinking": "プロジェクトリンク",
   "linkToSecondProject": "第2プロジェクトへのリンク",
   "secondProjectUrlAddress": "第2プロジェクトのURLアドレス",
   "enterSecondProjectUrlAddress": "第2プロジェクトのURLアドレスを入力",
+
+  "*** CONFIG - SORT IMAGES ***": "*** CONFIG SORT IMAGES ***",
   "sortImages": "テキストステートメントの代わりに画像/写真を並べ替える",
   "statementSortVsImageSort": "ステートメントソート vs. 画像ソート",
   "numberOfImages": "画像の数",
@@ -54,5 +59,10 @@
   "greenCardColor": "グリーンカードの色",
   "yellowCardColor": "イエローカードの色",
   "pinkCardColor": "ピンクカードの色",
-  "defaultFontColor": "デフォルトのフォントの色"
+  "defaultFontColor": "デフォルトのフォントの色",
+
+  "*** CONFIG - PRESORT OPTIONS ***": "*** CONFIG PRESORT OPTIONS ***",
+  "presortPageOptions": "事前ソートオプション",
+  "shuffleCards": "ステートメントの順序をシャッフル",
+  "defaultFontSizePresort": "デフォルトフォントサイズ"
 }

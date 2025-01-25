@@ -11,7 +11,7 @@
   "Novice": "Novice",
   "Expert": "Expert",
   "configPara1": "The config.json file has two sections. The first section contains the settings for the overall structure of your project. The second section includes a question generator for (optional) questionnaires before and/or after the participant completes the Q sort.",
-  "configPara2": "If you have a config.xml file from another EQ Web Sort project made with this version of the configurator, you can load its data for editing by clicking the orange - Load 'config.json' File Data - button below. If you don't have a file from a previous project, you can load the default config.xml file from the settings folder, or you can create a new file by inputting all of the data yourself.",
+  "configPara2": "If you have a config.xml file from another Quincey-Q project made with this version of the configurator, you can load its data for editing by clicking the orange - Load 'config.json' File Data - button below. If you don't have a file from a previous project, you can load the default config.xml file from the settings folder, or you can create a new file by inputting all of the data yourself.",
   "configPara3": "After you have added your data, click the orange button at the bottom of the page to save the information as 'config.json' in the settings folder (replacing the default file).",
 
   "*** CONFIG TEXT ***": "*** CONFIG TEXT ***",
@@ -24,9 +24,14 @@
   "enterEmailAddress": "Input Email Address",
   "emailSubjectLine": "Email Subject Line Text",
   "enterEmailSubjectLineText": "Input Email Subject Text",
+
+  "*** CONFIG - LINK TO SECOND PROJECT ***": "*** CONFIG LINK TO SECOND PROJECT ***",
+  "projectLinking": "Project Linking",
   "linkToSecondProject": "Link to Second Project",
   "secondProjectUrlAddress": "Second Project URL Address",
   "enterSecondProjectUrlAddress": "Input Second Project Email Address",
+
+  "*** CONFIG - SORT IMAGES ***": "*** CONFIG SORT IMAGES ***",
   "sortImages": "Sort Images / Pictures Instead of Text Statements",
   "statementSortVsImageSort": "Statement Sort vs. Image Sort",
   "numberOfImages": "Number of Images",
@@ -53,5 +58,10 @@
   "greenCardColor": "Green Card Color",
   "yellowCardColor": "Yellow Card Color",
   "pinkCardColor": "Pink Card Color",
-  "defaultFontColor": "Default Font Color"
+  "defaultFontColor": "Default Font Color",
+
+  "*** CONFIG - PRESORT OPTIONS ***": "*** CONFIG PRESORT OPTIONS ***",
+  "presortPageOptions": "Pre-Sorting Options",
+  "shuffleCards": "Shuffle Statement Order",
+  "defaultFontSizePresort": "Default Font Size"
 }

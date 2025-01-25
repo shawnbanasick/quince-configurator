@@ -46,7 +46,7 @@ const Config6LandingPageOptions: React.FC = () => {
         <Radio
           name="accessMode"
           value="anonymous"
-          label={"anonymous"}
+          label={t("anonymous")}
           align="left"
           disabled={false}
           isChecked={initialScreen === "anonymous"}
@@ -55,7 +55,7 @@ const Config6LandingPageOptions: React.FC = () => {
         <Radio
           name="accessMode"
           value="partId"
-          label={"part. ID"}
+          label={t("partId")}
           disabled={false}
           isChecked={initialScreen === "partId"}
           handleChange={handleInitialScreenChange}
@@ -63,7 +63,7 @@ const Config6LandingPageOptions: React.FC = () => {
         <Radio
           name="accessMode"
           value="access"
-          label={"access code"}
+          label={t("accessCode")}
           disabled={false}
           isChecked={initialScreen === "access"}
           handleChange={handleInitialScreenChange}
@@ -71,14 +71,14 @@ const Config6LandingPageOptions: React.FC = () => {
         <Radio
           name="accessMode"
           value="partId-access"
-          label={"part. ID + access code"}
+          label={t("partId") + " + " + t("accessCode")}
           disabled={false}
           isChecked={initialScreen === "partId-access"}
           handleChange={handleInitialScreenChange}
         />
       </div>
       <UserTextInput
-        classNameText={`mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 select-none sm:text-sm disabled:opacity-50`}
+        classNameText={`mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
         classNameLabel={`min-w-[130px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
         highlight={true}
         label={`6b. ${t("accessCode")}:`}

@@ -7,6 +7,7 @@ import { Config4SortImages } from "./Config4SortImages";
 import { Config5ConsentPageOptions } from "./Config5ConsentPageOptions";
 import { Config6LandingPageOptions } from "./Config6LandingPageOptions";
 import { Config7ColorSelection } from "./Config7ColorSelection";
+import { Config8PresortOptions } from "./Config8PresortOptions";
 // import { useTranslation } from "react-i18next";
 
 const getDisplayMode = (state) => state.displayMode;
@@ -32,6 +33,7 @@ const ConfigSections: React.FC = () => {
         <Config5ConsentPageOptions />
         <Config6LandingPageOptions />
         <Config7ColorSelection />
+        <Config8PresortOptions />
       </div>
     </>
   );

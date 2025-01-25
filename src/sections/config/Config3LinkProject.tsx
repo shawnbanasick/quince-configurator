@@ -37,7 +37,7 @@ const Config3LinkProject: React.FC = () => {
     <div className="flex flex-col  pt-6 pb-2 hover:bg-gray-100 hover:outline outline-2 outline-zinc-600 p-2 hover:rounded-md">
       <div className="flex flex-row content-center gap-5 mt-3">
         <span className="text-lg font-title font-semibold">
-          {t("Link to Second Project")}
+          {t("projectLinking")}
         </span>
         <img
           src={Image}
@@ -101,7 +101,7 @@ const Config3LinkProject: React.FC = () => {
       </div>
 
       <UserTextInput
-        classNameText={`mt-2 block min-w-[400px] px-3 py-2 border border-gray-300  rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 select-none sm:text-sm disabled:opacity-50`}
+        classNameText={`mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
         classNameLabel={`min-w-[170px] content-center pt-1 mr-1 disabled:opacity-50 ${
           linkToSecondProject ? "" : "text-slate-400"
         } select-none`}
