@@ -9,6 +9,7 @@ import { Config6LandingPageOptions } from "./Config6LandingPageOptions";
 import { Config7ColorSelection } from "./Config7ColorSelection";
 import { Config8PresortOptions } from "./Config8PresortOptions";
 import { Config9SortOptions } from "./Config9SortOptions";
+import { Config10PostsortOptions } from "./Config10PostsortOptions";
 
 const getDisplayMode = (state) => state.displayMode;
 
@@ -35,6 +36,7 @@ const ConfigSections: React.FC = () => {
         <Config7ColorSelection />
         <Config8PresortOptions />
         <Config9SortOptions />
+        <Config10PostsortOptions />
       </div>
     </>
   );

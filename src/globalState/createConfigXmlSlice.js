@@ -37,7 +37,7 @@ const createConfigXmlSlice = (set, get) => ({
   allowUnforcedSorts: false,
   warnOverloadedColumn: true,
 
-  showPostSort: true,
+  showPostsort: true,
   showSecondPosColumn: false,
   showSecondNegColumn: false,
   showBackButton: true,
@@ -74,8 +74,8 @@ const createConfigXmlSlice = (set, get) => ({
   setSortDirection: (direction) => {
     set(() => ({ sortDirection: direction }));
   },
-  setShowPostSort: (bool) => {
-    set(() => ({ showPostSort: bool }));
+  setShowPostsort: (bool) => {
+    set(() => ({ showPostsort: bool }));
   },
   setShowSecondPosColumn: (bool) => {
     set(() => ({ showSecondPosColumn: bool }));

@@ -5,10 +5,7 @@ import Image from "../../assets/images/infoIcon.svg";
 import { UserNumInput } from "../utils/UserNumInput";
 import { Radio } from "../utils/RadioButtons";
 import clsx from "clsx";
-import { cond } from "lodash";
 
-const getDefaultFontSizePresort = (state) => state.defaultFontSizePresort;
-const getSetDefaultFontSizePresort = (state) => state.setDefaultFontSizePresort;
 const getSortDirection = (state) => state.sortDirection;
 const getSetSortDirection = (state) => state.setSortDirection;
 const getAllowUnforcedSorts = (state) => state.allowUnforcedSorts;
@@ -20,8 +17,6 @@ const getSetConditionOfInstFontSize = (state) => state.setCondOfInstFontSize;
 
 const Config9SortOptions: React.FC = () => {
   const { t } = useTranslation();
-  const defaultFontSizePresort = useStore(getDefaultFontSizePresort);
-  const setDefaultFontSizePresort = useStore(getSetDefaultFontSizePresort);
   const sortDirection = useStore(getSortDirection);
   const setSortDirection = useStore(getSetSortDirection);
   const allowUnforcedSorts = useStore(getAllowUnforcedSorts);

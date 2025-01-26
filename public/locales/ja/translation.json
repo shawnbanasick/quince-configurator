@@ -75,5 +75,15 @@
   "negativeFirst": "マイナスカード優先",
   "positiveFirst": "プラスカード優先",
   "allowUnforcedSorts": "自由ソートを許可",
-  "warnOverloadedColumns": "オーバーロードされた列を警告"
+  "warnOverloadedColumns": "オーバーロードされた列を警告",
+
+  "*** CONFIG - POSTSORT OPTIONS ***": "*** CONFIG POSTSORT OPTIONS ***",
+  "postsortOptions": "ポストソートオプション",
+  "showPostsort": "ポストソートページを表示",
+  "showSecondPosColumn": "2番目のポジティブ・ソート・カラムを表示する",
+  "showSecondNegColumn": "2番目のネガティブ・ソート・カラムを表示する",
+  "showBackButton": "戻るボタンを表示",
+  "postsortCommentsRequired": "ポストソートコメント必須",
+  "defaultFontSizePostsort": "ポストソートのデフォルトフォントサイズ",
+  "minCardHeightPostsort": "ステートメントカードの最小高さ"
 }
