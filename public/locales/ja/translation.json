@@ -2,8 +2,8 @@
   "*** MULTI-USE ***": "*** MULTI-USE TERMS ***",
   "true": "はい",
   "false": "いいえ",
-  "upperlimit": "上限値",
-  "lowerlimit": "下限値",
+  "upperLimit": "上限値",
+  "lowerLimit": "下限値",
 
   "*** WELCOME ***": "*** WELCOME PAGE ***",
   "hello": "こんにちは",
@@ -47,7 +47,6 @@
 
   "*** CONFIG - PROJECT ACCESS OPTIONS ***": "*** CONFIG PROJECT ACCESS OPTIONS ***",
   "projectAccessOptions": "プロジェクトアクセスオプション",
-  "landingPageOptions": "ランディングページオプション",
   "accessMode": "アクセスモード",
   "anonymous": "匿名",
   "partId": "参加者ID",
@@ -76,6 +75,8 @@
   "positiveFirst": "プラスカード優先",
   "allowUnforcedSorts": "自由ソートを許可",
   "warnOverloadedColumns": "オーバーロードされた列を警告",
+  "negative": "ネガティブ",
+  "positive": "ポジティブ",
 
   "*** CONFIG - POSTSORT OPTIONS ***": "*** CONFIG POSTSORT OPTIONS ***",
   "postsortOptions": "ポストソートオプション",

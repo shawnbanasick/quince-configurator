@@ -66,8 +66,8 @@ const UserNumInput: React.FC<UserTextInputProps> = ({
     onChange(value); // setValue(value);
   };
 
-  const warningMessage = `${t("Lower Limit")}: ${lowerLimit}, ${t(
-    "Upper Limit"
+  const warningMessage = `${t("lowerLimit")}: ${lowerLimit}, ${t(
+    "upperLimit"
   )}: ${upperLimit}`;
 
   console.log(label, value);

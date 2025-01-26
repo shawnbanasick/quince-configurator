@@ -2,8 +2,8 @@
   "*** MULTI-USE ***": "*** MULTI-USE TERMS ***",
   "true": "true",
   "false": "false",
-  "upperlimit": "Upper Limit",
-  "lowerlimit": "Lower Limit",
+  "upperLimit": "Upper Limit",
+  "lowerLimit": "Lower Limit",
 
   "*** WELCOME ***": "*** WELCOME PAGE ***",
   "hello": "Hello",
@@ -75,6 +75,8 @@
   "positiveFirst": "Positive First",
   "allowUnforcedSorts": "Allow Unforced Sorts",
   "warnOverloadedColumns": "Warn Overloaded Columns",
+  "negative": "negative",
+  "positive": "positive",
 
   "*** CONFIG - POSTSORT OPTIONS ***": "*** CONFIG POSTSORT OPTIONS ***",
   "postsortOptions": "Post-Sort Options",
