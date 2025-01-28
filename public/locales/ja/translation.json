@@ -80,11 +80,15 @@
 
   "*** CONFIG - POSTSORT OPTIONS ***": "*** CONFIG POSTSORT OPTIONS ***",
   "postsortOptions": "ポストソートオプション",
-  "showPostsort": "ポストソートページを表示",
+  "showPostsort": "ポストソートページを含める",
   "showSecondPosColumn": "2番目のポジティブ・ソート・カラムを表示する",
   "showSecondNegColumn": "2番目のネガティブ・ソート・カラムを表示する",
   "showBackButton": "戻るボタンを表示",
   "postsortCommentsRequired": "ポストソートコメント必須",
   "defaultFontSizePostsort": "ポストソートのデフォルトフォントサイズ",
-  "minCardHeightPostsort": "ステートメントカードの最小高さ"
+  "minCardHeightPostsort": "ステートメントカードの最小高さ",
+
+  "*** CONFIG - SURVEY OPTIONS ***": "*** CONFIG SURVEY OPTIONS ***",
+  "surveyOptions": "アンケートオプション",
+  "includeSurvey": "アンケートを含める"
 }

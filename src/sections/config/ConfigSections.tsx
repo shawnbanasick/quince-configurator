@@ -10,6 +10,8 @@ import { Config7ColorSelection } from "./Config7ColorSelection";
 import { Config8PresortOptions } from "./Config8PresortOptions";
 import { Config9SortOptions } from "./Config9SortOptions";
 import { Config10PostsortOptions } from "./Config10PostsortOptions";
+import { Config11SurveyOptions } from "./Config11SurveyOptions";
+import { SurveyQuestionInput } from "./SurveyQuestionInput";
 
 const getDisplayMode = (state) => state.displayMode;
 
@@ -37,6 +39,8 @@ const ConfigSections: React.FC = () => {
         <Config8PresortOptions />
         <Config9SortOptions />
         <Config10PostsortOptions />
+        <Config11SurveyOptions />
+        <SurveyQuestionInput />
       </div>
     </>
   );

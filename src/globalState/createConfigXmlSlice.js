@@ -46,7 +46,117 @@ const createConfigXmlSlice = (set, get) => ({
   minCardHeightPostsort: 120,
 
   showSurvey: true,
+  detailsArray: [
+    `<b>1. Answer Required (not shown in image): </b>true`,
+    `<b>2. Label: </b>Age*`,
+    `<b>3. Note: </b>Please enter your year of birth (YYYY, eg. 1980).`,
+    `<b>4. Options: </b> N/A`,
+    `<b>5. Scale: </b> N/A`,
+    `<b>6. Placeholder: </b> (** no input = no placeholder text **)`,
+    `<b>7. Limit Answer Length: </b>true`,
+    `<b>8. Answer Maximum Length: </b>4`,
+    `<b>9. Answer Restricted to Numbers "0-9": </b>true`,
+  ],
+  showSurveyinformationImage: false,
+  showSurveytextImage: true,
+  showSurveytextareaImage: false,
+  showSurveyradioImage: false,
+  showSurveyselectImage: false,
+  showSurveycheckboxImage: false,
+  showSurveylikertImage: false,
+  showSurveyrating2Image: false,
+  showSurveyrating5Image: false,
+  showSurveyrating10Image: false,
+  surveyQuestionType: "text",
+  surveyAnswerRequired: false,
+  surveyQuestionLabel: "",
+  surveyQuestionNote: "",
+  surveyAnswerLenIsLimited: false,
+  surveyAnswerLenMax: 999,
+  surveyQuestionPlaceholder: "",
+  surveyAnswerRestricted: false,
+  surveyQuestionScale: "",
+  triggerOptionsWarningModal: false,
+  surveyQuestionOptions: "",
+  configSurveyInfoBarColor: "#fde047",
+  surveyQuestionsArray: [],
+  displayOptionsSemiWarn: false,
 
+  setDisplayOptionsSemiWarn: (bool) => {
+    set(() => ({ displayOptionsSemiWarn: bool }));
+  },
+  setSurveyQuestionsArray: (questionsArray) => {
+    set(() => ({ surveyQuestionsArray: questionsArray }));
+  },
+  setConfigSurveyInfoBarColor: (color) => {
+    set(() => ({ configSurveyInfoBarColor: color }));
+  },
+  setSurveyQuestionOptions: (options) => {
+    set(() => ({ surveyQuestionOptions: options }));
+  },
+  setTriggerOptionsWarningModal: (bool) => {
+    set(() => ({ triggerOptionsWarningModal: bool }));
+  },
+  setSurveyQuestionScale: (scale) => {
+    set(() => ({ surveyQuestionScale: scale }));
+  },
+  setSurveyAnswerRestricted: (bool) => {
+    set(() => ({ surveyAnswerRestricted: bool }));
+  },
+  setSurveyQuestionPlaceholder: (placeholder) => {
+    set(() => ({ surveyQuestionPlaceholder: placeholder }));
+  },
+  setSurveyAnswerLenMax: (max) => {
+    set(() => ({ surveyAnswerLenMax: max }));
+  },
+  setSurveyAnswerLenIsLimited: (bool) => {
+    set(() => ({ surveyAnswerLenIsLimited: bool }));
+  },
+  setSurveyQuestionNote: (note) => {
+    set(() => ({ surveyQuestionNote: note }));
+  },
+  setSurveyQuestionLabel: (label) => {
+    set(() => ({ surveyQuestionLabel: label }));
+  },
+  setSurveyAnswerRequired: (bool) => {
+    set(() => ({ surveyAnswerRequired: bool }));
+  },
+  setSurveyQuestionType: (type) => {
+    set(() => ({ surveyQuestionType: type }));
+  },
+  setDetailsArray: (detailsArray) => {
+    set(() => ({ detailsArray: detailsArray }));
+  },
+  setShowSurveyinformationImage: (bool) => {
+    set(() => ({ showSurveyinformationImage: bool }));
+  },
+  setShowSurveytextImage: (bool) => {
+    set(() => ({ showSurveytextImage: bool }));
+  },
+  setShowSurveytextareaImage: (bool) => {
+    set(() => ({ showSurveytextareaImage: bool }));
+  },
+  setShowSurveyradioImage: (bool) => {
+    set(() => ({ showSurveyradioImage: bool }));
+  },
+  setShowSurveyselectImage: (bool) => {
+    set(() => ({ showSurveyselectImage: bool }));
+  },
+  setShowSurveycheckboxImage: (bool) => {
+    set(() => ({ showSurveycheckboxImage: bool }));
+  },
+  setShowSurveylikertImage: (bool) => {
+    set(() => ({ showSurveylikertImage: bool }));
+  },
+  setShowSurveyrating2Image: (bool) => {
+    set(() => ({ showSurveyrating2Image: bool }));
+  },
+  setShowSurveyrating5Image: (bool) => {
+    set(() => ({ showSurveyrating5Image: bool }));
+  },
+  setShowSurveyrating10Image: (bool) => {
+    set(() => ({ showSurveyrating10Image: bool }));
+  },
   setShowSurvey: (bool) => {
     set(() => ({ showSurvey: bool }));
   },
