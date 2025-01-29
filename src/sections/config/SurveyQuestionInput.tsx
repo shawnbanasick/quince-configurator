@@ -3,10 +3,11 @@ import { UserDropdown } from "./UserDropdown";
 // import { Radio } from "../utils/RadioButtons";
 import { UserTextInput } from "../utils/UserTextInput";
 import { useTranslation } from "react-i18next";
-import { addSurveyQuestionItem } from "./addSurveyQuestionItem";
+import { AddQuestionButton } from "./AddQuestionButton";
 import { SurveyImageContainer } from "./SurveyImageContainer";
 import clsx from "clsx";
 import { shouldDisplayObject } from "./shouldDisplayObject";
+import DisplaySurvey from "./DisplaySurvey";
 // import InformationImage from "../../assets/images/  /informationQuestion";
 // import SurveyItemDndList from "./SurveyItemDndList";
 
@@ -19,7 +20,6 @@ import { useStore } from "../../globalState/useStore";
 // import { toast } from "react-toastify";
 // import { ToastContainer, Slide } from "react-toastify";
 
-// import GeneralButton from "../../Utils/GeneralButton";
 // import FadeIn from "./FadeIn";
 // const clone = require("rfdc/default");
 // import GlobalStyle from "../../Utils/GlobalStyle";
@@ -49,17 +49,6 @@ import { useStore } from "../../globalState/useStore";
 const getShowSurvey = (state) => state.showSurvey;
 const getDetailsArray = (state) => state.detailsArray;
 const getSurveyQuestionType = (state) => state.surveyQuestionType;
-// const getShowSurveytextImage = (state) => state.showSurveytextImage;
-// const getShowSurveytextareaImage = (state) => state.showSurveytextareaImage;
-// const getShowSurveyradioImage = (state) => state.showSurveyradioImage;
-// const getShowSurveyselectImage = (state) => state.showSurveyselectImage;
-// const getShowSurveycheckboxImage = (state) => state.showSurveycheckboxImage;
-// const getShowSurveylikertImage = (state) => state.showSurveylikertImage;
-// const getShowSurveyrating2Image = (state) => state.showSurveyrating2Image;
-// const getShowSurveyrating5Image = (state) => state.showSurveyrating5Image;
-// const getShowSurveyrating10Image = (state) => state.showSurveyrating10Image;
-// const getShowSurveyinformationImage = (state) =>
-//   state.showSurveyinformationImage;
 const getConfigSurveyInfoBarColor = (state) => state.configSurveyInfoBarColor;
 const getSetConfigSurveyInfoBarColor = (state) =>
   state.setConfigSurveyInfoBarColor;
@@ -123,48 +112,48 @@ const SurveyQuestionInput: React.FC = () => {
   console.log("displayBoolean", displayBoolean);
 
   const handleSurveyQuestionLabelChange = (inputValue: any) => {
-    setSurveyQuestionLabel(inputValue);
-    console.log(inputValue);
+    setSurveyQuestionLabel(inputValue.target.value);
+    console.log(inputValue.target.value);
   };
 
   const handleSurveyQuestionNoteChange = (inputValue: any) => {
-    setSurveyQuestionNote(inputValue);
-    console.log(inputValue);
+    setSurveyQuestionNote(inputValue.target.value);
+    console.log(inputValue.target.value);
   };
 
   const handleSurveyQuestionOptionsChange = (inputValue: any) => {
-    setSurveyQuestionOptions(inputValue);
-    console.log(inputValue);
+    setSurveyQuestionOptions(inputValue.target.value);
+    console.log(inputValue.target.value);
   };
 
   const handleSurveyQuestionScaleChange = (inputValue: any) => {
-    setSurveyQuestionScale(inputValue);
-    console.log(inputValue);
+    setSurveyQuestionScale(inputValue.target.value);
+    console.log(inputValue.target.value);
   };
 
   const handleSurveyQuestionPlaceholderChange = (inputValue: any) => {
-    setSurveyQuestionPlaceholder(inputValue);
-    console.log(inputValue);
+    setSurveyQuestionPlaceholder(inputValue.target.value);
+    console.log(inputValue.target.value);
   };
 
   const handleSurveyAnswerLenMaxChange = (inputValue: any) => {
-    console.log(inputValue);
-    setSurveyAnswerLenMax(inputValue);
+    console.log(inputValue.target.value);
+    setSurveyAnswerLenMax(inputValue.target.value);
   };
 
   const handleSurveyAnswerRequiredChange = (inputValue: any) => {
-    console.log(inputValue);
-    setSurveyAnswerRequired(inputValue);
+    console.log(inputValue.target.value);
+    setSurveyAnswerRequired(inputValue.target.value);
   };
 
   const handleSurveyAnswerLenIsLimitedChange = (inputValue: any) => {
-    console.log(inputValue);
-    setSurveyAnswerLenIsLimited(inputValue);
+    console.log(inputValue.target.value);
+    setSurveyAnswerLenIsLimited(inputValue.target.value);
   };
 
   const handleSurveyAnswerRestrictedChange = (inputValue: any) => {
-    console.log(inputValue);
-    setSurveyAnswerRestricted(inputValue);
+    console.log(inputValue.target.value);
+    setSurveyAnswerRestricted(inputValue.target.value);
   };
 
   return (
@@ -208,276 +197,264 @@ const SurveyQuestionInput: React.FC = () => {
               New Item Settings:
             </span>
           </div>
-          <UserDropdown />
-          {displayBoolean.required && (
-            <div className="flex flex-row h-[60px] content-center items-center gap-5 mt-3">
-              <span className="content-center">{`1. ${t(
-                "surveyAnswerRequired"
-              )}:`}</span>
-              <div className="">
-                <label
-                  className={clsx(
-                    "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
-                    {
-                      "bg-opacity-100": surveyAnswerRequired,
-                      "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
-                        !surveyAnswerRequired,
-                    }
-                  )}
-                  htmlFor="surveyAnswerRequiredTrue"
-                >
-                  <input
-                    type="radio"
-                    className="hidden"
-                    name="surveyAnswerRequired"
-                    id="surveyAnswerRequiredTrue" // htlmlFor targets this id.
-                    value="true"
-                    checked={surveyAnswerRequired}
-                    onChange={handleSurveyAnswerRequiredChange}
-                  />
-                  {t("true")}
-                </label>
-              </div>
-              <div className="">
-                <label
-                  className={clsx(
-                    "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
-                    {
-                      "bg-opacity-100": !surveyAnswerRequired,
-                      "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
-                        surveyAnswerRequired,
-                    }
-                  )}
-                  htmlFor="surveyAnswerRequiredFalse"
-                >
-                  <input
-                    type="radio"
-                    className="hidden"
-                    name="surveyAnswerRequired"
-                    id="surveyAnswerRequiredFalse" // htlmlFor targets this id.
-                    value="false"
-                    checked={!surveyAnswerRequired}
-                    onChange={handleSurveyAnswerRequiredChange}
-                  />
-                  {t("false")}
-                </label>
-              </div>
-            </div>
-          )}
-
-          {displayBoolean.label && (
-            <UserTextInput
-              classNameText={`mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
-              classNameLabel={`min-w-[80px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-              highlight={true}
-              placeholder={t("inputLabelPlaceholder")}
-              label="2. Label:"
-              disabled={false}
-              name="surveyQuestionLabel"
-              value={surveyQuestionLabel}
-              onChange={handleSurveyQuestionLabelChange}
-            />
-          )}
-          {displayBoolean.note && (
-            <UserTextInput
-              label="3. Note:"
-              classNameText={`mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
-              classNameLabel={`min-w-[130px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-              highlight={true}
-              placeholder={t("inputNotePlaceholder")}
-              disabled={false}
-              name="surveyQuestionNote"
-              value={surveyQuestionNote}
-              onChange={handleSurveyQuestionNoteChange}
-            />
-          )}
-          {displayBoolean.options && (
-            <UserTextInput
-              classNameText={`mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
-              classNameLabel={`min-w-[130px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-              highlight={true}
-              placeholder={t("inputOptionsPlaceholder")}
-              disabled={false}
-              name="surveyQuestionOptions"
-              value={surveyQuestionOptions}
-              onChange={handleSurveyQuestionOptionsChange}
-              label="4. Options:"
-            />
-          )}
-          {displayBoolean.scale && (
-            <UserTextInput
-              classNameText={`mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
-              classNameLabel={`min-w-[130px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-              label="5. Scale:"
-              highlight={true}
-              placeholder={t("inputScalePlaceholder")}
-              disabled={false}
-              name="surveyQuestionScale"
-              value={surveyQuestionScale}
-              onChange={handleSurveyQuestionScaleChange}
-            />
-          )}
-
-          {displayBoolean.placeholder && (
-            <UserTextInput
-              classNameText={`mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
-              classNameLabel={`min-w-[130px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-              highlight={true}
-              placeholder={t("inputLabelPlaceholder")}
-              disabled={false}
-              name="surveyQuestionPlaceholder"
-              value={surveyQuestionPlaceholder}
-              onChange={handleSurveyQuestionPlaceholderChange}
-              label="6. Placeholder:"
-            />
-          )}
-          {displayBoolean.limited && (
-            <div className="flex flex-row h-[60px] content-center items-center gap-5 mt-3">
-              <span className="content-center">{`7. ${t(
-                "surveyAnswerLenIsLimited"
-              )}:`}</span>
-              <div className="">
-                <label
-                  className={clsx(
-                    "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
-                    {
-                      "bg-opacity-100": surveyAnswerLenIsLimited,
-                      "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
-                        !surveyAnswerLenIsLimited,
-                    }
-                  )}
-                  htmlFor="surveyAnswerLenIsLimitedTrue"
-                >
-                  <input
-                    type="radio"
-                    className="hidden"
-                    name="surveyAnswerLenIsLimited"
-                    id="surveyAnswerLenIsLimitedTrue" // htlmlFor targets this id.
-                    value="true"
-                    checked={surveyAnswerLenIsLimited}
-                    onChange={handleSurveyAnswerLenIsLimitedChange}
-                  />
-                  {t("true")}
-                </label>
-              </div>
-              <div className="">
-                <label
-                  className={clsx(
-                    "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
-                    {
-                      "bg-opacity-100": !surveyAnswerLenIsLimited,
-                      "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
-                        surveyAnswerLenIsLimited,
-                    }
-                  )}
-                  htmlFor="surveyAnswerLenIsLimitedFalse"
-                >
-                  <input
-                    type="radio"
-                    className="hidden"
-                    name="surveyAnswerLenIsLimited"
-                    id="surveyAnswerLenIsLimitedFalse" // htlmlFor targets this id.
-                    value="false"
-                    checked={!surveyAnswerLenIsLimited}
-                    onChange={handleSurveyAnswerLenIsLimitedChange}
-                  />
-                  {t("false")}
-                </label>
-              </div>
-            </div>
-          )}
-          {displayBoolean.limited && (
-            <UserTextInput
-              classNameText={`mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
-              classNameLabel={`min-w-[130px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-              label="8. Answer Maximum Length:"
-              highlight={true}
-              placeholder={t("inputLabelPlaceholder")}
-              disabled={false}
-              name="surveyQuestionPlaceholder"
-              value={surveyAnswerLenMax}
-              onChange={handleSurveyAnswerLenMaxChange}
-            />
-          )}
-
-          {displayBoolean.restricted && (
-            <div className="flex flex-row h-[60px] content-center items-center gap-5 mt-3">
-              <span className="content-center">{`9. ${t(
-                "surveyAnswerRestricted"
-              )}:`}</span>
-              <div className="">
-                <label
-                  className={clsx(
-                    "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
-                    {
-                      "bg-opacity-100": surveyAnswerRestricted,
-                      "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
-                        !surveyAnswerRestricted,
-                    }
-                  )}
-                  htmlFor="surveyAnswerRestrictedTrue"
-                >
-                  <input
-                    type="radio"
-                    className="hidden"
-                    name="surveyAnswerRestricted"
-                    id="surveyAnswerRestrictedTrue" // htlmlFor targets this id.
-                    value="true"
-                    checked={surveyAnswerRestricted}
-                    onChange={handleSurveyAnswerRestrictedChange}
-                  />
-                  {t("true")}
-                </label>
-              </div>
-              <div className="">
-                <label
-                  className={clsx(
-                    "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
-                    {
-                      "bg-opacity-100": !surveyAnswerRestricted,
-                      "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
-                        surveyAnswerRestricted,
-                    }
-                  )}
-                  htmlFor="surveyAnswerRestrictedFalse"
-                >
-                  <input
-                    type="radio"
-                    className="hidden"
-                    name="surveyAnswerRestricted"
-                    id="surveyAnswerRestrictedFalse" // htlmlFor targets this id.
-                    value="false"
-                    checked={!surveyAnswerRestricted}
-                    onChange={handleSurveyAnswerRestrictedChange}
-                  />
-                  {t("false")}
-                </label>
-              </div>
-            </div>
-          )}
-          {displayBoolean.bg && (
-            <div
-              className={`flex flex-row h-[40px] content-center items-center gap-5 mt-1`}
-            >
-              <span className={`content-center`}>{`7b. ${t(
-                "surveyInfoBarColor"
-              )}:`}</span>
-              <div
-                className="w-10 h-5 rounded-md outline outline-1 outline-zinc-600"
-                style={{ backgroundColor: configSurveyInfoBarColor }}
+          <div className="flex flex-row w-12/12 justify-between items-end mt-3">
+            <UserDropdown />
+            <AddQuestionButton />
+          </div>
+          <div className="flex flex-row h-[60px] content-center items-center gap-5 mt-3">
+            <span className="content-center">{`1. ${t(
+              "surveyAnswerRequired"
+            )}:`}</span>
+            <div className="">
+              <label
+                className={clsx(
+                  "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
+                  {
+                    "bg-opacity-100": surveyAnswerRequired,
+                    "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
+                      !surveyAnswerRequired,
+                  }
+                )}
+                htmlFor="surveyAnswerRequiredTrue"
               >
-                <ColorPicker
-                  baseColor={configSurveyInfoBarColor}
-                  onChange={setConfigSurveyInfoBarColor}
+                <input
+                  type="radio"
+                  className="hidden"
+                  name="surveyAnswerRequired"
+                  id="surveyAnswerRequiredTrue" // htlmlFor targets this id.
+                  value="true"
+                  checked={surveyAnswerRequired}
+                  onChange={handleSurveyAnswerRequiredChange}
                 />
-              </div>
-              <span>{configSurveyInfoBarColor}</span>
+                {t("true")}
+              </label>
             </div>
-          )}
+            <div className="">
+              <label
+                className={clsx(
+                  "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
+                  {
+                    "bg-opacity-100": !surveyAnswerRequired,
+                    "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
+                      surveyAnswerRequired,
+                  }
+                )}
+                htmlFor="surveyAnswerRequiredFalse"
+              >
+                <input
+                  type="radio"
+                  className="hidden"
+                  name="surveyAnswerRequired"
+                  id="surveyAnswerRequiredFalse" // htlmlFor targets this id.
+                  value="false"
+                  checked={!surveyAnswerRequired}
+                  onChange={handleSurveyAnswerRequiredChange}
+                />
+                {t("false")}
+              </label>
+            </div>
+          </div>
 
-          <div onClick={addSurveyQuestionItem}>Add Item</div>
+          <UserTextInput
+            classNameText={`mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
+            classNameLabel={`min-w-[80px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+            highlight={true}
+            placeholder={t("inputLabelPlaceholder")}
+            label="2. Label:"
+            disabled={!displayBoolean.label}
+            name="surveyQuestionLabel"
+            value={surveyQuestionLabel}
+            onChange={handleSurveyQuestionLabelChange}
+          />
+          <UserTextInput
+            label="3. Note:"
+            classNameText={`mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
+            classNameLabel={`min-w-[130px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+            highlight={true}
+            placeholder={t("inputNotePlaceholder")}
+            disabled={!displayBoolean.note}
+            name="surveyQuestionNote"
+            value={surveyQuestionNote}
+            onChange={handleSurveyQuestionNoteChange}
+          />
+          <UserTextInput
+            classNameText={`mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
+            classNameLabel={`min-w-[130px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+            highlight={true}
+            placeholder={t("inputOptionsPlaceholder")}
+            disabled={!displayBoolean.options}
+            name="surveyQuestionOptions"
+            value={surveyQuestionOptions}
+            onChange={handleSurveyQuestionOptionsChange}
+            label="4. Options:"
+          />
+          <UserTextInput
+            classNameText={`mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
+            classNameLabel={`min-w-[130px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+            label="5. Scale:"
+            highlight={true}
+            placeholder={t("inputScalePlaceholder")}
+            disabled={!displayBoolean.scale}
+            name="surveyQuestionScale"
+            value={surveyQuestionScale}
+            onChange={handleSurveyQuestionScaleChange}
+          />
+
+          <UserTextInput
+            classNameText={`mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
+            classNameLabel={`min-w-[130px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+            highlight={true}
+            placeholder={t("inputLabelPlaceholder")}
+            disabled={!displayBoolean.placeholder}
+            name="surveyQuestionPlaceholder"
+            value={surveyQuestionPlaceholder}
+            onChange={handleSurveyQuestionPlaceholderChange}
+            label="6. Placeholder:"
+          />
+          <div className="flex flex-row h-[60px] content-center items-center gap-5 mt-3">
+            <span className="content-center">{`7. ${t(
+              "surveyAnswerLenIsLimited"
+            )}:`}</span>
+            <div className="">
+              <label
+                className={clsx(
+                  "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
+                  {
+                    "bg-opacity-100": surveyAnswerLenIsLimited,
+                    "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
+                      !surveyAnswerLenIsLimited,
+                  }
+                )}
+                htmlFor="surveyAnswerLenIsLimitedTrue"
+              >
+                <input
+                  type="radio"
+                  className="hidden"
+                  name="surveyAnswerLenIsLimited"
+                  id="surveyAnswerLenIsLimitedTrue" // htlmlFor targets this id.
+                  value="true"
+                  checked={surveyAnswerLenIsLimited}
+                  onChange={handleSurveyAnswerLenIsLimitedChange}
+                />
+                {t("true")}
+              </label>
+            </div>
+            <div className="">
+              <label
+                className={clsx(
+                  "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
+                  {
+                    "bg-opacity-100": !surveyAnswerLenIsLimited,
+                    "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
+                      surveyAnswerLenIsLimited,
+                  }
+                )}
+                htmlFor="surveyAnswerLenIsLimitedFalse"
+              >
+                <input
+                  type="radio"
+                  className="hidden"
+                  name="surveyAnswerLenIsLimited"
+                  id="surveyAnswerLenIsLimitedFalse" // htlmlFor targets this id.
+                  value="false"
+                  checked={!surveyAnswerLenIsLimited}
+                  onChange={handleSurveyAnswerLenIsLimitedChange}
+                />
+                {t("false")}
+              </label>
+            </div>
+          </div>
+          <UserTextInput
+            classNameText={`mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
+            classNameLabel={`min-w-[130px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+            label="8. Answer Maximum Length:"
+            highlight={true}
+            placeholder={t("inputLabelPlaceholder")}
+            disabled={!displayBoolean.maxLen}
+            name="surveyQuestionPlaceholder"
+            value={surveyAnswerLenMax}
+            onChange={handleSurveyAnswerLenMaxChange}
+          />
+
+          <div className="flex flex-row h-[60px] content-center items-center gap-5 mt-3">
+            <span className="content-center">{`9. ${t(
+              "surveyAnswerRestricted"
+            )}:`}</span>
+            <div className="">
+              <label
+                className={clsx(
+                  "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
+                  {
+                    "bg-opacity-100": surveyAnswerRestricted,
+                    "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
+                      !surveyAnswerRestricted,
+                  }
+                )}
+                htmlFor="surveyAnswerRestrictedTrue"
+              >
+                <input
+                  type="radio"
+                  className="hidden"
+                  name="surveyAnswerRestricted"
+                  id="surveyAnswerRestrictedTrue" // htlmlFor targets this id.
+                  value="true"
+                  checked={surveyAnswerRestricted}
+                  onChange={handleSurveyAnswerRestrictedChange}
+                />
+                {t("true")}
+              </label>
+            </div>
+            <div className="">
+              <label
+                className={clsx(
+                  "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
+                  {
+                    "bg-opacity-100": !surveyAnswerRestricted,
+                    "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
+                      surveyAnswerRestricted,
+                  }
+                )}
+                htmlFor="surveyAnswerRestrictedFalse"
+              >
+                <input
+                  type="radio"
+                  className="hidden"
+                  name="surveyAnswerRestricted"
+                  id="surveyAnswerRestrictedFalse" // htlmlFor targets this id.
+                  value="false"
+                  checked={!surveyAnswerRestricted}
+                  onChange={handleSurveyAnswerRestrictedChange}
+                />
+                {t("false")}
+              </label>
+            </div>
+          </div>
+          <div
+            className={`flex flex-row h-[40px] content-center items-center gap-5 mt-1`}
+          >
+            <span
+              className={`content-center ${
+                displayBoolean.bg ? "" : "text-slate-400"
+              }`}
+            >{`10. ${t("surveyInfoBarColor")}:`}</span>
+            <div
+              className="w-10 h-5 rounded-md outline outline-1 outline-zinc-600"
+              style={{ backgroundColor: configSurveyInfoBarColor }}
+            >
+              <ColorPicker
+                baseColor={configSurveyInfoBarColor}
+                onChange={setConfigSurveyInfoBarColor}
+                disabled={!displayBoolean.bg}
+              />
+            </div>
+            <span className={`${displayBoolean.bg ? "" : "text-slate-400"}`}>
+              {configSurveyInfoBarColor}
+            </span>
+          </div>
         </div>
         {/* <SurveyItemDndList /> */}
+        <DisplaySurvey />
+        {/* </SettingsContainer> */}
       </div>
       {/* )} */}
     </>

@@ -1,27 +1,10 @@
 import React from "react";
-// import { view } from "@risingstack/react-easy-state";
-// import styled from "styled-components";
-// import appState from "../../GlobalState/appState";
 import { exportSurveyObject } from "./exportSurveyObject";
 import { useStore } from "../../globalState/useStore";
 // import { useTranslation } from "react-i18next";
 
-// const optionsArray = [
-//   "showSurveytextImage",
-//   "showSurveytextareaImage",
-//   "showSurveyradioImage",
-//   "showSurveyselectImage",
-//   "showSurveycheckboxImage",
-//   "showSurveyrating2Image",
-//   "showSurveyrating5Image",
-//   "showSurveyrating10Image",
-//   "showSurveyinformationImage",
-//   "showSurveylikertImage",
-// ];
-
 const getSurveyQuestionType = (state) => state.surveyQuestionType;
 const getSetSurveyQuestionType = (state) => state.setSurveyQuestionType;
-// const getDetailsArray = (state) => state.detailsArray;
 const getSetDetailsArray = (state) => state.setDetailsArray;
 const getSetShowSurveytextImage = (state) => state.setShowSurveytextImage;
 const getSetShowSurveytextareaImage = (state) =>
@@ -37,6 +20,18 @@ const getSetShowSurveyrating10Image = (state) =>
 const getSetShowSurveyinformationImage = (state) =>
   state.setShowSurveyinformationImage;
 const getSetShowSurveylikertImage = (state) => state.setShowSurveylikertImage;
+
+const getSetSurveyQuestionLabel = (state) => state.setSurveyQuestionLabel;
+const getSetSurveyQuestionNote = (state) => state.setSurveyQuestionNote;
+const getSetSurveyQuestionOptions = (state) => state.setSurveyQuestionOptions;
+const getSetSurveyQuestionScale = (state) => state.setSurveyQuestionScale;
+const getSetSurveyQuestionPlaceholder = (state) =>
+  state.setSurveyQuestionPlaceholder;
+const getSetSurveyAnswerLenMax = (state) => state.setSurveyAnswerLenMax;
+const getSetSurveyAnswerRestricted = (state) => state.setSurveyAnswerRestricted;
+
+const getSetSurveyAnswerLenIsLimited = (state) =>
+  state.setSurveyAnswerLenIsLimited;
 
 const UserDropdown: React.FC = () => {
   //   const { t } = useTranslation();
@@ -57,6 +52,16 @@ const UserDropdown: React.FC = () => {
     getSetShowSurveyinformationImage
   );
   const setShowSurveylikertImage = useStore(getSetShowSurveylikertImage);
+  const setSurveyQuestionLabel = useStore(getSetSurveyQuestionLabel);
+  const setSurveyQuestionNote = useStore(getSetSurveyQuestionNote);
+  const setSurveyQuestionOptions = useStore(getSetSurveyQuestionOptions);
+  const setSurveyQuestionScale = useStore(getSetSurveyQuestionScale);
+  const setSurveyQuestionPlaceholder = useStore(
+    getSetSurveyQuestionPlaceholder
+  );
+  const setSurveyAnswerLenMax = useStore(getSetSurveyAnswerLenMax);
+  const setSurveyAnswerRestricted = useStore(getSetSurveyAnswerRestricted);
+  const setSurveyAnswerLenIsLimited = useStore(getSetSurveyAnswerLenIsLimited);
 
   const clearImages = () => {
     setShowSurveytextImage(false);
@@ -69,6 +74,17 @@ const UserDropdown: React.FC = () => {
     setShowSurveyrating10Image(false);
     setShowSurveyinformationImage(false);
     setShowSurveylikertImage(false);
+  };
+
+  const clearInputForm = () => {
+    setSurveyQuestionLabel("");
+    setSurveyQuestionNote("");
+    setSurveyQuestionOptions([]);
+    setSurveyQuestionScale("");
+    setSurveyQuestionPlaceholder("");
+    setSurveyAnswerLenIsLimited(false);
+    setSurveyAnswerLenMax(999);
+    setSurveyAnswerRestricted(false);
   };
 
   const handleCategoryChange = (category) => {
@@ -106,6 +122,7 @@ const UserDropdown: React.FC = () => {
     }
     const detailsArray2 = exportSurveyObject();
     setDetailsArray(detailsArray2[category]);
+    clearInputForm();
   };
 
   return (
@@ -117,7 +134,7 @@ const UserDropdown: React.FC = () => {
         name="category"
         value={surveyQuestionType}
         onChange={(event) => handleCategoryChange(event.target.value)}
-        className="block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50"
+        className="block min-w-[200px] px-3 py-2 border border-gray-500 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-md disabled:opacity-50 hover:cursor-pointer"
       >
         <option id="0">text</option>
         <option id="1">textarea</option>

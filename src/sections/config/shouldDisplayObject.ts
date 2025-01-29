@@ -92,11 +92,11 @@ const shouldDisplayObject = () => {
       required: false,
       label: false,
       placeholder: false,
-      note: true,
+      note: false,
       limited: false,
       restricted: false,
       scale: false,
-      options: false,
+      options: true,
       bg: true,
     },
     likert: {

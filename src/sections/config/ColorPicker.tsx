@@ -4,6 +4,7 @@ import { BlockPicker as Picker, ColorResult } from "react-color";
 interface ColorPickerProps {
   baseColor: string;
   onChange: (color: string) => void;
+  disabled?: boolean;
 }
 
 const ColorPicker: React.FC<ColorPickerProps> = (props) => {
@@ -39,19 +40,35 @@ const ColorPicker: React.FC<ColorPickerProps> = (props) => {
     };
   }, [showPicker]);
 
-  return (
-    <div className="w-10 h-5 rounded-md" onClick={() => setShowPicker(true)}>
-      {showPicker && (
-        <div className="mt-8" ref={pickerRef}>
-          <Picker
-            className="border border-1 border-slate-400"
-            color={color}
-            onChangeComplete={handleColorChange}
-          />
-        </div>
-      )}
-    </div>
-  );
+  if (props.disabled) {
+    return (
+      <div className="w-10 h-5 rounded-md disabled:opacity-50">
+        {showPicker && (
+          <div className="mt-8" ref={pickerRef}>
+            <Picker
+              className="border border-1 border-slate-400"
+              color={color}
+              onChangeComplete={handleColorChange}
+            />
+          </div>
+        )}
+      </div>
+    );
+  } else {
+    return (
+      <div className="w-10 h-5 rounded-md" onClick={() => setShowPicker(true)}>
+        {showPicker && (
+          <div className="mt-8" ref={pickerRef}>
+            <Picker
+              className="border border-1 border-slate-400 "
+              color={color}
+              onChangeComplete={handleColorChange}
+            />
+          </div>
+        )}
+      </div>
+    );
+  }
 };
 
 export { ColorPicker };

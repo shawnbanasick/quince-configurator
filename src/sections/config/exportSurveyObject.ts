@@ -10,6 +10,7 @@ const exportSurveyObject = () => {
       `<b>7. Limit Answer Length: </b>true`,
       `<b>8. Answer Maximum Length: </b>4`,
       `<b>9. Answer Restricted to Numbers "0-9": </b>true`,
+      `<b>10. Information Bar Background Color: </b>N/A`,
     ],
     textarea: [
       `<b>1. Answer Required (not shown in image): </b>false`,
@@ -21,6 +22,7 @@ const exportSurveyObject = () => {
       `<b>7. Limit Answer Length: </b>N/A`,
       `<b>8. Answer Maximum Length: </b>N/A`,
       `<b>9. Answer Restricted to Numbers "0-9": </b>N/A`,
+      `<b>10. Information Bar Background Color: </b>N/A`,
     ],
     radio: [
       `<b>1. Answer Required (not shown in image): </b>false`,
@@ -32,6 +34,7 @@ const exportSurveyObject = () => {
       `<b>7. Limit Answer Length: </b>N/A`,
       `<b>8. Answer Maximum Length: </b>N/A`,
       `<b>9. Answer Restricted to Numbers "0-9": </b>N/A`,
+      `<b>10. Information Bar Background Color: </b>N/A`,
     ],
     rating2: [
       `<b>1. Answer Required (not shown in image): </b>false`,
@@ -43,6 +46,7 @@ const exportSurveyObject = () => {
       `<b>7. Limit Answer Length: </b>N/A`,
       `<b>8. Answer Maximum Length: </b>N/A`,
       `<b>9. Answer Restricted to Numbers "0-9": </b>N/A`,
+      `<b>10. Information Bar Background Color: </b>N/A`,
     ],
     rating5: [
       `<b>1. Answer Required (not shown in image): </b>false`,
@@ -54,6 +58,7 @@ const exportSurveyObject = () => {
       `<b>7. Limit Answer Length: </b>N/A`,
       `<b>8. Answer Maximum Length: </b>N/A`,
       `<b>9. Answer Restricted to Numbers "0-9": </b>N/A`,
+      `<b>10. Information Bar Background Color: </b>N/A`,
     ],
     rating10: [
       `<b>1. Answer Required (not shown in image): </b>false`,
@@ -65,6 +70,7 @@ const exportSurveyObject = () => {
       `<b>7. Limit Answer Length: </b>N/A`,
       `<b>8. Answer Maximum Length: </b>N/A`,
       `<b>9. Answer Restricted to Numbers "0-9": </b>N/A`,
+      `<b>10. Information Bar Background Color: </b>N/A`,
     ],
     checkbox: [
       `<b>1. Answer Required (not shown in image): </b>false`,
@@ -76,6 +82,7 @@ const exportSurveyObject = () => {
       `<b>7. Limit Answer Length: </b>N/A`,
       `<b>8. Answer Maximum Length: </b>N/A`,
       `<b>9. Answer Restricted to Numbers "0-9": </b>N/A`,
+      `<b>10. Information Bar Background Color: </b>N/A`,
     ],
     select: [
       `<b>1. Answer Required (not shown in image): </b>false`,
@@ -87,6 +94,7 @@ const exportSurveyObject = () => {
       `<b>7. Limit Answer Length: </b>N/A`,
       `<b>8. Answer Maximum Length: </b>N/A`,
       `<b>9. Answer Restricted to Numbers "0-9": </b>N/A`,
+      `<b>10. Information Bar Background Color: </b>N/A`,
     ],
     likert: [
       `<b>1. Answer Required (not shown in image): </b>false`,
@@ -98,6 +106,7 @@ const exportSurveyObject = () => {
       `<b>7. Limit Answer Length: </b>N/A`,
       `<b>8. Answer Maximum Length: </b>N/A`,
       `<b>9. Answer Restricted to Numbers "0-9": </b>N/A`,
+      `<b>10. Information Bar Background Color: </b>N/A`,
     ],
     information: [
       `<b>1. Answer Required (not shown in image): </b>N/A`,
@@ -109,6 +118,7 @@ const exportSurveyObject = () => {
       `<b>7. Limit Answer Length: </b>N/A`,
       `<b>8. Answer Maximum Length: </b>N/A`,
       `<b>9. Answer Restricted to Numbers "0-9": </b>N/A`,
+      `<b>10. Information Bar Background Color: </b>#fde047`,
     ],
   };
   return surveyQuestionObject;

@@ -56,6 +56,7 @@ const createConfigXmlSlice = (set, get) => ({
     `<b>7. Limit Answer Length: </b>true`,
     `<b>8. Answer Maximum Length: </b>4`,
     `<b>9. Answer Restricted to Numbers "0-9": </b>true`,
+    `<b>10. Information Bar Background Color: </b>N/A`,
   ],
   showSurveyinformationImage: false,
   showSurveytextImage: true,
@@ -81,7 +82,11 @@ const createConfigXmlSlice = (set, get) => ({
   configSurveyInfoBarColor: "#fde047",
   surveyQuestionsArray: [],
   displayOptionsSemiWarn: false,
+  surveyQuestionInputPreviewQuestions: [],
 
+  setSurveyQuestionInputPreviewQuestions: (questions) => {
+    set(() => ({ surveyQuestionInputPreviewQuestions: questions }));
+  },
   setDisplayOptionsSemiWarn: (bool) => {
     set(() => ({ displayOptionsSemiWarn: bool }));
   },
