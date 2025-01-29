@@ -46,7 +46,7 @@ const ColorPicker: React.FC<ColorPickerProps> = (props) => {
         {showPicker && (
           <div className="mt-8" ref={pickerRef}>
             <Picker
-              className="border border-1 border-slate-400"
+              className="border border-1 border-slate-400 disabled:opacity-50"
               color={color}
               onChangeComplete={handleColorChange}
             />

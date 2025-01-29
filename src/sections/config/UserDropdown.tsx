@@ -136,16 +136,16 @@ const UserDropdown: React.FC = () => {
         onChange={(event) => handleCategoryChange(event.target.value)}
         className="block min-w-[200px] px-3 py-2 border border-gray-500 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-md disabled:opacity-50 hover:cursor-pointer"
       >
-        <option id="0">text</option>
-        <option id="1">textarea</option>
-        <option id="2">radio</option>
-        <option id="3">select</option>
-        <option id="4">checkbox</option>
-        <option id="5">likert</option>
-        <option id="6">rating2</option>
-        <option id="7">rating5</option>
-        <option id="8">rating10</option>
-        <option id="9">information</option>
+        <option id="0">information</option>
+        <option id="1">text</option>
+        <option id="2">textarea</option>
+        <option id="3">radio</option>
+        <option id="4">select</option>
+        <option id="5">checkbox</option>
+        <option id="6">likert</option>
+        <option id="7">rating2</option>
+        <option id="8">rating5</option>
+        <option id="9">rating10</option>
       </select>
     </div>
   );

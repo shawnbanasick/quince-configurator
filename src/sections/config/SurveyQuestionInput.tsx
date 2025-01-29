@@ -202,9 +202,11 @@ const SurveyQuestionInput: React.FC = () => {
             <AddQuestionButton />
           </div>
           <div className="flex flex-row h-[60px] content-center items-center gap-5 mt-3">
-            <span className="content-center">{`1. ${t(
-              "surveyAnswerRequired"
-            )}:`}</span>
+            <span
+              className={`content-center ${
+                displayBoolean.required ? "" : "text-slate-400"
+              }`}
+            >{`1. ${t("surveyAnswerRequired")}:`}</span>
             <div className="">
               <label
                 className={clsx(
@@ -257,7 +259,9 @@ const SurveyQuestionInput: React.FC = () => {
 
           <UserTextInput
             classNameText={`mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
-            classNameLabel={`min-w-[80px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+            classNameLabel={`min-w-[80px] content-center pt-1 mr-1 ${
+              displayBoolean.label ? "" : "text-slate-400"
+            } select-none`}
             highlight={true}
             placeholder={t("inputLabelPlaceholder")}
             label="2. Label:"
@@ -269,7 +273,9 @@ const SurveyQuestionInput: React.FC = () => {
           <UserTextInput
             label="3. Note:"
             classNameText={`mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
-            classNameLabel={`min-w-[130px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+            classNameLabel={`min-w-[130px] content-center pt-1 mr-1 disabled:opacity-50 select-none ${
+              displayBoolean.note ? "" : "text-slate-400"
+            }`}
             highlight={true}
             placeholder={t("inputNotePlaceholder")}
             disabled={!displayBoolean.note}
@@ -279,7 +285,9 @@ const SurveyQuestionInput: React.FC = () => {
           />
           <UserTextInput
             classNameText={`mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
-            classNameLabel={`min-w-[130px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+            classNameLabel={`min-w-[130px] content-center pt-1 mr-1 disabled:opacity-50 select-none ${
+              displayBoolean.options ? "" : "text-slate-400"
+            }`}
             highlight={true}
             placeholder={t("inputOptionsPlaceholder")}
             disabled={!displayBoolean.options}
@@ -290,7 +298,9 @@ const SurveyQuestionInput: React.FC = () => {
           />
           <UserTextInput
             classNameText={`mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
-            classNameLabel={`min-w-[130px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+            classNameLabel={`min-w-[130px] content-center pt-1 mr-1 disabled:opacity-50 select-none ${
+              displayBoolean.scale ? "" : "text-slate-400"
+            }`}
             label="5. Scale:"
             highlight={true}
             placeholder={t("inputScalePlaceholder")}
@@ -302,7 +312,9 @@ const SurveyQuestionInput: React.FC = () => {
 
           <UserTextInput
             classNameText={`mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
-            classNameLabel={`min-w-[130px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+            classNameLabel={`min-w-[130px] content-center pt-1 mr-1 disabled:opacity-50 select-none ${
+              displayBoolean.placeholder ? "" : "text-slate-400"
+            }`}
             highlight={true}
             placeholder={t("inputLabelPlaceholder")}
             disabled={!displayBoolean.placeholder}
@@ -312,9 +324,11 @@ const SurveyQuestionInput: React.FC = () => {
             label="6. Placeholder:"
           />
           <div className="flex flex-row h-[60px] content-center items-center gap-5 mt-3">
-            <span className="content-center">{`7. ${t(
-              "surveyAnswerLenIsLimited"
-            )}:`}</span>
+            <span
+              className={`content-center ${
+                displayBoolean.limited ? "" : "text-slate-400"
+              }`}
+            >{`7. ${t("surveyAnswerLenIsLimited")}:`}</span>
             <div className="">
               <label
                 className={clsx(
@@ -366,7 +380,9 @@ const SurveyQuestionInput: React.FC = () => {
           </div>
           <UserTextInput
             classNameText={`mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
-            classNameLabel={`min-w-[130px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+            classNameLabel={`min-w-[130px] content-center pt-1 mr-1 disabled:opacity-50 select-none ${
+              displayBoolean.maxLen ? "" : "text-slate-400"
+            }`}
             label="8. Answer Maximum Length:"
             highlight={true}
             placeholder={t("inputLabelPlaceholder")}
@@ -377,9 +393,11 @@ const SurveyQuestionInput: React.FC = () => {
           />
 
           <div className="flex flex-row h-[60px] content-center items-center gap-5 mt-3">
-            <span className="content-center">{`9. ${t(
-              "surveyAnswerRestricted"
-            )}:`}</span>
+            <span
+              className={`content-center ${
+                displayBoolean.restricted ? "" : "text-slate-400"
+              }`}
+            >{`9. ${t("surveyAnswerRestricted")}:`}</span>
             <div className="">
               <label
                 className={clsx(
