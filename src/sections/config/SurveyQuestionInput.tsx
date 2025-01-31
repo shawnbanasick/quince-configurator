@@ -142,18 +142,29 @@ const SurveyQuestionInput: React.FC = () => {
   };
 
   const handleSurveyAnswerRequiredChange = (inputValue: any) => {
-    console.log(inputValue.target.value);
-    setSurveyAnswerRequired(inputValue.target.value);
+    if (inputValue.target.value === "true") {
+      setSurveyAnswerRequired(true);
+    } else {
+      setSurveyAnswerRequired(false);
+    }
   };
 
   const handleSurveyAnswerLenIsLimitedChange = (inputValue: any) => {
     console.log(inputValue.target.value);
-    setSurveyAnswerLenIsLimited(inputValue.target.value);
+    if (inputValue.target.value === "true") {
+      setSurveyAnswerLenIsLimited(true);
+    } else {
+      setSurveyAnswerLenIsLimited(false);
+    }
   };
 
   const handleSurveyAnswerRestrictedChange = (inputValue: any) => {
     console.log(inputValue.target.value);
-    setSurveyAnswerRestricted(inputValue.target.value);
+    if (inputValue.target.value === "true") {
+      setSurveyAnswerRestricted(true);
+    } else {
+      setSurveyAnswerRestricted(false);
+    }
   };
 
   return (
@@ -212,6 +223,7 @@ const SurveyQuestionInput: React.FC = () => {
                 className={clsx(
                   "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
                   {
+                    "bg-opacity-50": !displayBoolean.required,
                     "bg-opacity-100": surveyAnswerRequired,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                       !surveyAnswerRequired,
@@ -236,6 +248,7 @@ const SurveyQuestionInput: React.FC = () => {
                 className={clsx(
                   "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
                   {
+                    "bg-opacity-50": !displayBoolean.required,
                     "bg-opacity-100": !surveyAnswerRequired,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                       surveyAnswerRequired,
@@ -334,6 +347,7 @@ const SurveyQuestionInput: React.FC = () => {
                 className={clsx(
                   "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
                   {
+                    "bg-opacity-50": !displayBoolean.limited,
                     "bg-opacity-100": surveyAnswerLenIsLimited,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                       !surveyAnswerLenIsLimited,
@@ -358,6 +372,7 @@ const SurveyQuestionInput: React.FC = () => {
                 className={clsx(
                   "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
                   {
+                    "bg-opacity-50": !displayBoolean.limited,
                     "bg-opacity-100": !surveyAnswerLenIsLimited,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                       surveyAnswerLenIsLimited,
@@ -403,6 +418,7 @@ const SurveyQuestionInput: React.FC = () => {
                 className={clsx(
                   "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
                   {
+                    "bg-opacity-50": !displayBoolean.restricted,
                     "bg-opacity-100": surveyAnswerRestricted,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                       !surveyAnswerRestricted,
@@ -427,6 +443,7 @@ const SurveyQuestionInput: React.FC = () => {
                 className={clsx(
                   "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
                   {
+                    "bg-opacity-50": !displayBoolean.restricted,
                     "bg-opacity-100": !surveyAnswerRestricted,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                       surveyAnswerRestricted,

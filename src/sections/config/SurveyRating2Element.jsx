@@ -125,11 +125,25 @@ const SurveyRatings2Element = (props) => {
   const RadioItems = () => {
     const radioList = optsArray.map((item, index) => {
       const itemText = ReactHtmlParser(item) || "";
+      console.log("itemText", itemText);
       return (
-        <ItemContainer indexVal={index} key={uuid()}>
-          <OptionsText key={uuid()}>{itemText}</OptionsText>
-          <RadioInput
+        // <ItemContainer indexVal={index} key={uuid()}>
+        <div
+          className="flex h-[40px] items-center content-center"
+          style={{
+            display: "inline-grid",
+            gridTemplateColumns: "minmax(30%, 1000px) 100px 100px 1fr",
+            backgroundColor: index % 2 ? "white" : "#ececec",
+          }}
+          indexVal={index}
+          key={uuid()}
+        >
+          {/* <OptionsText key={uuid()}>{itemText}</OptionsText> */}
+          <div key={uuid()}>{itemText}</div>
+          {/* <RadioInput */}
+          <input
             key={uuid()}
+            className="flex items-center content-center"
             id={`Q-${index}`}
             type="radio"
             value={1}
@@ -137,8 +151,9 @@ const SurveyRatings2Element = (props) => {
             onChange={(e) => handleChange(index, 0, e)}
             checked={checkedState[index][0]}
           />
-          <RadioInput
+          <input
             key={uuid()}
+            className="flex items-center content-center"
             id={`Q2-${index}`}
             type="radio"
             value={2}
@@ -146,54 +161,74 @@ const SurveyRatings2Element = (props) => {
             onChange={(e) => handleChange(index, 1, e)}
             checked={checkedState[index][1]}
           />
-        </ItemContainer>
+        </div>
       );
     });
     return <div>{radioList}</div>;
   };
 
-  if (displayNoteText) {
+  if (true) {
     return (
-      <Container bgColor={formatOptions.bgColor} border={formatOptions.border}>
-        <TitleBar>
-          <div>{labelText}</div>
-        </TitleBar>
-        <NoteText id="noteText">
-          <div>{noteText}</div>
-        </NoteText>
-        <RadioContainer>
-          <RatingTitle>
-            <div />
-            <ScaleDiv>
+      // <Container bgColor={formatOptions.bgColor} border={formatOptions.border}>
+      <div className="w-12/12 p-[20px] max-w[1300px] bg-[whitesmoke] outline outline-1 outline-gray-300 outline-none mt-1 ">
+        {/* <TitleBar> */}
+        <div>
+          <div className="bg-gray-300 flex items-center justify-center p-[5px] min-h-[20px] text-[18px] text-center w-full rounded-[3px]">
+            {labelText}
+          </div>
+        </div>
+        {/* <NoteText id="noteText"> */}
+        <div id="noteText">
+          <div className="content-center min-h-[35px]">{noteText}</div>
+        </div>
+        {/* <RadioContainer> */}
+        <div className="flex flex-col gap-3 p-2 bg-white  min-w-[100px] outline outline-1 outline-slate-300">
+          {/* <RatingTitle> */}
+          <div
+            style={{
+              display: "inline-grid",
+              gridTemplateColumns: "minmax(30%, 1000px) 100px 100px 1fr",
+            }}
+          >
+            {/* <ScaleDiv> */}
+            <div> </div>
+            <div className="flex justify-center items-center">
               <div>{ReactHtmlParser(scaleArray[0])}</div>
-            </ScaleDiv>
-            <ScaleDiv>
+            </div>
+            {/* <ScaleDiv> */}
+            <div className="flex justify-center items-center">
               <div>{ReactHtmlParser(scaleArray[1])}</div>
-            </ScaleDiv>
-          </RatingTitle>
+            </div>
+          </div>
           <RadioItems />
-        </RadioContainer>
-      </Container>
+        </div>
+      </div>
     );
   } else {
     return (
-      <Container bgColor={formatOptions.bgColor} border={formatOptions.border}>
-        <TitleBar>
+      // <Container bgColor={formatOptions.bgColor} border={formatOptions.border}>
+      <div bgColor={formatOptions.bgColor} border={formatOptions.border}>
+        {/* <TitleBar> */}
+        <div>
           <div>{labelText}</div>
-        </TitleBar>
-        <RadioContainer>
-          <RatingTitle>
+        </div>
+        {/* <RadioContainer> */}
+        <div>
+          {/* <RatingTitle> */}
+          <div>
             <div />
-            <ScaleDiv>
+            {/* <ScaleDiv> */}
+            <div>
               <div>{ReactHtmlParser(scaleArray[0])}</div>
-            </ScaleDiv>
-            <ScaleDiv>
+            </div>
+            {/* <ScaleDiv> */}
+            <div>
               <div>{ReactHtmlParser(scaleArray[1])}</div>
-            </ScaleDiv>
-          </RatingTitle>
+            </div>
+          </div>
           <RadioItems />
-        </RadioContainer>
-      </Container>
+        </div>
+      </div>
     );
   }
 };

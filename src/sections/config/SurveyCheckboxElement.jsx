@@ -101,19 +101,23 @@ const SurveyCheckboxElement = (props) => {
     }
   }, [checkRequiredQuestionsComplete, setYellow, props.opts.required]);
 
-  if (displayNoteText) {
+  if (true) {
     return (
-      <Container bgColor={formatOptions.bgColor} border={formatOptions.border}>
-        <TitleBar>
+      // <Container bgColor={formatOptions.bgColor} border={formatOptions.border}>
+      <div className="w-12/12 p-[20px] max-w[1300px] bg-[whitesmoke] outline outline-1 outline-gray-300 outline-none mt-1 ">
+        {/* <TitleBar> */}
+        <div className="bg-gray-300 flex items-center justify-center p-[5px] min-h-[20px] text-[18px] text-center w-full rounded-[3px]">
           <div>{labelText}</div>
-        </TitleBar>
-        <NoteText id="noteText">
+        </div>
+        {/* <NoteText id="noteText"> */}
+        <div className="content-center min-h-[35px]" id="noteText">
           <div>{noteText}</div>
-        </NoteText>
-        <RadioContainer>
+        </div>
+        {/* <RadioContainer> */}
+        <div className="flex flex-col gap-3 p-2 bg-white  min-w-[100px] outline outline-1 outline-slate-300">
           {optsArray.map((item, index) => {
             return (
-              <div key={uuid()}>
+              <div key={uuid()} className="flex items-center gap-1 ml-3 mr-3">
                 <input
                   id={`${item}-${index}`}
                   type="checkbox"
@@ -126,8 +130,8 @@ const SurveyCheckboxElement = (props) => {
               </div>
             );
           })}
-        </RadioContainer>
-      </Container>
+        </div>
+      </div>
     );
   } else {
     return (

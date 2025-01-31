@@ -119,9 +119,22 @@ const SurveyRatings5Element = (props) => {
     const radioList = optsArray.map((item, index) => {
       const itemText = ReactHtmlParser(item);
       return (
-        <ItemContainer indexVal={index} key={uuid()}>
-          <OptionsText key={uuid()}>{itemText}</OptionsText>
-          <RadioInput
+        // <ItemContainer indexVal={index} key={uuid()}>
+        <div
+          className="flex h-[40px] items-center content-center pl-2"
+          style={{
+            display: "inline-grid",
+            gridTemplateColumns:
+              "minmax(30%, 1000px) 50px 50px 50px 50px 50px 1fr",
+            backgroundColor: index % 2 ? "white" : "#ececec",
+          }}
+          indexVal={index}
+          key={uuid()}
+        >
+          {/* <OptionsText key={uuid()}>{itemText}</OptionsText> */}
+          <div key={uuid()}>{itemText}</div>
+          {/* <RadioInput */}
+          <input
             key={uuid()}
             id={`Q-${index}`}
             type="radio"
@@ -130,7 +143,7 @@ const SurveyRatings5Element = (props) => {
             onChange={(e) => handleChange(index, 0, e)}
             checked={checked5State[index][0]}
           />
-          <RadioInput
+          <input
             key={uuid()}
             id={`Q2-${index}`}
             type="radio"
@@ -139,7 +152,7 @@ const SurveyRatings5Element = (props) => {
             onChange={(e) => handleChange(index, 1, e)}
             checked={checked5State[index][1]}
           />
-          <RadioInput
+          <input
             key={uuid()}
             id={`Q3-${index}`}
             type="radio"
@@ -148,7 +161,7 @@ const SurveyRatings5Element = (props) => {
             onChange={(e) => handleChange(index, 2, e)}
             checked={checked5State[index][2]}
           />
-          <RadioInput
+          <input
             key={uuid()}
             id={`Q4-${index}`}
             type="radio"
@@ -157,7 +170,7 @@ const SurveyRatings5Element = (props) => {
             onChange={(e) => handleChange(index, 3, e)}
             checked={checked5State[index][3]}
           />
-          <RadioInput
+          <input
             key={uuid()}
             id={`Q5-${index}`}
             type="radio"
@@ -166,33 +179,46 @@ const SurveyRatings5Element = (props) => {
             onChange={(e) => handleChange(index, 4, e)}
             checked={checked5State[index][4]}
           />
-        </ItemContainer>
+        </div>
       );
     });
     return <div>{radioList}</div>;
   };
 
-  if (displayNoteText) {
+  if (true) {
     return (
-      <Container bgColor={formatOptions.bgColor} border={formatOptions.border}>
-        <TitleBar>
-          <div>{labelText}</div>
-        </TitleBar>
-        <NoteText id="noteText">
-          <div>{noteText}</div>
-        </NoteText>
-        <RadioContainer>
-          <RatingTitle>
+      // <Container bgColor={formatOptions.bgColor} border={formatOptions.border}>
+      <div className="w-12/12 p-[20px] max-w[1300px] bg-[whitesmoke] outline outline-1 outline-gray-300 outline-none mt-1 ">
+        {/* <TitleBar> */}
+        <div>
+          <div className="bg-gray-300 flex items-center justify-center p-[5px] min-h-[20px] text-[18px] text-center w-full rounded-[3px]">
+            {labelText}
+          </div>
+        </div>
+        {/* <NoteText id="noteText"> */}
+        <div id="noteText">
+          <div className="content-center min-h-[35px]">{noteText}</div>
+        </div>
+        {/* <RadioContainer> */}
+        <div className="flex flex-col gap-3 p-2 bg-white  min-w-[100px] outline outline-1 outline-slate-300">
+          {/* <RatingTitle> */}
+          <div
+            style={{
+              display: "inline-grid",
+              gridTemplateColumns:
+                "minmax(30%, 1000px) 50px 50px 50px 50px 50px 1fr",
+            }}
+          >
             <div />
-            <CircleDiv>1</CircleDiv>
-            <CircleDiv>2</CircleDiv>
-            <CircleDiv>3</CircleDiv>
-            <CircleDiv>4</CircleDiv>
-            <CircleDiv>5</CircleDiv>
-          </RatingTitle>
+            <div className="flex justify-center items-center">1</div>
+            <div className="flex justify-center items-center">2</div>
+            <div className="flex justify-center items-center">3</div>
+            <div className="flex justify-center items-center">4</div>
+            <div className="flex justify-center items-center">5</div>
+          </div>
           <RadioItems />
-        </RadioContainer>
-      </Container>
+        </div>
+      </div>
     );
   } else {
     return (

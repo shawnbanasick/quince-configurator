@@ -79,23 +79,32 @@ const SurveyTextAreaElement = (props) => {
     props.opts.required,
   ]);
 
-  if (displayNoteText) {
+  if (true) {
     return (
-      <Container bgColor={formatOptions.bgColor} border={formatOptions.border}>
-        <TitleBar>
+      // <Container bgColor={formatOptions.bgColor} border={formatOptions.border}>
+      <div className="w-12/12 p-[20px]  max-w[1300px] bg-[whitesmoke] outline outline-1 outline-gray-300 outline-none mt-1 ">
+        {/* <TitleBar> */}
+        <div className="bg-gray-300 flex items-center justify-center p-[5px] min-h-[20px] text-[18px] text-center w-full rounded-[3px]">
           <div>{labelText}</div>
-        </TitleBar>
-        <NoteText>{noteText}</NoteText>
-        <TextAreaInput
+        </div>
+        {/* <NoteText>{noteText}</NoteText> */}
+        <div className="content-center min-h-[35px]">{noteText}</div>
+        {/* <TextAreaInput */}
+        <textarea
+          type="textarea"
+          rows="5"
+          cols="33"
           value={userText}
+          className="border border-1 border-gray-300 p-[5px] w-full rounded-md"
           placeholder={placeholder}
           onChange={handleOnChange}
         />
-      </Container>
+      </div>
     );
   } else {
     return (
-      <Container bgColor={formatOptions.bgColor} border={formatOptions.border}>
+      // <Container bgColor={formatOptions.bgColor} border={formatOptions.border}>
+      <div bgColor={formatOptions.bgColor} border={formatOptions.border}>
         <TitleBar>
           <div>{labelText}</div>
         </TitleBar>
@@ -104,7 +113,7 @@ const SurveyTextAreaElement = (props) => {
           placeholder={placeholder}
           onChange={handleOnChange}
         />
-      </Container>
+      </div>
     );
   }
 };

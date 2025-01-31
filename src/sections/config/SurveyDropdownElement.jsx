@@ -94,15 +94,20 @@ const SurveyDropdownElement = (props) => {
     }
   }, [checkRequiredQuestionsComplete, selectedLen, props.opts.required]);
 
-  if (displayNoteText) {
+  if (true) {
     return (
-      <Container bgColor={formatOptions.bgColor} border={formatOptions.border}>
-        <TitleBar>
-          <div>{labelText}</div>
-        </TitleBar>
-        <NoteText id="noteText">
+      // <Container bgColor={formatOptions.bgColor} border={formatOptions.border}>
+      <div className="w-12/12 p-[20px] max-w[1300px] bg-[whitesmoke] outline outline-1 outline-gray-300 outline-none mt-1 ">
+        {/* <TitleBar> */}
+        <div>
+          <div className="bg-gray-300 flex items-center justify-center p-[5px] min-h-[20px] text-[18px] text-center w-full rounded-[3px]">
+            {labelText}
+          </div>
+        </div>
+        {/* <NoteText id="noteText"> */}
+        <div className="content-center min-h-[35px]" id="noteText">
           <div>{noteText}</div>
-        </NoteText>
+        </div>
         <MultiSelect
           className={"multiselect"}
           options={getOptionsArray(props.opts.options)}
@@ -110,7 +115,7 @@ const SurveyDropdownElement = (props) => {
           onChange={handleOnChange}
           value={selected}
         />
-      </Container>
+      </div>
     );
   } else {
     return (

@@ -1,10 +1,77 @@
 import React, { useState } from "react";
 import XMLParser from "react-xml-parser";
 
+interface InputObjType {
+  version?: string;
+  studyTitle?: string;
+  databaseOptions?: string;
+  setupTarget?: string;
+  steinApiUrl?: string;
+  emailAddress?: string;
+  emailSubject?: string;
+  linkToSecondProject?: string;
+  secondProjectUrl?: string;
+  useImages?: string;
+  numImages?: string;
+  imageFileType?: string;
+  imageFormat?: string;
+  shuffleCards?: string;
+  headerBarColor?: string;
+  devMode?: string;
+  showConsentPage?: string;
+  showConsentPageHelpModal?: string;
+  initialScreen?: string;
+  accessCode?: string;
+  setDefaultFontSize?: string;
+  defaultFontSize?: string;
+  displayNeutralObjects?: string;
+  greenCardColor?: string;
+  yellowCardColor?: string;
+  pinkCardColor?: string;
+  defaultFontColor?: string;
+  setDefaultFontSizePresort?: string;
+  defaultFontSizePresort?: string;
+  traceSorts?: string;
+  allowUnforcedSorts?: string;
+  warnOverloadedColumn?: string;
+  condOfInstFontSize?: string;
+  setMinCardHeightSort?: string;
+  minCardHeightSort?: string;
+  setDefaultFontSizeSort?: string;
+  defaultFontSizeSort?: string;
+  sortDirection?: string;
+  showPostsort?: string;
+  showSecondPosColumn?: string;
+  showSecondNegColumn?: string;
+  showBackButton?: string;
+  postsortCommentsRequired?: string;
+  setDefaultFontSizePostsort?: string;
+  defaultFontSizePostsort?: string;
+  setMinCardHeightPostsort?: string;
+  minCardHeightPostsort?: string;
+  showSurvey?: string;
+  survey?: string;
+  surveyQuestArray?: any[]; // Ensure this property is included
+}
+
+interface QuestObjType {
+  type?: string;
+  required?: string;
+  label?: string;
+  note?: string;
+  bg?: string;
+  limited?: string;
+  maxlength?: string;
+  restricted?: string;
+  placeholder?: string;
+  options?: string;
+  scale?: string;
+}
+
 const UploadAndReadXML: React.FC = () => {
   const [xmlContent, setXmlContent] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const surveyQuestArray = [];
+  const surveyQuestArray: any[] = [];
 
   const handleFileUpload = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -13,19 +80,21 @@ const UploadAndReadXML: React.FC = () => {
     if (file) {
       const reader = new FileReader();
 
-      type inputObj = {
-        [key: string]: string;
+      type InputObjType = {
+        [key: string]: string | any[];
         surveyQuestArray: any[];
       };
 
       reader.onload = (e: ProgressEvent<FileReader>) => {
         const content = e.target?.result as string;
 
-        const inputObj: inputObj = {};
+        const inputObj: InputObjType = {
+          surveyQuestArray: [],
+        };
 
         // Parse the XML content
         const parser = new XMLParser();
-        const xmlDoc = parser.parseFromString(content, "text/xml");
+        const xmlDoc = parser.parseFromString(content);
         const xmlObjectArray = xmlDoc.getElementsByTagName("item");
         console.log(JSON.stringify(xmlObjectArray));
 
@@ -42,7 +111,7 @@ const UploadAndReadXML: React.FC = () => {
 
           if (xmlObjectArray[index].attributes.id === "survey") {
             let inputObj = xmlObjectArray[index].children;
-            let questObj = {};
+            let questObj: QuestObjType = {};
             let questType = inputObj[0].attributes?.type;
             questObj.type = questType;
             questObj.required = inputObj[0].attributes?.required;
@@ -103,7 +172,7 @@ const UploadAndReadXML: React.FC = () => {
           }
         });
 
-        inputObj.surveyQuestArray = surveyQuestArray;
+        inputObj.surveyQuestArray = [...surveyQuestArray];
 
         console.log("inputObj", JSON.stringify(inputObj, null, 2));
 
@@ -113,6 +182,7 @@ const UploadAndReadXML: React.FC = () => {
           setError("Invalid XML file. Please upload a valid XML file.");
           setXmlContent(null);
         } else {
+          console.log("xmlDoc", JSON.stringify(xmlDoc));
           setXmlContent(new XMLSerializer().serializeToString(xmlDoc));
           setError(null);
         }

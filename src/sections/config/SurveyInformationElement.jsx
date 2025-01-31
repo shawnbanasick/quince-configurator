@@ -23,7 +23,7 @@ const SurveyInformationElement = (props) => {
 
   return (
     // <Container>
-    <div>
+    <div className="w-12/12 p-[20px] max-w[1300px] bg-[whitesmoke] outline outline-1 outline-gray-300 outline-none mt-0">
       {/* <TitleBar backgroundColor={props.opts.background}> */}
       <div
         className={`flex w-12/12 max-w-[1300px] p-2 items-center h-[30px] rounded-md border border-1 border-gray-300 outline-none mt-2`}

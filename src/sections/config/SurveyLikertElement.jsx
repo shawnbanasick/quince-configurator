@@ -3,119 +3,91 @@ import { v4 as uuid } from "uuid";
 import ReactHtmlParser from "html-react-parser";
 
 const SurveyLikertElement = (props) => {
-  // PROPS
   const checkRequiredQuestionsComplete = props.check;
-  // gives the number of questions
   const questionId = `itemNum${props.opts.itemNum}`;
   const labelText = ReactHtmlParser(props.opts.label) || "";
 
-  // PERSISTENT STATE
   let [selected, setSelected] = useState("");
-
-  // LOCAL STATE
   const [formatOptions, setFormatOptions] = useState({
-    bgColor: "whitesmoke",
-    border: "none",
+    bgColor: "bg-gray-200",
+    border: "border-none",
   });
 
-  // ****** GET SCALE ARRAY *******
-
-  const getScaleArray = (options) => {
-    let array = options.split(";;;");
-    return array;
-  };
+  const getScaleArray = (options) => options.split(";;;");
   const scaleArray = getScaleArray(props.opts.scale);
 
-  // ****** ON CHANGE  *******
   const handleChange = (e) => {
     const resultsSurvey = JSON.parse(localStorage.getItem("resultsSurvey"));
     resultsSurvey[`itemNum${props.opts.itemNum}`] = +e.target.value + 1;
     localStorage.setItem("resultsSurvey", JSON.stringify(resultsSurvey));
-  }; // end handleChange
+  };
 
-  // ****** CHECK IF ALL PARTS ANSWERED on render *******
-  let setYellow = false;
-  if (selected.length === 0) {
-    setYellow = true;
-  }
+  let setYellow = selected.length === 0;
 
   useEffect(() => {
-    // if is a required question, check if all parts answered
     if (
       (props.opts.required === true || props.opts.required === "true") &&
-      checkRequiredQuestionsComplete === true &&
+      checkRequiredQuestionsComplete &&
       setYellow
     ) {
       setFormatOptions({
-        bgColor: "rgba(253, 224, 71, .5)",
-        border: "3px dashed black",
+        bgColor: "bg-yellow-300 bg-opacity-50",
+        border: "border-4 border-black border-dashed",
       });
     } else {
-      setFormatOptions({
-        bgColor: "whitesmoke",
-        border: "none",
-      });
+      setFormatOptions({ bgColor: "bg-gray-200", border: "border-none" });
     }
   }, [checkRequiredQuestionsComplete, setYellow, props.opts.required]);
 
-  const scaleList = scaleArray.map((item) => {
-    return (
-      <ScaleDiv key={uuid()}>
-        <div>{ReactHtmlParser(item)}</div>
-      </ScaleDiv>
-    );
-  });
+  const scaleList = scaleArray.map((item) => (
+    <div key={uuid()} className="flex justify-center items-center text-center">
+      {ReactHtmlParser(item)}
+    </div>
+  ));
 
-  // template
-  const RadioInput = ({ value, checked, setter }) => {
-    return (
-      <>
-        <input
-          type="radio"
-          checked={checked === value}
-          onChange={() => setter(value)}
-          value={value}
-        />
-      </>
-    );
-  };
+  const RadioInput = ({ value, checked, setter }) => (
+    <input
+      type="radio"
+      className="h-6 w-6"
+      checked={checked === value}
+      onChange={() => setter(value)}
+      value={value}
+    />
+  );
 
   const RadioItems = () => {
-    const radioList = scaleArray.map((item, index) => (
-      // <RadioButtons
-      <div
-        className="radioButtons"
-        key={uuid()}
-        onChange={(e) => handleChange(e)}
-      >
-        {/* <RadioInput */}
-        <div
-          className="radioInput"
-          value={index}
-          checked={selected}
-          setter={setSelected}
-        />
-      </div>
-    ));
     return (
-      // <ButtonContainer className="buttonContainer" cols={scaleArray.length}>
-      <div className="buttonContainer" cols={scaleArray.length}>
-        {radioList}
+      <div
+        className={`w-[100%] justify-items-center items-center mb-1 bg-[whitesmoke] `}
+        style={{
+          display: "inline-grid",
+          gridTemplateColumns: `repeat(${scaleArray.length}, 1fr)`,
+        }}
+      >
+        {scaleArray.map((item, index) => (
+          <div key={uuid()} className="flex justify-center items-center p-1">
+            <RadioInput value={index} checked={selected} setter={setSelected} />
+          </div>
+        ))}
       </div>
     );
   };
 
   return (
-    // <Container bgColor={formatOptions.bgColor} border={formatOptions.border}>
-    <div bgColor={formatOptions.bgColor} border={formatOptions.border}>
-      {/* <TitleBar> */}
-      <div>
-        <div>{labelText}</div>
+    <div
+      className={`w-12/12 p-[20px] max-w[1300px] bg-[whitesmoke] outline outline-1 outline-gray-300 outline-none mt-1`}
+    >
+      <div className="bg-gray-300 flex items-center justify-center p-[5px] min-h-[20px] text-[18px] text-center w-full rounded-[3px]">
+        {labelText}
       </div>
-      {/* <RadioContainer className="radioContainer"> */}
-      <div className="radioContainer">
-        {/* <RatingTitle className="ratingTitle" cols={scaleArray.length}> */}
-        <div className="ratingTitle" cols={scaleArray.length}>
+      <div className="flex flex-col justify-start items-start p-5 bg-white rounded border-2 border-gray-300">
+        <div
+          className={`w-[100%] text-center mb-2`}
+          style={{
+            display: "inline-grid",
+            gridTemplateColumns: `repeat(${scaleList.length}, 1fr)`,
+          }}
+        >
           {scaleList}
         </div>
         <RadioItems />
@@ -125,85 +97,3 @@ const SurveyLikertElement = (props) => {
 };
 
 export default SurveyLikertElement;
-
-// const Container = styled.div`
-//   width: 90vw;
-//   padding: 12px 20px 0px 20px;
-//   margin-left: 20px;
-//   margin-right: 20px;
-//   max-width: 1300px;
-//   min-height: 170px;
-//   background-color: ${(props) => props.bgColor};
-//   outline: ${(props) => props.border};
-//   outline-offset: -3px;
-// `;
-
-// const TitleBar = styled.div`
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   min-height: 50px;
-//   padding: 5px;
-//   font-size: 18px;
-//   text-align: center;
-//   background-color: lightgray;
-//   width: 100%;
-//   border-radius: 3px;
-// `;
-
-// const RadioContainer = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: left;
-//   align-items: left;
-//   padding: 10px 20px 0px 20px;
-//   vertical-align: center;
-//   margin-top: 0px;
-//   height: auto;
-//   min-height: 50px;
-//   font-size: 16px;
-//   background-color: white;
-//   width: 100%;
-//   border-radius: 3px;
-//   border: 2px solid lightgray;
-
-//   label {
-//     margin-left: 8px;
-//   }
-// `;
-
-// const ButtonContainer = styled.div`
-//   display: inline-grid;
-//   grid-template-columns: ${(props) =>
-//     `repeat(${props.cols}, ${100 / props.cols}%)`};
-//   margin-bottom: 3px;
-//   justify-items: center;
-//   align-items: center;
-// `;
-
-// const RatingTitle = styled.div`
-//   display: inline-grid;
-//   grid-template-columns: ${(props) =>
-//     `repeat(${props.cols}, ${100 / props.cols}%)`};
-// `;
-
-// const ScaleDiv = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   text-align: center;
-// `;
-
-// const RadioButtons = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   justify-self: center;
-//   margin-bottom: 5px;
-//   padding: 5px;
-//   width: 25px;
-//   input {
-//     height: 1.5em;
-//     width: 20px;
-//   }
-// `;

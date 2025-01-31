@@ -86,14 +86,14 @@ const SurveyTextElement = (props) => {
   if (displayNoteText) {
     return (
       // <Container bgColor={formatOptions.bgColor} border={formatOptions.border}>
-      <div className="w-12/12 p-[20px] ml-2 mr-2 max-w[1300px] bg-[whitesmoke] border border-1 border-gray-300 outline-none mt-8 rounded-md">
+      <div className="w-12/12 p-[20px] max-w[1300px] bg-[whitesmoke] outline outline-1 outline-gray-300 outline-none mt-1 ">
         {/* <TitleBar> */}
         <div className="bg-gray-300 flex items-center justify-center p-[5px] min-h-[20px] text-[18px] text-center w-full rounded-[3px]">
           <div>{labelText}</div>
         </div>
         {/* <NoteText id="noteText"> */}
         <div id="noteText">
-          <div>{noteText}</div>
+          <div className="content-center min-h-[35px]">{noteText}</div>
         </div>
         {/* <TextInput */}
         <input

@@ -37,17 +37,19 @@ const SurveyRadioElement = (props) => {
   const RadioInput = ({ label, value, checked, setter }) => {
     return (
       <label>
-        <InputStyleDiv>
+        {/* <InputStyleDiv> */}
+        <div className="flex items-center gap-1 ml-3 mr-3">
           <input
             type="radio"
             checked={checked === value}
             onChange={() => setter(value)}
             value={value}
           />
-          <LabelDiv>
+          {/* <LabelDiv> */}
+          <div>
             <div>{label}</div>
-          </LabelDiv>
-        </InputStyleDiv>
+          </div>
+        </div>
       </label>
     );
   };
@@ -93,22 +95,30 @@ const SurveyRadioElement = (props) => {
         />
       </div>
     ));
-    return <div>{radioList}</div>;
+    return (
+      <div className="flex flex-col gap-3 p-2 bg-white  min-w-[100px] outline outline-1 outline-slate-300">
+        {radioList}
+      </div>
+    );
   };
 
-  if (displayNoteText) {
+  if (true) {
     return (
-      <Container bgColor={formatOptions.bgColor} border={formatOptions.border}>
-        <TitleBar>
+      // <Container bgColor={formatOptions.bgColor} border={formatOptions.border}>
+      <div className="w-12/12 p-[20px] max-w[1300px] bg-[whitesmoke] outline outline-1 outline-gray-300 outline-none mt-1 ">
+        {/* <TitleBar> */}
+        <div className="bg-gray-300 flex items-center justify-center p-[5px] min-h-[20px] text-[18px] text-center w-full rounded-[3px]">
           <div>{labelText}</div>
-        </TitleBar>
-        <NoteText>
-          <div>{noteText}</div>
-        </NoteText>
-        <RadioContainer onChange={(e) => handleChange(e)}>
+        </div>
+        {/* <NoteText> */}
+        <div>
+          <div className="content-center min-h-[35px]">{noteText}</div>
+        </div>
+        {/* <RadioContainer onChange={(e) => handleChange(e)}> */}
+        <div onChange={(e) => handleChange(e)}>
           <RadioItems />
-        </RadioContainer>
-      </Container>
+        </div>
+      </div>
     );
   } else {
     return (
