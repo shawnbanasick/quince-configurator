@@ -1,6 +1,5 @@
 import React from "react";
 import { UserDropdown } from "./UserDropdown";
-// import { Radio } from "../utils/RadioButtons";
 import { UserTextInput } from "../utils/UserTextInput";
 import { useTranslation } from "react-i18next";
 import { AddQuestionButton } from "./AddQuestionButton";
@@ -8,29 +7,11 @@ import { SurveyImageContainer } from "./SurveyImageContainer";
 import clsx from "clsx";
 import { shouldDisplayObject } from "./shouldDisplayObject";
 import DisplaySurvey from "./DisplaySurvey";
-// import InformationImage from "../../assets/images/  /informationQuestion";
-// import SurveyItemDndList from "./SurveyItemDndList";
 
 import { ColorPicker } from "./ColorPicker";
 
 import HtmlParser from "html-react-parser";
 import { useStore } from "../../globalState/useStore";
-// import clone from "lodash/clone";
-// import OptionsWarningModal from "../Language/OptionsWarningModal";
-// import { toast } from "react-toastify";
-// import { ToastContainer, Slide } from "react-toastify";
-
-// import FadeIn from "./FadeIn";
-// const clone = require("rfdc/default");
-// import GlobalStyle from "../../Utils/GlobalStyle";
-
-// const defaultArray = [
-//   "Answer required (not shown in image): true",
-//   "Label text: 'Age'",
-//   "Question note: 'Please enter your year of birth (YYYY, eg. 1980).'",
-//   "Maxlength (not shown in image): 4",
-//   `Restricted: "0-9"`,
-// ];
 
 // const notifySuccess = () => {
 //   toast.success("Item Added", {
@@ -177,11 +158,9 @@ const SurveyQuestionInput: React.FC = () => {
       </span>
       {/* {showSurvey === "true" && ( */}
       <div>
-        {/* <ExampleContainer> */}
         <div>
           <h3>Example Item:</h3>
           <SurveyImageContainer />
-          {/* <SettingsTextContainer> */}
           <div className="mt-4 bg-slate-100">
             <div className="mt-4">
               <b>Example Settings:</b>
@@ -223,8 +202,9 @@ const SurveyQuestionInput: React.FC = () => {
                 className={clsx(
                   "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
                   {
-                    "bg-opacity-50": !displayBoolean.required,
-                    "bg-opacity-100": surveyAnswerRequired,
+                    "bg-opacity-50 text-slate-300 outline-slate-200":
+                      !displayBoolean.required,
+                    "bg-opacity-100 ": surveyAnswerRequired,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                       !surveyAnswerRequired,
                   }
@@ -248,7 +228,8 @@ const SurveyQuestionInput: React.FC = () => {
                 className={clsx(
                   "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
                   {
-                    "bg-opacity-50": !displayBoolean.required,
+                    "bg-opacity-50  text-slate-300 outline-slate-200":
+                      !displayBoolean.required,
                     "bg-opacity-100": !surveyAnswerRequired,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                       surveyAnswerRequired,
@@ -347,7 +328,8 @@ const SurveyQuestionInput: React.FC = () => {
                 className={clsx(
                   "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
                   {
-                    "bg-opacity-50": !displayBoolean.limited,
+                    "bg-opacity-50  text-slate-300 outline-slate-200":
+                      !displayBoolean.limited,
                     "bg-opacity-100": surveyAnswerLenIsLimited,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                       !surveyAnswerLenIsLimited,
@@ -372,7 +354,8 @@ const SurveyQuestionInput: React.FC = () => {
                 className={clsx(
                   "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
                   {
-                    "bg-opacity-50": !displayBoolean.limited,
+                    "bg-opacity-50  text-slate-300 outline-slate-200":
+                      !displayBoolean.limited,
                     "bg-opacity-100": !surveyAnswerLenIsLimited,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                       surveyAnswerLenIsLimited,
@@ -418,7 +401,8 @@ const SurveyQuestionInput: React.FC = () => {
                 className={clsx(
                   "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
                   {
-                    "bg-opacity-50": !displayBoolean.restricted,
+                    "bg-opacity-50  text-slate-300 outline-slate-200":
+                      !displayBoolean.restricted,
                     "bg-opacity-100": surveyAnswerRestricted,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                       !surveyAnswerRestricted,
@@ -443,7 +427,8 @@ const SurveyQuestionInput: React.FC = () => {
                 className={clsx(
                   "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
                   {
-                    "bg-opacity-50": !displayBoolean.restricted,
+                    "bg-opacity-50  text-slate-300 outline-slate-200":
+                      !displayBoolean.restricted,
                     "bg-opacity-100": !surveyAnswerRestricted,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                       surveyAnswerRestricted,

@@ -19,7 +19,7 @@ const SurveyRadioElement = (props) => {
   const checkRequiredQuestionsComplete = props.check;
   const labelText = ReactHtmlParser(decodeHTML(props.opts.label)) || "";
   const noteText = ReactHtmlParser(decodeHTML(props.opts.note)) || "";
-  const optsArray = getOptionsArray(decodeHTML(props.opts.options));
+  const optsArray = getOptionsArray(decodeHTML(props.opts.options, true));
   let displayNoteText = true;
   if (noteText.length < 1 || noteText === "") {
     displayNoteText = false;

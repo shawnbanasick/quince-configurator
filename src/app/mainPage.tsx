@@ -7,6 +7,8 @@ import { v4 as uuidv4 } from "uuid";
 import { Config } from "../sections/config/Config";
 import { Language } from "../sections/language/Language";
 import { Map } from "../sections/map/Map";
+import { ToastContainer } from "react-toastify";
+
 // Add the following import statement for the declaration file
 
 const languages = ["en", "ru", "tm", "ja", "ko", "zh", "es", "fr", "de"];
@@ -21,6 +23,7 @@ export const MainPage = () => {
 
   return (
     <main className="w-screen h-screen flex flex-col space-y-4 items-center justify-center">
+      <ToastContainer />
       <Tabs className="h-screen w-screen p-2">
         <TabList>
           <Tab>Welcome</Tab>

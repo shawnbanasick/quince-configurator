@@ -22,7 +22,6 @@ const SurveyRatings10Element = (props) => {
   const questionId = `itemNum${props.opts.itemNum}`;
   const checkRequiredQuestionsComplete = props.check;
   const labelText = ReactHtmlParser(decodeHTML(props.opts.label)) || "";
-  console.log("labelText: ", labelText);
   const noteText = ReactHtmlParser(decodeHTML(props.opts.note)) || "";
   let displayNoteText = true;
   if (noteText.length < 1 || noteText === "") {
@@ -120,7 +119,6 @@ const SurveyRatings10Element = (props) => {
     const radioList = optsArray.map((item, index) => {
       const itemText = ReactHtmlParser(decodeHTML(item));
       return (
-        // <ItemContainer indexVal={index} key={uuid()}>
         <div
           className="flex h-[40px] items-center content-center pl-2"
           style={{
@@ -132,7 +130,6 @@ const SurveyRatings10Element = (props) => {
           indexVal={index}
           key={uuid()}
         >
-          {/* <OptionsText key={uuid()}>{itemText}</OptionsText> */}
           <div key={uuid()}>{itemText}</div>
           <input
             key={uuid()}

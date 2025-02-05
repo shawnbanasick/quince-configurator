@@ -18,7 +18,9 @@ const SurveyTextAreaElement = (props) => {
   const checkRequiredQuestionsComplete = props.check;
   const labelText = ReactHtmlParser(decodeHTML(props.opts.label)) || "";
   const noteText = ReactHtmlParser(decodeHTML(props.opts.note)) || "";
-  const placeholder = ReactHtmlParser(decodeHTML(props.opts.placeholder)) || "";
+  // true removes div holder so placeholder text renders properly
+  const placeholder =
+    ReactHtmlParser(decodeHTML(props.opts.placeholder, true)) || "";
   let displayNoteText = true;
   if (noteText.length < 1 || noteText === "") {
     displayNoteText = false;

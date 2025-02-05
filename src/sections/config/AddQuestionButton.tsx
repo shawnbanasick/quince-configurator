@@ -2,12 +2,12 @@ import React from "react";
 import { useStore } from "../../globalState/useStore";
 import { shouldDisplayObject } from "./shouldDisplayObject";
 import { decodeHTML } from "../utils/decodeHTML";
+import { useTranslation } from "react-i18next";
+import { ToastContainer, toast } from "react-toastify";
+
 // import clearAddItemForm from "./clearAddItemForm";
 import HtmlParser from "html-react-parser";
 import clone from "lodash/clone";
-
-// const getShowSurveytextImage = (state) => state.showSurveytextImage;
-// const getShowSurveytextareaImage = (state) => state.showSurveytextareaImage;
 
 const getShowSurveyradioImage = (state) => state.showSurveyradioImage;
 const getShowSurveyselectImage = (state) => state.showSurveyselectImage;
@@ -16,8 +16,6 @@ const getShowSurveylikertImage = (state) => state.showSurveylikertImage;
 const getShowSurveyrating2Image = (state) => state.showSurveyrating2Image;
 const getShowSurveyrating5Image = (state) => state.showSurveyrating5Image;
 const getShowSurveyrating10Image = (state) => state.showSurveyrating10Image;
-const getShowSurveyinformationImage = (state) =>
-  state.showSurveyinformationImage;
 const getSurveyQuestionType = (state) => state.surveyQuestionType;
 const getSurveyAnswerRequired = (state) => state.surveyAnswerRequired;
 const getSurveyQuestionLabel = (state) => state.surveyQuestionLabel;
@@ -33,8 +31,6 @@ const getTriggerOptionsWarningModal = (state) =>
   state.triggerOptionsWarningModal;
 const getSurveyQuestionsArray = (state) => state.surveyQuestionsArray;
 const getSetSurveyQuestionsArray = (state) => state.setSurveyQuestionsArray;
-const getSetSurveyQuestionInputPreviewQuestions = (state) =>
-  state.setSurveyQuestionInputPreviewQuestions;
 const getIsEditingSurveyQuestion = (state) => state.isEditingSurveyQuestion;
 const getIsEditingSurveyQuestionIndex = (state) =>
   state.isEditingSurveyQuestionIndex;
@@ -90,9 +86,6 @@ const AddQuestionButton: React.FC = () => {
   const triggerOptionsWarningModal = useStore(getTriggerOptionsWarningModal);
   const surveyQuestionsArray = useStore(getSurveyQuestionsArray);
   const setSurveyQuestionsArray = useStore(getSetSurveyQuestionsArray);
-  const setSurveyQuestionInputPreviewQuestions = useStore(
-    getSetSurveyQuestionInputPreviewQuestions
-  );
   const isEditingSurveyQuestion = useStore(getIsEditingSurveyQuestion);
   const isEditingSurveyQuestionIndex = useStore(
     getIsEditingSurveyQuestionIndex
@@ -101,10 +94,25 @@ const AddQuestionButton: React.FC = () => {
     getSetIsEditingSurveyQuestionIndex
   );
   const setIsEditingSurveyQuestion = useStore(getSetIsEditingSurveyQuestion);
+  const { t } = useTranslation();
 
-  // const showSurveyinformationImage = useStore(getShowSurveyinformationImage);
-  // const showSurveytextImage = useStore(getShowSurveytextImage);
-  // const showSurveytextareaImage = useStore(getShowSurveytextareaImage);
+  const notifySuccess = () => {
+    toast(t("itemAdded"), {
+      className: "p-4 min-w-[150px] bg-green-500 text-white",
+    });
+  };
+
+  const notifyError = () => {
+    toast(t("errorItemNotAdded"), {
+      className: "p-4 min-w-[150px] bg-red-300 text-white",
+    });
+  };
+
+  const notifySuccessEdit = () => {
+    toast(t("itemEdited"), {
+      className: "p-4 min-w-[150px] bg-green-500 text-white",
+    });
+  };
 
   const addSurveyQuestionItem = () => {
     let displayOptionsSemiWarn = false;
@@ -225,10 +233,7 @@ const AddQuestionButton: React.FC = () => {
       let surveyQuestionsArray2 = clone(surveyQuestionsArray);
 
       // ADD new question to ARRAY and save to STATE
-
       if (isEditingSurveyQuestion === true) {
-        console.log("isEditingSurveyQuestion", isEditingSurveyQuestion);
-        console.log("newItemObj", newItemObj);
         const index = isEditingSurveyQuestionIndex;
 
         surveyQuestionsArray2[index] = newItemObj;
@@ -236,31 +241,39 @@ const AddQuestionButton: React.FC = () => {
         setIsEditingSurveyQuestionIndex(null);
         setIsEditingSurveyQuestion(false);
         setSurveyQuestionsArray(surveyQuestionsArray2);
+        notifySuccessEdit();
       } else {
         surveyQuestionsArray2.push(newItemObj);
         setSurveyQuestionsArray(surveyQuestionsArray2);
+        notifySuccess();
       }
 
       const newArray = [...surveyQuestionsArray2];
       localStorage.setItem("surveyQuestionsArray", JSON.stringify(newArray));
-      console.log("newArray", JSON.stringify(newArray, null, 2));
-      // setSurveyQuestionInputPreviewQuestions(newArray);
 
-      return;
-      // notifySuccess();
       // clearAddItemForm();
+      return;
     } catch (error) {
-      // notifyError();
+      notifyError();
       console.log(error);
     }
   }; // end add item
 
+  let displayText = "";
+  if (isEditingSurveyQuestion === true) {
+    displayText = t("saveEditsToQuestion");
+  } else {
+    displayText = t("addQuestionToSurvey");
+  }
+
   return (
-    <div
-      className="h-10 p-2 bg-orange-300 hover:bg-orange-500 select-none border border-1 border-slate-500 rounded-md"
-      onClick={addSurveyQuestionItem}
-    >
-      Add Question to Survey
+    <div>
+      <div
+        className="h-10 p-2 bg-orange-300 hover:bg-orange-500 select-none border border-1 border-slate-500 rounded-md"
+        onClick={addSurveyQuestionItem}
+      >
+        {displayText}
+      </div>
     </div>
   );
 };

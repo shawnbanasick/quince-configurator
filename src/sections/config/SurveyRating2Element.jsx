@@ -126,7 +126,6 @@ const SurveyRatings2Element = (props) => {
   const RadioItems = () => {
     const radioList = optsArray.map((item, index) => {
       const itemText = ReactHtmlParser(decodeHTML(item)) || "";
-      console.log("itemText", itemText);
       return (
         // <ItemContainer indexVal={index} key={uuid()}>
         <div

@@ -4,6 +4,8 @@
   "false": "いいえ",
   "upperLimit": "上限値",
   "lowerLimit": "下限値",
+  "yes": "はい",
+  "no": "いいえ",
 
   "*** WELCOME ***": "*** WELCOME PAGE ***",
   "hello": "こんにちは",
@@ -90,5 +92,17 @@
 
   "*** CONFIG - SURVEY OPTIONS ***": "*** CONFIG SURVEY OPTIONS ***",
   "surveyOptions": "アンケートオプション",
-  "includeSurvey": "アンケートを含める"
+  "includeSurvey": "アンケートを含める",
+  "deleteItem": "アイテムを削除",
+  "areYouSure": "本当に削除しますか？",
+  "cancel": "キャンセル",
+  "delete": "削除",
+  "addQuestionToSurvey": "アンケートに質問を追加",
+  "saveEditsToQuestion": "質問への編集を保存",
+  "readyForEdit": "編集の準備完了",
+  "itemAdded": "アイテムが追加された",
+  "itemReadyForEditing": "アイテムの編集が準備完了",
+  "itemEdited": "アイテムが編集された",
+  "itemDeleted": "アイテムを削除された",
+  "errorItemNotAdded": "エラー：アイテムが追加されていない"
 }

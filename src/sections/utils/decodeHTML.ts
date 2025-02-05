@@ -1,9 +1,8 @@
-const decodeHTML = (string) => {
+const decodeHTML = (string, placeholderFlag = false) => {
   try {
     let shouldDoReplace = true; //string.includes("{{{");
     if (shouldDoReplace === true) {
       let string2 = `${string}`;
-      console.log("string2", `This is the ${string2}.`);
 
       if (shouldDoReplace === true) {
         const replaceAmp = /&amp;/gi;
@@ -16,10 +15,11 @@ const decodeHTML = (string) => {
         const stringText3 = stringText25.replace(replaceRight, ">");
         const stringText5 = stringText3.replace(replaceQuote, '"');
         const stringText6 = stringText5.replace(replaceAmp, "&");
-
-        console.log("string2", `This is the 2nd ${stringText6}.`);
-
-        return `<div>${stringText6}</div>`;
+        if (placeholderFlag) {
+          return stringText6;
+        } else {
+          return `<div>${stringText6}</div>`;
+        }
       }
     } else {
       return string;

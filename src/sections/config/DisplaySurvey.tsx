@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useRef } from "react";
 import SurveyTextElement from "./SurveyTextElement";
 import SurveyTextAreaElement from "./SurveyTextAreaElement";
 import SurveyRadioElement from "./SurveyRadioElement";
@@ -15,6 +15,9 @@ import UpArrows from "../../assets/images/upArrows.svg";
 import DownArrows from "../../assets/images/downArrows.svg";
 import TrashCan from "../../assets/images/trashCan.svg";
 import EditIcon from "../../assets/images/editIcon.svg";
+import { DeleteSurveyItemModal } from "./DeleteSurveyItemModal";
+import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
 
 const getSurveyQuestionsArray = (state) => state.surveyQuestionsArray;
 const getSetSurveyQuestionsArray = (state) => state.setSurveyQuestionsArray;
@@ -36,6 +39,8 @@ const getSetIsEditingSurveyQuestion = (state) =>
   state.setIsEditingSurveyQuestion;
 const getSetIsEditingSurveyQuestionIndex = (state) =>
   state.setIsEditingSurveyQuestionIndex;
+const getSetTriggerSurveyQuestionDeleteModal = (state) =>
+  state.setTriggerSurveyQuestionDeleteModal;
 
 const SurveyPageQuestions = () => {
   const checkRequiredQuestionsComplete = false;
@@ -58,9 +63,26 @@ const SurveyPageQuestions = () => {
   const setIsEditingSurveyQuestionIndex = useStore(
     getSetIsEditingSurveyQuestionIndex
   );
+  const setTriggerSurveyQuestionDeleteModal = useStore(
+    getSetTriggerSurveyQuestionDeleteModal
+  );
+  const { t } = useTranslation();
+
+  const notifyReadyForEdit = () => {
+    toast(t("readyForEdit"), {
+      className: "p-4 min-w-[150px] bg-blue-500 text-white",
+    });
+  };
+
+  const notifyQuestionDeleted = () => {
+    toast(t("itemDeleted"), {
+      className: "p-4 min-w-[150px] bg-orange-500 text-white",
+    });
+  };
+
+  const itemToDeleteIndexRef = useRef(-1);
 
   const handleMoveUp = (e) => {
-    console.log("e.target.id", e.target.id);
     const clickedItemIndex = parseInt(e.target.id);
     if (clickedItemIndex === 0) {
       return; // Element is already at the start
@@ -87,25 +109,31 @@ const SurveyPageQuestions = () => {
     setSurveyQuestionsArray([...surveyQuestionsArray]);
     return;
   };
+
+  const handleConfirmDelete = () => {
+    if (itemToDeleteIndexRef.current !== -1) {
+      const updatedArray = [...surveyQuestionsArray];
+      updatedArray.splice(itemToDeleteIndexRef.current, 1);
+      setSurveyQuestionsArray(updatedArray);
+      itemToDeleteIndexRef.current = -1;
+    }
+    setTriggerSurveyQuestionDeleteModal(false);
+    notifyQuestionDeleted();
+  };
+
   const handleDelete = (e) => {
-    console.log("Delete clicked", e);
-    const clickedItemIndex = parseInt(e.target.id);
-    console.log("clickedItemIndex", clickedItemIndex);
-    // remove the item from the array
-    surveyQuestionsArray.splice(clickedItemIndex, 1);
-    setSurveyQuestionsArray([...surveyQuestionsArray]);
+    const clickedItemIndex = parseInt(e.currentTarget.id);
+    itemToDeleteIndexRef.current = clickedItemIndex;
+    setTriggerSurveyQuestionDeleteModal(true);
   };
   const handleEdit = (e) => {
-    console.log("Edit clicked");
     const clickedItemIndex = parseInt(e.target.id);
-    console.log("clickedItemIndex", clickedItemIndex);
     const targetObject = surveyQuestionsArray[clickedItemIndex];
     const keys = Object.keys(targetObject);
 
     setIsEditingSurveyQuestion(true);
     setIsEditingSurveyQuestionIndex(clickedItemIndex);
 
-    console.log("keys", JSON.stringify(keys));
     keys.forEach((key) => {
       if (key === "surveyQuestionType") {
         setSurveyQuestionType(targetObject[key]);
@@ -141,48 +169,44 @@ const SurveyPageQuestions = () => {
         setConfigSurveyInfoBarColor(targetObject[key]);
       }
     });
+    notifyReadyForEdit();
   };
 
   const SurveyQuestions = (surveyQuestionsArray) => {
-    console.log("surveyQuestionObjects", JSON.stringify(surveyQuestionsArray));
-
     if (surveyQuestionsArray.length === 0) {
       return <div>No questions added.</div>;
     } else {
       const QuestionList = surveyQuestionsArray.map((object, index) => {
         if (object.surveyQuestionType === "text") {
           return (
-            <div
-              key={uuid()}
-              className="flex flex-row border-2 border-red-300 rounded-md"
-            >
+            <div key={uuid()} className="flex flex-row rounded-md">
               <SurveyTextElement
                 key={uuid()}
                 id={index}
                 check={checkRequiredQuestionsComplete}
                 opts={object}
               />
-              <div className="flex flex-row w-[130px]">
+              <div className="flex flex-row mt-5 w-[130px]">
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   id={index}
                   onClick={handleMoveUp}
                   src={UpArrows}
                 />
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   id={index}
                   onClick={handleDelete}
                   src={TrashCan}
                 />
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   onClick={handleEdit}
                   id={index}
                   src={EditIcon}
                 />
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   id={index}
                   onClick={handleMoveDown}
                   src={DownArrows}
@@ -193,36 +217,33 @@ const SurveyPageQuestions = () => {
         }
         if (object.surveyQuestionType === "textarea") {
           return (
-            <div
-              key={uuid()}
-              className="flex flex-row border-2 border-red-300 rounded-md"
-            >
+            <div key={uuid()} className="flex flex-row rounded-md">
               <SurveyTextAreaElement
                 check={checkRequiredQuestionsComplete}
                 id={index}
                 opts={object}
               />
-              <div className="flex flex-row w-[130px]">
+              <div className="flex flex-row mt-5 w-[130px]">
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   id={index}
                   onClick={handleMoveUp}
                   src={UpArrows}
                 />
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   onClick={handleDelete}
                   id={index}
                   src={TrashCan}
                 />
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   onClick={handleEdit}
                   id={index}
                   src={EditIcon}
                 />
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   id={index}
                   onClick={handleMoveDown}
                   src={DownArrows}
@@ -233,37 +254,34 @@ const SurveyPageQuestions = () => {
         }
         if (object.surveyQuestionType === "radio") {
           return (
-            <div
-              key={uuid()}
-              className="flex flex-row border-2 border-red-300 rounded-md"
-            >
+            <div key={uuid()} className="flex flex-row rounded-md">
               <SurveyRadioElement
                 key={uuid()}
                 id={index}
                 check={checkRequiredQuestionsComplete}
                 opts={object}
               />
-              <div className="flex flex-row w-[130px]">
+              <div className="flex flex-row  mt-5 w-[130px]">
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   id={index}
                   onClick={handleMoveUp}
                   src={UpArrows}
                 />
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   id={index}
                   onClick={handleDelete}
                   src={TrashCan}
                 />
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   onClick={handleEdit}
                   id={index}
                   src={EditIcon}
                 />
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   id={index}
                   onClick={handleMoveDown}
                   src={DownArrows}
@@ -274,37 +292,34 @@ const SurveyPageQuestions = () => {
         }
         if (object.surveyQuestionType === "select") {
           return (
-            <div
-              key={uuid()}
-              className="flex flex-row border-2 border-red-300 rounded-md"
-            >
+            <div key={uuid()} className="flex flex-row rounded-md">
               <SurveyDropdownElement
                 key={uuid()}
                 id={index}
                 check={checkRequiredQuestionsComplete}
                 opts={object}
               />
-              <div className="flex flex-row w-[130px]">
+              <div className="flex flex-row mt-5 w-[130px]">
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   id={index}
                   onClick={handleMoveUp}
                   src={UpArrows}
                 />
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   id={index}
                   onClick={handleDelete}
                   src={TrashCan}
                 />
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   onClick={handleEdit}
                   id={index}
                   src={EditIcon}
                 />
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   id={index}
                   onClick={handleMoveDown}
                   src={DownArrows}
@@ -315,37 +330,34 @@ const SurveyPageQuestions = () => {
         }
         if (object.surveyQuestionType === "checkbox") {
           return (
-            <div
-              key={uuid()}
-              className="flex flex-row border-2 border-red-300 rounded-md"
-            >
+            <div key={uuid()} className="flex flex-row rounded-md">
               <SurveyCheckboxElement
                 key={uuid()}
                 id={index}
                 check={checkRequiredQuestionsComplete}
                 opts={object}
               />
-              <div className="flex flex-row w-[130px]">
+              <div className="flex flex-row mt-5 w-[130px]">
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   id={index}
                   onClick={handleMoveUp}
                   src={UpArrows}
                 />
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   id={index}
                   onClick={handleDelete}
                   src={TrashCan}
                 />
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   onClick={handleEdit}
                   id={index}
                   src={EditIcon}
                 />
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   id={index}
                   onClick={handleMoveDown}
                   src={DownArrows}
@@ -356,37 +368,34 @@ const SurveyPageQuestions = () => {
         }
         if (object.surveyQuestionType === "rating2") {
           return (
-            <div
-              key={uuid()}
-              className="flex flex-row border-2 border-red-300 rounded-md"
-            >
+            <div key={uuid()} className="flex flex-row rounded-md">
               <SurveyRating2Element
                 key={uuid()}
                 id={index}
                 check={checkRequiredQuestionsComplete}
                 opts={object}
               />
-              <div className="flex flex-row w-[130px]">
+              <div className="flex flex-row mt-5 w-[130px]">
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   id={index}
                   onClick={handleMoveUp}
                   src={UpArrows}
                 />
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   id={index}
                   onClick={handleDelete}
                   src={TrashCan}
                 />
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   onClick={handleEdit}
                   id={index}
                   src={EditIcon}
                 />
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   id={index}
                   onClick={handleMoveDown}
                   src={DownArrows}
@@ -397,37 +406,34 @@ const SurveyPageQuestions = () => {
         }
         if (object.surveyQuestionType === "likert") {
           return (
-            <div
-              key={uuid()}
-              className="flex flex-row border-2 border-red-300 rounded-md"
-            >
+            <div key={uuid()} className="flex flex-row rounded-md">
               <SurveyLikertElement
                 key={uuid()}
                 id={index}
                 check={checkRequiredQuestionsComplete}
                 opts={object}
               />
-              <div className="flex flex-row w-[130px]">
+              <div className="flex flex-row mt-5 w-[130px]">
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   id={index}
                   onClick={handleMoveUp}
                   src={UpArrows}
                 />
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   id={index}
                   onClick={handleDelete}
                   src={TrashCan}
                 />
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   onClick={handleEdit}
                   id={index}
                   src={EditIcon}
                 />
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   id={index}
                   onClick={handleMoveDown}
                   src={DownArrows}
@@ -437,39 +443,35 @@ const SurveyPageQuestions = () => {
           );
         }
         if (object.surveyQuestionType === "rating5") {
-          console.log("object", JSON.stringify(object));
           return (
-            <div
-              key={uuid()}
-              className="flex flex-row border-2 border-red-300 rounded-md"
-            >
+            <div key={uuid()} className="flex flex-row rounded-md">
               <SurveyRating5Element
                 key={uuid()}
                 id={index}
                 check={checkRequiredQuestionsComplete}
                 opts={object}
               />
-              <div className="flex flex-row w-[130px]">
+              <div className="flex flex-row mt-5 w-[130px]">
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   id={index}
                   onClick={handleMoveUp}
                   src={UpArrows}
                 />
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   id={index}
                   onClick={handleDelete}
                   src={TrashCan}
                 />
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   onClick={handleEdit}
                   id={index}
                   src={EditIcon}
                 />
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   id={index}
                   onClick={handleMoveDown}
                   src={DownArrows}
@@ -480,37 +482,34 @@ const SurveyPageQuestions = () => {
         }
         if (object.surveyQuestionType === "rating10") {
           return (
-            <div
-              key={uuid()}
-              className="flex flex-row border-2 border-red-300 rounded-md"
-            >
+            <div key={uuid()} className="flex flex-row rounded-md">
               <SurveyRating10Element
                 key={uuid()}
                 id={index}
                 check={checkRequiredQuestionsComplete}
                 opts={object}
               />
-              <div className="flex flex-row w-[130px]">
+              <div className="flex flex-row mt-5 w-[130px]">
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   id={index}
                   onClick={handleMoveUp}
                   src={UpArrows}
                 />
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   id={index}
                   onClick={handleDelete}
                   src={TrashCan}
                 />
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   onClick={handleEdit}
                   id={index}
                   src={EditIcon}
                 />
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   id={index}
                   onClick={handleMoveDown}
                   src={DownArrows}
@@ -521,32 +520,29 @@ const SurveyPageQuestions = () => {
         }
         if (object.surveyQuestionType === "information") {
           return (
-            <div
-              key={uuid()}
-              className="flex flex-row border-2 border-red-300 rounded-md"
-            >
+            <div key={uuid()} className="flex flex-row rounded-md">
               <SurveyInformationElement id={index} key={uuid()} opts={object} />
-              <div className="flex flex-row w-[130px]">
+              <div className="flex flex-row  mt-5 w-[130px]">
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   id={index}
                   onClick={handleMoveUp}
                   src={UpArrows}
                 />
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   id={index}
                   onClick={handleDelete}
                   src={TrashCan}
                 />
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   onClick={handleEdit}
                   id={index}
                   src={EditIcon}
                 />
                 <img
-                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  className="m-2 w-[26px] h-[30px]  active:bg-orange-300 hover:outline outline-2 outline-slate-300"
                   id={index}
                   onClick={handleMoveDown}
                   src={DownArrows}
@@ -557,49 +553,18 @@ const SurveyPageQuestions = () => {
         }
         return null;
       });
-      console.log("QuestionList", QuestionList, null, 2);
       return QuestionList;
     }
   };
 
   return (
-    <React.Fragment>
-      <h2 className="mt-8"> Survey Question Preview</h2>
+    <div className="h-[800px] w-full">
+      <DeleteSurveyItemModal handleConfirmDelete={handleConfirmDelete} />
+      <hr className="mt-12 h-1 bg-slate-400 rounded-md" />
+      <h2 className="mt-12 mb-4"> Survey Question Preview</h2>
       <div className="w-full">{SurveyQuestions(surveyQuestionsArray)}</div>
-    </React.Fragment>
+    </div>
   );
 };
 
 export default SurveyPageQuestions;
-
-// const Container = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   padding-bottom: 150px;
-//   margin-top: 50px;
-// `;
-
-// const SortTitleBar = styled.div`
-//   width: 100vw;
-//   padding-left: 1.5vw;
-//   padding-right: 1.5vw;
-//   padding-top: 5px;
-//   min-height: 50px;
-//   background-color: ${(props) => props.background};
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   color: white;
-//   font-weight: bold;
-//   font-size: 28px;
-//   position: fixed;
-//   top: 0;
-//   z-index: 9999;
-// `;
-
-// const NoQuestionsDiv = styled.div`
-//   margin-top: 50px;
-//   font-size: 24px;
-//   font-weight: bold;
-// `;

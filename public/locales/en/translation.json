@@ -4,6 +4,8 @@
   "false": "false",
   "upperLimit": "Upper Limit",
   "lowerLimit": "Lower Limit",
+  "yes": "Yes",
+  "no": "No",
 
   "*** WELCOME ***": "*** WELCOME PAGE ***",
   "hello": "Hello",
@@ -90,5 +92,17 @@
 
   "*** CONFIG - SURVEY OPTIONS ***": "*** CONFIG SURVEY OPTIONS ***",
   "surveyOptions": "Questionnaire Options",
-  "includeSurvey": "Include Questionnaire"
+  "includeSurvey": "Include Questionnaire",
+  "deleteItem": "Delete Item",
+  "areYouSure": "Are you sure you want to delete this item?",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "addQuestionToSurvey": "Add Question to Survey",
+  "saveEditsToQuestion": "Save Edits to Question",
+  "readyForEdit": "Ready for Edit",
+  "itemAdded": "Item Added",
+  "itemReadyForEditing": "Item Ready for Editing",
+  "itemEdited": "Item Edited",
+  "itemDeleted": "Item Deleted",
+  "errorItemNotAdded": "Error: Item Not Added"
 }
