@@ -3,6 +3,7 @@ import { v4 as uuid } from "uuid";
 import ReactHtmlParser from "html-react-parser";
 import flatten from "lodash/flatten";
 import countBy from "lodash/countBy";
+import { decodeHTML } from "../utils/decodeHTML";
 
 const SurveyCheckboxElement = (props) => {
   // HELPER FUNCTIONS
@@ -21,8 +22,8 @@ const SurveyCheckboxElement = (props) => {
   const optsArray = getOptionsArray(props.opts.options);
   const nameValue = `question${props.opts.itemNum}`;
   let questionId = props.opts.id;
-  const labelText = ReactHtmlParser(props.opts.label) || "";
-  const noteText = ReactHtmlParser(props.opts.note) || "";
+  const labelText = ReactHtmlParser(decodeHTML(props.opts.label)) || "";
+  const noteText = ReactHtmlParser(decodeHTML(props.opts.note)) || "";
   let displayNoteText = true;
   if (noteText.length < 1 || noteText === "") {
     displayNoteText = false;
@@ -104,7 +105,7 @@ const SurveyCheckboxElement = (props) => {
   if (true) {
     return (
       // <Container bgColor={formatOptions.bgColor} border={formatOptions.border}>
-      <div className="w-12/12 p-[20px] max-w[1300px] bg-[whitesmoke] outline outline-1 outline-gray-300 outline-none mt-1 ">
+      <div className="w-10/12 p-[20px] max-w[1300px] bg-[whitesmoke] outline outline-1 outline-gray-300 outline-none mt-1 ">
         {/* <TitleBar> */}
         <div className="bg-gray-300 flex items-center justify-center p-[5px] min-h-[20px] text-[18px] text-center w-full rounded-[3px]">
           <div>{labelText}</div>

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { v4 as uuid } from "uuid";
 import ReactHtmlParser from "html-react-parser";
+import { decodeHTML } from "../utils/decodeHTML";
 
 const SurveyLikertElement = (props) => {
   const checkRequiredQuestionsComplete = props.check;
   const questionId = `itemNum${props.opts.itemNum}`;
-  const labelText = ReactHtmlParser(props.opts.label) || "";
+  const labelText = ReactHtmlParser(decodeHTML(props.opts.label)) || "";
 
   let [selected, setSelected] = useState("");
   const [formatOptions, setFormatOptions] = useState({
@@ -41,7 +42,7 @@ const SurveyLikertElement = (props) => {
 
   const scaleList = scaleArray.map((item) => (
     <div key={uuid()} className="flex justify-center items-center text-center">
-      {ReactHtmlParser(item)}
+      {ReactHtmlParser(decodeHTML(item))}
     </div>
   ));
 
@@ -75,7 +76,7 @@ const SurveyLikertElement = (props) => {
 
   return (
     <div
-      className={`w-12/12 p-[20px] max-w[1300px] bg-[whitesmoke] outline outline-1 outline-gray-300 outline-none mt-1`}
+      className={`w-10/12 p-[20px] max-w[1300px] bg-[whitesmoke] outline outline-1 outline-gray-300 outline-none mt-1`}
     >
       <div className="bg-gray-300 flex items-center justify-center p-[5px] min-h-[20px] text-[18px] text-center w-full rounded-[3px]">
         {labelText}

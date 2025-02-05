@@ -27,6 +27,11 @@ const Config6LandingPageOptions: React.FC = () => {
     setAccessCode(event.target.value);
   };
 
+  let accessCodeInputDisabled = false;
+  if (initialScreen === "anonymous" || initialScreen === "partId") {
+    accessCodeInputDisabled = true;
+  }
+
   return (
     <div className="flex flex-col  pt-6 pb-2 hover:bg-gray-100 hover:outline outline-2 outline-zinc-600 p-2 hover:rounded-md">
       <div className="flex flex-row content-center gap-5 mt-3">
@@ -80,12 +85,14 @@ const Config6LandingPageOptions: React.FC = () => {
 
       <UserTextInput
         classNameText={`mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
-        classNameLabel={`min-w-[130px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+        classNameLabel={`min-w-[170px] content-center pt-1 mr-1 disabled:opacity-50 ${
+          accessCodeInputDisabled ? "text-slate-400" : ""
+        } select-none`}
         highlight={true}
         label={`6b. ${t("accessCode")}:`}
         placeholder={t("inputAccessCode")}
-        disabled={false}
-        name="emailInput"
+        disabled={accessCodeInputDisabled}
+        name="accessCodeInput"
         value={accessCode}
         onChange={handleAccessCodeChange}
       />

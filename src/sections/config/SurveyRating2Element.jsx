@@ -3,6 +3,7 @@ import { v4 as uuid } from "uuid";
 import ReactHtmlParser from "html-react-parser";
 import flatten from "lodash/flatten";
 import countBy from "lodash/countBy";
+import { decodeHTML } from "../utils/decodeHTML";
 
 const SurveyRatings2Element = (props) => {
   // HELPER FUNCTIONS
@@ -23,8 +24,8 @@ const SurveyRatings2Element = (props) => {
   // gives the number of questions
   const rows = optsArray.length;
   const questionId = `itemNum${props.opts.itemNum}`;
-  const labelText = ReactHtmlParser(props.opts.label) || "";
-  const noteText = ReactHtmlParser(props.opts.note) || "";
+  const labelText = ReactHtmlParser(decodeHTML(props.opts.label)) || "";
+  const noteText = ReactHtmlParser(decodeHTML(props.opts.note)) || "";
   let displayNoteText = true;
   if (noteText.length < 1 || noteText === "") {
     displayNoteText = false;
@@ -124,7 +125,7 @@ const SurveyRatings2Element = (props) => {
 
   const RadioItems = () => {
     const radioList = optsArray.map((item, index) => {
-      const itemText = ReactHtmlParser(item) || "";
+      const itemText = ReactHtmlParser(decodeHTML(item)) || "";
       console.log("itemText", itemText);
       return (
         // <ItemContainer indexVal={index} key={uuid()}>
@@ -170,7 +171,7 @@ const SurveyRatings2Element = (props) => {
   if (true) {
     return (
       // <Container bgColor={formatOptions.bgColor} border={formatOptions.border}>
-      <div className="w-12/12 p-[20px] max-w[1300px] bg-[whitesmoke] outline outline-1 outline-gray-300 outline-none mt-1 ">
+      <div className="w-10/12 p-[20px] max-w[1300px] bg-[whitesmoke] outline outline-1 outline-gray-300 outline-none mt-1 ">
         {/* <TitleBar> */}
         <div>
           <div className="bg-gray-300 flex items-center justify-center p-[5px] min-h-[20px] text-[18px] text-center w-full rounded-[3px]">
@@ -193,11 +194,11 @@ const SurveyRatings2Element = (props) => {
             {/* <ScaleDiv> */}
             <div> </div>
             <div className="flex justify-center items-center">
-              <div>{ReactHtmlParser(scaleArray[0])}</div>
+              <div>{ReactHtmlParser(decodeHTML(scaleArray[0]))}</div>
             </div>
             {/* <ScaleDiv> */}
             <div className="flex justify-center items-center">
-              <div>{ReactHtmlParser(scaleArray[1])}</div>
+              <div>{ReactHtmlParser(decodeHTML(scaleArray[1]))}</div>
             </div>
           </div>
           <RadioItems />

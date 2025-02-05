@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ReactHtmlParser from "html-react-parser";
+import { decodeHTML } from "../utils/decodeHTML";
+
 // import sanitizeString from "../../utilities/sanitizeString.js";
 
 const SurveyTextAreaElement = (props) => {
@@ -14,9 +16,9 @@ const SurveyTextAreaElement = (props) => {
   // FROM PROPS
   const id = `itemNum${props.opts.itemNum}`;
   const checkRequiredQuestionsComplete = props.check;
-  const labelText = ReactHtmlParser(props.opts.label) || "";
-  const noteText = ReactHtmlParser(props.opts.note) || "";
-  const placeholder = ReactHtmlParser(props.opts.placeholder) || "";
+  const labelText = ReactHtmlParser(decodeHTML(props.opts.label)) || "";
+  const noteText = ReactHtmlParser(decodeHTML(props.opts.note)) || "";
+  const placeholder = ReactHtmlParser(decodeHTML(props.opts.placeholder)) || "";
   let displayNoteText = true;
   if (noteText.length < 1 || noteText === "") {
     displayNoteText = false;
@@ -82,7 +84,7 @@ const SurveyTextAreaElement = (props) => {
   if (true) {
     return (
       // <Container bgColor={formatOptions.bgColor} border={formatOptions.border}>
-      <div className="w-12/12 p-[20px]  max-w[1300px] bg-[whitesmoke] outline outline-1 outline-gray-300 outline-none mt-1 ">
+      <div className="w-10/12 p-[20px]  max-w[1300px] bg-[whitesmoke] outline outline-1 outline-gray-300 outline-none mt-1 ">
         {/* <TitleBar> */}
         <div className="bg-gray-300 flex items-center justify-center p-[5px] min-h-[20px] text-[18px] text-center w-full rounded-[3px]">
           <div>{labelText}</div>

@@ -3,6 +3,7 @@ import { v4 as uuid } from "uuid";
 import ReactHtmlParser from "html-react-parser";
 import flatten from "lodash/flatten";
 import countBy from "lodash/countBy";
+import { decodeHTML } from "../utils/decodeHTML";
 
 const SurveyRatings5Element = (props) => {
   // HELPER FUNCTIONS
@@ -19,12 +20,12 @@ const SurveyRatings5Element = (props) => {
   const rows = optsArray.length;
   const questionId = `itemNum${props.opts.itemNum}`;
   const checkRequiredQuestionsComplete = props.check;
-  const noteText = ReactHtmlParser(props.opts.note) || "";
+  const noteText = ReactHtmlParser(decodeHTML(props.opts.note)) || "";
   let displayNoteText = true;
   if (noteText.length < 1 || noteText === "") {
     displayNoteText = false;
   }
-  const labelText = ReactHtmlParser(props.opts.label) || "";
+  const labelText = ReactHtmlParser(decodeHTML(props.opts.label)) || "";
 
   // PERSISTENT STATE
   let [checked5State, setChecked5State] = useState(
@@ -117,7 +118,7 @@ const SurveyRatings5Element = (props) => {
 
   const RadioItems = () => {
     const radioList = optsArray.map((item, index) => {
-      const itemText = ReactHtmlParser(item);
+      const itemText = ReactHtmlParser(decodeHTML(item));
       return (
         // <ItemContainer indexVal={index} key={uuid()}>
         <div
@@ -188,7 +189,7 @@ const SurveyRatings5Element = (props) => {
   if (true) {
     return (
       // <Container bgColor={formatOptions.bgColor} border={formatOptions.border}>
-      <div className="w-12/12 p-[20px] max-w[1300px] bg-[whitesmoke] outline outline-1 outline-gray-300 outline-none mt-1 ">
+      <div className="w-10/12 p-[20px] max-w[1300px] bg-[whitesmoke] outline outline-1 outline-gray-300 outline-none mt-1 ">
         {/* <TitleBar> */}
         <div>
           <div className="bg-gray-300 flex items-center justify-center p-[5px] min-h-[20px] text-[18px] text-center w-full rounded-[3px]">

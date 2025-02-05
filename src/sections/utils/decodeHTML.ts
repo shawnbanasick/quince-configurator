@@ -1,9 +1,9 @@
 const decodeHTML = (string) => {
   try {
     let shouldDoReplace = true; //string.includes("{{{");
-
     if (shouldDoReplace === true) {
       let string2 = `${string}`;
+      console.log("string2", `This is the ${string2}.`);
 
       if (shouldDoReplace === true) {
         const replaceAmp = /&amp;/gi;
@@ -17,7 +17,9 @@ const decodeHTML = (string) => {
         const stringText5 = stringText3.replace(replaceQuote, '"');
         const stringText6 = stringText5.replace(replaceAmp, "&");
 
-        return stringText6;
+        console.log("string2", `This is the 2nd ${stringText6}.`);
+
+        return `<div>${stringText6}</div>`;
       }
     } else {
       return string;
@@ -28,4 +30,4 @@ const decodeHTML = (string) => {
   }
 };
 
-export default decodeHTML;
+export { decodeHTML };

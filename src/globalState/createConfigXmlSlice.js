@@ -83,7 +83,15 @@ const createConfigXmlSlice = (set, get) => ({
   surveyQuestionsArray: [],
   displayOptionsSemiWarn: false,
   surveyQuestionInputPreviewQuestions: [],
+  isEditingSurveyQuestion: false,
+  isEditingSurveyQuestionIndex: -1,
 
+  setIsEditingSurveyQuestionIndex: (index) => {
+    set(() => ({ isEditingSurveyQuestionIndex: index }));
+  },
+  setIsEditingSurveyQuestion: (bool) => {
+    set(() => ({ isEditingSurveyQuestion: bool }));
+  },
   setSurveyQuestionInputPreviewQuestions: (questions) => {
     set(() => ({ surveyQuestionInputPreviewQuestions: questions }));
   },

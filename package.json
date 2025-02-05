@@ -10,9 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@rgrove/parse-xml": "^4.2.0",
     "@types/lodash": "^4.17.14",
     "clsx": "^2.1.0",
-    "fast-xml-parser": "^4.5.1",
     "html-react-parser": "^5.2.2",
     "i18next": "^23.10.0",
     "i18next-browser-languagedetector": "^7.2.0",
@@ -25,6 +25,7 @@
     "react-multi-select-component": "^4.3.4",
     "react-tabs": "^6.0.2",
     "react-toastify": "^11.0.3",
+    "react-xml-parser": "^1.1.8",
     "uuid": "^11.0.2",
     "zustand": "^5.0.1"
   },

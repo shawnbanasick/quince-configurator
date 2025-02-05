@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { v4 as uuid } from "uuid";
 import ReactHtmlParser from "html-react-parser";
+import { decodeHTML } from "../utils/decodeHTML";
 
 const SurveyRadioElement = (props) => {
   // HELPER FUNCTION
@@ -16,9 +17,9 @@ const SurveyRadioElement = (props) => {
   // PROPS
   let questionId = props.opts.id;
   const checkRequiredQuestionsComplete = props.check;
-  const labelText = ReactHtmlParser(props.opts.label) || "";
-  const noteText = ReactHtmlParser(props.opts.note) || "";
-  const optsArray = getOptionsArray(props.opts.options);
+  const labelText = ReactHtmlParser(decodeHTML(props.opts.label)) || "";
+  const noteText = ReactHtmlParser(decodeHTML(props.opts.note)) || "";
+  const optsArray = getOptionsArray(decodeHTML(props.opts.options));
   let displayNoteText = true;
   if (noteText.length < 1 || noteText === "") {
     displayNoteText = false;
@@ -105,7 +106,7 @@ const SurveyRadioElement = (props) => {
   if (true) {
     return (
       // <Container bgColor={formatOptions.bgColor} border={formatOptions.border}>
-      <div className="w-12/12 p-[20px] max-w[1300px] bg-[whitesmoke] outline outline-1 outline-gray-300 outline-none mt-1 ">
+      <div className="w-10/12 p-[20px] max-w[1300px] bg-[whitesmoke] outline outline-1 outline-gray-300 outline-none mt-1 ">
         {/* <TitleBar> */}
         <div className="bg-gray-300 flex items-center justify-center p-[5px] min-h-[20px] text-[18px] text-center w-full rounded-[3px]">
           <div>{labelText}</div>

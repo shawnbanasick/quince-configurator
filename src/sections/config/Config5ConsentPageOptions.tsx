@@ -107,7 +107,7 @@ const Config5ConsentPageOptions: React.FC = () => {
                   !showConsentPageHelpModal,
               }
             )}
-            htmlFor="useImagesTrue"
+            htmlFor="showConsentPageHelpModalTrue"
           >
             <input
               type="radio"
@@ -125,12 +125,12 @@ const Config5ConsentPageOptions: React.FC = () => {
             className={clsx(
               "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
               {
-                "bg-opacity-100": !showConsentPage,
+                "bg-opacity-100": !showConsentPageHelpModal,
                 "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
-                  showConsentPage,
+                  showConsentPageHelpModal,
               }
             )}
-            htmlFor="useImagesFalse"
+            htmlFor="showConsentPageHelpModalFalse"
           >
             <input
               type="radio"
@@ -138,7 +138,7 @@ const Config5ConsentPageOptions: React.FC = () => {
               name="showConsentPageHelpModal"
               id="showConsentPageHelpModalFalse" // htlmlFor targets this id.
               value="false"
-              checked={!showConsentPage}
+              checked={!showConsentPageHelpModal}
               onChange={handleShowConsentPageHelpModalChange}
             />
             {t("false")}

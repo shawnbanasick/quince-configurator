@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SurveyTextElement from "./SurveyTextElement";
 import SurveyTextAreaElement from "./SurveyTextAreaElement";
 import SurveyRadioElement from "./SurveyRadioElement";
@@ -10,138 +10,554 @@ import SurveyRating10Element from "./SurveyRating10Element";
 import SurveyLikertElement from "./SurveyLikertElement";
 import SurveyInformationElement from "./SurveyInformationElement";
 import { v4 as uuid } from "uuid";
-// import AnswerAllSurveyQuestionsModal from "./AnswerAllSurveyQuestionsModal";
-// import ReactHtmlParser from "html-react-parser";
-// import decodeHTML from "../../utilities/decodeHTML";
-// import SurveyHelpModal from "./SurveyHelpModal";
-// import useSettingsStore from "../../globalState/useSettingsStore";
 import { useStore } from "../../globalState/useStore";
-// import PromptUnload from "../../utilities/PromptUnload";
+import UpArrows from "../../assets/images/upArrows.svg";
+import DownArrows from "../../assets/images/downArrows.svg";
+import TrashCan from "../../assets/images/trashCan.svg";
+import EditIcon from "../../assets/images/editIcon.svg";
 
-// const getLangObj = (state) => state.langObj;
-// const getConfigObj = (state) => state.configObj;
-// const getSurveyQuestionObjArray = (state) => state.surveyQuestionObjArray;
-const getCheckReqQuesComplete = (state) => state.checkRequiredQuestionsComplete;
-// const getSetDisplayNextButton = (state) => state.setDisplayNextButton;
+const getSurveyQuestionsArray = (state) => state.surveyQuestionsArray;
+const getSetSurveyQuestionsArray = (state) => state.setSurveyQuestionsArray;
+const getSetSurveyQuestionType = (state) => state.setSurveyQuestionType;
+const getSetSurveyAnswerRequired = (state) => state.setSurveyAnswerRequired;
+const getSetSurveyQuestionLabel = (state) => state.setSurveyQuestionLabel;
+const getSetSurveyQuestionNote = (state) => state.setSurveyQuestionNote;
+const getSetSurveyQuestionOptions = (state) => state.setSurveyQuestionOptions;
+const getSetSurveyQuestionScale = (state) => state.setSurveyQuestionScale;
+const getSetSurveyQuestionPlaceholder = (state) =>
+  state.setSurveyQuestionPlaceholder;
+const getSetSurveyAnswerLenIsLimited = (state) =>
+  state.setSurveyAnswerLenIsLimited;
+const getSetSurveyAnswerLenMax = (state) => state.setSurveyAnswerLenMax;
+const getSetSurveyAnswerRestricted = (state) => state.setSurveyAnswerRestricted;
+const getSetConfigSurveyInfoBarColor = (state) =>
+  state.setConfigSurveyInfoBarColor;
+const getSetIsEditingSurveyQuestion = (state) =>
+  state.setIsEditingSurveyQuestion;
+const getSetIsEditingSurveyQuestionIndex = (state) =>
+  state.setIsEditingSurveyQuestionIndex;
 
-const getSurveyQuestionInputPreviewQuestions = (state) =>
-  state.surveyQuestionInputPreviewQuestions;
-
-const SurveyPage = () => {
-  const surveyQuestionInputPreviewQuestions = useStore(
-    getSurveyQuestionInputPreviewQuestions
-  );
-  // STATE
-  //   const configObj = useSettingsStore(getConfigObj);
-  //   const langObj = useSettingsStore(getLangObj);
-  //   const surveyQuestionObjArray = useSettingsStore(getSurveyQuestionObjArray);
+const SurveyPageQuestions = () => {
   const checkRequiredQuestionsComplete = false;
-  //   const setDisplayNextButton = useStore(getSetDisplayNextButton);
+  const surveyQuestionsArray = useStore(getSurveyQuestionsArray);
+  const setSurveyQuestionsArray = useStore(getSetSurveyQuestionsArray);
+  const setSurveyQuestionType = useStore(getSetSurveyQuestionType);
+  const setSurveyAnswerRequired = useStore(getSetSurveyAnswerRequired);
+  const setSurveyQuestionLabel = useStore(getSetSurveyQuestionLabel);
+  const setSurveyQuestionNote = useStore(getSetSurveyQuestionNote);
+  const setSurveyQuestionOptions = useStore(getSetSurveyQuestionOptions);
+  const setSurveyQuestionScale = useStore(getSetSurveyQuestionScale);
+  const setSurveyQuestionPlaceholder = useStore(
+    getSetSurveyQuestionPlaceholder
+  );
+  const setSurveyAnswerLenIsLimited = useStore(getSetSurveyAnswerLenIsLimited);
+  const setSurveyAnswerLenMax = useStore(getSetSurveyAnswerLenMax);
+  const setSurveyAnswerRestricted = useStore(getSetSurveyAnswerRestricted);
+  const setConfigSurveyInfoBarColor = useStore(getSetConfigSurveyInfoBarColor);
+  const setIsEditingSurveyQuestion = useStore(getSetIsEditingSurveyQuestion);
+  const setIsEditingSurveyQuestionIndex = useStore(
+    getSetIsEditingSurveyQuestionIndex
+  );
 
-  const headerBarColor = "#83cafe";
-  //   const surveyQuestionObjects = surveyQuestionObjArray;
+  const handleMoveUp = (e) => {
+    console.log("e.target.id", e.target.id);
+    const clickedItemIndex = parseInt(e.target.id);
+    if (clickedItemIndex === 0) {
+      return; // Element is already at the start
+    }
+    // if not at end, move up
+    const temp = surveyQuestionsArray[clickedItemIndex];
+    surveyQuestionsArray[clickedItemIndex] =
+      surveyQuestionsArray[clickedItemIndex - 1];
+    surveyQuestionsArray[clickedItemIndex - 1] = temp;
+    setSurveyQuestionsArray([...surveyQuestionsArray]);
+    return;
+  };
+  const handleMoveDown = (e) => {
+    const clickedItemIndex = parseInt(e.target.id);
+    // check if at end of array
+    if (clickedItemIndex >= surveyQuestionsArray.length - 1) {
+      return;
+    }
+    // if not at the beginning, move up
+    const temp = surveyQuestionsArray[clickedItemIndex];
+    surveyQuestionsArray[clickedItemIndex] =
+      surveyQuestionsArray[clickedItemIndex + 1];
+    surveyQuestionsArray[clickedItemIndex + 1] = temp;
+    setSurveyQuestionsArray([...surveyQuestionsArray]);
+    return;
+  };
+  const handleDelete = (e) => {
+    console.log("Delete clicked", e);
+    const clickedItemIndex = parseInt(e.target.id);
+    console.log("clickedItemIndex", clickedItemIndex);
+    // remove the item from the array
+    surveyQuestionsArray.splice(clickedItemIndex, 1);
+    setSurveyQuestionsArray([...surveyQuestionsArray]);
+  };
+  const handleEdit = (e) => {
+    console.log("Edit clicked");
+    const clickedItemIndex = parseInt(e.target.id);
+    console.log("clickedItemIndex", clickedItemIndex);
+    const targetObject = surveyQuestionsArray[clickedItemIndex];
+    const keys = Object.keys(targetObject);
 
-  // setup language
-  //   const surveyHeader = ReactHtmlParser(decodeHTML(langObj.surveyHeader)) || "";
-  const surveyHeader = "Survey Questions";
+    setIsEditingSurveyQuestion(true);
+    setIsEditingSurveyQuestionIndex(clickedItemIndex);
 
-  // set next button display
-  //   setDisplayNextButton(true);
+    console.log("keys", JSON.stringify(keys));
+    keys.forEach((key) => {
+      if (key === "surveyQuestionType") {
+        setSurveyQuestionType(targetObject[key]);
+      }
+      if (key === "required") {
+        setSurveyAnswerRequired(targetObject[key]);
+      }
+      if (key === "label") {
+        setSurveyQuestionLabel(targetObject[key]);
+      }
+      if (key === "note") {
+        setSurveyQuestionNote(targetObject[key]);
+      }
+      if (key === "options") {
+        setSurveyQuestionOptions(targetObject[key]);
+      }
+      if (key === "scale") {
+        setSurveyQuestionScale(targetObject[key]);
+      }
+      if (key === "placeholder") {
+        setSurveyQuestionPlaceholder(targetObject[key]);
+      }
+      if (key === "limited") {
+        setSurveyAnswerLenIsLimited(targetObject[key]);
+      }
+      if (key === "length") {
+        setSurveyAnswerLenMax(targetObject[key]);
+      }
+      if (key === "restricted") {
+        setSurveyAnswerRestricted(targetObject[key]);
+      }
+      if (key === "bg") {
+        setConfigSurveyInfoBarColor(targetObject[key]);
+      }
+    });
+  };
 
-  const SurveyQuestions = () => {
-    const surveyQuestionObjects = surveyQuestionInputPreviewQuestions;
-    console.log("surveyQuestionObjects", surveyQuestionObjects);
-    if (surveyQuestionObjects.length === 0) {
-      //   return <NoQuestionsDiv>No questions added.</NoQuestionsDiv>;
+  const SurveyQuestions = (surveyQuestionsArray) => {
+    console.log("surveyQuestionObjects", JSON.stringify(surveyQuestionsArray));
+
+    if (surveyQuestionsArray.length === 0) {
       return <div>No questions added.</div>;
     } else {
-      const QuestionList = surveyQuestionObjects.map((object, index) => {
+      const QuestionList = surveyQuestionsArray.map((object, index) => {
         if (object.surveyQuestionType === "text") {
           return (
-            <SurveyTextElement
+            <div
               key={uuid()}
-              check={checkRequiredQuestionsComplete}
-              opts={object}
-            />
+              className="flex flex-row border-2 border-red-300 rounded-md"
+            >
+              <SurveyTextElement
+                key={uuid()}
+                id={index}
+                check={checkRequiredQuestionsComplete}
+                opts={object}
+              />
+              <div className="flex flex-row w-[130px]">
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleMoveUp}
+                  src={UpArrows}
+                />
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleDelete}
+                  src={TrashCan}
+                />
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  onClick={handleEdit}
+                  id={index}
+                  src={EditIcon}
+                />
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleMoveDown}
+                  src={DownArrows}
+                />
+              </div>
+            </div>
           );
         }
         if (object.surveyQuestionType === "textarea") {
           return (
-            <SurveyTextAreaElement
+            <div
               key={uuid()}
-              check={checkRequiredQuestionsComplete}
-              opts={object}
-            />
+              className="flex flex-row border-2 border-red-300 rounded-md"
+            >
+              <SurveyTextAreaElement
+                check={checkRequiredQuestionsComplete}
+                id={index}
+                opts={object}
+              />
+              <div className="flex flex-row w-[130px]">
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleMoveUp}
+                  src={UpArrows}
+                />
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  onClick={handleDelete}
+                  id={index}
+                  src={TrashCan}
+                />
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  onClick={handleEdit}
+                  id={index}
+                  src={EditIcon}
+                />
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleMoveDown}
+                  src={DownArrows}
+                />
+              </div>
+            </div>
           );
         }
         if (object.surveyQuestionType === "radio") {
           return (
-            <SurveyRadioElement
+            <div
               key={uuid()}
-              check={checkRequiredQuestionsComplete}
-              opts={object}
-            />
+              className="flex flex-row border-2 border-red-300 rounded-md"
+            >
+              <SurveyRadioElement
+                key={uuid()}
+                id={index}
+                check={checkRequiredQuestionsComplete}
+                opts={object}
+              />
+              <div className="flex flex-row w-[130px]">
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleMoveUp}
+                  src={UpArrows}
+                />
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleDelete}
+                  src={TrashCan}
+                />
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  onClick={handleEdit}
+                  id={index}
+                  src={EditIcon}
+                />
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleMoveDown}
+                  src={DownArrows}
+                />
+              </div>
+            </div>
           );
         }
         if (object.surveyQuestionType === "select") {
           return (
-            <SurveyDropdownElement
+            <div
               key={uuid()}
-              check={checkRequiredQuestionsComplete}
-              opts={object}
-            />
+              className="flex flex-row border-2 border-red-300 rounded-md"
+            >
+              <SurveyDropdownElement
+                key={uuid()}
+                id={index}
+                check={checkRequiredQuestionsComplete}
+                opts={object}
+              />
+              <div className="flex flex-row w-[130px]">
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleMoveUp}
+                  src={UpArrows}
+                />
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleDelete}
+                  src={TrashCan}
+                />
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  onClick={handleEdit}
+                  id={index}
+                  src={EditIcon}
+                />
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleMoveDown}
+                  src={DownArrows}
+                />
+              </div>
+            </div>
           );
         }
         if (object.surveyQuestionType === "checkbox") {
           return (
-            <SurveyCheckboxElement
+            <div
               key={uuid()}
-              check={checkRequiredQuestionsComplete}
-              opts={object}
-            />
+              className="flex flex-row border-2 border-red-300 rounded-md"
+            >
+              <SurveyCheckboxElement
+                key={uuid()}
+                id={index}
+                check={checkRequiredQuestionsComplete}
+                opts={object}
+              />
+              <div className="flex flex-row w-[130px]">
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleMoveUp}
+                  src={UpArrows}
+                />
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleDelete}
+                  src={TrashCan}
+                />
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  onClick={handleEdit}
+                  id={index}
+                  src={EditIcon}
+                />
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleMoveDown}
+                  src={DownArrows}
+                />
+              </div>
+            </div>
           );
         }
         if (object.surveyQuestionType === "rating2") {
           return (
-            <SurveyRating2Element
+            <div
               key={uuid()}
-              check={checkRequiredQuestionsComplete}
-              opts={object}
-            />
+              className="flex flex-row border-2 border-red-300 rounded-md"
+            >
+              <SurveyRating2Element
+                key={uuid()}
+                id={index}
+                check={checkRequiredQuestionsComplete}
+                opts={object}
+              />
+              <div className="flex flex-row w-[130px]">
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleMoveUp}
+                  src={UpArrows}
+                />
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleDelete}
+                  src={TrashCan}
+                />
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  onClick={handleEdit}
+                  id={index}
+                  src={EditIcon}
+                />
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleMoveDown}
+                  src={DownArrows}
+                />
+              </div>
+            </div>
           );
         }
         if (object.surveyQuestionType === "likert") {
           return (
-            <SurveyLikertElement
+            <div
               key={uuid()}
-              check={checkRequiredQuestionsComplete}
-              opts={object}
-            />
+              className="flex flex-row border-2 border-red-300 rounded-md"
+            >
+              <SurveyLikertElement
+                key={uuid()}
+                id={index}
+                check={checkRequiredQuestionsComplete}
+                opts={object}
+              />
+              <div className="flex flex-row w-[130px]">
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleMoveUp}
+                  src={UpArrows}
+                />
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleDelete}
+                  src={TrashCan}
+                />
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  onClick={handleEdit}
+                  id={index}
+                  src={EditIcon}
+                />
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleMoveDown}
+                  src={DownArrows}
+                />
+              </div>
+            </div>
           );
         }
         if (object.surveyQuestionType === "rating5") {
+          console.log("object", JSON.stringify(object));
           return (
-            <SurveyRating5Element
+            <div
               key={uuid()}
-              check={checkRequiredQuestionsComplete}
-              opts={object}
-            />
+              className="flex flex-row border-2 border-red-300 rounded-md"
+            >
+              <SurveyRating5Element
+                key={uuid()}
+                id={index}
+                check={checkRequiredQuestionsComplete}
+                opts={object}
+              />
+              <div className="flex flex-row w-[130px]">
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleMoveUp}
+                  src={UpArrows}
+                />
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleDelete}
+                  src={TrashCan}
+                />
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  onClick={handleEdit}
+                  id={index}
+                  src={EditIcon}
+                />
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleMoveDown}
+                  src={DownArrows}
+                />
+              </div>
+            </div>
           );
         }
         if (object.surveyQuestionType === "rating10") {
           return (
-            <SurveyRating10Element
+            <div
               key={uuid()}
-              check={checkRequiredQuestionsComplete}
-              opts={object}
-            />
+              className="flex flex-row border-2 border-red-300 rounded-md"
+            >
+              <SurveyRating10Element
+                key={uuid()}
+                id={index}
+                check={checkRequiredQuestionsComplete}
+                opts={object}
+              />
+              <div className="flex flex-row w-[130px]">
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleMoveUp}
+                  src={UpArrows}
+                />
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleDelete}
+                  src={TrashCan}
+                />
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  onClick={handleEdit}
+                  id={index}
+                  src={EditIcon}
+                />
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleMoveDown}
+                  src={DownArrows}
+                />
+              </div>
+            </div>
           );
         }
         if (object.surveyQuestionType === "information") {
-          return <SurveyInformationElement key={uuid()} opts={object} />;
+          return (
+            <div
+              key={uuid()}
+              className="flex flex-row border-2 border-red-300 rounded-md"
+            >
+              <SurveyInformationElement id={index} key={uuid()} opts={object} />
+              <div className="flex flex-row w-[130px]">
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleMoveUp}
+                  src={UpArrows}
+                />
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleDelete}
+                  src={TrashCan}
+                />
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  onClick={handleEdit}
+                  id={index}
+                  src={EditIcon}
+                />
+                <img
+                  className="m-2 w-[26px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleMoveDown}
+                  src={DownArrows}
+                />
+              </div>
+            </div>
+          );
         }
         return null;
       });
+      console.log("QuestionList", QuestionList, null, 2);
       return QuestionList;
     }
   };
@@ -149,20 +565,12 @@ const SurveyPage = () => {
   return (
     <React.Fragment>
       <h2 className="mt-8"> Survey Question Preview</h2>
-      {/* <PromptUnload /> */}
-      {/* <SurveyHelpModal /> */}
-      {/* <AnswerAllSurveyQuestionsModal /> */}
-      {/* <SortTitleBar background={headerBarColor}>{surveyHeader}</SortTitleBar>
-      <SortTitleBar background={headerBarColor}>{surveyHeader}</SortTitleBar> */}
-      {/* <Container> */}
-      <div>
-        <SurveyQuestions />
-      </div>
+      <div className="w-full">{SurveyQuestions(surveyQuestionsArray)}</div>
     </React.Fragment>
   );
 };
 
-export default SurveyPage;
+export default SurveyPageQuestions;
 
 // const Container = styled.div`
 //   display: flex;

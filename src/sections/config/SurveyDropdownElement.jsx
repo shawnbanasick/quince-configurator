@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { MultiSelect } from "react-multi-select-component";
 import ReactHtmlParser from "html-react-parser";
+import { decodeHTML } from "../utils/decodeHTML";
 import flatten from "lodash/flatten";
 
 const SurveyDropdownElement = (props) => {
@@ -13,7 +14,7 @@ const SurveyDropdownElement = (props) => {
     const objArray = array.map((x) => {
       x.replace(/\s/g, "");
       const tempObj = {};
-      tempObj.label = ReactHtmlParser(x);
+      tempObj.label = ReactHtmlParser(decodeHTML(x));
       tempObj.value = x;
       return tempObj;
     });
@@ -23,10 +24,12 @@ const SurveyDropdownElement = (props) => {
   // PROPS
   const checkRequiredQuestionsComplete = props.check;
   let questionId = props.opts.id;
-  const labelText = ReactHtmlParser(props.opts.label) || "";
+  const labelText = ReactHtmlParser(decodeHTML(props.opts.label)) || "";
   let originalOptions = props.opts.options.split(";;;") || [];
-  originalOptions = originalOptions.map((x) => ReactHtmlParser(x.trim()));
-  const noteText = ReactHtmlParser(props.opts.note) || "";
+  originalOptions = originalOptions.map((x) =>
+    ReactHtmlParser(decodeHTML(x.trim()))
+  );
+  const noteText = ReactHtmlParser(decodeHTML(props.opts.note)) || "";
   let displayNoteText = true;
   if (noteText.length < 1 || noteText === "") {
     displayNoteText = false;
@@ -97,7 +100,7 @@ const SurveyDropdownElement = (props) => {
   if (true) {
     return (
       // <Container bgColor={formatOptions.bgColor} border={formatOptions.border}>
-      <div className="w-12/12 p-[20px] max-w[1300px] bg-[whitesmoke] outline outline-1 outline-gray-300 outline-none mt-1 ">
+      <div className="w-10/12 p-[20px] max-w[1300px] bg-[whitesmoke] outline outline-1 outline-gray-300 outline-none mt-1 ">
         {/* <TitleBar> */}
         <div>
           <div className="bg-gray-300 flex items-center justify-center p-[5px] min-h-[20px] text-[18px] text-center w-full rounded-[3px]">

@@ -3,6 +3,7 @@ import { v4 as uuid } from "uuid";
 import ReactHtmlParser from "html-react-parser";
 import flatten from "lodash/flatten";
 import countBy from "lodash/countBy";
+import { decodeHTML } from "../utils/decodeHTML";
 
 const SurveyRatings10Element = (props) => {
   // HELPER FUNCTIONS
@@ -20,8 +21,9 @@ const SurveyRatings10Element = (props) => {
   const rows = optsArray.length;
   const questionId = `itemNum${props.opts.itemNum}`;
   const checkRequiredQuestionsComplete = props.check;
-  const labelText = ReactHtmlParser(props.opts.label) || "";
-  const noteText = ReactHtmlParser(props.opts.note) || "";
+  const labelText = ReactHtmlParser(decodeHTML(props.opts.label)) || "";
+  console.log("labelText: ", labelText);
+  const noteText = ReactHtmlParser(decodeHTML(props.opts.note)) || "";
   let displayNoteText = true;
   if (noteText.length < 1 || noteText === "") {
     displayNoteText = false;
@@ -116,7 +118,7 @@ const SurveyRatings10Element = (props) => {
 
   const RadioItems = () => {
     const radioList = optsArray.map((item, index) => {
-      const itemText = ReactHtmlParser(item);
+      const itemText = ReactHtmlParser(decodeHTML(item));
       return (
         // <ItemContainer indexVal={index} key={uuid()}>
         <div
@@ -231,7 +233,7 @@ const SurveyRatings10Element = (props) => {
   if (true) {
     return (
       // <Container bgColor={formatOptions.bgColor} border={formatOptions.border}>
-      <div className="w-12/12 p-[20px] max-w[1300px] bg-[whitesmoke] outline outline-1 outline-gray-300 outline-none mt-1 ">
+      <div className="w-10/12 p-[20px] max-w[1300px] bg-[whitesmoke] outline outline-1 outline-gray-300 outline-none mt-1">
         {/* <TitleBar> */}
         <div>
           <div className="bg-gray-300 flex items-center justify-center p-[5px] min-h-[20px] text-[18px] text-center w-full rounded-[3px]">

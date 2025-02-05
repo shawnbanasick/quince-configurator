@@ -1,0 +1,866 @@
+{
+  "type": "document",
+  "children": [
+    {
+      "type": "element",
+      "isRootNode": true,
+      "name": "config",
+      "attributes": { "version": "7.0.0", "htmlParse": "false" },
+      "children": [
+        { "type": "text", "text": "\n\n   \n   \n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "studyTitle" },
+          "children": [{ "type": "text", "text": "Demo Project" }]
+        },
+        { "type": "text", "text": " \n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "databaseOptions" },
+          "children": [{ "type": "text", "text": "Include_Google_Options" }]
+        },
+        { "type": "text", "text": "\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "setupTarget" },
+          "children": [{ "type": "text", "text": "firebase" }]
+        },
+        { "type": "text", "text": "\n   \n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "steinApiUrl" },
+          "children": []
+        },
+        { "type": "text", "text": "\n   \n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "emailAddress" },
+          "children": []
+        },
+        { "type": "text", "text": "  \n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "emailSubject" },
+          "children": [{ "type": "text", "text": "EQ Web Sort Results" }]
+        },
+        { "type": "text", "text": "  \n   \n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "linkToSecondProject" },
+          "children": [{ "type": "text", "text": "false" }]
+        },
+        { "type": "text", "text": " \n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "secondProjectUrl" },
+          "children": [{ "type": "text", "text": "http://" }]
+        },
+        { "type": "text", "text": " \n   \n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "useImages" },
+          "children": [{ "type": "text", "text": "false" }]
+        },
+        { "type": "text", "text": "\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "numImages" },
+          "children": [{ "type": "text", "text": "30" }]
+        },
+        { "type": "text", "text": "\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "imageFileType" },
+          "children": [{ "type": "text", "text": "jpg" }]
+        },
+        { "type": "text", "text": "\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "imageFormat" },
+          "children": [{ "type": "text", "text": "postSortImageModal169" }]
+        },
+        { "type": "text", "text": "\n\n   \n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "shuffleCards" },
+          "children": [{ "type": "text", "text": "false" }]
+        },
+        { "type": "text", "text": "\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "headerBarColor" },
+          "children": [{ "type": "text", "text": "#337ab7" }]
+        },
+        { "type": "text", "text": "\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "devMode" },
+          "children": [{ "type": "text", "text": "false" }]
+        },
+        { "type": "text", "text": " \n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "showConsentPage" },
+          "children": [{ "type": "text", "text": "true" }]
+        },
+        { "type": "text", "text": "\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "showConsentPageHelpModal" },
+          "children": [{ "type": "text", "text": "true" }]
+        },
+        { "type": "text", "text": "\n\n   \n   \n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "initialScreen" },
+          "children": [{ "type": "text", "text": "anonymous" }]
+        },
+        { "type": "text", "text": "\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "accessCode" },
+          "children": [{ "type": "text", "text": "demo" }]
+        },
+        { "type": "text", "text": "\n\n   \n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "setDefaultFontSize" },
+          "children": [{ "type": "text", "text": "true" }]
+        },
+        { "type": "text", "text": "\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "defaultFontSize" },
+          "children": [{ "type": "text", "text": "25" }]
+        },
+        { "type": "text", "text": "\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "displayNeutralObjects" },
+          "children": [{ "type": "text", "text": "false" }]
+        },
+        { "type": "text", "text": "\n\n   \n   \n   \n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "greenCardColor" },
+          "children": [{ "type": "text", "text": "#ccffcc" }]
+        },
+        { "type": "text", "text": "\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "yellowCardColor" },
+          "children": [{ "type": "text", "text": "#e0e0e0" }]
+        },
+        { "type": "text", "text": "\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "pinkCardColor" },
+          "children": [{ "type": "text", "text": "#ffe0e0" }]
+        },
+        { "type": "text", "text": "\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "defaultFontColor" },
+          "children": [{ "type": "text", "text": "#2a2a2a" }]
+        },
+        { "type": "text", "text": "\n\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "setDefaultFontSizePresort" },
+          "children": [{ "type": "text", "text": "true" }]
+        },
+        { "type": "text", "text": "\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "defaultFontSizePresort" },
+          "children": [{ "type": "text", "text": "22" }]
+        },
+        { "type": "text", "text": "\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "traceSorts" },
+          "children": [{ "type": "text", "text": "true" }]
+        },
+        { "type": "text", "text": "\n  \n\n   \n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "allowUnforcedSorts" },
+          "children": [{ "type": "text", "text": "false" }]
+        },
+        { "type": "text", "text": "\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "warnOverloadedColumn" },
+          "children": [{ "type": "text", "text": "true" }]
+        },
+        { "type": "text", "text": "\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "condOfInstFontSize" },
+          "children": [{ "type": "text", "text": "20" }]
+        },
+        { "type": "text", "text": "\n\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "setMinCardHeightSort" },
+          "children": [{ "type": "text", "text": "true" }]
+        },
+        { "type": "text", "text": "\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "minCardHeightSort" },
+          "children": [{ "type": "text", "text": "120" }]
+        },
+        { "type": "text", "text": "\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "setDefaultFontSizeSort" },
+          "children": [{ "type": "text", "text": "true" }]
+        },
+        { "type": "text", "text": "\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "defaultFontSizeSort" },
+          "children": [{ "type": "text", "text": "16" }]
+        },
+        { "type": "text", "text": "\n   \n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "sortDirection" },
+          "children": [{ "type": "text", "text": "positive" }]
+        },
+        { "type": "text", "text": " \n\n   \n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "showPostsort" },
+          "children": [{ "type": "text", "text": "true" }]
+        },
+        { "type": "text", "text": "\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "showSecondPosColumn" },
+          "children": [{ "type": "text", "text": "false" }]
+        },
+        { "type": "text", "text": "\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "showSecondNegColumn" },
+          "children": [{ "type": "text", "text": "false" }]
+        },
+        { "type": "text", "text": "\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "showBackButton" },
+          "children": [{ "type": "text", "text": "true" }]
+        },
+        { "type": "text", "text": "\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "postsortCommentsRequired" },
+          "children": [{ "type": "text", "text": "true" }]
+        },
+        { "type": "text", "text": "\n\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "setDefaultFontSizePostsort" },
+          "children": [{ "type": "text", "text": "true" }]
+        },
+        { "type": "text", "text": "\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "defaultFontSizePostsort" },
+          "children": [{ "type": "text", "text": "16" }]
+        },
+        { "type": "text", "text": "\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "setMinCardHeightPostsort" },
+          "children": [{ "type": "text", "text": "true" }]
+        },
+        { "type": "text", "text": "\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "minCardHeightPostsort" },
+          "children": [{ "type": "text", "text": "120" }]
+        },
+        { "type": "text", "text": "\n\n\n   \n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "showSurvey" },
+          "children": [{ "type": "text", "text": "true" }]
+        },
+        { "type": "text", "text": "\n\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "survey" },
+          "children": [
+            { "type": "text", "text": "\n       " },
+            {
+              "type": "element",
+              "name": "input",
+              "attributes": { "type": "information" },
+              "children": []
+            },
+            { "type": "text", "text": "\n       " },
+            {
+              "type": "element",
+              "name": "note",
+              "attributes": { "bg": "rgba(253, 224, 71, .5)" },
+              "children": [
+                {
+                  "type": "text",
+                  "text": "All questions marked with an * are {{{b}}}required.{{{/b}}}"
+                }
+              ]
+            },
+            { "type": "text", "text": "\n   " }
+          ]
+        },
+        { "type": "text", "text": "\n\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "survey" },
+          "children": [
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "input",
+              "attributes": {
+                "type": "text",
+                "required": "false",
+                "limited": "true",
+                "limitLength": "100",
+                "restricted": "false"
+              },
+              "children": []
+            },
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "label",
+              "attributes": {},
+              "children": [
+                {
+                  "type": "text",
+                  "text": "1. Have you had classes with me before?"
+                }
+              ]
+            },
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "note",
+              "attributes": {},
+              "children": [
+                {
+                  "type": "text",
+                  "text": "If yes, please {{{i}}}list them here{{{/i}}}. (limit = 100 characters)"
+                }
+              ]
+            },
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "placeholder",
+              "attributes": {},
+              "children": [{ "type": "text", "text": "input comment here" }]
+            },
+            { "type": "text", "text": "\n   " }
+          ]
+        },
+        { "type": "text", "text": "\n\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "survey" },
+          "children": [
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "input",
+              "attributes": { "type": "textarea", "required": "false" },
+              "children": []
+            },
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "label",
+              "attributes": {},
+              "children": [
+                {
+                  "type": "text",
+                  "text": "2. Describe your experience using the iPads in this class"
+                }
+              ]
+            },
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "note",
+              "attributes": {},
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Write as much as you want - no character limit"
+                }
+              ]
+            },
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "placeholder",
+              "attributes": {},
+              "children": [{ "type": "text", "text": "input comment here" }]
+            },
+            { "type": "text", "text": "\n   " }
+          ]
+        },
+        { "type": "text", "text": "\n\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "survey" },
+          "children": [
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "input",
+              "attributes": { "type": "radio", "required": "false" },
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Spring 2025;;;Fall 2025;;;Spring 2026;;;After Spring 2025"
+                }
+              ]
+            },
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "label",
+              "attributes": {},
+              "children": [
+                {
+                  "type": "text",
+                  "text": "3. When is your expected graduation date?"
+                }
+              ]
+            },
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "note",
+              "attributes": {},
+              "children": [
+                { "type": "text", "text": "Based on your current course load" }
+              ]
+            },
+            { "type": "text", "text": "\n   " }
+          ]
+        },
+        { "type": "text", "text": "\n\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "survey" },
+          "children": [
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "input",
+              "attributes": { "type": "select", "required": "false" },
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Global Studies;;;Linguistics;;;English Literature"
+                }
+              ]
+            },
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "label",
+              "attributes": {},
+              "children": [
+                { "type": "text", "text": "4. What is your program focus?" }
+              ]
+            },
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "note",
+              "attributes": {},
+              "children": [
+                {
+                  "type": "text",
+                  "text": "You can select more than one option"
+                }
+              ]
+            },
+            { "type": "text", "text": "\n   " }
+          ]
+        },
+        { "type": "text", "text": "\n\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "survey" },
+          "children": [
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "input",
+              "attributes": { "type": "checkbox", "required": "false" },
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Lecture;;;Group Discussion;;;Active Learning"
+                }
+              ]
+            },
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "label",
+              "attributes": {},
+              "children": [
+                {
+                  "type": "text",
+                  "text": "5. What kind of class do you prefer?"
+                }
+              ]
+            },
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "note",
+              "attributes": {},
+              "children": [
+                {
+                  "type": "text",
+                  "text": "You can select more than one option"
+                }
+              ]
+            },
+            { "type": "text", "text": "\n   " }
+          ]
+        },
+        { "type": "text", "text": "\n\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "survey" },
+          "children": [
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "input",
+              "attributes": {
+                "type": "likert",
+                "required": "true",
+                "scale": "Strongly Disagree;;;Disagree;;;Neutral;;;Agree;;;Strongly Agree"
+              },
+              "children": [{ "type": "text", "text": "." }]
+            },
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "label",
+              "attributes": {},
+              "children": [
+                {
+                  "type": "text",
+                  "text": "6. The iPads helped to create an effective learning environment.*"
+                }
+              ]
+            },
+            { "type": "text", "text": "\n   " }
+          ]
+        },
+        { "type": "text", "text": "\n\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "survey" },
+          "children": [
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "input",
+              "attributes": {
+                "type": "likert",
+                "required": "true",
+                "scale": "Very Unimportant;;;Unimportant;;;Neutral;;;Important;;;Very Important"
+              },
+              "children": [{ "type": "text", "text": "." }]
+            },
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "label",
+              "attributes": {},
+              "children": [
+                {
+                  "type": "text",
+                  "text": "7. How important is it to have an iPad for each class session?*"
+                }
+              ]
+            },
+            { "type": "text", "text": "\n   " }
+          ]
+        },
+        { "type": "text", "text": "\n\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "survey" },
+          "children": [
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "input",
+              "attributes": {
+                "type": "likert",
+                "required": "true",
+                "scale": "Very Unconcerned;;;Unconcerned;;;Neutral;;;Concerned;;;Very Concerned"
+              },
+              "children": [{ "type": "text", "text": "." }]
+            },
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "label",
+              "attributes": {},
+              "children": [
+                {
+                  "type": "text",
+                  "text": "8. How concerned are you about the amount of time that you spend looking at screens?* (TV, smartphone, computer, iPad, etc.)"
+                }
+              ]
+            },
+            { "type": "text", "text": "\n   " }
+          ]
+        },
+        { "type": "text", "text": "\n\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "survey" },
+          "children": [
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "input",
+              "attributes": {
+                "type": "likert",
+                "required": "true",
+                "scale": "Never;;;Rarely;;;Occasionally;;;Frequently;;;Very Frequently"
+              },
+              "children": [{ "type": "text", "text": "." }]
+            },
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "label",
+              "attributes": {},
+              "children": [
+                {
+                  "type": "text",
+                  "text": "9. How often do you use an iPad in your daily life?*"
+                }
+              ]
+            },
+            { "type": "text", "text": "\n   " }
+          ]
+        },
+        { "type": "text", "text": "\n\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "survey" },
+          "children": [
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "input",
+              "attributes": {
+                "type": "rating2",
+                "required": "false",
+                "scale": "Yes;;;No"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "text": "I have used an iPad in class {{{b}}}before{{{/b}}}.;;; I have used a notebook computer in class before.;;;I have used Moodle before.;;;I have used Quizlet before;;;"
+                }
+              ]
+            },
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "label",
+              "attributes": {},
+              "children": [
+                {
+                  "type": "text",
+                  "text": "10. Please respond to the following {{{u}}}statements{{{/u}}}"
+                }
+              ]
+            },
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "note",
+              "attributes": {},
+              "children": [
+                { "type": "text", "text": "Please answer all of the ratings" }
+              ]
+            },
+            { "type": "text", "text": "\n   " }
+          ]
+        },
+        { "type": "text", "text": "\n\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "survey" },
+          "children": [
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "input",
+              "attributes": {
+                "type": "rating5",
+                "required": "false",
+                "scale": "1;;;2;;;3;;;4;;;5"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "text": "How would you rate the use of iPads in this class?;;;How would you rate this class overall?;;;How was your interaction with {{{u}}}other students?{{{/u}}};;;How was access to the computer lab?"
+                }
+              ]
+            },
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "label",
+              "attributes": {},
+              "children": [
+                {
+                  "type": "text",
+                  "text": "11. {{{i}}}Please{{{/i}}} rate the following statements"
+                }
+              ]
+            },
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "note",
+              "attributes": {},
+              "children": [
+                { "type": "text", "text": "Please answer all of the ratings" }
+              ]
+            },
+            { "type": "text", "text": "\n   " }
+          ]
+        },
+        { "type": "text", "text": "\n\n   " },
+        {
+          "type": "element",
+          "name": "item",
+          "attributes": { "id": "survey" },
+          "children": [
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "input",
+              "attributes": {
+                "type": "rating10",
+                "required": "false",
+                "scale": "1;;;2;;;3;;;4;;;5;;;6;;;7;;;8;;;9;;;10"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "text": "How would you rate the use of the Socrative website in this class?;;;How would you rate the use of the {{{b}}}Quizlet{{{/b}}} website in this class?;;;How would you rate the use of Moodle in this class?;;;How would you rate the use of Edmodo in this class?;;;"
+                }
+              ]
+            },
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "label",
+              "attributes": {},
+              "children": [
+                {
+                  "type": "text",
+                  "text": "12. {{{u}}}Please{{{/u}}} rate the following statements"
+                }
+              ]
+            },
+            { "type": "text", "text": "\n        " },
+            {
+              "type": "element",
+              "name": "note",
+              "attributes": {},
+              "children": [
+                { "type": "text", "text": "Please answer all of the ratings" }
+              ]
+            },
+            { "type": "text", "text": "\n   " }
+          ]
+        },
+        { "type": "text", "text": "\n\n\n       \n  " }
+      ]
+    }
+  ]
+}

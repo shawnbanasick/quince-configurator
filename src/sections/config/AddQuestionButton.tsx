@@ -1,7 +1,7 @@
 import React from "react";
 import { useStore } from "../../globalState/useStore";
 import { shouldDisplayObject } from "./shouldDisplayObject";
-import decodeHTML from "../utils/decodeHTML";
+import { decodeHTML } from "../utils/decodeHTML";
 // import clearAddItemForm from "./clearAddItemForm";
 import HtmlParser from "html-react-parser";
 import clone from "lodash/clone";
@@ -35,6 +35,13 @@ const getSurveyQuestionsArray = (state) => state.surveyQuestionsArray;
 const getSetSurveyQuestionsArray = (state) => state.setSurveyQuestionsArray;
 const getSetSurveyQuestionInputPreviewQuestions = (state) =>
   state.setSurveyQuestionInputPreviewQuestions;
+const getIsEditingSurveyQuestion = (state) => state.isEditingSurveyQuestion;
+const getIsEditingSurveyQuestionIndex = (state) =>
+  state.isEditingSurveyQuestionIndex;
+const getSetIsEditingSurveyQuestionIndex = (state) =>
+  state.setIsEditingSurveyQuestionIndex;
+const getSetIsEditingSurveyQuestion = (state) =>
+  state.setIsEditingSurveyQuestion;
 
 interface newItemObjType {
   surveyQuestionType?: string;
@@ -86,6 +93,15 @@ const AddQuestionButton: React.FC = () => {
   const setSurveyQuestionInputPreviewQuestions = useStore(
     getSetSurveyQuestionInputPreviewQuestions
   );
+  const isEditingSurveyQuestion = useStore(getIsEditingSurveyQuestion);
+  const isEditingSurveyQuestionIndex = useStore(
+    getIsEditingSurveyQuestionIndex
+  );
+  const setIsEditingSurveyQuestionIndex = useStore(
+    getSetIsEditingSurveyQuestionIndex
+  );
+  const setIsEditingSurveyQuestion = useStore(getSetIsEditingSurveyQuestion);
+
   // const showSurveyinformationImage = useStore(getShowSurveyinformationImage);
   // const showSurveytextImage = useStore(getShowSurveytextImage);
   // const showSurveytextareaImage = useStore(getShowSurveytextareaImage);
@@ -210,14 +226,25 @@ const AddQuestionButton: React.FC = () => {
 
       // ADD new question to ARRAY and save to STATE
 
-      surveyQuestionsArray2.push(newItemObj);
-      setSurveyQuestionsArray(surveyQuestionsArray2);
+      if (isEditingSurveyQuestion === true) {
+        console.log("isEditingSurveyQuestion", isEditingSurveyQuestion);
+        console.log("newItemObj", newItemObj);
+        const index = isEditingSurveyQuestionIndex;
+
+        surveyQuestionsArray2[index] = newItemObj;
+
+        setIsEditingSurveyQuestionIndex(null);
+        setIsEditingSurveyQuestion(false);
+        setSurveyQuestionsArray(surveyQuestionsArray2);
+      } else {
+        surveyQuestionsArray2.push(newItemObj);
+        setSurveyQuestionsArray(surveyQuestionsArray2);
+      }
 
       const newArray = [...surveyQuestionsArray2];
-
       localStorage.setItem("surveyQuestionsArray", JSON.stringify(newArray));
       console.log("newArray", JSON.stringify(newArray, null, 2));
-      setSurveyQuestionInputPreviewQuestions(newArray);
+      // setSurveyQuestionInputPreviewQuestions(newArray);
 
       return;
       // notifySuccess();
