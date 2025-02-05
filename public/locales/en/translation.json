@@ -104,5 +104,6 @@
   "itemReadyForEditing": "Item Ready for Editing",
   "itemEdited": "Item Edited",
   "itemDeleted": "Item Deleted",
-  "errorItemNotAdded": "Error: Item Not Added"
+  "errorItemNotAdded": "Error: Item Not Added",
+  "chooseFile": "Choose File"
 }

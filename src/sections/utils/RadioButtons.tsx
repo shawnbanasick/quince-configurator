@@ -34,7 +34,7 @@ export const Radio: React.FC<RadioProps> = ({
               "bg-opacity-100": isChecked,
               "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                 !isChecked,
-              "bg-opacity-50": disabled,
+              "bg-opacity-50 text-slate-300 outline-slate-200": disabled,
               "outline-gray-300 text-gray-300": !isChecked && disabled,
             }
           )}

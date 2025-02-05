@@ -109,10 +109,7 @@ const UploadAndParseXML: React.FC = () => {
         const xml = parser.parseFromString(data, "text/xml");
         const xmlObjectArray = xml.getElementsByTagName("item");
 
-        console.log(xmlObjectArray);
-
         xmlObjectArray.forEach((item, index) => {
-          // console.log(item?.attributes?.id, item?.value);
           if (item?.attributes?.id === "studyTitle") {
             setStudyTitle(item?.value);
           }
@@ -279,7 +276,6 @@ const UploadAndParseXML: React.FC = () => {
             setSurveyQuestionsArray(surveyQuestArray);
           }
         });
-
         return;
       };
 
@@ -292,12 +288,10 @@ const UploadAndParseXML: React.FC = () => {
     }
   };
 
-  console.log("xmlContent:", xmlContent);
-
   return (
     <div className="flex flex-col items-center justify-center mt-2">
       <label
-        className="cursor-pointer bg-orange-300 border-2 border-gray-300 rounded-md p-2"
+        className="cursor-pointer bg-orange-300 border-2 border-gray-600 rounded-md p-2"
         htmlFor="uploadXml"
       >
         {t("chooseFile")}

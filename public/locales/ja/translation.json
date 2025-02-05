@@ -104,5 +104,6 @@
   "itemReadyForEditing": "アイテムの編集が準備完了",
   "itemEdited": "アイテムが編集された",
   "itemDeleted": "アイテムを削除された",
-  "errorItemNotAdded": "エラー：アイテムが追加されていない"
+  "errorItemNotAdded": "エラー：アイテムが追加されていない",
+  "chooseFile": "ファイルを選択"
 }
