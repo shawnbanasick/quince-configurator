@@ -291,10 +291,10 @@ const UploadAndParseXML: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center mt-2">
       <label
-        className="cursor-pointer bg-orange-300 border-2 border-gray-600 rounded-md p-2"
+        className="cursor-pointer bg-orange-300 hover:opacity-50 border-2 border-gray-600 rounded-md p-2"
         htmlFor="uploadXml"
       >
-        {t("chooseFile")}
+        {t("uploadXmlConfigFile")}
       </label>
       <input
         className="hidden"

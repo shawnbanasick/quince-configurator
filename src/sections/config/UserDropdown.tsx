@@ -1,7 +1,7 @@
 import React from "react";
 import { exportSurveyObject } from "./exportSurveyObject";
 import { useStore } from "../../globalState/useStore";
-// import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 const getSurveyQuestionType = (state) => state.surveyQuestionType;
 const getSetSurveyQuestionType = (state) => state.setSurveyQuestionType;
@@ -34,7 +34,7 @@ const getSetSurveyAnswerLenIsLimited = (state) =>
   state.setSurveyAnswerLenIsLimited;
 
 const UserDropdown: React.FC = () => {
-  //   const { t } = useTranslation();
+  const { t } = useTranslation();
 
   const surveyQuestionType = useStore(getSurveyQuestionType);
   const setSurveyQuestionType = useStore(getSetSurveyQuestionType);
@@ -129,7 +129,7 @@ const UserDropdown: React.FC = () => {
     // <InputContainerDiv>
     <div>
       {/* <TitleSpan>Select question type</TitleSpan> */}
-      <div>Select question type</div>
+      <div>1. {t("selectQuestionType")}</div>
       <select
         name="category"
         value={surveyQuestionType}

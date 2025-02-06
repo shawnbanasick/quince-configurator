@@ -25,8 +25,8 @@ const generateConfigXml = () => {
   const yellowCardColor = useStore.getState().yellowCardColor;
   const pinkCardColor = useStore.getState().pinkCardColor;
   const defaultFontColor = useStore.getState().defaultFontColor;
-  const defaultFontSize = useStore.getState().defaultFontSize;
-  const displayNeutralObjects = useStore.getState().displayNeutralObjects;
+  //   const defaultFontSize = useStore.getState().defaultFontSize;
+  //   const displayNeutralObjects = useStore.getState().displayNeutralObjects;
   const condOfInstFontSize = useStore.getState().condOfInstFontSize;
   const allowUnforcedSorts = useStore.getState().allowUnforcedSorts;
   const warnOverloadedColumn = useStore.getState().warnOverloadedColumn;
@@ -44,7 +44,9 @@ const generateConfigXml = () => {
   const surveyQuestionsArray = useStore.getState().surveyQuestionsArray;
   const presortTrace = useStore.getState().presortTrace;
   const defaultFontSizePresort = useStore.getState().defaultFontSizePresort;
-  const presortMinCardHeight = useStore.getState().presortMinCardHeight;
+  //   const presortMinCardHeight = useStore.getState().presortMinCardHeight;
+  const thinGuidanceModalMaxIterations =
+    useStore.getState().thinGuidanceModalMaxIterations;
 
   let loginTypeText;
   const loginType = initialScreen;
@@ -119,7 +121,7 @@ const generateConfigXml = () => {
 
    <!-- ACCESS -->
    <!-- options: anonymous, partId-access, partId, access -->
-   <item id="initialScreen">${initialScreen}</item>
+   <item id="initialScreen">${loginTypeText}</item>
    <item id="accessCode">${accessCode}</item>
   
    <!-- PRESORT -->
@@ -338,4 +340,4 @@ const generateConfigXml = () => {
   return data;
 };
 
-export default generateConfigXml;
+export { generateConfigXml };

@@ -105,12 +105,18 @@
   "itemEdited": "アイテムが編集された",
   "itemDeleted": "アイテムを削除された",
   "errorItemNotAdded": "エラー：アイテムが追加されていない",
-  "chooseFile": "ファイルを選択",
   "surveyAnswerRequired": "回答が必要",
   "surveyAnswerLenIsLimited": "回答の長さが制限されている",
   "surveyAnswerRestricted": "回答は数字のみに制限されている",
   "surveyInfoBarColor": "情報アイテムの背景色",
   "surveyAnswerMaximumLength": "回答の最大長",
   "surveyQuestionPreview": "アンケート質問プレビュー",
-  "surveyQuestionGenerator": "アンケート質問ジェネレータ"
+  "surveyQuestionGenerator": "アンケート質問ジェネレータ",
+  "downloadXmlConfigFile": "修正されたXMLファイルをダウンロード",
+  "uploadXmlConfigFile": "以前のXML設定ファイルをアップロード",
+  "noQuestionsAdded": "質問が追加されていない",
+  "exampleItem": "例のアイテム",
+  "newItemSettings": "新しいアイテムの設定",
+  "selectQuestionType": "質問タイプを選択",
+  "exampleSettings": "例の設定"
 }

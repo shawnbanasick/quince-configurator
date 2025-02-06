@@ -105,12 +105,18 @@
   "itemEdited": "Item Updated",
   "itemDeleted": "Item Deleted",
   "errorItemNotAdded": "Error: Item Not Added",
-  "chooseFile": "Choose File",
   "surveyAnswerRequired": "Answer Required Before Navigation Allowed",
   "surveyAnswerLenIsLimited": "Answer Length is Limited",
   "surveyAnswerRestricted": "Answer Restricted to Numbers Only",
   "surveyInfoBarColor": "Information Item Background Color",
   "surveyAnswerMaximumLength": "Answer Maximum Length",
   "surveyQuestionPreview": "Survey Question Preview",
-  "surveyQuestionGenerator": "Survey Question Generator"
+  "surveyQuestionGenerator": "Survey Question Generator",
+  "downloadXmlConfigFile": "Download Modified XML Config File",
+  "uploadXmlConfigFile": "Upload Previous XML Config File",
+  "noQuestionsAdded": "No Questions Added",
+  "exampleItem": "Example Item",
+  "newItemSettings": "New Item Settings",
+  "selectQuestionType": "Select Question Type",
+  "exampleSettings": "Example Settings"
 }

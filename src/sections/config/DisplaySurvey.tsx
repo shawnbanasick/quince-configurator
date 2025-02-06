@@ -174,7 +174,7 @@ const SurveyPageQuestions = () => {
 
   const SurveyQuestions = (surveyQuestionsArray) => {
     if (surveyQuestionsArray.length === 0) {
-      return <div>No questions added.</div>;
+      return <div>{t("noQuestionsAdded")}</div>;
     } else {
       const QuestionList = surveyQuestionsArray.map((object, index) => {
         if (object.surveyQuestionType === "text") {

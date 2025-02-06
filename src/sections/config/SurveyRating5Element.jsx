@@ -120,7 +120,6 @@ const SurveyRatings5Element = (props) => {
     const radioList = optsArray.map((item, index) => {
       const itemText = ReactHtmlParser(decodeHTML(item));
       return (
-        // <ItemContainer indexVal={index} key={uuid()}>
         <div
           className="flex h-[40px] items-center content-center pl-2"
           style={{
@@ -129,7 +128,6 @@ const SurveyRatings5Element = (props) => {
               "minmax(30%, 1000px) 50px 50px 50px 50px 50px 1fr",
             backgroundColor: index % 2 ? "white" : "#ececec",
           }}
-          indexVal={index}
           key={uuid()}
         >
           {/* <OptionsText key={uuid()}>{itemText}</OptionsText> */}
@@ -244,111 +242,3 @@ const SurveyRatings5Element = (props) => {
 };
 
 export default SurveyRatings5Element;
-
-// const Container = styled.div`
-//   width: 90vw;
-//   padding: 20px;
-//   margin-left: 20px;
-//   margin-right: 20px;
-//   max-width: 1300px;
-//   min-height: 200px;
-//   background-color: ${(props) => props.bgColor};
-//   outline: ${(props) => props.border};
-//   outline-offset: -3px;
-// `;
-
-// const TitleBar = styled.div`
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   min-height: 50px;
-//   padding: 5px;
-//   font-size: 18px;
-//   text-align: center;
-//   background-color: lightgray;
-//   width: 100%;
-//   border-radius: 3px;
-// `;
-
-// const RadioContainer = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: left;
-//   align-items: left;
-//   padding: 20px;
-//   vertical-align: center;
-//   margin-top: 0px;
-//   height: auto;
-//   min-height: 50px;
-//   font-size: 18px;
-//   background-color: white;
-//   width: 100%;
-//   border-radius: 3px;
-//   border: 2px solid lightgray;
-
-//   input {
-//     margin-top: 8px;
-//   }
-
-//   label {
-//     margin-left: 8px;
-//   }
-// `;
-
-// const ItemContainer = styled.div`
-//   display: inline-grid;
-//   grid-template-columns: minmax(30%, 1000px) 50px 50px 50px 50px 50px 1fr;
-//   margin-bottom: 17px;
-//   padding-bottom: 8px;
-//   height: 40px;
-//   background-color: ${(props) => (props.indexVal % 2 ? "white" : "#ececec")};
-//   font-size: 16px;
-//   align-items: end;
-//   &:hover {
-//     background-color: rgba(131, 202, 254, 0.4);
-//   }
-// `;
-
-// const RatingTitle = styled.div`
-//   display: inline-grid;
-//   grid-template-columns: minmax(30%, 1000px) 50px 50px 50px 50px 50px 1fr;
-//   margin-bottom: 7px;
-//   align-items: end;
-// `;
-
-// const RadioInput = styled.input`
-//   display: flex;
-//   justify-self: center;
-//   align-self: center;
-//   text-align: center;
-//   border: 0px;
-//   width: 25px;
-//   height: 1.4em;
-// `;
-
-// const CircleDiv = styled.div`
-//   display: flex;
-//   justify-self: center;
-//   align-self: center;
-//   text-align: center;
-// `;
-
-// const OptionsText = styled.span`
-//   margin-bottom: 2px;
-//   padding-left: 5px;
-// `;
-
-// const NoteText = styled.div`
-//   display: flex;
-//   justify-content: left;
-//   align-items: center;
-//   vertical-align: center;
-//   margin-top: 5px;
-//   margin-bottom: 5px;
-//   height: 50px;
-//   font-size: 16px;
-//   text-align: center;
-//   background-color: whitesmoke;
-//   width: 100%;
-//   border-radius: 3px;
-// `;
