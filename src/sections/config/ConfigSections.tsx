@@ -14,10 +14,12 @@ import { Config11SurveyOptions } from "./Config11SurveyOptions";
 import { SurveyQuestionInput } from "./SurveyQuestionInput";
 
 const getDisplayMode = (state) => state.displayMode;
+const getShowSurvey = (state) => state.showSurvey;
 
 const ConfigSections: React.FC = () => {
   // const { t } = useTranslation();
   const displayMode = useStore(getDisplayMode);
+  const showSurvey = useStore(getShowSurvey);
 
   let display;
   if (displayMode === "beginner") {
@@ -28,7 +30,7 @@ const ConfigSections: React.FC = () => {
 
   return (
     <>
-      <div className="flex flex-col align-center w-9/12 pl-10 pr-20 pt-2 pb-8 min-h-[300px] outline outline-2 outline-blue-300 mb-40">
+      <div className="flex flex-col align-center w-10/12 pl-10 pr-20 pt-2 pb-8 min-h-fit outline outline-5 outline-blue-300 mb-40">
         <Config1StudyTitle />
         <Config2SetupTarget />
         <Config3LinkProject />
@@ -40,7 +42,13 @@ const ConfigSections: React.FC = () => {
         <Config9SortOptions />
         <Config10PostsortOptions />
         <Config11SurveyOptions />
-        <SurveyQuestionInput />
+        <div
+          className={`transition-all duration-300 ease-in-out transform ${
+            showSurvey ? "opacity-100 scale-100" : "opacity-0 scale-100"
+          }`}
+        >
+          <SurveyQuestionInput />
+        </div>
       </div>
     </>
   );

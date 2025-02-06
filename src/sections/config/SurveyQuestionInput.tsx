@@ -1,6 +1,7 @@
 import React from "react";
 import { UserDropdown } from "./UserDropdown";
 import { UserTextInput } from "../utils/UserTextInput";
+import { UserNumInput } from "../utils/UserNumInput";
 import { useTranslation } from "react-i18next";
 import { AddQuestionButton } from "./AddQuestionButton";
 import { SurveyImageContainer } from "./SurveyImageContainer";
@@ -118,8 +119,8 @@ const SurveyQuestionInput: React.FC = () => {
   };
 
   const handleSurveyAnswerLenMaxChange = (inputValue: any) => {
-    console.log(inputValue.target.value);
-    setSurveyAnswerLenMax(inputValue.target.value);
+    console.log(inputValue);
+    setSurveyAnswerLenMax(inputValue);
   };
 
   const handleSurveyAnswerRequiredChange = (inputValue: any) => {
@@ -154,7 +155,7 @@ const SurveyQuestionInput: React.FC = () => {
       <StyledToastContainer />
       <OptionsWarningModal /> */}
       <span className="text-lg font-title font-semibold mt-8">
-        Survey Question Creator
+        {t("surveyQuestionGenerator")}
       </span>
       {/* {showSurvey === "true" && ( */}
       <div>
@@ -202,7 +203,7 @@ const SurveyQuestionInput: React.FC = () => {
                 className={clsx(
                   "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
                   {
-                    "bg-opacity-50 text-slate-300 outline-slate-200":
+                    "bg-opacity-50 text-slate-200 outline-1 outline-slate-100":
                       !displayBoolean.required,
                     "bg-opacity-100 ": surveyAnswerRequired,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
@@ -228,7 +229,7 @@ const SurveyQuestionInput: React.FC = () => {
                 className={clsx(
                   "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
                   {
-                    "bg-opacity-50  text-slate-300 outline-slate-200":
+                    "bg-opacity-50 text-slate-200 outline-1 outline-slate-100":
                       !displayBoolean.required,
                     "bg-opacity-100": !surveyAnswerRequired,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
@@ -252,12 +253,12 @@ const SurveyQuestionInput: React.FC = () => {
           </div>
 
           <UserTextInput
-            classNameText={`mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
-            classNameLabel={`min-w-[80px] content-center pt-1 mr-1 ${
+            classNameText={`mt-1 block min-w-[618px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
+            classNameLabel={`w-auto content-center pt-1 mr-3 ${
               displayBoolean.label ? "" : "text-slate-400"
             } select-none`}
             highlight={true}
-            placeholder={t("inputLabelPlaceholder")}
+            placeholder=""
             label="2. Label:"
             disabled={!displayBoolean.label}
             name="surveyQuestionLabel"
@@ -266,24 +267,24 @@ const SurveyQuestionInput: React.FC = () => {
           />
           <UserTextInput
             label="3. Note:"
-            classNameText={`mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
-            classNameLabel={`min-w-[130px] content-center pt-1 mr-1 disabled:opacity-50 select-none ${
+            classNameText={`mt-1 block min-w-[620px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
+            classNameLabel={`w-auto content-center pt-1 mr-3 disabled:opacity-50 select-none ${
               displayBoolean.note ? "" : "text-slate-400"
             }`}
             highlight={true}
-            placeholder={t("inputNotePlaceholder")}
+            placeholder=""
             disabled={!displayBoolean.note}
             name="surveyQuestionNote"
             value={surveyQuestionNote}
             onChange={handleSurveyQuestionNoteChange}
           />
           <UserTextInput
-            classNameText={`mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
-            classNameLabel={`min-w-[130px] content-center pt-1 mr-1 disabled:opacity-50 select-none ${
+            classNameText={`mt-1 block min-w-[600px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
+            classNameLabel={`w-auto content-center pt-1 mr-3 disabled:opacity-50 select-none ${
               displayBoolean.options ? "" : "text-slate-400"
             }`}
             highlight={true}
-            placeholder={t("inputOptionsPlaceholder")}
+            placeholder=""
             disabled={!displayBoolean.options}
             name="surveyQuestionOptions"
             value={surveyQuestionOptions}
@@ -291,13 +292,13 @@ const SurveyQuestionInput: React.FC = () => {
             label="4. Options:"
           />
           <UserTextInput
-            classNameText={`mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
-            classNameLabel={`min-w-[130px] content-center pt-1 mr-1 disabled:opacity-50 select-none ${
+            classNameText={`mt-1 block min-w-[620px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
+            classNameLabel={`w-auto content-center pt-1 mr-3 disabled:opacity-50 select-none ${
               displayBoolean.scale ? "" : "text-slate-400"
             }`}
             label="5. Scale:"
             highlight={true}
-            placeholder={t("inputScalePlaceholder")}
+            placeholder=""
             disabled={!displayBoolean.scale}
             name="surveyQuestionScale"
             value={surveyQuestionScale}
@@ -305,12 +306,12 @@ const SurveyQuestionInput: React.FC = () => {
           />
 
           <UserTextInput
-            classNameText={`mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
-            classNameLabel={`min-w-[130px] content-center pt-1 mr-1 disabled:opacity-50 select-none ${
+            classNameText={`mt-1 block min-w-[576px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
+            classNameLabel={`w-auto content-center pt-1 mr-3 disabled:opacity-50 select-none ${
               displayBoolean.placeholder ? "" : "text-slate-400"
             }`}
             highlight={true}
-            placeholder={t("inputLabelPlaceholder")}
+            placeholder=""
             disabled={!displayBoolean.placeholder}
             name="surveyQuestionPlaceholder"
             value={surveyQuestionPlaceholder}
@@ -328,7 +329,7 @@ const SurveyQuestionInput: React.FC = () => {
                 className={clsx(
                   "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
                   {
-                    "bg-opacity-50  text-slate-300 outline-slate-200":
+                    "bg-opacity-50 text-slate-200 outline-1 outline-slate-100":
                       !displayBoolean.limited,
                     "bg-opacity-100": surveyAnswerLenIsLimited,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
@@ -354,7 +355,7 @@ const SurveyQuestionInput: React.FC = () => {
                 className={clsx(
                   "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
                   {
-                    "bg-opacity-50  text-slate-300 outline-slate-200":
+                    "bg-opacity-50 text-slate-200 outline-1 outline-slate-100":
                       !displayBoolean.limited,
                     "bg-opacity-100": !surveyAnswerLenIsLimited,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
@@ -376,16 +377,19 @@ const SurveyQuestionInput: React.FC = () => {
               </label>
             </div>
           </div>
-          <UserTextInput
-            classNameText={`mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
+          <UserNumInput
+            classNameNum={`mt-1 block min-w-[30px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
             classNameLabel={`min-w-[130px] content-center pt-1 mr-1 disabled:opacity-50 select-none ${
               displayBoolean.maxLen ? "" : "text-slate-400"
             }`}
-            label="8. Answer Maximum Length:"
+            upperLimit={999}
+            lowerLimit={0}
+            step={1}
+            label={`8. ${t("surveyAnswerMaximumLength")}:`}
             highlight={true}
-            placeholder={t("inputLabelPlaceholder")}
+            placeholder=""
             disabled={!displayBoolean.maxLen}
-            name="surveyQuestionPlaceholder"
+            name="surveyQuestionMaxLen"
             value={surveyAnswerLenMax}
             onChange={handleSurveyAnswerLenMaxChange}
           />
@@ -401,7 +405,7 @@ const SurveyQuestionInput: React.FC = () => {
                 className={clsx(
                   "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
                   {
-                    "bg-opacity-50  text-slate-300 outline-slate-200":
+                    "bg-opacity-50 text-slate-200 outline-1 outline-slate-100":
                       !displayBoolean.restricted,
                     "bg-opacity-100": surveyAnswerRestricted,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
@@ -427,7 +431,7 @@ const SurveyQuestionInput: React.FC = () => {
                 className={clsx(
                   "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
                   {
-                    "bg-opacity-50  text-slate-300 outline-slate-200":
+                    "bg-opacity-50 text-slate-200 outline-1 outline-slate-100":
                       !displayBoolean.restricted,
                     "bg-opacity-100": !surveyAnswerRestricted,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":

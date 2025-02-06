@@ -99,11 +99,18 @@
   "delete": "Delete",
   "addQuestionToSurvey": "Add Question to Survey",
   "saveEditsToQuestion": "Save Edits to Question",
-  "readyForEdit": "Ready for Edit",
+  "readyForEdit": "Ready for Editing",
   "itemAdded": "Item Added",
   "itemReadyForEditing": "Item Ready for Editing",
-  "itemEdited": "Item Edited",
+  "itemEdited": "Item Updated",
   "itemDeleted": "Item Deleted",
   "errorItemNotAdded": "Error: Item Not Added",
-  "chooseFile": "Choose File"
+  "chooseFile": "Choose File",
+  "surveyAnswerRequired": "Answer Required Before Navigation Allowed",
+  "surveyAnswerLenIsLimited": "Answer Length is Limited",
+  "surveyAnswerRestricted": "Answer Restricted to Numbers Only",
+  "surveyInfoBarColor": "Information Item Background Color",
+  "surveyAnswerMaximumLength": "Answer Maximum Length",
+  "surveyQuestionPreview": "Survey Question Preview",
+  "surveyQuestionGenerator": "Survey Question Generator"
 }

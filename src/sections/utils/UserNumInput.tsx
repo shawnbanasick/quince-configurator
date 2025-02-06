@@ -70,8 +70,6 @@ const UserNumInput: React.FC<UserTextInputProps> = ({
     "upperLimit"
   )}: ${upperLimit}`;
 
-  console.log(label, value);
-
   return (
     <div className="flex items-center">
       <label htmlFor={name} className={classNameLabel}>
@@ -96,53 +94,3 @@ const UserNumInput: React.FC<UserTextInputProps> = ({
 };
 
 export { UserNumInput };
-
-// const NumberInput = styled.input.attrs({
-//   type: "number",
-// })`
-//   color: black;
-//   cursor: pointer;
-//   margin-bottom: 0;
-//   width: 75px;
-//   border-radius: 5px;
-//   box-sizing: border-box;
-//   height: 25px;
-//   border: 1px solid lightgray;
-//   box-shadow: none;
-//   outline: none;
-//   transition: 0.15s;
-//   text-align: center;
-//   &:hover {
-//     outline: none;
-//     background: none;
-//     box-shadow: none;
-//   }
-// `;
-
-// const NumberWarningMessage = styled.div`
-//   margin-left: 10px;
-//   padding-top: 4px;
-//   padding-left: 10px;
-//   padding-right: 10px;
-//   background-color: lightpink;
-//   color: var(--font-color);
-//   height: 25px;
-//   width: auto;
-//   font-size: 14px;
-//   /* width: 225px; */
-// `;
-
-// const UserNumberContainer = styled.div`
-//   display: flex;
-//   margin-top: 25px;
-//   margin-left: 70px;
-//   width: 90%;
-//   flex-direction: row;
-//   justify-content: flex-start;
-//   align-items: center;
-//   /* border: 2px solid green; */
-// `;
-
-// const TitleSpan = styled.span`
-//   margin-right: 10px;
-// `;

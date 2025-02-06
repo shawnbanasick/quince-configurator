@@ -1,4 +1,7 @@
+import { version } from "react";
+
 const createConfigXmlSlice = (set, get) => ({
+  version: "Quincey-Q 1.0.0",
   devMode: false,
   useMobileMode: true,
   traceSorts: true,
@@ -87,6 +90,9 @@ const createConfigXmlSlice = (set, get) => ({
   isEditingSurveyQuestionIndex: -1,
   triggerSurveyQuestionDeleteModal: false,
 
+  setVersion: (version) => {
+    set(() => ({ version: version }));
+  },
   setTriggerSurveyQuestionDeleteModal: (bool) => {
     set(() => ({ triggerSurveyQuestionDeleteModal: bool }));
   },

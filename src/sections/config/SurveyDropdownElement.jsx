@@ -14,7 +14,7 @@ const SurveyDropdownElement = (props) => {
     const objArray = array.map((x) => {
       x.replace(/\s/g, "");
       const tempObj = {};
-      tempObj.label = ReactHtmlParser(decodeHTML(x));
+      tempObj.label = x;
       tempObj.value = x;
       return tempObj;
     });

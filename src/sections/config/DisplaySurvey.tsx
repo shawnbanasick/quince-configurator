@@ -558,10 +558,10 @@ const SurveyPageQuestions = () => {
   };
 
   return (
-    <div className="h-[800px] w-full">
+    <div className="h-auto w-full">
       <DeleteSurveyItemModal handleConfirmDelete={handleConfirmDelete} />
       <hr className="mt-12 h-1 bg-slate-400 rounded-md" />
-      <h2 className="mt-12 mb-4"> Survey Question Preview</h2>
+      <h2 className="mt-12 mb-4">{t("surveyQuestionPreview")}</h2>
       <div className="w-full">{SurveyQuestions(surveyQuestionsArray)}</div>
     </div>
   );
