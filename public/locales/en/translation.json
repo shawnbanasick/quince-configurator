@@ -118,5 +118,10 @@
   "exampleItem": "Example Item",
   "newItemSettings": "New Item Settings",
   "selectQuestionType": "Select Question Type",
-  "exampleSettings": "Example Settings"
+  "exampleSettings": "Example Settings",
+
+  "*** STATEMENTS ***": "*** STATEMENTS OPTIONS ***",
+  "enterOrPasteStatements": "Enter or Paste Statements (1 statement per line)",
+  "loadStatements": "Load statements.xml File (from a previous project)",
+  "saveStatements": "Save New or Modified Statements File (replacing the default file)"
 }

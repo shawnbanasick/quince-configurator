@@ -1,28 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import XMLParser from "react-xml-parser";
 import { useStore } from "../../globalState/useStore";
 import { useTranslation } from "react-i18next";
+import { decodeHTML } from "../utils/decodeHTML";
+import { stripHtmlDivs } from "./stripHtmlDivs";
 
-interface QuestObjType {
-  surveyQuestionType?: string;
-  required?: string;
-  label?: string;
-  note?: string;
-  bg?: string;
-  limited?: string;
-  maxlength?: string;
-  restricted?: string;
-  placeholder?: string;
-  options?: string;
-  scale?: string;
-}
+const getSetCurrentStatements = (state) => state.setCurrentStatements;
+const getSetNumStatements = (state) => state.setNumStatements;
 
-const UploadAndReadXMLStatements: React.FC = () => {
+const UploadAndReadXmlStatements: React.FC = () => {
   const { t } = useTranslation();
-
-  const [xmlContent, setXmlContent] = useState<string | null>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [surveyQuestArray, setSurveyQuestArray] = useState<QuestObjType[]>([]);
+  const setCurrentStatements = useStore(getSetCurrentStatements);
+  const setNumStatements = useStore(getSetNumStatements);
 
   const handleFileUpload = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -35,82 +24,24 @@ const UploadAndReadXMLStatements: React.FC = () => {
         const data = e.target?.result as string;
         const parser = new XMLParser();
         const xml = parser.parseFromString(data, "text/xml");
-        const xmlObjectArray = xml.getElementsByTagName("item");
+        const xmlObjectArray = xml.getElementsByTagName("statement");
 
-        xmlObjectArray.forEach((item, index) => {
-          if (item?.attributes?.id === "studyTitle") {
-            setStudyTitle(item?.value);
-          }
+        setNumStatements(xmlObjectArray.length);
 
-          if (xmlObjectArray[index].attributes.id === "survey") {
-            let inputObj = xmlObjectArray[index].children;
-            let questObj: QuestObjType = {};
-            let questType = inputObj[0].attributes?.type;
-            questObj.surveyQuestionType = questType;
-            questObj.required = inputObj[0].attributes?.required;
-            if (questType !== "information") {
-              questObj.label = inputObj[1]?.value;
-            }
-            if (questType === "information") {
-              questObj.note = inputObj[1]?.value;
-              questObj.bg = inputObj[1]?.attributes?.bg;
-            }
-            if (questType === "text") {
-              questObj.limited = inputObj[0].attributes?.limited;
-              let inputLenVal = inputObj[0].attributes?.maxlength;
-              if (
-                inputLenVal === null ||
-                inputLenVal === undefined ||
-                isNaN(inputLenVal)
-              ) {
-                questObj.maxlength = inputObj[0].attributes?.limitLength;
-              } else {
-                questObj.maxlength = inputObj[0].attributes?.maxlength;
-              }
-              questObj.restricted = inputObj[0].attributes?.restricted;
-              questObj.note = inputObj[2]?.value;
-              questObj.placeholder = inputObj[3]?.value;
-            }
-            if (questType === "textarea") {
-              questObj.note = inputObj[2]?.value;
-              questObj.placeholder = inputObj[3]?.value;
-            }
-            if (questType === "radio") {
-              questObj[inputObj[2].name] = inputObj[2]?.value;
-              questObj.options = inputObj[0]?.value;
-            }
-            if (questType === "likert") {
-              questObj.required = inputObj[0].attributes?.required;
-              questObj.scale = inputObj[0].attributes?.scale;
-              questObj.label = inputObj[1]?.value;
-            }
-            if (
-              questType === "select" ||
-              questType === "checkbox" ||
-              questType === "rating2" ||
-              questType === "rating5" ||
-              questType === "rating10"
-            ) {
-              questObj.options = inputObj[0]?.value;
-              questObj.note = inputObj[2]?.value;
-            }
-            if (
-              questType === "rating2" ||
-              questType === "rating5" ||
-              questType === "rating10"
-            ) {
-              questObj.scale = inputObj[0].attributes?.scale;
-            }
-            surveyQuestArray.push(questObj);
-            setSurveyQuestionsArray(surveyQuestArray);
-          }
+        let statementString = "";
+        xmlObjectArray.forEach((item) => {
+          let strippedItem = stripHtmlDivs(item.value);
+          let decodedItem = decodeHTML(strippedItem, true);
+          let itemString = `${decodedItem}\n`;
+          statementString += itemString;
         });
+        setCurrentStatements(statementString);
         return;
       };
 
       reader.onerror = () => {
         console.error("Error reading file");
-        setError("Error reading file");
+        // setError("Error reading file");
       };
 
       reader.readAsText(file);
@@ -118,12 +49,12 @@ const UploadAndReadXMLStatements: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center mt-2">
+    <div className="flex flex-col items-center justify-center">
       <label
-        className="cursor-pointer bg-orange-300 hover:opacity-50 border-2 border-gray-600 rounded-md p-2"
+        className="w-80 px-6 p-2 bg-orange-300 text-black font-semibold rounded-md hover:opacity-50 focus:outline-none focus:ring-2 border-2 border-gray-600 focus:ring-orange-400 focus:ring-opacity-75 text-center min-h-[70px] select-none"
         htmlFor="uploadXml"
       >
-        {t("uploadXmlConfigFile")}
+        {t("loadStatements")}
       </label>
       <input
         className="hidden"
@@ -137,4 +68,4 @@ const UploadAndReadXMLStatements: React.FC = () => {
   );
 };
 
-export { UploadAndReadXMLStatements };
+export { UploadAndReadXmlStatements };

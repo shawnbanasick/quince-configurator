@@ -118,5 +118,10 @@
   "exampleItem": "例のアイテム",
   "newItemSettings": "新しいアイテムの設定",
   "selectQuestionType": "質問タイプを選択",
-  "exampleSettings": "例の設定"
+  "exampleSettings": "例の設定",
+
+  "*** STATEMENTS ***": "*** STATEMENTS OPTIONS ***",
+  "enterOrPasteStatements": "ステートメントを入力または貼り付ける (1行に1つのステートメント)",
+  "loadStatements": "ステートメント.xmlファイルを読み込む（以前のプロジェクトから）",
+  "saveStatements": "新規または変更されたステートメント・ファイルを保存する（デフォルト・ファイルを置き換える"
 }

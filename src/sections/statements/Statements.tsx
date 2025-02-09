@@ -2,22 +2,18 @@ import React from "react";
 import { useStore } from "../../globalState/useStore.js";
 import { useTranslation } from "react-i18next";
 import { StatementTextArea } from "./StatementTextArea";
-
-// import StatementTextArea from "./StatementTextArea";
-// import exportToXml from "../../Utils/exportToXml";
-// import generateStatementsXml from "./generateStatementXml";
-// import ImagesBypass from "./ImagesBypass";
-// import GlobalStyle from "../../Utils/GlobalStyle";
-
-// import UploadAndReadXML from "./UploadAndReadXml.js";
-// import { ConfigSections } from "./ConfigSections.js";
-// import { DownloadConfigXml } from "./DownloadConfigXml.js";
+import { UploadAndReadXmlStatements } from "./UploadAndReadXmlStatements";
+import { generateStatementsXml } from "./generateStatementsXml.ts";
 
 const getDisplayMode = (state) => state.displayMode;
+const getCurrentStatements = (state) => state.currentStatements;
+const getVersion = (state) => state.version;
 
 const Statements: React.FC = () => {
   const { t } = useTranslation();
   const displayMode = useStore(getDisplayMode);
+  const currentStatements = useStore(getCurrentStatements);
+  const version = useStore(getVersion);
 
   let display;
   if (displayMode === "beginner") {
@@ -27,48 +23,36 @@ const Statements: React.FC = () => {
   }
 
   const handleClick = () => {
-    console.log("clicked");
-    // const data = generateStatementsXml();
-    // exportToXml("statements.xml", data, "xml");
+    const xmlContent = generateStatementsXml(currentStatements, version);
+    const blob = new Blob([xmlContent], { type: "application/xml" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "statements.xml";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
   };
-
-  //   if (
-  //     appState.configUseImages === "true" ||
-  //     appState.configUseImages === true
-  //   ) {
-  //     return (
-  //       <MainContent>
-  //         <GlobalStyle />
-  //         <Title>Statements Settings</Title>
-  //         <ImagesBypass />
-  //       </MainContent>
-  //     );
-  //   }
 
   return (
     <div className="flex flex-col items-center justify-center">
       <h1 className="text-center">Statements.xml</h1>
 
-      <div className="flex flex-row w-2/3 justify-between  gap-[] mt-4 mb-6">
-        {/* <UploadAndReadXML /> */}
-        {/* <DownloadConfigXml /> */}
+      <div className="flex flex-row w-10/12 justify-between gap-[] mt-4 mb-6">
+        <UploadAndReadXmlStatements />
+        <div
+          onClick={() => handleClick()}
+          className="w-80 px-6 p-2 bg-orange-300 text-black font-semibold rounded-md hover:opacity-50 focus:outline-none focus:ring-2 border-2 border-gray-600 focus:ring-orange-400 focus:ring-opacity-75 text-center min-h-[70px] select-none"
+        >
+          {t("saveStatements")}
+        </div>
       </div>
       {/* 
 
       {/* <MainContent> */}
       <div className="flex flex-col items-center justify-center">
-        {/* <GlobalStyle /> */}
-        {/* <Title>Statements Settings</Title> */}
-        <h2>Statements Settings</h2>
         <StatementTextArea />
-        {/* <DownloadButton onClick={() => handleClick()}> */}
-        <button
-          onClick={() => handleClick()}
-          className="mt-4 mb-8 w-80 px-6 py-2 bg-orange-500 text-black font-semibold rounded-md hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-opacity-75"
-        >
-          Click here to save file to <b>SETTINGS</b> folder and replace the
-          "statements.xml" file
-        </button>
       </div>
     </div>
   );

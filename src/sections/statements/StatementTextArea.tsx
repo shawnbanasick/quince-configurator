@@ -6,10 +6,14 @@ import { useTranslation } from "react-i18next";
 // import UploadStatementsXmlButton from "./UploadStatementsXmlButton";
 
 const getDisplayMode = (state) => state.displayMode;
+const getCurrentStatements = (state) => state.currentStatements;
+const getSetCurrentStatements = (state) => state.setCurrentStatements;
 
 const StatementTextArea = () => {
   const { t } = useTranslation();
   let displayMode = useStore(getDisplayMode);
+  const currentStatements = useStore(getCurrentStatements);
+  const setCurrentStatements = useStore(getSetCurrentStatements);
 
   if (displayMode === "beginner") {
     displayMode = true;
@@ -17,13 +21,10 @@ const StatementTextArea = () => {
     displayMode = false;
   }
 
-  let currentStatements = localStorage.getItem("currentStatements");
-
   const handleChange = (event) => {
     console.log(event.target.value);
-    //   let statementInput = event.target.value;
-    //   appState.currentStatements = statementInput;
-    //   localStorage.setItem("currentStatements", statementInput);
+    let statementInput = event.target.value;
+    setCurrentStatements(statementInput);
   };
 
   return (
@@ -31,11 +32,18 @@ const StatementTextArea = () => {
     <div className="flex flex-col items-center justify-center">
       {displayMode && (
         // <DisplayModeText>
-        <div className="self-start ml-[10px] mt-[40px] mb-[30px] w-[78vw] max-w-[1200px] text-[20px] p-[10px] bg-[whitesmoke] rounded-[3px] border-2 border-black">
-          If you have statements from a previous EQ Web Sort project, you can
-          click on the orange "Load 'statements.xml' File Data" button to upload
-          the statements.xml file.
+        <div className=" ml-[10px] mt-[40px] mb-[30px] w-[78vw] max-w-[1200px] text-[20px] p-[10px] bg-[whitesmoke] rounded-[3px] border-2 border-black">
+          If you want to modify statements from a previous Quincey-Q project,
+          you can click on the orange "Load statements.xml File" button to
+          upload the statements.xml file.
           <br />
+          <br />
+          If you want to create new statements, you can type them directly into
+          the text box below, or paste statements from another file. Each
+          statement must be on a new line.
+          <br />
+          <br />
+          <b>Statement Formatting</b>
           <br />
           Statements can include HTML paired tag formatting if desired:
           <ul>
@@ -62,13 +70,15 @@ const StatementTextArea = () => {
           Config section.
           <br />
           <br />
-          When you have finished adding your statements, click the orange button
-          at the bottom of the page and save your information as
-          'statements.xml' in the settings folder (replace the default file).
+          <b>Save Statement File</b>
+          <br />
+          After you have finished adding or modifying your statements, you must
+          save the file. click the orange button at the top right side of the
+          page and save your information as 'statements.xml' in the settings
+          folder (replacing the default file).
         </div>
       )}
-      {/* <UploadStatementsXmlButton /> */}
-      <label>Enter or Paste Statements (1 statement per line) : </label>
+      <label>{t("enterOrPasteStatements")}: </label>
       <textarea
         className="w-[clamp(500px,80vw,1500px)] h-[400px] mt-[10px] mb-[30px] select-all border-2 border-slate-300"
         name="textValue"
