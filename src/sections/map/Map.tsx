@@ -5,6 +5,8 @@ import { useStore } from "../../globalState/useStore.js";
 import { useTranslation } from "react-i18next";
 import { Radio } from "../utils/RadioButtons";
 import { MapInputElement } from "./MapInputElement";
+import { setTintColors } from "./setTintColors";
+import { setStepColors } from "./setStepColors";
 
 const getDisplayMode = (state) => state.displayMode;
 const getNumStatements = (state) => state.numStatements;
@@ -36,9 +38,16 @@ const Map = () => {
     // exportToXml("map.xml", data, "xml");
   };
 
-  const handleMapColorPaletteChange = (event) => {
-    setMapColorPalette(event.target.value);
+  const handleMapColorPaletteChange = (value) => {
+    console.log("Map color palette changed to: ", value);
+    setMapColorPalette(value);
+    if (value === "steps") {
+      setStepColors();
+    } else if (value === "tints") {
+      setTintColors();
+    }
   };
+
   const handleMapColColorsChange = (event) => {
     setMapColColors(event.target.value);
   };
@@ -65,12 +74,11 @@ const Map = () => {
           the settings folder (replace the default file).
         </div>
       )}
-
       {/* <UploadButtonContainer> */}
       <div>{/* <UploadMapXmlButton /> */}</div>
-
-      <MapInputElement numStatements={numStatements} />
-
+      {/* ** DEBUG ONLY = REMOVE LATER */}
+      {/* <MapInputElement numStatements={numStatements} /> */}
+      <MapInputElement numStatements={33} />
       <div className="flex flex-row h-[70px] content-center gap-5 mt-1">
         <span className="content-center">{`1. ${t("mapColorPalette")}:`}</span>
         <Radio
@@ -96,7 +104,6 @@ const Map = () => {
           handleChange={handleMapColorPaletteChange}
         />
       </div>
-
       <div className="flex flex-row h-[70px] content-center gap-5 mt-1">
         <span className="content-center">{`2. ${t("mapColColors")}:`}</span>
         <Radio
@@ -122,7 +129,6 @@ const Map = () => {
           handleChange={handleMapColColorsChange}
         />
       </div>
-
       {/* <DownloadMapButton onClick={() => handleClick()}> */}
       <button onClick={() => handleClick()}>
         Click here to save file to <b>SETTINGS</b> folder and replace the

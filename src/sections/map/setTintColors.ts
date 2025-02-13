@@ -30,4 +30,4 @@ const setTintColors = () => {
   useStore.setState({ colCol6: "#3bff3b" });
 };
 
-export default setTintColors;
+export { setTintColors };

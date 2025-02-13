@@ -45,6 +45,18 @@ const createMapXmlSlice = (set, get) => ({
   qSortPattern: [],
   mapInputQsortPattern: [],
 
+  mapColorPaletteCustomActive: true,
+  mapColorPaletteStepsActive: false,
+  mapColorPaletteTintsActive: false,
+  setMapColorPalette: (palette) => set({ mapColorPalette: palette }),
+  setMapColorPaletteCustomActive: (active) =>
+    set({ mapColorPaletteCustomActive: active }),
+  setMapColorPaletteStepsActive: (active) =>
+    set({ mapColorPaletteStepsActive: active }),
+  setMapColorPaletteTintsActive: (active) =>
+    set({ mapColorPaletteTintsActive: active }),
+  setColor: (stateDesig, color) => set((state) => ({ [stateDesig]: color })),
+
   setMapInputQsortPattern: (pattern) => {
     set(() => ({ mapInputQsortPattern: pattern }));
   },

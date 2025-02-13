@@ -30,4 +30,4 @@ const setStepColors = () => {
   useStore.setState({ colCol6: "#057A55" });
 };
 
-export default setStepColors;
+export { setStepColors };
