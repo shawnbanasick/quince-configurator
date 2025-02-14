@@ -5,15 +5,21 @@ import { useStore } from "../../globalState/useStore.js";
 import { useTranslation } from "react-i18next";
 import { Radio } from "../utils/RadioButtons";
 import { MapInputElement } from "./MapInputElement";
-import { setTintColors } from "./setTintColors";
-import { setStepColors } from "./setStepColors";
+import { setTint6Colors } from "./setTint6Colors.js";
+import { setTint5Colors } from "./setTint5Colors.js";
+import { setTint4Colors } from "./setTint4Colors.js";
+import { setStep6Colors } from "./setStep6Colors.js";
+import { setStep5Colors } from "./setStep5Colors.js";
+import { setStep4Colors } from "./setStep4Colors.js";
+import { setClearAllColors } from "./setClearAllColors.js";
+import { UploadAndReadXmlMap } from "./UploadAndReadXmlMap.js";
 
 const getDisplayMode = (state) => state.displayMode;
 const getNumStatements = (state) => state.numStatements;
 const getMapColorPalette = (state) => state.mapColorPalette;
 const getSetMapColorPalette = (state) => state.setMapColorPalette;
-const getMapColColors = (state) => state.mapColColors;
-const getSetMapColColors = (state) => state.setMapColColors;
+const getMapColColorsStyle = (state) => state.mapColColorsStyle;
+const getSetMapColColorsStyle = (state) => state.setMapColColorsStyle;
 
 const Map = () => {
   const { t } = useTranslation();
@@ -21,8 +27,8 @@ const Map = () => {
   // const numStatements = useStore(getNumStatements);
   const mapColorPalette = useStore(getMapColorPalette);
   const setMapColorPalette = useStore(getSetMapColorPalette);
-  const mapColColors = useStore(getMapColColors);
-  const setMapColColors = useStore(getSetMapColColors);
+  const mapColColorsStyle = useStore(getMapColColorsStyle);
+  const setMapColColorsStyle = useStore(getSetMapColColorsStyle);
   const numStatements = useStore(getNumStatements);
 
   let display;
@@ -41,25 +47,54 @@ const Map = () => {
   const handleMapColorPaletteChange = (value) => {
     console.log("Map color palette changed to: ", value);
     setMapColorPalette(value);
-    if (value === "steps") {
-      setStepColors();
-    } else if (value === "tints") {
-      setTintColors();
+    if (value === "steps4") {
+      setStep4Colors();
     }
+    if (value === "steps5") {
+      setStep5Colors();
+    }
+    if (value === "steps6") {
+      setStep6Colors();
+    }
+    if (value === "tints4") {
+      setTint4Colors();
+    }
+    if (value === "tints5") {
+      setTint5Colors();
+    }
+    if (value === "tints6") {
+      setTint6Colors();
+    }
+    if (value === "clear") {
+      setClearAllColors();
+    }
+    return;
   };
 
-  const handleMapColColorsChange = (event) => {
-    setMapColColors(event.target.value);
+  const handleMapColColorsChange = (value) => {
+    console.log("Map column colors changed to: ", value);
+    setMapColColorsStyle(value);
   };
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center pb-[100px]">
       <h1 className="text-center">Map.xml</h1>
       <h2>Q Sort Grid Settings</h2>
+      <div className="flex flex-row w-10/12 justify-between gap-[] mt-4 mb-6">
+        {/* <DownloadMapButton onClick={() => handleClick()}> */}
+        <UploadAndReadXmlMap />
+        <button
+          className="bg-[orange] text-[black] w-[350px] p-[10px] rounded-[5px] mt-[20px]"
+          onClick={() => handleClick()}
+        >
+          Click here to save file to <b>SETTINGS</b> folder and replace the
+          "map.xml" file
+        </button>
+      </div>
       {displayMode && (
         // <DisplayModeText>
         <div className=" ml-[10px] mt-[40px] mb-[30px] w-[78vw] max-w-[1200px] text-[20px] p-[10px] bg-[whitesmoke] rounded-[3px] border-2 border-black">
-          If you have a "map.xml" from a previous EQ Web Sort project, you can
+          If you have a "map.xml" from a previous Quincey-Q project, you can
           click on the orange "Load 'map.xml' File Data" button to upload the
           file.
           <br />
@@ -79,21 +114,51 @@ const Map = () => {
       {/* ** DEBUG ONLY = REMOVE LATER */}
       {/* <MapInputElement numStatements={numStatements} /> */}
       <MapInputElement numStatements={33} />
-      <div className="flex flex-row h-[70px] content-center gap-5 mt-1">
+      <div className="flex flex-row h-[50px] content-center gap-5 mt-1 mb-[20px]">
         <span className="content-center">{`1. ${t("mapColorPalette")}:`}</span>
         <Radio
           name="option1"
-          value="steps"
-          label={t("steps")}
+          value="steps4"
+          label={t("steps4")}
           align="left"
-          isChecked={mapColorPalette === "steps"}
+          isChecked={mapColorPalette === "steps4"}
           handleChange={handleMapColorPaletteChange}
         />
         <Radio
           name="option1"
-          value="tints"
-          label={t("tints")}
-          isChecked={mapColorPalette === "tints"}
+          value="steps5"
+          label={t("steps5")}
+          align="left"
+          isChecked={mapColorPalette === "steps5"}
+          handleChange={handleMapColorPaletteChange}
+        />
+        <Radio
+          name="option1"
+          value="steps6"
+          label={t("steps6")}
+          align="left"
+          isChecked={mapColorPalette === "steps6"}
+          handleChange={handleMapColorPaletteChange}
+        />
+        <Radio
+          name="option1"
+          value="tints4"
+          label={t("tints4")}
+          isChecked={mapColorPalette === "tints4"}
+          handleChange={handleMapColorPaletteChange}
+        />
+        <Radio
+          name="option1"
+          value="tints5"
+          label={t("tints5")}
+          isChecked={mapColorPalette === "tints5"}
+          handleChange={handleMapColorPaletteChange}
+        />
+        <Radio
+          name="option1"
+          value="tints6"
+          label={t("tints6")}
+          isChecked={mapColorPalette === "tints6"}
           handleChange={handleMapColorPaletteChange}
         />
         <Radio
@@ -103,37 +168,39 @@ const Map = () => {
           isChecked={mapColorPalette === "custom"}
           handleChange={handleMapColorPaletteChange}
         />
+        <Radio
+          name="option1"
+          value="clear"
+          label={t("clearAll")}
+          isChecked={mapColorPalette === "clear"}
+          handleChange={handleMapColorPaletteChange}
+        />
       </div>
-      <div className="flex flex-row h-[70px] content-center gap-5 mt-1">
+      <div className="flex flex-row h-[50px] content-center gap-5 mt-1">
         <span className="content-center">{`2. ${t("mapColColors")}:`}</span>
         <Radio
           name="option2"
           value="headers"
           label={t("headers")}
           align="left"
-          isChecked={mapColColors === "headers"}
+          isChecked={mapColColorsStyle === "headers"}
           handleChange={handleMapColColorsChange}
         />
         <Radio
           name="option2"
           value="headersAndColumns"
-          label={t("headers and columns")}
-          isChecked={mapColColors === "Headers and columns"}
+          label={t("headersAndColumns")}
+          isChecked={mapColColorsStyle === "headersAndColumns"}
           handleChange={handleMapColColorsChange}
         />
         <Radio
           name="option2"
-          value="custom"
-          label={t("custom")}
-          isChecked={mapColColors === "custom"}
+          value="noColoring"
+          label={t("noColoring")}
+          isChecked={mapColColorsStyle === "noColoring"}
           handleChange={handleMapColColorsChange}
         />
       </div>
-      {/* <DownloadMapButton onClick={() => handleClick()}> */}
-      <button onClick={() => handleClick()}>
-        Click here to save file to <b>SETTINGS</b> folder and replace the
-        "map.xml" file
-      </button>
     </div>
   );
 };

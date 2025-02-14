@@ -1,6 +1,6 @@
 const createMapXmlSlice = (set, get) => ({
   mapColorPalette: "steps",
-  mapColColors: "Headers",
+  mapColColorsStyle: "headers",
   activeValueM6: "0",
   activeValueM5: "0",
   activeValueM4: "0",
@@ -45,18 +45,12 @@ const createMapXmlSlice = (set, get) => ({
   qSortPattern: [],
   mapInputQsortPattern: [],
 
-  mapColorPaletteCustomActive: true,
-  mapColorPaletteStepsActive: false,
-  mapColorPaletteTintsActive: false,
-  setMapColorPalette: (palette) => set({ mapColorPalette: palette }),
-  setMapColorPaletteCustomActive: (active) =>
-    set({ mapColorPaletteCustomActive: active }),
-  setMapColorPaletteStepsActive: (active) =>
-    set({ mapColorPaletteStepsActive: active }),
-  setMapColorPaletteTintsActive: (active) =>
-    set({ mapColorPaletteTintsActive: active }),
   setColor: (stateDesig, color) => set((state) => ({ [stateDesig]: color })),
+  setNumber: (stateDesig, number) => set((state) => ({ [stateDesig]: number })),
 
+  setMapColorPalette: (palette) => {
+    set(() => ({ mapColorPalette: palette }));
+  },
   setMapInputQsortPattern: (pattern) => {
     set(() => ({ mapInputQsortPattern: pattern }));
   },
@@ -186,11 +180,8 @@ const createMapXmlSlice = (set, get) => ({
   setMapValue13: (value) => {
     set(() => ({ activeValue13: value }));
   },
-  setMapColColors: (options) => {
-    set(() => ({ mapColColors: options }));
-  },
-  setMapColorPalette: (palette) => {
-    set(() => ({ mapColorPalette: palette }));
+  setMapColColorsStyle: (value) => {
+    set(() => ({ mapColColorsStyle: value }));
   },
 });
 

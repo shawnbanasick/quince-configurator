@@ -1,7 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useStore } from "../../globalState/useStore.js";
 import { InputDiv } from "./InputDiv";
-import { convertQsortObjectToArray } from "./convertQsortObjectToArray";
+import { useTranslation } from "react-i18next";
+
+// import { convertQsortObjectToArray } from "./convertQsortObjectToArray";
 
 const getColColN6 = (state) => state.colColN6;
 const getColColN5 = (state) => state.colColN5;
@@ -24,10 +26,33 @@ const getColCol11 = (state) => state.colCol11;
 const getColCol12 = (state) => state.colCol12;
 const getColCol13 = (state) => state.colCol13;
 
+const getActiveValueM6 = (state) => state.activeValueM6;
+const getActiveValueM5 = (state) => state.activeValueM5;
+const getActiveValueM4 = (state) => state.activeValueM4;
+const getActiveValueM3 = (state) => state.activeValueM3;
+const getActiveValueM2 = (state) => state.activeValueM2;
+const getActiveValueM1 = (state) => state.activeValueM1;
+const getActiveValue0 = (state) => state.activeValue0;
+const getActiveValue1 = (state) => state.activeValue1;
+const getActiveValue2 = (state) => state.activeValue2;
+const getActiveValue3 = (state) => state.activeValue3;
+const getActiveValue4 = (state) => state.activeValue4;
+const getActiveValue5 = (state) => state.activeValue5;
+const getActiveValue6 = (state) => state.activeValue6;
+const getActiveValue7 = (state) => state.activeValue7;
+const getActiveValue8 = (state) => state.activeValue8;
+const getActiveValue9 = (state) => state.activeValue9;
+const getActiveValue10 = (state) => state.activeValue10;
+const getActiveValue11 = (state) => state.activeValue11;
+const getActiveValue12 = (state) => state.activeValue12;
+const getActiveValue13 = (state) => state.activeValue13;
+const getSetNumber = (state) => state.setNumber;
+
 const getSetMapInputQsortPattern = (state) => state.setMapInputQsortPattern;
 
 const MapInputElement = (props) => {
   // Numbers tile bar background color
+  const { t } = useTranslation();
   let backgroundCol = "#d6dbe0";
 
   const totalEntries = useRef(0);
@@ -52,31 +77,28 @@ const MapInputElement = (props) => {
   const colCol11 = useStore(getColCol11);
   const colCol12 = useStore(getColCol12);
   const colCol13 = useStore(getColCol13);
+  const activeValueM6 = useStore(getActiveValueM6);
+  const activeValueM5 = useStore(getActiveValueM5);
+  const activeValueM4 = useStore(getActiveValueM4);
+  const activeValueM3 = useStore(getActiveValueM3);
+  const activeValueM2 = useStore(getActiveValueM2);
+  const activeValueM1 = useStore(getActiveValueM1);
+  const activeValue0 = useStore(getActiveValue0);
+  const activeValue1 = useStore(getActiveValue1);
+  const activeValue2 = useStore(getActiveValue2);
+  const activeValue3 = useStore(getActiveValue3);
+  const activeValue4 = useStore(getActiveValue4);
+  const activeValue5 = useStore(getActiveValue5);
+  const activeValue6 = useStore(getActiveValue6);
+  const activeValue7 = useStore(getActiveValue7);
+  const activeValue8 = useStore(getActiveValue8);
+  const activeValue9 = useStore(getActiveValue9);
+  const activeValue10 = useStore(getActiveValue10);
+  const activeValue11 = useStore(getActiveValue11);
+  const activeValue12 = useStore(getActiveValue12);
+  const activeValue13 = useStore(getActiveValue13);
   const setMapInputQsortPattern = useStore(getSetMapInputQsortPattern);
-
-  const [displayValue, setDisplayValue] = useState({
-    activeValueM6: 0,
-    activeValueM5: 0,
-    activeValueM4: 0,
-    activeValueM3: 0,
-    activeValueM2: 0,
-    activeValueM1: 0,
-    activeValue0: 0,
-    activeValue1: 0,
-    activeValue2: 0,
-    activeValue3: 0,
-    activeValue4: 0,
-    activeValue5: 0,
-    activeValue6: 0,
-    activeValue7: 0,
-    activeValue8: 0,
-    activeValue9: 0,
-    activeValue10: 0,
-    activeValue11: 0,
-    activeValue12: 0,
-    activeValue13: 0,
-    statementsLength: 0,
-  });
+  const setNumber = useStore(getSetNumber);
 
   const [displayTitles, setDisplayTitles] = useState({
     inputTitle: "Enter the Number of Statements in Each Column",
@@ -84,44 +106,47 @@ const MapInputElement = (props) => {
   });
 
   // *** HANDLE INPUT CHANGE ***
-  const calcQsortDesign = (event) => {
-    const columnName = event.target.name;
-    const value = +event.target.value;
+  const calcQsortDesign = (value, name) => {
+    const columnName = name;
+    // const columnName = event.target.name;
+    // const value = +event.target.value;
     console.log("value", value);
     console.log("columnName", columnName);
 
     totalEntries.current = +totalEntries.current + value;
 
-    setDisplayValue((prevState) => ({
-      ...prevState,
-      [`activeValue${columnName}`]: value,
-    }));
+    setNumber(`activeValue${columnName}`, value);
+    // setDisplayValue((prevState) => ({
+    //   ...prevState,
+    //   [`activeValue${columnName}`]: value,
+    // }));
 
     localStorage.setItem(`activeValue${columnName}`, value.toString());
   };
 
+  // get current entries and compute total statements entered
   useEffect(() => {
     const qSortPatternArray = [
-      +displayValue.activeValueM6,
-      +displayValue.activeValueM5,
-      +displayValue.activeValueM4,
-      +displayValue.activeValueM3,
-      +displayValue.activeValueM2,
-      +displayValue.activeValueM1,
-      +displayValue.activeValue0,
-      +displayValue.activeValue1,
-      +displayValue.activeValue2,
-      +displayValue.activeValue3,
-      +displayValue.activeValue4,
-      +displayValue.activeValue5,
-      +displayValue.activeValue6,
-      +displayValue.activeValue7,
-      +displayValue.activeValue8,
-      +displayValue.activeValue9,
-      +displayValue.activeValue10,
-      +displayValue.activeValue11,
-      +displayValue.activeValue12,
-      +displayValue.activeValue13,
+      +activeValueM6,
+      +activeValueM5,
+      +activeValueM4,
+      +activeValueM3,
+      +activeValueM2,
+      +activeValueM1,
+      +activeValue0,
+      +activeValue1,
+      +activeValue2,
+      +activeValue3,
+      +activeValue4,
+      +activeValue5,
+      +activeValue6,
+      +activeValue7,
+      +activeValue8,
+      +activeValue9,
+      +activeValue10,
+      +activeValue11,
+      +activeValue12,
+      +activeValue13,
     ];
 
     const numInputStatements = qSortPatternArray.reduce(
@@ -146,20 +171,43 @@ const MapInputElement = (props) => {
     } else {
       setDisplayTitles({
         inputTitle: `Over-Allocated: ${-difference} statements`,
-        inputColor: "bg-red-200",
+        inputColor: "bg-red-100",
       });
     }
-  }, [displayValue, props.numStatements, setMapInputQsortPattern]);
+  }, [
+    props.numStatements,
+    setMapInputQsortPattern,
+    activeValue0,
+    activeValue1,
+    activeValue2,
+    activeValue3,
+    activeValue4,
+    activeValue5,
+    activeValue6,
+    activeValue7,
+    activeValue8,
+    activeValue9,
+    activeValue10,
+    activeValue11,
+    activeValue12,
+    activeValue13,
+    activeValueM1,
+    activeValueM2,
+    activeValueM3,
+    activeValueM4,
+    activeValueM5,
+    activeValueM6,
+  ]);
 
   return (
-    <div className="mt-10 mb-20 flex flex-col w-auto items-center justify-center outline outline-2 outline-blue-300">
-      <div className="flex w-auto flex-row items-center justify-center outline outline-2 outline-green-300">
-        <div className="mb-5 w-[400px] pt-2 pl-2 outline outline-2 outline-purple-300">
-          Q Sort Pattern
+    <div className="flex flex-col mt-10 mb-10 w-auto">
+      <div className="flex flex-row">
+        <div className="flex items-center h-[50px] w-auto pr-4 pl-2">
+          {t("qSortPattern")}:
         </div>
         {props.numStatements > 0 ? (
           <div
-            className={`${displayTitles.inputColor} border border-2 border-blue-300`}
+            className={`flex pl-2 pr-2 rounded-sm items-center ${displayTitles.inputColor} `}
           >
             {displayTitles.inputTitle}
           </div>
@@ -167,12 +215,12 @@ const MapInputElement = (props) => {
           <div>No Statements Loaded in the Statements.xml section</div>
         )}
       </div>
-      <div className="flex flex-row gap-1 w-auto flex-wrap items-center justify-center outline outline-2 outline-yellow-300">
+      <div className="flex flex-row gap-1 w-auto flex-wrap items-center justify-center">
         <InputDiv
           label={"-6"}
           name={"M6"}
           onChangeCallback={calcQsortDesign}
-          value={displayValue.activeValueM6}
+          value={activeValueM6}
           stateDesig={"colColN6"}
           default={colColN6}
           backgroundCol={backgroundCol}
@@ -181,7 +229,7 @@ const MapInputElement = (props) => {
           label={"-5"}
           name={"M5"}
           onChangeCallback={calcQsortDesign}
-          value={displayValue.activeValueM5}
+          value={activeValueM5}
           stateDesig={"colColN5"}
           default={colColN5}
           backgroundCol={backgroundCol}
@@ -190,7 +238,7 @@ const MapInputElement = (props) => {
           label={"-4"}
           name={"M4"}
           onChangeCallback={calcQsortDesign}
-          value={displayValue.activeValueM4}
+          value={activeValueM4}
           stateDesig={"colColN4"}
           default={colColN4}
           backgroundCol={backgroundCol}
@@ -199,7 +247,7 @@ const MapInputElement = (props) => {
           label={"-3"}
           name={"M3"}
           onChangeCallback={calcQsortDesign}
-          value={displayValue.activeValueM3}
+          value={activeValueM3}
           stateDesig={"colColN3"}
           default={colColN3}
           backgroundCol={backgroundCol}
@@ -208,7 +256,7 @@ const MapInputElement = (props) => {
           label={"-2"}
           name={"M2"}
           onChangeCallback={calcQsortDesign}
-          value={displayValue.activeValueM2}
+          value={activeValueM2}
           stateDesig={"colColN2"}
           default={colColN2}
           backgroundCol={backgroundCol}
@@ -217,7 +265,7 @@ const MapInputElement = (props) => {
           label={"-1"}
           name={"M1"}
           onChangeCallback={calcQsortDesign}
-          value={displayValue.activeValueM1}
+          value={activeValueM1}
           stateDesig={"colColN1"}
           default={colColN1}
           backgroundCol={backgroundCol}
@@ -226,7 +274,7 @@ const MapInputElement = (props) => {
           label={"0"}
           name={"0"}
           onChangeCallback={calcQsortDesign}
-          value={displayValue.activeValue0}
+          value={activeValue0}
           stateDesig={"colCol0"}
           default={colCol0}
           backgroundCol={backgroundCol}
@@ -235,7 +283,7 @@ const MapInputElement = (props) => {
           label={"1"}
           name={"1"}
           onChangeCallback={calcQsortDesign}
-          value={displayValue.activeValue1}
+          value={activeValue1}
           stateDesig={"colCol1"}
           default={colCol1}
           backgroundCol={backgroundCol}
@@ -244,7 +292,7 @@ const MapInputElement = (props) => {
           label={"2"}
           name={"2"}
           onChangeCallback={calcQsortDesign}
-          value={displayValue.activeValue2}
+          value={activeValue2}
           stateDesig={"colCol2"}
           default={colCol2}
           backgroundCol={"#83cafe"}
@@ -253,7 +301,7 @@ const MapInputElement = (props) => {
           label={"3"}
           name={"3"}
           onChangeCallback={calcQsortDesign}
-          value={displayValue.activeValue3}
+          value={activeValue3}
           stateDesig={"colCol3"}
           default={colCol3}
           backgroundCol={backgroundCol}
@@ -262,7 +310,7 @@ const MapInputElement = (props) => {
           label={"4"}
           name={"4"}
           onChangeCallback={calcQsortDesign}
-          value={displayValue.activeValue4}
+          value={activeValue4}
           stateDesig={"colCol4"}
           default={colCol4}
           backgroundCol={backgroundCol}
@@ -271,7 +319,7 @@ const MapInputElement = (props) => {
           label={"5"}
           name={"5"}
           onChangeCallback={calcQsortDesign}
-          value={displayValue.activeValue5}
+          value={activeValue5}
           stateDesig={"colCol5"}
           default={colCol5}
           backgroundCol={backgroundCol}
@@ -280,7 +328,7 @@ const MapInputElement = (props) => {
           label={"6"}
           name={"6"}
           onChangeCallback={calcQsortDesign}
-          value={displayValue.activeValue6}
+          value={activeValue6}
           stateDesig={"colCol6"}
           default={colCol6}
           backgroundCol={backgroundCol}
@@ -289,7 +337,7 @@ const MapInputElement = (props) => {
           label={"7"}
           name={"7"}
           onChangeCallback={calcQsortDesign}
-          value={displayValue.activeValue7}
+          value={activeValue7}
           stateDesig={"colCol7"}
           default={colCol7}
           backgroundCol={backgroundCol}
@@ -298,7 +346,7 @@ const MapInputElement = (props) => {
           label={"8"}
           name={"8"}
           onChangeCallback={calcQsortDesign}
-          value={displayValue.activeValue8}
+          value={activeValue8}
           stateDesig={"colCol8"}
           default={colCol8}
           backgroundCol={backgroundCol}
@@ -307,7 +355,7 @@ const MapInputElement = (props) => {
           label={"9"}
           name={"9"}
           onChangeCallback={calcQsortDesign}
-          value={displayValue.activeValue9}
+          value={activeValue9}
           stateDesig={"colCol9"}
           default={colCol9}
           backgroundCol={backgroundCol}
@@ -316,7 +364,7 @@ const MapInputElement = (props) => {
           label={"10"}
           name={"10"}
           onChangeCallback={calcQsortDesign}
-          value={displayValue.activeValue10}
+          value={activeValue10}
           stateDesig={"colCol10"}
           default={colCol10}
           backgroundCol={backgroundCol}
@@ -325,7 +373,7 @@ const MapInputElement = (props) => {
           label={"11"}
           name={"11"}
           onChangeCallback={calcQsortDesign}
-          value={displayValue.activeValue11}
+          value={activeValue11}
           stateDesig={"colCol11"}
           default={colCol11}
           backgroundCol={backgroundCol}
@@ -334,7 +382,7 @@ const MapInputElement = (props) => {
           label={"12"}
           name={"12"}
           onChangeCallback={calcQsortDesign}
-          value={displayValue.activeValue12}
+          value={activeValue12}
           stateDesig={"colCol12"}
           default={colCol12}
           backgroundCol={backgroundCol}
@@ -343,7 +391,7 @@ const MapInputElement = (props) => {
           label={"13"}
           name={"13"}
           onChangeCallback={calcQsortDesign}
-          value={displayValue.activeValue13}
+          value={activeValue13}
           stateDesig={"colCol13"}
           default={colCol13}
           backgroundCol={backgroundCol}

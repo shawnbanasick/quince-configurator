@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { useStore } from "../../GlobalState/useStore";
 import PopoverPicker from "./PopoverPicker";
 import { useDebouncyFn } from "use-debouncy";
-import { setStepColors } from "./setStepColors";
-import { setTintColors } from "./setTintColors";
+// import { setStep6Colors } from "./setStep6Colors";
+// import { setTintColors } from "./setTintColors";
 
 const MapColorPicker = (props) => {
   const [color, setColor] = useState(props.default);
@@ -26,19 +26,19 @@ const MapColorPicker = (props) => {
     setColorInStore(props.stateDesig, e);
     localStorage.setItem(props.stateDesig, e);
     setColor(e);
-    setMapColorPalette("Custom");
+    setMapColorPalette("custom");
     setMapColorPaletteCustomActive(true);
     setMapColorPaletteStepsActive(false);
     setMapColorPaletteTintsActive(false);
   }, 200);
 
   useEffect(() => {
-    if (mapColorPalette === "Steps") {
-      setStepColors();
-    }
-    if (mapColorPalette === "Tints") {
-      setTintColors();
-    }
+    // if (mapColorPalette === "steps") {
+    //   setStep6Colors();
+    // }
+    // if (mapColorPalette === "tints") {
+    //   setTintColors();
+    // }
     let savedColor = localStorage.getItem(props.stateDesig);
     if (savedColor === null || savedColor === undefined) {
       savedColor = useStore.getState()[props.stateDesig];

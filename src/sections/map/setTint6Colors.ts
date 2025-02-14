@@ -1,6 +1,6 @@
 import { useStore } from "../../globalState/useStore";
 
-const setTintColors = () => {
+const setTint6Colors = () => {
   localStorage.setItem("colColN6", "#ff7676");
   localStorage.setItem("colColN5", "#ff8989");
   localStorage.setItem("colColN4", "#ff9d9d");
@@ -14,6 +14,13 @@ const setTintColors = () => {
   localStorage.setItem("colCol4", "#9dff9d");
   localStorage.setItem("colCol5", "#89ff89");
   localStorage.setItem("colCol6", "#3bff3b");
+  localStorage.setItem("colCol7", "#e0e0e0");
+  localStorage.setItem("colCol8", "#e0e0e0");
+  localStorage.setItem("colCol9", "#e0e0e0");
+  localStorage.setItem("colCol10", "#e0e0e0");
+  localStorage.setItem("colCol11", "#e0e0e0");
+  localStorage.setItem("colCol12", "#e0e0e0");
+  localStorage.setItem("colCol13", "#e0e0e0");
 
   useStore.setState({ colColN6: "#ff7676" });
   useStore.setState({ colColN5: "#ff8989" });
@@ -28,6 +35,13 @@ const setTintColors = () => {
   useStore.setState({ colCol4: "#9dff9d" });
   useStore.setState({ colCol5: "#89ff89" });
   useStore.setState({ colCol6: "#3bff3b" });
+  useStore.setState({ colCol7: "#e0e0e0" });
+  useStore.setState({ colCol8: "#e0e0e0" });
+  useStore.setState({ colCol9: "#e0e0e0" });
+  useStore.setState({ colCol10: "#e0e0e0" });
+  useStore.setState({ colCol11: "#e0e0e0" });
+  useStore.setState({ colCol12: "#e0e0e0" });
+  useStore.setState({ colCol13: "#e0e0e0" });
 };
 
-export { setTintColors };
+export { setTint6Colors };
