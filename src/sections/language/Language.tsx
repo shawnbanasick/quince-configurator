@@ -1,16 +1,20 @@
 import Image from "../../assets/images/qq-brand-image.png";
-// @ts-ignore
 import Button from "../utils/Button.jsx";
-// @ts-ignore
 import { useStore } from "../../globalState/useStore.js";
 import { useTranslation } from "react-i18next";
+import { LanguageIntroText } from "./LanguageIntroText";
+import { MultipleScreenTextInput } from "./MultipleScreenTextInput";
+import { ConsentPageTextInput } from "./ConsentPageTextInput.js";
+import { AccessControlTextInput } from "./AccessControlTextInput.js";
+import { WelcomeScreenTextInput } from "./WelcomeScreenTextInput.js";
+import { PresortTextInput } from "./PresortTextInput.js";
 
 const getShowDescriptionPro = (state) => state.showDescriptionPro;
 const getShowDescriptionBeginner = (state) => state.showDescriptionBeginner;
 const getSetShowDescriptionPro = (state) => state.setShowDescriptionPro;
 const getSetShowDescriptionBeginner = (state) =>
   state.setShowDescriptionBeginner;
-const getSetDisplayMode = (state) => state.setDisplayMode;
+const getDisplayMode = (state) => state.displayMode;
 
 const Language = () => {
   const { t } = useTranslation();
@@ -18,41 +22,42 @@ const Language = () => {
   const showDescriptionBeginner = useStore(getShowDescriptionBeginner);
   const setShowDescriptionPro = useStore(getSetShowDescriptionPro);
   const setShowDescriptionBeginner = useStore(getSetShowDescriptionBeginner);
-  const setDisplayMode = useStore(getSetDisplayMode);
+  const displayMode = useStore(getDisplayMode);
 
-  const setMode = (e) => {
-    const mode = e.target.id;
-    if (mode === "pro") {
-      setShowDescriptionPro(true);
-      setShowDescriptionBeginner(false);
-      setDisplayMode("pro");
-    } else {
-      setShowDescriptionPro(false);
-      setShowDescriptionBeginner(true);
-      setDisplayMode("beginner");
-    }
+  let display;
+  if (displayMode === "beginner") {
+    display = true;
+  } else {
+    display = false;
+  }
+
+  const handleClick = () => {
+    console.log("Language button clicked");
   };
 
   return (
-    <>
+    <div className="flex flex-col items-center justify-center pb-[100px]">
       <h1 className="text-center">Language.xml</h1>
+      <h2>User Interface Language Settings</h2>
 
-      <div className="mt-4 w-9/12 justify-self-center text-base">
-        Quincey-Q Configurator simplifies the set-up and testing of an{" "}
-        <a
-          className="text-blue-600 underline underline-offset-2 decoration-4 decoration-blue-300 hover:decoration-blue-400"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/shawnbanasick/eq-web-sort"
+      <div className="flex flex-row w-10/12 justify-between gap-[] mt-4 mb-6">
+        {/* <DownloadMapButton onClick={() => handleClick()}> */}
+        {/* <UploadAndReadXmlMap /> */}
+        <button
+          className="bg-[orange] text-[black] w-[350px] p-[10px] rounded-[5px] mt-[20px]"
+          onClick={() => handleClick()}
         >
-          Quincey-Q
-        </a>{" "}
-        project for online Q sorting. It provides guided editing of the Q sort
-        configuration files and offers increased control over the design of the
-        Q sort. To test your setup before hosting it on the web, use the Ken-Q
-        Tools Mini-Server available here.
+          Click here to save file to <b>SETTINGS</b> folder and replace the
+          "map.xml" file
+        </button>
       </div>
-    </>
+      {displayMode && <LanguageIntroText />}
+      <MultipleScreenTextInput />
+      <ConsentPageTextInput />
+      <AccessControlTextInput />
+      <WelcomeScreenTextInput />
+      <PresortTextInput />
+    </div>
   );
 };
 

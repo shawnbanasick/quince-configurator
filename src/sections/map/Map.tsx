@@ -95,7 +95,7 @@ const Map = () => {
       </div>
       {displayMode && (
         // <DisplayModeText>
-        <div className=" ml-[10px] mt-[40px] mb-[30px] w-[78vw] max-w-[1200px] text-[20px] p-[10px] bg-[whitesmoke] rounded-[3px] border-2 border-black">
+        <div className="ml-[10px] mt-[40px] mb-[30px] w-[78vw] max-w-[1200px] text-[20px] p-[10px] bg-[whitesmoke] rounded-[3px] border-2 border-black">
           If you have a "map.xml" from a previous Quincey-Q project, you can
           click on the orange "Load 'map.xml' File Data" button to upload the
           file.

@@ -71,7 +71,7 @@ const UserNumInput: React.FC<UserTextInputProps> = ({
   )}: ${upperLimit}`;
 
   return (
-    <div className="flex items-center">
+    <div className="flex items-center w-[70vw]">
       <label htmlFor={name} className={classNameLabel}>
         {`${label} `}
       </label>
