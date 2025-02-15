@@ -47,8 +47,9 @@ const getActiveValue11 = (state) => state.activeValue11;
 const getActiveValue12 = (state) => state.activeValue12;
 const getActiveValue13 = (state) => state.activeValue13;
 const getSetNumber = (state) => state.setNumber;
-
+const getQSortPatternObject = (state) => state.qSortPatternObject;
 const getSetMapInputQsortPattern = (state) => state.setMapInputQsortPattern;
+const getSetQSortPatternObject = (state) => state.setQSortPatternObject;
 
 const MapInputElement = (props) => {
   // Numbers tile bar background color
@@ -99,6 +100,8 @@ const MapInputElement = (props) => {
   const activeValue13 = useStore(getActiveValue13);
   const setMapInputQsortPattern = useStore(getSetMapInputQsortPattern);
   const setNumber = useStore(getSetNumber);
+  let qSortPatternObject = useStore(getQSortPatternObject);
+  const setQSortPatternObject = useStore(getSetQSortPatternObject);
 
   const [displayTitles, setDisplayTitles] = useState({
     inputTitle: "Enter the Number of Statements in Each Column",
@@ -107,21 +110,34 @@ const MapInputElement = (props) => {
 
   // *** HANDLE INPUT CHANGE ***
   const calcQsortDesign = (value, name) => {
-    const columnName = name;
-    // const columnName = event.target.name;
-    // const value = +event.target.value;
+    const columnName2 = name;
+    let columnName = columnName2.replace("M", "-");
+
     console.log("value", value);
     console.log("columnName", columnName);
 
     totalEntries.current = +totalEntries.current + value;
 
-    setNumber(`activeValue${columnName}`, value);
-    // setDisplayValue((prevState) => ({
-    //   ...prevState,
-    //   [`activeValue${columnName}`]: value,
-    // }));
+    if (
+      !qSortPatternObject ||
+      qSortPatternObject === null ||
+      qSortPatternObject === undefined
+    ) {
+      qSortPatternObject = JSON.parse(
+        localStorage.getItem("qSortPatternObject") || '""'
+      );
+    }
 
+    setNumber(`activeValue${columnName2}`, value.toString());
     localStorage.setItem(`activeValue${columnName}`, value.toString());
+    qSortPatternObject[columnName] = value.toString();
+
+    localStorage.setItem(
+      "qSortPatternObject",
+      JSON.stringify(qSortPatternObject)
+    );
+
+    setQSortPatternObject(qSortPatternObject);
   };
 
   // get current entries and compute total statements entered

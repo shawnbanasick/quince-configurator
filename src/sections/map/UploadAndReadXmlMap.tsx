@@ -8,12 +8,14 @@ import { setClearAllColNumbers } from "./setClearAllColNumbers";
 const getSetNumber = (state) => state.setNumber;
 const getSetColor = (state) => state.setColor;
 const getSetMapColorPalette = (state) => state.setMapColorPalette;
+const getSetQSortPatternObject = (state) => state.setQSortPatternObject;
 
 const UploadAndReadXmlMap: React.FC = () => {
   const { t } = useTranslation();
   const setNumber = useStore(getSetNumber);
   const setColor = useStore(getSetColor);
   const setMapColorPalette = useStore(getSetMapColorPalette);
+  const setQSortPatternObject = useStore(getSetQSortPatternObject);
 
   const handleFileUpload = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -58,6 +60,8 @@ const UploadAndReadXmlMap: React.FC = () => {
           "qSortPatternObject",
           JSON.stringify(qSortPatternObject)
         );
+
+        setQSortPatternObject(qSortPatternObject);
 
         console.log(JSON.stringify(qSortPatternObject));
 

@@ -13,6 +13,7 @@ import { setStep5Colors } from "./setStep5Colors.js";
 import { setStep4Colors } from "./setStep4Colors.js";
 import { setClearAllColors } from "./setClearAllColors.js";
 import { UploadAndReadXmlMap } from "./UploadAndReadXmlMap.js";
+import { generateMapXml } from "./generateMapXml.js";
 
 const getDisplayMode = (state) => state.displayMode;
 const getNumStatements = (state) => state.numStatements;
@@ -40,7 +41,8 @@ const Map = () => {
 
   const handleClick = () => {
     console.log("Map button clicked");
-    // const data = generateMapXml();
+    const data = generateMapXml();
+    console.log("data", data);
     // exportToXml("map.xml", data, "xml");
   };
 
