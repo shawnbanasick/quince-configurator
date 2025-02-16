@@ -7,17 +7,24 @@ import { useStore } from "../../GlobalState/useStore";
 
 const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
-const getLangLoginWelcomeText = (state) => state.langLoginWelcomeText;
-const getLangLoginHeaderText = (state) => state.langLoginHeaderText;
-const getLangLoginPartIdText = (state) => state.langLoginPartIdText;
-const getLangAccessInputText = (state) => state.langAccessInputText;
-const getLangPartIdWarning = (state) => state.langPartIdWarning;
-const getLangAccessCodeWarning = (state) => state.langAccessCodeWarning;
+const getLangLoginWelcomeText = (state) => state.loginWelcomeText;
+const getLangLoginHeaderText = (state) => state.loginHeaderText;
+const getLangLoginPartIdText = (state) => state.loginPartIdText;
+const getLangAccessInputText = (state) => state.accessInputText;
+const getLangPartIdWarning = (state) => state.partIdWarning;
+const getLangAccessCodeWarning = (state) => state.accessCodeWarning;
 const getLoginSubmitButtonText = (state) => state.loginSubmitButtonText;
 
 const AccessControlTextInput = () => {
   let displayMode = useStore(getDisplayMode);
   const setText = useStore(getSetText);
+  const langLoginWelcomeText = useStore(getLangLoginWelcomeText);
+  const langLoginHeaderText = useStore(getLangLoginHeaderText);
+  const langLoginPartIdText = useStore(getLangLoginPartIdText);
+  const langAccessInputText = useStore(getLangAccessInputText);
+  const langPartIdWarning = useStore(getLangPartIdWarning);
+  const langAccessCodeWarning = useStore(getLangAccessCodeWarning);
+  const loginSubmitButtonText = useStore(getLoginSubmitButtonText);
 
   const handleRefImage = (e) => {
     // showRefImage(e.target.id);
@@ -76,12 +83,12 @@ const AccessControlTextInput = () => {
       </div>
       <div className="pl-10">
         <UserTextAreaInput
-          classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 `}
+          classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
           label="3-1. Log-in welcome text"
           name="langLoginWelcomeText"
           height={150}
-          value={""}
+          value={langLoginWelcomeText}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
@@ -89,11 +96,11 @@ const AccessControlTextInput = () => {
           tabIndex="0"
         />
         <UserTextInput
-          classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
+          classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="3-2. Log-in box header text"
           name="langLoginHeaderText"
-          value={""}
+          value={langLoginHeaderText}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
@@ -101,11 +108,11 @@ const AccessControlTextInput = () => {
         />
 
         <UserTextInput
-          classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
+          classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="3-3. Participant name label"
           name="langLoginPartIdText"
-          value={""}
+          value={langLoginPartIdText}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
@@ -113,11 +120,11 @@ const AccessControlTextInput = () => {
         />
 
         <UserTextInput
-          classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
+          classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="3-4. Access code label"
           name="langAccessInputText"
-          value={""}
+          value={langAccessInputText}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
@@ -125,11 +132,11 @@ const AccessControlTextInput = () => {
         />
 
         <UserTextInput
-          classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
+          classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="3-5. Invalid name warning"
           name="langPartIdWarning"
-          value={""}
+          value={langPartIdWarning}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
@@ -137,22 +144,22 @@ const AccessControlTextInput = () => {
         />
 
         <UserTextInput
-          classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
+          classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="3-6. Invalid access code warning"
           name="langAccessCodeWarning"
-          value={""}
+          value={langAccessCodeWarning}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
           disabled={false}
         />
         <UserTextInput
-          classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
+          classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="3-7. Log-in submit button"
           name="loginSubmitButtonText"
-          value={""}
+          value={loginSubmitButtonText}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""

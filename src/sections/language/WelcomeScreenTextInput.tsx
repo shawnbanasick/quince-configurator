@@ -7,12 +7,12 @@ import { useStore } from "../../GlobalState/useStore";
 
 const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
-const getLangLandingHead = (state) => state.langLandingHead;
-const getLangWelcomeMessage = (state) => state.langWelcomeMessage;
-const getLangLandingHelpModalHead = (state) => state.langLandingHelpModalHead;
-const getLangLandingHelpModalText = (state) => state.langLandingHelpModalText;
-const getLangBtnNextLanding = (state) => state.langBtnNextLanding;
-const getLangBtnHelpLanding = (state) => state.langBtnHelpLanding;
+const getLangLandingHead = (state) => state.landingHead;
+const getLangWelcomeMessage = (state) => state.welcomeMessage;
+const getLangLandingHelpModalHead = (state) => state.landingHelpModalHead;
+const getLangLandingHelpModalText = (state) => state.landingHelpModalText;
+const getLangBtnNextLanding = (state) => state.btnNextLanding;
+const getLangBtnHelpLanding = (state) => state.btnHelpLanding;
 
 const WelcomeScreenTextInput = () => {
   let displayMode = useStore(getDisplayMode);
@@ -80,7 +80,7 @@ const WelcomeScreenTextInput = () => {
       </div>
       <div className="pl-10">
         <UserTextInput
-          classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
+          classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="4-1. Welcome Page Title Bar"
           name="langLandingHead"
@@ -91,7 +91,7 @@ const WelcomeScreenTextInput = () => {
           disabled={false}
         />
         <UserTextAreaInput
-          classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 `}
+          classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
           label="4-2. Welcome Message"
           name="langWelcomeMessage"
@@ -104,7 +104,7 @@ const WelcomeScreenTextInput = () => {
           tabIndex="0"
         />
         <UserTextInput
-          classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
+          classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="4-3. Help modal header text"
           name="langLandingHelpModalHead"
@@ -115,7 +115,7 @@ const WelcomeScreenTextInput = () => {
           disabled={false}
         />
         <UserTextAreaInput
-          classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 `}
+          classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
           label="4-4. Help modal main text"
           name="langLandingHelpModalText"
@@ -128,7 +128,7 @@ const WelcomeScreenTextInput = () => {
           tabIndex="0"
         />
         <UserTextInput
-          classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
+          classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="4-5. Start button text"
           name="langBtnNextLanding"
@@ -139,7 +139,7 @@ const WelcomeScreenTextInput = () => {
           disabled={false}
         />
         <UserTextInput
-          classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
+          classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="4-6. Welcome page Help button text"
           name="langBtnHelpLanding"

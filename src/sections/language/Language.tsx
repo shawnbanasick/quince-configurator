@@ -8,6 +8,7 @@ import { ConsentPageTextInput } from "./ConsentPageTextInput.js";
 import { AccessControlTextInput } from "./AccessControlTextInput.js";
 import { WelcomeScreenTextInput } from "./WelcomeScreenTextInput.js";
 import { PresortTextInput } from "./PresortTextInput.js";
+import { MobilePresortTextInput } from "./MobilePresortTextInput.js";
 
 const getShowDescriptionPro = (state) => state.showDescriptionPro;
 const getShowDescriptionBeginner = (state) => state.showDescriptionBeginner;
@@ -57,6 +58,7 @@ const Language = () => {
       <AccessControlTextInput />
       <WelcomeScreenTextInput />
       <PresortTextInput />
+      <MobilePresortTextInput />
     </div>
   );
 };

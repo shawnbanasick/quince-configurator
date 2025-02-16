@@ -1,144 +1,201 @@
 const createMapXmlSlice = (set, get) => ({
   /*
    ******** MULTIPLE  ****************** */
-  langBtnHelp: "Help",
-  langFooterTextSize: `Text Size`,
-  langFooterCardHeight: `Card Height`,
-  langBtnNext: "Continue",
-  langStepCompleted: `You have completed this step. Please click on the <b> blue "Continue" button </b> at the bottom right-side of your screen to go to the next step.`,
-  langLoginFirst: "Please complete the log-in process first.",
+  btnHelp: "Help",
+  footerTextSize: `Text Size`,
+  footerCardHeight: `Card Height`,
+  btnNext: "Continue",
+  stepCompleted: `You have completed this step. Please click on the <b> blue "Continue" button </b> at the bottom right-side of your screen to go to the next step.`,
+  loginFirst: "Please complete the log-in process first.",
+  screenOrientationText: `Please Use Portrait Orientation!`,
 
   /*
    ******** CONSENT PAGE  ****************** */
-  langConsentTitleBarText: `Research Consent`,
-  langConsentText: `You are invited to participate in a research study conducted by [Principal Investigator’s Name] at [Institution or Organization]. Before you decide to participate, it is important that you understand why the research is being conducted and what it will involve. Please take the time to read the following information carefully. Feel free to contact the research team with any questions you may have.<br /><br /><b>Purpose of the Study</b><br />The purpose of this study is to [briefly describe the purpose, e.g., understand the effects of a new teaching method on student performance]. This research will help us gain insights into [mention any broader implications or goals of the study]. <br /><br /><b>Study Procedures</b><br />If you agree to participate, you will be asked to [describe the procedures involved, including what participants will do, how long it will take, and how frequently it will occur]. For example, you will be asked to complete evaluate a series of statements, sort them, and then reflect on the sorting. Additionally, there is a short questionnaires at the end. The study will take approximately [duration, e.g., 45 minutes]. <br /><br /><b>Benefits</b><br />While there may not be direct benefits to you for participating, the information gathered from this study may help [describe potential benefits, e.g., improve educational methods, contribute to scientific knowledge, etc.]. You may also gain personal insights into [describe any personal benefits, if applicable].<br /><br /><b>Confidentiality</b><br />All information collected in this study will be kept strictly confidential. Data will be stored securely and only the research team will have access to it. Your identity will not be disclosed in any reports or publications resulting from this study. [Describe how data will be anonymized, encrypted, or stored securely].<br /><br /><b>Voluntary Participation</b><br />Your participation in this study is entirely voluntary. You are free to decline to participate, or to withdraw at any time, without penalty or loss of benefits to which you are otherwise entitled. If you decide to withdraw, close the webpage and any data collected up to that point will be deleted.<br /><br /><b>Consent</b><br />By clicking on the "Agree" button on the bottom of this page, you are indicating that you have read and understood the information provided, and that you agree to participate in this study. If you have any questions about this study, please contact [Principal Investigator’s Name and Contact Information].`,
-  langConsentHelpModalHead: `Contact Information`,
-  langConsentHelpModalText: `Thank you for participating in this University Research Project. You can contact the research team by phone (1-555-867-5309) or by email at researchTeam@myMail.com`,
-  langBtnNextConsent: `Agree and Continue`,
-  langBtnHelpConsent: `Contact Information`,
+  consentTitleBarText: `Research Consent`,
+  consentText: `You are invited to participate in a research study conducted by [Principal Investigator’s Name] at [Institution or Organization]. Before you decide to participate, it is important that you understand why the research is being conducted and what it will involve. Please take the time to read the following information carefully. Feel free to contact the research team with any questions you may have.<br /><br /><b>Purpose of the Study</b><br />The purpose of this study is to [briefly describe the purpose, e.g., understand the effects of a new teaching method on student performance]. This research will help us gain insights into [mention any broader implications or goals of the study]. <br /><br /><b>Study Procedures</b><br />If you agree to participate, you will be asked to [describe the procedures involved, including what participants will do, how long it will take, and how frequently it will occur]. For example, you will be asked to complete evaluate a series of statements, sort them, and then reflect on the sorting. Additionally, there is a short questionnaires at the end. The study will take approximately [duration, e.g., 45 minutes]. <br /><br /><b>Benefits</b><br />While there may not be direct benefits to you for participating, the information gathered from this study may help [describe potential benefits, e.g., improve educational methods, contribute to scientific knowledge, etc.]. You may also gain personal insights into [describe any personal benefits, if applicable].<br /><br /><b>Confidentiality</b><br />All information collected in this study will be kept strictly confidential. Data will be stored securely and only the research team will have access to it. Your identity will not be disclosed in any reports or publications resulting from this study. [Describe how data will be anonymized, encrypted, or stored securely].<br /><br /><b>Voluntary Participation</b><br />Your participation in this study is entirely voluntary. You are free to decline to participate, or to withdraw at any time, without penalty or loss of benefits to which you are otherwise entitled. If you decide to withdraw, close the webpage and any data collected up to that point will be deleted.<br /><br /><b>Consent</b><br />By clicking on the "Agree" button on the bottom of this page, you are indicating that you have read and understood the information provided, and that you agree to participate in this study. If you have any questions about this study, please contact [Principal Investigator’s Name and Contact Information].`,
+  consentHelpModalHead: `Contact Information`,
+  consentHelpModalText: `Thank you for participating in this University Research Project. You can contact the research team by phone (1-555-867-5309) or by email at researchTeam@myMail.com`,
+  btnNextConsent: `Agree and Continue`,
+  btnHelpConsent: `Contact Information`,
 
   /*
    ******** LANDING  ****************** */
-  langLandingHead: `University Research Project`,
-  langWelcomeMessage: `<h2>EQ Web Sort Demo Project - iPad Use in the Classroom.</h2><br/><br/><p>Thank you for helping with this research project</p><br/><br/><br/>
+  landingHead: `University Research Project`,
+  welcomeMessage: `<h2>EQ Web Sort Demo Project - iPad Use in the Classroom.</h2><br/><br/><p>Thank you for helping with this research project</p><br/><br/><br/>
     <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
-  langLandingHelpModalHead: `Welcome!`,
-  langLandingHelpModalText: `Thank you for participating in this University Research Project. Please click the "<b>Continue</b>" button at the bottom right side of the screen to go to the next step.`,
-  langBtnNextLanding: `Continue`,
-  langBtnHelpLanding: `Help`,
+  landingHelpModalHead: `Welcome!`,
+  landingHelpModalText: `Thank you for participating in this University Research Project. Please click the "<b>Continue</b>" button at the bottom right side of the screen to go to the next step.`,
+  btnNextLanding: `Continue`,
+  btnHelpLanding: `Help`,
 
   /*
    ******** ACCESS  ****************** */
-  langLoginWelcomeText: `<center></center><h3>Welcome!</h3></center><br/> Thank you for participating in this Q methodology research project. <br/>Please <b>sign in</b> using the form below to begin the process. `,
-  langLoginHeaderText: `Sign In`,
-  langLoginPartIdText: `Please enter your name or participant ID`,
-  langAccessCodeText: `Access Code`,
-  langPartIdWarning: `Invalid name or ID`,
-  langAccessCodeWarning: `Access code invalid`,
+  loginWelcomeText: `<center></center><h3>Welcome!</h3></center><br/> Thank you for participating in this Q methodology research project. <br/>Please <b>sign in</b> using the form below to begin the process. `,
+  loginHeaderText: `Sign In`,
+  loginPartIdText: `Please enter your name or participant ID`,
+  accessCodeText: `Access Code`,
+  partIdWarning: `Invalid name or ID`,
+  accessCodeWarning: `Access code invalid`,
   loginSubmitButtonText: `Submit`,
 
-  langAccessInputText: "Please enter the access code for this survey.",
+  accessInputText: "Please enter the access code for this survey.",
   /*
    ******** LOCAL DATA COLLECTION  ****************** */
-  langLocalHeader: "Offline Q-sort Control Panel",
-  langPartIdText: "Participant Name",
-  langUsercodeText: "Usercode",
-  langLocalStartButtonText: "Start Q-sort",
-  langLocalDeleteButtonText: "Delete",
-  langLocalDownloadButtonText: "Save Q-sort Data to Disk",
-  langStoredQsortsHeaderText: "Stored Q-sorts",
-  langLocalDeleteModalText:
+  localHeader: "Offline Q-sort Control Panel",
+  partIdText: "Participant Name",
+  usercodeText: "Usercode",
+  localStartButtonText: "Start Q-sort",
+  localDeleteButtonText: "Delete",
+  localDownloadButtonText: "Save Q-sort Data to Disk",
+  storedQsortsHeaderText: "Stored Q-sorts",
+  localDeleteModalText:
     "This will delete the particpant Q-sort data that is currently stored in the browser. You would usually only do this when you are starting a new project.<br/><br/><b>CAUTION - Deleted data cannot be recovered.</b> <br/><br/> <center></center>",
-  langLocalDeleteModalHead: "Delete Data Stored in Browser?",
-  langLocalParticipantsText: "Participants",
-  langLocalSaveDataButton: "Save Participant Data to Browser Memory",
-  langLocalSubmitSuccessModalHeader: "Success",
-  langLocalSubmitSuccessModalText:
+  localDeleteModalHead: "Delete Data Stored in Browser?",
+  localParticipantsText: "Participants",
+  localSaveDataButton: "Save Participant Data to Browser Memory",
+  localSubmitSuccessModalHeader: "Success",
+  localSubmitSuccessModalText:
     "Participant Q sort data have been succesfully saved to browser memory",
-  langReturnToLocalPanelButtonText: "Return to Control Panel",
-  langLocalSaveBeforeDeleteModalHeader: "Delete Disabled",
-  langLocalSaveBeforeDeleteModalText:
-    "Save Q sort Data to Disk before deleting.",
+  returnToLocalPanelButtonText: "Return to Control Panel",
+  localSaveBeforeDeleteModalHeader: "Delete Disabled",
+  localSaveBeforeDeleteModalText: "Save Q sort Data to Disk before deleting.",
 
   /*
    ******** PRESORT  ****************** */
-  langTitleBarText: `Preliminary Sorting`,
-  langPresortAgreement: `Agree (3)`,
-  langPresortStatements: `Statements`,
-  langPresortNeutral: `No Strong Feelings (2)`,
-  langPresortDisagreement: `Disagree (1)`,
-  langPresortImageSortInstructions: `To enlarge an image, hover your mouse pointer over it and double-click. {{{br/}}}{{{br/}}} To compare images, {{{u}}}press and hold{{{/u}}} the {{{b}}}{{{i}}}Shift{{{/i}}}{{{/b}}} key on your keyboard and then double-click on TWO images with your mouse.`,
-  langPresortModalHead: `Step 1 of 4`,
-  langPresortModalText: `Read the following statements carefully and split them up into three piles: a pile for statements you tend to disagree with, a pile for cards you tend to agree with, and a pile for the rest. Changes can be made later.<br/><br/>If you want to read this instruction a second time, click the help-button at the bottom left corner.<br/><br/><center><iframe width="560" height="315" src="https://www.youtube.com/embed/vtnLuKzpcKQ?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
-  langPresortPreventNavModalHead: `Navigation Disabled`,
-  langPresortPreventNavModalText: `Please finish the preliminary sorting before going to the next step.`,
-  langPresortFinishedModalHead: `Preliminary Sorting Complete`,
-  langPresortFinishedModalText: `You have completed this step. Please click the "Continue" button in the bottom right side of the page to go to the next step.`,
-  langPresortOnPageInstructions: `<div style="font-size: 24px">Click and drag on the cards  or press the "1", "2", or "3" keys to sort the statements.</div>`,
+  titleBarText: `Preliminary Sorting`,
+  presortAgreement: `Agree (3)`,
+  presortStatements: `Statements`,
+  presortNeutral: `No Strong Feelings (2)`,
+  presortDisagreement: `Disagree (1)`,
+  presortImageSortInstructions: `To enlarge an image, hover your mouse pointer over it and double-click. <br/><br/> To compare images, <u>press and hold</u> the <b><i>Shift</i></b> key on your keyboard and then double-click on TWO images with your mouse.`,
+  presortModalHead: `Step 1 of 4`,
+  presortModalText: `Read the following statements carefully and split them up into three piles: a pile for statements you tend to disagree with, a pile for cards you tend to agree with, and a pile for the rest. Changes can be made later.<br/><br/>If you want to read this instruction a second time, click the help-button in the bottom left corner.<br/><br/><center><iframe width="560" height="315" src="https://www.youtube.com/embed/vtnLuKzpcKQ?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
+  presortPreventNavModalHead: `Navigation Disabled`,
+  presortPreventNavModalText: `Please finish the preliminary sorting before going to the next step.`,
+  presortFinishedModalHead: `Preliminary Sorting Complete`,
+  presortFinishedModalText: `You have completed this step. Please click the "Continue" button in the bottom right side of the page to go to the next step.`,
+  presortOnPageInstructions: `<div style="font-size: 24px">Click and drag on the cards  or press the "1", "2", or "3" keys to sort the statements.</div>`,
+
+  /*
+   ******** MOBILE PRESORT  ****************** */
+  mobilePresortConditionsOfInstruction: `Evaluate the Statements According to Your Experience of using the iPads in the Class`,
+  mobilePresortCompletedLabel: `Completed Evaluations`,
+  mobilePresortAssignLeft: `Different from My Perspective`,
+  mobilePresortAssignRight: `Similar to My Perspective`,
+  mobilePresortRedoModalHead: `Re-Evaluate Statement`,
+  mobilePresortRedoModalText: `Click on the appropriate icon`,
+  mobilePresortRedoModalConfirmButton: `Confirm`,
+  mobilePresortEvaluationsComplete: `<div><b>All Statements Evaluated.</b> <br /><br />Please review the statements to confirm your evaluations.  <br /><br /><div>`,
+  mobilePresortHelpModalHead: `Stage 1 of 5<br />Statement Evaluation`,
+  mobilePresortHelpModalText: `Tap on the appropriate button to assign a value to each statement. <br /><br /> If you feel that the statement is <b>similar to your perspective</b>, tap the green "+" button.<br /><br /> If you feel that the statement is <b>different from your perspective</b>, tap the red "-" button. <br /><br />If you are unsure, tap the "?" button. <br /><br /> There are <b>33 statements</b> in this survey. <br /><br /> If you want to <b>change</b> your evaluation, tap the <b>redo icon</b> next to the statement.`,
+  mobilePresortFinishedModalHead: `Stage 1 of 5<br />Statement Evaluation`,
+  mobilePresortFinishedModalText: `The evaluation process is complete. <br/><br/> Please <b>review the statements</b> to confirm your evaluations.  <br /><br />If you want to make a change, tap the "redo" icon to the left of the statement.<br /><br />When you are satisfied with all of your evaluations, tap the <b>navigation button</b> on the bottom right.`,
+  mobilePresortProcessCompleteMessage: `The evaluation process is complete. <br/><br/> Please click on the navigation button on the bottom right side to go to the next stage.`,
+  mobilePresortPreventNavModalHead: `Navigation Disabled`,
+  mobilePresortPreventNavModalText: `Please finish the evaluations before going to the next stage.`,
+
+  /*
+   ******** THINNING  ****************** */
+  thinningPreventNavModalHead: `Navigation Disabled`,
+  thinningPreventNavModalText: `Please finish the refining process before going to the next step.`,
+  thinningConfirmModalHead: `Incomplete Selection`,
+  thinningConfirmModalText: `Please select the required number of statements.`,
+  agreeMostText: `Next, repeat the process with the remaining statements, but this time please select the cards that you agree with the most.`,
+  agreeLeastText: `Next, repeat the process with the remaining statements, but this time please select the cards that you agree with the least.`,
+  initialInstructionPart1: `Below are the statements you rated positively in the previous step. Now, pick the number of statements that you <b>MOST AGREE</b>.<br /><br />`,
+  initialInstructionPart2: `Next, continue to select the statements that are CLOSEST to your perspective`,
+  initialInstructionPart3: `Another set of statements will appear on the screen after you click the orange "Submit" button.`,
+  finalInstructions: `Refinement process complete. Click on the navigation button on the bottom right side to go to the next stage..`,
+
+  /*
+   ******** MOBILE THINNING  ****************** */
+  moveTopMobileHead: `Confirm Move`,
+  moveTopMobileText: `Move this statement to the top of the list?`,
+  moveBottomMobileText: `Move this statement to the bottom of the list?`,
+  moveAllTopMobileText: `Move all selected statements to the top of the list?`,
+  moveTopMobileButtonOK: `Yes`,
+  moveTopMobileButtonCancel: `Cancel`,
+  mobileThinConditionsOfInstruction: `Refine Your Evaluations`,
+  mobileThinSubmitButtonText: `Submit`,
+  mobileThinHelpModalHead: `Refine Your Evaluations`,
+  mobileThinHelpModalText: `During this stage you will be asked to <b></b>review the statements</b> you evaluated and choose those that are most similar or most different from your perspective.<br/><br/>You may need to <b>scroll down</b> to see all of the statements.<br/><br/>To <b>select a statement</b>, tap on the statement container. The color of the statement will change to yellow.<br/><br/>When you have selected the <b>correct number</b> of statements, the "Submit" button will change to <b>blue</b>. <br/><br/>To make it easier to compare the statements, you can <b>reorder</b> them by tapping on the up and down arrows located on the right or left sides of the statement.<br/><br/>You can also <b>move a group</b> of selected statements to the top of the list by <b>long pressing</b> (about 1 second) on a statement.`,
+  mobileThinPreventNavModalHead: `Navigation Disabled`,
+  mobileThinPreventNavModalText: `Please complete the refining process before navigating to the next page.`,
+  mobileThinProcessCompleteMessage: `The refinement process is complete. <br/><br/> Please click on the navigation button on the bottom right side to go to the next stage.`,
+  mobileGuidanceModalRight1Header: `Stage 2 of 5<br/> Refinement Process`,
+  mobileGuidanceModalRight1Text: `There are several steps in this Stage. <br/><br/>Step 1. Please look at all of the statements that you evaluated <b>positively</b> and select those that are <b>closest to your perspective</b>.<br/><br/>You may need to <b>scroll</b> down to see all of the statements.`,
+  mobileGuidanceModalRight2Header: `Stage 2 of 5<br/> Refinement Process`,
+  mobileGuidanceModalRight2Text: `Next, once again look at the remaining statements that you evaluated <b>positively</b> and select the <b>next set</b> of statements that are <b>closest to your perspective</b>.`,
+  mobileGuidanceModalLeft1Header: `Stage 2 of 5<br/> Refinement Process`,
+  mobileGuidanceModalLeft1Text: `Step 2. Next, please look at all of the statements that you evaluated negatively and <b>select</b> those that <b>differ the most</b> from your perspective.<br/><br/>You may need to <b>scroll down</b> to see all of the statements.`,
+  mobileGuidanceModalLeft2Header: `Stage 2 of 5<br/> Refinement Process`,
+  mobileGuidanceModalLeft2Text: `Next, once again look at the remaining statements that you evalued <b>negatively</b> and <b>select</b> the <b>next set</b> of statements that are <b>most different from to your perspective</b>.`,
+  mobileThinScrollBottomModalHead: `Confirmation Disabled`,
+  mobileThinScrollBottomModalText: `Please scroll to the bottom and review all the statements before confirming your selections.`,
+
   /*
    ******** SORT  ****************** */
-  langSortHelpModalHead: `Step 2 of 4`,
-  langSortHelpModalText: `In this step, please click and drag the statement cards to the appropriate column based on your perspective and the researcher's instructions at the top of the page. <br/><br/><center><iframe width="560" height="315" src="https://www.youtube.com/embed/iRxC9Vv3dLo?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
-  langSortAgreement: `Agree`,
-  langSortDisagreement: `Disagree`,
-  langCondOfInst: `Sort the cards according to your experience with the iPads this semester`,
-  langSortingCompleteModalHead: `Sorting Complete`,
-  langSortingCompleteModalText: `You have completed the initial sorting. Please take a moment to confirm your placement of the cards.<br/><br/>When you are satisfied with their placement, please click on the <b>blue "Continue" button</b> at the bottom right-side of your screen to go to the next step.`,
-  langSortPreventNavModalHead: `Navigation Disabled`,
-  langSortPreventNavModalText: `Please finish the grid sorting before going to the next step.`,
-  langSortOverloadedColumnModalHead: `Navigation Disabled`,
-  langSortOverloadedColumnModalText: `One of the columns has too many cards (it will be outlined in orange and have a dashed border). Please adjust the placement of the cards so that all columns have the correct number.`,
+  sortHelpModalHead: `Step 2 of 4`,
+  sortHelpModalText: `In this step, please click and drag the statement cards to the appropriate column based on your perspective and the researcher's instructions at the top of the page. <br/><br/><center><iframe width="560" height="315" src="https://www.youtube.com/embed/iRxC9Vv3dLo?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
+  sortAgreement: `Agree`,
+  sortDisagreement: `Disagree`,
+  condOfInst: `Sort the cards according to your experience with the iPads this semester`,
+  sortingCompleteModalHead: `Sorting Complete`,
+  sortingCompleteModalText: `You have completed the initial sorting. Please take a moment to confirm your placement of the cards.<br/><br/>When you are satisfied with their placement, please click on the <b>blue "Continue" button</b> at the bottom right-side of your screen to go to the next step.`,
+  sortPreventNavModalHead: `Navigation Disabled`,
+  sortPreventNavModalText: `Please finish the grid sorting before going to the next step.`,
+  sortOverloadedColumnModalHead: `Navigation Disabled`,
+  sortOverloadedColumnModalText: `One of the columns has too many cards (it will be outlined in orange and have a dashed border). Please adjust the placement of the cards so that all columns have the correct number.`,
   /*
    ******** POSTSORT  ****************** */
-  langPostsortHeader: `Post-Sort Comments`,
-  langPostsortInstructions: `<h3>Please describe your thoughts about these statements in more detail.</h3>`,
-  langPlaceholder: `Click here to add comment`,
-  langPostsortAgreement: `Placed on Agree`,
-  langPostsortDisagreement: `Placed on Disagree`,
-  langPostsortModalHead: `Step 3 of 4`,
-  langPostsortModalText: `You can use the buttons at the bottom of the page to change the font size or card height.<br/><br/><center><iframe width="560" height="315" src="https://www.youtube.com/embed/EFNlSiaEVVg?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></h3></center>`,
-  langPostsortPreventNavModalHead: `Navigation Disabled`,
-  langPostsortPreventNavModalText: `Please add comments to all of the cards before going to the next step.`,
-  langPostsortBackButton: `Go Back`,
+  postsortHeader: `Post-Sort Comments`,
+  postsortInstructions: `<h3>Please describe your thoughts about these statements in more detail.</h3>`,
+  placeholder: `Click here to add comment`,
+  postsortAgreement: `Placed on Agree`,
+  postsortDisagreement: `Placed on Disagree`,
+  postsortModalHead: `Step 3 of 4`,
+  postsortModalText: `You can use the buttons at the bottom of the page to change the font size or card height.<br/><br/><center><iframe width="560" height="315" src="https://www.youtube.com/embed/EFNlSiaEVVg?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></h3></center>`,
+  postsortPreventNavModalHead: `Navigation Disabled`,
+  postsortPreventNavModalText: `Please add comments to all of the cards before going to the next step.`,
+  postsortBackButton: `Go Back`,
   /*
    ******** SURVEY  ****************** */
-  langSurveyHeader: `Post-Sort Questionnaire`,
-  langSurveyModalHead: `Step 4 of 4`,
-  langSurveyModalText: `Finally, please answer the following questions regarding your background. The questions marked with an "*" in their title are required.<br/><br/><center><iframe width="560" height="315" src="https://www.youtube.com/embed/68MHzgLn1zg?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
-  langSurveyPreventNavModalHead: `Navigation Disabled`,
-  langSurveyPreventNavModalText: `Please answer the required questions (outlined in yellow) before going to the next step.`,
+  surveyHeader: `Post-Sort Questionnaire`,
+  surveyModalHead: `Step 4 of 4`,
+  surveyModalText: `Finally, please answer the following questions regarding your background. The questions marked with an "*" in their title are required.<br/><br/><center><iframe width="560" height="315" src="https://www.youtube.com/embed/68MHzgLn1zg?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
+  surveyPreventNavModalHead: `Navigation Disabled`,
+  surveyPreventNavModalText: `Please answer the required questions (outlined in yellow) before going to the next step.`,
 
   /*
    ******** SUBMIT  ****************** */
-  langBtnTransfer: `Submit Data`,
-  langTransferHead: `Final Step`,
-  langTransferTextAbove: `<h1>Ready to Submit</h1><br/><br/> <h2>Please click the "Submit Data" button to transmit your results.</h2>`,
-  langTransferTextBelow: `If the submission confirmation message does not appear, <br/>please wait a few minutes and click the submit button again.`,
-  langTransferOkModalHeader: `Success - The data have been sent to the server.`,
-  langTransferOkModalText: `Thank you for using EQ Web Sort!<br/><br/>You can now close your browser tab.`,
-  langTransferFailModalHeader: `Connection to server failed`,
-  langTransferFailModalText: `Please try again in a few moments.`,
-  langFallbackMessage: `Data transmission has failed. Please download the results and email them as an attachment to ken.q.tools@gmail.com.  Thank you!`,
-  langBtnDownload: `Download`,
-  langGoodbyeMessage: `<div>Thank You!</div> <br /><div>You can now close the browser tab</div>`,
+  btnTransfer: `Submit Data`,
+  yransferHead: `Final Step`,
+  transferTextAbove: `<h1>Ready to Submit</h1><br/><br/> <h2>Please click the "Submit Data" button to transmit your results.</h2>`,
+  transferTextBelow: `If the submission confirmation message does not appear, <br/>please wait a few minutes and click the submit button again.`,
+  TransferOkModalHeader: `Success - The data have been sent to the server.`,
+  TransferOkModalText: `Thank you for using EQ Web Sort!<br/><br/>You can now close your browser tab.`,
+  TransferFailModalHeader: `Connection to server failed`,
+  TransferFailModalText: `Please try again in a few moments.`,
+  FallbackMessage: `Data transmission has failed. Please download the results and email them as an attachment to ken.q.tools@gmail.com.  Thank you!`,
+  BtnDownload: `Download`,
+  GoodbyeMessage: `<div>Thank You!</div> <br /><div>You can now close the browser tab</div>`,
 
   /*
    ******** EMAIL  ****************** */
-  langEmailSubmitBtn: "Open Email Client and Send Results",
-  langEmailCopyResultsBtn: "Copy Results to Clipboard",
-  langEmaiCopyAddressBtn: "Copy Email Address to Clipboard",
-  langCopySuccessMessage: "Copied!",
-  langCopyFailMessage: "Error: Please try again.",
-  langDefaultEmailFailModalText:
+  EmailSubmitBtn: "Open Email Client and Send Results",
+  EmailCopyResultsBtn: "Copy Results to Clipboard",
+  EmaiCopyAddressBtn: "Copy Email Address to Clipboard",
+  CopySuccessMessage: "Copied!",
+  CopyFailMessage: "Error: Please try again.",
+  DefaultEmailFailModalText:
     "Your default email client should have automatically opened with the results in the email body. If it didn't, please use the buttons below to copy and paste your information into an email.",
-  langEmailBodyMessage:
+  EmailBodyMessage:
     "You don't have to add anything to this email. Please just click the SEND button.",
 
   /*
    ******** LINKING  ****************** */
-  langLinkingFallbackMessage:
-    "Please click the button to begin the next Q sort",
-  langLinkingBtnText: "Begin Next Q sort",
+  LinkingFallbackMessage: "Please click the button to begin the next Q sort",
+  LinkingBtnText: "Begin Next Q sort",
 
   /*
    ******** GENERICS  ****************** */
@@ -146,305 +203,402 @@ const createMapXmlSlice = (set, get) => ({
 
   /*
    ******** SET VALUES  ****************** */
-  setLangBtnHelp: (value) => {
-    set(() => ({ langBtnHelp: value }));
+  setMobilePresortConditionsOfInstruction: (value) => {
+    set(() => ({ mobilePresortConditionsOfInstruction: value }));
   },
-  setLangFooterTextSize: (value) => {
-    set(() => ({ langFooterTextSize: value }));
+  setMobilePresortCompletedLabel: (value) => {
+    set(() => ({ mobilePresortCompletedLabel: value }));
   },
-  setLangFooterCardHeight: (value) => {
-    set(() => ({ langFooterCardHeight: value }));
+  setMobilePresortAssignLeft: (value) => {
+    set(() => ({ mobilePresortAssignLeft: value }));
   },
-  setLangBtnNext: (value) => {
-    set(() => ({ langBtnNext: value }));
+  setMobilePresortAssignRight: (value) => {
+    set(() => ({ mobilePresortAssignRight: value }));
   },
-  setLangStepCompleted: (value) => {
-    set(() => ({ langStepCompleted: value }));
+  setMobilePresortRedoModalHead: (value) => {
+    set(() => ({ mobilePresortRedoModalHead: value }));
   },
-  setLangLoginFirst: (value) => {
-    set(() => ({ langLoginFirst: value }));
+  setMobilePresortRedoModalText: (value) => {
+    set(() => ({ mobilePresortRedoModalText: value }));
   },
-  setLangConsentTitleBarText: (value) => {
-    set(() => ({ langConsentTitleBarText: value }));
+  setMobilePresortRedoModalConfirmButton: (value) => {
+    set(() => ({ mobilePresortRedoModalConfirmButton: value }));
   },
-  setLangConsentText: (value) => {
-    set(() => ({ langConsentText: value }));
+  setMobilePresortEvaluationsComplete: (value) => {
+    set(() => ({ mobilePresortEvaluationsComplete: value }));
   },
-  setLangConsentHelpModalHead: (value) => {
-    set(() => ({ langConsentHelpModalHead: value }));
+  setMobilePresortHelpModalHead: (value) => {
+    set(() => ({ mobilePresortHelpModalHead: value }));
   },
-  setLangConsentHelpModalText: (value) => {
-    set(() => ({ langConsentHelpModalText: value }));
+  setMobilePresortHelpModalText: (value) => {
+    set(() => ({ mobilePresortHelpModalText: value }));
   },
-  setLangBtnNextConsent: (value) => {
-    set(() => ({ langBtnNextConsent: value }));
+  setMobilePresortFinishedModalHead: (value) => {
+    set(() => ({ mobilePresortFinishedModalHead: value }));
   },
-  setLangBtnHelpConsent: (value) => {
-    set(() => ({ langBtnHelpConsent: value }));
+  setMobilePresortFinishedModalText: (value) => {
+    set(() => ({ mobilePresortFinishedModalText: value }));
   },
-  setLangLandingHead: (value) => {
-    set(() => ({ langLandingHead: value }));
+  setMobilePresortProcessCompleteMessage: (value) => {
+    set(() => ({ mobilePresortProcessCompleteMessage: value }));
   },
-  setLangWelcomeMessage: (value) => {
-    set(() => ({ langWelcomeMessage: value }));
+  setMobilePresortPreventNavModalHead: (value) => {
+    set(() => ({ mobilePresortPreventNavModalHead: value }));
   },
-  setLangAccessCodeText: (value) => {
-    set(() => ({ langAccessCodeText: value }));
+  setMobilePresortPreventNavModalText: (value) => {
+    set(() => ({ mobilePresortPreventNavModalText: value }));
   },
-  setLangAccessInputText: (value) => {
-    set(() => ({ langAccessInputText: value }));
+  setMobileGuidanceModalRight1Header: (value) => {
+    set(() => ({ mobileGuidanceModalRight1Header: value }));
+  },
+  setMobileGuidanceModalRight1Text: (value) => {
+    set(() => ({ mobileGuidanceModalRight1Text: value }));
+  },
+  setMobileGuidanceModalRight2Header: (value) => {
+    set(() => ({ mobileGuidanceModalRight2Header: value }));
+  },
+  setMobileGuidanceModalRight2Text: (value) => {
+    set(() => ({ mobileGuidanceModalRight2Text: value }));
+  },
+  setMobileGuidanceModalLeft1Header: (value) => {
+    set(() => ({ mobileGuidanceModalLeft1Header: value }));
+  },
+  setMobileGuidanceModalLeft1Text: (value) => {
+    set(() => ({ mobileGuidanceModalLeft1Text: value }));
+  },
+  setMobileGuidanceModalLeft2Header: (value) => {
+    set(() => ({ mobileGuidanceModalLeft2Header: value }));
+  },
+  setMobileGuidanceModalLeft2Text: (value) => {
+    set(() => ({ mobileGuidanceModalLeft2Text: value }));
+  },
+  setMobileThinScrollBottomModalHead: (value) => {
+    set(() => ({ mobileThinScrollBottomModalHead: value }));
+  },
+  setMobileThinScrollBottomModalText: (value) => {
+    set(() => ({ mobileThinScrollBottomModalText: value }));
+  },
+  setMobileThinConditionsOfInstruction: (value) => {
+    set(() => ({ mobileThinConditionsOfInstruction: value }));
+  },
+  setMobileThinSubmitButtonText: (value) => {
+    set(() => ({ mobileThinSubmitButtonText: value }));
+  },
+  setMobileThinHelpModalHead: (value) => {
+    set(() => ({ mobileThinHelpModalHead: value }));
+  },
+  setMobileThinHelpModalText: (value) => {
+    set(() => ({ mobileThinHelpModalText: value }));
+  },
+  setMobileThinPreventNavModalHead: (value) => {
+    set(() => ({ mobileThinPreventNavModalHead: value }));
+  },
+  setMobileThinPreventNavModalText: (value) => {
+    set(() => ({ mobileThinPreventNavModalText: value }));
+  },
+  setMobileThinProcessCompleteMessage: (value) => {
+    set(() => ({ mobileThinProcessCompleteMessage: value }));
+  },
+
+  setBtnHelp: (value) => {
+    set(() => ({ btnHelp: value }));
+  },
+  setFooterTextSize: (value) => {
+    set(() => ({ footerTextSize: value }));
+  },
+  setFooterCardHeight: (value) => {
+    set(() => ({ footerCardHeight: value }));
+  },
+  setBtnNext: (value) => {
+    set(() => ({ btnNext: value }));
+  },
+  setStepCompleted: (value) => {
+    set(() => ({ stepCompleted: value }));
+  },
+  setLoginFirst: (value) => {
+    set(() => ({ loginFirst: value }));
+  },
+  setConsentTitleBarText: (value) => {
+    set(() => ({ consentTitleBarText: value }));
+  },
+  setConsentText: (value) => {
+    set(() => ({ consentText: value }));
+  },
+  setConsentHelpModalHead: (value) => {
+    set(() => ({ consentHelpModalHead: value }));
+  },
+  setConsentHelpModalText: (value) => {
+    set(() => ({ consentHelpModalText: value }));
+  },
+  setBtnNextConsent: (value) => {
+    set(() => ({ btnNextConsent: value }));
+  },
+  setBtnHelpConsent: (value) => {
+    set(() => ({ btnHelpConsent: value }));
+  },
+  setLandingHead: (value) => {
+    set(() => ({ landingHead: value }));
+  },
+  setWelcomeMessage: (value) => {
+    set(() => ({ welcomeMessage: value }));
+  },
+  setAccessCodeText: (value) => {
+    set(() => ({ accessCodeText: value }));
+  },
+  setAccessInputText: (value) => {
+    set(() => ({ accessInputText: value }));
   },
   setLoginSubmitButtonText: (value) => {
     set(() => ({ loginSubmitButtonText: value }));
   },
-  setLangLoginPartIdText: (value) => {
-    set(() => ({ langLoginPartIdText: value }));
+  setLoginPartIdText: (value) => {
+    set(() => ({ loginPartIdText: value }));
   },
-  setLangAccessCodeWarning: (value) => {
-    set(() => ({ langAccessCodeWarning: value }));
+  setAccessCodeWarning: (value) => {
+    set(() => ({ accessCodeWarning: value }));
   },
-  setLangPartIdWarning: (value) => {
-    set(() => ({ langPartIdWarning: value }));
+  setPartIdWarning: (value) => {
+    set(() => ({ partIdWarning: value }));
   },
-  setLangLoginHeaderText: (value) => {
-    set(() => ({ langLoginHeaderText: value }));
+  setLoginHeaderText: (value) => {
+    set(() => ({ loginHeaderText: value }));
   },
-  setLangLoginWelcomeText: (value) => {
-    set(() => ({ langLoginWelcomeText: value }));
+  setLoginWelcomeText: (value) => {
+    set(() => ({ loginWelcomeText: value }));
   },
-  setLangLandingHelpModalHead: (value) => {
-    set(() => ({ langLandingHelpModalHead: value }));
+  setLandingHelpModalHead: (value) => {
+    set(() => ({ landingHelpModalHead: value }));
   },
-  setLangLandingHelpModalText: (value) => {
-    set(() => ({ langLandingHelpModalText: value }));
+  setLandingHelpModalText: (value) => {
+    set(() => ({ landingHelpModalText: value }));
   },
-  setLangBtnHelpLanding: (value) => {
-    set(() => ({ langBtnHelpLanding: value }));
+  setBtnHelpLanding: (value) => {
+    set(() => ({ btnHelpLanding: value }));
   },
-  setLangLocalHeader: (value) => {
-    set(() => ({ langLocalHeader: value }));
+  setLocalHeader: (value) => {
+    set(() => ({ localHeader: value }));
   },
-  setLangPartIdText: (value) => {
-    set(() => ({ langPartIdText: value }));
+  setPartIdText: (value) => {
+    set(() => ({ partIdText: value }));
   },
-  setLangUsercodeText: (value) => {
-    set(() => ({ langUsercodeText: value }));
+  setUsercodeText: (value) => {
+    set(() => ({ usercodeText: value }));
   },
-  setLangLocalStartButtonText: (value) => {
-    set(() => ({ langLocalStartButtonText: value }));
+  setLocalStartButtonText: (value) => {
+    set(() => ({ localStartButtonText: value }));
   },
-  setLangLocalDeleteButtonText: (value) => {
-    set(() => ({ langLocalDeleteButtonText: value }));
+  setLocalDeleteButtonText: (value) => {
+    set(() => ({ localDeleteButtonText: value }));
   },
-  setLangLocalDownloadButtonText: (value) => {
-    set(() => ({ langLocalDownloadButtonText: value }));
+  setLocalDownloadButtonText: (value) => {
+    set(() => ({ localDownloadButtonText: value }));
   },
-  setLangStoredQsortsHeaderText: (value) => {
-    set(() => ({ langStoredQsortsHeaderText: value }));
+  setStoredQsortsHeaderText: (value) => {
+    set(() => ({ storedQsortsHeaderText: value }));
   },
-  setLangLocalDeleteModalText: (value) => {
-    set(() => ({ langLocalDeleteModalText: value }));
+  setLocalDeleteModalText: (value) => {
+    set(() => ({ localDeleteModalText: value }));
   },
-  setLangLocalDeleteModalHead: (value) => {
-    set(() => ({ langLocalDeleteModalHead: value }));
+  setLocalDeleteModalHead: (value) => {
+    set(() => ({ localDeleteModalHead: value }));
   },
-  setLangLocalParticipantsText: (value) => {
-    set(() => ({ langLocalParticipantsText: value }));
+  setLocalParticipantsText: (value) => {
+    set(() => ({ localParticipantsText: value }));
   },
-  setLangLocalSaveDataButton: (value) => {
-    set(() => ({ langLocalSaveDataButton: value }));
+  setLocalSaveDataButton: (value) => {
+    set(() => ({ localSaveDataButton: value }));
   },
-  setLangLocalSubmitSuccessModalHeader: (value) => {
-    set(() => ({ langLocalSubmitSuccessModalHeader: value }));
+  setLocalSubmitSuccessModalHeader: (value) => {
+    set(() => ({ localSubmitSuccessModalHeader: value }));
   },
-  setLangLocalSubmitSuccessModalText: (value) => {
-    set(() => ({ langLocalSubmitSuccessModalText: value }));
+  setLocalSubmitSuccessModalText: (value) => {
+    set(() => ({ localSubmitSuccessModalText: value }));
   },
-  setLangReturnToLocalPanelButtonText: (value) => {
-    set(() => ({ langReturnToLocalPanelButtonText: value }));
+  setReturnToLocalPanelButtonText: (value) => {
+    set(() => ({ returnToLocalPanelButtonText: value }));
   },
-  setLangLocalSaveBeforeDeleteModalHeader: (value) => {
-    set(() => ({ langLocalSaveBeforeDeleteModalHeader: value }));
+  setLocalSaveBeforeDeleteModalHeader: (value) => {
+    set(() => ({ localSaveBeforeDeleteModalHeader: value }));
   },
-  setLangLocalSaveBeforeDeleteModalText: (value) => {
-    set(() => ({ langLocalSaveBeforeDeleteModalText: value }));
+  setLocalSaveBeforeDeleteModalText: (value) => {
+    set(() => ({ localSaveBeforeDeleteModalText: value }));
   },
-  setLangTitleBarText: (value) => {
-    set(() => ({ langTitleBarText: value }));
+  setTitleBarText: (value) => {
+    set(() => ({ titleBarText: value }));
   },
-  setLangPresortAgreement: (value) => {
-    set(() => ({ langPresortAgreement: value }));
+  setPresortAgreement: (value) => {
+    set(() => ({ presortAgreement: value }));
   },
-  setLangPresortStatements: (value) => {
-    set(() => ({ langPresortStatements: value }));
+  setPresortStatements: (value) => {
+    set(() => ({ presortStatements: value }));
   },
-  setLangPresortNeutral: (value) => {
-    set(() => ({ langPresortNeutral: value }));
+  setPresortNeutral: (value) => {
+    set(() => ({ presortNeutral: value }));
   },
-  setLangPresortDisagreement: (value) => {
-    set(() => ({ langPresortDisagreement: value }));
+  setPresortDisagreement: (value) => {
+    set(() => ({ presortDisagreement: value }));
   },
-  setLangPresortImageSortInstructions: (value) => {
-    set(() => ({ langPresortImageSortInstructions: value }));
+  setPresortImageSortInstructions: (value) => {
+    set(() => ({ presortImageSortInstructions: value }));
   },
-  setLangPresortModalHead: (value) => {
-    set(() => ({ langPresortModalHead: value }));
+  setPresortModalHead: (value) => {
+    set(() => ({ presortModalHead: value }));
   },
-  setLangPresortModalText: (value) => {
-    set(() => ({ langPresortModalText: value }));
+  setPresortModalText: (value) => {
+    set(() => ({ presortModalText: value }));
   },
-  setLangPresortPreventNavModalHead: (value) => {
-    set(() => ({ langPresortPreventNavModalHead: value }));
+  setPresortPreventNavModalHead: (value) => {
+    set(() => ({ presortPreventNavModalHead: value }));
   },
-  setLangPresortPreventNavModalText: (value) => {
-    set(() => ({ langPresortPreventNavModalText: value }));
+  setPresortPreventNavModalText: (value) => {
+    set(() => ({ presortPreventNavModalText: value }));
   },
-  setLangPresortFinishedModalHead: (value) => {
-    set(() => ({ langPresortFinishedModalHead: value }));
+  setPresortFinishedModalHead: (value) => {
+    set(() => ({ presortFinishedModalHead: value }));
   },
-  setLangPresortFinishedModalText: (value) => {
-    set(() => ({ langPresortFinishedModalText: value }));
+  setPresortFinishedModalText: (value) => {
+    set(() => ({ presortFinishedModalText: value }));
   },
-  setLangPresortOnPageInstructions: (value) => {
-    set(() => ({ langPresortOnPageInstructions: value }));
+  setPresortOnPageInstructions: (value) => {
+    set(() => ({ presortOnPageInstructions: value }));
   },
-  setLangSortHelpModalHead: (value) => {
-    set(() => ({ langSortHelpModalHead: value }));
+  setSortHelpModalHead: (value) => {
+    set(() => ({ sortHelpModalHead: value }));
   },
-  setLangSortHelpModalText: (value) => {
-    set(() => ({ langSortHelpModalText: value }));
+  setSortHelpModalText: (value) => {
+    set(() => ({ sortHelpModalText: value }));
   },
-  setLangSortAgreement: (value) => {
-    set(() => ({ langSortAgreement: value }));
+  setSortAgreement: (value) => {
+    set(() => ({ sortAgreement: value }));
   },
-  setLangSortDisagreement: (value) => {
-    set(() => ({ langSortDisagreement: value }));
+  setSortDisagreement: (value) => {
+    set(() => ({ sortDisagreement: value }));
   },
-  setLangCondOfInst: (value) => {
-    set(() => ({ langCondOfInst: value }));
+  setCondOfInst: (value) => {
+    set(() => ({ condOfInst: value }));
   },
-  setLangSortingCompleteModalHead: (value) => {
-    set(() => ({ langSortingCompleteModalHead: value }));
+  setSortingCompleteModalHead: (value) => {
+    set(() => ({ sortingCompleteModalHead: value }));
   },
-  setLangSortingCompleteModalText: (value) => {
-    set(() => ({ langSortingCompleteModalText: value }));
+  setSortingCompleteModalText: (value) => {
+    set(() => ({ sortingCompleteModalText: value }));
   },
-  setLangSortPreventNavModalHead: (value) => {
-    set(() => ({ langSortPreventNavModalHead: value }));
+  setSortPreventNavModalHead: (value) => {
+    set(() => ({ sortPreventNavModalHead: value }));
   },
-  setLangSortPreventNavModalText: (value) => {
-    set(() => ({ langSortPreventNavModalText: value }));
+  setSortPreventNavModalText: (value) => {
+    set(() => ({ sortPreventNavModalText: value }));
   },
-  setLangSortOverloadedColumnModalHead: (value) => {
-    set(() => ({ langSortOverloadedColumnModalHead: value }));
+  setSortOverloadedColumnModalHead: (value) => {
+    set(() => ({ sortOverloadedColumnModalHead: value }));
   },
-  setLangSortOverloadedColumnModalText: (value) => {
-    set(() => ({ langSortOverloadedColumnModalText: value }));
+  setSortOverloadedColumnModalText: (value) => {
+    set(() => ({ sortOverloadedColumnModalText: value }));
   },
-  setLangPostsortHeader: (value) => {
-    set(() => ({ langPostsortHeader: value }));
+  setPostsortHeader: (value) => {
+    set(() => ({ postsortHeader: value }));
   },
-  setLangPostsortInstructions: (value) => {
-    set(() => ({ langPostsortInstructions: value }));
+  setPostsortInstructions: (value) => {
+    set(() => ({ postsortInstructions: value }));
   },
-  setLangPlaceholder: (value) => {
-    set(() => ({ langPlaceholder: value }));
+  setPlaceholder: (value) => {
+    set(() => ({ placeholder: value }));
   },
-  setLangPostsortAgreement: (value) => {
-    set(() => ({ langPostsortAgreement: value }));
+  setPostsortAgreement: (value) => {
+    set(() => ({ postsortAgreement: value }));
   },
-  setLangPostsortDisagreement: (value) => {
-    set(() => ({ langPostsortDisagreement: value }));
+  setPostsortDisagreement: (value) => {
+    set(() => ({ postsortDisagreement: value }));
   },
-  setLangPostsortModalHead: (value) => {
-    set(() => ({ langPostsortModalHead: value }));
+  setPostsortModalHead: (value) => {
+    set(() => ({ postsortModalHead: value }));
   },
-  setLangPostsortModalText: (value) => {
-    set(() => ({ langPostsortModalText: value }));
+  setPostsortModalText: (value) => {
+    set(() => ({ postsortModalText: value }));
   },
-  setLangPostsortPreventNavModalHead: (value) => {
-    set(() => ({ langPostsortPreventNavModalHead: value }));
+  setPostsortPreventNavModalHead: (value) => {
+    set(() => ({ postsortPreventNavModalHead: value }));
   },
-  setLangPostsortPreventNavModalText: (value) => {
-    set(() => ({ langPostsortPreventNavModalText: value }));
+  setPostsortPreventNavModalText: (value) => {
+    set(() => ({ postsortPreventNavModalText: value }));
   },
-  setLangPostsortBackButton: (value) => {
-    set(() => ({ langPostsortBackButton: value }));
+  setPostsortBackButton: (value) => {
+    set(() => ({ postsortBackButton: value }));
   },
-  setLangSurveyHeader: (value) => {
-    set(() => ({ langSurveyHeader: value }));
+  setSurveyHeader: (value) => {
+    set(() => ({ surveyHeader: value }));
   },
-  setLangSurveyModalHead: (value) => {
-    set(() => ({ langSurveyModalHead: value }));
+  setSurveyModalHead: (value) => {
+    set(() => ({ surveyModalHead: value }));
   },
-  setLangSurveyModalText: (value) => {
-    set(() => ({ langSurveyModalText: value }));
+  setSurveyModalText: (value) => {
+    set(() => ({ surveyModalText: value }));
   },
-  setLangSurveyPreventNavModalHead: (value) => {
-    set(() => ({ langSurveyPreventNavModalHead: value }));
+  setSurveyPreventNavModalHead: (value) => {
+    set(() => ({ surveyPreventNavModalHead: value }));
   },
-  setLangSurveyPreventNavModalText: (value) => {
-    set(() => ({ langSurveyPreventNavModalText: value }));
+  setSurveyPreventNavModalText: (value) => {
+    set(() => ({ surveyPreventNavModalText: value }));
   },
-  setLangBtnTransfer: (value) => {
-    set(() => ({ langBtnTransfer: value }));
+  setBtnTransfer: (value) => {
+    set(() => ({ btnTransfer: value }));
   },
-  setLangTransferHead: (value) => {
-    set(() => ({ langTransferHead: value }));
+  setTransferHead: (value) => {
+    set(() => ({ transferHead: value }));
   },
-  setLangTransferTextAbove: (value) => {
-    set(() => ({ langTransferTextAbove: value }));
+  setTransferTextAbove: (value) => {
+    set(() => ({ transferTextAbove: value }));
   },
-  setLangTransferTextBelow: (value) => {
-    set(() => ({ langTransferTextBelow: value }));
+  setTransferTextBelow: (value) => {
+    set(() => ({ transferTextBelow: value }));
   },
-  setLangTransferOkModalHeader: (value) => {
-    set(() => ({ langTransferOkModalHeader: value }));
+  setTransferOkModalHeader: (value) => {
+    set(() => ({ transferOkModalHeader: value }));
   },
-  setLangTransferOkModalText: (value) => {
-    set(() => ({ langTransferOkModalText: value }));
+  setTransferOkModalText: (value) => {
+    set(() => ({ transferOkModalText: value }));
   },
-  setLangTransferFailModalHeader: (value) => {
-    set(() => ({ langTransferFailModalHeader: value }));
+  setTransferFailModalHeader: (value) => {
+    set(() => ({ transferFailModalHeader: value }));
   },
-  setLangTransferFailModalText: (value) => {
-    set(() => ({ langTransferFailModalText: value }));
+  setTransferFailModalText: (value) => {
+    set(() => ({ transferFailModalText: value }));
   },
-  setLangFallbackMessage: (value) => {
-    set(() => ({ langFallbackMessage: value }));
+  setFallbackMessage: (value) => {
+    set(() => ({ fallbackMessage: value }));
   },
-  setLangBtnDownload: (value) => {
-    set(() => ({ langBtnDownload: value }));
+  setBtnDownload: (value) => {
+    set(() => ({ btnDownload: value }));
   },
-  setLangGoodbyeMessage: (value) => {
-    set(() => ({ langGoodbyeMessage: value }));
+  setGoodbyeMessage: (value) => {
+    set(() => ({ goodbyeMessage: value }));
   },
-  setLangEmailSubmitBtn: (value) => {
-    set(() => ({ langEmailSubmitBtn: value }));
+  setEmailSubmitBtn: (value) => {
+    set(() => ({ emailSubmitBtn: value }));
   },
-  setLangEmailCopyResultsBtn: (value) => {
-    set(() => ({ langEmailCopyResultsBtn: value }));
+  setEmailCopyResultsBtn: (value) => {
+    set(() => ({ emailCopyResultsBtn: value }));
   },
-  setLangEmaiCopyAddressBtn: (value) => {
-    set(() => ({ langEmaiCopyAddressBtn: value }));
+  setEmaiCopyAddressBtn: (value) => {
+    set(() => ({ emaiCopyAddressBtn: value }));
   },
-  setLangCopySuccessMessage: (value) => {
-    set(() => ({ langCopySuccessMessage: value }));
+  setCopySuccessMessage: (value) => {
+    set(() => ({ copySuccessMessage: value }));
   },
-  setLangCopyFailMessage: (value) => {
-    set(() => ({ langCopyFailMessage: value }));
+  setCopyFailMessage: (value) => {
+    set(() => ({ copyFailMessage: value }));
   },
-  setLangDefaultEmailFailModalText: (value) => {
-    set(() => ({ langDefaultEmailFailModalText: value }));
+  setDefaultEmailFailModalText: (value) => {
+    set(() => ({ defaultEmailFailModalText: value }));
   },
-  setLangEmailBodyMessage: (value) => {
-    set(() => ({ langEmailBodyMessage: value }));
+  setEmailBodyMessage: (value) => {
+    set(() => ({ emailBodyMessage: value }));
   },
-  setLangLinkingFallbackMessage: (value) => {
-    set(() => ({ langLinkingFallbackMessage: value }));
+  setLinkingFallbackMessage: (value) => {
+    set(() => ({ linkingFallbackMessage: value }));
   },
-  setLangLinkingBtnText: (value) => {
-    set(() => ({ langLinkingBtnText: value }));
+  setLinkingBtnText: (value) => {
+    set(() => ({ linkingBtnText: value }));
   },
 });
 

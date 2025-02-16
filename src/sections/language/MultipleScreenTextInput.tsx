@@ -7,12 +7,12 @@ import { useStore } from "../../GlobalState/useStore";
 
 const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
-const getLangBtnHelp = (state) => state.langBtnHelp;
-const getLangFooterTextSize = (state) => state.langFooterTextSize;
-const getLangFooterCardHeight = (state) => state.langFooterCardHeight;
-const getLangBtnNext = (state) => state.langBtnNext;
-const getLangStepCompleted = (state) => state.langStepCompleted;
-const getLangLoginFirst = (state) => state.langLoginFirst;
+const getLangBtnHelp = (state) => state.btnHelp;
+const getLangFooterTextSize = (state) => state.footerTextSize;
+const getLangFooterCardHeight = (state) => state.footerCardHeight;
+const getLangBtnNext = (state) => state.btnNext;
+const getLangStepCompleted = (state) => state.stepCompleted;
+const getLangLoginFirst = (state) => state.loginFirst;
 
 const MultipleScreenTextInput = () => {
   let displayMode = useStore(getDisplayMode);
@@ -85,7 +85,7 @@ const MultipleScreenTextInput = () => {
       </div>
       <div className="pl-10">
         <UserTextInput
-          classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
+          classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="1-1. Help"
           name="langBtnHelp"
@@ -96,7 +96,7 @@ const MultipleScreenTextInput = () => {
           disabled={false}
         />
         <UserTextInput
-          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
+          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="1-2. Text Size"
           name="langFooterTextSize"
@@ -107,7 +107,7 @@ const MultipleScreenTextInput = () => {
           disabled={false}
         />
         <UserTextInput
-          classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
+          classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="1-3. Card Height"
           name="langFooterCardHeight"
@@ -118,7 +118,7 @@ const MultipleScreenTextInput = () => {
           disabled={false}
         />
         <UserTextInput
-          classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
+          classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="1-4. Continue button text"
           name="langBtnNext"
@@ -129,7 +129,7 @@ const MultipleScreenTextInput = () => {
           disabled={false}
         />
         <UserTextAreaInput
-          classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 `}
+          classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
           label="1-5. Step completed message"
           name="langStepCompleted"
@@ -143,7 +143,7 @@ const MultipleScreenTextInput = () => {
         />
 
         <UserTextAreaInput
-          classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
+          classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`min-w-[180px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="1-6. Log in first message"
           name="langLoginFirst"

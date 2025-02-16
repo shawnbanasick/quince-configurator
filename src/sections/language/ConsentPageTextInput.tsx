@@ -7,12 +7,12 @@ import { useStore } from "../../GlobalState/useStore";
 
 const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
-const getLangConsentTitleBarText = (state) => state.langConsentTitleBarText;
-const getLangConsentText = (state) => state.langConsentText;
-const getLangConsentHelpModalHead = (state) => state.langConsentHelpModalHead;
-const getLangConsentHelpModalText = (state) => state.langConsentHelpModalText;
-const getLangBtnNextConsent = (state) => state.langBtnNextConsent;
-const getLangBtnHelpConsent = (state) => state.langBtnHelpConsent;
+const getLangConsentTitleBarText = (state) => state.consentTitleBarText;
+const getLangConsentText = (state) => state.consentText;
+const getLangConsentHelpModalHead = (state) => state.consentHelpModalHead;
+const getLangConsentHelpModalText = (state) => state.consentHelpModalText;
+const getLangBtnNextConsent = (state) => state.btnNextConsent;
+const getLangBtnHelpConsent = (state) => state.btnHelpConsent;
 
 const ConsentPageTextInput = () => {
   let displayMode = useStore(getDisplayMode);
@@ -82,7 +82,7 @@ const ConsentPageTextInput = () => {
       </div>
       <div className="pl-10">
         <UserTextInput
-          classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
+          classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="2-1. Consent Page Title Bar"
           name="langConsentTitleBarText"
@@ -93,7 +93,7 @@ const ConsentPageTextInput = () => {
           disabled={false}
         />
         <UserTextAreaInput
-          classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 `}
+          classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
           label="2-2. Consent Message"
           name="langConsentText"
@@ -106,7 +106,7 @@ const ConsentPageTextInput = () => {
           tabIndex="0"
         />
         <UserTextInput
-          classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
+          classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="2-3. Help modal header text"
           name="langConsentHelpModalHead"
@@ -117,7 +117,7 @@ const ConsentPageTextInput = () => {
           disabled={false}
         />
         <UserTextAreaInput
-          classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 `}
+          classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
           label="2-4. Help modal main text"
           name="langConsentHelpModalText"
@@ -130,7 +130,7 @@ const ConsentPageTextInput = () => {
           tabIndex="0"
         />
         <UserTextInput
-          classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
+          classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="2-5. Consent page Help button text"
           name="langBtnHelpConsent"
@@ -141,7 +141,7 @@ const ConsentPageTextInput = () => {
           disabled={false}
         />
         <UserTextInput
-          classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
+          classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="2-6. Accept button text"
           name="langBtnNextConsent"
