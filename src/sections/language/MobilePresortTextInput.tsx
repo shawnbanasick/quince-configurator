@@ -3,7 +3,7 @@ import { UserTextAreaInput } from "../utils/UserTextAreaInput";
 import showSectionDefaults from "./showSectionDefaults";
 import clearSection from "./clearSection";
 // import showRefImage from "./showRefImage";
-import { useStore } from "../../GlobalState/useStore";
+import { useStore } from "../../globalState/useStore";
 
 const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;

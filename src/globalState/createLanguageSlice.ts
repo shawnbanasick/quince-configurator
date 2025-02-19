@@ -100,18 +100,17 @@ const createMapXmlSlice = (set, get) => ({
   thinningPreventNavModalText: `Please finish the refining process before going to the next step.`,
   thinningConfirmModalHead: `Incomplete Selection`,
   thinningConfirmModalText: `Please select the required number of statements.`,
-  agreeMostText: `Next, repeat the process with the remaining statements, but this time please select the cards that you agree with the most.`,
-  agreeLeastText: `Next, repeat the process with the remaining statements, but this time please select the cards that you agree with the least.`,
   initialInstructionPart1: `Below are the statements you rated positively in the previous step. Now, pick the number of statements that you <b>MOST AGREE</b>.<br /><br />`,
   initialInstructionPart2: `Next, continue to select the statements that are CLOSEST to your perspective`,
   initialInstructionPart3: `Another set of statements will appear on the screen after you click the orange "Submit" button.`,
+  agreeMostText: `Next, repeat the process with the remaining statements, but this time please select the cards that you agree with the most.`,
+  agreeLeastText: `Next, repeat the process with the remaining statements, but this time please select the cards that you agree with the least.`,
   finalInstructions: `Refinement process complete. Click on the navigation button on the bottom right side to go to the next stage..`,
 
   /*
    ******** MOBILE THINNING  ****************** */
   moveTopMobileHead: `Confirm Move`,
   moveTopMobileText: `Move this statement to the top of the list?`,
-  moveBottomMobileText: `Move this statement to the bottom of the list?`,
   moveAllTopMobileText: `Move all selected statements to the top of the list?`,
   moveTopMobileButtonOK: `Yes`,
   moveTopMobileButtonCancel: `Cancel`,
@@ -146,6 +145,18 @@ const createMapXmlSlice = (set, get) => ({
   sortPreventNavModalText: `Please finish the grid sorting before going to the next step.`,
   sortOverloadedColumnModalHead: `Navigation Disabled`,
   sortOverloadedColumnModalText: `One of the columns has too many cards (it will be outlined in orange and have a dashed border). Please adjust the placement of the cards so that all columns have the correct number.`,
+
+  /*
+   ******** MOBILE SORT  ****************** */
+  mobileSortSwapModalHead: `Swap Statement Rankings?`,
+  mobileSortSwapModalText: `Click "Confirm" to swap.`,
+  mobileSortSwapModalConfirmButton: `Swap`,
+  mobileSortConditionsOfInstruction: `Rank the Statements According to Your Experience of using the iPads in the Class`,
+  mobileSortHelpModalHead: `Stage 3 of 5<br/> Final Statement Ranking`,
+  mobileSortHelpModalText: `The statements have been ranked based on your previous evaluations.<br/><br/> Those statements that are closest to your perspective should be at the top of the list. Those that are farthest from your perspective should be at the bottom of the list.<br/><br/>You will need to <b>scroll down</b> to see all of the statements.<br/><br/>Please <b>review the rankings</b> and make any necessary changes to the ranking of the statements so that the ordering <b>accurately reflects your perspective</b>. <br/><br/><mark>This is the most critical stage of the survey, so please review the statement rankings carefully.</mark><br/><br/> To <b>swap the positions of neighboring statements</b>, tap the up or down arrows on the right or left side of the statement.<br/><br/>To <b>swap the positions of statements that are separated</b>, tap on two statements (the statement color will change to yellow) and a swap confirmation message will appear.<br/><br/>When you are satisfied with all of the rankings, tap the navigation button on the bottom right.`,
+  mobileSortScrollBottomModalHead: `Navigation Disabled`,
+  mobileSortScrollBottomModalText: `Please scroll to the bottom and review the ranking of all the statements before going to the next stage.`,
+
   /*
    ******** POSTSORT  ****************** */
   postsortHeader: `Post-Sort Comments`,
@@ -158,6 +169,15 @@ const createMapXmlSlice = (set, get) => ({
   postsortPreventNavModalHead: `Navigation Disabled`,
   postsortPreventNavModalText: `Please add comments to all of the cards before going to the next step.`,
   postsortBackButton: `Go Back`,
+
+  /*
+   ******** MOBILE POSTSORT  ****************** */
+  mobilePostsortPreventNavModalHead: `Navigation Disabled`,
+  mobilePostsortPreventNavModalText: `Please add comments to all of the statements before going to the next step.`,
+  mobilePostsortSortbarText: `Postsort Comments`,
+  mobilePostsortHelpModalHead: `Stage 4 of 5<br/> Post-Ranking Comments`,
+  mobilePostsortHelpModalText: `Please comment on your rankings of these statements.`,
+
   /*
    ******** SURVEY  ****************** */
   surveyHeader: `Post-Sort Questionnaire`,
@@ -167,18 +187,27 @@ const createMapXmlSlice = (set, get) => ({
   surveyPreventNavModalText: `Please answer the required questions (outlined in yellow) before going to the next step.`,
 
   /*
+   ******** MOBILE SURVEY  ****************** */
+  mobileSurveyHelpModalHead: `Stage 5 of 5<br/> Post-Ranking Survey`,
+  mobileSurveyHelpModalText: `Please answer the following questions.`,
+
+  /*
    ******** SUBMIT  ****************** */
   btnTransfer: `Submit Data`,
-  yransferHead: `Final Step`,
+  transferHead: `Final Step`,
   transferTextAbove: `<h1>Ready to Submit</h1><br/><br/> <h2>Please click the "Submit Data" button to transmit your results.</h2>`,
   transferTextBelow: `If the submission confirmation message does not appear, <br/>please wait a few minutes and click the submit button again.`,
-  TransferOkModalHeader: `Success - The data have been sent to the server.`,
-  TransferOkModalText: `Thank you for using EQ Web Sort!<br/><br/>You can now close your browser tab.`,
-  TransferFailModalHeader: `Connection to server failed`,
-  TransferFailModalText: `Please try again in a few moments.`,
-  FallbackMessage: `Data transmission has failed. Please download the results and email them as an attachment to ken.q.tools@gmail.com.  Thank you!`,
-  BtnDownload: `Download`,
-  GoodbyeMessage: `<div>Thank You!</div> <br /><div>You can now close the browser tab</div>`,
+  transferOkModalHeader: `Success - The data have been sent to the server.`,
+  transferOkModalText: `Thank you for using EQ Web Sort!<br/><br/>You can now close your browser tab.`,
+  transferFailModalHeader: `Connection to server failed`,
+  transferFailModalText: `Please try again in a few moments.`,
+  fallbackMessage: `Data transmission has failed. Please download the results and email them as an attachment to ken.q.tools@gmail.com.  Thank you!`,
+  btnDownload: `Download`,
+  goodbyeMessage: `<div>Thank You!</div> <br /><div>You can now close the browser tab</div>`,
+
+  /*
+   ******** MOBILE SUBMIT  ****************** */
+  mobileSortTitleBar: `Submit Data`,
 
   /*
    ******** EMAIL  ****************** */
@@ -198,7 +227,7 @@ const createMapXmlSlice = (set, get) => ({
   LinkingBtnText: "Begin Next Q sort",
 
   /*
-   ******** GENERICS  ****************** */
+   ******** GENERIC STATE CHANGE  ****************** */
   setText: (stateDesig, text) => set((state) => ({ [stateDesig]: text })),
 
   /*

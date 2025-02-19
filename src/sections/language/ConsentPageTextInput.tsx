@@ -3,7 +3,7 @@ import { UserTextAreaInput } from "../utils/UserTextAreaInput";
 import showSectionDefaults from "./showSectionDefaults";
 import clearSection from "./clearSection";
 // import showRefImage from "./showRefImage";
-import { useStore } from "../../GlobalState/useStore";
+import { useStore } from "../../globalState/useStore";
 
 const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
@@ -51,7 +51,7 @@ const ConsentPageTextInput = () => {
     <div className="outline outline-2 outline-slate-500 p-2 w-[78vw] max-w-[1200px] rounded-sm bg-gray-100">
       {/* <HeaderButtonBar> */}
       <div className="flex flex-row justify-between mb-4">
-        <h2>2. Consent Page (optional)</h2>
+        <h2>2. Consent Screen (optional)</h2>
         <div className="flex flex-row gap-4">
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
