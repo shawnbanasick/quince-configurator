@@ -8,39 +8,34 @@ import clearSection from "./clearSection";
 const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
 
-const PostsortTextInput: React.FC = () => {
+const EmailTextInput: React.FC = () => {
   let displayMode = useStore(getDisplayMode);
   const setText = useStore(getSetText);
 
-  const postsortHeader = useStore((state) => state.postsortHeader);
-  const setPostsortHeader = useStore((state) => state.setPostsortHeader);
+  const emailSubmitBtn = useStore((state) => state.emailSubmitBtn);
+  const setEmailSubmitBtn = useStore((state) => state.setEmailSubmitBtn);
 
-  const postsortInstructions = useStore((state) => state.postsortInstructions);
-  const setPostsortInstructions = useStore((state) => state.setPostsortInstructions);
+  const emailCopyResultsBtn = useStore((state) => state.emailCopyResultsBtn);
+  const setEmailCopyResultsBtn = useStore((state) => state.setEmailCopyResultsBtn);
 
-  const placeholder = useStore((state) => state.placeholder);
-  const setPlaceholder = useStore((state) => state.setPlaceholder);
+  const emailCopyAddressBtn = useStore((state) => state.emailCopyAddressBtn);
+  const setEmailCopyAddressBtn = useStore((state) => state.setEmailCopyAddressBtn);
 
-  const postsortAgreement = useStore((state) => state.postsortAgreement);
-  const setPostsortAgreement = useStore((state) => state.setPostsortAgreement);
+  const copySuccessMessage = useStore((state) => state.copySuccessMessage);
+  const setCopySuccessMessage = useStore((state) => state.setCopySuccessMessage);
 
-  const postsortDisagreement = useStore((state) => state.postsortDisagreement);
-  const setPostsortDisagreement = useStore((state) => state.setPostsortDisagreement);
+  const copyFailMessage = useStore((state) => state.copyFailMessage);
+  const setCopyFailMessage = useStore((state) => state.setCopyFailMessage);
 
-  const postsortModalHead = useStore((state) => state.postsortModalHead);
-  const setPostsortModalHead = useStore((state) => state.setPostsortModalHead);
+  const defaultEmailFailModalText = useStore((state) => state.defaultEmailFailModalText);
+  const setDefaultEmailFailModalText = useStore((state) => state.setDefaultEmailFailModalText);
 
-  const postsortModalText = useStore((state) => state.postsortModalText);
-  const setPostsortModalText = useStore((state) => state.setPostsortModalText);
+  const emailBodyMessage = useStore((state) => state.emailBodyMessage);
+  const setEmailBodyMessage = useStore((state) => state.setEmailBodyMessage);
 
-  const postsortPreventNavModalHead = useStore((state) => state.postsortPreventNavModalHead);
-  const setPostsortPreventNavModalHead = useStore((state) => state.setPostsortPreventNavModalHead);
-
-  const postsortPreventNavModalText = useStore((state) => state.postsortPreventNavModalText);
-  const setPostsortPreventNavModalText = useStore((state) => state.setPostsortPreventNavModalText);
-
-  const postsortBackButton = useStore((state) => state.postsortBackButton);
-  const setPostsortBackButton = useStore((state) => state.setPostsortBackButton);
+  //   const handleTextChange = (setter) => (e) => {
+  //     setter(e.target.value);
+  //   };
 
   const handleRefImage = (e) => {
     // showRefImage(e.target.id);
@@ -63,11 +58,10 @@ const PostsortTextInput: React.FC = () => {
   } else {
     displayMode = false;
   }
-
   return (
     <div className="outline outline-2 outline-slate-500 p-2 w-[78vw] max-w-[1200px] rounded-sm">
       <div className="flex flex-row justify-between mb-4">
-        <h2>11. Post-Sort Comments Screen</h2>
+        <h2>17. Email Screen</h2>
         <div className="flex flex-row gap-4">
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
@@ -92,14 +86,57 @@ const PostsortTextInput: React.FC = () => {
           </button>
         </div>
       </div>
-
       <div className="pl-10">
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="11-1. Post-Sort Screen Title Bar"
-          name="postsortHeader"
-          value={postsortHeader}
+          label="17-1. Email Submit Button Text"
+          name="emailSubmitBtn"
+          value={emailSubmitBtn}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+        />
+        <UserTextInput
+          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
+          classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
+          label="17-2. Email Copy Results Button Text"
+          name="emailCopyResultsBtn"
+          value={emailCopyResultsBtn}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+        />
+        <UserTextInput
+          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
+          classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
+          label="17-3. Email Copy Address Button Text"
+          name="emailCopyAddressBtn"
+          value={emailCopyAddressBtn}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+        />
+        <UserTextInput
+          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
+          classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
+          label="17-4. Copy Success Message"
+          name="copySuccessMessage"
+          value={copySuccessMessage}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+        />
+        <UserTextInput
+          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
+          classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
+          label="17-5. Copy Fail Message"
+          name="copyFailMessage"
+          value={copyFailMessage}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
@@ -108,111 +145,32 @@ const PostsortTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="11-2. Post-Sort Instructions"
-          name="postsortInstructions"
+          label="17-6. Default Email Fail Modal Text"
+          name="defaultEmailFailModalText"
           height={150}
-          value={postsortInstructions}
+          value={defaultEmailFailModalText}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
           disabled={false}
           tabIndex="0"
-        />
-        <UserTextInput
-          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
-          classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="11-3. Comment Box Placeholders"
-          name="placeholder"
-          value={placeholder}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-        />
-        <UserTextInput
-          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
-          classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="11-4. Post-Sort Agreement"
-          name="postsortAgreement"
-          value={postsortAgreement}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-        />
-        <UserTextInput
-          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
-          classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="11-5. Post-Sort Disagreement"
-          name="postsortDisagreement"
-          value={postsortDisagreement}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-        />
-        <UserTextInput
-          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
-          classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="11-6. Post-Sort Modal Title"
-          name="postsortModalHead"
-          value={postsortModalHead}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
         />
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="11-7. Post-Sort Modal Text"
-          name="postsortModalText"
+          label="17-7. Email Body Message"
+          name="emailBodyMessage"
           height={150}
-          value={postsortModalText}
+          value={emailBodyMessage}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
           disabled={false}
           tabIndex="0"
-        />
-        <UserTextInput
-          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
-          classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="11-8. Post-Sort Prevent Navigation Modal Title"
-          name="postsortPreventNavModalHead"
-          value={postsortPreventNavModalHead}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-        />
-        <UserTextAreaInput
-          classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
-          classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="11-9. Post-Sort Prevent Navigation Modal Text"
-          name="postsortPreventNavModalText"
-          height={150}
-          value={postsortPreventNavModalText}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-          tabIndex="0"
-        />
-        <UserTextInput
-          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
-          classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="11-10. Post-Sort Back Button"
-          name="postsortBackButton"
-          value={postsortBackButton}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
         />
       </div>
     </div>
   );
 };
 
-export { PostsortTextInput };
+export { EmailTextInput };

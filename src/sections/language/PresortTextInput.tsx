@@ -12,16 +12,14 @@ const getPresortAgreement = (state) => state.presortAgreement;
 const getPresortNeutral = (state) => state.presortNeutral;
 const getPresortDisagreement = (state) => state.presortDisagreement;
 const getPresortOnPageInstructions = (state) => state.presortOnPageInstructions;
-const getPresortImageSortInstructions = (state) =>
-  state.presortImageSortInstructions;
+const getPresortImageSortInstructions = (state) => state.presortImageSortInstructions;
 const getPresortModalHead = (state) => state.presortModalHead;
 const getPresortModalText = (state) => state.presortModalText;
-const getPresortPreventNavModalHead = (state) =>
-  state.presortPreventNavModalHead;
-const getPresortPreventNavModalText = (state) =>
-  state.presortPreventNavModalText;
+const getPresortPreventNavModalHead = (state) => state.presortPreventNavModalHead;
+const getPresortPreventNavModalText = (state) => state.presortPreventNavModalText;
 const getPresortFinishedModalHead = (state) => state.presortFinishedModalHead;
 const getPresortFinishedModalText = (state) => state.presortFinishedModalText;
+const getLangLoginFirst = (state) => state.loginFirst;
 
 const PresortTextInput = () => {
   let displayMode = useStore(getDisplayMode);
@@ -31,19 +29,14 @@ const PresortTextInput = () => {
   const langPresortNeutral = useStore(getPresortNeutral);
   const langPresortDisagreement = useStore(getPresortDisagreement);
   const langPresortOnPageInstructions = useStore(getPresortOnPageInstructions);
-  const langPresortImageSortInstructions = useStore(
-    getPresortImageSortInstructions
-  );
+  const langPresortImageSortInstructions = useStore(getPresortImageSortInstructions);
   const langPresortModalHead = useStore(getPresortModalHead);
   const langPresortModalText = useStore(getPresortModalText);
-  const langPresortPreventNavModalHead = useStore(
-    getPresortPreventNavModalHead
-  );
-  const langPresortPreventNavModalText = useStore(
-    getPresortPreventNavModalText
-  );
+  const langPresortPreventNavModalHead = useStore(getPresortPreventNavModalHead);
+  const langPresortPreventNavModalText = useStore(getPresortPreventNavModalText);
   const langPresortFinishedModalHead = useStore(getPresortFinishedModalHead);
   const langPresortFinishedModalText = useStore(getPresortFinishedModalText);
+  const langLoginFirst = useStore(getLangLoginFirst);
 
   const handleRefImage = (e) => {
     // showRefImage(e.target.id);
@@ -81,11 +74,7 @@ const PresortTextInput = () => {
             Use Defaults
           </button>
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
-          <button
-            id="footerClear"
-            className="bg-slate-300 p-2 rounded-md"
-            onClick={handleClearAll}
-          >
+          <button id="footerClear" className="bg-slate-300 p-2 rounded-md" onClick={handleClearAll}>
             Clear Section
           </button>
           {/* <RefImageButton */}
@@ -100,10 +89,24 @@ const PresortTextInput = () => {
         </div>
       </div>
       <div className="pl-10">
+        <UserTextAreaInput
+          classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
+          classNameLabel={`min-w-[180px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+          label="5-1. Log In First Message"
+          name="langLoginFirst"
+          height={150}
+          value={langLoginFirst}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+          tabIndex="0"
+        />
+
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="5-1. Title bar text"
+          label="5-2. Title Bar Text"
           name="langTitleBarText"
           value={langTitleBarText}
           onChange={handleTextChange}
@@ -114,7 +117,7 @@ const PresortTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`5-2. "Agree"`}
+          label={`5-3. "Agree"`}
           name="langPresortAgreement"
           value={langPresortAgreement}
           onChange={handleTextChange}
@@ -125,7 +128,7 @@ const PresortTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`5-3. "Neutral"`}
+          label={`5-4. "Neutral"`}
           name="langPresortNeutral"
           value={langPresortNeutral}
           onChange={handleTextChange}
@@ -136,7 +139,7 @@ const PresortTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`4-4. "Disagree"`}
+          label={`5-5. "Disagree"`}
           name="langPresortDisagreement"
           value={langPresortDisagreement}
           onChange={handleTextChange}
@@ -148,7 +151,7 @@ const PresortTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label="5-5a. Presort instructions (for statement sorts)"
+          label="5-6. Presort Instructions (for statement sorts)"
           name="langPresortOnPageInstructions"
           height={150}
           value={langPresortOnPageInstructions}
@@ -161,7 +164,7 @@ const PresortTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label="5-5b. Presort instructions (for image sorts)"
+          label="5-7. Presort Instructions (for image sorts)"
           name="langPresortImageSortInstructions"
           height={150}
           value={langPresortImageSortInstructions}
@@ -175,7 +178,7 @@ const PresortTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="5-6. Presort greeting modal header text"
+          label="5-8. Presort Greeting Modal Title"
           name="langPresortModalHead"
           value={langPresortModalHead}
           onChange={handleTextChange}
@@ -186,7 +189,7 @@ const PresortTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label="5-7. Presort greeting modal main text"
+          label="5-9. Presort Greeting Modal Text"
           name="langPresortModalText"
           height={150}
           value={langPresortModalText}
@@ -199,7 +202,7 @@ const PresortTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="5-8. Prevent navigation modal header"
+          label="5-10. Prevent Navigation Modal Title"
           name="langPresortPreventNavModalHead"
           value={langPresortPreventNavModalHead}
           onChange={handleTextChange}
@@ -210,7 +213,7 @@ const PresortTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label="5-9. Prevent navigation modal main text"
+          label="5-11. Prevent Navigation Modal Text"
           name="langPresortPreventNavModalText"
           height={150}
           value={langPresortPreventNavModalText}
@@ -223,7 +226,7 @@ const PresortTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="5-10. Presort complete modal header"
+          label="5-12. Presort Complete Modal Title"
           name="langPresortFinishedModalHead"
           value={langPresortFinishedModalHead}
           onChange={handleTextChange}
@@ -234,7 +237,7 @@ const PresortTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label="5-11. Presort complete modal main text"
+          label="5-13. Presort Complete Modal Text"
           name="langPresortFinishedModalText"
           height={150}
           value={langPresortFinishedModalText}

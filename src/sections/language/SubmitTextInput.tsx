@@ -24,31 +24,17 @@ const SubmitTextInput: React.FC = () => {
   const transferTextBelow = useStore((state) => state.transferTextBelow);
   const setTransferTextBelow = useStore((state) => state.setTransferTextBelow);
 
-  const transferOkModalHeader = useStore(
-    (state) => state.transferOkModalHeader
-  );
-  const setTransferOkModalHeader = useStore(
-    (state) => state.setTransferOkModalHeader
-  );
+  const transferOkModalHeader = useStore((state) => state.transferOkModalHeader);
+  const setTransferOkModalHeader = useStore((state) => state.setTransferOkModalHeader);
 
   const transferOkModalText = useStore((state) => state.transferOkModalText);
-  const setTransferOkModalText = useStore(
-    (state) => state.setTransferOkModalText
-  );
+  const setTransferOkModalText = useStore((state) => state.setTransferOkModalText);
 
-  const transferFailModalHeader = useStore(
-    (state) => state.transferFailModalHeader
-  );
-  const setTransferFailModalHeader = useStore(
-    (state) => state.setTransferFailModalHeader
-  );
+  const transferFailModalHeader = useStore((state) => state.transferFailModalHeader);
+  const setTransferFailModalHeader = useStore((state) => state.setTransferFailModalHeader);
 
-  const transferFailModalText = useStore(
-    (state) => state.transferFailModalText
-  );
-  const setTransferFailModalText = useStore(
-    (state) => state.setTransferFailModalText
-  );
+  const transferFailModalText = useStore((state) => state.transferFailModalText);
+  const setTransferFailModalText = useStore((state) => state.setTransferFailModalText);
 
   const fallbackMessage = useStore((state) => state.fallbackMessage);
   const setFallbackMessage = useStore((state) => state.setFallbackMessage);
@@ -94,11 +80,7 @@ const SubmitTextInput: React.FC = () => {
             Use Defaults
           </button>
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
-          <button
-            id="footerClear"
-            className="bg-slate-300 p-2 rounded-md"
-            onClick={handleClearAll}
-          >
+          <button id="footerClear" className="bg-slate-300 p-2 rounded-md" onClick={handleClearAll}>
             Clear Section
           </button>
           {/* <RefImageButton */}
@@ -114,9 +96,9 @@ const SubmitTextInput: React.FC = () => {
       </div>
       <div className="pl-10">
         <UserTextInput
-          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50"
+          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="Button Transfer"
+          label="15-1. Transfer Button Text"
           name="btnTransfer"
           value={btnTransfer}
           onChange={handleTextChange}
@@ -125,9 +107,9 @@ const SubmitTextInput: React.FC = () => {
           disabled={false}
         />
         <UserTextInput
-          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50"
+          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="Transfer Head"
+          label="15-2. Transfer Screen Title"
           name="transferHead"
           value={transferHead}
           onChange={handleTextChange}
@@ -136,9 +118,9 @@ const SubmitTextInput: React.FC = () => {
           disabled={false}
         />
         <UserTextAreaInput
-          classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 text-left align-top"
+          classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="Transfer Text Above"
+          label="15-3. Transfer Text Above Submit Button"
           name="transferTextAbove"
           height={150}
           value={transferTextAbove}
@@ -149,9 +131,9 @@ const SubmitTextInput: React.FC = () => {
           tabIndex="0"
         />
         <UserTextAreaInput
-          classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 text-left align-top"
+          classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="Transfer Text Below"
+          label="15-4. Transfer Text Below Submit Button"
           name="transferTextBelow"
           height={150}
           value={transferTextBelow}
@@ -162,9 +144,9 @@ const SubmitTextInput: React.FC = () => {
           tabIndex="0"
         />
         <UserTextInput
-          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50"
+          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="Transfer OK Modal Header"
+          label="15-5. Submit Data Success Modal Title"
           name="transferOkModalHeader"
           value={transferOkModalHeader}
           onChange={handleTextChange}
@@ -173,9 +155,9 @@ const SubmitTextInput: React.FC = () => {
           disabled={false}
         />
         <UserTextAreaInput
-          classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 text-left align-top"
+          classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="Transfer OK Modal Text"
+          label="15-6. Submit Data Success Modal Text"
           name="transferOkModalText"
           height={150}
           value={transferOkModalText}
@@ -186,9 +168,9 @@ const SubmitTextInput: React.FC = () => {
           tabIndex="0"
         />
         <UserTextInput
-          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50"
+          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="Transfer Fail Modal Header"
+          label="15-7. Data Submit Fail Modal Title"
           name="transferFailModalHeader"
           value={transferFailModalHeader}
           onChange={handleTextChange}
@@ -197,9 +179,9 @@ const SubmitTextInput: React.FC = () => {
           disabled={false}
         />
         <UserTextAreaInput
-          classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 text-left align-top"
+          classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="Transfer Fail Modal Text"
+          label="15-8. Data Submit Fail Modal Text"
           name="transferFailModalText"
           height={150}
           value={transferFailModalText}
@@ -210,9 +192,9 @@ const SubmitTextInput: React.FC = () => {
           tabIndex="0"
         />
         <UserTextAreaInput
-          classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 text-left align-top"
+          classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="Fallback Message"
+          label="15-9. Fallback Message"
           name="fallbackMessage"
           height={150}
           value={fallbackMessage}
@@ -223,9 +205,9 @@ const SubmitTextInput: React.FC = () => {
           tabIndex="0"
         />
         <UserTextInput
-          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50"
+          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="Button Download"
+          label="15-10. Fallback Data Download Button Text"
           name="btnDownload"
           value={btnDownload}
           onChange={handleTextChange}
@@ -234,9 +216,9 @@ const SubmitTextInput: React.FC = () => {
           disabled={false}
         />
         <UserTextAreaInput
-          classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 text-left align-top"
+          classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="Goodbye Message"
+          label="15-11. Goodbye Message"
           name="goodbyeMessage"
           height={150}
           value={goodbyeMessage}

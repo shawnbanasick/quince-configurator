@@ -18,12 +18,15 @@ import { MobilePostsortTextInput } from "./MobilePostsortTextInput.js";
 import { SurveyTextInput } from "./SurveyTextInput.js";
 import { MobileSurveyTextInput } from "./MobileSurveyTextInput.js";
 import { SubmitTextInput } from "./SubmitTextInput.js";
+import { MobileSubmitTextInput } from "./MobileSubmitTextInput.js";
+import { EmailTextInput } from "./EmailTextInput.js";
+import { ProjectLinkingTextInput } from "./ProjectLinkingTextInput.js";
+import { generateLanguageXml } from "./generateLanguageXml.js";
 
 const getShowDescriptionPro = (state) => state.showDescriptionPro;
 const getShowDescriptionBeginner = (state) => state.showDescriptionBeginner;
 const getSetShowDescriptionPro = (state) => state.setShowDescriptionPro;
-const getSetShowDescriptionBeginner = (state) =>
-  state.setShowDescriptionBeginner;
+const getSetShowDescriptionBeginner = (state) => state.setShowDescriptionBeginner;
 const getDisplayMode = (state) => state.displayMode;
 
 const Language = () => {
@@ -43,6 +46,8 @@ const Language = () => {
 
   const handleClick = () => {
     console.log("Language button clicked");
+    let languageXml = generateLanguageXml();
+    console.log(languageXml);
   };
 
   return (
@@ -57,8 +62,7 @@ const Language = () => {
           className="bg-[orange] text-[black] w-[350px] p-[10px] rounded-[5px] mt-[20px]"
           onClick={() => handleClick()}
         >
-          Click here to save file to <b>SETTINGS</b> folder and replace the
-          "map.xml" file
+          Click here to save file to <b>SETTINGS</b> folder and replace the "map.xml" file
         </button>
       </div>
       {displayMode && <LanguageIntroText />}
@@ -77,6 +81,9 @@ const Language = () => {
       <SurveyTextInput />
       <MobileSurveyTextInput />
       <SubmitTextInput />
+      <MobileSubmitTextInput />
+      <EmailTextInput />
+      <ProjectLinkingTextInput />
     </div>
   );
 };

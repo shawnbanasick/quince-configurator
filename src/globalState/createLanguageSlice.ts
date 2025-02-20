@@ -6,7 +6,6 @@ const createMapXmlSlice = (set, get) => ({
   footerCardHeight: `Card Height`,
   btnNext: "Continue",
   stepCompleted: `You have completed this step. Please click on the <b> blue "Continue" button </b> at the bottom right-side of your screen to go to the next step.`,
-  loginFirst: "Please complete the log-in process first.",
   screenOrientationText: `Please Use Portrait Orientation!`,
 
   /*
@@ -19,17 +18,7 @@ const createMapXmlSlice = (set, get) => ({
   btnHelpConsent: `Contact Information`,
 
   /*
-   ******** LANDING  ****************** */
-  landingHead: `University Research Project`,
-  welcomeMessage: `<h2>EQ Web Sort Demo Project - iPad Use in the Classroom.</h2><br/><br/><p>Thank you for helping with this research project</p><br/><br/><br/>
-    <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
-  landingHelpModalHead: `Welcome!`,
-  landingHelpModalText: `Thank you for participating in this University Research Project. Please click the "<b>Continue</b>" button at the bottom right side of the screen to go to the next step.`,
-  btnNextLanding: `Continue`,
-  btnHelpLanding: `Help`,
-
-  /*
-   ******** ACCESS  ****************** */
+   ******** ACCESS CONTROL  ****************** */
   loginWelcomeText: `<center></center><h3>Welcome!</h3></center><br/> Thank you for participating in this Q methodology research project. <br/>Please <b>sign in</b> using the form below to begin the process. `,
   loginHeaderText: `Sign In`,
   loginPartIdText: `Please enter your name or participant ID`,
@@ -37,8 +26,8 @@ const createMapXmlSlice = (set, get) => ({
   partIdWarning: `Invalid name or ID`,
   accessCodeWarning: `Access code invalid`,
   loginSubmitButtonText: `Submit`,
-
   accessInputText: "Please enter the access code for this survey.",
+
   /*
    ******** LOCAL DATA COLLECTION  ****************** */
   localHeader: "Offline Q-sort Control Panel",
@@ -61,7 +50,18 @@ const createMapXmlSlice = (set, get) => ({
   localSaveBeforeDeleteModalText: "Save Q sort Data to Disk before deleting.",
 
   /*
+   ******** WELCOME (LANDING) SCREEN   ****************** */
+  landingHead: `University Research Project`,
+  welcomeMessage: `<h2>EQ Web Sort Demo Project - iPad Use in the Classroom.</h2><br/><br/><p>Thank you for helping with this research project</p><br/><br/><br/>
+    <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
+  landingHelpModalHead: `Welcome!`,
+  landingHelpModalText: `Thank you for participating in this University Research Project. Please click the "<b>Continue</b>" button at the bottom right side of the screen to go to the next step.`,
+  btnNextLanding: `Continue`,
+  btnHelpLanding: `Help`,
+
+  /*
    ******** PRESORT  ****************** */
+  loginFirst: "Please complete the log-in process first.",
   titleBarText: `Preliminary Sorting`,
   presortAgreement: `Agree (3)`,
   presortStatements: `Statements`,
@@ -211,20 +211,20 @@ const createMapXmlSlice = (set, get) => ({
 
   /*
    ******** EMAIL  ****************** */
-  EmailSubmitBtn: "Open Email Client and Send Results",
-  EmailCopyResultsBtn: "Copy Results to Clipboard",
-  EmaiCopyAddressBtn: "Copy Email Address to Clipboard",
-  CopySuccessMessage: "Copied!",
-  CopyFailMessage: "Error: Please try again.",
-  DefaultEmailFailModalText:
+  emailSubmitBtn: "Open Email Client and Send Results",
+  emailCopyResultsBtn: "Copy Results to Clipboard",
+  emailCopyAddressBtn: "Copy Email Address to Clipboard",
+  copySuccessMessage: "Copied!",
+  copyFailMessage: "Error: Please try again.",
+  defaultEmailFailModalText:
     "Your default email client should have automatically opened with the results in the email body. If it didn't, please use the buttons below to copy and paste your information into an email.",
-  EmailBodyMessage:
+  emailBodyMessage:
     "You don't have to add anything to this email. Please just click the SEND button.",
 
   /*
    ******** LINKING  ****************** */
-  LinkingFallbackMessage: "Please click the button to begin the next Q sort",
-  LinkingBtnText: "Begin Next Q sort",
+  linkingFallbackMessage: "Please click the button to begin the next Q sort",
+  linkingBtnText: "Begin Next Q sort",
 
   /*
    ******** GENERIC STATE CHANGE  ****************** */

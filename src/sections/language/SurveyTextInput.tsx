@@ -21,19 +21,11 @@ const SurveyTextInput: React.FC = () => {
   const surveyModalText = useStore((state) => state.surveyModalText);
   const setSurveyModalText = useStore((state) => state.setSurveyModalText);
 
-  const surveyPreventNavModalHead = useStore(
-    (state) => state.surveyPreventNavModalHead
-  );
-  const setSurveyPreventNavModalHead = useStore(
-    (state) => state.setSurveyPreventNavModalHead
-  );
+  const surveyPreventNavModalHead = useStore((state) => state.surveyPreventNavModalHead);
+  const setSurveyPreventNavModalHead = useStore((state) => state.setSurveyPreventNavModalHead);
 
-  const surveyPreventNavModalText = useStore(
-    (state) => state.surveyPreventNavModalText
-  );
-  const setSurveyPreventNavModalText = useStore(
-    (state) => state.setSurveyPreventNavModalText
-  );
+  const surveyPreventNavModalText = useStore((state) => state.surveyPreventNavModalText);
+  const setSurveyPreventNavModalText = useStore((state) => state.setSurveyPreventNavModalText);
 
   const handleRefImage = (e) => {
     // showRefImage(e.target.id);
@@ -70,11 +62,7 @@ const SurveyTextInput: React.FC = () => {
             Use Defaults
           </button>
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
-          <button
-            id="footerClear"
-            className="bg-slate-300 p-2 rounded-md"
-            onClick={handleClearAll}
-          >
+          <button id="footerClear" className="bg-slate-300 p-2 rounded-md" onClick={handleClearAll}>
             Clear Section
           </button>
           {/* <RefImageButton */}
@@ -90,9 +78,9 @@ const SurveyTextInput: React.FC = () => {
       </div>
       <div className="pl-10">
         <UserTextInput
-          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50"
+          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="Survey Header"
+          label="13-1. Questionnaire Screen Title Bar"
           name="surveyHeader"
           value={surveyHeader}
           onChange={handleTextChange}
@@ -101,9 +89,9 @@ const SurveyTextInput: React.FC = () => {
           disabled={false}
         />
         <UserTextInput
-          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50"
+          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="Survey Modal Head"
+          label="13-2. Questionnaire Help Modal Title"
           name="surveyModalHead"
           value={surveyModalHead}
           onChange={handleTextChange}
@@ -112,9 +100,9 @@ const SurveyTextInput: React.FC = () => {
           disabled={false}
         />
         <UserTextAreaInput
-          classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 text-left align-top"
+          classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="Survey Modal Text"
+          label="13-3. Questionnaire Help Modal Text"
           name="surveyModalText"
           height={150}
           value={surveyModalText}
@@ -125,9 +113,9 @@ const SurveyTextInput: React.FC = () => {
           tabIndex="0"
         />
         <UserTextInput
-          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50"
+          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="Survey Prevent Navigation Modal Head"
+          label="13-4. Questionnaire Prevent Navigation Modal Title"
           name="surveyPreventNavModalHead"
           value={surveyPreventNavModalHead}
           onChange={handleTextChange}
@@ -136,9 +124,9 @@ const SurveyTextInput: React.FC = () => {
           disabled={false}
         />
         <UserTextAreaInput
-          classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 text-left align-top"
+          classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="Survey Prevent Navigation Modal Text"
+          label="13-5. Questionnaire Prevent Navigation Modal Text"
           name="surveyPreventNavModalText"
           height={150}
           value={surveyPreventNavModalText}

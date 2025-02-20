@@ -1,22 +1,21 @@
 import React from "react";
 import { useStore } from "../../GlobalState/useStore";
 import { UserTextInput } from "../utils/UserTextInput";
-import { UserTextAreaInput } from "../utils/UserTextAreaInput";
 import showSectionDefaults from "./showSectionDefaults";
 import clearSection from "./clearSection";
 
 const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
 
-const MobileSurveyTextInput: React.FC = () => {
+const ProjectLinkingTextInput: React.FC = () => {
   let displayMode = useStore(getDisplayMode);
   const setText = useStore(getSetText);
 
-  const mobileSurveyHelpModalHead = useStore((state) => state.mobileSurveyHelpModalHead);
-  const setMobileSurveyHelpModalHead = useStore((state) => state.setMobileSurveyHelpModalHead);
+  const linkingFallbackMessage = useStore((state) => state.linkingFallbackMessage);
+  const setLinkingFallbackMessage = useStore((state) => state.setLinkingFallbackMessage);
 
-  const mobileSurveyHelpModalText = useStore((state) => state.mobileSurveyHelpModalText);
-  const setMobileSurveyHelpModalText = useStore((state) => state.setMobileSurveyHelpModalText);
+  const linkingBtnText = useStore((state) => state.linkingBtnText);
+  const setLinkingBtnText = useStore((state) => state.setLinkingBtnText);
 
   const handleRefImage = (e) => {
     // showRefImage(e.target.id);
@@ -42,7 +41,7 @@ const MobileSurveyTextInput: React.FC = () => {
   return (
     <div className="outline outline-2 outline-slate-500 p-2 w-[78vw] max-w-[1200px] rounded-sm bg-gray-100">
       <div className="flex flex-row justify-between mb-4">
-        <h2>14. Mobile Questionnaire Screen</h2>
+        <h2>18. Project Linking Screen</h2>
         <div className="flex flex-row gap-4">
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
@@ -71,30 +70,28 @@ const MobileSurveyTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="14-1. Mobile Survey Help Modal Title"
-          name="mobileSurveyHelpModalHead"
-          value={mobileSurveyHelpModalHead}
+          label="18.1 Linking Fallback Message"
+          name="linkingFallbackMessage"
+          value={linkingFallbackMessage}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
           disabled={false}
         />
-        <UserTextAreaInput
-          classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
+        <UserTextInput
+          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="14-2. Mobile Survey Help Modal Text"
-          name="mobileSurveyHelpModalText"
-          height={150}
-          value={mobileSurveyHelpModalText}
+          label="18-2. Linking Button Text"
+          name="linkingBtnText"
+          value={linkingBtnText}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
           disabled={false}
-          tabIndex="0"
         />
       </div>
     </div>
   );
 };
 
-export { MobileSurveyTextInput };
+export { ProjectLinkingTextInput };

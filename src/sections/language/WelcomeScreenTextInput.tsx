@@ -60,11 +60,7 @@ const WelcomeScreenTextInput = () => {
             Use Defaults
           </button>
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
-          <button
-            id="footerClear"
-            className="bg-slate-300 p-2 rounded-md"
-            onClick={handleClearAll}
-          >
+          <button id="footerClear" className="bg-slate-300 p-2 rounded-md" onClick={handleClearAll}>
             Clear Section
           </button>
           {/* <RefImageButton */}
@@ -106,7 +102,7 @@ const WelcomeScreenTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="4-3. Help modal header text"
+          label="4-3. Help Modal Title"
           name="langLandingHelpModalHead"
           value={langLandingHelpModalHead}
           onChange={handleTextChange}
@@ -117,7 +113,7 @@ const WelcomeScreenTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label="4-4. Help modal main text"
+          label="4-4. Help Modal Text"
           name="langLandingHelpModalText"
           height={150}
           value={langLandingHelpModalText}
@@ -130,7 +126,7 @@ const WelcomeScreenTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="4-5. Start button text"
+          label="4-5. Start Button Text"
           name="langBtnNextLanding"
           value={langBtnNextLanding}
           onChange={handleTextChange}
@@ -141,7 +137,7 @@ const WelcomeScreenTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="4-6. Welcome page Help button text"
+          label="4-6. Welcome Screen Help Button Text"
           name="langBtnHelpLanding"
           value={langBtnHelpLanding}
           onChange={handleTextChange}

@@ -12,7 +12,7 @@ const getLangFooterTextSize = (state) => state.footerTextSize;
 const getLangFooterCardHeight = (state) => state.footerCardHeight;
 const getLangBtnNext = (state) => state.btnNext;
 const getLangStepCompleted = (state) => state.stepCompleted;
-const getLangLoginFirst = (state) => state.loginFirst;
+const getScreenOrientationText = (state) => state.screenOrientationText;
 
 const MultipleScreenTextInput = () => {
   let displayMode = useStore(getDisplayMode);
@@ -22,9 +22,7 @@ const MultipleScreenTextInput = () => {
   const langFooterCardHeight = useStore(getLangFooterCardHeight);
   const langBtnNext = useStore(getLangBtnNext);
   const langStepCompleted = useStore(getLangStepCompleted);
-  const langLoginFirst = useStore(getLangLoginFirst);
-
-  console.log(langLoginFirst);
+  const screenOrientationText = useStore(getScreenOrientationText);
 
   console.log("langBtnHelp", langBtnHelp);
 
@@ -65,11 +63,7 @@ const MultipleScreenTextInput = () => {
             Use Defaults
           </button>
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
-          <button
-            id="footerClear"
-            className="bg-slate-300 p-2 rounded-md"
-            onClick={handleClearAll}
-          >
+          <button id="footerClear" className="bg-slate-300 p-2 rounded-md" onClick={handleClearAll}>
             Clear Section
           </button>
           {/* <RefImageButton */}
@@ -120,7 +114,7 @@ const MultipleScreenTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="1-4. Continue button text"
+          label="1-4. Continue Button Text"
           name="langBtnNext"
           value={langBtnNext}
           onChange={handleTextChange}
@@ -131,7 +125,7 @@ const MultipleScreenTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label="1-5. Step completed message"
+          label="1-5. Step Completed Message"
           name="langStepCompleted"
           height={150}
           value={langStepCompleted}
@@ -141,19 +135,16 @@ const MultipleScreenTextInput = () => {
           disabled={false}
           tabIndex="0"
         />
-
-        <UserTextAreaInput
-          classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
-          classNameLabel={`min-w-[180px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="1-6. Log in first message"
-          name="langLoginFirst"
-          height={150}
-          value={langLoginFirst}
+        <UserTextInput
+          classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
+          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+          label="1-6. Mobile Screen Orientation Text"
+          name="screenOrientationText"
+          value={screenOrientationText}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
           disabled={false}
-          tabIndex="0"
         />
       </div>
     </div>

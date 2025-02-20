@@ -14,6 +14,7 @@ const getLangAccessInputText = (state) => state.accessInputText;
 const getLangPartIdWarning = (state) => state.partIdWarning;
 const getLangAccessCodeWarning = (state) => state.accessCodeWarning;
 const getLoginSubmitButtonText = (state) => state.loginSubmitButtonText;
+const getAccessCodeText = (state) => state.accessCodeText;
 
 const AccessControlTextInput = () => {
   let displayMode = useStore(getDisplayMode);
@@ -25,6 +26,7 @@ const AccessControlTextInput = () => {
   const langPartIdWarning = useStore(getLangPartIdWarning);
   const langAccessCodeWarning = useStore(getLangAccessCodeWarning);
   const loginSubmitButtonText = useStore(getLoginSubmitButtonText);
+  const accessCodeText = useStore(getAccessCodeText);
 
   const handleRefImage = (e) => {
     // showRefImage(e.target.id);
@@ -63,11 +65,7 @@ const AccessControlTextInput = () => {
             Use Defaults
           </button>
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
-          <button
-            id="footerClear"
-            className="bg-slate-300 p-2 rounded-md"
-            onClick={handleClearAll}
-          >
+          <button id="footerClear" className="bg-slate-300 p-2 rounded-md" onClick={handleClearAll}>
             Clear Section
           </button>
           {/* <RefImageButton */}
@@ -85,7 +83,7 @@ const AccessControlTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label="3-1. Log-in welcome text"
+          label="3-1. Login Welcome Text"
           name="langLoginWelcomeText"
           height={150}
           value={langLoginWelcomeText}
@@ -98,7 +96,7 @@ const AccessControlTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="3-2. Log-in box header text"
+          label="3-2. Login Box Title"
           name="langLoginHeaderText"
           value={langLoginHeaderText}
           onChange={handleTextChange}
@@ -110,10 +108,21 @@ const AccessControlTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="3-3. Participant name label"
+          label="3-3. Participant Name Input Label"
           name="langLoginPartIdText"
           value={langLoginPartIdText}
           onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+        />
+        <UserTextInput
+          classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
+          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+          label="3-4. Access Code Title"
+          name="langLoginPartIdText"
+          value={accessCodeText}
+          onChange={accessCodeText}
           highlight={false}
           placeholder=""
           disabled={false}
@@ -122,7 +131,7 @@ const AccessControlTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="3-4. Access code label"
+          label="3-5. Access Code Label"
           name="langAccessInputText"
           value={langAccessInputText}
           onChange={handleTextChange}
@@ -134,7 +143,7 @@ const AccessControlTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="3-5. Invalid name warning"
+          label="3-6. Invalid Name Warning"
           name="langPartIdWarning"
           value={langPartIdWarning}
           onChange={handleTextChange}
@@ -146,7 +155,7 @@ const AccessControlTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="3-6. Invalid access code warning"
+          label="3-7. Invalid Access Code Warning"
           name="langAccessCodeWarning"
           value={langAccessCodeWarning}
           onChange={handleTextChange}
@@ -157,7 +166,7 @@ const AccessControlTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="3-7. Log-in submit button"
+          label="3-8. Login Submit Button"
           name="loginSubmitButtonText"
           value={loginSubmitButtonText}
           onChange={handleTextChange}

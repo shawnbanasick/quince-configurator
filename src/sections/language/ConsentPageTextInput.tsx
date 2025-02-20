@@ -62,11 +62,7 @@ const ConsentPageTextInput = () => {
             Use Defaults
           </button>
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
-          <button
-            id="footerClear"
-            className="bg-slate-300 p-2 rounded-md"
-            onClick={handleClearAll}
-          >
+          <button id="footerClear" className="bg-slate-300 p-2 rounded-md" onClick={handleClearAll}>
             Clear Section
           </button>
           {/* <RefImageButton */}
@@ -108,7 +104,7 @@ const ConsentPageTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="2-3. Help modal header text"
+          label="2-3. Help Modal Title"
           name="langConsentHelpModalHead"
           value={langConsentHelpModalHead}
           onChange={handleTextChange}
@@ -119,7 +115,7 @@ const ConsentPageTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label="2-4. Help modal main text"
+          label="2-4. Help Modal Text"
           name="langConsentHelpModalText"
           height={150}
           value={langConsentHelpModalText}
@@ -132,7 +128,7 @@ const ConsentPageTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="2-5. Consent page Help button text"
+          label="2-5. Help Button Text"
           name="langBtnHelpConsent"
           value={langBtnHelpConsent}
           onChange={handleTextChange}
@@ -143,7 +139,7 @@ const ConsentPageTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="2-6. Accept button text"
+          label="2-6. Accept Button Text"
           name="langBtnNextConsent"
           value={langBtnNextConsent}
           onChange={handleTextChange}
