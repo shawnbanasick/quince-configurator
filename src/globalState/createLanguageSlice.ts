@@ -1,6 +1,6 @@
 const createMapXmlSlice = (set, get) => ({
   /*
-   ******** MULTIPLE  ****************** */
+   ******** MULTIPLE AND FOOTER ****************** */
   btnHelp: "Help",
   footerTextSize: `Text Size`,
   footerCardHeight: `Card Height`,
@@ -45,9 +45,9 @@ const createMapXmlSlice = (set, get) => ({
   localSubmitSuccessModalHeader: "Success",
   localSubmitSuccessModalText:
     "Participant Q sort data have been succesfully saved to browser memory",
-  returnToLocalPanelButtonText: "Return to Control Panel",
   localSaveBeforeDeleteModalHeader: "Delete Disabled",
   localSaveBeforeDeleteModalText: "Save Q sort Data to Disk before deleting.",
+  returnToLocalPanelButtonText: "Return to Control Panel",
 
   /*
    ******** WELCOME (LANDING) SCREEN   ****************** */

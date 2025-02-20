@@ -21,20 +21,12 @@ import { SubmitTextInput } from "./SubmitTextInput.js";
 import { MobileSubmitTextInput } from "./MobileSubmitTextInput.js";
 import { EmailTextInput } from "./EmailTextInput.js";
 import { ProjectLinkingTextInput } from "./ProjectLinkingTextInput.js";
-import { generateLanguageXml } from "./generateLanguageXml.js";
+import { UploadAndReadLanguageXml } from "./UploadAndReadLanguageXml.js";
+import { DownloadLanguageXml } from "./DownloadLanguageXml.js";
 
-const getShowDescriptionPro = (state) => state.showDescriptionPro;
-const getShowDescriptionBeginner = (state) => state.showDescriptionBeginner;
-const getSetShowDescriptionPro = (state) => state.setShowDescriptionPro;
-const getSetShowDescriptionBeginner = (state) => state.setShowDescriptionBeginner;
 const getDisplayMode = (state) => state.displayMode;
 
 const Language = () => {
-  const { t } = useTranslation();
-  // const showDescriptionPro = useStore(getShowDescriptionPro);
-  // const showDescriptionBeginner = useStore(getShowDescriptionBeginner);
-  // const setShowDescriptionPro = useStore(getSetShowDescriptionPro);
-  // const setShowDescriptionBeginner = useStore(getSetShowDescriptionBeginner);
   const displayMode = useStore(getDisplayMode);
 
   let display;
@@ -44,26 +36,14 @@ const Language = () => {
     display = false;
   }
 
-  const handleClick = () => {
-    console.log("Language button clicked");
-    let languageXml = generateLanguageXml();
-    console.log(languageXml);
-  };
-
   return (
     <div className="flex flex-col items-center justify-center pb-[100px]">
       <h1 className="text-center">Language.xml</h1>
-      <h2>User Interface Language Settings</h2>
+      <h2>User Interface Language Settings for Desktop and Mobile</h2>
 
-      <div className="flex flex-row w-10/12 justify-between gap-[] mt-4 mb-6">
-        {/* <DownloadMapButton onClick={() => handleClick()}> */}
-        {/* <UploadAndReadXmlMap /> */}
-        <button
-          className="bg-[orange] text-[black] w-[350px] p-[10px] rounded-[5px] mt-[20px]"
-          onClick={() => handleClick()}
-        >
-          Click here to save file to <b>SETTINGS</b> folder and replace the "map.xml" file
-        </button>
+      <div className="flex flex-row w-2/3 justify-between  gap-[] mt-4 mb-6 border-2 border-black">
+        <UploadAndReadLanguageXml />
+        <DownloadLanguageXml />
       </div>
       {displayMode && <LanguageIntroText />}
       <MultipleScreenTextInput />

@@ -28,7 +28,6 @@ const generateLanguageXml = () => {
         <item id="btnNextConsent">${encodeHTML(useStore.getState().btnNextConsent)}</item>
         <item id="btnHelpConsent">${encodeHTML(useStore.getState().btnHelpConsent)}</item>
 
-
         <!-- ACCESS CONTROL - only displayed if access is restricted -->
         <item id="loginWelcomeText">${encodeHTML(useStore.getState().loginWelcomeText)}</item>
         <item id="loginHeaderText">${encodeHTML(useStore.getState().loginHeaderText)}</item>
@@ -40,7 +39,6 @@ const generateLanguageXml = () => {
           useStore.getState().loginSubmitButtonText
         )}</item>
         <item id="accessInputText">${encodeHTML(useStore.getState().accessInputText)}</item>
-
 
         <!-- LOCAL DATA COLLECTION -->  
         <item id="localHeader">${encodeHTML(useStore.getState().localHeader)}</item>
@@ -67,23 +65,22 @@ const generateLanguageXml = () => {
         <item id="localParticipantsText">${encodeHTML(
           useStore.getState().localParticipantsText
         )}</item>
-        <item id="localSaveBeforeDeleteModalHeader">${encodeHTML(
-          useStore.getState().localSaveBeforeDeleteModalHeader
-        )}</item>
-        <item id="localSaveBeforeDeleteModalText">${encodeHTML(
-          useStore.getState().localSaveBeforeDeleteModalText
-        )}</item>
-        <item id="localSaveDataButton">${encodeHTML(useStore.getState().LocalSaveDataButton)}</item>
+        <item id="localSaveDataButton">${encodeHTML(useStore.getState().localSaveDataButton)}</item>
         <item id="localSubmitSuccessModalHeader">${encodeHTML(
           useStore.getState().localSubmitSuccessModalHeader
         )}</item>
         <item id="localSubmitSuccessModalText">${encodeHTML(
           useStore.getState().localSubmitSuccessModalText
         )}</item>
+        <item id="localSaveBeforeDeleteModalHeader">${encodeHTML(
+          useStore.getState().localSaveBeforeDeleteModalHeader
+        )}</item>
+        <item id="localSaveBeforeDeleteModalText">${encodeHTML(
+          useStore.getState().localSaveBeforeDeleteModalText
+        )}</item>
         <item id="returnToLocalPanelButtonText">${encodeHTML(
           useStore.getState().returnToLocalPanelButtonText
         )}</item>
-
 
         <!-- WELCOME (LANDING) SCREEN -->
         <item id="landingHead">${encodeHTML(useStore.getState().landingHead)}</item>
@@ -97,8 +94,6 @@ const generateLanguageXml = () => {
         <item id="btnHelpLanding">${encodeHTML(useStore.getState().btnHelpLanding)}</item>
         <item id="btnNextLanding">${encodeHTML(useStore.getState().btnNextLanding)}</item>
 
-
-
         <!-- PRESORT: rough sorting into three piles -->
         <item id="logInFirst">${encodeHTML(useStore.getState().loginFirst)}</item>
         <item id="titleBarText">${encodeHTML(useStore.getState().titleBarText)}</item>
@@ -106,8 +101,11 @@ const generateLanguageXml = () => {
         <item id="presortStatements">${encodeHTML(useStore.getState().presortStatements)}</item>
         <item id="presortNeutral">${encodeHTML(useStore.getState().presortNeutral)}</item>
         <item id="presortDisagreement">${encodeHTML(useStore.getState().presortDisagreement)}</item>
+        <item id="presortImageSortInstructions">${encodeHTML(
+          useStore.getState().presortImageSortInstructions
+        )}</item>        
         <item id="presortModalHead">${encodeHTML(useStore.getState().presortModalHead)}</item>
-          <item id="presortModalText">${encodeHTML(useStore.getState().presortModalText)}</item>
+        <item id="presortModalText">${encodeHTML(useStore.getState().presortModalText)}</item>
         <item id="presortPreventNavModalHead">${encodeHTML(
           useStore.getState().presortPreventNavModalHead
         )}</item>
@@ -123,12 +121,145 @@ const generateLanguageXml = () => {
         <item id="presortOnPageInstructions">${encodeHTML(
           useStore.getState().presortOnPageInstructions
         )}</item>
-        <item id="presortImageSortInstructions">${encodeHTML(
-          useStore.getState().presortImageSortInstructions
+
+        <!-- MOBILE PRESORT -->
+        <item id="mobilePresortConditionsOfInstruction">${encodeHTML(
+          useStore.getState().mobilePresortConditionsOfInstruction
+        )}</item>
+        <item id="mobilePresortCompletedLabel">${encodeHTML(
+          useStore.getState().mobilePresortCompletedLabel
+        )}</item>
+        <item id="mobilePresortAssignLeft">${encodeHTML(
+          useStore.getState().mobilePresortAssignLeft
+        )}</item>
+        <item id="mobilePresortAssignRight">${encodeHTML(
+          useStore.getState().mobilePresortAssignRight
+        )}</item>
+        <item id="mobilePresortRedoModalHead">${encodeHTML(
+          useStore.getState().mobilePresortRedoModalHead
+        )}</item>
+        <item id="mobilePresortRedoModalText">${encodeHTML(
+          useStore.getState().mobilePresortRedoModalText
+        )}</item>
+        <item id="mobilePresortRedoModalConfirmButton">${encodeHTML(
+          useStore.getState().mobilePresortRedoModalConfirmButton
+        )}</item>
+        <item id="mobilePresortEvaluationsComplete">${encodeHTML(
+          useStore.getState().mobilePresortEvaluationsComplete
+        )}</item>
+        <item id="mobilePresortHelpModalHead">${encodeHTML(
+          useStore.getState().mobilePresortHelpModalHead
+        )}</item>
+        <item id="mobilePresortHelpModalText">${encodeHTML(
+          useStore.getState().mobilePresortHelpModalText
+        )}</item>
+        <item id="mobilePresortFinishedModalHead">${encodeHTML(
+          useStore.getState().mobilePresortFinishedModalHead
+        )}</item>
+        <item id="mobilePresortFinishedModalText">${encodeHTML(
+          useStore.getState().mobilePresortFinishedModalText
+        )}</item>
+        <item id="mobilePresortProcessCompleteMessage">${encodeHTML(
+          useStore.getState().mobilePresortProcessCompleteMessage
+        )}</item>
+        <item id="mobilePresortPreventNavModalHead">${encodeHTML(
+          useStore.getState().mobilePresortPreventNavModalHead
+        )}</item>
+        <item id="mobilePresortPreventNavModalText">${encodeHTML(
+          useStore.getState().mobilePresortPreventNavModalText
         )}</item>
 
-        
-        <!-- SORT: sorting (leave blank to skip popup) -->
+        <!-- THINNING -->
+        <item id="thinningPreventNavModalHead">${encodeHTML(
+          useStore.getState().thinningPreventNavModalHead
+        )}</item>
+        <item id="thinningPreventNavModalText">${encodeHTML(
+          useStore.getState().thinningPreventNavModalText
+        )}</item>
+        <item id="thinningConfirmModalHead">${encodeHTML(
+          useStore.getState().thinningConfirmModalHead
+        )}</item>
+        <item id="thinningConfirmModalText">${encodeHTML(
+          useStore.getState().thinningConfirmModalText
+        )}</item>
+        <item id="initialInstructionPart1">${encodeHTML(
+          useStore.getState().initialInstructionPart1
+        )}</item>
+        <item id="initialInstructionPart2">${encodeHTML(
+          useStore.getState().initialInstructionPart2
+        )}</item>
+        <item id="initialInstructionPart3">${encodeHTML(
+          useStore.getState().initialInstructionPart3
+        )}</item>
+        <item id="agreeMostText">${encodeHTML(useStore.getState().agreeMostText)}</item>
+        <item id="agreeLeastText">${encodeHTML(useStore.getState().agreeLeastText)}</item>
+        <item id="finalInstructions">${encodeHTML(useStore.getState().finalInstructions)}</item>
+
+        <!-- MOBILE THINNING -->
+        <item id="moveTopMobileHead">${encodeHTML(useStore.getState().moveTopMobileHead)}</item>
+        <item id="moveTopMobileText">${encodeHTML(useStore.getState().moveTopMobileText)}</item>
+        <item id="moveAllTopMobileText">${encodeHTML(
+          useStore.getState().moveAllTopMobileText
+        )}</item>
+        <item id="moveTopMobileButtonOK">${encodeHTML(
+          useStore.getState().moveTopMobileButtonOK
+        )}</item>
+        <item id="moveTopMobileButtonCancel">${encodeHTML(
+          useStore.getState().moveTopMobileButtonCancel
+        )}</item>
+        <item id="mobileThinConditionsOfInstruction">${encodeHTML(
+          useStore.getState().mobileThinConditionsOfInstruction
+        )}</item>
+        <item id="mobileThinSubmitButtonText">${encodeHTML(
+          useStore.getState().mobileThinSubmitButtonText
+        )}</item>
+        <item id="mobileThinHelpModalHead">${encodeHTML(
+          useStore.getState().mobileThinHelpModalHead
+        )}</item>
+        <item id="mobileThinHelpModalText">${encodeHTML(
+          useStore.getState().mobileThinHelpModalText
+        )}</item>
+        <item id="mobileThinPreventNavModalHead">${encodeHTML(
+          useStore.getState().mobileThinPreventNavModalHead
+        )}</item>
+        <item id="mobileThinPreventNavModalText">${encodeHTML(
+          useStore.getState().mobileThinPreventNavModalText
+        )}</item>
+        <item id="mobileThinProcessCompleteMessage">${encodeHTML(
+          useStore.getState().mobileThinProcessCompleteMessage
+        )}</item>
+        <item id="mobileGuidanceModalRight1Header">${encodeHTML(
+          useStore.getState().mobileGuidanceModalRight1Header
+        )}</item>
+        <item id="mobileGuidanceModalRight1Text">${encodeHTML(
+          useStore.getState().mobileGuidanceModalRight1Text
+        )}</item>
+        <item id="mobileGuidanceModalRight2Header">${encodeHTML(
+          useStore.getState().mobileGuidanceModalRight2Header
+        )}</item>
+        <item id="mobileGuidanceModalRight2Text">${encodeHTML(
+          useStore.getState().mobileGuidanceModalRight2Text
+        )}</item>
+        <item id="mobileGuidanceModalLeft1Header">${encodeHTML(
+          useStore.getState().mobileGuidanceModalLeft1Header
+        )}</item>
+        <item id="mobileGuidanceModalLeft1Text">${encodeHTML(
+          useStore.getState().mobileGuidanceModalLeft1Text
+        )}</item>
+        <item id="mobileGuidanceModalLeft2Header">${encodeHTML(
+          useStore.getState().mobileGuidanceModalLeft2Header
+        )}</item>
+        <item id="mobileGuidanceModalLeft2Text">${encodeHTML(
+          useStore.getState().mobileGuidanceModalLeft2Text
+        )}</item>
+        <item id="mobileThinScrollBottomModalHead">${encodeHTML(
+          useStore.getState().mobileThinScrollBottomModalHead
+        )}</item>
+        <item id="mobileThinScrollBottomModalText">${encodeHTML(
+          useStore.getState().mobileThinScrollBottomModalText
+        )}</item>
+
+        <!-- SORT -->
         <item id="sortHelpModalHead">${encodeHTML(useStore.getState().sortHelpModalHead)}</item>
         <item id="sortHelpModalText">${encodeHTML(useStore.getState().sortHelpModalText)}</item>
         <item id="sortAgreement">${encodeHTML(useStore.getState().sortAgreement)}</item>
@@ -153,7 +284,33 @@ const generateLanguageXml = () => {
           useStore.getState().sortOverloadedColumnModalText
         )}</item>
 
-        <!-- POSTSORT: comments - only displayed if showStep3 = true -->
+        <!-- MOBILE SORT -->
+        <item id="mobileSortSwapModalHead">${encodeHTML(
+          useStore.getState().mobileSortSwapModalHead
+        )}</item>
+        <item id="mobileSortSwapModalText">${encodeHTML(
+          useStore.getState().mobileSortSwapModalText
+        )}</item>
+        <item id="mobileSortSwapModalConfirmButton">${encodeHTML(
+          useStore.getState().mobileSortSwapModalConfirmButton
+        )}</item>
+        <item id="mobileSortConditionsOfInstruction">${encodeHTML(
+          useStore.getState().mobileSortConditionsOfInstruction
+        )}</item>
+        <item id="mobileSortHelpModalHead">${encodeHTML(
+          useStore.getState().mobileSortHelpModalHead
+        )}</item>
+        <item id="mobileSortHelpModalText">${encodeHTML(
+          useStore.getState().mobileSortHelpModalText
+        )}</item>
+        <item id="mobileSortScrollBottomModalHead">${encodeHTML(
+          useStore.getState().mobileSortScrollBottomModalHead
+        )}</item>
+        <item id="mobileSortScrollBottomModalText">${encodeHTML(
+          useStore.getState().mobileSortScrollBottomModalText
+        )}</item>
+
+       <!-- POSTSORT: comments - only displayed if showStep3 = TRUE in config.xml -->
         <item id="postsortHeader">${encodeHTML(useStore.getState().postsortHeader)}</item>
         <item id="postsortInstructions">${encodeHTML(
           useStore.getState().postsortInstructions
@@ -175,6 +332,23 @@ const generateLanguageXml = () => {
           useStore.getState().postsortBackButton
         )}</item>
 
+       <!-- MOBILE POSTSORT: comments - only displayed if showStep3 = TRUE in config.xml -->
+       <item id="mobilePostsortPreventNavModalHead">${encodeHTML(
+         useStore.getState().mobilePostsortPreventNavModalHead
+       )}</item>
+       <item id="mobilePostsortPreventNavModalText">${encodeHTML(
+         useStore.getState().mobilePostsortPreventNavModalText
+       )}</item>
+       <item id="mobilePostsortSortbarText">${encodeHTML(
+         useStore.getState().mobilePostsortSortbarText
+       )}</item>
+       <item id="mobilePostsortHelpModalHead">${encodeHTML(
+         useStore.getState().mobilePostsortHelpModalHead
+       )}</item>
+       <item id="mobilePostsortHelpModalText">${encodeHTML(
+         useStore.getState().mobilePostsortHelpModalText
+       )}</item>
+
         <!-- SURVEY: Additional questions, only displayed if showStep4 == true -->
         <item id="surveyHeader">${encodeHTML(useStore.getState().surveyHeader)}</item>
         <item id="surveyModalHead">${encodeHTML(useStore.getState().surveyModalHead)}</item>
@@ -186,6 +360,14 @@ const generateLanguageXml = () => {
           useStore.getState().surveyPreventNavModalText
         )}</item>
        
+        <!-- MOBILE SURVEY: Additional questions, only displayed if showStep4 == true -->
+        <item id="mobileSurveyHelpModalHead">${encodeHTML(
+          useStore.getState().mobileSurveyHelpModalHead
+        )}</item>
+        <item id="mobileSurveyHelpModalText">${encodeHTML(
+          useStore.getState().mobileSurveyHelpModalText
+        )}</item>
+
         <!-- SUBMIT -->
         <item id="btnTransfer">${encodeHTML(useStore.getState().btnTransfer)}</item>
         <item id="transferHead">${encodeHTML(useStore.getState().transferHead)}</item>
@@ -205,6 +387,9 @@ const generateLanguageXml = () => {
         <item id="btnDownload">${encodeHTML(useStore.getState().btnDownload)}</item>   
         <item id="goodbyeMessage">${encodeHTML(useStore.getState().goodbyeMessage)}</item>   
 
+        <!-- MOBILE SUBMIT -->
+        <item id="mobileSortTitleBar">${encodeHTML(useStore.getState().mobileSortTitleBar)}</item>
+
         <!-- EMAIL -->
         <item id="btnTransferEmail">${encodeHTML(useStore.getState().emailSubmitBtn)}</item>
         <item id="clipboardResults">${encodeHTML(useStore.getState().emailCopyResultsBtn)}</item>  
@@ -223,8 +408,6 @@ const generateLanguageXml = () => {
          <item id="linkedProjectBtnMessage">${encodeHTML(
            useStore.getState().linkingBtnText
          )}</item>   
-
-
    </language>`;
 
   return data;
