@@ -9,6 +9,7 @@ import { Language } from "../sections/language/Language";
 import { Map } from "../sections/map/Map";
 import { ToastContainer } from "react-toastify";
 import { Statements } from "../sections/statements/Statements";
+import { Databases } from "../sections/databases/Databases";
 
 // Add the following import statement for the declaration file
 
@@ -88,7 +89,7 @@ export const MainPage = () => {
           <Language />
         </TabPanel>
         <TabPanel>
-          <h2>Any content 7</h2>
+          <Databases />
         </TabPanel>
         <TabPanel>
           <h2>Any content 7</h2>
