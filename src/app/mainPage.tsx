@@ -24,7 +24,7 @@ export const MainPage = () => {
   };
 
   return (
-    <main className="w-screen h-screen flex flex-col space-y-4 items-center justify-center">
+    <main className="w-screen flex flex-col space-y-4 items-center justify-center">
       <ToastContainer />
       <Tabs className="h-screen w-screen p-2">
         <TabList>
