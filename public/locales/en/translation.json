@@ -123,5 +123,23 @@
   "*** STATEMENTS ***": "*** STATEMENTS OPTIONS ***",
   "enterOrPasteStatements": "Enter or Paste Statements (1 statement per line)",
   "loadStatements": "Load statements.xml File (from a previous project)",
-  "saveStatements": "Save New or Modified Statements File (replacing the default file)"
+  "saveStatements": "Save New or Modified Statements File (replacing the default file)",
+
+  "*** DATABASE - MAIN PAGE ***": "*** DATABASE - MAIN PAGE ***",
+  "currentlySelectedDatabase": "Currently Selected Database",
+  "toChangeTheDatabase": "The database selection is determined by the config.xml file. To change databases, reload the config.xml file and make the desired change.",
+
+  "*** DATABASE - BASEROW ***": "*** DATABASE - BASEROW ***",
+  "baserowStep1": "First, create a new user account on baserow.io by clicking on the 'Sign Up' button in the upper right corner of the page.",
+  "baserowStep2": "Next, fill in the required information and click the 'Get Started' button.",
+  "baserowStep3": "Click the 'Skip for now' button to bypass the data collection.",
+  "baserowStep4": "Click the 'Skip for now' button to bypass the data collection.",
+  "baserowStep5": "Input your first workspace name (any name is fine) and click the 'Continue' button.",
+  "baserowStep6": "Click the 'Skip for now' button to skip inviting collaborators.",
+  "baserowStep7": "Input your database name and click the 'Continue' button.",
+  "baserowStep8": "Click the '+Add your own' button to add your database table.",
+  "baserowStep9": "Input your table name and what it includes, then click the 'Continue' button.",
+  "baserowStep10": "Click the 'Date' button and then click 'Continue'.",
+
+  "*** DATABASE - FIREBASE ***": "*** DATABASE - FIREBASE ***"
 }

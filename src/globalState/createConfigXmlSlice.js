@@ -7,7 +7,7 @@ const createConfigXmlSlice = (set, get) => ({
   traceSorts: true,
 
   studyTitle: "My Study Title",
-  setupTarget: "baserow",
+  setupTarget: "firebase",
   emailAddress: "",
   emailSubjectLine: "Your Study Results",
   linkToSecondProject: false,
