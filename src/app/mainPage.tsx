@@ -30,11 +30,11 @@ export const MainPage = () => {
         <TabList>
           <Tab>Welcome</Tab>
           <Tab>1. Setup For Editing</Tab>
-          <Tab>2. Config.xml</Tab>
-          <Tab>3. Statements.xml</Tab>
-          <Tab>4. Map.xml</Tab>
-          <Tab>5. Language.xml</Tab>
-          <Tab>6. Database Setup</Tab>
+          <Tab>2. Database Setup</Tab>
+          <Tab>3. Config.xml</Tab>
+          <Tab>4. Statements.xml</Tab>
+          <Tab>5. Map.xml</Tab>
+          <Tab>6. Language.xml</Tab>
           <Tab>7. Web Host Setup</Tab>
         </TabList>
 
@@ -77,6 +77,9 @@ export const MainPage = () => {
           </div>
         </TabPanel>
         <TabPanel>
+          <Databases />
+        </TabPanel>
+        <TabPanel>
           <Config />
         </TabPanel>
         <TabPanel>
@@ -88,9 +91,7 @@ export const MainPage = () => {
         <TabPanel>
           <Language />
         </TabPanel>
-        <TabPanel>
-          <Databases />
-        </TabPanel>
+
         <TabPanel>
           <h2>Any content 7</h2>
         </TabPanel>

@@ -7,11 +7,13 @@ import { Firebase } from "./Firebase";
 
 const getDisplayMode = (state) => state.displayMode;
 const getSetupTarget = (state) => state.setupTarget;
+const getSetSetupTarget = (state) => state.setSetupTarget;
 
 const Databases = () => {
   const { t } = useTranslation();
   const displayMode = useStore(getDisplayMode);
   const database = useStore(getSetupTarget);
+  const setSetupTarget = useStore(getSetSetupTarget);
 
   let display;
   if (displayMode === "beginner") {
@@ -19,6 +21,9 @@ const Databases = () => {
   } else {
     display = false;
   }
+  const handleSetupTargetChange = (inputValue: any) => {
+    setSetupTarget(inputValue);
+  };
 
   return (
     <div className="flex flex-col items-center justify-center pb-[100px]">
@@ -38,7 +43,7 @@ const Databases = () => {
         </div>
       )}
       <div className="flex flex-col justify-center items-center content-center gap-5 mt-1 mb-[20px]">
-        <span className="text-3xl">{`${t("currentlySelectedDatabase")}:`}</span>
+        <span className="text-3xl">{`${t("selectDataStorageOption")}:`}</span>
         <div className="flex flex-row gap-5">
           <Radio
             name="database"
@@ -46,6 +51,7 @@ const Databases = () => {
             label={"Baserow"}
             align="left"
             isChecked={database === "baserow"}
+            handleChange={handleSetupTargetChange}
           />
           <Radio
             name="database"
@@ -53,6 +59,7 @@ const Databases = () => {
             label={"Firebase"}
             align="left"
             isChecked={database === "firebase"}
+            handleChange={handleSetupTargetChange}
           />
           <Radio
             name="database"
@@ -60,6 +67,7 @@ const Databases = () => {
             label={"Email Only"}
             align="left"
             isChecked={database === "email"}
+            handleChange={handleSetupTargetChange}
           />
         </div>
         <span className="w-[500px]">{t("toChangeTheDatabase")}</span>
@@ -67,6 +75,12 @@ const Databases = () => {
 
       {database === "baserow" && <Baserow />}
       {database === "firebase" && <Firebase />}
+      {database === "email" && (
+        <div className="flex flex-col items-center justify-center">
+          <h2 className="mt-8 text-8xl mb-6 font-bold">Email Only</h2>
+          <div className="mt-4 w-9/12 align-self-center text-base">{t("emailOnlyDescription")}</div>
+        </div>
+      )}
     </div>
   );
 };

@@ -24,9 +24,7 @@ const Config2SetupTarget: React.FC = () => {
     setEmailAddress(event.target.value);
   };
 
-  const handleEmailSubjectTextChange = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleEmailSubjectTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmailSubjectLine(event.target.value);
   };
 
@@ -42,17 +40,22 @@ const Config2SetupTarget: React.FC = () => {
         <Radio
           name="option"
           value="baserow"
-          label={t("baserow+email")}
+          label={t("baserow")}
           align="left"
           isChecked={setupTarget === "baserow"}
-          handleChange={handleSetupTargetChange}
+        />
+        <Radio
+          name="option"
+          value="firebase"
+          label={t("firebase")}
+          align="left"
+          isChecked={setupTarget === "firebase"}
         />
         <Radio
           name="option"
           value="email"
           label={t("emailOnly")}
           isChecked={setupTarget === "email"}
-          handleChange={handleSetupTargetChange}
         />
       </div>
 
