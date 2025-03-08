@@ -89,26 +89,24 @@ const Map = () => {
           className="bg-[orange] text-[black] w-[350px] p-[10px] rounded-[5px] mt-[20px]"
           onClick={() => handleClick()}
         >
-          Click here to save file to <b>SETTINGS</b> folder and replace the
-          "map.xml" file
+          Click here to save file to <b>SETTINGS</b> folder and replace the "map.xml" file
         </button>
       </div>
       {displayMode && (
         // <DisplayModeText>
         <div className="ml-[10px] mt-[40px] mb-[30px] w-[78vw] max-w-[1200px] text-[20px] p-[10px] bg-[whitesmoke] rounded-[3px] border-2 border-black">
-          If you have a "map.xml" from a previous Quincey-Q project, you can
-          click on the orange "Load 'map.xml' File Data" button to upload the
-          file.
+          If you have a "map.xml" from a previous Quincy-Q project, you can click on the orange
+          "Load 'map.xml' File Data" button to upload the file.
           <br />
           <br />
-          Enter the number of cards in each column of the Q-sort grid. The
-          background color of the "Q Sort Pattern" text will change to green
-          when all of your statements have been allocated.
+          Enter the number of cards in each column of the Q-sort grid. The background color of the
+          "Q Sort Pattern" text will change to green when all of your statements have been
+          allocated.
           <br />
           <br />
-          When you have finished setting up the columns, click the orange button
-          at the bottom of the page and save your information as 'map.xml' in
-          the settings folder (replace the default file).
+          When you have finished setting up the columns, click the orange button at the bottom of
+          the page and save your information as 'map.xml' in the settings folder (replace the
+          default file).
         </div>
       )}
       {/* <UploadButtonContainer> */}

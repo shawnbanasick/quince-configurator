@@ -21,28 +21,25 @@ const LanguageIntroText = () => {
         <mark>
           <b>**Important**</b>
         </mark>{" "}
-        The input options will change according to the setup target (firebase,
-        sheets, or local). If you want to set up the language.xml file for a
-        local, offline data collection project, be sure to choose "local" for
-        Question 2-2 "Setup target" in the Config section <b>before</b> you
-        input the language data here.
+        The input options will change according to the setup target (firebase, sheets, or local). If
+        you want to set up the language.xml file for a local, offline data collection project, be
+        sure to choose "local" for Question 2-2 "Setup target" in the Config section <b>before</b>{" "}
+        you input the language data here.
         <br />
         <br />
-        If you have a language.xml file from another Quincey-Q project, you can
-        load it into the Configurator by clicking the orange "
-        <b>Load 'language.xml' File Data</b>" button below. If you don't have a
-        file from a previous project, you can load the default English settings
-        by clicking the section buttons, or you can create a new file by
-        inputting all of the data yourself.
+        If you have a language.xml file from another Quincy-Q project, you can load it into the
+        Configurator by clicking the orange "<b>Load 'language.xml' File Data</b>" button below. If
+        you don't have a file from a previous project, you can load the default English settings by
+        clicking the section buttons, or you can create a new file by inputting all of the data
+        yourself.
         <br />
         <br />
         <h4>
           <b>Section Buttons</b>
         </h4>
-        The "Use Defaults" button will insert the default text into all of the
-        input boxes in that section. The "Clear Section" button will clear all
-        of the input boxes in that section. The "View Reference Image" buttons
-        give hints about the location of the text in the application.
+        The "Use Defaults" button will insert the default text into all of the input boxes in that
+        section. The "Clear Section" button will clear all of the input boxes in that section. The
+        "View Reference Image" buttons give hints about the location of the text in the application.
         <br />
         <br />
         <h4>
@@ -67,9 +64,9 @@ const LanguageIntroText = () => {
         <h4>
           <b>Complex HTML Layouts</b>
         </h4>
-        Complex HTML layouts are possible for the Welcome message, Submit Data
-        text, Goodbye message, and pop-up modal texts. In-line CSS styling can
-        be used to modify the HTML elements.
+        Complex HTML layouts are possible for the Welcome message, Submit Data text, Goodbye
+        message, and pop-up modal texts. In-line CSS styling can be used to modify the HTML
+        elements.
         <br />
         <br />
         {`You can use `}
@@ -83,40 +80,24 @@ const LanguageIntroText = () => {
         {/* <ListContainer> */}
         <div className="mt-[5px] mb-2">
           <li>
-            <a
-              href="https://codepen.io/shawnbanasick/pen/gOxOQrr"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="https://codepen.io/shawnbanasick/pen/gOxOQrr" target="_blank" rel="noreferrer">
               Headers and text
             </a>{" "}
           </li>
 
           <li>
-            <a
-              href="https://codepen.io/shawnbanasick/pen/QWMWJEM"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="https://codepen.io/shawnbanasick/pen/QWMWJEM" target="_blank" rel="noreferrer">
               Lists
             </a>{" "}
           </li>
           <li>
-            <a
-              href="https://codepen.io/shawnbanasick/pen/WNENYNp"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="https://codepen.io/shawnbanasick/pen/WNENYNp" target="_blank" rel="noreferrer">
               Font size adjustment
             </a>{" "}
           </li>
 
           <li>
-            <a
-              href="https://codepen.io/shawnbanasick/pen/vYJYQxN"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="https://codepen.io/shawnbanasick/pen/vYJYQxN" target="_blank" rel="noreferrer">
               Side-by-side layouts
             </a>{" "}
           </li>
@@ -163,9 +144,9 @@ const LanguageIntroText = () => {
         <h4 className="mt-6">
           <b>Save Data</b>
         </h4>
-        When you have finished adding your language data, click the orange
-        button at the bottom of the page and save your information as
-        'language.xml' in the settings folder (replace the default file).
+        When you have finished adding your language data, click the orange button at the bottom of
+        the page and save your information as 'language.xml' in the settings folder (replace the
+        default file).
       </div>
     </div>
   );
