@@ -1,6 +1,8 @@
 import { useTranslation } from "react-i18next";
 import firebase1 from "../../assets/images/firebase1.png";
 import firebase2 from "../../assets/images/firebase2.png";
+import firebase2b from "../../assets/images/firebase2b.png";
+
 import firebase3 from "../../assets/images/firebase3.png";
 import firebase4 from "../../assets/images/firebase4.png";
 import firebase5 from "../../assets/images/firebase5.png";
@@ -16,6 +18,13 @@ import firebase14 from "../../assets/images/firebase14.png";
 import firebase15 from "../../assets/images/firebase15.png";
 import firebase16 from "../../assets/images/firebase16.png";
 import firebase17 from "../../assets/images/firebase17.png";
+import firebase18 from "../../assets/images/firebase18.png";
+import firebase19 from "../../assets/images/firebase19.png";
+import firebase20 from "../../assets/images/firebase20.png";
+import firebase21 from "../../assets/images/firebase21.png";
+import firebase22 from "../../assets/images/firebase22.png";
+import firebase23 from "../../assets/images/firebase23.png";
+import firebase24 from "../../assets/images/firebase24.png";
 
 const Firebase = () => {
   const { t } = useTranslation();
@@ -37,12 +46,20 @@ const Firebase = () => {
         <div className="ml-[10px] mt-[40px] mb-[30px] w-[78vw] max-w-[1200px] text-[20px] p-[10px] bg-[whitesmoke] rounded-[3px] border-2 border-black">{`2. ${t(
           "firebaseStep2"
         )}`}</div>
-        <img
-          src={firebase2}
-          className=" w-12/12 justify-self-center border-2 border-gray-300 rounded-md"
-          width={500}
-          alt="firebase screen 2"
-        />
+        <div className="flex flex-row gap-10">
+          <img
+            src={firebase2}
+            className=" w-12/12 justify-self-center border-2 border-gray-300 rounded-md"
+            width={500}
+            alt="firebase screen 2"
+          />
+          <img
+            src={firebase2b}
+            className=" w-12/12 justify-self-center border-2 border-gray-300 rounded-md"
+            width={500}
+            alt="firebase screen 2"
+          />
+        </div>
         <div className="ml-[10px] mt-[40px] mb-[30px] w-[78vw] max-w-[1200px] text-[20px] p-[10px] bg-[whitesmoke] rounded-[3px] border-2 border-black">{`3. ${t(
           "firebaseStep3"
         )}`}</div>
@@ -174,6 +191,69 @@ const Firebase = () => {
         )}`}</div>
         <img
           src={firebase17}
+          className=" w-12/12 justify-self-center border-2 border-gray-300 rounded-md"
+          width={500}
+          alt="firebase screen 17"
+        />
+        <div className="ml-[10px] mt-[40px] mb-[30px] w-[78vw] max-w-[1200px] text-[20px] p-[10px] bg-[whitesmoke] rounded-[3px] border-2 border-black">{`18. ${t(
+          "firebaseStep18"
+        )}`}</div>
+        <img
+          src={firebase18}
+          className=" w-12/12 justify-self-center border-2 border-gray-300 rounded-md"
+          width={500}
+          alt="firebase screen 17"
+        />
+        <div className="ml-[10px] mt-[40px] mb-[30px] w-[78vw] max-w-[1200px] text-[20px] p-[10px] bg-[whitesmoke] rounded-[3px] border-2 border-black">{`19. ${t(
+          "firebaseStep19"
+        )}`}</div>
+        <img
+          src={firebase19}
+          className=" w-12/12 justify-self-center border-2 border-gray-300 rounded-md"
+          width={500}
+          alt="firebase screen 17"
+        />
+        <div className="ml-[10px] mt-[40px] mb-[30px] w-[78vw] max-w-[1200px] text-[20px] p-[10px] bg-[whitesmoke] rounded-[3px] border-2 border-black">{`20. ${t(
+          "firebaseStep20"
+        )}`}</div>
+        <img
+          src={firebase20}
+          className=" w-12/12 justify-self-center border-2 border-gray-300 rounded-md"
+          width={500}
+          alt="firebase screen 17"
+        />
+        <div className="ml-[10px] mt-[40px] mb-[30px] w-[78vw] max-w-[1200px] text-[20px] p-[10px] bg-[whitesmoke] rounded-[3px] border-2 border-black">{`21. ${t(
+          "firebaseStep21"
+        )}`}</div>
+        <img
+          src={firebase21}
+          className=" w-12/12 justify-self-center border-2 border-gray-300 rounded-md"
+          width={500}
+          alt="firebase screen 17"
+        />
+        <div className="ml-[10px] mt-[40px] mb-[30px] w-[78vw] max-w-[1200px] text-[20px] p-[10px] bg-[whitesmoke] rounded-[3px] border-2 border-black">{`22. ${t(
+          "firebaseStep22"
+        )}`}</div>
+        <img
+          src={firebase22}
+          className=" w-12/12 justify-self-center border-2 border-gray-300 rounded-md"
+          width={500}
+          alt="firebase screen 17"
+        />
+        <div className="ml-[10px] mt-[40px] mb-[30px] w-[78vw] max-w-[1200px] text-[20px] p-[10px] bg-[whitesmoke] rounded-[3px] border-2 border-black">{`23. ${t(
+          "firebaseStep23"
+        )}`}</div>
+        <img
+          src={firebase23}
+          className=" w-12/12 justify-self-center border-2 border-gray-300 rounded-md"
+          width={500}
+          alt="firebase screen 17"
+        />
+        <div className="ml-[10px] mt-[40px] mb-[30px] w-[78vw] max-w-[1200px] text-[20px] p-[10px] bg-[whitesmoke] rounded-[3px] border-2 border-black">{`24. ${t(
+          "firebaseStep24"
+        )}`}</div>
+        <img
+          src={firebase24}
           className=" w-12/12 justify-self-center border-2 border-gray-300 rounded-md"
           width={500}
           alt="firebase screen 17"
