@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import { MapColorPicker } from "./MapColorPicker";
 import { useStore } from "../../GlobalState/useStore";
 
@@ -17,11 +17,11 @@ const InputDiv = (props) => {
     setMapColorPalette("custom");
   };
 
-  let backgroundCol = props.backgroundCol;
+  // let backgroundCol = props.backgroundCol;
 
-  if (isNaN(props.value) || +props.value < 0) {
-    backgroundCol = "bg-yellow-500";
-  }
+  // if (isNaN(props.value) || +props.value < 0) {
+  //   backgroundCol = "bg-yellow-500";
+  // }
 
   return (
     <div

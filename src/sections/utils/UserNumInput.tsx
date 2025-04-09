@@ -21,7 +21,7 @@ interface UserTextInputProps {
 const UserNumInput: React.FC<UserTextInputProps> = ({
   classNameNum,
   classNameLabel,
-  highlight,
+  // highlight,
   upperLimit,
   lowerLimit,
   step,
@@ -66,9 +66,7 @@ const UserNumInput: React.FC<UserTextInputProps> = ({
     onChange(value); // setValue(value);
   };
 
-  const warningMessage = `${t("lowerLimit")}: ${lowerLimit}, ${t(
-    "upperLimit"
-  )}: ${upperLimit}`;
+  const warningMessage = `${t("lowerLimit")}: ${lowerLimit}, ${t("upperLimit")}: ${upperLimit}`;
 
   return (
     <div className="flex items-center w-[70vw]">

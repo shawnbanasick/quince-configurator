@@ -16,7 +16,7 @@ import { UploadAndReadXmlMap } from "./UploadAndReadXmlMap.js";
 import { generateMapXml } from "./generateMapXml.js";
 
 const getDisplayMode = (state) => state.displayMode;
-const getNumStatements = (state) => state.numStatements;
+// const getNumStatements = (state) => state.numStatements;
 const getMapColorPalette = (state) => state.mapColorPalette;
 const getSetMapColorPalette = (state) => state.setMapColorPalette;
 const getMapColColorsStyle = (state) => state.mapColColorsStyle;
@@ -30,14 +30,14 @@ const Map = () => {
   const setMapColorPalette = useStore(getSetMapColorPalette);
   const mapColColorsStyle = useStore(getMapColColorsStyle);
   const setMapColColorsStyle = useStore(getSetMapColColorsStyle);
-  const numStatements = useStore(getNumStatements);
+  // const numStatements = useStore(getNumStatements);
 
-  let display;
-  if (displayMode === "beginner") {
-    display = true;
-  } else {
-    display = false;
-  }
+  // let display;
+  // if (displayMode === "beginner") {
+  //   display = true;
+  // } else {
+  //   display = false;
+  // }
 
   const handleClick = () => {
     console.log("Map button clicked");

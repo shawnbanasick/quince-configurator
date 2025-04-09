@@ -19,7 +19,7 @@ interface UserTextAreaInputProps {
 const getSetText = (state) => state.setText;
 
 const UserTextAreaInput: React.FC<UserTextAreaInputProps> = ({
-  tabIndex,
+  // tabIndex,
   classNameText,
   classNameLabel,
   highlight,
@@ -27,8 +27,8 @@ const UserTextAreaInput: React.FC<UserTextAreaInputProps> = ({
   placeholder,
   name,
   value,
-  onChange,
-  height,
+  // onChange,
+  // height,
 }) => {
   // props = label, stateId, sectionName, width, left
   const { t } = useTranslation();

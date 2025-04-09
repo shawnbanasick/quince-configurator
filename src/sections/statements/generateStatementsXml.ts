@@ -1,4 +1,4 @@
-import { useStore } from "../../globalState/useStore";
+// import { useStore } from "../../globalState/useStore";
 import encodeHTML from "../utils/encodeHTML";
 
 const generateStatementsXml = (statements, version) => {
@@ -15,9 +15,7 @@ const generateStatementsXml = (statements, version) => {
    <statements version="${version}" htmlParse="false">\n`;
 
   for (let i = 0; i < statementsArray.length; i += 1) {
-    let string = `     <statement id="${i + 1}">${encodeHTML(
-      statementsArray[i]
-    )}</statement>\n`;
+    let string = `     <statement id="${i + 1}">${encodeHTML(statementsArray[i])}</statement>\n`;
 
     data = data.concat(string);
     // }

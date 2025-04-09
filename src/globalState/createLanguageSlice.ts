@@ -1,4 +1,4 @@
-const createMapXmlSlice = (set, get) => ({
+const createMapXmlSlice = (set) => ({
   /*
    ******** MULTIPLE AND FOOTER ****************** */
   btnHelp: "Help",
@@ -228,7 +228,7 @@ const createMapXmlSlice = (set, get) => ({
 
   /*
    ******** GENERIC STATE CHANGE  ****************** */
-  setText: (stateDesig, text) => set((state) => ({ [stateDesig]: text })),
+  setText: (stateDesig, text) => set(() => ({ [stateDesig]: text })),
 
   /*
    ******** SET VALUES  ****************** */
