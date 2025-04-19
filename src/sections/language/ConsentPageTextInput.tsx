@@ -48,7 +48,7 @@ const ConsentPageTextInput = () => {
 
   return (
     // <SectionContainer>
-    <div className="outline outline-2 outline-slate-500 p-2 w-[78vw] max-w-[1200px] rounded-sm bg-gray-100">
+    <div className="outline outline-2 outline-slate-500 p-2 w-[78vw] max-w-[78vw] rounded-sm bg-gray-100">
       {/* <HeaderButtonBar> */}
       <div className="flex flex-row justify-between mb-4">
         <h2>2. Consent Screen (optional)</h2>

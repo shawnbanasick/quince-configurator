@@ -11,7 +11,7 @@ const DownloadLanguageXml: React.FC = () => {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "config.xml";
+    a.download = "language.xml";
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -19,9 +19,9 @@ const DownloadLanguageXml: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center mt-2">
+    <div className="flex flex-col items-center justify-center">
       <button
-        className="cursor-pointer bg-orange-300 hover:opacity-50 border-2 border-gray-600 rounded-md p-2"
+        className="cursor-pointer font-semibold bg-orange-300 hover:bg-orange-500 border-2 border-gray-600 rounded-md p-2"
         id="downloadXml"
         onClick={handleFileDownload}
       >

@@ -65,7 +65,7 @@ const PostsortTextInput: React.FC = () => {
   }
 
   return (
-    <div className="outline outline-2 outline-slate-500 p-2 w-[78vw] max-w-[1200px] rounded-sm">
+    <div className="outline outline-2 outline-slate-500 p-2 w-[78vw] max-w-[78vw] rounded-sm">
       <div className="flex flex-row justify-between mb-4">
         <h2>11. Post-Sort Comments Screen</h2>
         <div className="flex flex-row gap-4">

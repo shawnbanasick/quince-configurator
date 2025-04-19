@@ -7,10 +7,8 @@ import { useStore } from "../../globalState/useStore";
 
 const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
-const getThinningPreventNavModalHead = (state) =>
-  state.thinningPreventNavModalHead;
-const getThinningPreventNavModalText = (state) =>
-  state.thinningPreventNavModalText;
+const getThinningPreventNavModalHead = (state) => state.thinningPreventNavModalHead;
+const getThinningPreventNavModalText = (state) => state.thinningPreventNavModalText;
 const getThinningConfirmModalHead = (state) => state.thinningConfirmModalHead;
 const getThinningConfirmModalText = (state) => state.thinningConfirmModalText;
 const getAgreeMostText = (state) => state.agreeMostText;
@@ -57,7 +55,7 @@ const RefineEvaluationsTextInput = () => {
   }
 
   return (
-    <div className="outline outline-2 outline-slate-500 p-2 w-[78vw] max-w-[1200px] rounded-sm">
+    <div className="outline outline-2 outline-slate-500 p-2 w-[78vw] max-w-[78vw] rounded-sm">
       <div className="flex flex-row justify-between mb-4">
         <h2>7. Refine Evaluations Screen</h2>
         <div className="flex flex-row gap-4">
@@ -70,11 +68,7 @@ const RefineEvaluationsTextInput = () => {
             Use Defaults
           </button>
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
-          <button
-            id="footerClear"
-            className="bg-slate-300 p-2 rounded-md"
-            onClick={handleClearAll}
-          >
+          <button id="footerClear" className="bg-slate-300 p-2 rounded-md" onClick={handleClearAll}>
             Clear Section
           </button>
           {/* <RefImageButton */}

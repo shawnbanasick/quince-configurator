@@ -41,7 +41,7 @@ const Language = () => {
       <h1 className="text-center">Language.xml</h1>
       <h2>User Interface Language Settings for Desktop and Mobile</h2>
 
-      <div className="flex flex-row w-2/3 justify-between  gap-[] mt-4 mb-6 border-2 border-black">
+      <div className="flex flex-row w-2/3 justify-between mt-4 mb-6">
         <UploadAndReadLanguageXml />
         <DownloadLanguageXml />
       </div>

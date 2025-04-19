@@ -36,7 +36,7 @@ const MobileSubmitTextInput: React.FC = () => {
     displayMode = false;
   }
   return (
-    <div className="outline outline-2 outline-slate-500 p-2 w-[78vw] max-w-[1200px] rounded-sm bg-gray-100">
+    <div className="outline outline-2 outline-slate-500 p-2 w-[78vw] max-w-[78vw] rounded-sm bg-gray-100">
       <div className="flex flex-row justify-between mb-4">
         <h2>16. Mobile Submit Screen</h2>
         <div className="flex flex-row gap-4">

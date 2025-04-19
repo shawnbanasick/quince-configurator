@@ -6,7 +6,7 @@ const generateLanguageXml = () => {
 
    <language version="${useStore.getState().version}" htmlParse="true">\n;
 
-        <!-- MULTIPLE SCREENS AND FOOTER -->
+        <!-- 1. MULTIPLE SCREENS AND FOOTER -->
         <item id="btnHelp">${encodeHTML(useStore.getState().btnHelp)}</item>
         <item id="fontSizeText">${encodeHTML(useStore.getState().footerTextSize)}</item>
         <item id="cardHeightText">${encodeHTML(useStore.getState().footerCardHeight)}</item>
@@ -16,7 +16,7 @@ const generateLanguageXml = () => {
           useStore.getState().screenOrientationText
         )}</item>
 
-        <!-- CONSENT SCREEN -->
+        <!-- 2. CONSENT SCREEN -->
         <item id="consentTitleBarText">${encodeHTML(useStore.getState().consentTitleBarText)}</item>
         <item id="consentText">${encodeHTML(useStore.getState().consentText)}</item>
         <item id="consentHelpModalHead">${encodeHTML(
@@ -28,7 +28,7 @@ const generateLanguageXml = () => {
         <item id="btnNextConsent">${encodeHTML(useStore.getState().btnNextConsent)}</item>
         <item id="btnHelpConsent">${encodeHTML(useStore.getState().btnHelpConsent)}</item>
 
-        <!-- ACCESS CONTROL - only displayed if access is restricted -->
+        <!-- 3. ACCESS CONTROL - only displayed if access is restricted -->
         <item id="loginWelcomeText">${encodeHTML(useStore.getState().loginWelcomeText)}</item>
         <item id="loginHeaderText">${encodeHTML(useStore.getState().loginHeaderText)}</item>
         <item id="loginPartIdText">${encodeHTML(useStore.getState().loginPartIdText)}</item>
@@ -82,7 +82,7 @@ const generateLanguageXml = () => {
           useStore.getState().returnToLocalPanelButtonText
         )}</item>
 
-        <!-- WELCOME (LANDING) SCREEN -->
+        <!-- 4. WELCOME (LANDING) SCREEN -->
         <item id="landingHead">${encodeHTML(useStore.getState().landingHead)}</item>
         <item id="welcomeText">${encodeHTML(useStore.getState().welcomeMessage)}</item>        
         <item id="landingHelpModalHead">${encodeHTML(
@@ -94,7 +94,7 @@ const generateLanguageXml = () => {
         <item id="btnHelpLanding">${encodeHTML(useStore.getState().btnHelpLanding)}</item>
         <item id="btnNextLanding">${encodeHTML(useStore.getState().btnNextLanding)}</item>
 
-        <!-- PRESORT: rough sorting into three piles -->
+        <!-- 5. PRESORT: rough sorting into three piles -->
         <item id="logInFirst">${encodeHTML(useStore.getState().loginFirst)}</item>
         <item id="titleBarText">${encodeHTML(useStore.getState().titleBarText)}</item>
         <item id="presortAgreement">${encodeHTML(useStore.getState().presortAgreement)}</item>
@@ -122,7 +122,7 @@ const generateLanguageXml = () => {
           useStore.getState().presortOnPageInstructions
         )}</item>
 
-        <!-- MOBILE PRESORT -->
+        <!-- 6. MOBILE PRESORT -->
         <item id="mobilePresortConditionsOfInstruction">${encodeHTML(
           useStore.getState().mobilePresortConditionsOfInstruction
         )}</item>
@@ -169,7 +169,7 @@ const generateLanguageXml = () => {
           useStore.getState().mobilePresortPreventNavModalText
         )}</item>
 
-        <!-- THINNING -->
+        <!-- 7. THINNING -->
         <item id="thinningPreventNavModalHead">${encodeHTML(
           useStore.getState().thinningPreventNavModalHead
         )}</item>
@@ -195,7 +195,7 @@ const generateLanguageXml = () => {
         <item id="agreeLeastText">${encodeHTML(useStore.getState().agreeLeastText)}</item>
         <item id="finalInstructions">${encodeHTML(useStore.getState().finalInstructions)}</item>
 
-        <!-- MOBILE THINNING -->
+        <!-- 8. MOBILE THINNING -->
         <item id="moveTopMobileHead">${encodeHTML(useStore.getState().moveTopMobileHead)}</item>
         <item id="moveTopMobileText">${encodeHTML(useStore.getState().moveTopMobileText)}</item>
         <item id="moveAllTopMobileText">${encodeHTML(
@@ -259,7 +259,7 @@ const generateLanguageXml = () => {
           useStore.getState().mobileThinScrollBottomModalText
         )}</item>
 
-        <!-- SORT -->
+        <!-- 9. SORT -->
         <item id="sortHelpModalHead">${encodeHTML(useStore.getState().sortHelpModalHead)}</item>
         <item id="sortHelpModalText">${encodeHTML(useStore.getState().sortHelpModalText)}</item>
         <item id="sortAgreement">${encodeHTML(useStore.getState().sortAgreement)}</item>
@@ -284,7 +284,7 @@ const generateLanguageXml = () => {
           useStore.getState().sortOverloadedColumnModalText
         )}</item>
 
-        <!-- MOBILE SORT -->
+        <!-- 10. MOBILE SORT -->
         <item id="mobileSortSwapModalHead">${encodeHTML(
           useStore.getState().mobileSortSwapModalHead
         )}</item>
@@ -310,7 +310,7 @@ const generateLanguageXml = () => {
           useStore.getState().mobileSortScrollBottomModalText
         )}</item>
 
-       <!-- POSTSORT: comments - only displayed if showStep3 = TRUE in config.xml -->
+       <!-- 11. POSTSORT: comments - only displayed if showStep3 = TRUE in config.xml -->
         <item id="postsortHeader">${encodeHTML(useStore.getState().postsortHeader)}</item>
         <item id="postsortInstructions">${encodeHTML(
           useStore.getState().postsortInstructions
@@ -332,7 +332,7 @@ const generateLanguageXml = () => {
           useStore.getState().postsortBackButton
         )}</item>
 
-       <!-- MOBILE POSTSORT: comments - only displayed if showStep3 = TRUE in config.xml -->
+       <!-- 12. MOBILE POSTSORT: comments - only displayed if showStep3 = TRUE in config.xml -->
        <item id="mobilePostsortPreventNavModalHead">${encodeHTML(
          useStore.getState().mobilePostsortPreventNavModalHead
        )}</item>
@@ -349,7 +349,7 @@ const generateLanguageXml = () => {
          useStore.getState().mobilePostsortHelpModalText
        )}</item>
 
-        <!-- SURVEY: Additional questions, only displayed if showStep4 == true -->
+        <!-- 13. SURVEY: Additional questions, only displayed if showStep4 == true -->
         <item id="surveyHeader">${encodeHTML(useStore.getState().surveyHeader)}</item>
         <item id="surveyModalHead">${encodeHTML(useStore.getState().surveyModalHead)}</item>
         <item id="surveyModalText">${encodeHTML(useStore.getState().surveyModalText)}</item>
@@ -360,7 +360,7 @@ const generateLanguageXml = () => {
           useStore.getState().surveyPreventNavModalText
         )}</item>
        
-        <!-- MOBILE SURVEY: Additional questions, only displayed if showStep4 == true -->
+        <!-- 14. MOBILE SURVEY: Additional questions, only displayed if showStep4 == true -->
         <item id="mobileSurveyHelpModalHead">${encodeHTML(
           useStore.getState().mobileSurveyHelpModalHead
         )}</item>
@@ -368,7 +368,7 @@ const generateLanguageXml = () => {
           useStore.getState().mobileSurveyHelpModalText
         )}</item>
 
-        <!-- SUBMIT -->
+        <!-- 15. SUBMIT -->
         <item id="btnTransfer">${encodeHTML(useStore.getState().btnTransfer)}</item>
         <item id="transferHead">${encodeHTML(useStore.getState().transferHead)}</item>
         <item id="transferTextAbove">${encodeHTML(useStore.getState().transferTextAbove)}</item>
@@ -387,10 +387,10 @@ const generateLanguageXml = () => {
         <item id="btnDownload">${encodeHTML(useStore.getState().btnDownload)}</item>   
         <item id="goodbyeMessage">${encodeHTML(useStore.getState().goodbyeMessage)}</item>   
 
-        <!-- MOBILE SUBMIT -->
+        <!-- 16. MOBILE SUBMIT -->
         <item id="mobileSortTitleBar">${encodeHTML(useStore.getState().mobileSortTitleBar)}</item>
 
-        <!-- EMAIL -->
+        <!-- 17. EMAIL -->
         <item id="btnTransferEmail">${encodeHTML(useStore.getState().emailSubmitBtn)}</item>
         <item id="clipboardResults">${encodeHTML(useStore.getState().emailCopyResultsBtn)}</item>  
         <item id="clipboardEmail">${encodeHTML(useStore.getState().emailCopyAddressBtn)}</item>  
@@ -401,7 +401,7 @@ const generateLanguageXml = () => {
         )}</item>   
         <item id="emailMessage1">${encodeHTML(useStore.getState().emailBodyMessage)}</item>
 
-        <!-- LINKING -->
+        <!-- 18. LINKING -->
         <item id="linkedProjectFallbackMessage">${encodeHTML(
           useStore.getState().linkingFallbackMessage
         )}</item>   

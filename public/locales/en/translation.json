@@ -142,6 +142,12 @@
   "baserowStep9": "Input your table name and what it includes, then click the 'Continue' button.",
   "baserowStep10": "Click the 'Date' button and then click 'Continue'.",
   "emailOnlyDescription": "No database setup is needed for this option. The participant' default email client will send the data by email to the researcher.",
+  "baserowStep11": "The Baserow screen will show a grid with 'Name' and 'Date' columns.",
+  "baserowStep14": "Click the display icon next to the database name.",
+  "baserowStep15": "Click on the 'My settings' link.",
+  "baserowStep16": "Click on the 'Database tokens' link, then click 'Create token'.",
+  "baserowStep17": "Enter a name for the token and set the 'Workspace' to your database.",
+  "baserowStep19": "Click on the 'show databases button' and then deactivate the 'read', 'update', and 'delete' options (see image below).",
 
   "*** DATABASE - FIREBASE ***": "*** DATABASE - FIREBASE ***",
   "firebaseStep1": "First, create a new user account on firebase.google.com by clicking on the 'Get Sign in' button in the upper right corner of the page.",
@@ -167,5 +173,9 @@
   "firebaseStep21": "Click the 'Database' button in the left-hand menu.",
   "firebaseStep22": "Click the 'Create Database' button to create a new database.",
   "firebaseStep23": "Select 'Start in test mode' and click the 'Next' button.",
-  "firebaseStep24": "Click the 'Done' button to create the database."
+  "firebaseStep24": "Click the 'Done' button to create the database.",
+
+  "*** LANGUAGE PAGE ***": "***  LANGUAGE PAGE  ***",
+  "loadLanguage": "Load Language File",
+  "downloadXmlLanguageFile": "Download Language XML File"
 }

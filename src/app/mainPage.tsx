@@ -24,9 +24,9 @@ export const MainPage = () => {
   };
 
   return (
-    <main className="w-screen flex flex-col space-y-4 items-center justify-center">
+    <main className="w-screen flex flex-col space-y-4  items-center justify-center">
       <ToastContainer />
-      <Tabs className="h-screen w-screen p-2">
+      <Tabs className="h-screen w-screen p-2 ">
         <TabList>
           <Tab>Welcome</Tab>
           <Tab>1. Setup For Editing</Tab>
@@ -38,7 +38,7 @@ export const MainPage = () => {
           <Tab>7. Web Host Setup</Tab>
         </TabList>
 
-        <TabPanel className="flex flex-col justify-center">
+        <TabPanel className="flex flex-col justify-center ">
           <div className="justify-self-right">
             <div>{t("selectLanguage")}</div>
             <div className="space-x-2">
