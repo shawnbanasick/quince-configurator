@@ -3,7 +3,7 @@ import { useStore } from "../../globalState/useStore.js";
 const clearSection = (array) => {
   array.forEach((item) => {
     localStorage.setItem(item, "");
-    useStore.setState({ item: "" });
+    useStore.setState((state) => ({ ...state, [item]: "" }));
   });
 };
 
@@ -12,12 +12,13 @@ const showSectionDefaults = (section) => {
 
   if (section === "footerClear") {
     selectorArray = [
-      "langBtnHelp",
-      "langFooterTextSize",
-      "langFooterCardHeight",
-      "langBtnNext",
-      "langStepCompleted",
-      "langLoginFirst",
+      "btnHelp",
+      "footerTextSize",
+      "footerCardHeight",
+      "btnNext",
+      "stepCompleted",
+      // "langLoginFirst",
+      "screenOrientationText",
     ];
 
     clearSection(selectorArray);

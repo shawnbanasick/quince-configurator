@@ -1,11 +1,13 @@
 const showSectionDefaults = () => {
   const obj = {
-    langStepCompleted: `You have completed this step. Please click on the <b> blue "Continue" button </b> at the bottom right-side of your screen to go to the next step.`,
-    langLoginFirst: `Please complete the log-in process first.`,
-    langFooterTextSize: `Text Size`,
-    langFooterCardHeight: `Card Height`,
-    langBtnHelp: "Help",
-    langBtnNext: "Continue",
+    btnHelp: "Help",
+    footerTextSize: `Text Size`,
+    footerCardHeight: `Card Height`,
+    // langLoginFirst: `Please complete the log-in process first.`,
+    btnNext: "Continue",
+    stepCompleted: `You have completed this step. Please click on the <b> blue "Continue" button </b> at the bottom right-side of your screen to go to the next step.`,
+    screenOrientationText: "Please Use Portrait Orientation!",
+
     langLandingHead: `University Research Project`,
     langWelcomeMessage: `<h2>EQ Web Sort Demo Project - iPad Use in the Classroom.</h2><br/><br/><p>Thank you for helping with this research project</p><br/><br/><br/>
     <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
@@ -51,8 +53,7 @@ const showSectionDefaults = () => {
       "Participant Q sort data have been successfully saved to browser memory",
     langReturnToLocalPanelButtonText: "Return to Control Panel",
     langLocalSaveBeforeDeleteModalHeader: "Delete Disabled",
-    langLocalSaveBeforeDeleteModalText:
-      "Save Q sort Data to Disk before deleting.",
+    langLocalSaveBeforeDeleteModalText: "Save Q sort Data to Disk before deleting.",
 
     /*
      ******** PRESORT  ****************** */
@@ -130,8 +131,7 @@ const showSectionDefaults = () => {
 
     /*
      ******** SECOND PROJECT LINK  ****************** */
-    langLinkingFallbackMessage:
-      "Please click the button to begin the next Q sort",
+    langLinkingFallbackMessage: "Please click the button to begin the next Q sort",
     langLinkingBtnText: "Begin Next Q sort",
   };
   return obj;

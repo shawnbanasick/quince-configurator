@@ -14,14 +14,14 @@ const showSectionDefaults = (section) => {
     });
   };
 
-  if (section === "footerDef") {
+  if (section === "multipleScreens") {
     selectorArray = [
-      "langBtnHelp",
-      "langFooterTextSize",
-      "langFooterCardHeight",
-      "langBtnNext",
-      "langStepCompleted",
-      "langLoginFirst",
+      "btnHelp",
+      "footerTextSize",
+      "footerCardHeight",
+      "btnNext",
+      "stepCompleted",
+      "screenOrientationText",
     ];
 
     setDefaults(selectorArray);

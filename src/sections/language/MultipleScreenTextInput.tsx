@@ -27,6 +27,7 @@ const MultipleScreenTextInput = () => {
   console.log("langBtnHelp", langBtnHelp);
 
   const handleShowDefaults = (e) => {
+    console.log("handleShowDefaults", e.target.id);
     showSectionDefaults(e.target.id);
   };
 
@@ -50,31 +51,35 @@ const MultipleScreenTextInput = () => {
   }
 
   return (
-    <div className="outline outline-2 outline-slate-500 p-2 w-[78vw] max-w-[78vw] rounded-sm">
+    <div className="outline outline-2 outline-slate-500  p-2 w-[78vw] max-w-[78vw] rounded-sm">
       <div className="flex flex-row justify-between mb-4">
         <h2>1. Multiple Screens</h2>
         <div className="flex flex-row gap-4">
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
-            id="footerDef"
-            className="bg-slate-300 p-2 rounded-md"
+            id="multipleScreens"
+            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
             Use Defaults
           </button>
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
-          <button id="footerClear" className="bg-slate-300 p-2 rounded-md" onClick={handleClearAll}>
+          <button
+            id="footerClear"
+            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
+            onClick={handleClearAll}
+          >
             Clear Section
           </button>
           {/* <RefImageButton */}
-          <button
-            className="bg-slate-300 p-2 rounded-md"
+          {/* <button
+            className="bg-slate-300 p-2 rounded-md w-[160px] hover:bg-slate-400 hover:font-semibold"
             id="footerImage"
             // marginRight="35px"
             onClick={handleRefImage}
           >
             Reference Image
-          </button>
+          </button> */}
         </div>
       </div>
       <div className="pl-10">
@@ -82,7 +87,7 @@ const MultipleScreenTextInput = () => {
           classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="1-1. Help"
-          name="langBtnHelp"
+          name="btnHelp"
           value={langBtnHelp}
           onChange={handleTextChange}
           highlight={false}
@@ -93,7 +98,7 @@ const MultipleScreenTextInput = () => {
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="1-2. Text Size"
-          name="langFooterTextSize"
+          name="footerTextSize"
           value={langFooterTextSize}
           onChange={handleTextChange}
           highlight={false}
@@ -104,7 +109,7 @@ const MultipleScreenTextInput = () => {
           classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="1-3. Card Height"
-          name="langFooterCardHeight"
+          name="footerCardHeight"
           value={langFooterCardHeight}
           onChange={handleTextChange}
           highlight={false}
@@ -115,7 +120,7 @@ const MultipleScreenTextInput = () => {
           classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="1-4. Continue Button Text"
-          name="langBtnNext"
+          name="btnNext"
           value={langBtnNext}
           onChange={handleTextChange}
           highlight={false}
@@ -126,7 +131,7 @@ const MultipleScreenTextInput = () => {
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
           label="1-5. Step Completed Message"
-          name="langStepCompleted"
+          name="stepCompleted"
           height={150}
           value={langStepCompleted}
           onChange={handleTextChange}
