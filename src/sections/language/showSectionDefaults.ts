@@ -29,25 +29,12 @@ const showSectionDefaults = (section) => {
 
   if (section === "consentDef") {
     selectorArray = [
-      "langConsentTitleBarText",
-      "langConsentText",
-      "langConsentHelpModalHead",
-      "langConsentHelpModalText",
-      "langBtnNextConsent",
-      "langBtnHelpConsent",
-    ];
-
-    setDefaults(selectorArray);
-  }
-
-  if (section === "landingDef") {
-    selectorArray = [
-      "langLandingHead",
-      "langWelcomeMessage",
-      "langLandingHelpModalHead",
-      "langLandingHelpModalText",
-      "langBtnNextLanding",
-      "langBtnHelpLanding",
+      "consentTitleBarText",
+      "consentText",
+      "consentHelpModalHead",
+      "consentHelpModalText",
+      "btnNextConsent",
+      "btnHelpConsent",
     ];
 
     setDefaults(selectorArray);
@@ -55,13 +42,27 @@ const showSectionDefaults = (section) => {
 
   if (section === "accessDef") {
     selectorArray = [
-      "langLoginWelcomeText",
-      "langLoginHeaderText",
-      "langLoginPartIdText",
-      "langAccessInputText",
-      "langPartIdWarning",
-      "langAccessCodeWarning",
+      "loginWelcomeText",
+      "loginHeaderText",
+      "loginPartIdText",
+      "accessCodeText",
+      "accessInputText",
+      "partIdWarning",
+      "accessCodeWarning",
       "loginSubmitButtonText",
+    ];
+
+    setDefaults(selectorArray);
+  }
+
+  if (section === "welcomeDef") {
+    selectorArray = [
+      "landingHead",
+      "welcomeMessage",
+      "landingHelpModalHead",
+      "landingHelpModalText",
+      "btnNextLanding",
+      "btnHelpLanding",
     ];
 
     setDefaults(selectorArray);

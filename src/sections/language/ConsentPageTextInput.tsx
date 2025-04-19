@@ -28,6 +28,7 @@ const ConsentPageTextInput = () => {
     // showRefImage(e.target.id);
   };
   const handleShowDefaults = (e) => {
+    console.log("handleShowDefaults", e.target.id);
     showSectionDefaults(e.target.id);
   };
 
@@ -55,20 +56,24 @@ const ConsentPageTextInput = () => {
         <div className="flex flex-row gap-4">
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
-            id="footerDef"
-            className="bg-slate-300 p-2 rounded-md"
+            id="consentDef"
+            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
             Use Defaults
           </button>
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
-          <button id="footerClear" className="bg-slate-300 p-2 rounded-md" onClick={handleClearAll}>
+          <button
+            id="consentClear"
+            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
+            onClick={handleClearAll}
+          >
             Clear Section
           </button>
           {/* <RefImageButton */}
           <button
-            className="bg-slate-300 p-2 rounded-md"
-            id="footerImage"
+            className="bg-slate-300 p-2 rounded-md w-[160px] hover:bg-slate-400 hover:font-semibold"
+            id="consentImage"
             // marginRight="35px"
             onClick={handleRefImage}
           >
@@ -92,7 +97,7 @@ const ConsentPageTextInput = () => {
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
           label="2-2. Consent Message"
-          name="langConsentText"
+          name="consentText"
           height={150}
           value={langConsentText}
           onChange={handleTextChange}
@@ -105,7 +110,7 @@ const ConsentPageTextInput = () => {
           classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="2-3. Help Modal Title"
-          name="langConsentHelpModalHead"
+          name="consentHelpModalHead"
           value={langConsentHelpModalHead}
           onChange={handleTextChange}
           highlight={true}
@@ -116,7 +121,7 @@ const ConsentPageTextInput = () => {
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
           label="2-4. Help Modal Text"
-          name="langConsentHelpModalText"
+          name="consentHelpModalText"
           height={150}
           value={langConsentHelpModalText}
           onChange={handleTextChange}
@@ -129,7 +134,7 @@ const ConsentPageTextInput = () => {
           classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="2-5. Help Button Text"
-          name="langBtnHelpConsent"
+          name="btnHelpConsent"
           value={langBtnHelpConsent}
           onChange={handleTextChange}
           highlight={true}
@@ -140,7 +145,7 @@ const ConsentPageTextInput = () => {
           classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="2-6. Accept Button Text"
-          name="langBtnNextConsent"
+          name="btnNextConsent"
           value={langBtnNextConsent}
           onChange={handleTextChange}
           highlight={false}

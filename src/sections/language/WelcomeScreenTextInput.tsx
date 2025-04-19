@@ -53,20 +53,24 @@ const WelcomeScreenTextInput = () => {
         <div className="flex flex-row gap-4">
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
-            id="footerDef"
-            className="bg-slate-300 p-2 rounded-md"
+            id="welcomeDef"
+            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
             Use Defaults
           </button>
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
-          <button id="footerClear" className="bg-slate-300 p-2 rounded-md" onClick={handleClearAll}>
+          <button
+            id="welcomeClear"
+            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
+            onClick={handleClearAll}
+          >
             Clear Section
           </button>
           {/* <RefImageButton */}
           <button
-            className="bg-slate-300 p-2 rounded-md"
-            id="footerImage"
+            className="bg-slate-300 p-2 rounded-md w-[160px] hover:bg-slate-400 hover:font-semibold"
+            id="welcomeImage"
             // marginRight="35px"
             onClick={handleRefImage}
           >
@@ -79,7 +83,7 @@ const WelcomeScreenTextInput = () => {
           classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="4-1. Welcome Page Title Bar"
-          name="langLandingHead"
+          name="landingHead"
           value={langLandingHead}
           onChange={handleTextChange}
           highlight={true}
@@ -90,7 +94,7 @@ const WelcomeScreenTextInput = () => {
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
           label="4-2. Welcome Message"
-          name="langWelcomeMessage"
+          name="welcomeMessage"
           height={150}
           value={langWelcomeMessage}
           onChange={handleTextChange}
@@ -103,7 +107,7 @@ const WelcomeScreenTextInput = () => {
           classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="4-3. Help Modal Title"
-          name="langLandingHelpModalHead"
+          name="landingHelpModalHead"
           value={langLandingHelpModalHead}
           onChange={handleTextChange}
           highlight={false}
@@ -114,7 +118,7 @@ const WelcomeScreenTextInput = () => {
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
           label="4-4. Help Modal Text"
-          name="langLandingHelpModalText"
+          name="landingHelpModalText"
           height={150}
           value={langLandingHelpModalText}
           onChange={handleTextChange}
@@ -127,7 +131,7 @@ const WelcomeScreenTextInput = () => {
           classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="4-5. Start Button Text"
-          name="langBtnNextLanding"
+          name="btnNextLanding"
           value={langBtnNextLanding}
           onChange={handleTextChange}
           highlight={false}
@@ -138,7 +142,7 @@ const WelcomeScreenTextInput = () => {
           classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="4-6. Welcome Screen Help Button Text"
-          name="langBtnHelpLanding"
+          name="btnHelpLanding"
           value={langBtnHelpLanding}
           onChange={handleTextChange}
           highlight={false}

@@ -23,10 +23,10 @@ const createMapXmlSlice = (set) => ({
   loginHeaderText: `Sign In`,
   loginPartIdText: `Please enter your name or participant ID`,
   accessCodeText: `Access Code`,
+  accessInputText: "Please enter the access code for this survey.",
   partIdWarning: `Invalid name or ID`,
   accessCodeWarning: `Access code invalid`,
   loginSubmitButtonText: `Submit`,
-  accessInputText: "Please enter the access code for this survey.",
 
   /*
    ******** LOCAL DATA COLLECTION  ****************** */

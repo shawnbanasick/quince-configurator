@@ -65,7 +65,7 @@ const MultipleScreenTextInput = () => {
           </button>
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
-            id="footerClear"
+            id="multipleClear"
             className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleClearAll}
           >

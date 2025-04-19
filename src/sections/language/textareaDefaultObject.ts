@@ -1,5 +1,7 @@
 const showSectionDefaults = () => {
   const obj = {
+    /*
+     ******* MULTIPLE SCREENS  ****************** */
     btnHelp: "Help",
     footerTextSize: `Text Size`,
     footerCardHeight: `Card Height`,
@@ -8,52 +10,35 @@ const showSectionDefaults = () => {
     stepCompleted: `You have completed this step. Please click on the <b> blue "Continue" button </b> at the bottom right-side of your screen to go to the next step.`,
     screenOrientationText: "Please Use Portrait Orientation!",
 
-    langLandingHead: `University Research Project`,
-    langWelcomeMessage: `<h2>EQ Web Sort Demo Project - iPad Use in the Classroom.</h2><br/><br/><p>Thank you for helping with this research project</p><br/><br/><br/>
-    <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
-
-    langLoginWelcomeText: `<center><h3>Welcome!</h3></center><br/> Thank you for participating in this Q methodology research project. <br/>Please <b>sign in</b> using the form below to begin the process. `,
-    langLoginHeaderText: `Sign In`,
-    langLoginPartIdText: `Please enter your name or participant ID`,
-    langAccessInputText: "Please enter the access code for this survey.",
-    langPartIdWarning: `Invalid name or ID`,
-    langAccessCodeWarning: `Access code invalid`,
-    loginSubmitButtonText: `Submit`,
-
-    langLandingHelpModalHead: `Welcome!`,
-    langLandingHelpModalText: `Thank you for participating in this University Research Project. Please click the "<b>Continue</b>" button at the bottom right side of the screen to go to the next step.`,
-    langBtnNextLanding: `Start`,
-    langBtnHelpLanding: `Help`,
-
     /*
      ******** CONSENT PAGE  ****************** */
-    langConsentTitleBarText: `Research Consent`,
-    langConsentText: `You are invited to participate in a research study conducted by [Principal Investigator’s Name] at [Institution or Organization]. Before you decide to participate, it is important that you understand why the research is being conducted and what it will involve. Please take the time to read the following information carefully. Feel free to contact the research team with any questions you may have.<br /><br /><b>Purpose of the Study</b><br />The purpose of this study is to [briefly describe the purpose, e.g., understand the effects of a new teaching method on student performance]. This research will help us gain insights into [mention any broader implications or goals of the study]. <br /><br /><b>Study Procedures</b><br />If you agree to participate, you will be asked to [describe the procedures involved, including what participants will do, how long it will take, and how frequently it will occur]. For example, you will be asked to complete evaluate a series of statements, sort them, and then reflect on the sorting. Additionally, there is a short questionnaires at the end. The study will take approximately [duration, e.g., 45 minutes]. <br /><br /><b>Benefits</b><br />While there may not be direct benefits to you for participating, the information gathered from this study may help [describe potential benefits, e.g., improve educational methods, contribute to scientific knowledge, etc.]. You may also gain personal insights into [describe any personal benefits, if applicable].<br /><br /><b>Confidentiality</b><br />All information collected in this study will be kept strictly confidential. Data will be stored securely and only the research team will have access to it. Your identity will not be disclosed in any reports or publications resulting from this study. [Describe how data will be anonymized, encrypted, or stored securely].<br /><br /><b>Voluntary Participation</b><br />Your participation in this study is entirely voluntary. You are free to decline to participate, or to withdraw at any time, without penalty or loss of benefits to which you are otherwise entitled. If you decide to withdraw, close the webpage and any data collected up to that point will be deleted.<br /><br /><b>Consent</b><br />By clicking on the "Agree" button on the bottom of this page, you are indicating that you have read and understood the information provided, and that you agree to participate in this study. If you have any questions about this study, please contact [Principal Investigator’s Name and Contact Information].`,
-    langConsentHelpModalHead: `Contact Information`,
-    langConsentHelpModalText: `Thank you for participating in this University Research Project. You can contact the research team by phone (1-555-867-5309) or by email at researchTeam@myMail.com`,
-    langBtnNextConsent: `Agree`,
-    langBtnHelpConsent: `Contact Information`,
+    consentTitleBarText: `Research Consent`,
+    consentText: `You are invited to participate in a research study conducted by [Principal Investigator’s Name] at [Institution or Organization]. Before you decide to participate, it is important that you understand why the research is being conducted and what it will involve. Please take the time to read the following information carefully. Feel free to contact the research team with any questions you may have.<br /><br /><b>Purpose of the Study</b><br />The purpose of this study is to [briefly describe the purpose, e.g., understand the effects of a new teaching method on student performance]. This research will help us gain insights into [mention any broader implications or goals of the study]. <br /><br /><b>Study Procedures</b><br />If you agree to participate, you will be asked to [describe the procedures involved, including what participants will do, how long it will take, and how frequently it will occur]. For example, you will be asked to complete evaluate a series of statements, sort them, and then reflect on the sorting. Additionally, there is a short questionnaires at the end. The study will take approximately [duration, e.g., 45 minutes]. <br /><br /><b>Benefits</b><br />While there may not be direct benefits to you for participating, the information gathered from this study may help [describe potential benefits, e.g., improve educational methods, contribute to scientific knowledge, etc.]. You may also gain personal insights into [describe any personal benefits, if applicable].<br /><br /><b>Confidentiality</b><br />All information collected in this study will be kept strictly confidential. Data will be stored securely and only the research team will have access to it. Your identity will not be disclosed in any reports or publications resulting from this study. [Describe how data will be anonymized, encrypted, or stored securely].<br /><br /><b>Voluntary Participation</b><br />Your participation in this study is entirely voluntary. You are free to decline to participate, or to withdraw at any time, without penalty or loss of benefits to which you are otherwise entitled. If you decide to withdraw, close the webpage and any data collected up to that point will be deleted.<br /><br /><b>Consent</b><br />By clicking on the "Agree" button on the bottom of this page, you are indicating that you have read and understood the information provided, and that you agree to participate in this study. If you have any questions about this study, please contact [Principal Investigator’s Name and Contact Information].`,
+    consentHelpModalHead: `Contact Information`,
+    consentHelpModalText: `Thank you for participating in this University Research Project. You can contact the research team by phone (1-555-867-5309) or by email at researchTeam@myMail.com`,
+    btnNextConsent: `Agree`,
+    btnHelpConsent: `Contact Information`,
 
     /*
-     ******** LOCAL DATA COLLECTION  ****************** */
-    langLocalHeader: "Offline Q-sort Control Panel",
-    langPartIdText: "Participant Name",
-    langUsercodeText: "Usercode",
-    langLocalStartButtonText: "Start Q-sort",
-    langLocalDeleteButtonText: "Delete",
-    langLocalDownloadButtonText: "Save Q-sort Data to Disk",
-    langStoredQsortsHeaderText: "Stored Q-sorts",
-    langLocalDeleteModalText:
-      "This will delete the participant Q-sort data that is currently stored in the browser. You would usually only do this when you are starting a new project.<br/><br/><b>CAUTION - Deleted data cannot be recovered.</b> <br/><br/> <center></center>",
-    langLocalDeleteModalHead: "Delete Data Stored in Browser?",
-    langLocalParticipantsText: "Participants",
-    langLocalSaveDataButton: "Save Participant Data to Browser Memory",
-    langLocalSubmitSuccessModalHeader: "Success",
-    langLocalSubmitSuccessModalText:
-      "Participant Q sort data have been successfully saved to browser memory",
-    langReturnToLocalPanelButtonText: "Return to Control Panel",
-    langLocalSaveBeforeDeleteModalHeader: "Delete Disabled",
-    langLocalSaveBeforeDeleteModalText: "Save Q sort Data to Disk before deleting.",
+     ******* ACCESS PAGE  ****************** */
+    loginWelcomeText: `<center><h3>Welcome!</h3></center><br/> Thank you for participating in this Q methodology research project. <br/>Please <b>sign in</b> using the form below to begin the process. `,
+    loginHeaderText: `Sign In`,
+    loginPartIdText: `Please enter your name or participant ID`,
+    accessCodeText: `Access Code`,
+    accessInputText: "Please enter the access code for this survey.",
+    partIdWarning: `Invalid name or ID`,
+    accessCodeWarning: `Access code invalid`,
+    loginSubmitButtonText: `Submit`,
+
+    /*
+     ******* WELCOME PAGE  ****************** */
+    landingHead: `University Research Project`,
+    welcomeMessage: `<h2>EQ Web Sort Demo Project - iPad Use in the Classroom.</h2><br/><br/><p>Thank you for helping with this research project</p><br/><br/><br/>
+    <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
+    landingHelpModalHead: `Welcome!`,
+    landingHelpModalText: `Thank you for participating in this University Research Project. Please click the "<b>Continue</b>" button at the bottom right side of the screen to go to the next step.`,
+    btnNextLanding: `Continue`,
+    btnHelpLanding: `Help`,
 
     /*
      ******** PRESORT  ****************** */
@@ -133,6 +118,27 @@ const showSectionDefaults = () => {
      ******** SECOND PROJECT LINK  ****************** */
     langLinkingFallbackMessage: "Please click the button to begin the next Q sort",
     langLinkingBtnText: "Begin Next Q sort",
+
+    /*
+     ******** LOCAL DATA COLLECTION  ****************** */
+    langLocalHeader: "Offline Q-sort Control Panel",
+    langPartIdText: "Participant Name",
+    langUsercodeText: "Usercode",
+    langLocalStartButtonText: "Start Q-sort",
+    langLocalDeleteButtonText: "Delete",
+    langLocalDownloadButtonText: "Save Q-sort Data to Disk",
+    langStoredQsortsHeaderText: "Stored Q-sorts",
+    langLocalDeleteModalText:
+      "This will delete the participant Q-sort data that is currently stored in the browser. You would usually only do this when you are starting a new project.<br/><br/><b>CAUTION - Deleted data cannot be recovered.</b> <br/><br/> <center></center>",
+    langLocalDeleteModalHead: "Delete Data Stored in Browser?",
+    langLocalParticipantsText: "Participants",
+    langLocalSaveDataButton: "Save Participant Data to Browser Memory",
+    langLocalSubmitSuccessModalHeader: "Success",
+    langLocalSubmitSuccessModalText:
+      "Participant Q sort data have been successfully saved to browser memory",
+    langReturnToLocalPanelButtonText: "Return to Control Panel",
+    langLocalSaveBeforeDeleteModalHeader: "Delete Disabled",
+    langLocalSaveBeforeDeleteModalText: "Save Q sort Data to Disk before deleting.",
   };
   return obj;
 };

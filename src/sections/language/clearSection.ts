@@ -10,7 +10,7 @@ const clearSection = (array) => {
 const showSectionDefaults = (section) => {
   let selectorArray: string[] = [];
 
-  if (section === "footerClear") {
+  if (section === "multipleClear") {
     selectorArray = [
       "btnHelp",
       "footerTextSize",
@@ -24,14 +24,14 @@ const showSectionDefaults = (section) => {
     clearSection(selectorArray);
   }
 
-  if (section === "landingClear") {
+  if (section === "consentClear") {
     selectorArray = [
-      "langLandingHead",
-      "langWelcomeMessage",
-      "langLandingHelpModalHead",
-      "langLandingHelpModalText",
-      "langBtnNextLanding",
-      "langBtnHelpLanding",
+      "consentTitleBarText",
+      "consentText",
+      "consentHelpModalHead",
+      "consentHelpModalText",
+      "btnNextConsent",
+      "btnHelpConsent",
     ];
 
     clearSection(selectorArray);
@@ -39,13 +39,27 @@ const showSectionDefaults = (section) => {
 
   if (section === "accessClear") {
     selectorArray = [
-      "langLoginWelcomeText",
-      "langLoginHeaderText",
-      "langLoginPartIdText",
-      "langAccessInputText",
-      "langPartIdWarning",
-      "langAccessCodeWarning",
+      "loginWelcomeText",
+      "loginHeaderText",
+      "loginPartIdText",
+      "accessCodeText",
+      "accessInputText",
+      "partIdWarning",
+      "accessCodeWarning",
       "loginSubmitButtonText",
+    ];
+
+    clearSection(selectorArray);
+  }
+
+  if (section === "welcomeClear") {
+    selectorArray = [
+      "landingHead",
+      "welcomeMessage",
+      "landingHelpModalHead",
+      "landingHelpModalText",
+      "btnNextLanding",
+      "btnHelpLanding",
     ];
 
     clearSection(selectorArray);
@@ -119,19 +133,6 @@ const showSectionDefaults = (section) => {
       "langPostsortPreventNavModalHead",
       "langPostsortPreventNavModalText",
       "langPostsortBackButton",
-    ];
-
-    clearSection(selectorArray);
-  }
-
-  if (section === "consentClear") {
-    selectorArray = [
-      "langConsentTitleBarText",
-      "langConsentText",
-      "langConsentHelpModalHead",
-      "langConsentHelpModalText",
-      "langBtnNextConsent",
-      "langBtnHelpConsent",
     ];
 
     clearSection(selectorArray);
