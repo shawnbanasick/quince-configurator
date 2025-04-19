@@ -67,20 +67,24 @@ const PresortTextInput = () => {
         <div className="flex flex-row gap-4">
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
-            id="footerDef"
-            className="bg-slate-300 p-2 rounded-md"
+            id="presortDef"
+            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
             Use Defaults
           </button>
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
-          <button id="footerClear" className="bg-slate-300 p-2 rounded-md" onClick={handleClearAll}>
+          <button
+            id="presortClear"
+            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
+            onClick={handleClearAll}
+          >
             Clear Section
           </button>
           {/* <RefImageButton */}
           <button
-            className="bg-slate-300 p-2 rounded-md"
-            id="footerImage"
+            className="bg-slate-300 p-2 rounded-md w-[160px] hover:bg-slate-400 hover:font-semibold"
+            id="presortImage"
             // marginRight="35px"
             onClick={handleRefImage}
           >
@@ -93,7 +97,7 @@ const PresortTextInput = () => {
           classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`min-w-[180px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="5-1. Log In First Message"
-          name="langLoginFirst"
+          name="loginFirst"
           height={150}
           value={langLoginFirst}
           onChange={handleTextChange}
@@ -107,7 +111,7 @@ const PresortTextInput = () => {
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="5-2. Title Bar Text"
-          name="langTitleBarText"
+          name="titleBarText"
           value={langTitleBarText}
           onChange={handleTextChange}
           highlight={false}
@@ -118,7 +122,7 @@ const PresortTextInput = () => {
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label={`5-3. "Agree"`}
-          name="langPresortAgreement"
+          name="presortAgreement"
           value={langPresortAgreement}
           onChange={handleTextChange}
           highlight={false}
@@ -129,7 +133,7 @@ const PresortTextInput = () => {
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label={`5-4. "Neutral"`}
-          name="langPresortNeutral"
+          name="presortNeutral"
           value={langPresortNeutral}
           onChange={handleTextChange}
           highlight={false}
@@ -140,7 +144,7 @@ const PresortTextInput = () => {
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label={`5-5. "Disagree"`}
-          name="langPresortDisagreement"
+          name="presortDisagreement"
           value={langPresortDisagreement}
           onChange={handleTextChange}
           highlight={false}
@@ -152,7 +156,7 @@ const PresortTextInput = () => {
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
           label="5-6. Presort Instructions (for statement sorts)"
-          name="langPresortOnPageInstructions"
+          name="presortOnPageInstructions"
           height={150}
           value={langPresortOnPageInstructions}
           onChange={handleTextChange}
@@ -165,7 +169,7 @@ const PresortTextInput = () => {
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
           label="5-7. Presort Instructions (for image sorts)"
-          name="langPresortImageSortInstructions"
+          name="presortImageSortInstructions"
           height={150}
           value={langPresortImageSortInstructions}
           onChange={handleTextChange}
@@ -179,7 +183,7 @@ const PresortTextInput = () => {
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="5-8. Presort Greeting Modal Title"
-          name="langPresortModalHead"
+          name="presortModalHead"
           value={langPresortModalHead}
           onChange={handleTextChange}
           highlight={false}
@@ -190,7 +194,7 @@ const PresortTextInput = () => {
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
           label="5-9. Presort Greeting Modal Text"
-          name="langPresortModalText"
+          name="presortModalText"
           height={150}
           value={langPresortModalText}
           onChange={handleTextChange}
@@ -203,7 +207,7 @@ const PresortTextInput = () => {
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="5-10. Prevent Navigation Modal Title"
-          name="langPresortPreventNavModalHead"
+          name="presortPreventNavModalHead"
           value={langPresortPreventNavModalHead}
           onChange={handleTextChange}
           highlight={false}
@@ -214,7 +218,7 @@ const PresortTextInput = () => {
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
           label="5-11. Prevent Navigation Modal Text"
-          name="langPresortPreventNavModalText"
+          name="presortPreventNavModalText"
           height={150}
           value={langPresortPreventNavModalText}
           onChange={handleTextChange}
@@ -227,7 +231,7 @@ const PresortTextInput = () => {
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="5-12. Presort Complete Modal Title"
-          name="langPresortFinishedModalHead"
+          name="presortFinishedModalHead"
           value={langPresortFinishedModalHead}
           onChange={handleTextChange}
           highlight={false}
@@ -238,7 +242,7 @@ const PresortTextInput = () => {
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
           label="5-13. Presort Complete Modal Text"
-          name="langPresortFinishedModalText"
+          name="presortFinishedModalText"
           height={150}
           value={langPresortFinishedModalText}
           onChange={handleTextChange}

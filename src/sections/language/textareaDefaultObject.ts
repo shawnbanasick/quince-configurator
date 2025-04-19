@@ -42,19 +42,41 @@ const showSectionDefaults = () => {
 
     /*
      ******** PRESORT  ****************** */
-    langTitleBarText: `Preliminary Sorting`,
-    langPresortAgreement: `Agree (3)`,
-    langPresortStatements: `Statements`,
-    langPresortNeutral: `No Strong Feelings (2)`,
-    langPresortDisagreement: `Disagree (1)`,
-    langPresortImageSortInstructions: `To enlarge an image, hover your mouse pointer over it and double-click. <br/><br/> To compare images, <u>press and hold</u> the <b><i>Shift</i></b> key on your keyboard and then double-click on TWO images with your mouse.`,
-    langPresortModalHead: `Step 1 of 4`,
-    langPresortModalText: `Read the following statements carefully and split them up into three piles: a pile for statements you tend to disagree with, a pile for cards you tend to agree with, and a pile for the rest. Changes can be made later.<br/><br/>If you want to read this instruction a second time, click the help-button at the bottom left corner.<br/><br/><center><iframe width="560" height="315" src="https://www.youtube.com/embed/vtnLuKzpcKQ?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
-    langPresortPreventNavModalHead: `Navigation Disabled`,
-    langPresortPreventNavModalText: `Please finish the preliminary sorting before going to the next step.`,
-    langPresortFinishedModalHead: `Preliminary Sorting Complete`,
-    langPresortFinishedModalText: `You have completed this step. Please click the "Continue" button in the bottom right side of the page to go to the next step.`,
-    langPresortOnPageInstructions: `<div style="font-size: 24px">Click and drag on the cards  or press the "1", "2", or "3" keys to sort the statements.</div>`,
+    loginFirst: "Please complete the log-in process first.",
+    titleBarText: `Preliminary Sorting`,
+    presortAgreement: `Agree (3)`,
+    presortStatements: `Statements`,
+    presortNeutral: `No Strong Feelings (2)`,
+    presortDisagreement: `Disagree (1)`,
+    presortImageSortInstructions: `To enlarge an image, hover your mouse pointer over it and double-click. <br/><br/> To compare images, <u>press and hold</u> the <b><i>Shift</i></b> key on your keyboard and then double-click on TWO images with your mouse.`,
+    presortModalHead: `Step 1 of 4`,
+    presortModalText: `Read the following statements carefully and split them up into three piles: a pile for statements you tend to disagree with, a pile for cards you tend to agree with, and a pile for the rest. Changes can be made later.<br/><br/>If you want to read this instruction a second time, click the help-button at the bottom left corner.<br/><br/><center><iframe width="560" height="315" src="https://www.youtube.com/embed/vtnLuKzpcKQ?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
+    presortPreventNavModalHead: `Navigation Disabled`,
+    presortPreventNavModalText: `Please finish the preliminary sorting before going to the next step.`,
+    presortFinishedModalHead: `Preliminary Sorting Complete`,
+    presortFinishedModalText: `You have completed this step. Please click the "Continue" button in the bottom right side of the page to go to the next step.`,
+    presortOnPageInstructions: `<div style="font-size: 24px">Click and drag on the cards  or press the "1", "2", or "3" keys to sort the statements.</div>`,
+
+    /*
+     ******** MOBILE PRESORT  ****************** */
+    mobilePresortConditionsOfInstruction:
+      "Evaluate the Statements According to Your Experience of using the iPads in the Class",
+    mobilePresortCompletedLabel: "Completed Evaluations",
+    mobilePresortAssignLeft: "Different from My Perspective",
+    mobilePresortAssignRight: "Similar to My Perspective",
+    mobilePresortRedoModalHead: "Re-Evaluate Statement",
+    mobilePresortRedoModalText: "Click on the appropriate icon",
+    mobilePresortRedoModalConfirmButton: "Confirm",
+    mobilePresortEvaluationsComplete:
+      "<div><b>All Statements Evaluated.</b> <br /><br />Please review the statements to confirm your evaluations.  <br /><br /><div>",
+    mobilePresortHelpModalHead: "Stage 1 of 5<br />Statement Evaluation",
+    mobilePresortHelpModalText: `Tap on the appropriate button to assign a value to each statement. <br /><br /> If you feel that the statement is <b>similar to your perspective</b>, tap the green "+" button.<br /><br /> If you feel that the statement is <b>different from your perspective</b>, tap the red "-" button. <br /><br />If you are unsure, tap the "?" button. <br /><br /> There are <b>33 statements</b> in this survey. <br /><br /> If you want to <b>change</b> your evaluation, tap the <b>redo icon</b> next to the statement.`,
+    mobilePresortFinishedModalHead: "Stage 1 of 5<br />Statement Evaluation",
+    mobilePresortFinishedModalText: `The evaluation process is complete. <br/><br/> Please <b>review the statements</b> to confirm your evaluations.  <br /><br />If you want to make a change, tap the "redo" icon to the left of the statement.<br /><br />When you are satisfied with all of your evaluations, tap the <b>navigation button</b> on the bottom right.`,
+    mobilePresortPreventNavModalHead: "Navigation Disabled",
+    mobilePresortPreventNavModalText:
+      "Please finish the evaluations before going to the next stage.",
+
     /*
      ******** SORT  ****************** */
     langSortHelpModalHead: `Step 2 of 4`,

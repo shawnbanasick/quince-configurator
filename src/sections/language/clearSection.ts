@@ -86,19 +86,41 @@ const showSectionDefaults = (section) => {
 
   if (section === "presortClear") {
     selectorArray = [
-      "langTitleBarText",
-      "langPresortStatements",
-      "langPresortAgreement",
-      "langPresortNeutral",
-      "langPresortDisagreement",
-      "langPresortImageSortInstructions",
-      "langPresortModalHead",
-      "langPresortModalText",
-      "langPresortPreventNavModalHead",
-      "langPresortPreventNavModalText",
-      "langPresortFinishedModalHead",
-      "langPresortFinishedModalText",
-      "langPresortOnPageInstructions",
+      "loginFirst",
+      "titleBarText",
+      "presortStatements",
+      "presortAgreement",
+      "presortNeutral",
+      "presortDisagreement",
+      "presortImageSortInstructions",
+      "presortModalHead",
+      "presortModalText",
+      "presortPreventNavModalHead",
+      "presortPreventNavModalText",
+      "presortFinishedModalHead",
+      "presortFinishedModalText",
+      "presortOnPageInstructions",
+    ];
+
+    clearSection(selectorArray);
+  }
+
+  if (section === "mobilePresortClear") {
+    selectorArray = [
+      "mobilePresortConditionsOfInstruction",
+      "mobilePresortCompletedLabel",
+      "mobilePresortAssignLeft",
+      "mobilePresortAssignRight",
+      "mobilePresortRedoModalHead",
+      "mobilePresortRedoModalText",
+      "mobilePresortRedoModalConfirmButton",
+      "mobilePresortEvaluationsComplete",
+      "mobilePresortHelpModalHead",
+      "mobilePresortHelpModalText",
+      "mobilePresortFinishedModalHead",
+      "mobilePresortFinishedModalText",
+      "mobilePresortPreventNavModalHead",
+      "mobilePresortPreventNavModalText",
     ];
 
     clearSection(selectorArray);
