@@ -2,6 +2,8 @@ import React from "react";
 import { useStore } from "../../globalState/useStore";
 import { UserTextInput } from "../utils/UserTextInput";
 import { UserTextAreaInput } from "../utils/UserTextAreaInput";
+import showSectionDefaults from "./showSectionDefaults";
+import clearSection from "./clearSection";
 
 const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
@@ -11,59 +13,60 @@ const MobileSortTextInput: React.FC = () => {
   const setText = useStore(getSetText);
 
   const mobileSortSwapModalHead = useStore((state) => state.mobileSortSwapModalHead);
-  const setMobileSortSwapModalHead = useStore((state) => state.setMobileSortSwapModalHead);
+  // const setMobileSortSwapModalHead = useStore((state) => state.setMobileSortSwapModalHead);
 
   const mobileSortSwapModalText = useStore((state) => state.mobileSortSwapModalText);
-  const setMobileSortSwapModalText = useStore((state) => state.setMobileSortSwapModalText);
+  // const setMobileSortSwapModalText = useStore((state) => state.setMobileSortSwapModalText);
 
   const mobileSortSwapModalConfirmButton = useStore(
     (state) => state.mobileSortSwapModalConfirmButton
   );
-  const setMobileSortSwapModalConfirmButton = useStore(
-    (state) => state.setMobileSortSwapModalConfirmButton
-  );
+  // const setMobileSortSwapModalConfirmButton = useStore(
+  //   (state) => state.setMobileSortSwapModalConfirmButton
+  // );
 
   const mobileSortConditionsOfInstruction = useStore(
     (state) => state.mobileSortConditionsOfInstruction
   );
-  const setMobileSortConditionsOfInstruction = useStore(
-    (state) => state.setMobileSortConditionsOfInstruction
-  );
+  // const setMobileSortConditionsOfInstruction = useStore(
+  //   (state) => state.setMobileSortConditionsOfInstruction
+  // );
 
   const mobileSortHelpModalHead = useStore((state) => state.mobileSortHelpModalHead);
-  const setMobileSortHelpModalHead = useStore((state) => state.setMobileSortHelpModalHead);
+  // const setMobileSortHelpModalHead = useStore((state) => state.setMobileSortHelpModalHead);
 
   const mobileSortHelpModalText = useStore((state) => state.mobileSortHelpModalText);
-  const setMobileSortHelpModalText = useStore((state) => state.setMobileSortHelpModalText);
+  // const setMobileSortHelpModalText = useStore((state) => state.setMobileSortHelpModalText);
 
   const mobileSortScrollBottomModalHead = useStore(
     (state) => state.mobileSortScrollBottomModalHead
   );
-  const setMobileSortScrollBottomModalHead = useStore(
-    (state) => state.setMobileSortScrollBottomModalHead
-  );
+  // const setMobileSortScrollBottomModalHead = useStore(
+  //   (state) => state.setMobileSortScrollBottomModalHead
+  // );
 
   const mobileSortScrollBottomModalText = useStore(
     (state) => state.mobileSortScrollBottomModalText
   );
-  const setMobileSortScrollBottomModalText = useStore(
-    (state) => state.setMobileSortScrollBottomModalText
-  );
+
+  // const setMobileSortScrollBottomModalText = useStore(
+  //   (state) => state.setMobileSortScrollBottomModalText
+  // );
 
   const handleRefImage = (e) => {
     // showRefImage(e.target.id);
   };
   const handleShowDefaults = (e) => {
-    // showSectionDefaults(e.target.id);
+    showSectionDefaults(e.target.id);
   };
 
   const handleTextChange = (e) => {
     // console.log("handleTextChange", e.target.value);
-    // setText(e.target.name, e.target.value);
+    setText(e.target.name, e.target.value);
   };
 
   const handleClearAll = (e) => {
-    // clearSection(e.target.id);
+    clearSection(e.target.id);
   };
 
   if (displayMode === "beginner") {
@@ -79,20 +82,24 @@ const MobileSortTextInput: React.FC = () => {
         <div className="flex flex-row gap-4">
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
-            id="footerDef"
-            className="bg-slate-300 p-2 rounded-md"
+            id="mobileSortDef"
+            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
             Use Defaults
           </button>
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
-          <button id="footerClear" className="bg-slate-300 p-2 rounded-md" onClick={handleClearAll}>
+          <button
+            id="mobileSortClear"
+            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
+            onClick={handleClearAll}
+          >
             Clear Section
           </button>
           {/* <RefImageButton */}
           <button
-            className="bg-slate-300 p-2 rounded-md"
-            id="footerImage"
+            className="bg-slate-300 p-2 rounded-md w-[160px] hover:bg-slate-400 hover:font-semibold"
+            id="mobileSortImage"
             // marginRight="35px"
             onClick={handleRefImage}
           >

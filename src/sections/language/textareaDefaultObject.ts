@@ -5,7 +5,7 @@ const showSectionDefaults = () => {
     btnHelp: "Help",
     footerTextSize: `Text Size`,
     footerCardHeight: `Card Height`,
-    // langLoginFirst: `Please complete the log-in process first.`,
+    // LoginFirst: `Please complete the log-in process first.`,
     btnNext: "Continue",
     stepCompleted: `You have completed this step. Please click on the <b> blue "Continue" button </b> at the bottom right-side of your screen to go to the next step.`,
     screenOrientationText: "Please Use Portrait Orientation!",
@@ -128,76 +128,95 @@ const showSectionDefaults = () => {
     sortOverloadedColumnModalText: `One of the columns has too many cards (it will be outlined in orange and have a dashed border). Please adjust the placement of the cards so that all columns have the correct number.`,
 
     /*
+     ******** MOBILE SORT  ****************** */
+    mobileSortSwapModalHead: `Swap Statement Rankings?`,
+    mobileSortSwapModalText: `Click "Confirm" to swap.`,
+    mobileSortSwapModalConfirmButton: `Swap`,
+    mobileSortConditionsOfInstruction: `Rank the Statements According to Your Experience of using the iPads in the Class`,
+    mobileSortHelpModalHead: `Stage 3 of 5<br/> Final Statement Ranking`,
+    mobileSortHelpModalText: `The statements have been ranked based on your previous evaluations.<br/><br/> Those statements that are closest to your perspective should be at the top of the list. Those that are farthest from your perspective should be at the bottom of the list.<br/><br/>You will need to <b>scroll down</b> to see all of the statements.<br/><br/>Please <b>review the rankings</b> and make any necessary changes to the ranking of the statements so that the ordering <b>accurately reflects your perspective</b>. <br/><br/><mark>This is the most critical stage of the survey, so please review the statement rankings carefully.</mark><br/><br/> To <b>swap the positions of neighboring statements</b>, tap the up or down arrows on the right or left side of the statement.<br/><br/>To <b>swap the positions of statements that are separated</b>, tap on two statements (the statement color will change to yellow) and a swap confirmation message will appear.<br/><br/>When you are satisfied with all of the rankings, tap the navigation button on the bottom right.`,
+    mobileSortScrollBottomModalHead: `Navigation Disabled`,
+    mobileSortScrollBottomModalText: `Please scroll to the bottom and review the ranking of all the statements before going to the next stage.`,
+
+    /*
      ******** POSTSORT  ****************** */
-    PostsortHeader: `Post-Sort Comments`,
-    PostsortInstructions: `<h3>Please describe your thoughts about these statements in more detail.</h3>`,
-    Placeholder: `Click here to add comment`,
-    PostsortAgreement: `Placed on Agree`,
-    PostsortDisagreement: `Placed on Disagree`,
-    PostsortModalHead: `Step 3 of 4`,
-    PostsortModalText: `You can use the buttons at the bottom of the page to change the font size or card height.<br/><br/><center><iframe width="560" height="315" src="https://www.youtube.com/embed/EFNlSiaEVVg?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></h3></center>`,
-    PostsortPreventNavModalHead: `Navigation Disabled`,
-    PostsortPreventNavModalText: `Please add comments to all of the cards before going to the next step.`,
-    PostsortBackButton: `Go Back`,
+    postsortHeader: `Post-Sort Comments`,
+    postsortInstructions: `<h3>Please describe your thoughts about these statements in more detail.</h3>`,
+    placeholder: `Click here to add comment`,
+    postsortAgreement: `Placed on Agree`,
+    postsortDisagreement: `Placed on Disagree`,
+    postsortModalHead: `Step 3 of 4`,
+    postsortModalText: `You can use the buttons at the bottom of the page to change the font size or card height.<br/><br/><center><iframe width="560" height="315" src="https://www.youtube.com/embed/EFNlSiaEVVg?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></h3></center>`,
+    postsortPreventNavModalHead: `Navigation Disabled`,
+    postsortPreventNavModalText: `Please add comments to all of the cards before going to the next step.`,
+    postsortBackButton: `Go Back`,
+
+    /*
+     ******** MOBILE POSTSORT  ****************** */
+    mobilePostsortPreventNavModalHead: `Navigation Disabled`,
+    mobilePostsortPreventNavModalText: `Please add comments to all of the statements before going to the next step.`,
+    mobilePostsortSortbarText: `Postsort Comments`,
+    mobilePostsortHelpModalHead: `Stage 4 of 5<br/> Post-Ranking Comments`,
+    mobilePostsortHelpModalText: `Please comment on your rankings of these statements.`,
 
     /*
      ******** SURVEY  ****************** */
-    langSurveyHeader: `Post-Sort Questionnaire`,
-    langSurveyModalHead: `Step 4 of 4`,
-    langSurveyModalText: `Finally, please answer the following questions regarding your background. The questions marked with an "*" in their title are required.<br/><br/><center><iframe width="560" height="315" src="https://www.youtube.com/embed/68MHzgLn1zg?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
-    langSurveyPreventNavModalHead: `Navigation Disabled`,
-    langSurveyPreventNavModalText: `Please answer the required questions (outlined in yellow) before going to the next step.`,
+    surveyHeader: `Post-Sort Questionnaire`,
+    surveyModalHead: `Step 4 of 4`,
+    surveyModalText: `Finally, please answer the following questions regarding your background. The questions marked with an "*" in their title are required.<br/><br/><center><iframe width="560" height="315" src="https://www.youtube.com/embed/68MHzgLn1zg?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
+    surveyPreventNavModalHead: `Navigation Disabled`,
+    surveyPreventNavModalText: `Please answer the required questions (outlined in yellow) before going to the next step.`,
 
     /*
      ******** SUBMIT  ****************** */
-    langBtnTransfer: `Submit Data`,
-    langTransferHead: `Final Step`,
-    langTransferTextAbove: `<h1>Ready to Submit</h1><br/><br/> <h2>Please click the "Submit Data" button to transmit your results.</h2>`,
-    langTransferTextBelow: `If the submission confirmation message does not appear, <br/>please wait a few minutes and click the submit button again.`,
-    langTransferOkModalHeader: `Success - The data have been sent to the server.`,
-    langTransferOkModalText: `Thank you for using EQ Web Sort!<br/><br/>You can now close your browser tab.`,
-    langTransferFailModalHeader: `Connection to server failed`,
-    langTransferFailModalText: `Please try again in a few moments.`,
-    langFallbackMessage: `Data transmission has failed. Please download the results and email them as an attachment to ken.q.tools@gmail.com.  Thank you!`,
-    langBtnDownload: `Download`,
-    langGoodbyeMessage: `<div>Thank You!</div> <br/><div>You can now close the browser tab</div>`,
+    BtnTransfer: `Submit Data`,
+    TransferHead: `Final Step`,
+    TransferTextAbove: `<h1>Ready to Submit</h1><br/><br/> <h2>Please click the "Submit Data" button to transmit your results.</h2>`,
+    TransferTextBelow: `If the submission confirmation message does not appear, <br/>please wait a few minutes and click the submit button again.`,
+    TransferOkModalHeader: `Success - The data have been sent to the server.`,
+    TransferOkModalText: `Thank you for using EQ Web Sort!<br/><br/>You can now close your browser tab.`,
+    TransferFailModalHeader: `Connection to server failed`,
+    TransferFailModalText: `Please try again in a few moments.`,
+    FallbackMessage: `Data transmission has failed. Please download the results and email them as an attachment to ken.q.tools@gmail.com.  Thank you!`,
+    BtnDownload: `Download`,
+    GoodbyeMessage: `<div>Thank You!</div> <br/><div>You can now close the browser tab</div>`,
     /*
      ******** EMAIL  ****************** */
-    langEmailSubmitBtn: "Open Email Client and Send Results",
-    langEmailCopyResultsBtn: "Copy Results to Clipboard",
-    langEmailCopyAddressBtn: "Copy Email Address to Clipboard",
-    langCopySuccessMessage: "Copied!",
-    langCopyFailMessage: "Error: Please try again.",
-    langDefaultEmailFailModalText:
+    EmailSubmitBtn: "Open Email Client and Send Results",
+    EmailCopyResultsBtn: "Copy Results to Clipboard",
+    EmailCopyAddressBtn: "Copy Email Address to Clipboard",
+    CopySuccessMessage: "Copied!",
+    CopyFailMessage: "Error: Please try again.",
+    DefaultEmailFailModalText:
       "Your default email client should have automatically opened with the results in the email body. If it didn't, please use the buttons below to copy and paste your information into an email.",
-    langEmailBodyMessage:
+    EmailBodyMessage:
       "You don't have to add anything to this email. Please just click the SEND button.",
 
     /*
      ******** SECOND PROJECT LINK  ****************** */
-    langLinkingFallbackMessage: "Please click the button to begin the next Q sort",
-    langLinkingBtnText: "Begin Next Q sort",
+    LinkingFallbackMessage: "Please click the button to begin the next Q sort",
+    LinkingBtnText: "Begin Next Q sort",
 
     /*
      ******** LOCAL DATA COLLECTION  ****************** */
-    langLocalHeader: "Offline Q-sort Control Panel",
-    langPartIdText: "Participant Name",
-    langUsercodeText: "Usercode",
-    langLocalStartButtonText: "Start Q-sort",
-    langLocalDeleteButtonText: "Delete",
-    langLocalDownloadButtonText: "Save Q-sort Data to Disk",
-    langStoredQsortsHeaderText: "Stored Q-sorts",
-    langLocalDeleteModalText:
+    LocalHeader: "Offline Q-sort Control Panel",
+    PartIdText: "Participant Name",
+    UsercodeText: "Usercode",
+    LocalStartButtonText: "Start Q-sort",
+    LocalDeleteButtonText: "Delete",
+    LocalDownloadButtonText: "Save Q-sort Data to Disk",
+    StoredQsortsHeaderText: "Stored Q-sorts",
+    LocalDeleteModalText:
       "This will delete the participant Q-sort data that is currently stored in the browser. You would usually only do this when you are starting a new project.<br/><br/><b>CAUTION - Deleted data cannot be recovered.</b> <br/><br/> <center></center>",
-    langLocalDeleteModalHead: "Delete Data Stored in Browser?",
-    langLocalParticipantsText: "Participants",
-    langLocalSaveDataButton: "Save Participant Data to Browser Memory",
-    langLocalSubmitSuccessModalHeader: "Success",
-    langLocalSubmitSuccessModalText:
+    LocalDeleteModalHead: "Delete Data Stored in Browser?",
+    LocalParticipantsText: "Participants",
+    LocalSaveDataButton: "Save Participant Data to Browser Memory",
+    LocalSubmitSuccessModalHeader: "Success",
+    LocalSubmitSuccessModalText:
       "Participant Q sort data have been successfully saved to browser memory",
-    langReturnToLocalPanelButtonText: "Return to Control Panel",
-    langLocalSaveBeforeDeleteModalHeader: "Delete Disabled",
-    langLocalSaveBeforeDeleteModalText: "Save Q sort Data to Disk before deleting.",
+    ReturnToLocalPanelButtonText: "Return to Control Panel",
+    LocalSaveBeforeDeleteModalHeader: "Delete Disabled",
+    LocalSaveBeforeDeleteModalText: "Save Q sort Data to Disk before deleting.",
   };
   return obj;
 };

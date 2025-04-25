@@ -176,7 +176,6 @@ const showSectionDefaults = (section) => {
   }
 
   if (section === "sortDef") {
-    console.log("sortDef");
     selectorArray = [
       "sortHelpModalHead",
       "sortHelpModalText",
@@ -194,33 +193,62 @@ const showSectionDefaults = (section) => {
     setDefaults(selectorArray);
   }
 
+  if (section === "mobileSortDef") {
+    selectorArray = [
+      "mobileSortSwapModalHead",
+      "mobileSortSwapModalText",
+      "mobileSortSwapModalConfirmButton",
+      "mobileSortConditionsOfInstruction",
+      "mobileSortHelpModalHead",
+      "mobileSortHelpModalText",
+      "mobileSortScrollBottomModalHead",
+      "mobileSortScrollBottomModalText",
+    ];
+
+    setDefaults(selectorArray);
+  }
+
   if (section === "postsortDef") {
     selectorArray = [
-      "PostsortHeader",
-      "PostsortInstructions",
-      "Placeholder",
-      "PostsortAgreement",
-      "PostsortDisagreement",
-      "PostsortModalHead",
-      "PostsortModalText",
-      "PostsortPreventNavModalHead",
-      "PostsortPreventNavModalText",
-      "PostsortBackButton",
+      "postsortHeader",
+      "postsortInstructions",
+      "placeholder",
+      "postsortAgreement",
+      "postsortDisagreement",
+      "postsortModalHead",
+      "postsortModalText",
+      "postsortPreventNavModalHead",
+      "postsortPreventNavModalText",
+      "postsortBackButton",
     ];
 
     setDefaults(selectorArray);
   }
+
+  if (section === "mobilePostsortDef") {
+    selectorArray = [
+      "mobilePostsortPreventNavModalHead",
+      "mobilePostsortPreventNavModalText",
+      "mobilePostsortSortbarText",
+      "mobilePostsortHelpModalHead",
+      "mobilePostsortHelpModalText",
+    ];
+
+    setDefaults(selectorArray);
+  }
+
   if (section === "surveyDef") {
     selectorArray = [
-      "SurveyHeader",
-      "SurveyModalHead",
-      "SurveyModalText",
-      "SurveyPreventNavModalHead",
-      "SurveyPreventNavModalText",
+      "surveyHeader",
+      "surveyModalHead",
+      "surveyModalText",
+      "surveyPreventNavModalHead",
+      "surveyPreventNavModalText",
     ];
 
     setDefaults(selectorArray);
   }
+
   if (section === "submitDef") {
     selectorArray = [
       "BtnTransfer",

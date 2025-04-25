@@ -74,18 +74,22 @@ const SubmitTextInput: React.FC = () => {
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="footerDef"
-            className="bg-slate-300 p-2 rounded-md"
+            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
             Use Defaults
           </button>
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
-          <button id="footerClear" className="bg-slate-300 p-2 rounded-md" onClick={handleClearAll}>
+          <button
+            id="footerClear"
+            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
+            onClick={handleClearAll}
+          >
             Clear Section
           </button>
           {/* <RefImageButton */}
           <button
-            className="bg-slate-300 p-2 rounded-md"
+            className="bg-slate-300 p-2 rounded-md w-[160px] hover:bg-slate-400 hover:font-semibold"
             id="footerImage"
             // marginRight="35px"
             onClick={handleRefImage}

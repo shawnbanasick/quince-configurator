@@ -189,18 +189,46 @@ const showSectionDefaults = (section) => {
 
     clearSection(selectorArray);
   }
+
+  if (section === "mobileSortClear") {
+    selectorArray = [
+      "mobileSortSwapModalHead",
+      "mobileSortSwapModalText",
+      "mobileSortSwapModalConfirmButton",
+      "mobileSortConditionsOfInstruction",
+      "mobileSortHelpModalHead",
+      "mobileSortHelpModalText",
+      "mobileSortScrollBottomModalHead",
+      "mobileSortScrollBottomModalText",
+    ];
+
+    clearSection(selectorArray);
+  }
+
   if (section === "postsortClear") {
     selectorArray = [
-      "PostsortHeader",
-      "PostsortInstructions",
-      "Placeholder",
-      "PostsortAgreement",
-      "PostsortDisagreement",
-      "PostsortModalHead",
-      "PostsortModalText",
-      "PostsortPreventNavModalHead",
-      "PostsortPreventNavModalText",
-      "PostsortBackButton",
+      "postsortHeader",
+      "postsortInstructions",
+      "placeholder",
+      "postsortAgreement",
+      "postsortDisagreement",
+      "postsortModalHead",
+      "postsortModalText",
+      "postsortPreventNavModalHead",
+      "postsortPreventNavModalText",
+      "postsortBackButton",
+    ];
+
+    clearSection(selectorArray);
+  }
+
+  if (section === "mobilePostsortClear") {
+    selectorArray = [
+      "mobilePostsortPreventNavModalHead",
+      "mobilePostsortPreventNavModalText",
+      "mobilePostsortSortbarText",
+      "mobilePostsortHelpModalHead",
+      "mobilePostsortHelpModalText",
     ];
 
     clearSection(selectorArray);
@@ -208,11 +236,11 @@ const showSectionDefaults = (section) => {
 
   if (section === "surveyClear") {
     selectorArray = [
-      "SurveyHeader",
-      "SurveyModalHead",
-      "SurveyModalText",
-      "SurveyPreventNavModalHead",
-      "SurveyPreventNavModalText",
+      "surveyHeader",
+      "surveyModalHead",
+      "surveyModalText",
+      "surveyPreventNavModalHead",
+      "surveyPreventNavModalText",
     ];
 
     clearSection(selectorArray);
