@@ -38,13 +38,13 @@ const createMapXmlSlice = (set) => ({
   localDownloadButtonText: "Save Q-sort Data to Disk",
   storedQsortsHeaderText: "Stored Q-sorts",
   localDeleteModalText:
-    "This will delete the particpant Q-sort data that is currently stored in the browser. You would usually only do this when you are starting a new project.<br/><br/><b>CAUTION - Deleted data cannot be recovered.</b> <br/><br/> <center></center>",
+    "This will delete the participant Q-sort data that is currently stored in the browser. You would usually only do this when you are starting a new project.<br/><br/><b>CAUTION - Deleted data cannot be recovered.</b> <br/><br/> <center></center>",
   localDeleteModalHead: "Delete Data Stored in Browser?",
   localParticipantsText: "Participants",
   localSaveDataButton: "Save Participant Data to Browser Memory",
   localSubmitSuccessModalHeader: "Success",
   localSubmitSuccessModalText:
-    "Participant Q sort data have been succesfully saved to browser memory",
+    "Participant Q sort data have been successfully saved to browser memory",
   localSaveBeforeDeleteModalHeader: "Delete Disabled",
   localSaveBeforeDeleteModalText: "Save Q sort Data to Disk before deleting.",
   returnToLocalPanelButtonText: "Return to Control Panel",
@@ -105,7 +105,7 @@ const createMapXmlSlice = (set) => ({
   initialInstructionPart3: `Another set of statements will appear on the screen after you click the orange "Submit" button.`,
   agreeMostText: `Next, repeat the process with the remaining statements, but this time please select the cards that you agree with the most.`,
   agreeLeastText: `Next, repeat the process with the remaining statements, but this time please select the cards that you agree with the least.`,
-  finalInstructions: `Refinement process complete. Click on the navigation button on the bottom right side to go to the next stage..`,
+  finalInstructions: `Refinement process complete. Click on the navigation button on the bottom right side to go to the next stage.`,
 
   /*
    ******** MOBILE THINNING  ****************** */
@@ -128,7 +128,7 @@ const createMapXmlSlice = (set) => ({
   mobileGuidanceModalLeft1Header: `Stage 2 of 5<br/> Refinement Process`,
   mobileGuidanceModalLeft1Text: `Step 2. Next, please look at all of the statements that you evaluated negatively and <b>select</b> those that <b>differ the most</b> from your perspective.<br/><br/>You may need to <b>scroll down</b> to see all of the statements.`,
   mobileGuidanceModalLeft2Header: `Stage 2 of 5<br/> Refinement Process`,
-  mobileGuidanceModalLeft2Text: `Next, once again look at the remaining statements that you evalued <b>negatively</b> and <b>select</b> the <b>next set</b> of statements that are <b>most different from to your perspective</b>.`,
+  mobileGuidanceModalLeft2Text: `Next, once again look at the remaining statements that you evaluated <b>negatively</b> and <b>select</b> the <b>next set</b> of statements that are <b>most different from to your perspective</b>.`,
   mobileThinScrollBottomModalHead: `Confirmation Disabled`,
   mobileThinScrollBottomModalText: `Please scroll to the bottom and review all the statements before confirming your selections.`,
 
@@ -608,8 +608,8 @@ const createMapXmlSlice = (set) => ({
   setEmailCopyResultsBtn: (value) => {
     set(() => ({ emailCopyResultsBtn: value }));
   },
-  setEmaiCopyAddressBtn: (value) => {
-    set(() => ({ emaiCopyAddressBtn: value }));
+  setEmailCopyAddressBtn: (value) => {
+    set(() => ({ emailCopyAddressBtn: value }));
   },
   setCopySuccessMessage: (value) => {
     set(() => ({ copySuccessMessage: value }));

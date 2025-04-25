@@ -61,20 +61,24 @@ const RefineEvaluationsTextInput = () => {
         <div className="flex flex-row gap-4">
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
-            id="footerDef"
-            className="bg-slate-300 p-2 rounded-md"
+            id="refineDef"
+            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
             Use Defaults
           </button>
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
-          <button id="footerClear" className="bg-slate-300 p-2 rounded-md" onClick={handleClearAll}>
+          <button
+            id="refineClear"
+            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
+            onClick={handleClearAll}
+          >
             Clear Section
           </button>
           {/* <RefImageButton */}
           <button
-            className="bg-slate-300 p-2 rounded-md"
-            id="footerImage"
+            className="bg-slate-300 p-2 rounded-md w-[160px] hover:bg-slate-400 hover:font-semibold"
+            id="refineImage"
             // marginRight="35px"
             onClick={handleRefImage}
           >
@@ -136,7 +140,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label="7-5. Incomplete Selection Modal Main Text"
+          label="7-5. Select Statements of Greatest Agreement Message 1"
           name="agreeMostText"
           height={150}
           value={agreeMostText}
@@ -150,7 +154,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label="7-6. Select Statements of Least Greatest Agreement"
+          label="7-6. Select Statements of Greatest Agreement Message 2"
           name="initialInstructionPart1"
           height={150}
           value={initialInstructionPart1}
@@ -164,7 +168,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label="7-7. Select Statements of Least Greatest Disagreement"
+          label="7-7. Select Statements of Greatest Agreement Message 3"
           name="initialInstructionPart2"
           height={150}
           value={initialInstructionPart2}
@@ -178,7 +182,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label="7-8. Another Set of Statements"
+          label="7-8. Another Set of Statements is Displayed"
           name="initialInstructionPart3"
           height={150}
           value={initialInstructionPart3}
@@ -192,7 +196,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label="7-9. Continue Selecting Statements of Most Agreement"
+          label="7-9. Select Statements of Greatest Disagreement Message 1"
           name="agreeLeastText"
           height={150}
           value={agreeLeastText}
@@ -206,7 +210,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label="7-10. Continue Selecting Statements of Greatest Disagreement"
+          label="7-10. Select Statements of Greatest Disagreement Message 2"
           name="agreeLeastText"
           height={150}
           value={agreeLeastText}

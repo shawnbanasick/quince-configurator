@@ -67,18 +67,18 @@ const showSectionDefaults = (section) => {
 
   if (section === "localClear") {
     selectorArray = [
-      "langLocalHeader",
-      "langPartIdText",
-      "langUsercodeText",
-      "langLocalStartButtonText",
-      "langLocalDeleteButtonText",
-      "langLocalDownloadButtonText",
-      "langStoredQsortsHeaderText",
-      "langLocalDeleteModalHead",
-      "langLocalDeleteModalText",
-      "langLocalParticipantsText",
-      "langLocalSaveBeforeDeleteModalHeader",
-      "langLocalSaveBeforeDeleteModalText",
+      "LocalHeader",
+      "PartIdText",
+      "UsercodeText",
+      "LocalStartButtonText",
+      "LocalDeleteButtonText",
+      "LocalDownloadButtonText",
+      "StoredQsortsHeaderText",
+      "LocalDeleteModalHead",
+      "LocalDeleteModalText",
+      "LocalParticipantsText",
+      "LocalSaveBeforeDeleteModalHeader",
+      "LocalSaveBeforeDeleteModalText",
     ];
 
     clearSection(selectorArray);
@@ -126,35 +126,81 @@ const showSectionDefaults = (section) => {
     clearSection(selectorArray);
   }
 
+  if (section === "refineClear") {
+    selectorArray = [
+      "thinningPreventNavModalHead",
+      "thinningPreventNavModalText",
+      "thinningConfirmModalHead",
+      "thinningConfirmModalText",
+      "initialInstructionPart1",
+      "initialInstructionPart2",
+      "initialInstructionPart3",
+      "agreeMostText",
+      "agreeLeastText",
+      "finalInstructions",
+    ];
+
+    clearSection(selectorArray);
+  }
+
+  if (section === "mobileRefineClear") {
+    selectorArray = [
+      "moveTopMobileHead",
+      "moveTopMobileText",
+      "moveAllTopMobileText",
+      "moveTopMobileButtonOK",
+      "moveTopMobileButtonCancel",
+      "mobileThinConditionsOfInstruction",
+      "mobileThinSubmitButtonText",
+      "mobileThinHelpModalHead",
+      "mobileThinHelpModalText",
+      "mobileThinPreventNavModalHead",
+      "mobileThinPreventNavModalText",
+      "mobileThinProcessCompleteMessage",
+      "mobileGuidanceModalRight1Header",
+      "mobileGuidanceModalRight1Text",
+      "mobileGuidanceModalRight2Header",
+      "mobileGuidanceModalRight2Text",
+      "mobileGuidanceModalLeft1Header",
+      "mobileGuidanceModalLeft1Text",
+      "mobileGuidanceModalLeft2Header",
+      "mobileGuidanceModalLeft2Text",
+      "mobileThinScrollBottomModalHead",
+      "mobileThinScrollBottomModalText",
+    ];
+
+    clearSection(selectorArray);
+  }
+
   if (section === "sortClear") {
     selectorArray = [
-      "langSortHelpModalHead",
-      "langSortHelpModalText",
-      "langSortAgreement",
-      "langSortDisagreement",
-      "langCondOfInst",
-      "langSortingCompleteModalHead",
-      "langSortingCompleteModalText",
-      "langSortPreventNavModalHead",
-      "langSortPreventNavModalText",
-      "langSortOverloadedColumnModalHead",
-      "langSortOverloadedColumnModalText",
+      "sortHelpModalHead",
+      "sortHelpModalText",
+      "sortAgreement",
+      "sortDisagreement",
+      "condOfInst",
+      "sortingCompleteModalHead",
+      "sortingCompleteModalText",
+      "sortPreventNavModalHead",
+      "sortPreventNavModalText",
+      "sortOverloadedColumnModalHead",
+      "sortOverloadedColumnModalText",
     ];
 
     clearSection(selectorArray);
   }
   if (section === "postsortClear") {
     selectorArray = [
-      "langPostsortHeader",
-      "langPostsortInstructions",
-      "langPlaceholder",
-      "langPostsortAgreement",
-      "langPostsortDisagreement",
-      "langPostsortModalHead",
-      "langPostsortModalText",
-      "langPostsortPreventNavModalHead",
-      "langPostsortPreventNavModalText",
-      "langPostsortBackButton",
+      "PostsortHeader",
+      "PostsortInstructions",
+      "Placeholder",
+      "PostsortAgreement",
+      "PostsortDisagreement",
+      "PostsortModalHead",
+      "PostsortModalText",
+      "PostsortPreventNavModalHead",
+      "PostsortPreventNavModalText",
+      "PostsortBackButton",
     ];
 
     clearSection(selectorArray);
@@ -162,57 +208,57 @@ const showSectionDefaults = (section) => {
 
   if (section === "surveyClear") {
     selectorArray = [
-      "langSurveyHeader",
-      "langSurveyModalHead",
-      "langSurveyModalText",
-      "langSurveyPreventNavModalHead",
-      "langSurveyPreventNavModalText",
+      "SurveyHeader",
+      "SurveyModalHead",
+      "SurveyModalText",
+      "SurveyPreventNavModalHead",
+      "SurveyPreventNavModalText",
     ];
 
     clearSection(selectorArray);
   }
   if (section === "submitClear") {
     selectorArray = [
-      "langBtnTransfer",
-      "langTransferHead",
-      "langTransferTextAbove",
-      "langTransferTextBelow",
-      "langTransferOkModalHeader",
-      "langTransferOkModalText",
-      "langTransferFailModalHeader",
-      "langTransferFailModalText",
-      "langFallbackMessage",
-      "langBtnDownload",
-      "langGoodbyeMessage",
+      "BtnTransfer",
+      "TransferHead",
+      "TransferTextAbove",
+      "TransferTextBelow",
+      "TransferOkModalHeader",
+      "TransferOkModalText",
+      "TransferFailModalHeader",
+      "TransferFailModalText",
+      "FallbackMessage",
+      "BtnDownload",
+      "GoodbyeMessage",
     ];
 
     clearSection(selectorArray);
   }
   if (section === "localSubmitClear") {
     selectorArray = [
-      "langLocalSaveDataButton",
-      "langLocalSubmitSuccessModalHeader",
-      "langLocalSubmitSuccessModalText",
-      "langReturnToLocalPanelButtonText",
+      "LocalSaveDataButton",
+      "LocalSubmitSuccessModalHeader",
+      "LocalSubmitSuccessModalText",
+      "ReturnToLocalPanelButtonText",
     ];
 
     clearSection(selectorArray);
   }
   if (section === "emailClear") {
     selectorArray = [
-      "langEmailSubmitBtn",
-      "langEmailCopyResultsBtn",
-      "langEmaiCopyAddressBtn",
-      "langCopySuccessMessage",
-      "langCopyFailMessage",
-      "langDefaultEmailFailModalText",
-      "langEmailBodyMessage",
+      "EmailSubmitBtn",
+      "EmailCopyResultsBtn",
+      "EmailCopyAddressBtn",
+      "CopySuccessMessage",
+      "CopyFailMessage",
+      "DefaultEmailFailModalText",
+      "EmailBodyMessage",
     ];
 
     clearSection(selectorArray);
   }
   if (section === "linkingClear") {
-    selectorArray = ["langLinkingFallbackMessage", "langLinkingBtnText"];
+    selectorArray = ["LinkingFallbackMessage", "LinkingBtnText"];
 
     clearSection(selectorArray);
   }

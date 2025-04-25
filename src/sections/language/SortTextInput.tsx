@@ -77,20 +77,24 @@ const SortTextInput: React.FC = () => {
         <div className="flex flex-row gap-4">
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
-            id="footerDef"
-            className="bg-slate-300 p-2 rounded-md"
+            id="sortDef"
+            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
             Use Defaults
           </button>
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
-          <button id="footerClear" className="bg-slate-300 p-2 rounded-md" onClick={handleClearAll}>
+          <button
+            id="sortClear"
+            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
+            onClick={handleClearAll}
+          >
             Clear Section
           </button>
           {/* <RefImageButton */}
           <button
-            className="bg-slate-300 p-2 rounded-md"
-            id="footerImage"
+            className="bg-slate-300 p-2 rounded-md w-[160px] hover:bg-slate-400 hover:font-semibold"
+            id="sortImage"
             // marginRight="35px"
             onClick={handleRefImage}
           >
