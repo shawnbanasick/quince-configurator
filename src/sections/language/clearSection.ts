@@ -245,23 +245,37 @@ const showSectionDefaults = (section) => {
 
     clearSection(selectorArray);
   }
+
+  if (section === "mobileSurveyClear") {
+    selectorArray = ["mobileSurveyHelpModalHead", "mobileSurveyHelpModalText"];
+
+    clearSection(selectorArray);
+  }
+
   if (section === "submitClear") {
     selectorArray = [
-      "BtnTransfer",
-      "TransferHead",
-      "TransferTextAbove",
-      "TransferTextBelow",
-      "TransferOkModalHeader",
-      "TransferOkModalText",
-      "TransferFailModalHeader",
-      "TransferFailModalText",
-      "FallbackMessage",
-      "BtnDownload",
-      "GoodbyeMessage",
+      "btnTransfer",
+      "transferHead",
+      "transferTextAbove",
+      "transferTextBelow",
+      "transferOkModalHeader",
+      "transferOkModalText",
+      "transferFailModalHeader",
+      "transferFailModalText",
+      "fallbackMessage",
+      "btnDownload",
+      "goodbyeMessage",
     ];
 
     clearSection(selectorArray);
   }
+
+  if (section === "mobileSubmitClear") {
+    selectorArray = ["mobileSortTitleBar"];
+
+    clearSection(selectorArray);
+  }
+
   if (section === "localSubmitClear") {
     selectorArray = [
       "LocalSaveDataButton",
@@ -274,19 +288,19 @@ const showSectionDefaults = (section) => {
   }
   if (section === "emailClear") {
     selectorArray = [
-      "EmailSubmitBtn",
-      "EmailCopyResultsBtn",
-      "EmailCopyAddressBtn",
-      "CopySuccessMessage",
-      "CopyFailMessage",
-      "DefaultEmailFailModalText",
-      "EmailBodyMessage",
+      "emailSubmitBtn",
+      "emailCopyResultsBtn",
+      "emailCopyAddressBtn",
+      "copySuccessMessage",
+      "copyFailMessage",
+      "defaultEmailFailModalText",
+      "emailBodyMessage",
     ];
 
     clearSection(selectorArray);
   }
   if (section === "linkingClear") {
-    selectorArray = ["LinkingFallbackMessage", "LinkingBtnText"];
+    selectorArray = ["linkingFallbackMessage", "linkingBtnText"];
 
     clearSection(selectorArray);
   }

@@ -33,10 +33,6 @@ const EmailTextInput: React.FC = () => {
   const emailBodyMessage = useStore((state) => state.emailBodyMessage);
   const setEmailBodyMessage = useStore((state) => state.setEmailBodyMessage);
 
-  //   const handleTextChange = (setter) => (e) => {
-  //     setter(e.target.value);
-  //   };
-
   const handleRefImage = (e) => {
     // showRefImage(e.target.id);
   };
@@ -65,21 +61,24 @@ const EmailTextInput: React.FC = () => {
         <div className="flex flex-row gap-4">
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
-            id="footerDef"
-            className="bg-slate-300 p-2 rounded-md"
+            id="emailDef"
+            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
             Use Defaults
           </button>
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
-          <button id="footerClear" className="bg-slate-300 p-2 rounded-md" onClick={handleClearAll}>
+          <button
+            id="emailClear"
+            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
+            onClick={handleClearAll}
+          >
             Clear Section
           </button>
           {/* <RefImageButton */}
           <button
-            className="bg-slate-300 p-2 rounded-md"
-            id="footerImage"
-            // marginRight="35px"
+            className="bg-slate-300 p-2 rounded-md w-[160px] hover:bg-slate-400 hover:font-semibold"
+            id="emailImage"
             onClick={handleRefImage}
           >
             Reference Image

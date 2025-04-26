@@ -73,7 +73,7 @@ const SubmitTextInput: React.FC = () => {
         <div className="flex flex-row gap-4">
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
-            id="footerDef"
+            id="submitDef"
             className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
@@ -81,7 +81,7 @@ const SubmitTextInput: React.FC = () => {
           </button>
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
-            id="footerClear"
+            id="submitClear"
             className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleClearAll}
           >
@@ -90,7 +90,7 @@ const SubmitTextInput: React.FC = () => {
           {/* <RefImageButton */}
           <button
             className="bg-slate-300 p-2 rounded-md w-[160px] hover:bg-slate-400 hover:font-semibold"
-            id="footerImage"
+            id="submitImage"
             // marginRight="35px"
             onClick={handleRefImage}
           >

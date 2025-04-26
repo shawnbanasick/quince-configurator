@@ -42,20 +42,24 @@ const MobileSubmitTextInput: React.FC = () => {
         <div className="flex flex-row gap-4">
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
-            id="footerDef"
+            id="mobileSubmitDef"
             className="bg-slate-300 p-2 rounded-md"
             onClick={handleShowDefaults}
           >
             Use Defaults
           </button>
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
-          <button id="footerClear" className="bg-slate-300 p-2 rounded-md" onClick={handleClearAll}>
+          <button
+            id="mobileSubmitClear"
+            className="bg-slate-300 p-2 rounded-md"
+            onClick={handleClearAll}
+          >
             Clear Section
           </button>
           {/* <RefImageButton */}
           <button
             className="bg-slate-300 p-2 rounded-md"
-            id="footerImage"
+            id="mobileSubmitImage"
             // marginRight="35px"
             onClick={handleRefImage}
           >

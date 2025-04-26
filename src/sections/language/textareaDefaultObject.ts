@@ -168,34 +168,44 @@ const showSectionDefaults = () => {
     surveyPreventNavModalText: `Please answer the required questions (outlined in yellow) before going to the next step.`,
 
     /*
+     ******** MOBILE SURVEY  ****************** */
+    mobileSurveyHelpModalHead: `Stage 5 of 5<br/> Post-Ranking Survey`,
+    mobileSurveyHelpModalText: `Please answer the following questions.`,
+
+    /*
      ******** SUBMIT  ****************** */
-    BtnTransfer: `Submit Data`,
-    TransferHead: `Final Step`,
-    TransferTextAbove: `<h1>Ready to Submit</h1><br/><br/> <h2>Please click the "Submit Data" button to transmit your results.</h2>`,
-    TransferTextBelow: `If the submission confirmation message does not appear, <br/>please wait a few minutes and click the submit button again.`,
-    TransferOkModalHeader: `Success - The data have been sent to the server.`,
-    TransferOkModalText: `Thank you for using EQ Web Sort!<br/><br/>You can now close your browser tab.`,
-    TransferFailModalHeader: `Connection to server failed`,
-    TransferFailModalText: `Please try again in a few moments.`,
-    FallbackMessage: `Data transmission has failed. Please download the results and email them as an attachment to ken.q.tools@gmail.com.  Thank you!`,
-    BtnDownload: `Download`,
-    GoodbyeMessage: `<div>Thank You!</div> <br/><div>You can now close the browser tab</div>`,
+    btnTransfer: `Submit Data`,
+    transferHead: `Final Step`,
+    transferTextAbove: `<h1>Ready to Submit</h1><br/><br/> <h2>Please click the "Submit Data" button to transmit your results.</h2>`,
+    transferTextBelow: `If the submission confirmation message does not appear, <br/>please wait a few minutes and click the submit button again.`,
+    transferOkModalHeader: `Success - The data have been sent to the server.`,
+    transferOkModalText: `Thank you for using EQ Web Sort!<br/><br/>You can now close your browser tab.`,
+    transferFailModalHeader: `Connection to server failed`,
+    transferFailModalText: `Please try again in a few moments.`,
+    fallbackMessage: `Data transmission has failed. Please download the results and email them as an attachment to ken.q.tools@gmail.com.  Thank you!`,
+    btnDownload: `Download`,
+    goodbyeMessage: `<div>Thank You!</div> <br/><div>You can now close the browser tab</div>`,
+
+    /*
+     ********  MOBILE SUBMIT  ****************** */
+    mobileSortTitleBar: `Submit Data`,
+
     /*
      ******** EMAIL  ****************** */
-    EmailSubmitBtn: "Open Email Client and Send Results",
-    EmailCopyResultsBtn: "Copy Results to Clipboard",
-    EmailCopyAddressBtn: "Copy Email Address to Clipboard",
-    CopySuccessMessage: "Copied!",
-    CopyFailMessage: "Error: Please try again.",
-    DefaultEmailFailModalText:
+    emailSubmitBtn: "Open Email Client and Send Results",
+    emailCopyResultsBtn: "Copy Results to Clipboard",
+    emailCopyAddressBtn: "Copy Email Address to Clipboard",
+    copySuccessMessage: "Copied!",
+    copyFailMessage: "Error: Please try again.",
+    defaultEmailFailModalText:
       "Your default email client should have automatically opened with the results in the email body. If it didn't, please use the buttons below to copy and paste your information into an email.",
-    EmailBodyMessage:
+    emailBodyMessage:
       "You don't have to add anything to this email. Please just click the SEND button.",
 
     /*
      ******** SECOND PROJECT LINK  ****************** */
-    LinkingFallbackMessage: "Please click the button to begin the next Q sort",
-    LinkingBtnText: "Begin Next Q sort",
+    linkingFallbackMessage: "Please click the button to begin the next Q sort",
+    linkingBtnText: "Begin Next Q sort",
 
     /*
      ******** LOCAL DATA COLLECTION  ****************** */
