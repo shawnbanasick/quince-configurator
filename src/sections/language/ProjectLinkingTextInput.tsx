@@ -12,10 +12,7 @@ const ProjectLinkingTextInput: React.FC = () => {
   const setText = useStore(getSetText);
 
   const linkingFallbackMessage = useStore((state) => state.linkingFallbackMessage);
-  const setLinkingFallbackMessage = useStore((state) => state.setLinkingFallbackMessage);
-
   const linkingBtnText = useStore((state) => state.linkingBtnText);
-  const setLinkingBtnText = useStore((state) => state.setLinkingBtnText);
 
   const handleRefImage = (e) => {
     // showRefImage(e.target.id);

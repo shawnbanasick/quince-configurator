@@ -1,4 +1,4 @@
-const createMapXmlSlice = (set, get) => ({
+const createMapXmlSlice = (set) => ({
   mapColorPalette: "steps",
   mapColColorsStyle: "headers",
   activeValueM6: "0",
@@ -45,8 +45,8 @@ const createMapXmlSlice = (set, get) => ({
   qSortPattern: [],
   mapInputQsortPattern: [],
 
-  setColor: (stateDesig, color) => set((state) => ({ [stateDesig]: color })),
-  setNumber: (stateDesig, number) => set((state) => ({ [stateDesig]: number })),
+  setColor: (stateDesig, color) => set(() => ({ [stateDesig]: color })),
+  setNumber: (stateDesig, number) => set(() => ({ [stateDesig]: number })),
 
   setMapColorPalette: (palette) => {
     set(() => ({ mapColorPalette: palette }));

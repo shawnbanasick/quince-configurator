@@ -1,4 +1,4 @@
-const createStatementsXmlSlice = (set, get) => ({
+const createStatementsXmlSlice = (set) => ({
   currentStatements: "",
   numStatements: 0,
 

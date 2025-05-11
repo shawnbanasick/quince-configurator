@@ -5,22 +5,22 @@ import { StatementTextArea } from "./StatementTextArea";
 import { UploadAndReadXmlStatements } from "./UploadAndReadXmlStatements";
 import { generateStatementsXml } from "./generateStatementsXml.ts";
 
-const getDisplayMode = (state) => state.displayMode;
+// const getDisplayMode = (state) => state.displayMode;
 const getCurrentStatements = (state) => state.currentStatements;
 const getVersion = (state) => state.version;
 
 const Statements: React.FC = () => {
   const { t } = useTranslation();
-  const displayMode = useStore(getDisplayMode);
+  // const displayMode = useStore(getDisplayMode);
   const currentStatements = useStore(getCurrentStatements);
   const version = useStore(getVersion);
 
-  let display;
-  if (displayMode === "beginner") {
-    display = true;
-  } else {
-    display = false;
-  }
+  // let display;
+  // if (displayMode === "beginner") {
+  //   display = true;
+  // } else {
+  //   display = false;
+  // }
 
   const handleClick = () => {
     const xmlContent = generateStatementsXml(currentStatements, version);

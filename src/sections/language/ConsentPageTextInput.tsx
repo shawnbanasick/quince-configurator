@@ -2,7 +2,9 @@ import { UserTextInput } from "../utils/UserTextInput";
 import { UserTextAreaInput } from "../utils/UserTextAreaInput";
 import showSectionDefaults from "./showSectionDefaults";
 import clearSection from "./clearSection";
-// import showRefImage from "./showRefImage";
+import consent1 from "../../assets/images/consent-1.png";
+import consent2 from "../../assets/images/consent-2.png";
+
 import { useStore } from "../../globalState/useStore";
 
 const getDisplayMode = (state) => state.displayMode;
@@ -24,19 +26,26 @@ const ConsentPageTextInput = () => {
   const langBtnNextConsent = useStore(getLangBtnNextConsent);
   const langBtnHelpConsent = useStore(getLangBtnHelpConsent);
 
-  const handleRefImage = (e) => {
-    // showRefImage(e.target.id);
+  const handleRefImage = () => {
+    window.open(consent1, "Consent Image 1", "width=800, height=600");
+    return false;
   };
-  const handleShowDefaults = (e) => {
+
+  const handleRefImage2 = () => {
+    window.open(consent2, "Consent Image 2", "width=800, height=300");
+    return false;
+  };
+
+  const handleShowDefaults = (e: any) => {
     console.log("handleShowDefaults", e.target.id);
     showSectionDefaults(e.target.id);
   };
 
-  const handleClearAll = (e) => {
+  const handleClearAll = (e: any) => {
     clearSection(e.target.id);
   };
 
-  const handleTextChange = (e) => {
+  const handleTextChange = (e: any) => {
     console.log("handleTextChange", e.target.value);
     setText(e.target.name, e.target.value);
   };
@@ -49,10 +58,11 @@ const ConsentPageTextInput = () => {
 
   return (
     // <SectionContainer>
+
     <div className="outline outline-2 outline-slate-500 p-2 w-[78vw] max-w-[78vw] rounded-sm bg-gray-100">
       {/* <HeaderButtonBar> */}
-      <div className="flex flex-row justify-between mb-4">
-        <h2>2. Consent Screen (optional)</h2>
+      <div className="flex flex-row justify-between align-middle mb-4">
+        <h2>2. Consent Screen</h2>
         <div className="flex flex-row gap-4">
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
@@ -71,13 +81,24 @@ const ConsentPageTextInput = () => {
             Clear Section
           </button>
           {/* <RefImageButton */}
+          <div className="flex items-center p-2 justify-center h-auto ">
+            <p>Images:</p>
+          </div>
           <button
-            className="bg-slate-300 p-2 rounded-md w-[160px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
             id="consentImage"
             // marginRight="35px"
             onClick={handleRefImage}
           >
-            Reference Image
+            1
+          </button>
+          <button
+            className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            id="consentImage"
+            // marginRight="35px"
+            onClick={handleRefImage2}
+          >
+            2
           </button>
         </div>
       </div>

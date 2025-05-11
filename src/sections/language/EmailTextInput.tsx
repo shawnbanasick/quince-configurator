@@ -13,25 +13,12 @@ const EmailTextInput: React.FC = () => {
   const setText = useStore(getSetText);
 
   const emailSubmitBtn = useStore((state) => state.emailSubmitBtn);
-  const setEmailSubmitBtn = useStore((state) => state.setEmailSubmitBtn);
-
   const emailCopyResultsBtn = useStore((state) => state.emailCopyResultsBtn);
-  const setEmailCopyResultsBtn = useStore((state) => state.setEmailCopyResultsBtn);
-
   const emailCopyAddressBtn = useStore((state) => state.emailCopyAddressBtn);
-  const setEmailCopyAddressBtn = useStore((state) => state.setEmailCopyAddressBtn);
-
   const copySuccessMessage = useStore((state) => state.copySuccessMessage);
-  const setCopySuccessMessage = useStore((state) => state.setCopySuccessMessage);
-
   const copyFailMessage = useStore((state) => state.copyFailMessage);
-  const setCopyFailMessage = useStore((state) => state.setCopyFailMessage);
-
   const defaultEmailFailModalText = useStore((state) => state.defaultEmailFailModalText);
-  const setDefaultEmailFailModalText = useStore((state) => state.setDefaultEmailFailModalText);
-
   const emailBodyMessage = useStore((state) => state.emailBodyMessage);
-  const setEmailBodyMessage = useStore((state) => state.setEmailBodyMessage);
 
   const handleRefImage = (e) => {
     // showRefImage(e.target.id);

@@ -1,3 +1,5 @@
+import { initial } from "lodash";
+
 const createMapXmlSlice = (set) => ({
   /*
    ******** MULTIPLE AND FOOTER ****************** */
@@ -96,6 +98,10 @@ const createMapXmlSlice = (set) => ({
 
   /*
    ******** THINNING  ****************** */
+  thinningPageTitle: `Refine Your Evaluations`,
+  thinningPageSubmitButtonText: `Submit`,
+  thinningPageNumStatesToSelect: `Number of Statements to Select`,
+  thinningPageCurrentNumStatesSelected: `Current Number of Statements Selected`,
   thinningPreventNavModalHead: `Navigation Disabled`,
   thinningPreventNavModalText: `Please finish the refining process before going to the next step.`,
   thinningConfirmModalHead: `Incomplete Selection`,
@@ -103,6 +109,8 @@ const createMapXmlSlice = (set) => ({
   initialInstructionPart1: `Below are the statements you rated positively in the previous step. Now, pick the number of statements that you <b>MOST AGREE</b>.<br /><br />`,
   initialInstructionPart2: `Next, continue to select the statements that are CLOSEST to your perspective`,
   initialInstructionPart3: `Another set of statements will appear on the screen after you click the orange "Submit" button.`,
+  initialInstructionNegPart1: `Below are the statements you rated positively in the previous step. Now, pick statements that <mark<b>DIFFER THE MOST FROM YOUR PERSPECTIVE</b></mark>.`,
+  initialInstructionNegPart2: `Next, continue to select the statements that are <mark>DIFFER THE MOST</mark> from your perspective.`,
   agreeMostText: `Next, repeat the process with the remaining statements, but this time please select the cards that you agree with the most.`,
   agreeLeastText: `Next, repeat the process with the remaining statements, but this time please select the cards that you agree with the least.`,
   finalInstructions: `Refinement process complete. Click on the navigation button on the bottom right side to go to the next stage.`,
@@ -227,11 +235,24 @@ const createMapXmlSlice = (set) => ({
   linkingBtnText: "Begin Next Q sort",
 
   /*
+   ******** MODAL CONTROLLERS  ****************** */
+  triggerConsentImageModal: false,
+
+  /*
    ******** GENERIC STATE CHANGE  ****************** */
   setText: (stateDesig, text) => set(() => ({ [stateDesig]: text })),
 
   /*
    ******** SET VALUES  ****************** */
+
+  setRefineTitlePage: (value) => {
+    set(() => ({ refineTitlePage: value }));
+  },
+
+  setTriggerConsentImageModal: (value) => {
+    set(() => ({ triggerConsentImageModal: value }));
+  },
+
   setMobilePresortConditionsOfInstruction: (value) => {
     set(() => ({ mobilePresortConditionsOfInstruction: value }));
   },

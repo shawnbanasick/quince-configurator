@@ -10,9 +10,7 @@ const getSetText = (state) => state.setText;
 const MobileSubmitTextInput: React.FC = () => {
   let displayMode = useStore(getDisplayMode);
   const setText = useStore(getSetText);
-
   const mobileSortTitleBar = useStore((state) => state.mobileSortTitleBar);
-  const setMobileSortTitleBar = useStore((state) => state.setMobileSortTitleBar);
 
   const handleRefImage = (e) => {
     // showRefImage(e.target.id);
@@ -22,7 +20,6 @@ const MobileSubmitTextInput: React.FC = () => {
   };
 
   const handleTextChange = (e) => {
-    console.log("handleTextChange", e.target.value);
     setText(e.target.name, e.target.value);
   };
 

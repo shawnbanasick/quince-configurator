@@ -2,8 +2,9 @@ import { UserTextInput } from "../utils/UserTextInput";
 import { UserTextAreaInput } from "../utils/UserTextAreaInput";
 import showSectionDefaults from "./showSectionDefaults";
 import clearSection from "./clearSection";
-// import showRefImage from "./showRefImage";
 import { useStore } from "../../GlobalState/useStore";
+import welcome1 from "../../assets/images/welcome-1.png";
+import welcome2 from "../../assets/images/welcome-2.png";
 
 const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
@@ -24,9 +25,16 @@ const WelcomeScreenTextInput = () => {
   const langBtnNextLanding = useStore(getLangBtnNextLanding);
   const langBtnHelpLanding = useStore(getLangBtnHelpLanding);
 
-  const handleRefImage = (e) => {
-    // showRefImage(e.target.id);
+  const handleRefImage = () => {
+    window.open(welcome1, "Welcome Image 1", "width=800, height=600");
+    return false;
   };
+
+  const handleRefImage2 = () => {
+    window.open(welcome2, "Welcome Image 1", "width=800, height=300");
+    return false;
+  };
+
   const handleShowDefaults = (e) => {
     showSectionDefaults(e.target.id);
   };
@@ -68,13 +76,24 @@ const WelcomeScreenTextInput = () => {
             Clear Section
           </button>
           {/* <RefImageButton */}
+          <div className="flex items-center p-2 justify-center h-auto ">
+            <p>Images:</p>
+          </div>
           <button
-            className="bg-slate-300 p-2 rounded-md w-[160px] hover:bg-slate-400 hover:font-semibold"
-            id="welcomeImage"
+            className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            id="consentImage"
             // marginRight="35px"
             onClick={handleRefImage}
           >
-            Reference Image
+            1
+          </button>
+          <button
+            className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            id="consentImage"
+            // marginRight="35px"
+            onClick={handleRefImage2}
+          >
+            2
           </button>
         </div>
       </div>

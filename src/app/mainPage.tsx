@@ -20,6 +20,7 @@ export const MainPage = () => {
   const currentLanguage = i18n.language;
 
   const onChangeLanguage = (lng: string) => {
+    console.log(lng);
     i18n.changeLanguage(lng);
   };
 
