@@ -27,7 +27,7 @@ const LanguageIntroText = () => {
         you input the language data here.
         <br />
         <br />
-        If you have a language.xml file from another Quincy-Q project, you can load it into the
+        If you have a language.xml file from another Quincy project, you can load it into the
         Configurator by clicking the orange "<b>Load 'language.xml' File Data</b>" button below. If
         you don't have a file from a previous project, you can load the default English settings by
         clicking the section buttons, or you can create a new file by inputting all of the data

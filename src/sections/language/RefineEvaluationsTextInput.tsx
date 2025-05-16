@@ -12,7 +12,7 @@ const getThinningPreventNavModalText = (state) => state.thinningPreventNavModalT
 const getThinningConfirmModalHead = (state) => state.thinningConfirmModalHead;
 const getThinningConfirmModalText = (state) => state.thinningConfirmModalText;
 const getAgreeMostText = (state) => state.agreeMostText;
-const getAgreeLeastText = (state) => state.agreeLeastText;
+// const getAgreeLeastText = (state) => state.agreeLeastText;
 const getInitialInstructionPart1 = (state) => state.initialInstructionPart1;
 const getInitialInstructionPart2 = (state) => state.initialInstructionPart2;
 const getInitialInstructionPart3 = (state) => state.initialInstructionPart3;
@@ -24,6 +24,8 @@ const getThinningPageCurrentNumStatesSelected = (state) =>
   state.thinningPageCurrentNumStatesSelected;
 const getInitialInstructionNegPart1 = (state) => state.initialInstructionNegPart1;
 const getInitialInstructionNegPart2 = (state) => state.initialInstructionNegPart2;
+const getThinningHelpModalHead = (state) => state.thinningHelpModalHead;
+const getThinningHelpModalText = (state) => state.thinningHelpModalText;
 
 const RefineEvaluationsTextInput = () => {
   let displayMode = useStore(getDisplayMode);
@@ -44,6 +46,8 @@ const RefineEvaluationsTextInput = () => {
   const thinningPageCurrentNumStatesSelected = useStore(getThinningPageCurrentNumStatesSelected);
   const initialInstructionNegPart1 = useStore(getInitialInstructionNegPart1);
   const initialInstructionNegPart2 = useStore(getInitialInstructionNegPart2);
+  const thinningHelpModalHead = useStore(getThinningHelpModalHead);
+  const thinningHelpModalText = useStore(getThinningHelpModalText);
 
   const handleRefImage = (e) => {
     // showRefImage(e.target.id);
@@ -68,9 +72,9 @@ const RefineEvaluationsTextInput = () => {
   }
 
   return (
-    <div className="outline outline-2 outline-slate-500 p-2 w-[78vw] max-w-[78vw] rounded-sm">
+    <div className="outline outline-2 outline-slate-500 p-2 w-[78vw] max-w-[78vw] rounded-sm bg-gray-100">
       <div className="flex flex-row justify-between mb-4">
-        <h2>7. Refine Evaluations Screen</h2>
+        <h2>8. Refine Evaluations Screen</h2>
         <div className="flex flex-row gap-4">
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
@@ -103,7 +107,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="7-1. Title Bar Text"
+          label="8-1. Title Bar Text"
           name="thinningPageTitle"
           value={thinningPageTitle}
           onChange={handleTextChange}
@@ -114,7 +118,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="7-2. Submit Button Text"
+          label="8-2. Submit Button Text"
           name="thinningPageSubmitButtonText"
           value={thinPageSubmitButtonText}
           onChange={handleTextChange}
@@ -125,7 +129,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="7-3. Number Statements to Select Text"
+          label="8-3. Number Statements to Select Text"
           name="thinPageNumStatesToSelect"
           value={thinningPageNumStatesToSelect}
           onChange={handleTextChange}
@@ -136,7 +140,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="7-4. Number Statements Currently Selected Text"
+          label="8-4. Number Statements Currently Selected Text"
           name="thinPageCurrentNumStatesSelected"
           value={thinningPageCurrentNumStatesSelected}
           onChange={handleTextChange}
@@ -147,7 +151,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="7-5. Refine Evaluations Prevent Navigation Modal Title"
+          label="8-5. Refine Evaluations Prevent Navigation Modal Title"
           name="thinningPreventNavModalHead"
           value={thinningPreventNavModalHead}
           onChange={handleTextChange}
@@ -158,7 +162,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] min-h-[80px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label="7-6. Refine Evaluations Prevent Navigation Modal Text"
+          label="8-6. Refine Evaluations Prevent Navigation Modal Text"
           name="thinningPreventNavModalText"
           height={150}
           value={thinningPreventNavModalText}
@@ -168,10 +172,35 @@ const RefineEvaluationsTextInput = () => {
           disabled={false}
           tabIndex="0"
         />
+
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`7-7. Incomplete Selection Modal Title`}
+          label={`8-7. Incomplete Selection Modal Title`}
+          name="thinningHelpModalHead"
+          value={thinningHelpModalHead}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+        />
+        <UserTextAreaInput
+          classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[80px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
+          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
+          label="8-8. Incomplete Selection Modal Text"
+          name="thinningHelpModalText"
+          height={150}
+          value={thinningHelpModalText}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+          tabIndex="0"
+        />
+        <UserTextInput
+          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
+          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+          label={`8-9. Incomplete Selection Modal Title`}
           name="thinningConfirmModalHead"
           value={thinningConfirmModalHead}
           onChange={handleTextChange}
@@ -179,11 +208,10 @@ const RefineEvaluationsTextInput = () => {
           placeholder=""
           disabled={false}
         />
-
         <UserTextAreaInput
-          classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[40px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
+          classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[80px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label="7-8. Incomplete Selection Modal Text"
+          label="8-10. Incomplete Selection Modal Text"
           name="thinningConfirmModalText"
           height={150}
           value={thinningConfirmModalText}
@@ -197,7 +225,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[80px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label="7-9. Select Statements of Agreement Message 1"
+          label="8-11. Select Statements of Agreement Message 1"
           name="initialInstructionPart1"
           height={150}
           value={initialInstructionPart1}
@@ -207,10 +235,10 @@ const RefineEvaluationsTextInput = () => {
           disabled={false}
           tabIndex="0"
         />
-        <UserTextAreaInput
+        {/* <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[100px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label="7-10. Select Statements of Agreement Message 2"
+          label="8-12. Select Statements of Agreement Message 2"
           name="agreeMostText"
           // height={150}
           value={agreeMostText}
@@ -220,12 +248,12 @@ const RefineEvaluationsTextInput = () => {
           placeholder=""
           disabled={false}
           tabIndex="0"
-        />
+        /> */}
 
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[80px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label="7-11. Select Statements of Agreement Message 3"
+          label="8-12. Select Statements of Agreement Message 2"
           name="initialInstructionPart2"
           height={150}
           value={initialInstructionPart2}
@@ -239,7 +267,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[60px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label="7-12. Another Set of Statements is Displayed"
+          label="8-13. Another Set of Statements is Displayed"
           name="initialInstructionPart3"
           height={150}
           value={initialInstructionPart3}
@@ -253,7 +281,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[80px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label="7-13. Select Statements of Disagreement Message 1"
+          label="8-14. Select Statements of Disagreement Message 1"
           name="initialInstructionNegPart1"
           height={150}
           value={initialInstructionNegPart1}
@@ -267,7 +295,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[80px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label="7-14. Select Statements of Disagreement Message 2"
+          label="8-15. Select Statements of Disagreement Message 2"
           name="initialInstructionNegPart2"
           height={150}
           value={initialInstructionNegPart2}
@@ -281,7 +309,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[80px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label="7-15. Final Instructions"
+          label="8-16. Final Instructions"
           name="finalInstructions"
           height={150}
           value={finalInstructions}

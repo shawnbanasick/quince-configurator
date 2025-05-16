@@ -13,10 +13,8 @@ const getLangFooterCardHeight = (state) => state.footerCardHeight;
 const getLangBtnNext = (state) => state.btnNext;
 const getLangStepCompleted = (state) => state.stepCompleted;
 const getScreenOrientationText = (state) => state.screenOrientationText;
-const getMobileTextSize = (state) => state.mobileTextSize;
-const getMobileViewSize = (state) => state.mobileViewSize;
 
-const MultipleScreenTextInput = () => {
+const MobileFooterTextInput = () => {
   let displayMode = useStore(getDisplayMode);
   const setText = useStore(getSetText);
   const langBtnHelp = useStore(getLangBtnHelp);
@@ -25,8 +23,8 @@ const MultipleScreenTextInput = () => {
   const langBtnNext = useStore(getLangBtnNext);
   const langStepCompleted = useStore(getLangStepCompleted);
   const screenOrientationText = useStore(getScreenOrientationText);
-  const mobileTextSize = useStore(getMobileTextSize);
-  const mobileViewSize = useStore(getMobileViewSize);
+
+  console.log("langBtnHelp", langBtnHelp);
 
   const handleShowDefaults = (e) => {
     console.log("handleShowDefaults", e.target.id);
@@ -153,31 +151,9 @@ const MultipleScreenTextInput = () => {
           placeholder=""
           disabled={false}
         />
-        <UserTextInput
-          classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
-          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="1-7. Mobile Text Size Adjustment Button Text"
-          name="mobileTextSize"
-          value={mobileTextSize}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-        />
-        <UserTextInput
-          classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
-          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="1-8. Mobile View Area Size Button Text"
-          name="mobileViewSize"
-          value={mobileViewSize}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-        />
       </div>
     </div>
   );
 };
 
-export { MultipleScreenTextInput };
+export { MobileFooterTextInput };

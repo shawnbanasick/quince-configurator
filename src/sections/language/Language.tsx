@@ -7,6 +7,7 @@ import { MultipleScreenTextInput } from "./MultipleScreenTextInput";
 import { ConsentPageTextInput } from "./ConsentPageTextInput.js";
 import { AccessControlTextInput } from "./AccessControlTextInput.js";
 import { WelcomeScreenTextInput } from "./WelcomeScreenTextInput.js";
+import { MobileWelcomeScreenTextInput } from "./MobileWelcomeScreenTextInput.js";
 import { PresortTextInput } from "./PresortTextInput.js";
 import { MobilePresortTextInput } from "./MobilePresortTextInput.js";
 import { RefineEvaluationsTextInput } from "./RefineEvaluationsTextInput.js";
@@ -50,6 +51,7 @@ const Language = () => {
       <ConsentPageTextInput />
       <AccessControlTextInput />
       <WelcomeScreenTextInput />
+      <MobileWelcomeScreenTextInput />
       <PresortTextInput />
       <MobilePresortTextInput />
       <RefineEvaluationsTextInput />

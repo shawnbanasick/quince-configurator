@@ -19,8 +19,7 @@ const SurveyTextAreaElement = (props) => {
   const labelText = ReactHtmlParser(decodeHTML(props.opts.label)) || "";
   const noteText = ReactHtmlParser(decodeHTML(props.opts.note)) || "";
   // true removes div holder so placeholder text renders properly
-  const placeholder =
-    ReactHtmlParser(decodeHTML(props.opts.placeholder, true)) || "";
+  const placeholder = ReactHtmlParser(decodeHTML(props.opts.placeholder, true)) || "";
   let displayNoteText = true;
   if (noteText.length < 1 || noteText === "") {
     displayNoteText = false;
@@ -76,12 +75,7 @@ const SurveyTextAreaElement = (props) => {
         border: "none",
       });
     }
-  }, [
-    checkRequiredQuestionsComplete,
-    userText,
-    userTextLen,
-    props.opts.required,
-  ]);
+  }, [checkRequiredQuestionsComplete, userText, userTextLen, props.opts.required]);
 
   if (true) {
     return (
@@ -112,11 +106,7 @@ const SurveyTextAreaElement = (props) => {
         <TitleBar>
           <div>{labelText}</div>
         </TitleBar>
-        <TextAreaInput
-          value={userText}
-          placeholder={placeholder}
-          onChange={handleOnChange}
-        />
+        <TextAreaInput value={userText} placeholder={placeholder} onChange={handleOnChange} />
       </div>
     );
   }

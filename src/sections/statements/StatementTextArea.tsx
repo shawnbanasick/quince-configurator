@@ -33,7 +33,7 @@ const StatementTextArea = () => {
       {displayMode && (
         // <DisplayModeText>
         <div className=" ml-[10px] mt-[40px] mb-[30px] w-[78vw] max-w-[1200px] text-[20px] p-[10px] bg-[whitesmoke] rounded-[3px] border-2 border-black">
-          If you want to modify statements from a previous Quincy-Q project, you can click on the
+          If you want to modify statements from a previous Quincy project, you can click on the
           orange "Load statements.xml File" button to upload the statements.xml file.
           <br />
           <br />

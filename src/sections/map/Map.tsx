@@ -95,8 +95,8 @@ const Map = () => {
       {displayMode && (
         // <DisplayModeText>
         <div className="ml-[10px] mt-[40px] mb-[30px] w-[78vw] max-w-[1200px] text-[20px] p-[10px] bg-[whitesmoke] rounded-[3px] border-2 border-black">
-          If you have a "map.xml" from a previous Quincy-Q project, you can click on the orange
-          "Load 'map.xml' File Data" button to upload the file.
+          If you have a "map.xml" from a previous Quincy project, you can click on the orange "Load
+          'map.xml' File Data" button to upload the file.
           <br />
           <br />
           Enter the number of cards in each column of the Q-sort grid. The background color of the

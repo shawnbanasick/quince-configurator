@@ -14,19 +14,19 @@ const ProjectLinkingTextInput: React.FC = () => {
   const linkingFallbackMessage = useStore((state) => state.linkingFallbackMessage);
   const linkingBtnText = useStore((state) => state.linkingBtnText);
 
-  const handleRefImage = (e) => {
+  const handleRefImage = (e: any) => {
     // showRefImage(e.target.id);
   };
-  const handleShowDefaults = (e) => {
+  const handleShowDefaults = (e: any) => {
     showSectionDefaults(e.target.id);
   };
 
-  const handleTextChange = (e) => {
+  const handleTextChange = (e: any) => {
     console.log("handleTextChange", e.target.value);
     setText(e.target.name, e.target.value);
   };
 
-  const handleClearAll = (e) => {
+  const handleClearAll = (e: any) => {
     clearSection(e.target.id);
   };
 
@@ -36,9 +36,9 @@ const ProjectLinkingTextInput: React.FC = () => {
     displayMode = false;
   }
   return (
-    <div className="outline outline-2 outline-slate-500 p-2 w-[78vw] max-w-[78vw] rounded-sm bg-gray-100">
+    <div className="outline outline-2 outline-slate-500 p-2 w-[78vw] max-w-[78vw] rounded-sm">
       <div className="flex flex-row justify-between mb-4">
-        <h2>18. Project Linking Screen</h2>
+        <h2>19. Project Linking Screen</h2>
         <div className="flex flex-row gap-4">
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
@@ -71,7 +71,7 @@ const ProjectLinkingTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="18.1 Linking Fallback Message"
+          label="19.1 Linking Fallback Message"
           name="linkingFallbackMessage"
           value={linkingFallbackMessage}
           onChange={handleTextChange}
@@ -82,7 +82,7 @@ const ProjectLinkingTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="18-2. Linking Button Text"
+          label="19-2. Linking Button Text"
           name="linkingBtnText"
           value={linkingBtnText}
           onChange={handleTextChange}

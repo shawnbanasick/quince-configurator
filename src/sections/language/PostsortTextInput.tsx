@@ -65,9 +65,9 @@ const PostsortTextInput: React.FC = () => {
   }
 
   return (
-    <div className="outline outline-2 outline-slate-500 p-2 w-[78vw] max-w-[78vw] rounded-sm">
+    <div className="outline outline-2 outline-slate-500 p-2 w-[78vw] max-w-[78vw] rounded-sm bg-gray-100">
       <div className="flex flex-row justify-between mb-4">
-        <h2>11. Post-Sort Comments Screen</h2>
+        <h2>12. Post-Sort Comments Screen</h2>
         <div className="flex flex-row gap-4">
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
@@ -101,7 +101,7 @@ const PostsortTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="11-1. Post-Sort Screen Title Bar"
+          label="12-1. Post-Sort Screen Title Bar"
           name="postsortHeader"
           value={postsortHeader}
           onChange={handleTextChange}
@@ -112,7 +112,7 @@ const PostsortTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[60px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="11-2. Post-Sort Instructions"
+          label="12-2. Post-Sort Instructions"
           name="postsortInstructions"
           height={150}
           value={postsortInstructions}
@@ -125,7 +125,7 @@ const PostsortTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="11-3. Comment Box Placeholders"
+          label="12-3. Comment Box Placeholders"
           name="placeholder"
           value={placeholder}
           onChange={handleTextChange}
@@ -136,7 +136,7 @@ const PostsortTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="11-4. Post-Sort Agreement"
+          label="12-4. Post-Sort Agreement"
           name="postsortAgreement"
           value={postsortAgreement}
           onChange={handleTextChange}
@@ -147,7 +147,7 @@ const PostsortTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="11-5. Post-Sort Disagreement"
+          label="12-5. Post-Sort Disagreement"
           name="postsortDisagreement"
           value={postsortDisagreement}
           onChange={handleTextChange}
@@ -158,7 +158,7 @@ const PostsortTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="11-6. Post-Sort Modal Title"
+          label="12-6. Post-Sort Modal Title"
           name="postsortModalHead"
           value={postsortModalHead}
           onChange={handleTextChange}
@@ -169,7 +169,7 @@ const PostsortTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="11-7. Post-Sort Modal Text"
+          label="12-7. Post-Sort Modal Text"
           name="postsortModalText"
           height={150}
           value={postsortModalText}
@@ -182,7 +182,7 @@ const PostsortTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="11-8. Post-Sort Prevent Navigation Modal Title"
+          label="12-8. Post-Sort Prevent Navigation Modal Title"
           name="postsortPreventNavModalHead"
           value={postsortPreventNavModalHead}
           onChange={handleTextChange}
@@ -193,7 +193,7 @@ const PostsortTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="11-9. Post-Sort Prevent Navigation Modal Text"
+          label="12-9. Post-Sort Prevent Navigation Modal Text"
           name="postsortPreventNavModalText"
           height={150}
           value={postsortPreventNavModalText}
@@ -206,7 +206,7 @@ const PostsortTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="11-10. Post-Sort Back Button"
+          label="12-10. Post-Sort Back Button"
           name="postsortBackButton"
           value={postsortBackButton}
           onChange={handleTextChange}

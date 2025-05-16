@@ -32,17 +32,17 @@ const Start = () => {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <h1 className="text-center mt-8">Quincy-Q Configurator</h1>
+      <h1 className="text-center mt-8">Quincy Configurator</h1>
       <img src={Image} className=" w-1/12 justify-self-center" alt="Configurator Hero Image" />
       <div className="mt-4 w-9/12 align-self-center text-base">
-        Quincy-Q Configurator simplifies the set-up and testing of an{" "}
+        Quincy Configurator simplifies the set-up and testing of an{" "}
         <a
           className="text-blue-600 underline underline-offset-2 decoration-4 decoration-blue-300 hover:decoration-blue-400"
           target="_blank"
           rel="noopener noreferrer"
           href="https://github.com/shawnbanasick/eq-web-sort"
         >
-          Quincy-Q
+          Quincy
         </a>{" "}
         project for online Q sorting. It provides guided editing of the Q sort configuration files
         and offers increased control over the design of the Q sort. To test your setup before
@@ -50,7 +50,7 @@ const Start = () => {
       </div>
       <div className="justify-self-center mt-4 mb-8">
         Citation:
-        <br /> Banasick, S. (2025). Quincy-Q Configurator (Version 1.0.0)
+        <br /> Banasick, S. (2025). Quincy Configurator (Version 1.0.0)
       </div>
       <h2 className="text-center mt-4">{t("SelectConfiguratorDisplayMode")}:</h2>
       <div className="flex flex-row justify-self-center mt-4">

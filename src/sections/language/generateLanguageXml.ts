@@ -4,7 +4,7 @@ import { useStore } from "../../globalState/useStore.js";
 const generateLanguageXml = () => {
   let data = `<?xml version="1.0" encoding="UTF-8"?>
 
-   <language version="${useStore.getState().version}" htmlParse="true">\n;
+   <language version="Quincy ${useStore.getState().version}" htmlParse="true">\n;
 
         <!-- 1. MULTIPLE SCREENS AND FOOTER -->
         <item id="btnHelp">${encodeHTML(useStore.getState().btnHelp)}</item>
@@ -12,10 +12,14 @@ const generateLanguageXml = () => {
         <item id="cardHeightText">${encodeHTML(useStore.getState().footerCardHeight)}</item>
         <item id="btnNext">${encodeHTML(useStore.getState().btnNext)}</item>
         <item id="stepCompleteMessage">${encodeHTML(useStore.getState().stepCompleted)}</item>
+        
+        <!-- 1b. MOBILE FOOTER -->
         <item id="screenOrientationText">${encodeHTML(
           useStore.getState().screenOrientationText
         )}</item>
-
+        <item id="mobileTextSize">${encodeHTML(useStore.getState().mobileTextSize)}</item>
+        <item id="mobileViewSize">${encodeHTML(useStore.getState().mobileViewSize)}</item>
+        
         <!-- 2. CONSENT SCREEN -->
         <item id="consentTitleBarText">${encodeHTML(useStore.getState().consentTitleBarText)}</item>
         <item id="consentText">${encodeHTML(useStore.getState().consentText)}</item>
@@ -25,63 +29,22 @@ const generateLanguageXml = () => {
         <item id="consentHelpModalText">${encodeHTML(
           useStore.getState().consentHelpModalText
         )}</item>
-        <item id="btnNextConsent">${encodeHTML(useStore.getState().btnNextConsent)}</item>
         <item id="btnHelpConsent">${encodeHTML(useStore.getState().btnHelpConsent)}</item>
+        <item id="btnNextConsent">${encodeHTML(useStore.getState().btnNextConsent)}</item>
+
 
         <!-- 3. ACCESS CONTROL - only displayed if access is restricted -->
         <item id="loginWelcomeText">${encodeHTML(useStore.getState().loginWelcomeText)}</item>
         <item id="loginHeaderText">${encodeHTML(useStore.getState().loginHeaderText)}</item>
         <item id="loginPartIdText">${encodeHTML(useStore.getState().loginPartIdText)}</item>
-         <item id="accessCodeText">${encodeHTML(useStore.getState().accessCodeText)}</item>
+        <item id="accessCodeText">${encodeHTML(useStore.getState().accessCodeText)}</item>
+        <item id="accessInputText">${encodeHTML(useStore.getState().accessInputText)}</item>
         <item id="partIdWarning">${encodeHTML(useStore.getState().partIdWarning)}</item>
         <item id="accessCodeWarning">${encodeHTML(useStore.getState().accessCodeWarning)}</item>
         <item id="loginSubmitButtonText">${encodeHTML(
           useStore.getState().loginSubmitButtonText
         )}</item>
-        <item id="accessInputText">${encodeHTML(useStore.getState().accessInputText)}</item>
-
-        <!-- LOCAL DATA COLLECTION -->  
-        <item id="localHeader">${encodeHTML(useStore.getState().localHeader)}</item>
-        <item id="partIdText">${encodeHTML(useStore.getState().partIdText)}</item>
-        <item id="usercodeText">${encodeHTML(useStore.getState().usercodeText)}</item>
-        <item id="localStartButtonText">${encodeHTML(
-          useStore.getState().localStartButtonText
-        )}</item>
-        <item id="localDeleteButtonText">${encodeHTML(
-          useStore.getState().localDeleteButtonText
-        )}</item>
-        <item id="localDownloadButtonText">${encodeHTML(
-          useStore.getState().localDownloadButtonText
-        )}</item>
-        <item id="storedQsortsHeaderText">${encodeHTML(
-          useStore.getState().storedQsortsHeaderText
-        )}</item>
-        <item id="localDeleteModalHead">${encodeHTML(
-          useStore.getState().localDeleteModalHead
-        )}</item>
-        <item id="localDeleteModalText">${encodeHTML(
-          useStore.getState().localDeleteModalText
-        )}</item>
-        <item id="localParticipantsText">${encodeHTML(
-          useStore.getState().localParticipantsText
-        )}</item>
-        <item id="localSaveDataButton">${encodeHTML(useStore.getState().localSaveDataButton)}</item>
-        <item id="localSubmitSuccessModalHeader">${encodeHTML(
-          useStore.getState().localSubmitSuccessModalHeader
-        )}</item>
-        <item id="localSubmitSuccessModalText">${encodeHTML(
-          useStore.getState().localSubmitSuccessModalText
-        )}</item>
-        <item id="localSaveBeforeDeleteModalHeader">${encodeHTML(
-          useStore.getState().localSaveBeforeDeleteModalHeader
-        )}</item>
-        <item id="localSaveBeforeDeleteModalText">${encodeHTML(
-          useStore.getState().localSaveBeforeDeleteModalText
-        )}</item>
-        <item id="returnToLocalPanelButtonText">${encodeHTML(
-          useStore.getState().returnToLocalPanelButtonText
-        )}</item>
-
+        
         <!-- 4. WELCOME (LANDING) SCREEN -->
         <item id="landingHead">${encodeHTML(useStore.getState().landingHead)}</item>
         <item id="welcomeText">${encodeHTML(useStore.getState().welcomeMessage)}</item>        
@@ -94,7 +57,10 @@ const generateLanguageXml = () => {
         <item id="btnHelpLanding">${encodeHTML(useStore.getState().btnHelpLanding)}</item>
         <item id="btnNextLanding">${encodeHTML(useStore.getState().btnNextLanding)}</item>
 
-        <!-- 5. PRESORT: rough sorting into three piles -->
+        <!-- 5. MOBILE WELCOME (LANDING) SCREEN -->
+        <item id="mobileWelcomeText">${encodeHTML(useStore.getState().mobileWelcomeText)}</item>
+
+        <!-- 6. PRESORT: rough sorting into three piles -->
         <item id="logInFirst">${encodeHTML(useStore.getState().loginFirst)}</item>
         <item id="titleBarText">${encodeHTML(useStore.getState().titleBarText)}</item>
         <item id="presortAgreement">${encodeHTML(useStore.getState().presortAgreement)}</item>
@@ -408,6 +374,49 @@ const generateLanguageXml = () => {
          <item id="linkedProjectBtnMessage">${encodeHTML(
            useStore.getState().linkingBtnText
          )}</item>   
+
+                 <!-- LOCAL DATA COLLECTION -->  
+        <item id="localHeader">${encodeHTML(useStore.getState().localHeader)}</item>
+        <item id="partIdText">${encodeHTML(useStore.getState().partIdText)}</item>
+        <item id="usercodeText">${encodeHTML(useStore.getState().usercodeText)}</item>
+        <item id="localStartButtonText">${encodeHTML(
+          useStore.getState().localStartButtonText
+        )}</item>
+        <item id="localDeleteButtonText">${encodeHTML(
+          useStore.getState().localDeleteButtonText
+        )}</item>
+        <item id="localDownloadButtonText">${encodeHTML(
+          useStore.getState().localDownloadButtonText
+        )}</item>
+        <item id="storedQsortsHeaderText">${encodeHTML(
+          useStore.getState().storedQsortsHeaderText
+        )}</item>
+        <item id="localDeleteModalHead">${encodeHTML(
+          useStore.getState().localDeleteModalHead
+        )}</item>
+        <item id="localDeleteModalText">${encodeHTML(
+          useStore.getState().localDeleteModalText
+        )}</item>
+        <item id="localParticipantsText">${encodeHTML(
+          useStore.getState().localParticipantsText
+        )}</item>
+        <item id="localSaveDataButton">${encodeHTML(useStore.getState().localSaveDataButton)}</item>
+        <item id="localSubmitSuccessModalHeader">${encodeHTML(
+          useStore.getState().localSubmitSuccessModalHeader
+        )}</item>
+        <item id="localSubmitSuccessModalText">${encodeHTML(
+          useStore.getState().localSubmitSuccessModalText
+        )}</item>
+        <item id="localSaveBeforeDeleteModalHeader">${encodeHTML(
+          useStore.getState().localSaveBeforeDeleteModalHeader
+        )}</item>
+        <item id="localSaveBeforeDeleteModalText">${encodeHTML(
+          useStore.getState().localSaveBeforeDeleteModalText
+        )}</item>
+        <item id="returnToLocalPanelButtonText">${encodeHTML(
+          useStore.getState().returnToLocalPanelButtonText
+        )}</item>
+
    </language>`;
 
   return data;
