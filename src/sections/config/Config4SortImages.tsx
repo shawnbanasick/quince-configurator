@@ -41,9 +41,7 @@ const Config4SortImages: React.FC = () => {
     setImageFormat(inputValue);
   };
 
-  const handleUseImagesChange = (
-    inputValue: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleUseImagesChange = (inputValue: React.ChangeEvent<HTMLInputElement>) => {
     if (inputValue.target.value === "true") {
       setUseImages(true);
     } else {
@@ -54,25 +52,29 @@ const Config4SortImages: React.FC = () => {
   return (
     <div className="flex flex-col  pt-6 pb-2 hover:bg-gray-100 hover:outline outline-2 outline-zinc-600 p-2 hover:rounded-md">
       <div className="flex flex-row content-center gap-5 mt-3">
-        <span className="text-lg font-title font-semibold">
-          {t("statementSortVsImageSort")}
-        </span>{" "}
-        <img
+        <span className="text-lg font-title font-semibold">{`4. ${t(
+          "statementSortVsImageSort"
+        )}`}</span>{" "}
+        {/* <img
           src={Image}
           className=" w-[25px] h-[25px] justify-self-center"
           onClick={() => alert("This is a tooltip")}
           alt="info icon"
-        />
+        /> */}
       </div>
-      <div className="flex flex-row h-[60px] content-center gap-5 mt-3">
-        <span className="content-center">{`4a. ${t("sortImages")}:`}</span>
+      <br />
+      <span className="text-md">
+        <mark>{t("imageSortDisabled")}</mark>
+      </span>
+      <div className="flex flex-row h-[60px] content-center gap-5 mt-3 text-opacity-50">
+        <span className="content-center text-gray-400">{`4a. ${t("sortImages")}:`}</span>
         <div className="content-center">
           <label
             className={clsx(
-              "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
+              " bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none text-opacity-50",
               {
-                "bg-opacity-100": useImages,
-                "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
+                "bg-opacity-50": useImages,
+                "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600 disabled:opacity-50 text-opacity-50":
                   !useImages,
               }
             )}
@@ -85,17 +87,19 @@ const Config4SortImages: React.FC = () => {
               id="useImagesTrue" // htlmlFor targets this id.
               value="true"
               checked={useImages}
+              disabled={true}
               onChange={handleUseImagesChange}
             />
             {t("true")}
           </label>
         </div>
         <div className="content-center">
+          {/* temporarily disabled until image sorting is restored */}
           <label
             className={clsx(
-              "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
+              "bg-opacity-50 bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
               {
-                "bg-opacity-100": !useImages,
+                "bg-opacity-50": !useImages,
                 "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                   useImages,
               }
@@ -109,6 +113,7 @@ const Config4SortImages: React.FC = () => {
               id="useImagesFalse" // htlmlFor targets this id.
               value="false"
               checked={!useImages}
+              disabled={true}
               onChange={handleUseImagesChange}
             />
             {t("false")}
@@ -132,9 +137,9 @@ const Config4SortImages: React.FC = () => {
         onChange={handleNumberInput}
       />
       <div className="flex flex-row h-[70px] content-center gap-5 mt-1">
-        <span
-          className={`content-center ${useImages ? "" : "text-slate-400"} `}
-        >{`4c. ${t("imageFileType")}:`}</span>
+        <span className={`content-center ${useImages ? "" : "text-slate-400"} `}>{`4c. ${t(
+          "imageFileType"
+        )}:`}</span>
         <Radio
           name="imageFileType"
           value="jpg"
@@ -154,9 +159,9 @@ const Config4SortImages: React.FC = () => {
         />
       </div>
       <div className="flex flex-row h-[70px] content-center gap-5 mt-1">
-        <span
-          className={`content-center ${useImages ? "" : "text-slate-400"}`}
-        >{`4d. ${t("imageFormat")}:`}</span>
+        <span className={`content-center ${useImages ? "" : "text-slate-400"}`}>{`4d. ${t(
+          "imageFormat"
+        )}:`}</span>
         <Radio
           name="imageFormat"
           value="letterbox"

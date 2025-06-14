@@ -30,13 +30,12 @@ export const MainPage = () => {
       <Tabs className="h-screen w-screen p-2 ">
         <TabList>
           <Tab>Welcome</Tab>
-          <Tab>1. Setup For Editing</Tab>
-          <Tab>2. Database Setup</Tab>
-          <Tab>3. Config.xml</Tab>
-          <Tab>4. Statements.xml</Tab>
-          <Tab>5. Map.xml</Tab>
-          <Tab>6. Language.xml</Tab>
-          <Tab>7. Web Host Setup</Tab>
+          <Tab>1. Database Setup</Tab>
+          <Tab>2. Configuration / Questionnaire</Tab>
+          <Tab>3. Statements</Tab>
+          <Tab>4. Q Sort Grid</Tab>
+          <Tab>5. Language</Tab>
+          <Tab>6. Web Host Setup</Tab>
         </TabList>
 
         <TabPanel className="flex flex-col justify-center ">
@@ -72,11 +71,7 @@ export const MainPage = () => {
             https://github.com/ecomnazar/react-i18n-boilerplate
           </a> */}
         </TabPanel>
-        <TabPanel>
-          <div className="flex flex-col justify-center w-full, text-center">
-            <h2>Server Setup</h2>
-          </div>
-        </TabPanel>
+
         <TabPanel>
           <Databases />
         </TabPanel>

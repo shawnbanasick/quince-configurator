@@ -34,7 +34,7 @@ const MobileWelcomeScreenTextInput = () => {
     setText(e.target.name, e.target.value);
   };
 
-  const handleClearAll = (e) => {
+  const handleClearAll = (e: any) => {
     clearSection(e.target.id);
   };
 

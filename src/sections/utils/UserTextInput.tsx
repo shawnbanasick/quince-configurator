@@ -27,6 +27,10 @@ const UserTextInput: React.FC<UserTextInputProps> = ({
     onChange(event);
   };
 
+  if (disabled === true) {
+    highlight = false; // if disabled, no highlight
+  }
+
   if (highlight === true) {
     return (
       <div className="flex flex-row w-[72vw] focus-within:font-bold">

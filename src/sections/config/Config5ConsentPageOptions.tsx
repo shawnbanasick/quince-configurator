@@ -1,46 +1,51 @@
 import React from "react";
 import { useStore } from "../../globalState/useStore";
 import { useTranslation } from "react-i18next";
-import { Radio } from "../utils/RadioButtons";
-import Image from "../../assets/images/infoIcon.svg";
+// import { Radio } from "../utils/RadioButtons";
+// import Image from "../../assets/images/infoIcon.svg";
 
 import clsx from "clsx";
 
 const getShowConsetPage = (state) => state.showConsentPage;
 const getSetShowConsentPage = (state) => state.setShowConsentPage;
 const getShowConsentPageHelpModal = (state) => state.showConsentPageHelpModal;
-const getSetShowConsentPageHelpModal = (state) =>
-  state.setShowConsentPageHelpModal;
+const getSetShowConsentPageHelpModal = (state) => state.setShowConsentPageHelpModal;
 
 const Config5ConsentPageOptions: React.FC = () => {
   const showConsentPageHelpModal = useStore(getShowConsentPageHelpModal);
   const setShowConsentPageHelpModal = useStore(getSetShowConsentPageHelpModal);
 
   const showConsentPage = useStore(getShowConsetPage);
+  console.log("showConsentPage", showConsentPage);
   const setShowConsentPage = useStore(getSetShowConsentPage);
   const { t } = useTranslation();
 
-  const handleShowConsentPageChange = (input: any) => {
-    setShowConsentPage(input);
+  const handleShowConsentPageChange = (input: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(input.target.value);
+    if (input.target.value === "true") {
+      setShowConsentPage(true);
+    } else {
+      setShowConsentPage(false);
+    }
+    // console.log("showConsentPage", showConsentPage);
   };
 
-  const handleShowConsentPageHelpModalChange = (inputValue: any) => {
-    console.log(inputValue);
-    setShowConsentPageHelpModal(inputValue);
+  const handleShowConsentPageHelpModalChange = (input: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(input.target.value);
+    setShowConsentPageHelpModal(input.target.value === "true" ? true : false);
+    // console.log("showConsentPageHelpModal", showConsentPageHelpModal);
   };
 
   return (
     <div className="flex flex-col  pt-6 pb-2 hover:bg-gray-100 hover:outline outline-2 outline-zinc-600 p-2 hover:rounded-md">
       <div className="flex flex-row content-center gap-5 mt-3">
-        <span className="text-lg font-title font-semibold">
-          {t("consentPageOptions")}
-        </span>{" "}
-        <img
+        <span className="text-lg font-title font-semibold">5. {t("consentPageOptions")}</span>{" "}
+        {/* <img
           src={Image}
           className=" w-[25px] h-[25px] justify-self-center"
           onClick={() => alert("This is a tooltip")}
           alt="info icon"
-        />
+        /> */}
       </div>
       <div className="flex flex-row h-[60px] content-center gap-5 mt-3">
         <span className="content-center">{`5a. ${t("showConsentPage")}:`}</span>
@@ -54,7 +59,7 @@ const Config5ConsentPageOptions: React.FC = () => {
                   !showConsentPage,
               }
             )}
-            htmlFor="useImagesTrue"
+            htmlFor="showConsentPageTrue"
           >
             <input
               type="radio"
@@ -77,13 +82,13 @@ const Config5ConsentPageOptions: React.FC = () => {
                   showConsentPage,
               }
             )}
-            htmlFor="useImagesFalse"
+            htmlFor="showConsentPageFalse"
           >
             <input
               type="radio"
               className="hidden"
               name="showConsentPage"
-              id="useImagesFalse" // htlmlFor targets this id.
+              id="showConsentPageFalse" // htlmlFor targets this id.
               value="false"
               checked={!showConsentPage}
               onChange={handleShowConsentPageChange}
@@ -94,9 +99,7 @@ const Config5ConsentPageOptions: React.FC = () => {
       </div>
 
       <div className="flex flex-row h-[60px] content-center gap-5 mt-3">
-        <span className="content-center">{`5b. ${t(
-          "showConsentPageHelpModal"
-        )}:`}</span>
+        <span className="content-center">{`5b. ${t("showConsentPageHelpModal")}:`}</span>
         <div className="content-center">
           <label
             className={clsx(

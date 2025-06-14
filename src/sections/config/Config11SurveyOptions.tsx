@@ -12,9 +12,7 @@ const Config11SurveyOptions: React.FC = () => {
   const showSurvey = useStore(getShowSurvey);
   const setShowSurvey = useStore(getSetShowSurvey);
 
-  const handleShowSurveyChange = (
-    input: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleShowSurveyChange = (input: React.ChangeEvent<HTMLInputElement>) => {
     console.log(input.target.value);
     if (input.target.value === "true") {
       setShowSurvey(true);
@@ -26,15 +24,13 @@ const Config11SurveyOptions: React.FC = () => {
   return (
     <div className="flex flex-col  pt-6 pb-2 hover:bg-gray-100 hover:outline outline-2 outline-zinc-600 p-2 hover:rounded-md">
       <div className="flex flex-row content-center gap-5 mt-3">
-        <span className="text-lg font-title font-semibold">
-          {t("surveyOptions")}
-        </span>{" "}
-        <img
+        <span className="text-lg font-title font-semibold">11. {t("surveyOptions")}</span>{" "}
+        {/* <img
           src={Image}
           className=" w-[25px] h-[25px] justify-self-center"
           onClick={() => alert("This is a tooltip")}
           alt="info icon"
-        />
+        /> */}
       </div>
 
       <div className="flex flex-row h-[60px] content-center gap-5 mt-3">

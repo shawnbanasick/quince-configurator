@@ -39,15 +39,13 @@ const Config7ColorSelection: React.FC = () => {
   return (
     <div className="flex flex-col  pt-6 pb-2 hover:bg-gray-100 hover:outline outline-2 outline-zinc-600 p-2 hover:rounded-md">
       <div className="flex flex-row content-center gap-5 mt-3">
-        <span className="text-lg font-title font-semibold">
-          {t("colorSettings")}
-        </span>{" "}
-        <img
+        <span className="text-lg font-title font-semibold">7. {t("colorSettings")}</span>{" "}
+        {/* <img
           src={Image}
           className=" w-[25px] h-[25px] justify-self-center"
           onClick={() => alert("This is a tooltip")}
           alt="info icon"
-        />
+        /> */}
       </div>
 
       <button
@@ -57,60 +55,37 @@ const Config7ColorSelection: React.FC = () => {
         {t("restoreDefaultColors")}
       </button>
 
-      <div
-        className={`flex flex-row h-[40px] content-center items-center gap-5 mt-1`}
-      >
-        <span className={`content-center`}>{`7a. ${t(
-          "headerBarColor"
-        )}:`}</span>
+      <div className={`flex flex-row h-[40px] content-center items-center gap-5 mt-1`}>
+        <span className={`content-center`}>{`7a. ${t("headerBarColor")}:`}</span>
         <div
           className="w-10 h-5 rounded-md outline outline-1 outline-zinc-600"
           style={{ backgroundColor: headerBarColor }}
         >
-          <ColorPicker
-            baseColor={headerBarColor}
-            onChange={setHeaderBarColor}
-          />
+          <ColorPicker baseColor={headerBarColor} onChange={setHeaderBarColor} />
         </div>
         <span>{headerBarColor}</span>
       </div>
-      <div
-        className={`flex flex-row h-[40px] content-center items-center gap-5 mt-1`}
-      >
-        <span className={`content-center`}>{`7b. ${t(
-          "greenCardColor"
-        )}:`}</span>
+      <div className={`flex flex-row h-[40px] content-center items-center gap-5 mt-1`}>
+        <span className={`content-center`}>{`7b. ${t("greenCardColor")}:`}</span>
         <div
           className="w-10 h-5 rounded-md outline outline-1 outline-zinc-600"
           style={{ backgroundColor: greenCardColor }}
         >
-          <ColorPicker
-            baseColor={greenCardColor}
-            onChange={setGreenCardColor}
-          />
+          <ColorPicker baseColor={greenCardColor} onChange={setGreenCardColor} />
         </div>
         <span>{greenCardColor}</span>
       </div>
-      <div
-        className={`flex flex-row h-[40px] content-center items-center gap-5 mt-1`}
-      >
-        <span className={`content-center`}>{`7c. ${t(
-          "yellowCardColor"
-        )}:`}</span>
+      <div className={`flex flex-row h-[40px] content-center items-center gap-5 mt-1`}>
+        <span className={`content-center`}>{`7c. ${t("yellowCardColor")}:`}</span>
         <div
           className="w-10 h-5 rounded-md outline outline-1 outline-zinc-600"
           style={{ backgroundColor: yellowCardColor }}
         >
-          <ColorPicker
-            baseColor={yellowCardColor}
-            onChange={setYellowCardColor}
-          />
+          <ColorPicker baseColor={yellowCardColor} onChange={setYellowCardColor} />
         </div>
         <span>{yellowCardColor}</span>
       </div>
-      <div
-        className={`flex flex-row h-[40px] content-center items-center gap-5 mt-1`}
-      >
+      <div className={`flex flex-row h-[40px] content-center items-center gap-5 mt-1`}>
         <span className={`content-center`}>{`7d. ${t("pinkCardColor")}:`}</span>
         <div
           className="w-10 h-5 rounded-md outline outline-1 outline-zinc-600"
@@ -120,20 +95,13 @@ const Config7ColorSelection: React.FC = () => {
         </div>
         <span>{pinkCardColor}</span>
       </div>
-      <div
-        className={`flex flex-row h-[40px] content-center items-center gap-5 mt-1`}
-      >
-        <span className={`content-center`}>{`7e. ${t(
-          "defaultFontColor"
-        )}:`}</span>
+      <div className={`flex flex-row h-[40px] content-center items-center gap-5 mt-1`}>
+        <span className={`content-center`}>{`7e. ${t("defaultFontColor")}:`}</span>
         <div
           className="w-10 h-5 rounded-md outline outline-1 outline-zinc-600"
           style={{ backgroundColor: defaultFontColor }}
         >
-          <ColorPicker
-            baseColor={defaultFontColor}
-            onChange={setDefaultFontColor}
-          />
+          <ColorPicker baseColor={defaultFontColor} onChange={setDefaultFontColor} />
         </div>
         <span>{defaultFontColor}</span>
       </div>

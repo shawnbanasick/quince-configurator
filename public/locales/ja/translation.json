@@ -79,6 +79,8 @@
   "warnOverloadedColumns": "オーバーロードされた列を警告",
   "negative": "ネガティブ",
   "positive": "ポジティブ",
+  "defaultFontSizeSort": "デフォルトフォントサイズ",
+  "minCardHeightSort": "ステートメントカードの最小高さ",
 
   "*** CONFIG - POSTSORT OPTIONS ***": "*** CONFIG POSTSORT OPTIONS ***",
   "postsortOptions": "ポストソートオプション",

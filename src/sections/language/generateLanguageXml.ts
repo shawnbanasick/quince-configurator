@@ -12,11 +12,11 @@ const generateLanguageXml = () => {
         <item id="cardHeightText">${encodeHTML(useStore.getState().footerCardHeight)}</item>
         <item id="btnNext">${encodeHTML(useStore.getState().btnNext)}</item>
         <item id="stepCompleteMessage">${encodeHTML(useStore.getState().stepCompleted)}</item>
-        
-        <!-- 1b. MOBILE FOOTER -->
         <item id="screenOrientationText">${encodeHTML(
           useStore.getState().screenOrientationText
         )}</item>
+
+        <!-- 1b. MOBILE MULTIPLE SCREENS AND FOOTER -->
         <item id="mobileTextSize">${encodeHTML(useStore.getState().mobileTextSize)}</item>
         <item id="mobileViewSize">${encodeHTML(useStore.getState().mobileViewSize)}</item>
         
@@ -31,7 +31,6 @@ const generateLanguageXml = () => {
         )}</item>
         <item id="btnHelpConsent">${encodeHTML(useStore.getState().btnHelpConsent)}</item>
         <item id="btnNextConsent">${encodeHTML(useStore.getState().btnNextConsent)}</item>
-
 
         <!-- 3. ACCESS CONTROL - only displayed if access is restricted -->
         <item id="loginWelcomeText">${encodeHTML(useStore.getState().loginWelcomeText)}</item>
@@ -64,9 +63,12 @@ const generateLanguageXml = () => {
         <item id="logInFirst">${encodeHTML(useStore.getState().loginFirst)}</item>
         <item id="titleBarText">${encodeHTML(useStore.getState().titleBarText)}</item>
         <item id="presortAgreement">${encodeHTML(useStore.getState().presortAgreement)}</item>
-        <item id="presortStatements">${encodeHTML(useStore.getState().presortStatements)}</item>
         <item id="presortNeutral">${encodeHTML(useStore.getState().presortNeutral)}</item>
         <item id="presortDisagreement">${encodeHTML(useStore.getState().presortDisagreement)}</item>
+        <item id="presortStatements">${encodeHTML(useStore.getState().presortStatements)}</item>
+        <item id="presortOnPageInstructions">${encodeHTML(
+          useStore.getState().presortOnPageInstructions
+        )}</item>
         <item id="presortImageSortInstructions">${encodeHTML(
           useStore.getState().presortImageSortInstructions
         )}</item>        
@@ -84,11 +86,8 @@ const generateLanguageXml = () => {
         <item id="presortFinishedModalText">${encodeHTML(
           useStore.getState().presortFinishedModalText
         )}</item>
-        <item id="presortOnPageInstructions">${encodeHTML(
-          useStore.getState().presortOnPageInstructions
-        )}</item>
 
-        <!-- 6. MOBILE PRESORT -->
+        <!-- 7. MOBILE PRESORT -->
         <item id="mobilePresortConditionsOfInstruction">${encodeHTML(
           useStore.getState().mobilePresortConditionsOfInstruction
         )}</item>
@@ -135,12 +134,28 @@ const generateLanguageXml = () => {
           useStore.getState().mobilePresortPreventNavModalText
         )}</item>
 
-        <!-- 7. THINNING -->
+        <!-- 8. THINNING -->
+        <item id="thinPageTitle">${encodeHTML(useStore.getState().thinningPageTitle)}</item>
+        <item id="thinPageSubmitButton">${encodeHTML(
+          useStore.getState().thinningPageSubmitButtonText
+        )}</item>
+        <item id="numStatementsToSelect">${encodeHTML(
+          useStore.getState().thinningPageNumStatesToSelect
+        )}</item>
+        <item id="currentlySelectedNumber">${encodeHTML(
+          useStore.getState().thinningPageCurrentNumStatesSelected
+        )}</item>
         <item id="thinningPreventNavModalHead">${encodeHTML(
           useStore.getState().thinningPreventNavModalHead
         )}</item>
         <item id="thinningPreventNavModalText">${encodeHTML(
           useStore.getState().thinningPreventNavModalText
+        )}</item>
+       <item id="thinningHelpModalHead">${encodeHTML(
+         useStore.getState().thinningHelpModalHead
+       )}</item>
+        <item id="thinningHelpModalText">${encodeHTML(
+          useStore.getState().thinningHelpModalText
         )}</item>
         <item id="thinningConfirmModalHead">${encodeHTML(
           useStore.getState().thinningConfirmModalHead
@@ -157,11 +172,15 @@ const generateLanguageXml = () => {
         <item id="initialInstructionPart3">${encodeHTML(
           useStore.getState().initialInstructionPart3
         )}</item>
-        <item id="agreeMostText">${encodeHTML(useStore.getState().agreeMostText)}</item>
-        <item id="agreeLeastText">${encodeHTML(useStore.getState().agreeLeastText)}</item>
+        <item id="initialInstructionPartNeg1">${encodeHTML(
+          useStore.getState().initialInstructionNegPart1
+        )}</item>
+        <item id="initialInstructionPartNeg2">${encodeHTML(
+          useStore.getState().initialInstructionNegPart2
+        )}</item>
         <item id="finalInstructions">${encodeHTML(useStore.getState().finalInstructions)}</item>
 
-        <!-- 8. MOBILE THINNING -->
+        <!-- 9. MOBILE THINNING -->
         <item id="moveTopMobileHead">${encodeHTML(useStore.getState().moveTopMobileHead)}</item>
         <item id="moveTopMobileText">${encodeHTML(useStore.getState().moveTopMobileText)}</item>
         <item id="moveAllTopMobileText">${encodeHTML(
@@ -225,7 +244,7 @@ const generateLanguageXml = () => {
           useStore.getState().mobileThinScrollBottomModalText
         )}</item>
 
-        <!-- 9. SORT -->
+        <!-- 10. SORT -->
         <item id="sortHelpModalHead">${encodeHTML(useStore.getState().sortHelpModalHead)}</item>
         <item id="sortHelpModalText">${encodeHTML(useStore.getState().sortHelpModalText)}</item>
         <item id="sortAgreement">${encodeHTML(useStore.getState().sortAgreement)}</item>
@@ -250,7 +269,7 @@ const generateLanguageXml = () => {
           useStore.getState().sortOverloadedColumnModalText
         )}</item>
 
-        <!-- 10. MOBILE SORT -->
+        <!-- 11. MOBILE SORT -->
         <item id="mobileSortSwapModalHead">${encodeHTML(
           useStore.getState().mobileSortSwapModalHead
         )}</item>
@@ -315,7 +334,7 @@ const generateLanguageXml = () => {
          useStore.getState().mobilePostsortHelpModalText
        )}</item>
 
-        <!-- 13. SURVEY: Additional questions, only displayed if showStep4 == true -->
+        <!-- 13. SURVEY: Additional questions, only displayed if showStep4 == TRUE -->
         <item id="surveyHeader">${encodeHTML(useStore.getState().surveyHeader)}</item>
         <item id="surveyModalHead">${encodeHTML(useStore.getState().surveyModalHead)}</item>
         <item id="surveyModalText">${encodeHTML(useStore.getState().surveyModalText)}</item>

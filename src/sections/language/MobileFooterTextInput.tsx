@@ -26,21 +26,21 @@ const MobileFooterTextInput = () => {
 
   console.log("langBtnHelp", langBtnHelp);
 
-  const handleShowDefaults = (e) => {
+  const handleShowDefaults = (e: any) => {
     console.log("handleShowDefaults", e.target.id);
     showSectionDefaults(e.target.id);
   };
 
-  const handleClearAll = (e) => {
+  const handleClearAll = (e: any) => {
     clearSection(e.target.id);
   };
 
-  const handleTextChange = (e) => {
+  const handleTextChange = (e: any) => {
     console.log("handleTextChange", e.target.value);
     setText(e.target.name, e.target.value);
   };
 
-  const handleRefImage = (e) => {
+  const handleRefImage = (e: any) => {
     // showRefImage(e.target.id);
   };
 

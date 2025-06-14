@@ -20,7 +20,7 @@ const getMobilePresortHelpModalHead = (state) => state.mobilePresortHelpModalHea
 const getMobilePresortHelpModalText = (state) => state.mobilePresortHelpModalText;
 const getMobilePresortFinishedModalHead = (state) => state.mobilePresortFinishedModalHead;
 const getMobilePresortFinishedModalText = (state) => state.mobilePresortFinishedModalText;
-const getMobilePresortProcessCompleteMessage = (state) => state.mobilePresortProcessCompleteMessage;
+// const getMobilePresortProcessCompleteMessage = (state) => state.mobilePresortProcessCompleteMessage;
 const getMobilePresortPreventNavModalHead = (state) => state.mobilePresortPreventNavModalHead;
 const getMobilePresortPreventNavModalText = (state) => state.mobilePresortPreventNavModalText;
 
@@ -39,23 +39,23 @@ const MobilePresortTextInput = () => {
   const mobilePresortHelpModalText = useStore(getMobilePresortHelpModalText);
   const mobilePresortFinishedModalHead = useStore(getMobilePresortFinishedModalHead);
   const mobilePresortFinishedModalText = useStore(getMobilePresortFinishedModalText);
-  const mobilePresortProcessCompleteMessage = useStore(getMobilePresortProcessCompleteMessage);
+  // const mobilePresortProcessCompleteMessage = useStore(getMobilePresortProcessCompleteMessage);
   const mobilePresortPreventNavModalHead = useStore(getMobilePresortPreventNavModalHead);
   const mobilePresortPreventNavModalText = useStore(getMobilePresortPreventNavModalText);
 
-  const handleRefImage = (e) => {
+  const handleRefImage = (e: any) => {
     // showRefImage(e.target.id);
   };
-  const handleShowDefaults = (e) => {
+  const handleShowDefaults = (e: any) => {
     showSectionDefaults(e.target.id);
   };
 
-  const handleTextChange = (e) => {
+  const handleTextChange = (e: any) => {
     console.log("handleTextChange", e.target.value);
     setText(e.target.name, e.target.value);
   };
 
-  const handleClearAll = (e) => {
+  const handleClearAll = (e: any) => {
     clearSection(e.target.id);
   };
 

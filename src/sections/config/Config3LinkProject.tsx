@@ -17,15 +17,11 @@ const Config3LinkProject: React.FC = () => {
   const setSecondProjectUrl = useStore(getSetSecondProjectUrl);
   const { t } = useTranslation();
 
-  const handleSecondProjectUrlAddressChange = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleSecondProjectUrlAddressChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSecondProjectUrl(event.target.value);
   };
 
-  const handleLinkSecondProjectChange = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleLinkSecondProjectChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.value === "true") {
       setLinkToSecondProject(true);
     } else {
@@ -36,20 +32,16 @@ const Config3LinkProject: React.FC = () => {
   return (
     <div className="flex flex-col  pt-6 pb-2 hover:bg-gray-100 hover:outline outline-2 outline-zinc-600 p-2 hover:rounded-md">
       <div className="flex flex-row content-center gap-5 mt-3">
-        <span className="text-lg font-title font-semibold">
-          {t("projectLinking")}
-        </span>
-        <img
+        <span className="text-lg font-title font-semibold">{`3. ${t("projectLinking")}`}</span>
+        {/* <img
           src={Image}
           className=" w-[25px] h-[25px] justify-self-center"
           onClick={() => alert("This is a tooltip")}
           alt="info icon"
-        />
+        /> */}
       </div>
       <div className="flex flex-row h-[60px] content-center items-center gap-5 mt-3">
-        <span className="content-center">{`3a. ${t(
-          "linkToSecondProject"
-        )}:`}</span>
+        <span className="content-center">{`3a. ${t("linkToSecondProject")}:`}</span>
         <div className="">
           <label
             className={clsx(

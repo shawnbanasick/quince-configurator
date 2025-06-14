@@ -7,15 +7,18 @@ const createConfigXmlSlice = (set, get) => ({
   traceSorts: true,
 
   studyTitle: "My Study Title",
-  setupTarget: "firebase",
-  emailAddress: "",
-  emailSubjectLine: "Your Study Results",
   linkToSecondProject: false,
   secondProjectUrl: "",
   useImages: false,
   numImages: 0,
   imageFileType: "jpg",
   imageFormat: "letterbox",
+
+  setupTarget: "baserow",
+  baserowToken: "",
+  baserowDatabaseId: "",
+  emailAddress: "",
+  emailSubjectLine: "Q Sort Results",
 
   showConsentPage: false,
   showConsentPageHelpModal: true,
@@ -39,6 +42,8 @@ const createConfigXmlSlice = (set, get) => ({
   sortDirection: "positive",
   allowUnforcedSorts: false,
   warnOverloadedColumn: true,
+  minCardHeightSort: 120,
+  defaultFontSizeSort: 16,
 
   showPostsort: true,
   showSecondPosColumn: false,
@@ -90,6 +95,18 @@ const createConfigXmlSlice = (set, get) => ({
   isEditingSurveyQuestionIndex: -1,
   triggerSurveyQuestionDeleteModal: false,
 
+  setMinCardHeightSort: (height) => {
+    set(() => ({ minCardHeightSort: height }));
+  },
+  setDefaultFontSizeSort: (size) => {
+    set(() => ({ defaultFontSizeSort: size }));
+  },
+  setBaserowToken: (token) => {
+    set(() => ({ baserowToken: token }));
+  },
+  setBaserowDatabaseId: (id) => {
+    set(() => ({ baserowDatabaseId: id }));
+  },
   setVersion: (version) => {
     set(() => ({ version: version }));
   },

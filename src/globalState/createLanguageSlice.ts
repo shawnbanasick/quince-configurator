@@ -96,7 +96,7 @@ const createMapXmlSlice = (set) => ({
   initialInstructionPart1: `Below are the statements you rated positively in the previous step. Now, pick the number of statements that you <b>MOST AGREE</b>.<br /><br />`,
   initialInstructionPart2: `Next, continue to select the statements that are CLOSEST to your perspective`,
   initialInstructionPart3: `Another set of statements will appear on the screen after you click the orange "Submit" button.`,
-  initialInstructionNegPart1: `Below are the statements you rated positively in the previous step. Now, pick statements that <mark<b>DIFFER THE MOST FROM YOUR PERSPECTIVE</b></mark>.`,
+  initialInstructionNegPart1: `Below are the statements you rated positively in the previous step. Now, pick statements that <mark><b>DIFFER THE MOST FROM YOUR PERSPECTIVE</b></mark>.`,
   initialInstructionNegPart2: `Next, continue to select the statements that are <mark>DIFFER THE MOST</mark> from your perspective.`,
   // agreeMostText: `Next, repeat the process with the remaining statements, but this time please select the cards that you agree with the most.`,
   // agreeLeastText: `Next, repeat the process with the remaining statements, but this time please select the cards that you agree with the least.`,

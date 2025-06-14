@@ -3,7 +3,7 @@ import { useStore } from "../../globalState/useStore";
 import { useTranslation } from "react-i18next";
 import { Radio } from "../utils/RadioButtons";
 import { UserTextInput } from "../utils/UserTextInput";
-import Image from "../../assets/images/infoIcon.svg";
+// import Image from "../../assets/images/infoIcon.svg";
 
 const getInitialScreen = (state) => state.initialScreen;
 const getSetInitialScreen = (state) => state.setInitialScreen;
@@ -18,12 +18,11 @@ const Config6LandingPageOptions: React.FC = () => {
   const { t } = useTranslation();
 
   const handleInitialScreenChange = (inputValue: any) => {
+    console.log("Initial screen changed:", inputValue);
     setInitialScreen(inputValue);
   };
 
-  const handleAccessCodeChange = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleAccessCodeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setAccessCode(event.target.value);
   };
 
@@ -35,15 +34,13 @@ const Config6LandingPageOptions: React.FC = () => {
   return (
     <div className="flex flex-col  pt-6 pb-2 hover:bg-gray-100 hover:outline outline-2 outline-zinc-600 p-2 hover:rounded-md">
       <div className="flex flex-row content-center gap-5 mt-3">
-        <span className="text-lg font-title font-semibold">
-          {t("projectAccessOptions")}
-        </span>{" "}
-        <img
+        <span className="text-lg font-title font-semibold">6. {t("projectAccessOptions")}</span>{" "}
+        {/* <img
           src={Image}
           className=" w-[25px] h-[25px] justify-self-center"
           onClick={() => alert("This is a tooltip")}
           alt="info icon"
-        />
+        /> */}
       </div>
 
       <div className="flex flex-row h-[70px] content-center gap-5 mt-1">

@@ -7,7 +7,7 @@ const generateConfigXml = () => {
   const initialScreen = useStore.getState().initialScreen;
   let studyTitle = useStore.getState().studyTitle;
   const version = useStore.getState().version;
-  const setupTarget = useStore.getState().setupTarget;
+  // const setupTarget = useStore.getState().setupTarget;
   const imageFormat = useStore.getState().imageFormat;
   const emailAddress = useStore.getState().emailAddress;
   const emailSubjectLine = useStore.getState().emailSubjectLine;
@@ -16,7 +16,7 @@ const generateConfigXml = () => {
   const useImages = useStore.getState().useImages;
   const numImages = useStore.getState().numImages;
   const imageFileType = useStore.getState().imageFileType;
-  const shuffleCards = useStore.getState().ShuffleCards;
+  const shuffleCards = useStore.getState().shuffleCards;
   const headerBarColor = useStore.getState().headerBarColor;
   const showConsentPage = useStore.getState().showConsentPage;
   const showConsentPageHelpModal = useStore.getState().showConsentPageHelpModal;
@@ -25,8 +25,6 @@ const generateConfigXml = () => {
   const yellowCardColor = useStore.getState().yellowCardColor;
   const pinkCardColor = useStore.getState().pinkCardColor;
   const defaultFontColor = useStore.getState().defaultFontColor;
-  //   const defaultFontSize = useStore.getState().defaultFontSize;
-  //   const displayNeutralObjects = useStore.getState().displayNeutralObjects;
   const condOfInstFontSize = useStore.getState().condOfInstFontSize;
   const allowUnforcedSorts = useStore.getState().allowUnforcedSorts;
   const warnOverloadedColumn = useStore.getState().warnOverloadedColumn;
@@ -42,26 +40,14 @@ const generateConfigXml = () => {
   const minCardHeightPostsort = useStore.getState().minCardHeightPostsort;
   const showSurvey = useStore.getState().showSurvey;
   const surveyQuestionsArray = useStore.getState().surveyQuestionsArray;
-  const presortTrace = useStore.getState().presortTrace;
   const defaultFontSizePresort = useStore.getState().defaultFontSizePresort;
+  const baserowToken = useStore.getState().baserowToken;
+  const baserowDatabaseId = useStore.getState().baserowDatabaseId;
+  //   const defaultFontSize = useStore.getState().defaultFontSize;
+  //   const displayNeutralObjects = useStore.getState().displayNeutralObjects;
+  // const presortTrace = useStore.getState().presortTrace;
   //   const presortMinCardHeight = useStore.getState().presortMinCardHeight;
-  const thinGuidanceModalMaxIterations =
-    useStore.getState().thinGuidanceModalMaxIterations;
-
-  let loginTypeText;
-  const loginType = initialScreen;
-  if (loginType === "name only") {
-    loginTypeText = "partId";
-  }
-  if (loginType === "anonymous") {
-    loginTypeText = "anonymous";
-  }
-  if (loginType === "name + access code") {
-    loginTypeText = "partId-access";
-  }
-  if (loginType === "access code only") {
-    loginTypeText = "access";
-  }
+  // const thinGuidanceModalMaxIterations = useStore.getState().thinGuidanceModalMaxIterations;
 
   //   let defaultLogo = appState.configLogoHtml;
   //   defaultLogo = defaultLogo.replace(/\s/g, "");
@@ -93,62 +79,61 @@ const generateConfigXml = () => {
    <config version="${version}" htmlParse="false">\n`;
 
   const data2 = `
-   <!-- GENERAL SETTINGS -->
-   <!-- "setupTarget" options: netlify, firebase, local, email, or sheets -->
+   <!-- 0. HIDDEN OPTIONS -->
+   <item id="devMode">false</item> 
+   <item id="traceSorts">true</item> 
+   <item id="thinGuidanceModalMaxIterations">2</item>
+
+
+   <!-- 1. STUDY TITLE -->
    <item id="studyTitle">${studyTitle}</item> 
-   <item id="setupTarget">${setupTarget}</item>
 
-   <!-- EMAIL -->
-   <item id="emailAddress">${emailAddress}</item>  
-   <item id="emailSubject">${emailSubjectLine}</item>  
+   <!-- 2. DATABASE SETUP -->
+   <item id="baserowToken">${baserowToken}</item>
+   <item id="baserowDatabaseIdNumber">${baserowDatabaseId}</item>
+   <item id="emailAddress">${emailAddress}</item>
+   <item id="emailSubjectLine">${emailSubjectLine}</item>
 
-   <!-- SECOND PROJECT LINKING -->
+   <!-- 3. SECOND PROJECT LINKING -->
    <item id="linkToSecondProject">${linkToSecondProject}</item> 
    <item id="secondProjectUrl">${secondProjectUrl}</item> 
 
-   <!-- IMAGE OPTIONS  (imageFormat: 169 or 43)-->
+   <!-- 4. STATEMENT OR IMAGE SORT  (imageFormat: 169 or 43)-->
    <item id="useImages">${useImages}</item>
    <item id="numImages">${numImages}</item>
    <item id="imageFileType">${imageFileType}</item>
    <item id="imageFormat">${imageFormat}</item>
 
-   <!-- OTHER GENERAL OPTIONS -->
-   <item id="shuffleCards">${shuffleCards}</item>
-   <item id="headerBarColor">${headerBarColor}</item>
-   <item id="devMode">false</item> 
+   <!-- 5. CONSENT PAGE OPTIONS -->
    <item id="showConsentPage">${showConsentPage}</item>
    <item id="showConsentPageHelpModal">${showConsentPageHelpModal}</item>
-
-   <!-- ACCESS -->
+   
+   <!-- 6. PROJECT ACCESS OPTIONS -->
    <!-- options: anonymous, partId-access, partId, access -->
-   <item id="initialScreen">${loginTypeText}</item>
+   <item id="initialScreen">${initialScreen}</item>
    <item id="accessCode">${accessCode}</item>
-  
-   <!-- PRESORT -->
-   <!-- default colors #2a2a2a, #ccffcc, #e0e0e0, #ffe0f0 -->
+   
+   <!-- 7. COLORS  -->
+   <!-- defaults = #2a2a2a (font), #ccffcc (right), #e0e0e0 (center), #ffe0f0 (left) -->
+   <item id="headerBarColor">${headerBarColor}</item>
    <item id="greenCardColor">${greenCardColor}</item>
    <item id="yellowCardColor">${yellowCardColor}</item>
    <item id="pinkCardColor">${pinkCardColor}</item>
    <item id="defaultFontColor">${defaultFontColor}</item>
-
-   <item id="setDefaultFontSizePresort">true</item>
+   
+   <!-- 8. PRESORT -->
+   <item id="shuffleCards">${shuffleCards}</item>
    <item id="defaultFontSizePresort">${defaultFontSizePresort}</item>
-   <item id="traceSorts">${presortTrace}</item>
 
-   <!-- THINNING -->
-   <item id="thinGuidanceModalMaxIterations">${thinGuidanceModalMaxIterations}</item>
-
-   <!-- SORT -->
+   <!-- 9. SORT -->
+   <item id="condOfInstFontSize">${condOfInstFontSize}</item>
+   <item id="sortDirection">${sortDirection}</item> 
    <item id="allowUnforcedSorts">${allowUnforcedSorts}</item>
    <item id="warnOverloadedColumn">${warnOverloadedColumn}</item>
-   <item id="condOfInstFontSize">${condOfInstFontSize}</item>
-
    <item id="setMinCardHeightSort">true</item>
    <item id="minCardHeightSort">${minCardHeightSort}</item>
    <item id="setDefaultFontSizeSort">true</item>
    <item id="defaultFontSizeSort">${defaultFontSizeSort}</item>
-   
-   <item id="sortDirection">${sortDirection}</item> 
 
    <!-- POSTSORT -->
    <item id="showPostsort">${showPostsort}</item>
@@ -156,7 +141,6 @@ const generateConfigXml = () => {
    <item id="showSecondNegColumn">${showSecondNegColumn}</item>
    <item id="showBackButton">${showBackButton}</item>
    <item id="postsortCommentsRequired">${postsortCommentsRequired}</item>
-
    <item id="setDefaultFontSizePostsort">true</item>
    <item id="defaultFontSizePostsort">${defaultFontSizePostsort}</item>
    <item id="setMinCardHeightPostsort">true</item>
@@ -190,11 +174,7 @@ const generateConfigXml = () => {
       if (itemObject.limited === true || itemObject.limited === "true") {
         limitedString = `true`;
         maxLengthNum = +itemObject.limitLength;
-        if (
-          maxLengthNum === undefined ||
-          maxLengthNum === null ||
-          isNaN(maxLengthNum)
-        )
+        if (maxLengthNum === undefined || maxLengthNum === null || isNaN(maxLengthNum))
           maxLengthNum = itemObject.maxlength;
       } else {
         limitedString = `false`;
@@ -206,14 +186,7 @@ const generateConfigXml = () => {
       const input = `        <input type="text" required="${itemObject.required}" limited="${limitedString}" limitLength="${maxLengthNum}" ${restrictedString}></input>\n`;
       const placeholder = `        <placeholder>${itemObject.placeholder}</placeholder>\n`;
 
-      item = accumulatorString.concat(
-        open,
-        input,
-        label,
-        note,
-        placeholder,
-        close
-      );
+      item = accumulatorString.concat(open, input, label, note, placeholder, close);
     }
 
     // for TEXT-RESTRICTED items
@@ -228,14 +201,7 @@ const generateConfigXml = () => {
       label = `        <label>${encodeHTML(itemObject.label)}</label>\n`;
       const note = `        <note>${encodeHTML(itemObject.note)}</note>\n`;
       const placeholder = `        <placeholder>${itemObject.placeholder}</placeholder>\n`;
-      item = accumulatorString.concat(
-        open,
-        input,
-        label,
-        note,
-        placeholder,
-        close
-      );
+      item = accumulatorString.concat(open, input, label, note, placeholder, close);
     }
 
     // for TEXTAREA items
@@ -244,14 +210,7 @@ const generateConfigXml = () => {
       label = `        <label>${encodeHTML(itemObject.label)}</label>\n`;
       const note = `        <note>${encodeHTML(itemObject.note)}</note>\n`;
       const placeholder = `        <placeholder>${itemObject.placeholder}</placeholder>\n`;
-      item = accumulatorString.concat(
-        open,
-        input,
-        label,
-        note,
-        placeholder,
-        close
-      );
+      item = accumulatorString.concat(open, input, label, note, placeholder, close);
     }
 
     // for RADIO items
@@ -265,9 +224,7 @@ const generateConfigXml = () => {
     // for SELECT items
     if (itemObject.surveyQuestionType === "select") {
       const input = `        <input type="select" required="${itemObject.required}">${itemObject.options}</input>\n`;
-      label = `        <label>${encodeHTML(
-        encodeHTML(itemObject.label)
-      )}</label>\n`;
+      label = `        <label>${encodeHTML(encodeHTML(itemObject.label))}</label>\n`;
       const note = `        <note>${encodeHTML(itemObject.note)}</note>\n`;
       item = accumulatorString.concat(open, input, label, note, close);
     }
@@ -289,11 +246,9 @@ const generateConfigXml = () => {
 
     // for RATING2 items
     if (itemObject.surveyQuestionType === "rating2") {
-      const input = `        <input type="rating2" required="${
-        itemObject.required
-      }" scale="${itemObject.scale}">${encodeHTML(
-        itemObject.options
-      )}</input>\n`;
+      const input = `        <input type="rating2" required="${itemObject.required}" scale="${
+        itemObject.scale
+      }">${encodeHTML(itemObject.options)}</input>\n`;
       label = `        <label>${encodeHTML(itemObject.label)}</label>\n`;
       const note = `        <note>${encodeHTML(itemObject.note)}</note>\n`;
       item = accumulatorString.concat(open, input, label, note, close);

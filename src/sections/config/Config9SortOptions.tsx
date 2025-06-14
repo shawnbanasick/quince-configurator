@@ -14,6 +14,11 @@ const getWarnOverloadedColumn = (state) => state.warnOverloadedColumn;
 const getSetWarnOverloadedColumn = (state) => state.setWarnOverloadedColumn;
 const getConditionOfInstFontSize = (state) => state.condOfInstFontSize;
 const getSetConditionOfInstFontSize = (state) => state.setCondOfInstFontSize;
+const getDefaultFontSizeSort = (state) => state.defaultFontSizeSort;
+// const getSetDefaultFontSizeSort = (state) => state.setDefaultFontSizeSort;
+const getMinCardHeightSort = (state) => state.minCardHeightSort;
+const getSetMinCardHeightSort = (state) => state.setMinCardHeightSort;
+const getSetDefaultFontSizeSort = (state) => state.setDefaultFontSizeSort;
 
 const Config9SortOptions: React.FC = () => {
   const { t } = useTranslation();
@@ -25,11 +30,20 @@ const Config9SortOptions: React.FC = () => {
   const setWarnOverloadedColumn = useStore(getSetWarnOverloadedColumn);
   const condOfInstFontSize = useStore(getConditionOfInstFontSize);
   const setCondOfInstFontSize = useStore(getSetConditionOfInstFontSize);
+  const defaultFontSizeSort = useStore(getDefaultFontSizeSort);
+  const setDefaultFontSizeSort = useStore(getSetDefaultFontSizeSort);
+  const minCardHeightSort = useStore(getMinCardHeightSort);
+  const setMinCardHeightSort = useStore(getSetMinCardHeightSort);
 
-  const handleWarnOverloadedColumnChange = (
-    input: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    console.log(input.target.value);
+  const handleDefaultFontSizeSortChange = (inputValue: any) => {
+    setDefaultFontSizeSort(inputValue);
+  };
+
+  const handleMinCardHeightSortChange = (inputValue: any) => {
+    setMinCardHeightSort(inputValue);
+  };
+
+  const handleWarnOverloadedColumnChange = (input: React.ChangeEvent<HTMLInputElement>) => {
     if (input.target.value === "true") {
       setWarnOverloadedColumn(true);
     } else {
@@ -37,10 +51,7 @@ const Config9SortOptions: React.FC = () => {
     }
   };
 
-  const handleAllowUnforcedSortsChange = (
-    input: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    console.log(input.target.value);
+  const handleAllowUnforcedSortsChange = (input: React.ChangeEvent<HTMLInputElement>) => {
     if (input.target.value === "true") {
       setAllowUnforcedSorts(true);
     } else {
@@ -59,15 +70,13 @@ const Config9SortOptions: React.FC = () => {
   return (
     <div className="flex flex-col  pt-6 pb-2 hover:bg-gray-100 hover:outline outline-2 outline-zinc-600 p-2 hover:rounded-md">
       <div className="flex flex-row content-center gap-5 mt-3">
-        <span className="text-lg font-title font-semibold">
-          {t("sortPageOptions")}
-        </span>{" "}
-        <img
+        <span className="text-lg font-title font-semibold">9. {t("sortPageOptions")}</span>{" "}
+        {/* <img
           src={Image}
           className=" w-[25px] h-[25px] justify-self-center"
           onClick={() => alert("This is a tooltip")}
           alt="info icon"
-        />
+        /> */}
       </div>
 
       <UserNumInput
@@ -107,9 +116,7 @@ const Config9SortOptions: React.FC = () => {
       </div>
 
       <div className="flex flex-row h-[60px] content-center gap-5 mt-3">
-        <span className="content-center">{`9c. ${t(
-          "allowUnforcedSorts"
-        )}:`}</span>
+        <span className="content-center">{`9c. ${t("allowUnforcedSorts")}:`}</span>
         <div className="content-center">
           <label
             className={clsx(
@@ -160,9 +167,7 @@ const Config9SortOptions: React.FC = () => {
       </div>
 
       <div className="flex flex-row h-[60px] content-center gap-5 mt-3">
-        <span className="content-center">{`9d. ${t(
-          "warnOverloadedColumns"
-        )}:`}</span>
+        <span className="content-center">{`9d. ${t("warnOverloadedColumns")}:`}</span>
         <div className="content-center">
           <label
             className={clsx(
@@ -173,7 +178,7 @@ const Config9SortOptions: React.FC = () => {
                   !warnOverloadedColumn,
               }
             )}
-            htmlFor="shuffleCardsTrue"
+            htmlFor="warnOverloadedColumnTrue"
           >
             <input
               type="radio"
@@ -196,7 +201,7 @@ const Config9SortOptions: React.FC = () => {
                   warnOverloadedColumn,
               }
             )}
-            htmlFor="shuffleCardsFalse"
+            htmlFor="warnOverloadedColumnFalse"
           >
             <input
               type="radio"
@@ -211,6 +216,35 @@ const Config9SortOptions: React.FC = () => {
           </label>
         </div>
       </div>
+      <UserNumInput
+        classNameNum={`mt-4 block min-w-[80px] px-3 py-2 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 outline outline-1 outline-zinc-600 ml-4`}
+        classNameLabel={`flex flex-row content-center min-w-[170px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+        highlight={true}
+        label={`9e. ${t("defaultFontSizeSort")}:`}
+        placeholder=""
+        upperLimit={199}
+        lowerLimit={6}
+        step={1}
+        disabled={false}
+        name="defaultFontSizeSort"
+        value={defaultFontSizeSort}
+        onChange={handleDefaultFontSizeSortChange}
+      />
+
+      <UserNumInput
+        classNameNum={`mt-6 mb-2 block min-w-[80px] px-3 py-2 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 outline outline-1 outline-zinc-600 ml-4`}
+        classNameLabel={`flex flex-row content-center min-w-[170px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+        highlight={true}
+        label={`9f. ${t("minCardHeightSort")}:`}
+        placeholder=""
+        upperLimit={199}
+        lowerLimit={6}
+        step={1}
+        disabled={false}
+        name="minCardHeightSort"
+        value={minCardHeightSort}
+        onChange={handleMinCardHeightSortChange}
+      />
     </div>
   );
 };
