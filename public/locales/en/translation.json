@@ -177,6 +177,9 @@
   "allStatementsAssigned": "All Statements Assigned",
   "overAllocatedStatements": "Over Allocated Statements",
   "noStatementsLoaded": "No Statements Loaded in the Statements.xml section",
+  "loadStatementsError": "Error: No statements loaded in the Statements.xml section. Please load a file or enter statements in the 'Statements' section.",
+  "allStatementsAssignedError": "Error: Some statements have not been assigned to a column. Please check the number of statements in the Q-sort grid. ",
+  "missingMobileColumnLabels": "Error: Missing mobile column labels. Please enter the correct number of mobile column labels.",
 
   "*** DATABASE - MAIN PAGE ***": "*** DATABASE - MAIN PAGE ***",
   "baserowSetupProcess": "Baserow Database Setup Process",

@@ -3,8 +3,6 @@ import { useStore } from "../../globalState/useStore.js";
 import { InputDiv } from "./InputDiv";
 import { useTranslation } from "react-i18next";
 
-// import { convertQsortObjectToArray } from "./convertQsortObjectToArray";
-
 const getColColN6 = (state) => state.colColN6;
 const getColColN5 = (state) => state.colColN5;
 const getColColN4 = (state) => state.colColN4;
@@ -51,12 +49,13 @@ const getQSortPatternObject = (state) => state.qSortPatternObject;
 const getSetMapInputQsortPattern = (state) => state.setMapInputQsortPattern;
 const getSetQSortPatternObject = (state) => state.setQSortPatternObject;
 const getSetMapNumTotalColumns = (state) => state.setMapNumTotalColumns;
+const getSetAllStatementsAllocated = (state) => state.setAllStatementsAllocated;
 
 const MapInputElement = (props) => {
   // Numbers tile bar background color
-  const { t } = useTranslation();
   let backgroundCol = "#d6dbe0";
 
+  const { t } = useTranslation();
   const totalEntries = useRef(0);
 
   const colColN6 = useStore(getColColN6);
@@ -104,6 +103,7 @@ const MapInputElement = (props) => {
   let qSortPatternObject = useStore(getQSortPatternObject);
   const setQSortPatternObject = useStore(getSetQSortPatternObject);
   const setMapNumTotalColumns = useStore(getSetMapNumTotalColumns);
+  const setAllStatementsAllocated = useStore(getSetAllStatementsAllocated);
 
   const [displayTitles, setDisplayTitles] = useState({
     inputTitle: "Enter the Number of Statements in Each Column",
@@ -114,10 +114,6 @@ const MapInputElement = (props) => {
   const calcQsortDesign = (value, name) => {
     const columnName2 = name;
     let columnName = columnName2.replace("M", "-");
-
-    console.log("value", value);
-    console.log("columnName", columnName);
-
     totalEntries.current = +totalEntries.current + value;
 
     if (!qSortPatternObject || qSortPatternObject === null || qSortPatternObject === undefined) {
@@ -127,9 +123,7 @@ const MapInputElement = (props) => {
     setNumber(`activeValue${columnName2}`, value.toString());
     localStorage.setItem(`activeValue${columnName}`, value.toString());
     qSortPatternObject[columnName] = value.toString();
-
     localStorage.setItem("qSortPatternObject", JSON.stringify(qSortPatternObject));
-
     setQSortPatternObject(qSortPatternObject);
   };
 
@@ -163,7 +157,6 @@ const MapInputElement = (props) => {
     // calculate the number of columns that have non-zero values
     const numNonZeroColumns = qSortPatternArray.filter((value) => value > 0).length;
     setMapNumTotalColumns(numNonZeroColumns);
-
     setMapInputQsortPattern(qSortPatternArray);
 
     const difference = props.numStatements - numInputStatements;
@@ -173,16 +166,19 @@ const MapInputElement = (props) => {
         inputTitle: `${t("allStatementsAssigned")}`,
         inputColor: "bg-green-200",
       });
+      setAllStatementsAllocated(true);
     } else if (difference > 0) {
       setDisplayTitles({
         inputTitle: `${t("statementsLeft")}: ${difference}`,
         inputColor: "bg-white",
       });
+      setAllStatementsAllocated(false);
     } else {
       setDisplayTitles({
         inputTitle: `${t("overAllocatedStatements")} ${-difference}`,
         inputColor: "bg-red-100",
       });
+      setAllStatementsAllocated(false);
     }
   }, [
     props.numStatements,

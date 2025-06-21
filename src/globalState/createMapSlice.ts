@@ -54,6 +54,7 @@ const createMapXmlSlice = (set) => ({
     "Very Strongly Agree, Strongly Agree, Agree, Agree Somewhat, Neutral, Disagree Somewhat, Disagree, Strongly Disagree, Very Strongly Disagree",
   mobileHeadersDefault11:
     "Very Strongly Agree, Strongly Agree, Agree, Agree Somewhat, Slightly Agree, Neutral, Very Slightly Disagree, Disagree Somewhat, Disagree, Strongly Disagree, Very Strongly Disagree",
+  allStatementsAllocated: false,
 
   /*
    ******** GENERIC STATE CHANGE  ****************** */
@@ -61,6 +62,9 @@ const createMapXmlSlice = (set) => ({
   setColor: (stateDesig, color) => set(() => ({ [stateDesig]: color })),
   setNumber: (stateDesig, number) => set(() => ({ [stateDesig]: number })),
 
+  setAllStatementsAllocated: (value) => {
+    set(() => ({ allStatementsAllocated: value }));
+  },
   setMobileHeadersDefaultLabels: (text) => {
     set(() => ({ mobileHeadersDefaultLabels: text }));
   },

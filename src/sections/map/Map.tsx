@@ -35,6 +35,7 @@ const getMobileHeadersDefault7 = (state) => state.mobileHeadersDefault7;
 const getMobileHeadersDefault9 = (state) => state.mobileHeadersDefault9;
 const getMobileHeadersDefault11 = (state) => state.mobileHeadersDefault11;
 const getNumStatements = (state) => state.numStatements;
+const getAllStatementsAllocated = (state) => state.allStatementsAllocated;
 
 const Map = () => {
   const { t } = useTranslation();
@@ -53,6 +54,7 @@ const Map = () => {
   const mobileHeadersDefault9 = useStore(getMobileHeadersDefault9);
   const mobileHeadersDefault11 = useStore(getMobileHeadersDefault11);
   const numStatements = useStore(getNumStatements);
+  const allStatementsAllocated = useStore(getAllStatementsAllocated);
 
   // let display;
   // if (displayMode === "beginner") {
@@ -60,19 +62,6 @@ const Map = () => {
   // } else {
   //   display = false;
   // }
-
-  const handleClick = () => {
-    const data = generateMapXml();
-    const blob = new Blob([data], { type: "application/xml" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "map.xml";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  };
 
   const handleMapColorPaletteChange = (value) => {
     setMapColorPalette(value);
@@ -129,7 +118,6 @@ const Map = () => {
   };
 
   const handleMapColColorsChange = (value) => {
-    console.log("Map column colors changed to: ", value);
     setMapColColorsStyle(value);
   };
 
@@ -145,12 +133,39 @@ const Map = () => {
   const numHeaderLabels = countMobileHeaders(mobileHeadersText);
   const numMissingHeaders = numMapTotalColumns - numHeaderLabels;
 
+  const handleClick = () => {
+    // check if mobile column labels match the number of columns
+    if (numStatements === 0) {
+      alert(t("loadStatementsError"));
+      return;
+    }
+
+    if (!allStatementsAllocated) {
+      alert(t("allStatementsAssignedError"));
+    }
+
+    if (numMissingHeaders !== 0) {
+      alert(t("missingMobileColumnLabels"));
+      return;
+    }
+
+    const data = generateMapXml();
+    const blob = new Blob([data], { type: "application/xml" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "map.xml";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <div className="flex flex-col items-center justify-center pb-[100px]">
       <h1 className="text-center">Map.xml</h1>
       <h2>{t("qSortGridSettings")}</h2>
       <div className="flex flex-row w-10/12 justify-between gap-[] mt-4 mb-6">
-        {/* <DownloadMapButton onClick={() => handleClick()}> */}
         <UploadAndReadXmlMap />
         <button
           className="w-80 px-6 p-2 bg-orange-300 text-black font-semibold rounded-md hover:opacity-50 focus:outline-none focus:ring-2 border-2 border-gray-600 focus:ring-orange-400 focus:ring-opacity-75 text-center min-h-[70px] select-none"
@@ -160,7 +175,6 @@ const Map = () => {
         </button>
       </div>
       {displayMode && (
-        // <DisplayModeText>
         <div className="ml-[10px] mt-[40px] mb-[30px] w-[78vw] max-w-[1200px] text-[20px] p-[10px] bg-[whitesmoke] rounded-[3px] border-2 border-black">
           {t("mapIntroText1")}
           <br />
@@ -177,10 +191,6 @@ const Map = () => {
           {t("mapIntroText5")}
         </div>
       )}
-      {/* <UploadButtonContainer> */}
-      <div>{/* <UploadMapXmlButton /> */}</div>
-      {/* ** DEBUG ONLY = REMOVE LATER */}
-      {/* <MapInputElement numStatements={numStatements} /> */}
       <MapInputElement numStatements={numStatements} />
       <div className="bg-gray-200 p-6  rounded-md items-left justify-center w-[86vw]">
         <span className="content-center">{`1. ${t("mapColorPalette")}:`}</span>
@@ -310,17 +320,18 @@ const Map = () => {
           <div className="flex flex-row items-center gap-2 mb-2">
             <span>3. {t("mobileHeadersText")}:</span>
             <div className="flex flex-row w-[200px]">
-              {numMissingHeaders > 0 ? (
-                <div className="text-red-700  font-semibold">
-                  {`${t("missingLabels")}: ${numMissingHeaders}`}
-                </div>
-              ) : numMissingHeaders === 0 ? (
-                <div className="text-green-700  font-semibold">{`${t("labelsMatch")}`}</div>
-              ) : (
-                <div className="text-red-700  font-semibold">
-                  {`${t("excessLabels")}: ${numMissingHeaders}`}
-                </div>
-              )}
+              {numStatements > 0 &&
+                (numMissingHeaders > 0 ? (
+                  <div className="text-red-700  font-semibold">
+                    {`${t("missingLabels")}: ${numMissingHeaders}`}
+                  </div>
+                ) : numMissingHeaders === 0 ? (
+                  <div className="text-green-700  font-semibold">{`${t("labelsMatch")}`}</div>
+                ) : (
+                  <div className="text-red-700  font-semibold">
+                    {`${t("excessLabels")}: ${numMissingHeaders}`}
+                  </div>
+                ))}
             </div>
             <span className="ml-20">{`${t("defaultOptions")}`}:</span>
             <Radio

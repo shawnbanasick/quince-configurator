@@ -177,6 +177,9 @@
   "allStatementsAssigned": "すべてのステートメントが割り当てられました",
   "overAllocatedStatements": "割り当てられたステートメントが多すぎます",
   "noStatementsLoaded": "Statements.xml セクションにステートメントが読み込まれていません。",
+  "loadStatementsError": "エラー: Statements.xml セクションにステートメントが読み込まれていません。ファイルをロードするか、『Statements』 セクションにステートメントを入力してください。",
+  "allStatementsAssignedError": "エラー: 一部のステートメントが列に割り当てられていません。Q-sort グリッド内のステートメントの数を確認してください。",
+  "missingMobileColumnLabels": "エラー: モバイル列のラベルが不足しています。正しい数のモバイル列ラベルを入力してください。",
 
   "*** DATABASE - MAIN PAGE ***": "*** DATABASE - MAIN PAGE ***",
   "baserowSetupProcess": "Baserowデータベースの設定",
