@@ -12,11 +12,11 @@ import baserow8 from "../../assets/images/baserow8.png";
 import baserow9 from "../../assets/images/baserow9.png";
 import baserow10 from "../../assets/images/baserow10.png";
 import baserow11 from "../../assets/images/baserow11.png";
-import baserow14 from "../../assets/images/baserow14.png";
-import baserow15 from "../../assets/images/baserow15.png";
-import baserow16 from "../../assets/images/baserow16.png";
-import baserow17 from "../../assets/images/baserow17.png";
-import baserow19 from "../../assets/images/baserow19.png";
+import baserow12 from "../../assets/images/baserow14.png";
+import baserow13 from "../../assets/images/baserow15.png";
+import baserow14 from "../../assets/images/baserow16.png";
+import baserow15 from "../../assets/images/baserow17.png";
+import baserow16 from "../../assets/images/baserow19.png";
 
 const Baserow = () => {
   const { t } = useTranslation();
@@ -145,7 +145,7 @@ const Baserow = () => {
           {`12.`} {step12Text}
         </div>
         <img
-          src={baserow14}
+          src={baserow12}
           className=" w-12/12 justify-self-center border-2 border-gray-300 rounded-md"
           alt="baserow screen 1"
           width={500}
@@ -154,7 +154,7 @@ const Baserow = () => {
           {`13.`} {step13Text}
         </div>
         <img
-          src={baserow15}
+          src={baserow13}
           className=" w-12/12 justify-self-center border-2 border-gray-300 rounded-md"
           alt="baserow screen 1"
           width={400}
@@ -163,7 +163,7 @@ const Baserow = () => {
           {`14.`} {step14Text}
         </div>
         <img
-          src={baserow16}
+          src={baserow14}
           className=" w-12/12 justify-self-center border-2 border-gray-300 rounded-md"
           alt="baserow screen 1"
         />
@@ -171,7 +171,7 @@ const Baserow = () => {
           {`15.`} {step15Text}
         </div>
         <img
-          src={baserow17}
+          src={baserow15}
           className=" w-12/12 justify-self-center border-2 border-gray-300 rounded-md"
           alt="baserow screen 1"
         />
@@ -179,7 +179,7 @@ const Baserow = () => {
           {`16.`} {step16Text}
         </div>
         <img
-          src={baserow19}
+          src={baserow16}
           className=" w-12/12 justify-self-center border-2 border-gray-300 rounded-md"
           alt="baserow screen 1"
         />

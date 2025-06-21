@@ -10,10 +10,12 @@ import { Map } from "../sections/map/Map";
 import { ToastContainer } from "react-toastify";
 import { Statements } from "../sections/statements/Statements";
 import { Databases } from "../sections/databases/Databases";
+import { setLanguageDefaults } from "./setLanguageDefaults.js";
 
 // Add the following import statement for the declaration file
 
-const languages = ["en", "ru", "tm", "ja", "ko", "zh", "es", "fr", "de"];
+// const languages = ["en", "ru", "tm", "ja", "ko", "zh", "es", "fr", "de"];
+const languages = ["en", "ja"];
 
 export const MainPage = () => {
   const { t, i18n } = useTranslation();
@@ -22,6 +24,8 @@ export const MainPage = () => {
   const onChangeLanguage = (lng: string) => {
     console.log(lng);
     i18n.changeLanguage(lng);
+    // set default language for map.xml
+    setLanguageDefaults(lng);
   };
 
   return (
@@ -40,25 +44,27 @@ export const MainPage = () => {
 
         <TabPanel className="flex flex-col justify-center ">
           <div className="justify-self-right">
-            <div>{t("selectLanguage")}</div>
-            <div className="space-x-2">
-              {languages.map((lng) => {
-                return (
-                  <button
-                    onClick={() => onChangeLanguage(lng)}
-                    key={uuidv4()}
-                    className={clsx(
-                      "bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md",
-                      {
-                        "bg-opacity-100": lng === currentLanguage,
-                        "bg-opacity-50": lng !== currentLanguage,
-                      }
-                    )}
-                  >
-                    {lng.toUpperCase()}
-                  </button>
-                );
-              })}
+            <div className="pl-6">
+              <div>{t("selectLanguage")}</div>
+              <div className="space-x-2">
+                {languages.map((lng) => {
+                  return (
+                    <button
+                      onClick={() => onChangeLanguage(lng)}
+                      key={uuidv4()}
+                      className={clsx(
+                        "bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md",
+                        {
+                          "bg-opacity-100": lng === currentLanguage,
+                          "bg-opacity-50": lng !== currentLanguage,
+                        }
+                      )}
+                    >
+                      {lng.toUpperCase()}
+                    </button>
+                  );
+                })}
+              </div>
               <Start />
             </div>
           </div>
