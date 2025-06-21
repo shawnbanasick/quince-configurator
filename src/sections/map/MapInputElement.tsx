@@ -50,6 +50,7 @@ const getSetNumber = (state) => state.setNumber;
 const getQSortPatternObject = (state) => state.qSortPatternObject;
 const getSetMapInputQsortPattern = (state) => state.setMapInputQsortPattern;
 const getSetQSortPatternObject = (state) => state.setQSortPatternObject;
+const getSetMapNumTotalColumns = (state) => state.setMapNumTotalColumns;
 
 const MapInputElement = (props) => {
   // Numbers tile bar background color
@@ -102,6 +103,7 @@ const MapInputElement = (props) => {
   const setNumber = useStore(getSetNumber);
   let qSortPatternObject = useStore(getQSortPatternObject);
   const setQSortPatternObject = useStore(getSetQSortPatternObject);
+  const setMapNumTotalColumns = useStore(getSetMapNumTotalColumns);
 
   const [displayTitles, setDisplayTitles] = useState({
     inputTitle: "Enter the Number of Statements in Each Column",
@@ -118,24 +120,15 @@ const MapInputElement = (props) => {
 
     totalEntries.current = +totalEntries.current + value;
 
-    if (
-      !qSortPatternObject ||
-      qSortPatternObject === null ||
-      qSortPatternObject === undefined
-    ) {
-      qSortPatternObject = JSON.parse(
-        localStorage.getItem("qSortPatternObject") || '""'
-      );
+    if (!qSortPatternObject || qSortPatternObject === null || qSortPatternObject === undefined) {
+      qSortPatternObject = JSON.parse(localStorage.getItem("qSortPatternObject") || '""');
     }
 
     setNumber(`activeValue${columnName2}`, value.toString());
     localStorage.setItem(`activeValue${columnName}`, value.toString());
     qSortPatternObject[columnName] = value.toString();
 
-    localStorage.setItem(
-      "qSortPatternObject",
-      JSON.stringify(qSortPatternObject)
-    );
+    localStorage.setItem("qSortPatternObject", JSON.stringify(qSortPatternObject));
 
     setQSortPatternObject(qSortPatternObject);
   };
@@ -165,10 +158,11 @@ const MapInputElement = (props) => {
       +activeValue13,
     ];
 
-    const numInputStatements = qSortPatternArray.reduce(
-      (sum, current) => sum + current,
-      0
-    );
+    const numInputStatements = qSortPatternArray.reduce((sum, current) => sum + current, 0);
+
+    // calculate the number of columns that have non-zero values
+    const numNonZeroColumns = qSortPatternArray.filter((value) => value > 0).length;
+    setMapNumTotalColumns(numNonZeroColumns);
 
     setMapInputQsortPattern(qSortPatternArray);
 
@@ -176,17 +170,17 @@ const MapInputElement = (props) => {
 
     if (difference === 0) {
       setDisplayTitles({
-        inputTitle: "All Statements Allocated",
+        inputTitle: `${t("allStatementsAssigned")}`,
         inputColor: "bg-green-200",
       });
     } else if (difference > 0) {
       setDisplayTitles({
-        inputTitle: `${difference} Statements Left`,
+        inputTitle: `${t("statementsLeft")}: ${difference}`,
         inputColor: "bg-white",
       });
     } else {
       setDisplayTitles({
-        inputTitle: `Over-Allocated: ${-difference} statements`,
+        inputTitle: `${t("overAllocatedStatements")} ${-difference}`,
         inputColor: "bg-red-100",
       });
     }
@@ -218,17 +212,17 @@ const MapInputElement = (props) => {
   return (
     <div className="flex flex-col mt-10 mb-10 w-auto">
       <div className="flex flex-row">
-        <div className="flex items-center h-[50px] w-auto pr-4 pl-2">
-          {t("qSortPattern")}:
+        <div className="flex items-center h-[50px] w-[250px] pr-4 pl-2">
+          {`${t("qSortPattern")}`} &nbsp;&nbsp;&nbsp; {` >>>`}
         </div>
         {props.numStatements > 0 ? (
-          <div
-            className={`flex pl-2 pr-2 rounded-sm items-center ${displayTitles.inputColor} `}
-          >
+          <div className={`flex pl-2 pr-2 rounded-sm items-center ${displayTitles.inputColor} `}>
             {displayTitles.inputTitle}
           </div>
         ) : (
-          <div>No Statements Loaded in the Statements.xml section</div>
+          <div className="flex items-center h-[50px] w-[66vw] pr-4 pl-2 rounded-md">
+            {`${t("noStatementsLoaded")}`}
+          </div>
         )}
       </div>
       <div className="flex flex-row gap-1 w-auto flex-wrap items-center justify-center">

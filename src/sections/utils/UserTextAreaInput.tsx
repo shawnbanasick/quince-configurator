@@ -11,7 +11,6 @@ interface UserTextAreaInputProps {
   placeholder: string;
   name: string;
   value: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   height: number;
   disabled: boolean;
 }
@@ -37,6 +36,7 @@ const UserTextAreaInput: React.FC<UserTextAreaInputProps> = ({
 
   const handleChange = (event) => {
     event.preventDefault();
+    console.log("UserTextAreaInput handleChange", event.target.value);
     const value = event.target.value;
     setText(key, value);
     localStorage.setItem(key, value);
@@ -62,7 +62,7 @@ const UserTextAreaInput: React.FC<UserTextAreaInputProps> = ({
     return (
       <div className="flex flex-row items-center w-[72vw] focus-within:font-bold">
         <label htmlFor={name} className={classNameLabel}>
-          {`${t(label)} `}
+          {label ? t(label) : ""}
         </label>
         <textarea
           className={`${classNameText}`}

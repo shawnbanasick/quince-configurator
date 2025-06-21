@@ -51,9 +51,7 @@ const generateMapXml = () => {
 
   console.log("qSortPatternObject", JSON.stringify(qSortPatternObject));
   if (qSortPatternObject === null) {
-    qSortPatternObject = JSON.parse(
-      localStorage.getItem("qSortPatternObject") || '""'
-    );
+    qSortPatternObject = JSON.parse(localStorage.getItem("qSortPatternObject") || '""');
   }
   console.log("qSortPatternObject", JSON.stringify(qSortPatternObject));
 
@@ -68,29 +66,19 @@ const generateMapXml = () => {
   console.log("test", test);
 
   // CALC COL ARRAYS
-  let filteredQSortPatternObject = Object.keys(qSortPatternObject).reduce(
-    (property, index) => {
-      if (+qSortPatternObject[index] > 0)
-        property[index] = qSortPatternObject[index];
-      return property;
-    },
-    {}
-  );
+  let filteredQSortPatternObject = Object.keys(qSortPatternObject).reduce((property, index) => {
+    if (+qSortPatternObject[index] > 0) property[index] = qSortPatternObject[index];
+    return property;
+  }, {});
 
   // replace "M" with "-" in keys
-  filteredQSortPatternObject = Object.keys(filteredQSortPatternObject).reduce(
-    (property, index) => {
-      let newKey = index.replace("M", "-");
-      property[newKey] = filteredQSortPatternObject[index];
-      return property;
-    },
-    {}
-  );
+  filteredQSortPatternObject = Object.keys(filteredQSortPatternObject).reduce((property, index) => {
+    let newKey = index.replace("M", "-");
+    property[newKey] = filteredQSortPatternObject[index];
+    return property;
+  }, {});
 
-  console.log(
-    "filteredQSortPatternObject",
-    JSON.stringify(filteredQSortPatternObject)
-  );
+  console.log("filteredQSortPatternObject", JSON.stringify(filteredQSortPatternObject));
 
   let keys = Object.keys(filteredQSortPatternObject).map((x) => +x);
 
@@ -125,8 +113,7 @@ const generateMapXml = () => {
 
       let colorIndex = `colCol${headersLookupArray[i]}`;
 
-      let color =
-        localStorage.getItem(colorIndex) || useStore.getState()[colorIndex];
+      let color = localStorage.getItem(colorIndex) || useStore.getState()[colorIndex];
 
       if (mapColColorsStyle === "headers") {
         columnHeadersColorsArray.push(color);
@@ -162,13 +149,18 @@ const generateMapXml = () => {
   const columnHeadersColorsText = `     <item id="columnHeadersColorsArray">${columnHeadersColorsString}</item>\n`;
   const columnColorsText = `     <item id="columnColorsArray">${columnColorsString}</item>\n`;
 
+  const mobileHeadersTextValue = useStore.getState().mobileHeadersText;
+
+  const mobileHeadersText = `     <item id="mobileHeadersText">${mobileHeadersTextValue}</item>\n`;
+
   // Concat arrays into file
   data = data.concat(
     qSortHeaderNumbersText,
     qSortHeadersText,
     qSortPatternArrayText,
     columnHeadersColorsText,
-    columnColorsText
+    columnColorsText,
+    mobileHeadersText
   );
 
   // end file

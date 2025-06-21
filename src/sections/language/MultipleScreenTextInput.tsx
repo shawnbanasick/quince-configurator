@@ -136,7 +136,6 @@ const MultipleScreenTextInput = () => {
           name="stepCompleted"
           height={150}
           value={langStepCompleted}
-          onChange={handleTextChange}
           highlight={false}
           placeholder=""
           disabled={false}

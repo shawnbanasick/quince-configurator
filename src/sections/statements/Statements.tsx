@@ -38,7 +38,7 @@ const Statements: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center">
       <h1 className="text-center">Statements.xml</h1>
-
+      <h2>{t("listOfStatements")}</h2>
       <div className="flex flex-row w-10/12 justify-between gap-[] mt-4 mb-6">
         <UploadAndReadXmlStatements />
         <div

@@ -30,7 +30,7 @@ const ConfigSections: React.FC = () => {
 
   return (
     <>
-      <div className="flex flex-col align-center w-10/12 pl-10 pr-20 pt-2 pb-8 min-h-fit outline outline-5 outline-blue-300 mb-40">
+      <div className="flex flex-col align-center w-10/12 pl-10 pr-20 pt-2 pb-8 min-h-fit mb-40">
         <Config1StudyTitle />
         <Config2SetupTarget />
         <Config3LinkProject />

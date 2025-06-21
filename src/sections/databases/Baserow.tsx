@@ -33,15 +33,15 @@ const Baserow = () => {
   const step9Text = ReactHtmlParser(decodeHTML(t("baserowStep9"))) || "";
   const step10Text = ReactHtmlParser(decodeHTML(t("baserowStep10"))) || "";
   const step11Text = ReactHtmlParser(decodeHTML(t("baserowStep11"))) || "";
+  const step12Text = ReactHtmlParser(decodeHTML(t("baserowStep12"))) || "";
+  const step13Text = ReactHtmlParser(decodeHTML(t("baserowStep13"))) || "";
   const step14Text = ReactHtmlParser(decodeHTML(t("baserowStep14"))) || "";
   const step15Text = ReactHtmlParser(decodeHTML(t("baserowStep15"))) || "";
   const step16Text = ReactHtmlParser(decodeHTML(t("baserowStep16"))) || "";
-  const step17Text = ReactHtmlParser(decodeHTML(t("baserowStep17"))) || "";
-  const step19Text = ReactHtmlParser(decodeHTML(t("baserowStep19"))) || "";
 
   return (
     <>
-      <span className="mt-8 text-8xl mb-6 font-bold">Baserow Setup Process</span>
+      <span className="mt-8 text-6xl mb-6 font-bold">{t("baserowSetupProcess")}</span>
       <div className="flex flex-col gap-10 justify-center items-center"></div>
       <div className="flex flex-col gap-10 justify-center items-center">
         <div className="ml-[10px] mt-[40px] mb-[30px] w-[78vw] max-w-[1200px] text-[20px] p-[10px] bg-yellow-100 rounded-[3px] border-2 border-black">
@@ -142,7 +142,7 @@ const Baserow = () => {
           alt="baserow screen 1"
         />
         <div className="ml-[10px] mt-[40px] mb-[30px] w-[78vw] max-w-[1200px] text-[20px] p-[10px] bg-yellow-100 rounded-[3px] border-2 border-black">
-          {`12.`} {step14Text}
+          {`12.`} {step12Text}
         </div>
         <img
           src={baserow14}
@@ -151,7 +151,7 @@ const Baserow = () => {
           width={500}
         />
         <div className="ml-[10px] mt-[40px] mb-[30px] w-[78vw] max-w-[1200px] text-[20px] p-[10px] bg-yellow-100 rounded-[3px] border-2 border-black">
-          {`13.`} {step15Text}
+          {`13.`} {step13Text}
         </div>
         <img
           src={baserow15}
@@ -160,7 +160,7 @@ const Baserow = () => {
           width={400}
         />
         <div className="ml-[10px] mt-[40px] mb-[30px] w-[78vw] max-w-[1200px] text-[20px] p-[10px] bg-yellow-100 rounded-[3px] border-2 border-black">
-          {`14.`} {step16Text}
+          {`14.`} {step14Text}
         </div>
         <img
           src={baserow16}
@@ -168,7 +168,7 @@ const Baserow = () => {
           alt="baserow screen 1"
         />
         <div className="ml-[10px] mt-[40px] mb-[30px] w-[78vw] max-w-[1200px] text-[20px] p-[10px] bg-yellow-100 rounded-[3px] border-2 border-black">
-          {`15.`} {step17Text}
+          {`15.`} {step15Text}
         </div>
         <img
           src={baserow17}
@@ -176,7 +176,7 @@ const Baserow = () => {
           alt="baserow screen 1"
         />
         <div className="ml-[10px] mt-[40px] mb-[30px] w-[78vw] max-w-[1200px] text-[20px] p-[10px] bg-yellow-100 rounded-[3px] border-2 border-black">
-          {`16.`} {step19Text}
+          {`16.`} {step16Text}
         </div>
         <img
           src={baserow19}

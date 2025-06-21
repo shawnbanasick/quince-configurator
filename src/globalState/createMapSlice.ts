@@ -44,10 +44,32 @@ const createMapXmlSlice = (set) => ({
   colCol13: "#e0e0e0",
   qSortPattern: [],
   mapInputQsortPattern: [],
+  mobileHeadersText: "",
+  numMapTotalColumns: 0,
+  mobileHeadersDefaultLabels: "",
+  mobileHeadersDefault5: "Strongly Agree, Agree, Neutral, Disagree, Strongly Disagree",
+  mobileHeadersDefault7:
+    "Strongly Agree, Agree, Agree Somewhat, Neutral, Disagree Somewhat, Disagree, Strongly Disagree",
+  mobileHeadersDefault9:
+    "Very Strongly Agree, Strongly Agree, Agree, Agree Somewhat, Neutral, Disagree Somewhat, Disagree, Strongly Disagree, Very Strongly Disagree",
+  mobileHeadersDefault11:
+    "Very Strongly Agree, Strongly Agree, Agree, Agree Somewhat, Slightly Agree, Neutral, Very Slightly Disagree, Disagree Somewhat, Disagree, Strongly Disagree, Very Strongly Disagree",
 
+  /*
+   ******** GENERIC STATE CHANGE  ****************** */
+  setText: (stateDesig, text) => set(() => ({ [stateDesig]: text })),
   setColor: (stateDesig, color) => set(() => ({ [stateDesig]: color })),
   setNumber: (stateDesig, number) => set(() => ({ [stateDesig]: number })),
 
+  setMobileHeadersDefaultLabels: (text) => {
+    set(() => ({ mobileHeadersDefaultLabels: text }));
+  },
+  setMapNumTotalColumns: (num) => {
+    set(() => ({ numMapTotalColumns: num }));
+  },
+  setMobileHeadersText: (text) => {
+    set(() => ({ mobileHeadersText: text }));
+  },
   setMapColorPalette: (palette) => {
     set(() => ({ mapColorPalette: palette }));
   },

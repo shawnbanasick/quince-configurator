@@ -8,12 +8,14 @@ import { useTranslation } from "react-i18next";
 const getDisplayMode = (state) => state.displayMode;
 const getCurrentStatements = (state) => state.currentStatements;
 const getSetCurrentStatements = (state) => state.setCurrentStatements;
+const getSetNumStatements = (state) => state.setNumStatements;
 
 const StatementTextArea = () => {
   const { t } = useTranslation();
   let displayMode = useStore(getDisplayMode);
   const currentStatements = useStore(getCurrentStatements);
   const setCurrentStatements = useStore(getSetCurrentStatements);
+  const setNumStatements = useStore(getSetNumStatements);
 
   if (displayMode === "beginner") {
     displayMode = true;
@@ -25,6 +27,9 @@ const StatementTextArea = () => {
     console.log(event.target.value);
     let statementInput = event.target.value;
     setCurrentStatements(statementInput);
+    // get the number of statements
+    const statementsArray = statementInput.split("\n").filter((line) => line.trim() !== "");
+    setNumStatements(statementsArray.length);
   };
 
   return (

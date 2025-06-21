@@ -21,6 +21,7 @@ const Config: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center">
       <h1 className="text-center">Config.xml</h1>
+      <h2>{t("configSettings")}</h2>
       <div className="flex flex-row w-2/3 justify-between  gap-[] mt-4 mb-6">
         <UploadAndReadXML />
         <DownloadConfigXml />
