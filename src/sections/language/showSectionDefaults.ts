@@ -1,9 +1,22 @@
+// @ts-ignore
 // import appState from "../../GlobalState/appState";
 import defObject from "./textareaDefaultObject";
+import defObject_JA from "./textAreaDefaultObject_JA";
 import { useStore } from "../../GlobalState/useStore";
 
 const showSectionDefaults = (section) => {
-  let defObj = defObject();
+  console.log("test");
+  let currentLang: string = localStorage.getItem("i18nextLng") || '""';
+
+  console.log(currentLang);
+
+  let defObj;
+  if (currentLang === "ja") {
+    defObj = defObject_JA();
+  } else {
+    defObj = defObject();
+  }
+
   let selectorArray: string[] = [];
 
   const setDefaults = (array) => {

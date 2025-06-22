@@ -11,6 +11,8 @@ import { ToastContainer } from "react-toastify";
 import { Statements } from "../sections/statements/Statements";
 import { Databases } from "../sections/databases/Databases";
 import { setLanguageDefaults } from "./setLanguageDefaults.js";
+import { setLanguageSection_JA } from "./setLanguageSection_JA.js";
+import { setLanguageSection_EN } from "./setLanguageSection_EN.js";
 
 // Add the following import statement for the declaration file
 
@@ -20,6 +22,14 @@ const languages = ["en", "ja"];
 export const MainPage = () => {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
+
+  if (currentLanguage === "ja") {
+    setLanguageSection_JA(currentLanguage);
+  }
+
+  if (currentLanguage === "en") {
+    setLanguageSection_EN(currentLanguage);
+  }
 
   const onChangeLanguage = (lng: string) => {
     console.log(lng);
