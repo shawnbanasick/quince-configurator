@@ -29,18 +29,19 @@ const getDisplayMode = (state) => state.displayMode;
 
 const Language = () => {
   const displayMode = useStore(getDisplayMode);
+  const { t } = useTranslation();
 
-  let display;
-  if (displayMode === "beginner") {
-    display = true;
-  } else {
-    display = false;
-  }
+  // let display;
+  // if (displayMode === "beginner") {
+  //   display = true;
+  // } else {
+  //   display = false;
+  // }
 
   return (
     <div className="flex flex-col items-center justify-center pb-[100px]">
       <h1 className="text-center">Language.xml</h1>
-      <h2>User Interface Language Settings for Desktop and Mobile</h2>
+      <h2>{t("languageSubtitle")}</h2>
 
       <div className="flex flex-row w-2/3 justify-between mt-4 mb-6">
         <UploadAndReadLanguageXml />

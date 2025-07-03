@@ -4,6 +4,7 @@ import showSectionDefaults from "./showSectionDefaults";
 import clearSection from "./clearSection";
 // import showRefImage from "./showRefImage";
 import { useStore } from "../../globalState/useStore";
+import { useTranslation } from "react-i18next";
 
 const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
@@ -27,6 +28,7 @@ const MultipleScreenTextInput = () => {
   const screenOrientationText = useStore(getScreenOrientationText);
   const mobileTextSize = useStore(getMobileTextSize);
   const mobileViewSize = useStore(getMobileViewSize);
+  const { t } = useTranslation();
 
   const handleShowDefaults = (e) => {
     console.log("handleShowDefaults", e.target.id);
@@ -55,7 +57,8 @@ const MultipleScreenTextInput = () => {
   return (
     <div className="outline outline-2 outline-slate-500  p-2 w-[78vw] max-w-[78vw] rounded-sm">
       <div className="flex flex-row justify-between mb-4">
-        <h2>1. Multiple Screens</h2>
+        <h2>1. {t("multipleScreens")}</h2>
+
         <div className="flex flex-row gap-4">
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
@@ -63,7 +66,7 @@ const MultipleScreenTextInput = () => {
             className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
-            Use Defaults
+            {t("useDefaults")}
           </button>
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
@@ -71,7 +74,7 @@ const MultipleScreenTextInput = () => {
             className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleClearAll}
           >
-            Clear Section
+            {t("clearSection")}
           </button>
           {/* <RefImageButton */}
           {/* <button
@@ -88,7 +91,7 @@ const MultipleScreenTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="1-1. Help"
+          label={`1-1. ${t("help")}`}
           name="btnHelp"
           value={langBtnHelp}
           onChange={handleTextChange}
@@ -99,7 +102,7 @@ const MultipleScreenTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="1-2. Text Size"
+          label={`1-2. ${t("textSize")}`}
           name="footerTextSize"
           value={langFooterTextSize}
           onChange={handleTextChange}
@@ -110,7 +113,7 @@ const MultipleScreenTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="1-3. Card Height"
+          label={`1-3. ${t("cardHeight")}`}
           name="footerCardHeight"
           value={langFooterCardHeight}
           onChange={handleTextChange}
@@ -121,7 +124,7 @@ const MultipleScreenTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="1-4. Continue Button Text"
+          label={`1-4. ${t("continueButtonText")}`}
           name="btnNext"
           value={langBtnNext}
           onChange={handleTextChange}
@@ -132,7 +135,7 @@ const MultipleScreenTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label="1-5. Step Completed Message"
+          label={`1-5. ${t("stepCompletedMessage")}`}
           name="stepCompleted"
           height={150}
           value={langStepCompleted}
@@ -144,7 +147,7 @@ const MultipleScreenTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="1-6. Mobile Screen Orientation Text"
+          label={`1-6. ${t("mobileScreenOrientationText")}`}
           name="screenOrientationText"
           value={screenOrientationText}
           onChange={handleTextChange}
@@ -155,7 +158,7 @@ const MultipleScreenTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="1-7. Mobile Text Size Adjustment Button Text"
+          label={`1-7. ${t("mobileTextSizeAdjustmentButtonText")}`}
           name="mobileTextSize"
           value={mobileTextSize}
           onChange={handleTextChange}
@@ -166,7 +169,7 @@ const MultipleScreenTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="1-8. Mobile View Area Size Button Text"
+          label={`1-8. ${t("mobileViewAreaSizeButtonText")}`}
           name="mobileViewSize"
           value={mobileViewSize}
           onChange={handleTextChange}

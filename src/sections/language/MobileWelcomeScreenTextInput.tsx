@@ -5,6 +5,7 @@ import clearSection from "./clearSection";
 import { useStore } from "../../GlobalState/useStore";
 import welcome1 from "../../assets/images/welcome-1.png";
 import welcome2 from "../../assets/images/welcome-2.png";
+import { useTranslation } from "react-i18next";
 
 const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
@@ -14,6 +15,7 @@ const MobileWelcomeScreenTextInput = () => {
   let displayMode = useStore(getDisplayMode);
   const setText = useStore(getSetText);
   const mobileWelcomeText = useStore(getMobileWelcomeText);
+  const { t } = useTranslation();
 
   const handleRefImage = () => {
     window.open(welcome1, "Welcome Image 1", "width=800, height=600");
@@ -47,7 +49,7 @@ const MobileWelcomeScreenTextInput = () => {
   return (
     <div className="outline outline-2 outline-slate-500 p-2 w-[78vw] max-w-[78vw] rounded-sm">
       <div className="flex flex-row justify-between mb-4">
-        <h2>5. Mobile Welcome Screen</h2>
+        <h2>{`5. ${t("mobileWelcomeScreen")}`} </h2>
         <div className="flex flex-row gap-4">
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
@@ -91,7 +93,7 @@ const MobileWelcomeScreenTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label="5-1. Mobile Welcome Message"
+          label={`5-1. ${t("mobileWelcomeText")}`}
           name="mobileWelcomeText"
           value={mobileWelcomeText}
           height={150}

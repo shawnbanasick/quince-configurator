@@ -4,6 +4,7 @@ import showSectionDefaults from "./showSectionDefaults";
 import clearSection from "./clearSection";
 import consent1 from "../../assets/images/consent-1.png";
 import consent2 from "../../assets/images/consent-2.png";
+import { useTranslation } from "react-i18next";
 
 import { useStore } from "../../globalState/useStore";
 
@@ -25,6 +26,7 @@ const ConsentPageTextInput = () => {
   const langConsentHelpModalText = useStore(getLangConsentHelpModalText);
   const langBtnNextConsent = useStore(getLangBtnNextConsent);
   const langBtnHelpConsent = useStore(getLangBtnHelpConsent);
+  const { t } = useTranslation();
 
   const handleRefImage = () => {
     window.open(consent1, "Consent Image 1", "width=800, height=600");
@@ -62,7 +64,7 @@ const ConsentPageTextInput = () => {
     <div className="outline outline-2 outline-slate-500 p-2 w-[78vw] max-w-[78vw] rounded-sm bg-gray-100">
       {/* <HeaderButtonBar> */}
       <div className="flex flex-row justify-between align-middle mb-4">
-        <h2>2. Consent Screen</h2>
+        <h2>2. {t("consentScreen")}</h2>
         <div className="flex flex-row gap-4">
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
@@ -70,7 +72,7 @@ const ConsentPageTextInput = () => {
             className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
-            Use Defaults
+            {t("useDefaults")}
           </button>
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
@@ -78,11 +80,11 @@ const ConsentPageTextInput = () => {
             className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleClearAll}
           >
-            Clear Section
+            {t("clearSection")}
           </button>
           {/* <RefImageButton */}
           <div className="flex items-center p-2 justify-center h-auto ">
-            <p>Images:</p>
+            <p>{t("images")}:</p>
           </div>
           <button
             className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
@@ -106,7 +108,7 @@ const ConsentPageTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="2-1. Consent Page Title Bar"
+          label={`2-1. ${t("consentPageTitleBar")}`}
           name="consentTitleBarText"
           value={langConsentTitleBarText}
           onChange={handleTextChange}
@@ -117,11 +119,11 @@ const ConsentPageTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label="2-2. Consent Message"
+          label={`2-2. ${t("consentMessage")}`}
           name="consentText"
           height={150}
           value={langConsentText}
-          onChange={handleTextChange}
+          // onChange={handleTextChange}
           highlight={true}
           placeholder=""
           disabled={false}
@@ -130,7 +132,7 @@ const ConsentPageTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="2-3. Help Modal Title"
+          label={`2-3. ${t("helpModalTitle")}`}
           name="consentHelpModalHead"
           value={langConsentHelpModalHead}
           onChange={handleTextChange}
@@ -141,7 +143,7 @@ const ConsentPageTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label="2-4. Help Modal Text"
+          label={`2-4. ${t("helpModalText")}`}
           name="consentHelpModalText"
           height={150}
           value={langConsentHelpModalText}
@@ -154,7 +156,7 @@ const ConsentPageTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="2-5. Help Button Text"
+          label={`2-5. ${t("helpButtonText")}`}
           name="btnHelpConsent"
           value={langBtnHelpConsent}
           onChange={handleTextChange}
@@ -165,7 +167,7 @@ const ConsentPageTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="2-6. Accept Button Text"
+          label={`2-6. ${t("acceptButtonText")}`}
           name="btnNextConsent"
           value={langBtnNextConsent}
           onChange={handleTextChange}

@@ -4,6 +4,7 @@ import showSectionDefaults from "./showSectionDefaults";
 import clearSection from "./clearSection";
 // import showRefImage from "./showRefImage";
 import { useStore } from "../../GlobalState/useStore";
+import { useTranslation } from "react-i18next";
 
 const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
@@ -27,6 +28,7 @@ const AccessControlTextInput = () => {
   const langAccessCodeWarning = useStore(getLangAccessCodeWarning);
   const loginSubmitButtonText = useStore(getLoginSubmitButtonText);
   const accessCodeText = useStore(getAccessCodeText);
+  const { t } = useTranslation();
 
   const handleRefImage = (e: any) => {
     // showRefImage(e.target.id);
@@ -54,7 +56,7 @@ const AccessControlTextInput = () => {
   return (
     <div className="outline outline-2 outline-slate-500 p-2 w-[78vw] max-w-[78vw] rounded-sm">
       <div className="flex flex-row justify-between mb-4">
-        <h2>3. Access Control Screen</h2>
+        <h2>{`3. ${t("accessControlScreen")}`} </h2>
         <div className="flex flex-row gap-4">
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
@@ -87,7 +89,7 @@ const AccessControlTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label="3-1. Login Welcome Text"
+          label={`3-1. ${t("loginWelcomeText")}`}
           name="loginWelcomeText"
           height={150}
           value={langLoginWelcomeText}
@@ -100,7 +102,7 @@ const AccessControlTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="3-2. Login Box Title"
+          label={`3-2. ${t("loginHeaderText")}`}
           name="loginHeaderText"
           value={langLoginHeaderText}
           onChange={handleTextChange}
@@ -112,7 +114,7 @@ const AccessControlTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="3-3. Participant Name Input Label"
+          label={`3-3. ${t("loginPartIdText")}`}
           name="loginPartIdText"
           value={langLoginPartIdText}
           onChange={handleTextChange}
@@ -123,7 +125,7 @@ const AccessControlTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="3-4. Access Code Title"
+          label={`3-4. ${t("accessCodeText")}`}
           name="accessCodeText"
           value={accessCodeText}
           onChange={handleTextChange}
@@ -135,7 +137,7 @@ const AccessControlTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="3-5. Access Code Label"
+          label={`3-5. ${t("accessInputText")}`}
           name="accessInputText"
           value={langAccessInputText}
           onChange={handleTextChange}
@@ -147,7 +149,7 @@ const AccessControlTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="3-6. Invalid Name Warning"
+          label={`3-6. ${t("partIdWarning")}`}
           name="partIdWarning"
           value={langPartIdWarning}
           onChange={handleTextChange}
@@ -159,7 +161,7 @@ const AccessControlTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="3-7. Invalid Access Code Warning"
+          label={`3-7. ${t("accessCodeWarning")}`}
           name="accessCodeWarning"
           value={langAccessCodeWarning}
           onChange={handleTextChange}
@@ -170,7 +172,7 @@ const AccessControlTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 block min-w-[200px] ml-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="3-8. Login Submit Button"
+          label={`3-8. ${t("loginSubmitButtonText")}`}
           name="loginSubmitButtonText"
           value={loginSubmitButtonText}
           onChange={handleTextChange}

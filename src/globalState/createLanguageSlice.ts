@@ -205,7 +205,7 @@ const createMapXmlSlice = (set) => ({
   mobileSortTitleBar: `Submit Data`,
 
   /*
-   ******** EMAIL  ****************** */
+   ******** 18. EMAIL  ****************** */
   emailSubmitBtn: "Open Email Client and Send Results",
   emailCopyResultsBtn: "Copy Results to Clipboard",
   emailCopyAddressBtn: "Copy Email Address to Clipboard",
@@ -217,12 +217,12 @@ const createMapXmlSlice = (set) => ({
     "You don't have to add anything to this email. Please just click the SEND button.",
 
   /*
-   ******** LINKING  ****************** */
+   ******** 19. LINKING  ****************** */
   linkingFallbackMessage: "Please click the button to begin the next Q sort",
   linkingBtnText: "Begin Next Q sort",
 
   /*
-   ******** LOCAL DATA COLLECTION  ****************** */
+   ******** 20. LOCAL DATA COLLECTION  ****************** */
   localHeader: "Offline Q-sort Control Panel",
   partIdText: "Participant Name",
   usercodeText: "Usercode",
