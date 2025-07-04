@@ -4,6 +4,7 @@ import { UserTextInput } from "../utils/UserTextInput";
 import { UserTextAreaInput } from "../utils/UserTextAreaInput";
 import showSectionDefaults from "./showSectionDefaults";
 import clearSection from "./clearSection";
+import { useTranslation } from "react-i18next";
 
 const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
@@ -11,6 +12,7 @@ const getSetText = (state) => state.setText;
 const MobileSortTextInput: React.FC = () => {
   let displayMode = useStore(getDisplayMode);
   const setText = useStore(getSetText);
+  const { t } = useTranslation();
 
   const mobileSortSwapModalHead = useStore((state) => state.mobileSortSwapModalHead);
   // const setMobileSortSwapModalHead = useStore((state) => state.setMobileSortSwapModalHead);
@@ -78,7 +80,7 @@ const MobileSortTextInput: React.FC = () => {
   return (
     <div className="outline outline-2 outline-slate-500 p-2 w-[78vw] max-w-[78vw] rounded-sm">
       <div className="flex flex-row justify-between mb-4">
-        <h2>11. Mobile Sort Screen</h2>
+        <h2>{`11. ${t("mobileSortScreen")}`} </h2>
         <div className="flex flex-row gap-4">
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
@@ -111,7 +113,7 @@ const MobileSortTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="11-1. Sort Position Swap Modal Title"
+          label={`11-1. ${t("mobileSortSwapModalHead")}`}
           name="mobileSortSwapModalHead"
           value={mobileSortSwapModalHead}
           onChange={handleTextChange}
@@ -122,7 +124,7 @@ const MobileSortTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[60px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="11-2. Sort Position Swap Modal Text"
+          label={`11-2. ${t("mobileSortSwapModalText")}`}
           name="mobileSortSwapModalText"
           height={150}
           value={mobileSortSwapModalText}
@@ -135,7 +137,7 @@ const MobileSortTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="11-3. Sort Swap Modal Confirm Button"
+          label={`11-3. ${t("mobileSortSwapModalConfirmButton")}`}
           name="mobileSortSwapModalConfirmButton"
           value={mobileSortSwapModalConfirmButton}
           onChange={handleTextChange}
@@ -146,7 +148,7 @@ const MobileSortTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[60px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="11-4. Sort Conditions Of Instruction"
+          label={`11-4. ${t("mobileSortConditionsOfInstruction")}`}
           name="mobileSortConditionsOfInstruction"
           height={150}
           value={mobileSortConditionsOfInstruction}
@@ -159,7 +161,7 @@ const MobileSortTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="11-5. Sort Help Modal Title"
+          label={`11-5. ${t("mobileSortHelpModalHead")}`}
           name="mobileSortHelpModalHead"
           value={mobileSortHelpModalHead}
           onChange={handleTextChange}
@@ -170,7 +172,7 @@ const MobileSortTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="11-6. Sort Help Modal Text"
+          label={`11-6. ${t("mobileSortHelpModalText")}`}
           name="mobileSortHelpModalText"
           height={150}
           value={mobileSortHelpModalText}
@@ -183,7 +185,7 @@ const MobileSortTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="11-7. Sort Must Scroll Bottom Modal Title"
+          label={`11-7. ${t("mobileSortScrollBottomModalHead")}`}
           name="mobileSortScrollBottomModalHead"
           value={mobileSortScrollBottomModalHead}
           onChange={handleTextChange}
@@ -194,7 +196,7 @@ const MobileSortTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[80px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="11-8. Sort Must Scroll Bottom Modal Text"
+          label={`11-8. ${t("mobileSortScrollBottomModalText")}`}
           name="mobileSortScrollBottomModalText"
           height={150}
           value={mobileSortScrollBottomModalText}

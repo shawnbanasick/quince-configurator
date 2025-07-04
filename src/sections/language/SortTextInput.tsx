@@ -4,6 +4,7 @@ import { UserTextInput } from "../utils/UserTextInput";
 import { UserTextAreaInput } from "../utils/UserTextAreaInput";
 import showSectionDefaults from "./showSectionDefaults";
 import clearSection from "./clearSection";
+import { useTranslation } from "react-i18next";
 
 const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
@@ -11,6 +12,7 @@ const getSetText = (state) => state.setText;
 const SortTextInput: React.FC = () => {
   let displayMode = useStore(getDisplayMode);
   const setText = useStore(getSetText);
+  const { t } = useTranslation();
 
   const sortHelpModalHead = useStore((state) => state.sortHelpModalHead);
   // const setSortHelpModalHead = useStore((state) => state.setSortHelpModalHead);
@@ -73,7 +75,7 @@ const SortTextInput: React.FC = () => {
   return (
     <div className="outline outline-2 outline-slate-500 p-2 w-[78vw] max-w-[78vw] rounded-sm bg-gray-100">
       <div className="flex flex-row justify-between mb-4">
-        <h2>10. Sort Screen</h2>
+        <h2>{`10. ${t("sortScreen")}`} </h2>
         <div className="flex flex-row gap-4">
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
@@ -106,7 +108,7 @@ const SortTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="10-1. Sort Help Modal Title"
+          label={`10-1. ${t("sortHelpModalHead")}`}
           name="sortHelpModalHead"
           value={sortHelpModalHead}
           onChange={handleTextChange}
@@ -117,7 +119,7 @@ const SortTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="10-2. Sort Help Modal Text"
+          label={`10-2. ${t("sortHelpModalText")}`}
           name="sortHelpModalText"
           height={150}
           value={sortHelpModalText}
@@ -130,7 +132,7 @@ const SortTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="10-3. Sort Agreement"
+          label={`10-3. ${t("sortAgreement")}`}
           name="sortAgreement"
           value={sortAgreement}
           onChange={handleTextChange}
@@ -141,7 +143,7 @@ const SortTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="10-4. Sort Disagreement"
+          label={`10-4. ${t("sortDisagreement")}`}
           name="sortDisagreement"
           value={sortDisagreement}
           onChange={handleTextChange}
@@ -152,7 +154,7 @@ const SortTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[60px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="10-5. Conditions of Instruction"
+          label={`10-5. ${t("condOfInst")}`}
           name="condOfInst"
           height={150}
           value={condOfInst}
@@ -165,7 +167,7 @@ const SortTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="10-6. Sorting Complete Modal Title"
+          label={`10-6. ${t("sortingCompleteModalHead")}`}
           name="sortingCompleteModalHead"
           value={sortingCompleteModalHead}
           onChange={handleTextChange}
@@ -176,7 +178,7 @@ const SortTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="10-7. Sorting Complete Modal Text"
+          label={`10-7. ${t("sortingCompleteModalText")}`}
           name="sortingCompleteModalText"
           height={150}
           value={sortingCompleteModalText}
@@ -189,7 +191,7 @@ const SortTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="10-8. Sort Prevent Navigation Modal Title"
+          label={`10-8. ${t("sortPreventNavModalHead")}`}
           name="sortPreventNavModalHead"
           value={sortPreventNavModalHead}
           onChange={handleTextChange}
@@ -200,7 +202,7 @@ const SortTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="10-9. Sort Prevent Navigation Modal Text"
+          label={`10-9. ${t("sortPreventNavModalText")}`}
           name="sortPreventNavModalText"
           height={150}
           value={sortPreventNavModalText}
@@ -213,7 +215,7 @@ const SortTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="10-10. Sort Overloaded Column Modal Title"
+          label={`10-10. ${t("sortOverloadedColumnModalHead")}`}
           name="sortOverloadedColumnModalHead"
           value={sortOverloadedColumnModalHead}
           onChange={handleTextChange}
@@ -224,7 +226,7 @@ const SortTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="10-11. Sort Overloaded Column Modal Text"
+          label={`10-11. ${t("sortOverloadedColumnModalText")}`}
           name="sortOverloadedColumnModalText"
           height={150}
           value={sortOverloadedColumnModalText}
