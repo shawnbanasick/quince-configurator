@@ -1,10 +1,9 @@
-import { UserTextInput } from "../utils/UserTextInput";
+// import { UserTextInput } from "../utils/UserTextInput";
 import { UserTextAreaInput } from "../utils/UserTextAreaInput";
 import showSectionDefaults from "./showSectionDefaults";
 import clearSection from "./clearSection";
 import { useStore } from "../../GlobalState/useStore";
-import welcome1 from "../../assets/images/welcome-1.png";
-import welcome2 from "../../assets/images/welcome-2.png";
+import mobileWelcome1 from "../../assets/images/mobile_welcome-1.png";
 import { useTranslation } from "react-i18next";
 
 const getDisplayMode = (state) => state.displayMode;
@@ -18,12 +17,7 @@ const MobileWelcomeScreenTextInput = () => {
   const { t } = useTranslation();
 
   const handleRefImage = () => {
-    window.open(welcome1, "Welcome Image 1", "width=800, height=600");
-    return false;
-  };
-
-  const handleRefImage2 = () => {
-    window.open(welcome2, "Welcome Image 1", "width=800, height=300");
+    window.open(mobileWelcome1, "Welcome Image 1", "width=800, height=600");
     return false;
   };
 
@@ -54,7 +48,7 @@ const MobileWelcomeScreenTextInput = () => {
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="welcomeDef"
-            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[200px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
             Use Defaults
@@ -62,7 +56,7 @@ const MobileWelcomeScreenTextInput = () => {
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="welcomeClear"
-            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[200px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleClearAll}
           >
             Clear Section
@@ -71,7 +65,7 @@ const MobileWelcomeScreenTextInput = () => {
           <div className="flex items-center p-2 justify-center h-auto ">
             <p>Images:</p>
           </div>
-          {/* <button
+          <button
             className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
             id="consentImage"
             // marginRight="35px"
@@ -79,6 +73,7 @@ const MobileWelcomeScreenTextInput = () => {
           >
             1
           </button>
+          {/*
           <button
             className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
             id="consentImage"

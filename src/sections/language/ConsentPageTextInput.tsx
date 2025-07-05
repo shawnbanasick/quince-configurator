@@ -69,7 +69,7 @@ const ConsentPageTextInput = () => {
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="consentDef"
-            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[200px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
             {t("useDefaults")}
@@ -77,7 +77,7 @@ const ConsentPageTextInput = () => {
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="consentClear"
-            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[200px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleClearAll}
           >
             {t("clearSection")}

@@ -103,7 +103,7 @@ const showSectionDefaults_JA = () => {
     moveAllTopMobileText: `選択したすべての文をリストの上部に移動しますか？`,
     moveTopMobileButtonOK: `はい`,
 
-    moveTopMobileButtonCancel: `キャンセル`,
+    mobileModalButtonCancel: `キャンセル`,
     mobileThinConditionsOfInstruction: `評価を精査してください`,
     mobileThinSubmitButtonText: `送信`,
 

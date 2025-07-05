@@ -4,6 +4,7 @@ import { UserTextInput } from "../utils/UserTextInput";
 import { UserTextAreaInput } from "../utils/UserTextAreaInput";
 import showSectionDefaults from "./showSectionDefaults";
 import clearSection from "./clearSection";
+import { useTranslation } from "react-i18next";
 
 const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
@@ -11,6 +12,7 @@ const getSetText = (state) => state.setText;
 const MobilePostsortTextInput: React.FC = () => {
   let displayMode = useStore(getDisplayMode);
   const setText = useStore(getSetText);
+  const { t } = useTranslation();
 
   const mobilePostsortPreventNavModalHead = useStore(
     (state) => state.mobilePostsortPreventNavModalHead
@@ -60,7 +62,7 @@ const MobilePostsortTextInput: React.FC = () => {
   return (
     <div className="outline outline-2 outline-slate-500 p-2 w-[78vw] max-w-[78vw] rounded-sm">
       <div className="flex flex-row justify-between mb-4">
-        <h2>13. Mobile Post-Sort Screen</h2>
+        <h2>{`13. ${t("mobilePostsortCommentsScreen")}`} </h2>
         <div className="flex flex-row gap-4">
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
@@ -94,7 +96,7 @@ const MobilePostsortTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="13-1. Post-Sort Prevent Navigation Modal Title"
+          label={`13-1. ${t("mobilePostsortPreventNavModalHead")}`}
           name="mobilePostsortPreventNavModalHead"
           value={mobilePostsortPreventNavModalHead}
           onChange={handleTextChange}
@@ -105,7 +107,7 @@ const MobilePostsortTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="13-2. Post-Sort Prevent Navigation Modal Text"
+          label={`13-2. ${t("mobilePostsortPreventNavModalText")}`}
           name="mobilePostsortPreventNavModalText"
           height={150}
           value={mobilePostsortPreventNavModalText}
@@ -118,7 +120,7 @@ const MobilePostsortTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="13-3. Post-Sort Sortbar Text"
+          label={`13-3. ${t("mobilePostsortSortbarText")}`}
           name="mobilePostsortSortbarText"
           value={mobilePostsortSortbarText}
           onChange={handleTextChange}
@@ -129,7 +131,7 @@ const MobilePostsortTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="13-4. Post-Sort Help Modal Title"
+          label={`13-4. ${t("mobilePostsortHelpModalHead")}`}
           name="mobilePostsortHelpModalHead"
           value={mobilePostsortHelpModalHead}
           onChange={handleTextChange}
@@ -140,7 +142,7 @@ const MobilePostsortTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="13-5. Post-Sort Help Modal Text"
+          label={`13-5. ${t("mobilePostsortHelpModalText")}`}
           name="mobilePostsortHelpModalText"
           height={150}
           value={mobilePostsortHelpModalText}

@@ -90,7 +90,7 @@ const setLanguageSection_EN = (language) => {
     moveTopMobileHead: `Confirm Move`,
     moveAllTopMobileText: `Move all selected statements to the top of the list?`,
     moveTopMobileButtonOK: `Yes`,
-    moveTopMobileButtonCancel: `Cancel`,
+    mobileModalButtonCancel: `Cancel`,
     mobileThinConditionsOfInstruction: `Refine Your Evaluations`,
     mobileThinSubmitButtonText: `Submit`,
     mobileThinHelpModalHead: `Refine Your Evaluations`,

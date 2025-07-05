@@ -2,9 +2,12 @@ import { UserTextInput } from "../utils/UserTextInput";
 import { UserTextAreaInput } from "../utils/UserTextAreaInput";
 import showSectionDefaults from "./showSectionDefaults";
 import clearSection from "./clearSection";
-// import showRefImage from "./showRefImage";
 import { useStore } from "../../globalState/useStore";
 import { useTranslation } from "react-i18next";
+import presort1 from "../../assets/images/presort-main-1.png";
+import presort2 from "../../assets/images/presort-welcome-modal-1.png";
+import presort3 from "../../assets/images/presort-nav-disabled.png";
+import presort4 from "../../assets/images/presort-complete-1.png";
 
 const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
@@ -13,7 +16,7 @@ const getPresortAgreement = (state) => state.presortAgreement;
 const getPresortNeutral = (state) => state.presortNeutral;
 const getPresortDisagreement = (state) => state.presortDisagreement;
 const getPresortOnPageInstructions = (state) => state.presortOnPageInstructions;
-const getPresortImageSortInstructions = (state) => state.presortImageSortInstructions;
+// const getPresortImageSortInstructions = (state) => state.presortImageSortInstructions;
 const getPresortModalHead = (state) => state.presortModalHead;
 const getPresortModalText = (state) => state.presortModalText;
 const getPresortPreventNavModalHead = (state) => state.presortPreventNavModalHead;
@@ -31,7 +34,7 @@ const PresortTextInput = () => {
   const presortNeutral = useStore(getPresortNeutral);
   const presortDisagreement = useStore(getPresortDisagreement);
   const presortOnPageInstructions = useStore(getPresortOnPageInstructions);
-  const presortImageSortInstructions = useStore(getPresortImageSortInstructions);
+  // const presortImageSortInstructions = useStore(getPresortImageSortInstructions);
   const presortModalHead = useStore(getPresortModalHead);
   const presortModalText = useStore(getPresortModalText);
   const presortPreventNavModalHead = useStore(getPresortPreventNavModalHead);
@@ -43,8 +46,25 @@ const PresortTextInput = () => {
   const { t } = useTranslation();
 
   const handleRefImage = (e) => {
-    // showRefImage(e.target.id);
+    window.open(presort1, "Presort Main Image 1", "width=800, height=600");
+    return false;
   };
+
+  const handleRefImage2 = (e) => {
+    window.open(presort2, "Presort Welcome Image 1", "width=800, height=600");
+    return false;
+  };
+
+  const handleRefImage3 = (e) => {
+    window.open(presort3, "Presort Prevent Navigation Image", "width=800, height=600");
+    return false;
+  };
+
+  const handleRefImage4 = (e) => {
+    window.open(presort4, "Presort Prevent Navigation Image", "width=800, height=600");
+    return false;
+  };
+
   const handleShowDefaults = (e) => {
     showSectionDefaults(e.target.id);
   };
@@ -72,7 +92,7 @@ const PresortTextInput = () => {
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="presortDef"
-            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[200px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
             Use Defaults
@@ -80,19 +100,45 @@ const PresortTextInput = () => {
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="presortClear"
-            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[200px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleClearAll}
           >
             Clear Section
           </button>
-          {/* <RefImageButton */}
+          <div className="flex items-center p-2 justify-center h-auto ">
+            <p>Images:</p>
+          </div>
           <button
-            className="bg-slate-300 p-2 rounded-md w-[160px] hover:bg-slate-400 hover:font-semibold"
-            id="presortImage"
+            className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            id="consentImage"
             // marginRight="35px"
             onClick={handleRefImage}
           >
-            Reference Image
+            1
+          </button>
+          <button
+            className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            id="consentImage"
+            // marginRight="35px"
+            onClick={handleRefImage2}
+          >
+            2
+          </button>
+          <button
+            className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            id="consentImage"
+            // marginRight="35px"
+            onClick={handleRefImage3}
+          >
+            3
+          </button>
+          <button
+            className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            id="consentImage"
+            // marginRight="35px"
+            onClick={handleRefImage4}
+          >
+            4
           </button>
         </div>
       </div>

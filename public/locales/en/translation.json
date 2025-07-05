@@ -341,7 +341,7 @@
   "moveTopMobileHead": "Confirm Move Modal Title",
   "moveAllTopMobileText": "Move All To Top Message",
   "moveTopMobileButtonOK": "Move All to Top Modal OK Button Text",
-  "moveTopMobileButtonCancel": "Move All to Top Modal Cancel Button",
+  "mobileModalButtonCancel": "Move All to Top Modal Cancel Button",
   "mobileThinConditionsOfInstruction": "Instructions for Moving Statements",
   "mobileThinSubmitButtonText": "Submit Button Text",
   "mobileThinHelpModalHead": "Help Modal Title",

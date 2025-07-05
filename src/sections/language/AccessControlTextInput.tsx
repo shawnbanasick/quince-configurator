@@ -2,9 +2,9 @@ import { UserTextInput } from "../utils/UserTextInput";
 import { UserTextAreaInput } from "../utils/UserTextAreaInput";
 import showSectionDefaults from "./showSectionDefaults";
 import clearSection from "./clearSection";
-// import showRefImage from "./showRefImage";
 import { useStore } from "../../GlobalState/useStore";
 import { useTranslation } from "react-i18next";
+import access1 from "../../assets/images/access-1.png";
 
 const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
@@ -31,7 +31,8 @@ const AccessControlTextInput = () => {
   const { t } = useTranslation();
 
   const handleRefImage = (e: any) => {
-    // showRefImage(e.target.id);
+    window.open(access1, "Access Image 1", "width=800, height=600");
+    return false;
   };
 
   const handleShowDefaults = (e: any) => {
@@ -61,7 +62,7 @@ const AccessControlTextInput = () => {
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="accessDef"
-            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[200px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
             Use Defaults
@@ -69,19 +70,22 @@ const AccessControlTextInput = () => {
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="accessClear"
-            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[200px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleClearAll}
           >
             Clear Section
           </button>
           {/* <RefImageButton */}
+          <div className="flex items-center p-2 justify-center h-auto ">
+            <p>{t("images")}:</p>
+          </div>
           <button
-            className="bg-slate-300 p-2 rounded-md w-[160px] hover:bg-slate-400 hover:font-semibold"
-            id="accessImage"
+            className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            id="consentImage"
             // marginRight="35px"
             onClick={handleRefImage}
           >
-            Reference Image
+            1
           </button>
         </div>
       </div>

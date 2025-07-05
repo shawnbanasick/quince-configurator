@@ -82,7 +82,7 @@ const setLanguageSection_JA = (language) => {
     moveTopMobileText: `この文をリストの上部に移動しますか？`,
     moveAllTopMobileText: `選択したすべての文をリストの上部に移動しますか？`,
     moveTopMobileButtonOK: `はい`,
-    moveTopMobileButtonCancel: `キャンセル`,
+    mobileModalButtonCancel: `キャンセル`,
     mobileThinConditionsOfInstruction: `評価を精査してください`,
     mobileThinSubmitButtonText: `送信`,
     mobileThinHelpModalHead: `評価を精査してください`,

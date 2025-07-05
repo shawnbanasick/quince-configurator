@@ -108,7 +108,7 @@ const createMapXmlSlice = (set) => ({
   // moveTopMobileText: `Move this statement to the top of the list?`,
   moveAllTopMobileText: `Move all selected statements to the top of the list?`,
   moveTopMobileButtonOK: `Yes`,
-  moveTopMobileButtonCancel: `Cancel`,
+  mobileModalButtonCancel: `Cancel`,
   mobileThinConditionsOfInstruction: `Refine Your Evaluations`,
   mobileThinSubmitButtonText: `Submit`,
   mobileThinHelpModalHead: `Refine Your Evaluations`,

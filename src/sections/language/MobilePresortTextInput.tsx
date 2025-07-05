@@ -2,9 +2,14 @@ import { UserTextInput } from "../utils/UserTextInput";
 import { UserTextAreaInput } from "../utils/UserTextAreaInput";
 import showSectionDefaults from "./showSectionDefaults";
 import clearSection from "./clearSection";
-// import showRefImage from "./showRefImage";
 import { useStore } from "../../globalState/useStore";
 import { useTranslation } from "react-i18next";
+import mobilePresort1 from "../../assets/images/mobile_presort-welcome.png";
+import mobilePresort2 from "../../assets/images/mobile_main.png";
+import mobilePresort3 from "../../assets/images/mobile_presort-re-evaluate-modal.png";
+import mobilePresort4 from "../../assets/images/mobile_presort-finished.png";
+import mobilePresort5 from "../../assets/images/mobile_presort-complete-modal.png";
+import mobilePresort6 from "../../assets/images/mobile_presort_prevent_nav.png";
 
 const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
@@ -14,16 +19,16 @@ const getMobilePresortCompletedLabel = (state) => state.mobilePresortCompletedLa
 const getMobilePresortAssignLeft = (state) => state.mobilePresortAssignLeft;
 const getMobilePresortAssignRight = (state) => state.mobilePresortAssignRight;
 const getMobilePresortRedoModalHead = (state) => state.mobilePresortRedoModalHead;
-const getMobilePresortRedoModalText = (state) => state.mobilePresortRedoModalText;
 const getMobilePresortRedoModalConfirmButton = (state) => state.mobilePresortRedoModalConfirmButton;
 const getMobilePresortEvaluationsComplete = (state) => state.mobilePresortEvaluationsComplete;
 const getMobilePresortHelpModalHead = (state) => state.mobilePresortHelpModalHead;
 const getMobilePresortHelpModalText = (state) => state.mobilePresortHelpModalText;
 const getMobilePresortFinishedModalHead = (state) => state.mobilePresortFinishedModalHead;
 const getMobilePresortFinishedModalText = (state) => state.mobilePresortFinishedModalText;
-// const getMobilePresortProcessCompleteMessage = (state) => state.mobilePresortProcessCompleteMessage;
 const getMobilePresortPreventNavModalHead = (state) => state.mobilePresortPreventNavModalHead;
 const getMobilePresortPreventNavModalText = (state) => state.mobilePresortPreventNavModalText;
+// const getMobilePresortProcessCompleteMessage = (state) => state.mobilePresortProcessCompleteMessage;
+// const getMobilePresortRedoModalText = (state) => state.mobilePresortRedoModalText;
 
 const MobilePresortTextInput = () => {
   let displayMode = useStore(getDisplayMode);
@@ -33,21 +38,48 @@ const MobilePresortTextInput = () => {
   const mobilePresortAssignLeft = useStore(getMobilePresortAssignLeft);
   const mobilePresortAssignRight = useStore(getMobilePresortAssignRight);
   const mobilePresortRedoModalHead = useStore(getMobilePresortRedoModalHead);
-  const mobilePresortRedoModalText = useStore(getMobilePresortRedoModalText);
   const mobilePresortRedoModalConfirmButton = useStore(getMobilePresortRedoModalConfirmButton);
   const mobilePresortEvaluationsComplete = useStore(getMobilePresortEvaluationsComplete);
   const mobilePresortHelpModalHead = useStore(getMobilePresortHelpModalHead);
   const mobilePresortHelpModalText = useStore(getMobilePresortHelpModalText);
   const mobilePresortFinishedModalHead = useStore(getMobilePresortFinishedModalHead);
   const mobilePresortFinishedModalText = useStore(getMobilePresortFinishedModalText);
-  // const mobilePresortProcessCompleteMessage = useStore(getMobilePresortProcessCompleteMessage);
   const mobilePresortPreventNavModalHead = useStore(getMobilePresortPreventNavModalHead);
   const mobilePresortPreventNavModalText = useStore(getMobilePresortPreventNavModalText);
   const { t } = useTranslation();
+  // const mobilePresortProcessCompleteMessage = useStore(getMobilePresortProcessCompleteMessage);
+  // const mobilePresortRedoModalText = useStore(getMobilePresortRedoModalText);
 
-  const handleRefImage = (e: any) => {
-    // showRefImage(e.target.id);
+  const handleRefImage1 = () => {
+    window.open(mobilePresort1, "Mobile Presort Main Image", "width=800, height=600");
+    return false;
   };
+
+  const handleRefImage2 = () => {
+    window.open(mobilePresort2, "Mobile Presort Main Image", "width=800, height=600");
+    return false;
+  };
+
+  const handleRefImage3 = () => {
+    window.open(mobilePresort3, "Mobile Presort Re-Evaluate Modal", "width=800, height=600");
+    return false;
+  };
+
+  const handleRefImage4 = () => {
+    window.open(mobilePresort4, "Mobile Presort Re-Evaluate Modal", "width=800, height=600");
+    return false;
+  };
+
+  const handleRefImage5 = () => {
+    window.open(mobilePresort5, "Mobile Presort Re-Evaluate Modal", "width=800, height=600");
+    return false;
+  };
+
+  const handleRefImage6 = () => {
+    window.open(mobilePresort6, "Mobile Presort Re-Evaluate Modal", "width=800, height=600");
+    return false;
+  };
+
   const handleShowDefaults = (e: any) => {
     showSectionDefaults(e.target.id);
   };
@@ -75,7 +107,7 @@ const MobilePresortTextInput = () => {
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="mobilePresortDef"
-            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[180px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
             Use Defaults
@@ -83,19 +115,62 @@ const MobilePresortTextInput = () => {
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="mobilePresortClear"
-            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[180px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleClearAll}
           >
             Clear Section
           </button>
-          {/* <RefImageButton */}
+          <div className="flex items-center p-2 justify-center h-auto ">
+            <p>Images:</p>
+          </div>
           <button
-            className="bg-slate-300 p-2 rounded-md w-[160px] hover:bg-slate-400 hover:font-semibold"
-            id="mobilePresortImage"
+            className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            id="mobilePresortImage1"
+            name="mobilePresortImage1"
             // marginRight="35px"
-            onClick={handleRefImage}
+            onClick={handleRefImage1}
           >
-            Reference Image
+            1
+          </button>
+          <button
+            className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            id="mobilePresortImage2"
+            // marginRight="35px"
+            onClick={handleRefImage2}
+          >
+            2
+          </button>
+          <button
+            className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            id="mobilePresortImage3"
+            // marginRight="35px"
+            onClick={handleRefImage3}
+          >
+            3
+          </button>
+          <button
+            className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            id="mobilePresortImage4"
+            // marginRight="35px"
+            onClick={handleRefImage4}
+          >
+            4
+          </button>
+          <button
+            className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            id="mobilePresortImage5"
+            // marginRight="35px"
+            onClick={handleRefImage5}
+          >
+            5
+          </button>
+          <button
+            className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            id="mobilePresortImage6"
+            // marginRight="35px"
+            onClick={handleRefImage6}
+          >
+            6
           </button>
         </div>
       </div>
@@ -103,98 +178,7 @@ const MobilePresortTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`7-1. ${t("mobilePresortConditionsOfInstruction")}`}
-          name="mobilePresortConditionsOfInstruction"
-          value={mobilePresortConditionsOfInstruction}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-        />
-        <UserTextInput
-          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
-          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`7-2. ${t("mobilePresortCompletedLabel")}`}
-          name="mobilePresortCompletedLabel"
-          value={mobilePresortCompletedLabel}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-        />
-        <UserTextInput
-          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
-          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`7-3. ${t("mobilePresortAssignLeft")}`}
-          name="mobilePresortAssignLeft"
-          value={mobilePresortAssignLeft}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-        />
-        <UserTextInput
-          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
-          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`7-4. ${t("mobilePresortAssignRight")}`}
-          name="mobilePresortAssignRight"
-          value={mobilePresortAssignRight}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-        />
-        <UserTextInput
-          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
-          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`7-5. ${t("mobilePresortRedoModalHead")}`}
-          name="mobilePresortRedoModalHead"
-          value={mobilePresortRedoModalHead}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-        />
-        <UserTextInput
-          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
-          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`7-6. ${t("mobilePresortRedoModalText")}`}
-          name="mobilePresortRedoModalText"
-          value={mobilePresortRedoModalText}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-        />
-        <UserTextInput
-          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
-          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`7-7. ${t("mobilePresortRedoModalConfirmButton")}`}
-          name="mobilePresortRedoModalConfirmButton"
-          value={mobilePresortRedoModalConfirmButton}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-        />
-
-        <UserTextAreaInput
-          classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[80px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
-          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label={`7-8. ${t("mobilePresortEvaluationsComplete")}`}
-          name="mobilePresortEvaluationsComplete"
-          height={150}
-          value={mobilePresortEvaluationsComplete}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-          tabIndex="0"
-        />
-        <UserTextInput
-          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
-          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`7-9. ${t("mobilePresortHelpModalHead")}`}
+          label={`7-1. ${t("mobilePresortHelpModalHead")}`}
           name="mobilePresortHelpModalHead"
           value={mobilePresortHelpModalHead}
           onChange={handleTextChange}
@@ -206,7 +190,7 @@ const MobilePresortTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label={`7-10. ${t("mobilePresortHelpModalText")}`}
+          label={`7-2. ${t("mobilePresortHelpModalText")}`}
           name="mobilePresortHelpModalText"
           height={150}
           value={mobilePresortHelpModalText}
@@ -220,7 +204,99 @@ const MobilePresortTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`7-11. ${t("mobilePresortFinishedModalHead")}`}
+          label={`7-3. ${t("mobilePresortConditionsOfInstruction")}`}
+          name="mobilePresortConditionsOfInstruction"
+          value={mobilePresortConditionsOfInstruction}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+        />
+        <UserTextInput
+          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
+          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+          label={`7-4. ${t("mobilePresortCompletedLabel")}`}
+          name="mobilePresortCompletedLabel"
+          value={mobilePresortCompletedLabel}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+        />
+        <UserTextInput
+          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
+          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+          label={`7-5. ${t("mobilePresortAssignLeft")}`}
+          name="mobilePresortAssignLeft"
+          value={mobilePresortAssignLeft}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+        />
+        <UserTextInput
+          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
+          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+          label={`7-6. ${t("mobilePresortAssignRight")}`}
+          name="mobilePresortAssignRight"
+          value={mobilePresortAssignRight}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+        />
+        <UserTextInput
+          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
+          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+          label={`7-7. ${t("mobilePresortRedoModalHead")}`}
+          name="mobilePresortRedoModalHead"
+          value={mobilePresortRedoModalHead}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+        />
+        {/* <UserTextInput
+          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
+          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+          label={`7-6. ${t("mobilePresortRedoModalText")}`}
+          name="mobilePresortRedoModalText"
+          value={mobilePresortRedoModalText}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+        /> */}
+        <UserTextInput
+          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
+          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+          label={`7-8. ${t("mobilePresortRedoModalConfirmButton")}`}
+          name="mobilePresortRedoModalConfirmButton"
+          value={mobilePresortRedoModalConfirmButton}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+        />
+
+        <UserTextAreaInput
+          classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[80px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
+          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
+          label={`7-9. ${t("mobilePresortEvaluationsComplete")}`}
+          name="mobilePresortEvaluationsComplete"
+          height={150}
+          value={mobilePresortEvaluationsComplete}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+          tabIndex="0"
+        />
+
+        <UserTextInput
+          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
+          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+          label={`7-10. ${t("mobilePresortFinishedModalHead")}`}
           name="mobilePresortFinishedModalHead"
           value={mobilePresortFinishedModalHead}
           onChange={handleTextChange}
@@ -232,7 +308,7 @@ const MobilePresortTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[120px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label={`7-12. ${t("mobilePresortFinishedModalText")}`}
+          label={`7-11. ${t("mobilePresortFinishedModalText")}`}
           name="mobilePresortFinishedModalText"
           height={150}
           value={mobilePresortFinishedModalText}
@@ -245,7 +321,7 @@ const MobilePresortTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`7-13. ${t("mobilePresortPreventNavModalHead")}`}
+          label={`7-12. ${t("mobilePresortPreventNavModalHead")}`}
           name="mobilePresortPreventNavModalHead"
           value={mobilePresortPreventNavModalHead}
           onChange={handleTextChange}
@@ -257,7 +333,7 @@ const MobilePresortTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[60px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center has-[:focus]:font-bold`}
-          label={`7-14. ${t("mobilePresortPreventNavModalText")}`}
+          label={`7-13. ${t("mobilePresortPreventNavModalText")}`}
           name="mobilePresortPreventNavModalText"
           height={150}
           value={mobilePresortPreventNavModalText}

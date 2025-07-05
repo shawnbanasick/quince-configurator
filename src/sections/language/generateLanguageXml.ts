@@ -19,6 +19,9 @@ const generateLanguageXml = () => {
         <!-- 1b. MOBILE MULTIPLE SCREENS AND FOOTER -->
         <item id="mobileTextSize">${encodeHTML(useStore.getState().mobileTextSize)}</item>
         <item id="mobileViewSize">${encodeHTML(useStore.getState().mobileViewSize)}</item>
+        <item id="mobileModalButtonCancel">${encodeHTML(
+          useStore.getState().mobileModalButtonCancel
+        )}</item>
         
         <!-- 2. CONSENT SCREEN -->
         <item id="consentTitleBarText">${encodeHTML(useStore.getState().consentTitleBarText)}</item>
@@ -188,9 +191,6 @@ const generateLanguageXml = () => {
         )}</item>
         <item id="moveTopMobileButtonOK">${encodeHTML(
           useStore.getState().moveTopMobileButtonOK
-        )}</item>
-        <item id="moveTopMobileButtonCancel">${encodeHTML(
-          useStore.getState().moveTopMobileButtonCancel
         )}</item>
         <item id="mobileThinConditionsOfInstruction">${encodeHTML(
           useStore.getState().mobileThinConditionsOfInstruction

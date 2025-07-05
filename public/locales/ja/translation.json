@@ -341,7 +341,7 @@
   "moveTopMobileHead": "移動確認モーダルタイトル",
   "moveAllTopMobileText": "すべてを上に移動メッセージ",
   "moveTopMobileButtonOK": "すべてを上に移動モーダルOKボタンテキスト",
-  "moveTopMobileButtonCancel": "すべてを上に移動モーダルキャンセルボタン",
+  "mobileModalButtonCancel": "すべてを上に移動モーダルキャンセルボタン",
   "mobileThinConditionsOfInstruction": "移動に関する指示",
   "mobileThinSubmitButtonText": "送信ボタンテキスト",
   "mobileThinHelpModalHead": "ヘルプモーダルタイトル",

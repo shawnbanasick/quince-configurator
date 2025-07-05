@@ -149,7 +149,7 @@ const showSectionDefaults = (section) => {
       "moveTopMobileText",
       "moveAllTopMobileText",
       "moveTopMobileButtonOK",
-      "moveTopMobileButtonCancel",
+      "mobileModalButtonCancel",
       "mobileThinConditionsOfInstruction",
       "mobileThinSubmitButtonText",
       "mobileThinHelpModalHead",

@@ -4,6 +4,7 @@ import { UserTextInput } from "../utils/UserTextInput";
 import { UserTextAreaInput } from "../utils/UserTextAreaInput";
 import showSectionDefaults from "./showSectionDefaults";
 import clearSection from "./clearSection";
+import { useTranslation } from "react-i18next";
 
 const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
@@ -11,7 +12,6 @@ const getSetText = (state) => state.setText;
 const EmailTextInput: React.FC = () => {
   let displayMode = useStore(getDisplayMode);
   const setText = useStore(getSetText);
-
   const emailSubmitBtn = useStore((state) => state.emailSubmitBtn);
   const emailCopyResultsBtn = useStore((state) => state.emailCopyResultsBtn);
   const emailCopyAddressBtn = useStore((state) => state.emailCopyAddressBtn);
@@ -19,6 +19,7 @@ const EmailTextInput: React.FC = () => {
   const copyFailMessage = useStore((state) => state.copyFailMessage);
   const defaultEmailFailModalText = useStore((state) => state.defaultEmailFailModalText);
   const emailBodyMessage = useStore((state) => state.emailBodyMessage);
+  const { t } = useTranslation();
 
   const handleRefImage = (e: any) => {
     // showRefImage(e.target.id);
@@ -44,7 +45,7 @@ const EmailTextInput: React.FC = () => {
   return (
     <div className="outline outline-2 outline-slate-500 p-2 w-[78vw] max-w-[78vw] rounded-sm bg-gray-100">
       <div className="flex flex-row justify-between mb-4">
-        <h2>18. Email Screen</h2>
+        <h2>18. {t("emailScreen")}</h2>
         <div className="flex flex-row gap-4">
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
@@ -76,7 +77,7 @@ const EmailTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="18-1. Email Submit Button Text"
+          label={`18-1. ${t("emailSubmitBtn")}`}
           name="emailSubmitBtn"
           value={emailSubmitBtn}
           onChange={handleTextChange}
@@ -87,7 +88,7 @@ const EmailTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="18-2. Email Copy Results Button Text"
+          label={`18-2. ${t("emailCopyResultsBtn")}`}
           name="emailCopyResultsBtn"
           value={emailCopyResultsBtn}
           onChange={handleTextChange}
@@ -98,7 +99,7 @@ const EmailTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="18-3. Email Copy Address Button Text"
+          label={`18-3. ${t("emailCopyAddressBtn")}`}
           name="emailCopyAddressBtn"
           value={emailCopyAddressBtn}
           onChange={handleTextChange}
@@ -109,7 +110,7 @@ const EmailTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="18-4. Copy Success Message"
+          label={`18-4. ${t("copySuccessMessage")}`}
           name="copySuccessMessage"
           value={copySuccessMessage}
           onChange={handleTextChange}
@@ -120,7 +121,7 @@ const EmailTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="18-5. Copy Fail Message"
+          label={`18-5. ${t("copyFailMessage")}`}
           name="copyFailMessage"
           value={copyFailMessage}
           onChange={handleTextChange}
@@ -131,7 +132,7 @@ const EmailTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="18-6. Default Email Fail Modal Text"
+          label={`18-6. ${t("defaultEmailFailModalText")}`}
           name="defaultEmailFailModalText"
           height={150}
           value={defaultEmailFailModalText}
@@ -144,7 +145,7 @@ const EmailTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label="18-7. Email Body Message"
+          label={`18-7. ${t("emailBodyMessage")}`}
           name="emailBodyMessage"
           height={150}
           value={emailBodyMessage}
