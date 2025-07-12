@@ -18,6 +18,13 @@ const setLanguageSection_EN = (language) => {
     btnNext: "Continue",
     stepCompleted: `You have completed this step. Please click on the <b> blue "Continue" button </b> at the bottom right-side of your screen to go to the next step.`,
     screenOrientationText: `Please Use Portrait Orientation!`,
+    expandViewMessage:
+      'Tap the View "+" button below to expand the view area and hide this message.',
+    mobileTextSize: `Text`,
+    mobileViewSize: `View`,
+    mobileModalButtonCancel: `Cancel`,
+
+    expandViewMessage: `Tap the View "+" button below to expand the view area and hide this message.`,
     mobileTextSize: `Text`,
     mobileViewSize: `View`,
     consentTitleBarText: `Research Consent`,
@@ -93,7 +100,7 @@ const setLanguageSection_EN = (language) => {
     mobileModalButtonCancel: `Cancel`,
     mobileThinConditionsOfInstruction: `Refine Your Evaluations`,
     mobileThinSubmitButtonText: `Submit`,
-    mobileThinHelpModalHead: `Refine Your Evaluations`,
+    mobileThinHelpModalHead: `Step 2 of 5<br/>Refinement Process`,
     mobileThinHelpModalText: `During this stage you will be asked to <b></b>review the statements</b> you evaluated and choose those that are most similar or most different from your perspective.<br/><br/>You may need to <b>scroll down</b> to see all of the statements.<br/><br/>To <b>select a statement</b>, tap on the statement container. The color of the statement will change to yellow.<br/><br/>When you have selected the <b>correct number</b> of statements, the "Submit" button will change to <b>blue</b>. <br/><br/>To make it easier to compare the statements, you can <b>reorder</b> them by tapping on the up and down arrows located on the right or left sides of the statement.<br/><br/>You can also <b>move a group</b> of selected statements to the top of the list by <b>long pressing</b> (about 1 second) on the arrows on the right a statement.`,
     mobileThinPreventNavModalHead: `Navigation Disabled`,
     mobileThinPreventNavModalText: `Please complete the refining process before navigating to the next page.`,

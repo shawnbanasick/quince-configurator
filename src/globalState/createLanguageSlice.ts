@@ -9,6 +9,8 @@ const createMapXmlSlice = (set) => ({
   screenOrientationText: `Please Use Portrait Orientation!`,
   mobileTextSize: `Text`,
   mobileViewSize: `View`,
+  mobileModalButtonCancel: `Cancel`,
+  expandViewMessage: `Tap the View "+" button below to expand the view area and hide this message.`,
 
   /*
    ******** 2. CONSENT PAGE  ****************** */

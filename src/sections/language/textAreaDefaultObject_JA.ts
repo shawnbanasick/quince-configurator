@@ -7,6 +7,8 @@ const showSectionDefaults_JA = () => {
     btnNext: "次",
     stepCompleted: `このステップを完了しました。画面右下の青い「続行」ボタンをクリックして、次のステップに進んでください。`,
     screenOrientationText: `縦向きでご使用ください！`,
+    expandViewMessage:
+      'Tap the View "+" button below to expand the view area and hide this message.',
 
     /*
      ******** 同意ページ  ****************** */

@@ -113,46 +113,27 @@ const MobileRefineEvaluationsTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`9-1. ${t("moveTopMobileHead")}`}
-          name="moveTopMobileHead"
-          value={moveTopMobileHead}
+          label={`9-1. ${t("mobileThinHelpModalHead")}`}
+          name="mobileThinHelpModalHead"
+          value={mobileThinHelpModalHead}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
           disabled={false}
         />
-        {/* <UserTextInput
-          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
-          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="8-2. Confirm Move Modal Text"
-          name="moveTopMobileText"
-          value={moveTopMobileText}
+
+        <UserTextAreaInput
+          classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
+          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
+          label={`9-2. ${t("mobileThinHelpModalText")}`}
+          name="mobileThinHelpModalText"
+          height={150}
+          value={mobileThinHelpModalText}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
           disabled={false}
-        /> */}
-        <UserTextInput
-          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
-          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`9-2. ${t("moveAllTopMobileText")}`}
-          name="moveAllTopMobileText"
-          value={moveAllTopMobileText}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-        />
-        <UserTextInput
-          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
-          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`9-3. ${t("moveTopMobileButtonOK")}`}
-          name="moveTopMobileButtonOK"
-          value={moveTopMobileButtonOK}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
+          tabIndex="0"
         />
 
         <UserTextInput
@@ -177,32 +158,6 @@ const MobileRefineEvaluationsTextInput = () => {
           highlight={false}
           placeholder=""
           disabled={false}
-        />
-
-        <UserTextInput
-          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
-          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`9-6. ${t("mobileThinHelpModalHead")}`}
-          name="mobileThinHelpModalHead"
-          value={mobileThinHelpModalHead}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-        />
-
-        <UserTextAreaInput
-          classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
-          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label={`9-7. ${t("mobileThinHelpModalText")}`}
-          name="mobileThinHelpModalText"
-          height={150}
-          value={mobileThinHelpModalText}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-          tabIndex="0"
         />
 
         <UserTextInput
@@ -370,6 +325,51 @@ const MobileRefineEvaluationsTextInput = () => {
           placeholder=""
           disabled={false}
           tabIndex="0"
+        />
+
+        <UserTextInput
+          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
+          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+          label={`9-1. ${t("moveTopMobileHead")}`}
+          name="moveTopMobileHead"
+          value={moveTopMobileHead}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+        />
+        {/* <UserTextInput
+          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
+          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+          label="8-2. Confirm Move Modal Text"
+          name="moveTopMobileText"
+          value={moveTopMobileText}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+        /> */}
+        <UserTextInput
+          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
+          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+          label={`9-2. ${t("moveAllTopMobileText")}`}
+          name="moveAllTopMobileText"
+          value={moveAllTopMobileText}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+        />
+        <UserTextInput
+          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
+          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+          label={`9-3. ${t("moveTopMobileButtonOK")}`}
+          name="moveTopMobileButtonOK"
+          value={moveTopMobileButtonOK}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
         />
       </div>
     </div>

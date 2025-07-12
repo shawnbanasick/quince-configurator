@@ -249,6 +249,8 @@
   "mobileScreenOrientationText": "Mobile Screen Orientation Text",
   "mobileTextSizeAdjustmentButtonText": "Mobile Text Size Adjustment Button Text",
   "mobileViewAreaSizeButtonText": "Mobile View Area Size Button Text",
+  "mobileModalButtonCancel": "Mobile Modal Cancel Button",
+  "expandViewMessage": "Expand View Area Message",
 
   "*** LANGUAGE 2. Consent Screen ***": "***  LANGUAGE PAGE  ***",
   "consentScreen": "Consent Screen",
@@ -341,7 +343,6 @@
   "moveTopMobileHead": "Confirm Move Modal Title",
   "moveAllTopMobileText": "Move All To Top Message",
   "moveTopMobileButtonOK": "Move All to Top Modal OK Button Text",
-  "mobileModalButtonCancel": "Move All to Top Modal Cancel Button",
   "mobileThinConditionsOfInstruction": "Instructions for Moving Statements",
   "mobileThinSubmitButtonText": "Submit Button Text",
   "mobileThinHelpModalHead": "Help Modal Title",

@@ -16,6 +16,7 @@ const getScreenOrientationText = (state) => state.screenOrientationText;
 const getMobileTextSize = (state) => state.mobileTextSize;
 const getMobileViewSize = (state) => state.mobileViewSize;
 const getmobileModalButtonCancel = (state) => state.mobileModalButtonCancel;
+const getmobileExpandViewMessage = (state) => state.expandViewMessage;
 
 const MultipleScreenTextInput = () => {
   let displayMode = useStore(getDisplayMode);
@@ -29,6 +30,7 @@ const MultipleScreenTextInput = () => {
   const mobileModalButtonCancel = useStore(getmobileModalButtonCancel);
   const mobileTextSize = useStore(getMobileTextSize);
   const mobileViewSize = useStore(getMobileViewSize);
+  const expandViewMessage = useStore(getmobileExpandViewMessage);
   const { t } = useTranslation();
 
   const handleShowDefaults = (e) => {
@@ -185,6 +187,18 @@ const MultipleScreenTextInput = () => {
           label={`1-9. ${t("mobileModalButtonCancel")}`}
           name="mobileModalButtonCancel"
           value={mobileModalButtonCancel}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+        />
+
+        <UserTextInput
+          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
+          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+          label={`1-10. ${t("expandViewMessage")}`}
+          name="expandViewMessage"
+          value={expandViewMessage}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""

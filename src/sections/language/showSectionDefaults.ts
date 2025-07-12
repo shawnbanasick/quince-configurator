@@ -35,6 +35,10 @@ const showSectionDefaults = (section) => {
       "btnNext",
       "stepCompleted",
       "screenOrientationText",
+      "mobileTextSize",
+      "mobileViewSize",
+      "mobileModalButtonCancel",
+      "expandViewMessage",
     ];
 
     setDefaults(selectorArray);

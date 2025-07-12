@@ -19,6 +19,10 @@ const showSectionDefaults = (section) => {
       "stepCompleted",
       // "langLoginFirst",
       "screenOrientationText",
+      "mobileTextSize",
+      "mobileViewSize",
+      "mobileModalButtonCancel",
+      "expandViewMessage",
     ];
 
     clearSection(selectorArray);
