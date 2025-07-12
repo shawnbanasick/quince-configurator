@@ -174,8 +174,8 @@ const showSectionDefaults_JA = () => {
      ******** モバイル投稿ソート  ****************** */
     mobilePostsortPreventNavModalHead: `ナビゲーションを無効にしました`,
     mobilePostsortPreventNavModalText: `次のステップに進む前に、すべてのコメントにコメントを追加してください`,
-
     mobilePostsortSortbarText: `投稿後のコメント`,
+    mobilePostsortPlaceholder: `コメントを追加するにはここをクリック`,
     mobilePostsortHelpModalHead: `ステージ 4/5<br/> 投稿後のコメント`,
     mobilePostsortHelpModalText: `これらの投稿のランキングについてコメントしてください。`,
 

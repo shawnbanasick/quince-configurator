@@ -248,6 +248,7 @@ const showSectionDefaults = (section) => {
       "mobilePostsortPreventNavModalHead",
       "mobilePostsortPreventNavModalText",
       "mobilePostsortSortbarText",
+      "mobilePostsortPlaceholder",
       "mobilePostsortHelpModalHead",
       "mobilePostsortHelpModalText",
     ];

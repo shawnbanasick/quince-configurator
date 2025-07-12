@@ -5,6 +5,9 @@ import { UserTextAreaInput } from "../utils/UserTextAreaInput";
 import showSectionDefaults from "./showSectionDefaults";
 import clearSection from "./clearSection";
 import { useTranslation } from "react-i18next";
+import mobilePostsort1 from "../../assets/images/mobile-postsort-1.png";
+import mobilePostsort2 from "../../assets/images/mobile-postsort-2.png";
+import mobilePostsort3 from "../../assets/images/mobile-postsort-3.png";
 
 const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
@@ -17,29 +20,29 @@ const MobilePostsortTextInput: React.FC = () => {
   const mobilePostsortPreventNavModalHead = useStore(
     (state) => state.mobilePostsortPreventNavModalHead
   );
-  // const setMobilePostsortPreventNavModalHead = useStore(
-  //   (state) => state.setMobilePostsortPreventNavModalHead
-  // );
-
   const mobilePostsortPreventNavModalText = useStore(
     (state) => state.mobilePostsortPreventNavModalText
   );
-  // const setMobilePostsortPreventNavModalText = useStore(
-  //   (state) => state.setMobilePostsortPreventNavModalText
-  // );
-
   const mobilePostsortSortbarText = useStore((state) => state.mobilePostsortSortbarText);
-  // const setMobilePostsortSortbarText = useStore((state) => state.setMobilePostsortSortbarText);
-
   const mobilePostsortHelpModalHead = useStore((state) => state.mobilePostsortHelpModalHead);
-  // const setMobilePostsortHelpModalHead = useStore((state) => state.setMobilePostsortHelpModalHead);
-
   const mobilePostsortHelpModalText = useStore((state) => state.mobilePostsortHelpModalText);
-  // const setMobilePostsortHelpModalText = useStore((state) => state.setMobilePostsortHelpModalText);
+  const mobilePostsortPlaceholder = useStore((state) => state.mobilePostsortPlaceholder);
 
-  const handleRefImage = (e: any) => {
-    // showRefImage(e.target.id);
+  const handleRefImage1 = () => {
+    window.open(mobilePostsort1, "Mobile Presort Main Image", "width=800, height=600");
+    return false;
   };
+
+  const handleRefImage2 = () => {
+    window.open(mobilePostsort2, "Mobile Presort Main Image", "width=800, height=600");
+    return false;
+  };
+
+  const handleRefImage3 = () => {
+    window.open(mobilePostsort3, "Mobile Presort Re-Evaluate Modal", "width=800, height=600");
+    return false;
+  };
+
   const handleShowDefaults = (e: any) => {
     showSectionDefaults(e.target.id);
   };
@@ -80,14 +83,33 @@ const MobilePostsortTextInput: React.FC = () => {
           >
             Clear Section
           </button>
-          {/* <RefImageButton */}
+          <div className="flex items-center h-[50px] p-2 justify-center ">
+            <p>Images:</p>
+          </div>
           <button
-            className="bg-slate-300 p-2 rounded-md  w-[160px] hover:bg-slate-400 hover:font-semibold"
-            id="mobilePostsortImage"
+            className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            id="mobilePresortImage1"
+            name="mobilePresortImage1"
             // marginRight="35px"
-            onClick={handleRefImage}
+            onClick={handleRefImage1}
           >
-            Reference Image
+            1
+          </button>
+          <button
+            className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            id="mobilePresortImage2"
+            // marginRight="35px"
+            onClick={handleRefImage2}
+          >
+            2
+          </button>
+          <button
+            className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            id="mobilePresortImage3"
+            // marginRight="35px"
+            onClick={handleRefImage3}
+          >
+            3
           </button>
         </div>
       </div>
@@ -133,7 +155,7 @@ const MobilePostsortTextInput: React.FC = () => {
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
           label={`13-4. ${t("mobilePostsortPlaceholder")}`}
           name="mobilePostsortPlaceholder"
-          // value={mobilePostsortPlaceholder}
+          value={mobilePostsortPlaceholder}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""

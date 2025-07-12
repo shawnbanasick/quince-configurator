@@ -173,6 +173,7 @@ const createMapXmlSlice = (set) => ({
   mobilePostsortPreventNavModalHead: `Navigation Disabled`,
   mobilePostsortPreventNavModalText: `Please add comments to all of the statements before going to the next step.`,
   mobilePostsortSortbarText: `Postsort Comments`,
+  mobilePostsortPlaceholder: `Click here to add comment`,
   mobilePostsortHelpModalHead: `Stage 4 of 5<br/> Post-Ranking Comments`,
   mobilePostsortHelpModalText: `Please comment on your rankings of these statements.`,
 
@@ -264,6 +265,9 @@ const createMapXmlSlice = (set) => ({
     set(() => ({ triggerConsentImageModal: value }));
   },
 
+  setMobilePostsortPlaceholder: (value) => {
+    set(() => ({ mobilePostsortPlaceholder: value }));
+  },
   setMobilePresortConditionsOfInstruction: (value) => {
     set(() => ({ mobilePresortConditionsOfInstruction: value }));
   },
