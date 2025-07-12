@@ -172,6 +172,7 @@ const showSectionDefaults = (section) => {
       "mobileModalButtonCancel",
       "mobileThinConditionsOfInstruction",
       "mobileThinSubmitButtonText",
+      "mobileThinSelectedText",
       "mobileThinHelpModalHead",
       "mobileThinHelpModalText",
       "mobileThinPreventNavModalHead",

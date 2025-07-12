@@ -100,7 +100,7 @@ const setLanguageSection_JA = (language) => {
     mobileGuidanceModalLeft2Text: `次に、再度、<b>否定的に評価した</b>残りの項目を確認し、<b>選択</b>してください。次に、<b>最も異なる</b>項目を<b>次のセット</b>として選択してください。`,
     mobileThinScrollBottomModalHead: `確認無効`,
     mobileThinScrollBottomModalText: `選択を確認する前に、画面下までスクロールしてすべての文を確認してください。`,
-    sortHelpModalHead: `ステップ 2/4`,
+    sortHelpModalHead: `ステップ 3/5`,
     sortHelpModalText: `このステップでは、ご自身の視点とページ上部の研究者の指示に基づいて、ステートメントカードを適切な列にドラッグアンドドロップしてください。<br/><br/><center><iframe width="560" height=「315」 src="https://www.youtube.com/embed/iRxC9Vv3dLo?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
     sortAgreement: `同意`,
     sortDisagreement: `不同意`,

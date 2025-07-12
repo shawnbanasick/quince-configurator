@@ -344,6 +344,7 @@
   "moveAllTopMobileText": "Move All To Top Message",
   "moveTopMobileButtonOK": "Move All to Top Modal OK Button Text",
   "mobileThinConditionsOfInstruction": "Instructions for Moving Statements",
+  "mobileThinSelectedText": "Selected Indicator Text",
   "mobileThinSubmitButtonText": "Submit Button Text",
   "mobileThinHelpModalHead": "Help Modal Title",
   "mobileThinHelpModalText": "Help Modal Text",
@@ -404,6 +405,7 @@
   "mobilePostsortPreventNavModalHead": "Prevent Navigation Modal Title",
   "mobilePostsortPreventNavModalText": "Prevent Navigation Modal Text",
   "mobilePostsortSortbarText": "Title Bar Text",
+  "mobilePostsortPlaceholder": "Comment Box Input Placeholder",
   "mobilePostsortHelpModalHead": "Help Modal Title",
   "mobilePostsortHelpModalText": "Help Modal Text",
 

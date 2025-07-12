@@ -130,7 +130,7 @@ const showSectionDefaults_JA = () => {
 
     /*
      ******** SORT  ****************** */
-    sortHelpModalHead: `ステップ 2/4`,
+    sortHelpModalHead: `ステップ 3/5`,
     sortHelpModalText: `このステップでは、ご自身の視点とページ上部の研究者の指示に基づいて、ステートメントカードを適切な列にドラッグアンドドロップしてください。<br/><br/><center><iframe width="560" height=「315」 src="https://www.youtube.com/embed/iRxC9Vv3dLo?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
 
     sortAgreement: `同意`,

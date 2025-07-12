@@ -143,7 +143,7 @@
         <item id="mobileThinScrollBottomModalText">Please scroll to the bottom and review all the statements before confirming your selections.</item>
 
         <!-- SORT: sorting -->
-        <item id="sortHelpModalHead">Step 2 of 4</item>
+        <item id="sortHelpModalHead">Step 3 of 5</item>
         <item id="sortHelpModalText">In this step, please click and drag the statement cards to the appropriate column based on your perspective and the researcher&apos;s instructions at the top of the page. {{{br/}}}{{{br/}}}{{{center}}}{{{iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/iRxC9Vv3dLo?rel=0&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen}}}{{{/iframe}}}{{{/center}}}</item>
         <item id="sortAgreement">Agree</item>
         <item id="sortDisagreement">Disagree</item>

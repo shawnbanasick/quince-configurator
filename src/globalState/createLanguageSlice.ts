@@ -110,9 +110,10 @@ const createMapXmlSlice = (set) => ({
   // moveTopMobileText: `Move this statement to the top of the list?`,
   moveAllTopMobileText: `Move all selected statements to the top of the list?`,
   moveTopMobileButtonOK: `Yes`,
-  mobileModalButtonCancel: `Cancel`,
+  // mobileModalButtonCancel: `Cancel`,
   mobileThinConditionsOfInstruction: `Refine Your Evaluations`,
   mobileThinSubmitButtonText: `Submit`,
+  mobilethinSelectedText: `Selected`,
   mobileThinHelpModalHead: `Refine Your Evaluations`,
   mobileThinHelpModalText: `During this stage you will be asked to <b></b>review the statements</b> you evaluated and choose those that are most similar or most different from your perspective.<br/><br/>You may need to <b>scroll down</b> to see all of the statements.<br/><br/>To <b>select a statement</b>, tap on the statement container. The color of the statement will change to yellow.<br/><br/>When you have selected the <b>correct number</b> of statements, the "Submit" button will change to <b>blue</b>. <br/><br/>To make it easier to compare the statements, you can <b>reorder</b> them by tapping on the up and down arrows located on the right or left sides of the statement.<br/><br/>You can also <b>move a group</b> of selected statements to the top of the list by <b>long pressing</b> (about 1 second) on the arrows on the right a statement.`,
   mobileThinPreventNavModalHead: `Navigation Disabled`,
@@ -131,7 +132,7 @@ const createMapXmlSlice = (set) => ({
 
   /*
    ******** 10. SORT  ****************** */
-  sortHelpModalHead: `Step 2 of 4`,
+  sortHelpModalHead: `Step 3 of 5`,
   sortHelpModalText: `In this step, please click and drag the statement cards to the appropriate column based on your perspective and the researcher's instructions at the top of the page. <br/><br/><center><iframe width="560" height="315" src="https://www.youtube.com/embed/iRxC9Vv3dLo?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
   sortAgreement: `Agree`,
   sortDisagreement: `Disagree`,
@@ -340,6 +341,16 @@ const createMapXmlSlice = (set) => ({
   },
   setMobileThinConditionsOfInstruction: (value) => {
     set(() => ({ mobileThinConditionsOfInstruction: value }));
+  },
+  setMobileThinSelectedText: (value) => {
+    set(() => ({ mobileThinSelectedText: value }));
+  },
+
+  setMobileModalButtonCancel: (value) => {
+    set(() => ({ mobileModalButtonCancel: value }));
+  },
+  setExpandedViewMessage: (value) => {
+    set(() => ({ expandViewMessage: value }));
   },
   setMobileThinSubmitButtonText: (value) => {
     set(() => ({ mobileThinSubmitButtonText: value }));

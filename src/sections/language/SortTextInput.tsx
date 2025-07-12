@@ -5,6 +5,9 @@ import { UserTextAreaInput } from "../utils/UserTextAreaInput";
 import showSectionDefaults from "./showSectionDefaults";
 import clearSection from "./clearSection";
 import { useTranslation } from "react-i18next";
+import sort1 from "../../assets/images/sort-1.png";
+import sort2 from "../../assets/images/sort-2.png";
+import sort3 from "../../assets/images/sort-3.png";
 
 const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
@@ -15,45 +18,32 @@ const SortTextInput: React.FC = () => {
   const { t } = useTranslation();
 
   const sortHelpModalHead = useStore((state) => state.sortHelpModalHead);
-  // const setSortHelpModalHead = useStore((state) => state.setSortHelpModalHead);
-
   const sortHelpModalText = useStore((state) => state.sortHelpModalText);
-  // const setSortHelpModalText = useStore((state) => state.setSortHelpModalText);
-
   const sortAgreement = useStore((state) => state.sortAgreement);
-  // const setSortAgreement = useStore((state) => state.setSortAgreement);
-
   const sortDisagreement = useStore((state) => state.sortDisagreement);
-  // const setSortDisagreement = useStore((state) => state.setSortDisagreement);
-
   const condOfInst = useStore((state) => state.condOfInst);
-  // const setCondOfInst = useStore((state) => state.setCondOfInst);
-
-  const sortingCompleteModalHead = useStore((state) => state.sortingCompleteModalHead);
-  // const setSortingCompleteModalHead = useStore((state) => state.setSortingCompleteModalHead);
-
-  const sortingCompleteModalText = useStore((state) => state.sortingCompleteModalText);
-  // const setSortingCompleteModalText = useStore((state) => state.setSortingCompleteModalText);
-
-  const sortPreventNavModalHead = useStore((state) => state.sortPreventNavModalHead);
-  // const setSortPreventNavModalHead = useStore((state) => state.setSortPreventNavModalHead);
-
-  const sortPreventNavModalText = useStore((state) => state.sortPreventNavModalText);
-  // const setSortPreventNavModalText = useStore((state) => state.setSortPreventNavModalText);
-
   const sortOverloadedColumnModalHead = useStore((state) => state.sortOverloadedColumnModalHead);
-  // const setSortOverloadedColumnModalHead = useStore(
-  // (state) => state.setSor/tOverloadedColumnModalHead
-  // );
-
   const sortOverloadedColumnModalText = useStore((state) => state.sortOverloadedColumnModalText);
-  // const setSortOverloadedColumnModalText = useStore(
-  //   (state) => state.setSortOverloadedColumnModalText
-  // );
+  // const sortingCompleteModalHead = useStore((state) => state.sortingCompleteModalHead);
+  // const sortingCompleteModalText = useStore((state) => state.sortingCompleteModalText);
+  // const sortPreventNavModalHead = useStore((state) => state.sortPreventNavModalHead);
+  // const sortPreventNavModalText = useStore((state) => state.sortPreventNavModalText);
 
-  const handleRefImage = (e: any) => {
-    // showRefImage(e.target.id);
+  const handleRefImage1 = () => {
+    window.open(sort1, "Mobile Presort Main Image", "width=800, height=600");
+    return false;
   };
+
+  const handleRefImage2 = () => {
+    window.open(sort2, "Mobile Presort Main Image", "width=800, height=600");
+    return false;
+  };
+
+  const handleRefImage3 = () => {
+    window.open(sort3, "Mobile Presort Re-Evaluate Modal", "width=800, height=600");
+    return false;
+  };
+
   const handleShowDefaults = (e: any) => {
     showSectionDefaults(e.target.id);
   };
@@ -93,14 +83,33 @@ const SortTextInput: React.FC = () => {
           >
             Clear Section
           </button>
-          {/* <RefImageButton */}
+          <div className="flex items-center h-[50px] p-2 justify-center ">
+            <p>Images:</p>
+          </div>
           <button
-            className="bg-slate-300 p-2 rounded-md w-[160px] hover:bg-slate-400 hover:font-semibold"
-            id="sortImage"
+            className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            id="mobilePresortImage1"
+            name="mobilePresortImage1"
             // marginRight="35px"
-            onClick={handleRefImage}
+            onClick={handleRefImage1}
           >
-            Reference Image
+            1
+          </button>
+          <button
+            className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            id="mobilePresortImage2"
+            // marginRight="35px"
+            onClick={handleRefImage2}
+          >
+            2
+          </button>
+          <button
+            className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            id="mobilePresortImage3"
+            // marginRight="35px"
+            onClick={handleRefImage3}
+          >
+            3
           </button>
         </div>
       </div>
@@ -164,7 +173,7 @@ const SortTextInput: React.FC = () => {
           disabled={false}
           tabIndex="0"
         />
-        <UserTextInput
+        {/* <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
           label={`10-6. ${t("sortingCompleteModalHead")}`}
@@ -187,8 +196,8 @@ const SortTextInput: React.FC = () => {
           placeholder=""
           disabled={false}
           tabIndex="0"
-        />
-        <UserTextInput
+        /> */}
+        {/* <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
           label={`10-8. ${t("sortPreventNavModalHead")}`}
@@ -211,11 +220,11 @@ const SortTextInput: React.FC = () => {
           placeholder=""
           disabled={false}
           tabIndex="0"
-        />
+        /> */}
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`10-10. ${t("sortOverloadedColumnModalHead")}`}
+          label={`10-6. ${t("sortOverloadedColumnModalHead")}`}
           name="sortOverloadedColumnModalHead"
           value={sortOverloadedColumnModalHead}
           onChange={handleTextChange}
@@ -226,7 +235,7 @@ const SortTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`10-11. ${t("sortOverloadedColumnModalText")}`}
+          label={`10-7. ${t("sortOverloadedColumnModalText")}`}
           name="sortOverloadedColumnModalText"
           height={150}
           value={sortOverloadedColumnModalText}

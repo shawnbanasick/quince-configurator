@@ -158,7 +158,7 @@
 
 
     <!-- SORT: sorting -->
-    <item id="sortHelpModalHead">ステップ 2/4</item>
+    <item id="sortHelpModalHead">ステップ 3/5</item>
     <item id="sortHelpModalText">このステップでは、ステートメントカードをクリックしてドラッグし、あなたの考えと研究者の指示に基づいて適切な列に配置してください。{{{br/}}}{{{br/}}}{{{center}}}{{{iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/iRxC9Vv3dLo?rel=0&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen}}}{{{/iframe}}}{{{/center}}}</item>
     <item id="sortAgreement">同意</item>
     <item id="sortDisagreement">不同意</item>
