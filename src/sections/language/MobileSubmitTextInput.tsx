@@ -4,6 +4,7 @@ import { UserTextInput } from "../utils/UserTextInput";
 import showSectionDefaults from "./showSectionDefaults";
 import clearSection from "./clearSection";
 import { useTranslation } from "react-i18next";
+import mobileSubmit1 from "../../assets/images/mobile-submit-1.png";
 
 const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
@@ -14,9 +15,11 @@ const MobileSubmitTextInput: React.FC = () => {
   const mobileSortTitleBar = useStore((state) => state.mobileSortTitleBar);
   const { t } = useTranslation();
 
-  const handleRefImage = (e) => {
-    // showRefImage(e.target.id);
+  const handleRefImage1 = () => {
+    window.open(mobileSubmit1, "Mobile Presort Main Image", "width=800, height=600");
+    return false;
   };
+
   const handleShowDefaults = (e) => {
     showSectionDefaults(e.target.id);
   };
@@ -55,14 +58,17 @@ const MobileSubmitTextInput: React.FC = () => {
           >
             Clear Section
           </button>
-          {/* <RefImageButton */}
+          <div className="flex items-center h-[50px] p-2 justify-center ">
+            <p>Images:</p>
+          </div>
           <button
-            className="bg-slate-300 p-2 rounded-md"
-            id="mobileSubmitImage"
+            className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            id="mobilePresortImage1"
+            name="mobilePresortImage1"
             // marginRight="35px"
-            onClick={handleRefImage}
+            onClick={handleRefImage1}
           >
-            Reference Image
+            1
           </button>
         </div>
       </div>

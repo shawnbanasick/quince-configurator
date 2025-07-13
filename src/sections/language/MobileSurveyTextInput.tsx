@@ -5,6 +5,7 @@ import { UserTextAreaInput } from "../utils/UserTextAreaInput";
 import showSectionDefaults from "./showSectionDefaults";
 import clearSection from "./clearSection";
 import { useTranslation } from "react-i18next";
+import mobileSurvey1 from "../../assets/images/mobile-survey-1.png";
 
 const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
@@ -16,9 +17,11 @@ const MobileSurveyTextInput: React.FC = () => {
   const mobileSurveyHelpModalText = useStore((state) => state.mobileSurveyHelpModalText);
   const { t } = useTranslation();
 
-  const handleRefImage = (e) => {
-    // showRefImage(e.target.id);
+  const handleRefImage1 = () => {
+    window.open(mobileSurvey1, "Mobile Presort Main Image", "width=800, height=600");
+    return false;
   };
+
   const handleShowDefaults = (e) => {
     showSectionDefaults(e.target.id);
   };
@@ -59,14 +62,17 @@ const MobileSurveyTextInput: React.FC = () => {
           >
             Clear Section
           </button>
-          {/* <RefImageButton */}
+          <div className="flex items-center h-[50px] p-2 justify-center ">
+            <p>Images:</p>
+          </div>
           <button
-            className="bg-slate-300 p-2 rounded-md w-[160px] hover:bg-slate-400 hover:font-semibold"
-            id="mobileSurveyImage"
+            className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            id="mobilePresortImage1"
+            name="mobilePresortImage1"
             // marginRight="35px"
-            onClick={handleRefImage}
+            onClick={handleRefImage1}
           >
-            Reference Image
+            1
           </button>
         </div>
       </div>

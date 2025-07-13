@@ -164,7 +164,7 @@ const showSectionDefaults_JA = () => {
     placeholder: `コメントを追加するにはここをクリック`,
     postsortAgreement: `同意に配置`,
     postsortDisagreement: `反対に配置`,
-    postsortModalHead: `ステップ 3/4`,
+    postsortModalHead: `ステップ 4/5`,
     postsortModalText: `ページの最下部にあるボタンを使用して、フォントサイズやカードの高さを変更できます。<br/><br/><center><iframe width="560" height="315" src="https://www.youtube.com/embed/EFNlSiaEVVg?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></h3></center>`,
     postsortPreventNavModalHead: `ナビゲーションを無効にしました`,
     postsortPreventNavModalText: `次のステップに進む前に、すべてのカードにコメントを追加してください`,
@@ -182,7 +182,7 @@ const showSectionDefaults_JA = () => {
     /*
      ******** アンケート  ****************** */
     surveyHeader: `投稿後のアンケート`,
-    surveyModalHead: `ステップ 4/4`,
+    surveyModalHead: `ステップ 5/5`,
     surveyModalText: `最後に、ご自身の背景に関する以下の質問にお答えください。タイトルに「*」が付いた質問は必須です。<br/><br/><center><iframe width="560" height=「315」 src="https://www.youtube.com/embed/68MHzgLn1zg?rel=0" title="YouTube動画プレイヤー" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
 
     surveyPreventNavModalHead: `ナビゲーションが無効です`,

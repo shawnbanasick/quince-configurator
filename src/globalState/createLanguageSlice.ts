@@ -162,7 +162,7 @@ const createMapXmlSlice = (set) => ({
   placeholder: `Click here to add comment`,
   postsortAgreement: `Placed on Agree`,
   postsortDisagreement: `Placed on Disagree`,
-  postsortModalHead: `Step 3 of 4`,
+  postsortModalHead: `Step 4 of 5`,
   postsortModalText: `You can use the buttons at the bottom of the page to change the font size or card height.<br/><br/><center><iframe width="560" height="315" src="https://www.youtube.com/embed/EFNlSiaEVVg?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></h3></center>`,
   postsortPreventNavModalHead: `Navigation Disabled`,
   postsortPreventNavModalText: `Please add comments to all of the cards before going to the next step.`,
@@ -180,7 +180,7 @@ const createMapXmlSlice = (set) => ({
   /*
    ******** 14. SURVEY  ****************** */
   surveyHeader: `Post-Sort Questionnaire`,
-  surveyModalHead: `Step 4 of 4`,
+  surveyModalHead: `Step 5 of 5`,
   surveyModalText: `Finally, please answer the following questions regarding your background. The questions marked with an "*" in their title are required.<br/><br/><center><iframe width="560" height="315" src="https://www.youtube.com/embed/68MHzgLn1zg?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
   surveyPreventNavModalHead: `Navigation Disabled`,
   surveyPreventNavModalText: `Please answer the required questions (outlined in yellow) before going to the next step.`,

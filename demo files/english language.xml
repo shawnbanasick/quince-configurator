@@ -173,7 +173,7 @@
         <item id="placeholder">Click here to add comment</item>
         <item id="postsortAgreement">Placed on Agree</item>
         <item id="postsortDisagreement">Placed on Disagree</item>
-        <item id="postsortModalHead">Step 3 of 4</item>
+        <item id="postsortModalHead">Step 4 of 5</item>
         <item id="postsortModalText">You can use the buttons at the bottom of the page to change the font size or card height.{{{br/}}}{{{br/}}}{{{center}}}{{{iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/EFNlSiaEVVg?rel=0&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen}}}{{{/iframe}}}{{{/h3}}}{{{/center}}}</item>
         <item id="postsortPreventNavModalHead">Navigation Disabled</item>
         <item id="postsortPreventNavModalText">Please add comments to all of the cards before going to the next step.</item>
@@ -190,7 +190,7 @@
 
         <!-- SURVEY: Additional questions, displayed if showStep4 == true -->
         <item id="surveyHeader">Post-Sort Questionnaire</item>
-        <item id="surveyModalHead">Step 4 of 4</item>
+        <item id="surveyModalHead">Step 5 of 5</item>
         <item id="surveyModalText">Finally, please answer the following questions regarding your background. The questions marked with an &quot;*&quot; in their title are required.{{{br/}}}{{{br/}}}{{{center}}}{{{iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/68MHzgLn1zg?rel=0&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen}}}{{{/iframe}}}{{{/center}}}</item>
         <item id="surveyPreventNavModalHead">Navigation Disabled</item>
         <item id="surveyPreventNavModalText">Please answer the required questions (outlined in yellow) before going to the next step.</item>
