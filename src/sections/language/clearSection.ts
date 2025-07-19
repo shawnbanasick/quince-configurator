@@ -302,13 +302,17 @@ const showSectionDefaults = (section) => {
   }
   if (section === "emailClear") {
     selectorArray = [
+      "fallbackMessage",
       "emailSubmitBtn",
-      "emailCopyResultsBtn",
-      "emailCopyAddressBtn",
-      "copySuccessMessage",
-      "copyFailMessage",
+      "emailSubmitBtn",
+      "sendEmailMessage",
       "defaultEmailFailModalText",
+      "emailCopyAddressBtn",
+      "emailCopyResultsBtn",
+      "copySuccessMessage",
+      "btnDownload",
       "emailBodyMessage",
+      "emailSubjectText",
     ];
 
     clearSection(selectorArray);

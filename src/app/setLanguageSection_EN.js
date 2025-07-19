@@ -165,7 +165,7 @@ const setLanguageSection_EN = (language) => {
     transferOkModalText: `Thank you for using Quincy!<br/><br/>You can now close your browser tab.`,
     transferFailModalHeader: `Connection to server failed`,
     transferFailModalText: `Please try again in a few moments.`,
-    fallbackMessage: `Data transmission has failed. Please download the results and email them as an attachment to ken.q.tools@gmail.com.  Thank you!`,
+    fallbackMessage: `*** Error - Transmission Failure*** <br/><br/>Please check your internet connection and click the "Submit Data" button again.`,
     btnDownload: `Download`,
     goodbyeMessage: `<div>Thank You!</div> <br /><div>You can now close the browser tab</div>`,
     mobileSortTitleBar: `Submit Data`,

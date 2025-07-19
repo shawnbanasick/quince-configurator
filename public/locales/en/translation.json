@@ -449,7 +449,7 @@
   "copySuccessMessage": "Copy Success Message",
   "btnDownload": "Results Download Button Text",
   "emailBodyMessage": "Email Body Message",
-  "emailSubjectMessage": "Email Subject Line Message",
+  "emailSubjectText": "Email Subject Line Message",
 
   "*** LANGUAGE 19. Linking ***": "***  LANGUAGE PAGE  ***",
   "projectLinkingScreen": "Project Linking Screen",

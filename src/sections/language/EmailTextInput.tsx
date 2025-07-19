@@ -131,7 +131,7 @@ const FailureTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`18-6. ${t("fallbackMessage")}`}
+          label={`18-1. ${t("fallbackMessage")}`}
           name="fallbackMessage"
           height={150}
           value={fallbackMessage}
@@ -145,7 +145,7 @@ const FailureTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`18-1. ${t("emailSubmitBtn")}`}
+          label={`18-2. ${t("emailSubmitBtn")}`}
           name="emailSubmitBtn"
           value={emailSubmitBtn}
           onChange={handleTextChange}
@@ -156,7 +156,7 @@ const FailureTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`18-6. ${t("sendEmailMessage")}`}
+          label={`18-3. ${t("sendEmailMessage")}`}
           name="sendEmailMessage"
           height={150}
           value={sendEmailMessage}
@@ -169,7 +169,7 @@ const FailureTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`18-6. ${t("defaultEmailFailModalText")}`}
+          label={`18-4. ${t("defaultEmailFailModalText")}`}
           name="defaultEmailFailModalText"
           height={150}
           value={defaultEmailFailModalText}
@@ -183,7 +183,7 @@ const FailureTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`18-3. ${t("emailCopyAddressBtn")}`}
+          label={`18-5. ${t("emailCopyAddressBtn")}`}
           name="emailCopyAddressBtn"
           value={emailCopyAddressBtn}
           onChange={handleTextChange}
@@ -194,7 +194,7 @@ const FailureTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`18-2. ${t("emailCopyResultsBtn")}`}
+          label={`18-6. ${t("emailCopyResultsBtn")}`}
           name="emailCopyResultsBtn"
           value={emailCopyResultsBtn}
           onChange={handleTextChange}
@@ -206,7 +206,7 @@ const FailureTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`18-4. ${t("copySuccessMessage")}`}
+          label={`18-7. ${t("copySuccessMessage")}`}
           name="copySuccessMessage"
           value={copySuccessMessage}
           onChange={handleTextChange}
@@ -218,7 +218,7 @@ const FailureTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`18-4. ${t("btnDownload")}`}
+          label={`18-8. ${t("btnDownload")}`}
           name="btnDownload"
           value={btnDownload}
           onChange={handleTextChange}
@@ -227,10 +227,21 @@ const FailureTextInput: React.FC = () => {
           disabled={false}
         />
 
+        <UserTextInput
+          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
+          classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
+          label={`18-9. ${t("emailSubjectText")}`}
+          name="emailSubjectText"
+          value={emailSubjectText}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+        />
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`18-7. ${t("emailBodyMessage")}`}
+          label={`18-10. ${t("emailBodyMessage")}`}
           name="emailBodyMessage"
           height={150}
           value={emailBodyMessage}
@@ -239,17 +250,6 @@ const FailureTextInput: React.FC = () => {
           placeholder=""
           disabled={false}
           tabIndex="0"
-        />
-        <UserTextInput
-          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
-          classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`18-4. ${t("emailSubjectMessage")}`}
-          name="emailSubjectText"
-          value={emailSubjectText}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
         />
       </div>
     </div>
