@@ -441,7 +441,7 @@
   "mobileSortTitleBar": "Title Bar Text",
 
   "*** LANGUAGE 18. Email ***": "***  LANGUAGE PAGE  ***",
-  "emailScreen": "Email Screen",
+  "emailScreen": "Failure to Connect to Database Screen",
   "emailSubmitBtn": "Email Submit Button Text",
   "emailCopyResultsBtn": "Copy Results to Clipboard Button Text",
   "emailCopyAddressBtn": "Copy Email Address to Clipboard Button Text",

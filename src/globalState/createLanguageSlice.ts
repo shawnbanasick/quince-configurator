@@ -188,37 +188,42 @@ const createMapXmlSlice = (set) => ({
   /*
    ******** 15. MOBILE SURVEY  ****************** */
   mobileSurveyHelpModalHead: `Stage 5 of 5<br/> Post-Ranking Survey`,
-  mobileSurveyHelpModalText: `Please answer the following questions.`,
+  mobileSurveyHelpModalText: `Please answer these background questions.<br/><br/>Some of the questions may require that you provide an answer before you can go to the final step.`,
 
   /*
    ******** 16. SUBMIT  ****************** */
-  btnTransfer: `Submit Data`,
   transferHead: `Final Step`,
   transferTextAbove: `<h1>Ready to Submit</h1><br/><br/> <h2>Please click the "Submit Data" button to transmit your results.</h2>`,
-  transferTextBelow: `If the submission confirmation message does not appear, <br/>please wait a few minutes and click the submit button again.`,
-  transferOkModalHeader: `Success - The data have been sent to the server.`,
-  transferOkModalText: `Thank you for using Quincy!<br/><br/>You can now close your browser tab.`,
-  transferFailModalHeader: `Connection to server failed`,
-  transferFailModalText: `Please try again in a few moments.`,
-  fallbackMessage: `Data transmission has failed. Please download the results and email them as an attachment to ken.q.tools@gmail.com.  Thank you!`,
-  btnDownload: `Download`,
+  btnTransfer: `Submit Data`,
+  transferTextBelow: `Please wait for the confirmation message that indicates your data have been sent to the server successfully.`,
   goodbyeMessage: `<div>Thank You!</div> <br /><div>You can now close the browser tab</div>`,
+
+  // transferOkModalText: `Thank you for using Quincy!<br/><br/>You can now close your browser tab.`,
+  // transferOkModalHeader: `Success - The data have been sent to the server.`,
+  // transferFailModalHeader: `Connection to server failed`,
+  // transferFailModalText: `Please try again in a few moments.`,
 
   /*
    ******** 17. MOBILE SUBMIT  ****************** */
   mobileSortTitleBar: `Submit Data`,
 
   /*
-   ******** 18. EMAIL  ****************** */
+   ******** 18. FAILURE  ****************** */
+  fallbackMessage: `*** Error - Transmission Failure*** <br/><br/>Please check your internet connection and click the "Submit Data" button again.`,
   emailSubmitBtn: "Open Email Client and Send Results",
-  emailCopyResultsBtn: "Copy Results to Clipboard",
-  emailCopyAddressBtn: "Copy Email Address to Clipboard",
-  copySuccessMessage: "Copied!",
-  copyFailMessage: "Error: Please try again.",
+  sendEmailMessage:
+    "Unable to connect with the database.<br/><br/>Please click the button to open your default email client and send an email with your data to the research team.",
   defaultEmailFailModalText:
-    "Your default email client should have automatically opened with the results in the email body. If it didn't, please use the buttons below to copy and paste your information into an email.",
+    "Your default email client should have automatically opened with the results in the email body. If it didn't, please use the buttons below to copy and paste your information into an email.<br><br/>There is also a button to download your results to your computer as a backup.",
+  emailCopyAddressBtn: "Copy Email Address to Clipboard",
+  emailCopyResultsBtn: "Copy Results to Clipboard",
+  copySuccessMessage: "Copied!",
+  btnDownload: `Download Results`,
   emailBodyMessage:
     "You don't have to add anything to this email. Please just click the SEND button.",
+  emailSubjectText: `Q-sort Results - Quincy Demo Project`,
+
+  // copyFailMessage: "Error: Please try again.",
 
   /*
    ******** 19. LINKING  ****************** */
@@ -265,6 +270,12 @@ const createMapXmlSlice = (set) => ({
     set(() => ({ triggerConsentImageModal: value }));
   },
 
+  setEmailSubjectText: (value) => {
+    set(() => ({ emailSubjectText: value }));
+  },
+  setSendEmailMessage: (value) => {
+    set(() => ({ sendEmailMessage: value }));
+  },
   setMobilePostsortPlaceholder: (value) => {
     set(() => ({ mobilePostsortPlaceholder: value }));
   },

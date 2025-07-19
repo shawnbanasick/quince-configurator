@@ -235,10 +235,10 @@
     <item id="btnDownload">ダウンロード</item>
     <item id="goodbyeMessage">{{{div}}}ありがとうございました！{{{/div}}} {{{br/}}}{{{div}}}ブラウザタブを閉じることができます{{{/div}}}</item>
 
-    <!-- MOBILE SUBMIT -->
+    <!-- 17. MOBILE SUBMIT -->
     <item id="mobileSortTitleBar">データを送信</item>
 
-    <!-- EMAIL -->
+    <!-- 18. FAILURE -->
     <item id="btnTransferEmail">メールクライアントを開いて結果を送信</item>
     <item id="clipboardResults">結果をクリップボードにコピー</item>
     <item id="clipboardEmail">メールアドレスをクリップボードにコピー</item>
@@ -247,7 +247,7 @@
     <item id="defaultEmailClientFail">デフォルトのメールクライアントが自動的に開き、結果がメール本文に表示されるはずです。開かない場合は、以下のボタンを使用して情報をコピーしてメールに貼り付けてください。</item>
     <item id="emailMessage1">このメールに何も追加する必要はありません。送信ボタンをクリックしてください。</item>
 
-    <!-- LINKING -->
+    <!-- 19. LINKING -->
     <item id="linkedProjectFallbackMessage">次のQソートを開始するにはボタンをクリックしてください</item>
     <item id="linkedProjectBtnMessage">次のQソートを開始</item>
 

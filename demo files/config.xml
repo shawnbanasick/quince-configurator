@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-   <config version="7.0.0" htmlParse="false">
+   <config version="Quincy 1.0.0" htmlParse="false">
 
    <!-- GENERAL SETTINGS -->
    <!-- "setupTarget" options: netlify, firebase, local, email, or sheets -->
    <item id="studyTitle">Demo Project</item> 
    <item id="databaseOptions">Include_Google_Options</item>
-   <item id="setupTarget">firebase</item>
+   <item id="setupTarget">baserow</item>
    <!-- STEIN -->
    <item id="steinApiUrl"></item>
    <!-- EMAIL -->
-   <item id="emailAddress"></item>  
+   <item id="emailAddress">ken.q.tools@gmail.com</item>  
    <item id="emailSubject">EQ Web Sort Results</item>  
    <!-- SECOND PROJECT LINKING -->
    <item id="linkToSecondProject">false</item> 

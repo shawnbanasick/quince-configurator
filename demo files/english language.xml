@@ -205,7 +205,7 @@
         <item id="btnTransfer">Submit Data</item>
         <item id="transferHead">Final Step</item>
         <item id="transferTextAbove">{{{h1}}}Ready to Submit{{{/h1}}}{{{br/}}}{{{br/}}} {{{h2}}}Please click the &quot;Submit Data&quot; button to transmit your results.{{{/h2}}}</item>
-        <item id="transferTextBelow">If the submission confirmation message does not appear, {{{br/}}}please wait a few minutes and click the submit button again.</item>
+        <item id="transferTextBelow">Please wait for the confirmation message that indicates your data have been sent to the server successfully.</item>
         <item id="transferOkModalHeader">Success - The data have been sent to the server.</item>   
         <item id="transferOkModalText">Thank you for using EQ Web Sort!{{{br/}}}{{{br/}}}You can now close your browser tab.</item>
         <item id="transferFailModalHeader">Connection to server failed</item>   

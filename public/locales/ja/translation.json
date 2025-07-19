@@ -438,7 +438,7 @@
   "mobileSortTitleBar": "タイトルバーテキスト",
 
   "*** LANGUAGE 18. Email ***": "***  LANGUAGE PAGE  ***",
-  "emailScreen": "メール画面",
+  "emailScreen": "データベースに接続できません画面",
   "emailSubmitBtn": "メール送信ボタンテキスト",
   "emailCopyResultsBtn": "結果をクリップボードにコピーするボタンテキスト",
   "emailCopyAddressBtn": "メールアドレスをクリップボードにコピーするボタンテキスト",

@@ -20,7 +20,7 @@ import { SurveyTextInput } from "./SurveyTextInput.js";
 import { MobileSurveyTextInput } from "./MobileSurveyTextInput.js";
 import { SubmitTextInput } from "./SubmitTextInput.js";
 import { MobileSubmitTextInput } from "./MobileSubmitTextInput.js";
-import { EmailTextInput } from "./EmailTextInput.js";
+import { FailureTextInput } from "./EmailTextInput.js";
 import { ProjectLinkingTextInput } from "./ProjectLinkingTextInput.js";
 import { UploadAndReadLanguageXml } from "./UploadAndReadLanguageXml.js";
 import { DownloadLanguageXml } from "./DownloadLanguageXml.js";
@@ -65,7 +65,7 @@ const Language = () => {
       <MobileSurveyTextInput />
       <SubmitTextInput />
       <MobileSubmitTextInput />
-      <EmailTextInput />
+      <FailureTextInput />
       <ProjectLinkingTextInput />
     </div>
   );

@@ -148,6 +148,14 @@ const showSectionDefaults = (section) => {
 
   if (section === "refineDef") {
     selectorArray = [
+      "initialInstructionNegPart1",
+      "initialInstructionNegPart2",
+      "thinningPageCurrentNumStatesSelected",
+      "thinningPageNumStatesToSelect",
+      "thinningPageSubmitButtonText",
+      "thinningPageTitle",
+      "thinningHelpModalHead",
+      "thinningHelpModalText",
       "thinningPreventNavModalHead",
       "thinningPreventNavModalText",
       "thinningConfirmModalHead",
