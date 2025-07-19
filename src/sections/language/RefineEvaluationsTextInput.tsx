@@ -119,7 +119,7 @@ const RefineEvaluationsTextInput = () => {
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="refineDef"
-            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[130px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
             Use Defaults
@@ -127,14 +127,16 @@ const RefineEvaluationsTextInput = () => {
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="refineClear"
-            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[130px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleClearAll}
           >
             Clear Section
           </button>
-          {/* <RefImageButton */}
+          <div className="flex items-center p-2 justify-center h-[50px] ">
+            <p>Images:</p>
+          </div>
           <button
-            className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage1"
             name="mobilePresortImage1"
             // marginRight="35px"
@@ -143,7 +145,7 @@ const RefineEvaluationsTextInput = () => {
             1
           </button>
           <button
-            className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage2"
             // marginRight="35px"
             onClick={handleRefImage2}
@@ -151,7 +153,7 @@ const RefineEvaluationsTextInput = () => {
             2
           </button>
           <button
-            className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage3"
             // marginRight="35px"
             onClick={handleRefImage3}
@@ -159,7 +161,7 @@ const RefineEvaluationsTextInput = () => {
             3
           </button>
           <button
-            className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage4"
             // marginRight="35px"
             onClick={handleRefImage4}
@@ -167,7 +169,7 @@ const RefineEvaluationsTextInput = () => {
             4
           </button>
           <button
-            className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage5"
             // marginRight="35px"
             onClick={handleRefImage5}
@@ -175,7 +177,7 @@ const RefineEvaluationsTextInput = () => {
             5
           </button>
           <button
-            className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage6"
             // marginRight="35px"
             onClick={handleRefImage6}
@@ -183,7 +185,7 @@ const RefineEvaluationsTextInput = () => {
             6
           </button>
           <button
-            className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage6"
             // marginRight="35px"
             onClick={handleRefImage7}

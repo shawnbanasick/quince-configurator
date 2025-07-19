@@ -292,8 +292,6 @@ const showSectionDefaults = (section) => {
       "transferOkModalText",
       "transferFailModalHeader",
       "transferFailModalText",
-      "fallbackMessage",
-      "btnDownload",
       "goodbyeMessage",
     ];
 
@@ -318,13 +316,16 @@ const showSectionDefaults = (section) => {
   }
   if (section === "emailDef") {
     selectorArray = [
+      "fallbackMessage",
       "emailSubmitBtn",
-      "emailCopyResultsBtn",
-      "emailCopyAddressBtn",
-      "copySuccessMessage",
-      "copyFailMessage",
+      "sendEmailMessage",
       "defaultEmailFailModalText",
+      "emailCopyAddressBtn",
+      "emailCopyResultsBtn",
+      "copySuccessMessage",
+      "btnDownload",
       "emailBodyMessage",
+      "emailSubjectText",
     ];
 
     setDefaults(selectorArray);

@@ -107,7 +107,7 @@ const MobilePresortTextInput = () => {
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="mobilePresortDef"
-            className="bg-slate-300 p-2 rounded-md w-[180px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[180px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
             Use Defaults
@@ -115,16 +115,16 @@ const MobilePresortTextInput = () => {
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="mobilePresortClear"
-            className="bg-slate-300 p-2 rounded-md w-[180px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[180px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleClearAll}
           >
             Clear Section
           </button>
-          <div className="flex items-center p-2 justify-center h-auto ">
+          <div className="flex items-center p-2 justify-center h-[50px] ">
             <p>Images:</p>
           </div>
           <button
-            className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage1"
             name="mobilePresortImage1"
             // marginRight="35px"
@@ -133,7 +133,7 @@ const MobilePresortTextInput = () => {
             1
           </button>
           <button
-            className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage2"
             // marginRight="35px"
             onClick={handleRefImage2}
@@ -141,7 +141,7 @@ const MobilePresortTextInput = () => {
             2
           </button>
           <button
-            className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage3"
             // marginRight="35px"
             onClick={handleRefImage3}
@@ -149,7 +149,7 @@ const MobilePresortTextInput = () => {
             3
           </button>
           <button
-            className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage4"
             // marginRight="35px"
             onClick={handleRefImage4}
@@ -157,7 +157,7 @@ const MobilePresortTextInput = () => {
             4
           </button>
           <button
-            className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage5"
             // marginRight="35px"
             onClick={handleRefImage5}
@@ -165,7 +165,7 @@ const MobilePresortTextInput = () => {
             5
           </button>
           <button
-            className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage6"
             // marginRight="35px"
             onClick={handleRefImage6}

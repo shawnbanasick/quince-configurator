@@ -198,8 +198,6 @@ const showSectionDefaults = () => {
     transferOkModalText: `Thank you for using EQ Web Sort!<br/><br/>You can now close your browser tab.`,
     transferFailModalHeader: `Connection to server failed`,
     transferFailModalText: `Please try again in a few moments.`,
-    fallbackMessage: `Data transmission has failed. Please download the results and email them as an attachment to ken.q.tools@gmail.com.  Thank you!`,
-    btnDownload: `Download`,
     goodbyeMessage: `<div>Thank You!</div> <br/><div>You can now close the browser tab</div>`,
 
     /*
@@ -208,15 +206,19 @@ const showSectionDefaults = () => {
 
     /*
      ******** EMAIL  ****************** */
+    fallbackMessage: `*** Error - Transmission Failure*** <br/><br/>Please check your internet connection and click the "Submit Data" button again.`,
     emailSubmitBtn: "Open Email Client and Send Results",
-    emailCopyResultsBtn: "Copy Results to Clipboard",
-    emailCopyAddressBtn: "Copy Email Address to Clipboard",
-    copySuccessMessage: "Copied!",
-    copyFailMessage: "Error: Please try again.",
+    sendEmailMessage:
+      "Unable to connect with the database.<br/><br/>Please click the button to open your default email client and send an email with your data to the research team.",
     defaultEmailFailModalText:
-      "Your default email client should have automatically opened with the results in the email body. If it didn't, please use the buttons below to copy and paste your information into an email.",
+      "Your default email client should have automatically opened with the results in the email body. If it didn't, please use the buttons below to copy and paste your information into an email.<br><br/>There is also a button to download your results to your computer as a backup.",
+    emailCopyAddressBtn: "Copy Email Address to Clipboard",
+    emailCopyResultsBtn: "Copy Results to Clipboard",
+    copySuccessMessage: "Copied!",
+    btnDownload: `Download Results`,
     emailBodyMessage:
       "You don't have to add anything to this email. Please just click the SEND button.",
+    emailSubjectText: `Q-sort Results - Quincy Demo Project`,
 
     /*
      ******** SECOND PROJECT LINK  ****************** */

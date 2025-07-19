@@ -16,13 +16,18 @@ const getSetText = (state) => state.setText;
 const FailureTextInput: React.FC = () => {
   let displayMode = useStore(getDisplayMode);
   const setText = useStore(getSetText);
+
+  const fallbackMessage = useStore((state) => state.fallbackMessage);
   const emailSubmitBtn = useStore((state) => state.emailSubmitBtn);
-  const emailCopyResultsBtn = useStore((state) => state.emailCopyResultsBtn);
-  const emailCopyAddressBtn = useStore((state) => state.emailCopyAddressBtn);
-  const copySuccessMessage = useStore((state) => state.copySuccessMessage);
-  const copyFailMessage = useStore((state) => state.copyFailMessage);
+  const sendEmailMessage = useStore((state) => state.sendEmailMessage);
   const defaultEmailFailModalText = useStore((state) => state.defaultEmailFailModalText);
+  const emailCopyAddressBtn = useStore((state) => state.emailCopyAddressBtn);
+  const emailCopyResultsBtn = useStore((state) => state.emailCopyResultsBtn);
+  const copySuccessMessage = useStore((state) => state.copySuccessMessage);
+  const btnDownload = useStore((state) => state.btnDownload);
   const emailBodyMessage = useStore((state) => state.emailBodyMessage);
+  const emailSubjectText = useStore((state) => state.emailSubjectText);
+
   const { t } = useTranslation();
 
   const handleRefImage1 = () => {
@@ -68,7 +73,7 @@ const FailureTextInput: React.FC = () => {
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="emailDef"
-            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[130px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
             Use Defaults
@@ -76,7 +81,7 @@ const FailureTextInput: React.FC = () => {
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="emailClear"
-            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[130px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleClearAll}
           >
             Clear Section
@@ -126,10 +131,10 @@ const FailureTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`18-6. ${t("defaultEmailFailModalText")}`}
-          name="defaultEmailFailModalText"
+          label={`18-6. ${t("fallbackMessage")}`}
+          name="fallbackMessage"
           height={150}
-          value={defaultEmailFailModalText}
+          value={fallbackMessage}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
@@ -148,49 +153,18 @@ const FailureTextInput: React.FC = () => {
           placeholder=""
           disabled={false}
         />
-        <UserTextInput
-          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
+        <UserTextAreaInput
+          classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`18-2. ${t("emailCopyResultsBtn")}`}
-          name="emailCopyResultsBtn"
-          value={emailCopyResultsBtn}
+          label={`18-6. ${t("sendEmailMessage")}`}
+          name="sendEmailMessage"
+          height={150}
+          value={sendEmailMessage}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
           disabled={false}
-        />
-        <UserTextInput
-          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
-          classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`18-3. ${t("emailCopyAddressBtn")}`}
-          name="emailCopyAddressBtn"
-          value={emailCopyAddressBtn}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-        />
-        <UserTextInput
-          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
-          classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`18-4. ${t("copySuccessMessage")}`}
-          name="copySuccessMessage"
-          value={copySuccessMessage}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-        />
-        <UserTextInput
-          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
-          classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`18-5. ${t("copyFailMessage")}`}
-          name="copyFailMessage"
-          value={copyFailMessage}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
+          tabIndex="0"
         />
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
@@ -205,6 +179,54 @@ const FailureTextInput: React.FC = () => {
           disabled={false}
           tabIndex="0"
         />
+
+        <UserTextInput
+          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
+          classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
+          label={`18-3. ${t("emailCopyAddressBtn")}`}
+          name="emailCopyAddressBtn"
+          value={emailCopyAddressBtn}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+        />
+        <UserTextInput
+          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
+          classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
+          label={`18-2. ${t("emailCopyResultsBtn")}`}
+          name="emailCopyResultsBtn"
+          value={emailCopyResultsBtn}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+        />
+
+        <UserTextInput
+          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
+          classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
+          label={`18-4. ${t("copySuccessMessage")}`}
+          name="copySuccessMessage"
+          value={copySuccessMessage}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+        />
+
+        <UserTextInput
+          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
+          classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
+          label={`18-4. ${t("btnDownload")}`}
+          name="btnDownload"
+          value={btnDownload}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+        />
+
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
@@ -217,6 +239,17 @@ const FailureTextInput: React.FC = () => {
           placeholder=""
           disabled={false}
           tabIndex="0"
+        />
+        <UserTextInput
+          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
+          classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
+          label={`18-4. ${t("emailSubjectMessage")}`}
+          name="emailSubjectText"
+          value={emailSubjectText}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
         />
       </div>
     </div>
