@@ -4,6 +4,7 @@ import { UserTextInput } from "../utils/UserTextInput";
 import showSectionDefaults from "./showSectionDefaults";
 import clearSection from "./clearSection";
 import { useTranslation } from "react-i18next";
+import linking1 from "../../assets/images/linking-1.png";
 
 const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
@@ -15,9 +16,11 @@ const ProjectLinkingTextInput: React.FC = () => {
   const linkingBtnText = useStore((state) => state.linkingBtnText);
   const { t } = useTranslation();
 
-  const handleRefImage = (e: any) => {
-    // showRefImage(e.target.id);
+  const handleRefImage1 = () => {
+    window.open(linking1, "Mobile Presort Main Image", "width=800, height=600");
+    return false;
   };
+
   const handleShowDefaults = (e: any) => {
     showSectionDefaults(e.target.id);
   };
@@ -44,7 +47,7 @@ const ProjectLinkingTextInput: React.FC = () => {
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="linkingDef"
-            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[130px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
             Use Defaults
@@ -52,19 +55,22 @@ const ProjectLinkingTextInput: React.FC = () => {
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="linkingClear"
-            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[130px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleClearAll}
           >
             Clear Section
           </button>
-          {/* <RefImageButton */}
+          <div className="flex items-center h-[50px] p-2 justify-center ">
+            <p>Images:</p>
+          </div>
           <button
-            className="bg-slate-300 p-2 rounded-md w-[160px] hover:bg-slate-400 hover:font-semibold"
-            id="linkingImage"
+            className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            id="linkingImage1"
+            name="linkingImage1"
             // marginRight="35px"
-            onClick={handleRefImage}
+            onClick={handleRefImage1}
           >
-            Reference Image
+            1
           </button>
         </div>
       </div>

@@ -82,7 +82,7 @@ const MobileSortTextInput: React.FC = () => {
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="mobileSortDef"
-            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[130px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
             Use Defaults
@@ -90,7 +90,7 @@ const MobileSortTextInput: React.FC = () => {
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="mobileSortClear"
-            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[130px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleClearAll}
           >
             Clear Section

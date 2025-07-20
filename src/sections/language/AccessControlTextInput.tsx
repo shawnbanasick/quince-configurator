@@ -62,7 +62,7 @@ const AccessControlTextInput = () => {
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="accessDef"
-            className="bg-slate-300 p-2 rounded-md w-[200px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
             Use Defaults
@@ -70,17 +70,17 @@ const AccessControlTextInput = () => {
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="accessClear"
-            className="bg-slate-300 p-2 rounded-md w-[200px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleClearAll}
           >
             Clear Section
           </button>
           {/* <RefImageButton */}
-          <div className="flex items-center p-2 justify-center h-auto ">
+          <div className="flex items-center p-2 justify-center h-[50px]">
             <p>{t("images")}:</p>
           </div>
           <button
-            className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="consentImage"
             // marginRight="35px"
             onClick={handleRefImage}
