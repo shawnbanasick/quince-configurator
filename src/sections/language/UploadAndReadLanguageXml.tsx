@@ -8,6 +8,8 @@ const getSetText = (state) => state.setText;
 // import XmlUploadErrorModal from "./XmlUploadErrorModal";
 
 const UploadAndReadLanguageXml = () => {
+  console.log("UploadAndReadLanguageXml component rendered");
+
   const { t } = useTranslation();
   const setText = useStore(getSetText);
 
@@ -19,8 +21,13 @@ const UploadAndReadLanguageXml = () => {
         const parser = new XMLParser();
         const xml = parser.parseFromString(data, "text/xml");
         const xmlObjectArray = xml.getElementsByTagName("item");
+        const keys = xmlObjectArray.map((item) => item.attributes.id);
+        console.log("Keys from XML:", keys);
+        // console.log("Parsed XML object array:", JSON.stringify(xmlObjectArray, null, 2));
+
         xmlObjectArray.forEach((item) => {
           setText(item.attributes.id, decodeHTML(item.value));
+          // console.log(`Setting text for ${item.attributes.id}: ${decodeHTML(item.value)}`);
         });
       } catch (error) {
         console.error("Error reading file", error);

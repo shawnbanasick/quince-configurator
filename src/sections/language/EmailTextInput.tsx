@@ -17,7 +17,7 @@ const FailureTextInput: React.FC = () => {
   let displayMode = useStore(getDisplayMode);
   const setText = useStore(getSetText);
 
-  const fallbackMessage = useStore((state) => state.fallbackMessage);
+  const checkInternetMessage = useStore((state) => state.checkInternetMessage);
   const emailSubmitBtn = useStore((state) => state.emailSubmitBtn);
   const sendEmailMessage = useStore((state) => state.sendEmailMessage);
   const defaultEmailFailModalText = useStore((state) => state.defaultEmailFailModalText);
@@ -131,10 +131,10 @@ const FailureTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`18-1. ${t("fallbackMessage")}`}
-          name="fallbackMessage"
+          label={`18-1. ${t("checkInternetMessage")}`}
+          name="checkInternetMessage"
           height={150}
-          value={fallbackMessage}
+          value={checkInternetMessage}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""

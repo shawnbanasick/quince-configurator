@@ -209,7 +209,7 @@ const createMapXmlSlice = (set) => ({
 
   /*
    ******** 18. FAILURE  ****************** */
-  fallbackMessage: `*** Error - Transmission Failure*** <br/><br/>Please check your internet connection and click the "Submit Data" button again.`,
+  checkInternetMessage: `*** Error - Transmission Failure*** <br/><br/>Please check your internet connection and click the "Submit Data" button again.`,
   emailSubmitBtn: "Open Email Client and Send Results",
   sendEmailMessage:
     "Unable to connect with the database.<br/><br/>Please click the button to open your default email client and send an email with your data to the research team.",
@@ -270,6 +270,9 @@ const createMapXmlSlice = (set) => ({
     set(() => ({ triggerConsentImageModal: value }));
   },
 
+  setCheckInternetMessage: (value) => {
+    set(() => ({ checkInternetMessage: value }));
+  },
   setEmailSubjectText: (value) => {
     set(() => ({ emailSubjectText: value }));
   },
@@ -649,9 +652,6 @@ const createMapXmlSlice = (set) => ({
   },
   setTransferFailModalText: (value) => {
     set(() => ({ transferFailModalText: value }));
-  },
-  setFallbackMessage: (value) => {
-    set(() => ({ fallbackMessage: value }));
   },
   setBtnDownload: (value) => {
     set(() => ({ btnDownload: value }));
