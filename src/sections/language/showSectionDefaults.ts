@@ -318,12 +318,12 @@ const showSectionDefaults = (section) => {
     selectorArray = [
       "checkInternetMessage",
       "btnTransferEmail",
-      "sendEmailMessage",
-      "defaultEmailFailModalText",
-      "emailCopyAddressBtn",
-      "emailCopyResultsBtn",
-      "copySuccessMessage",
-      "btnDownload",
+      "submitFailMessage",
+      "defaultEmailClientFail",
+      "clipboardEmail",
+      "clipboardResults",
+      "copiedText",
+      "downloadResultsButtonText",
       "emailBodyMessage",
       "emailSubjectText",
     ];

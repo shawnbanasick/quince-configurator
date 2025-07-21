@@ -19,11 +19,12 @@ const FailureTextInput: React.FC = () => {
 
   const checkInternetMessage = useStore((state) => state.checkInternetMessage);
   const btnTransferEmail = useStore((state) => state.btnTransferEmail);
-  const sendEmailMessage = useStore((state) => state.sendEmailMessage);
-  const defaultEmailFailModalText = useStore((state) => state.defaultEmailFailModalText);
-  const emailCopyAddressBtn = useStore((state) => state.emailCopyAddressBtn);
-  const emailCopyResultsBtn = useStore((state) => state.emailCopyResultsBtn);
-  const copySuccessMessage = useStore((state) => state.copySuccessMessage);
+  const submitFailMessage = useStore((state) => state.submitFailMessage);
+  const defaultEmailClientFail = useStore((state) => state.defaultEmailClientFail);
+  const clipboardEmail = useStore((state) => state.clipboardEmail);
+  const clipboardResults = useStore((state) => state.clipboardResults);
+  const copiedText = useStore((state) => state.copiedText);
+  const downloadResultsButtonText = useStore((state) => state.downloadResultsButtonText);
   const btnDownload = useStore((state) => state.btnDownload);
   const emailBodyMessage = useStore((state) => state.emailBodyMessage);
   const emailSubjectText = useStore((state) => state.emailSubjectText);
@@ -156,10 +157,10 @@ const FailureTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`18-3. ${t("sendEmailMessage")}`}
-          name="sendEmailMessage"
+          label={`18-3. ${t("submitFailMessage")}`}
+          name="submitFailMessage"
           height={150}
-          value={sendEmailMessage}
+          value={submitFailMessage}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
@@ -169,10 +170,10 @@ const FailureTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`18-4. ${t("defaultEmailFailModalText")}`}
-          name="defaultEmailFailModalText"
+          label={`18-4. ${t("defaultEmailClientFail")}`}
+          name="defaultEmailClientFail"
           height={150}
-          value={defaultEmailFailModalText}
+          value={defaultEmailClientFail}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
@@ -183,9 +184,9 @@ const FailureTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`18-5. ${t("emailCopyAddressBtn")}`}
-          name="emailCopyAddressBtn"
-          value={emailCopyAddressBtn}
+          label={`18-5. ${t("clipboardEmail")}`}
+          name="clipboardEmail"
+          value={clipboardEmail}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
@@ -194,21 +195,9 @@ const FailureTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`18-6. ${t("emailCopyResultsBtn")}`}
-          name="emailCopyResultsBtn"
-          value={emailCopyResultsBtn}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-        />
-
-        <UserTextInput
-          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
-          classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`18-7. ${t("copySuccessMessage")}`}
-          name="copySuccessMessage"
-          value={copySuccessMessage}
+          label={`18-6. ${t("clipboardResults")}`}
+          name="clipboardResults"
+          value={clipboardResults}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
@@ -218,9 +207,21 @@ const FailureTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`18-8. ${t("btnDownload")}`}
-          name="btnDownload"
-          value={btnDownload}
+          label={`18-7. ${t("copiedText")}`}
+          name="copiedText"
+          value={copiedText}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+        />
+
+        <UserTextInput
+          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
+          classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
+          label={`18-8. ${t("downloadResultsButtonText")}`}
+          name="downloadResultsButtonText"
+          value={downloadResultsButtonText}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""

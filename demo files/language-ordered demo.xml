@@ -198,18 +198,18 @@
 
        
         <!-- 16. SUBMIT -->
-        <item order="16-1" id="btnTransfer">Submit Data</item>
-        <item order="16-2" id="transferHead">Final Step</item>
-        <item order="16-3" id="transferTextAbove">{{{h1}}}Ready to Submit{{{/h1}}}{{{br/}}}{{{br/}}} {{{h2}}}Please click the &quot;Submit Data&quot; button to transmit your results.{{{/h2}}}</item>
+        <item order="16-1" id="transferHead">Final Step</item>
+        <item order="16-2" id="transferTextAbove">{{{h1}}}Ready to Submit{{{/h1}}}{{{br/}}}{{{br/}}} {{{h2}}}Please click the &quot;Submit Data&quot; button to transmit your results.{{{/h2}}}</item>
+        <item order="16-3" id="btnTransfer">Submit Data</item>
         <item order="16-4" id="transferTextBelow">Please wait for the confirmation message that indicates your data have been sent to the server successfully.</item>
+        <item order="16-5" id="transferOkModalText">Thank you for using Quincy!{{{br/}}}{{{br/}}}You can now close your browser tab.</item>
+<!--         
         <item order="16-5" id="transferOkModalHeader">Success - The data have been sent to the server.</item>   
-        <item order="16-6" id="transferOkModalText">Thank you for using Quincy!{{{br/}}}{{{br/}}}You can now close your browser tab.</item>
         <item order="16-7" id="transferFailModalHeader">Connection to server failed</item>   
         <item order="16-8" id="transferFailModalText">Please try again in a few moments.</item>   
         <item order="16-9" id="fallbackMessage">Data transmission has failed. Please download the results and email them as an attachment to ken.q.tools@gmail.com. Thank you!</item>   
         <item order="16-10" id="btnDownload">Download</item>   
-        <item order="16-11" id="goodbyeMessage">{{{div}}}Thank You!{{{/div}}} {{{br/}}}{{{div}}}You can now close the browser tab{{{/div}}}</item>   
-        
+        <item order="16-11" id="goodbyeMessage">{{{div}}}Thank You!{{{/div}}} {{{br/}}}{{{div}}}You can now close the browser tab{{{/div}}}</item>    -->
 
         <!-- 17. MOBILE SUBMIT -->
          <item order="17-1" id="mobileSortTitleBar">Submit Data</item>
@@ -217,13 +217,14 @@
         <!-- 18. FAILURE -->
         <item order="18-1" id="checkInternetMessage">*** Error - Transmission Failure *** {{{br/}}} Please check your internet connection and click the "Submit Data" button again.</item>
         <item order="18-2" id="btnTransferEmail">Open Email Client and Send Results</item>
-        <item order="18-3" id="SubmitFailMessage">Unable to connect with the database. {{{br/}}}{{{br/}}}Please click the button above to send an email with your data.</item>
+        <item order="18-3" id="submitFailMessage">Unable to connect with the database. {{{br/}}}{{{br/}}}Please click the button above to send an email with your data.</item>
         <item order="18-4" id="defaultEmailClientFail">Your default email client should have automatically opened with the results in the email body. If it didn&apos;t, please use the buttons below to copy and paste your information into an email.{{{br/}}}{{{br/}}}There is also a button to download your results to your computer as a backup.</item>   
         <item order="18-5" id="clipboardEmail">Copy Email Address to Clipboard</item>  
         <item order="18-6" id="clipboardResults">Copy Results to Clipboard</item>  
         <item order="18-7" id="copiedText">Copied!</item>  
         <item order="18-8" id="downloadResultsButtonText">Download Results</item>  
-        <item order="18-9" id="emailMessage1">You don&apos;t have to add anything to this email. Please just click the SEND button.</item>
+        <item order="18-9" id="emailBodyMessage">You don&apos;t have to add anything to this email. Please just click the SEND button.</item>
+        <item order="18-10" id="emailSubjectText">Quincy Q-sort Results</item>
         <!-- <item order="19-1" id="copyTextError">Error: Please try again.</item>   -->
 
 

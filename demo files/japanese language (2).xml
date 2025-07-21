@@ -237,7 +237,7 @@
     <item id="transferFailModalHeader">サーバーへの接続に失敗しました</item>
     <item id="transferFailModalText">数分後にもう一度お試しください。</item>
     <item id="fallbackMessage">データの送信に失敗しました。結果をダウンロードし、添付ファイルとしてken.q.tools@gmail.comにメールで送信してください。ありがとうございます！</item>
-    <item id="btnDownload">ダウンロード</item>
+    <item id="downloadResultsButtonText">ダウンロード</item>
     <item id="goodbyeMessage">{{{div}}}ありがとうございました！{{{/div}}} {{{br/}}}{{{div}}}ブラウザタブを閉じることができます{{{/div}}}</item>
     <item id="checkInternetConnectionText">インターネット接続を確認してください。</item>
 
@@ -251,7 +251,9 @@
     <item id="copiedText">コピーしました！</item>
     <item id="copyTextError">エラー：もう一度お試しください。</item>
     <item id="defaultEmailClientFail">デフォルトのメールクライアントが自動的に開き、結果がメール本文に表示されるはずです。開かない場合は、以下のボタンを使用して情報をコピーしてメールに貼り付けてください。</item>
-    <item id="emailMessage1">このメールに何も追加する必要はありません。送信ボタンをクリックしてください。</item>
+    <item id="downloadResultsButtonText">結果をダウンロード</item>
+    <item id="emailBodyMessage">このメールに何も追加する必要はありません。送信ボタンをクリックしてください。</item>
+    <item id="emailSubjectText">Qソート結果</item>
 
     <!-- LINKING -->
     <item id="linkedProjectFallbackMessage">次のQソートを開始するにはボタンをクリックしてください</item>

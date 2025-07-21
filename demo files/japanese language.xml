@@ -249,9 +249,11 @@
     <item id="clipboardResults">結果をクリップボードにコピー</item>
     <item id="clipboardEmail">メールアドレスをクリップボードにコピー</item>
     <item id="copiedText">コピーしました！</item>
+    <item id="downloadResultsButtonText">結果をダウンロード</item>
     <item id="copyTextError">エラー：もう一度お試しください。</item>
     <item id="defaultEmailClientFail">デフォルトのメールクライアントが自動的に開き、結果がメール本文に表示されるはずです。開かない場合は、以下のボタンを使用して情報をコピーしてメールに貼り付けてください。</item>
-    <item id="emailMessage1">このメールに何も追加する必要はありません。送信ボタンをクリックしてください。</item>
+    <item id="emailBodyMessage">このメールに何も追加する必要はありません。送信ボタンをクリックしてください。</item>
+    <item id="emailSubjectText">Qソート結果</item>
 
     <!-- LINKING -->
     <item id="linkedProjectFallbackMessage">次のQソートを開始するにはボタンをクリックしてください</item>

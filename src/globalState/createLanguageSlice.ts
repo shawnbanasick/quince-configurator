@@ -209,17 +209,17 @@ const createMapXmlSlice = (set) => ({
    ******** 18. FAILURE  ****************** */
   checkInternetMessage: `*** Error - Transmission Failure*** <br/><br/>Please check your internet connection and click the "Submit Data" button again.`,
   btnTransferEmail: "Open Email Client and Send Results",
-  sendEmailMessage:
+  submitFailMessage:
     "Unable to connect with the database.<br/><br/>Please click the button to open your default email client and send an email with your data to the research team.",
-  defaultEmailFailModalText:
+  defaultEmailClientFail:
     "Your default email client should have automatically opened with the results in the email body. If it didn't, please use the buttons below to copy and paste your information into an email.<br><br/>There is also a button to download your results to your computer as a backup.",
-  emailCopyAddressBtn: "Copy Email Address to Clipboard",
-  emailCopyResultsBtn: "Copy Results to Clipboard",
-  copySuccessMessage: "Copied!",
-  btnDownload: `Download Results`,
+  clipboardEmail: "Copy Email Address to Clipboard",
+  clipboardResults: "Copy Results to Clipboard",
+  copiedText: "Copied!",
+  downloadResultsButtonText: `Download Results`,
+  emailSubjectText: `Q-sort Results - Quincy Demo Project`,
   emailBodyMessage:
     "You don't have to add anything to this email. Please just click the SEND button.",
-  emailSubjectText: `Q-sort Results - Quincy Demo Project`,
 
   // copyFailMessage: "Error: Please try again.",
 
@@ -268,14 +268,17 @@ const createMapXmlSlice = (set) => ({
     set(() => ({ triggerConsentImageModal: value }));
   },
 
+  setDownloadResultsButtonText: (value) => {
+    set(() => ({ downloadResultsButtonText: value }));
+  },
   setCheckInternetMessage: (value) => {
     set(() => ({ checkInternetMessage: value }));
   },
   setEmailSubjectText: (value) => {
     set(() => ({ emailSubjectText: value }));
   },
-  setSendEmailMessage: (value) => {
-    set(() => ({ sendEmailMessage: value }));
+  setSubmitFailMessage: (value) => {
+    set(() => ({ submitFailMessage: value }));
   },
   setMobilePostsortPlaceholder: (value) => {
     set(() => ({ mobilePostsortPlaceholder: value }));
@@ -660,20 +663,20 @@ const createMapXmlSlice = (set) => ({
   setEmailSubmitBtn: (value) => {
     set(() => ({ btnTransferEmail: value }));
   },
-  setEmailCopyResultsBtn: (value) => {
-    set(() => ({ emailCopyResultsBtn: value }));
+  setClipboardResults: (value) => {
+    set(() => ({ clipboardResults: value }));
   },
-  setEmailCopyAddressBtn: (value) => {
-    set(() => ({ emailCopyAddressBtn: value }));
+  setClipboardEmail: (value) => {
+    set(() => ({ clipboardEmail: value }));
   },
-  setCopySuccessMessage: (value) => {
-    set(() => ({ copySuccessMessage: value }));
+  setCopiedText: (value) => {
+    set(() => ({ copiedText: value }));
   },
   setCopyFailMessage: (value) => {
     set(() => ({ copyFailMessage: value }));
   },
-  setDefaultEmailFailModalText: (value) => {
-    set(() => ({ defaultEmailFailModalText: value }));
+  setDefaultEmailClientFail: (value) => {
+    set(() => ({ defaultEmailClientFail: value }));
   },
   setEmailBodyMessage: (value) => {
     set(() => ({ emailBodyMessage: value }));

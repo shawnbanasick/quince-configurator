@@ -377,14 +377,19 @@ const generateLanguageXml = () => {
 
         <!-- 17. EMAIL -->
         <item id="btnTransferEmail">${encodeHTML(useStore.getState().btnTransferEmail)}</item>
-        <item id="clipboardResults">${encodeHTML(useStore.getState().emailCopyResultsBtn)}</item>  
-        <item id="clipboardEmail">${encodeHTML(useStore.getState().emailCopyAddressBtn)}</item>  
-        <item id="copiedText">${encodeHTML(useStore.getState().copySuccessMessage)}</item>  
+        <item id="clipboardResults">${encodeHTML(useStore.getState().clipboardResults)}</item>  
+        <item id="clipboardEmail">${encodeHTML(useStore.getState().clipboardEmail)}</item>  
+        <item id="copiedText">${encodeHTML(useStore.getState().copiedText)}</item>  
+        <item id="downloadResultsButtonText">${encodeHTML(
+          useStore.getState().downloadResultsButtonText
+        )}</item>  
+        <item id="emailSubmit
         <item id="copyTextError">${encodeHTML(useStore.getState().copyFailMessage)}</item>  
         <item id="defaultEmailClientFail">${encodeHTML(
-          useStore.getState().defaultEmailFailModalText
+          useStore.getState().defaultEmailClientFail
         )}</item>   
-        <item id="emailMessage1">${encodeHTML(useStore.getState().emailBodyMessage)}</item>
+        <item id="emailBodyMessage">${encodeHTML(useStore.getState().emailBodyMessage)}</item>
+        <item id="emailSubjectText">${encodeHTML(useStore.getState().emailSubjectText)}</item>
 
         <!-- 18. LINKING -->
         <item id="linkedProjectFallbackMessage">${encodeHTML(

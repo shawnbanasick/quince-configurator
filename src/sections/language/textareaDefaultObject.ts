@@ -201,32 +201,32 @@ const showSectionDefaults = () => {
     goodbyeMessage: `<div>Thank You!</div> <br/><div>You can now close the browser tab</div>`,
 
     /*
-     ********  MOBILE SUBMIT  ****************** */
+     ********  17. MOBILE SUBMIT  ****************** */
     mobileSortTitleBar: `Submit Data`,
 
     /*
-     ******** EMAIL  ****************** */
+     ******** 18. FAILURE  ****************** */
     checkInternetMessage: `*** Error - Transmission Failure*** <br/><br/>Please check your internet connection and click the "Submit Data" button again.`,
     btnTransferEmail: "Open Email Client and Send Results",
-    sendEmailMessage:
+    submitFailMessage:
       "Unable to connect with the database.<br/><br/>Please click the button to open your default email client and send an email with your data to the research team.",
-    defaultEmailFailModalText:
+    defaultEmailClientFail:
       "Your default email client should have automatically opened with the results in the email body. If it didn't, please use the buttons below to copy and paste your information into an email.<br><br/>There is also a button to download your results to your computer as a backup.",
-    emailCopyAddressBtn: "Copy Email Address to Clipboard",
-    emailCopyResultsBtn: "Copy Results to Clipboard",
-    copySuccessMessage: "Copied!",
-    btnDownload: `Download Results`,
+    clipboardEmail: "Copy Email Address to Clipboard",
+    clipboardResults: "Copy Results to Clipboard",
+    copiedText: "Copied!",
+    downloadResultsButtonText: `Download Results`,
     emailBodyMessage:
       "You don't have to add anything to this email. Please just click the SEND button.",
-    emailSubjectText: `Q-sort Results - Quincy Demo Project`,
+    emailSubjectText: `Quincy Q-sort Results`,
 
     /*
-     ******** SECOND PROJECT LINK  ****************** */
+     ******** 19. SECOND PROJECT LINK  ****************** */
     linkingFallbackMessage: "Please click the button to begin the next Q sort",
     linkingBtnText: "Begin Next Q sort",
 
     /*
-     ******** LOCAL DATA COLLECTION  ****************** */
+     ******** 20. LOCAL DATA COLLECTION  ****************** */
     LocalHeader: "Offline Q-sort Control Panel",
     PartIdText: "Participant Name",
     UsercodeText: "Usercode",

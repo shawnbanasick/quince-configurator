@@ -229,13 +229,14 @@
     <!-- 18. FAILURE -->
     <item order="18-1" id="checkInternetMessage">*** エラー 送信失敗 *** {{{br/}}} インターネット接続を確認し、再度「データ送信」ボタンをクリックしてください。</item>
     <item order="18-2" id="btnTransferEmail">メールクライアントを開いて結果を送信</item>
-    <item order="18-3" id="SubmitFailMessage">データベースに接続できませんでした。 {{{br/}}}{{{br/}}}上のボタンをクリックしてデータをメールで送信してください。</item>
+    <item order="18-3" id="submitFailMessage">データベースに接続できませんでした。 {{{br/}}}{{{br/}}}上のボタンをクリックしてデータをメールで送信してください。</item>
     <item order="18-4" id="defaultEmailClientFail">デフォルトのメールクライアントが自動的に開き、結果がメール本文に表示されるはずです。開かない場合は、以下のボタンを使用して情報をコピーしてメールに貼り付けてください。</item>
     <item order="18-5" id="clipboardEmail">メールアドレスをクリップボードにコピー</item>
     <item order="18-6" id="clipboardResults">結果をクリップボードにコピー</item>
     <item order="18-7" id="copiedText">コピーしました！</item>
-    <item order="18-8" id="downloadResultsButtonText">Download Results</item>  
-    <item order="18-9" id="emailMessage1">このメールに何も追加する必要はありません。送信ボタンをクリックしてください。</item>
+    <item order="18-8" id="downloadResultsButtonText">結果をダウンロード</item>
+    <item order="18-9" id="emailBodyMessage">このメールに何も追加する必要はありません。送信ボタンをクリックしてください。</item>
+    <item order="18-10" id="emailSubjectText">Qソート結果</item>
 
     <!-- 19. LINKING -->
     <item order="19-1" id="linkingFallbackMessage">次のQソートを開始するにはボタンをクリックしてください</item>

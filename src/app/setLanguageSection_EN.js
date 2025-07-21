@@ -170,11 +170,12 @@ const setLanguageSection_EN = (language) => {
     goodbyeMessage: `<div>Thank You!</div> <br /><div>You can now close the browser tab</div>`,
     mobileSortTitleBar: `Submit Data`,
     btnTransferEmail: "Open Email Client and Send Results",
-    emailCopyResultsBtn: "Copy Results to Clipboard",
-    emailCopyAddressBtn: "Copy Email Address to Clipboard",
-    copySuccessMessage: "Copied!",
+    clipboardResults: "Copy Results to Clipboard",
+    clipboardEmail: "Copy Email Address to Clipboard",
+    copiedText: "Copied!",
+    downloadResultsButtonText: "Download Results",
     copyFailMessage: "Error: Please try again.",
-    defaultEmailFailModalText:
+    defaultEmailClientFail:
       "Your default email client should have automatically opened with the results in the email body. If it didn't, please use the buttons below to copy and paste your information into an email.",
     emailBodyMessage:
       "You don't have to add anything to this email. Please just click the SEND button.",

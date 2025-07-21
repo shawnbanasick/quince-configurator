@@ -211,7 +211,7 @@
         <item id="transferFailModalHeader">Connection to server failed</item>   
         <item id="transferFailModalText">Please try again in a few moments.</item>   
         <item id="fallbackMessage">Data transmission has failed. Please download the results and email them as an attachment to ken.q.tools@gmail.com. Thank you!</item>   
-        <item id="btnDownload">Download</item>   
+        <item id="downloadResultsButtonText">Download</item>   
         <item id="goodbyeMessage">{{{div}}}Thank You!{{{/div}}} {{{br/}}}{{{div}}}You can now close the browser tab{{{/div}}}</item>   
 
         <!-- MOBILE SUBMIT -->
@@ -222,10 +222,12 @@
         <item id="btnTransferEmail">Open Email Client and Send Results</item>
         <item id="clipboardResults">Copy Results to Clipboard</item>  
         <item id="clipboardEmail">Copy Email Address to Clipboard</item>  
-        <item id="copiedText">Copied!</item>  
+        <item id="copiedText">Copied!</item> 
+        <item id="downloadResultsButtonText">Download Results</item> 
         <item id="copyTextError">Error: Please try again.</item>  
         <item id="defaultEmailClientFail">Your default email client should have automatically opened with the results in the email body. If it didn&apos;t, please use the buttons below to copy and paste your information into an email.</item>   
-        <item id="emailMessage1">You don&apos;t have to add anything to this email. Please just click the SEND button.</item>
+        <item id="emailBodyMessage">You don&apos;t have to add anything to this email. Please just click the SEND button.</item>
+        <item id="emailSubjectText">Quincy Q-Sort Results</item>
 
         <!-- LINKING -->
         <item id="linkedProjectFallbackMessage">Please click the button to begin the next Q sort</item>   
