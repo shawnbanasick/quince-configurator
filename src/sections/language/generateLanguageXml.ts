@@ -8,10 +8,10 @@ const generateLanguageXml = () => {
 
         <!-- 1. MULTIPLE SCREENS AND FOOTER -->
         <item id="btnHelp">${encodeHTML(useStore.getState().btnHelp)}</item>
-        <item id="fontSizeText">${encodeHTML(useStore.getState().footerTextSize)}</item>
-        <item id="cardHeightText">${encodeHTML(useStore.getState().footerCardHeight)}</item>
+        <item id="fontSizeText">${encodeHTML(useStore.getState().fontSizeText)}</item>
+        <item id="cardHeightText">${encodeHTML(useStore.getState().cardHeightText)}</item>
         <item id="btnNext">${encodeHTML(useStore.getState().btnNext)}</item>
-        <item id="stepCompleteMessage">${encodeHTML(useStore.getState().stepCompleted)}</item>
+        <item id="stepCompletedMessage">${encodeHTML(useStore.getState().stepCompleted)}</item>
         <item id="screenOrientationText">${encodeHTML(
           useStore.getState().screenOrientationText
         )}</item>
@@ -49,7 +49,7 @@ const generateLanguageXml = () => {
         
         <!-- 4. WELCOME (LANDING) SCREEN -->
         <item id="landingHead">${encodeHTML(useStore.getState().landingHead)}</item>
-        <item id="welcomeText">${encodeHTML(useStore.getState().welcomeMessage)}</item>        
+        <item id="welcomeText">${encodeHTML(useStore.getState().welcomeText)}</item>        
         <item id="landingHelpModalHead">${encodeHTML(
           useStore.getState().landingHelpModalHead
         )}</item>
@@ -63,7 +63,7 @@ const generateLanguageXml = () => {
         <item id="mobileWelcomeText">${encodeHTML(useStore.getState().mobileWelcomeText)}</item>
 
         <!-- 6. PRESORT: rough sorting into three piles -->
-        <item id="logInFirst">${encodeHTML(useStore.getState().loginFirst)}</item>
+        <item id="logInFirst">${encodeHTML(useStore.getState().logInFirst)}</item>
         <item id="titleBarText">${encodeHTML(useStore.getState().titleBarText)}</item>
         <item id="presortAgreement">${encodeHTML(useStore.getState().presortAgreement)}</item>
         <item id="presortNeutral">${encodeHTML(useStore.getState().presortNeutral)}</item>
@@ -138,12 +138,12 @@ const generateLanguageXml = () => {
         )}</item>
 
         <!-- 8. THINNING -->
-        <item id="thinPageTitle">${encodeHTML(useStore.getState().thinningPageTitle)}</item>
+        <item id="thinPageTitle">${encodeHTML(useStore.getState().thinPageTitle)}</item>
         <item id="thinPageSubmitButton">${encodeHTML(
-          useStore.getState().thinningPageSubmitButtonText
+          useStore.getState().thinPageSubmitButton
         )}</item>
         <item id="numStatementsToSelect">${encodeHTML(
-          useStore.getState().thinningPageNumStatesToSelect
+          useStore.getState().numStatementsToSelect
         )}</item>
         <item id="currentlySelectedNumber">${encodeHTML(
           useStore.getState().thinningPageCurrentNumStatesSelected

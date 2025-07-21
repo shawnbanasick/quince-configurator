@@ -4,7 +4,7 @@
 ;
 
         <!-- MULTI-PURPOSE MODALS -->
-        <item id="stepCompleteMessage">You have completed this step. Please click on the {{{strong}}} blue &quot;Continue&quot; button {{{/strong}}} at the bottom right-side of your screen to go to the next step.</item>
+        <item id="stepCompletedMessage">You have completed this step. Please click on the {{{strong}}} blue &quot;Continue&quot; button {{{/strong}}} at the bottom right-side of your screen to go to the next step.</item>
         <item id="logInFirst">Please complete the log-in process first.</item>
 
         <!-- MOBILE MULTI-PURPOSE  -->

@@ -3,7 +3,7 @@
 <language version="7.0.0" htmlParse="true">
 
     <!-- MULTI-PURPOSE MODALS -->
-    <item id="stepCompleteMessage">このステップが完了しました。次のステップに進むには、画面右下の {{{strong}}} 青い「続ける」ボタン {{{/strong}}} をクリックしてください。</item>
+    <item id="stepCompletedMessage">このステップが完了しました。次のステップに進むには、画面右下の {{{strong}}} 青い「続ける」ボタン {{{/strong}}} をクリックしてください。</item>
     <item id="logInFirst">まずログインプロセスを完了してください。</item>
 
     <!-- MOBILE MULTI-PURPOSE  -->

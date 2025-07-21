@@ -30,7 +30,7 @@ const UserTextAreaInput: React.FC<UserTextAreaInputProps> = ({
   // height,
 }) => {
   // props = label, stateId, sectionName, width, left
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   const setText = useStore(getSetText);
   const key = `${name}`; // ${sectionName}
 
@@ -46,7 +46,7 @@ const UserTextAreaInput: React.FC<UserTextAreaInputProps> = ({
     return (
       <div className="flex flex-row w-[72vw] focus-within:font-bold">
         <label htmlFor={name} className={classNameLabel}>
-          <mark> {`${t(label)} `}</mark>
+          <mark>{label ? label : ""}</mark>
         </label>
         <textarea
           className={`${classNameText}`}
@@ -62,7 +62,7 @@ const UserTextAreaInput: React.FC<UserTextAreaInputProps> = ({
     return (
       <div className="flex flex-row items-center w-[72vw] focus-within:font-bold">
         <label htmlFor={name} className={classNameLabel}>
-          {label ? t(label) : ""}
+          {label ? label : ""}
         </label>
         <textarea
           className={`${classNameText}`}

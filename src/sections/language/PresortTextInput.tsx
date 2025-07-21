@@ -23,7 +23,7 @@ const getPresortPreventNavModalHead = (state) => state.presortPreventNavModalHea
 const getPresortPreventNavModalText = (state) => state.presortPreventNavModalText;
 const getPresortFinishedModalHead = (state) => state.presortFinishedModalHead;
 const getPresortFinishedModalText = (state) => state.presortFinishedModalText;
-const getLangLoginFirst = (state) => state.loginFirst;
+const getLangLogInFirst = (state) => state.logInFirst;
 const getPresortStatements = (state) => state.presortStatements;
 
 const PresortTextInput = () => {
@@ -41,7 +41,7 @@ const PresortTextInput = () => {
   const presortPreventNavModalText = useStore(getPresortPreventNavModalText);
   const presortFinishedModalHead = useStore(getPresortFinishedModalHead);
   const presortFinishedModalText = useStore(getPresortFinishedModalText);
-  const loginFirst = useStore(getLangLoginFirst);
+  const logInFirst = useStore(getLangLogInFirst);
   const presortStatements = useStore(getPresortStatements);
   const { t } = useTranslation();
 
@@ -146,10 +146,10 @@ const PresortTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] h-[40px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`min-w-[180px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`6-1. ${t("loginFirst")}`}
-          name="loginFirst"
+          label={`6-1. ${t("logInFirst")}`}
+          name="logInFirst"
           height={150}
-          value={loginFirst}
+          value={logInFirst}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""

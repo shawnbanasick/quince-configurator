@@ -2,10 +2,10 @@ const createMapXmlSlice = (set) => ({
   /*
    ******** 1. MULTIPLE AND FOOTER ****************** */
   btnHelp: "Help",
-  footerTextSize: `Text Size`,
-  footerCardHeight: `Card Height`,
+  fontSizeText: `Text Size`,
+  cardHeightText: `Card Height`,
   btnNext: "Continue",
-  stepCompleted: `You have completed this step. Please click on the <b> blue "Continue" button </b> at the bottom right-side of your screen to go to the next step.`,
+  stepCompletedMessage: `You have completed this step. Please click on the <b> blue "Continue" button </b> at the bottom right-side of your screen to go to the next step.`,
   screenOrientationText: `Please Use Portrait Orientation!`,
   mobileTextSize: `Text`,
   mobileViewSize: `View`,
@@ -35,7 +35,7 @@ const createMapXmlSlice = (set) => ({
   /*
    ******** 4. WELCOME (LANDING) SCREEN   ****************** */
   landingHead: `University Research Project`,
-  welcomeMessage: `<h2>Quincy Demo Project - iPad Use in the Classroom.</h2><br/><br/><p>Thank you for helping with this research project</p><br/><br/><br/>
+  welcomeText: `<h2>Quincy Demo Project - iPad Use in the Classroom.</h2><br/><br/><p>Thank you for helping with this research project</p><br/><br/><br/>
     <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
   landingHelpModalHead: `Welcome!`,
   landingHelpModalText: `Thank you for participating in this University Research Project. Please click the "<b>Continue</b>" button at the bottom right side of the screen to go to the next step.`,
@@ -48,7 +48,7 @@ const createMapXmlSlice = (set) => ({
 
   /*
    ******** 6. PRESORT  ****************** */
-  loginFirst: "Please complete the log-in process first.",
+  logInFirst: "Please complete the log-in process first.",
   titleBarText: `Preliminary Sorting`,
   presortAgreement: `Agree (3)`,
   presortNeutral: `No Strong Feelings (2)`,
@@ -83,26 +83,24 @@ const createMapXmlSlice = (set) => ({
 
   /*
    ******** 8. THINNING  ****************** */
-  thinningPageTitle: `Refine Your Evaluations`,
-  thinningPageSubmitButtonText: `Submit`,
-  thinningPageNumStatesToSelect: `Number of Statements to Select`,
-  thinningPageCurrentNumStatesSelected: `Current Number of Statements Selected`,
-  thinningPreventNavModalHead: `Navigation Disabled`,
-  thinningPreventNavModalText: `Please finish the refining process before going to the next step.`,
-
   thinningHelpModalHead: `Refine Your Evaluations`,
   thinningHelpModalText: `Please look again at the statements you evaluated in the previous stage. Choose those which you feel are the best expression of your perspective.`,
-
-  thinningConfirmModalHead: `Incomplete Selection`,
-  thinningConfirmModalText: `Please select the required number of statements.`,
+  thinPageTitle: `Refine Your Evaluations`,
+  thinPageSubmitButton: `Submit`,
+  numStatementsToSelect: `Number of Statements to Select`,
+  thinningPageCurrentNumStatesSelected: `Current Number of Statements Selected`,
   initialInstructionPart1: `Below are the statements you rated positively in the previous step. Now, pick the number of statements that you <b>MOST AGREE</b>.<br /><br />`,
   initialInstructionPart2: `Next, continue to select the statements that are CLOSEST to your perspective`,
   initialInstructionPart3: `Another set of statements will appear on the screen after you click the orange "Submit" button.`,
   initialInstructionNegPart1: `Below are the statements you rated positively in the previous step. Now, pick statements that <mark><b>DIFFER THE MOST FROM YOUR PERSPECTIVE</b></mark>.`,
   initialInstructionNegPart2: `Next, continue to select the statements that are <mark>DIFFER THE MOST</mark> from your perspective.`,
+  finalInstructions: `Refinement process complete. Click on the navigation button on the bottom right side to go to the next stage.`,
+  thinningPreventNavModalHead: `Navigation Disabled`,
+  thinningPreventNavModalText: `Please finish the refining process before going to the next step.`,
+  // thinningConfirmModalHead: `Incomplete Selection`,
+  // thinningConfirmModalText: `Please select the required number of statements.`,
   // agreeMostText: `Next, repeat the process with the remaining statements, but this time please select the cards that you agree with the most.`,
   // agreeLeastText: `Next, repeat the process with the remaining statements, but this time please select the cards that you agree with the least.`,
-  finalInstructions: `Refinement process complete. Click on the navigation button on the bottom right side to go to the next stage.`,
 
   /*
    ******** 9. MOBILE THINNING  ****************** */
@@ -392,11 +390,11 @@ const createMapXmlSlice = (set) => ({
   setBtnHelp: (value) => {
     set(() => ({ btnHelp: value }));
   },
-  setFooterTextSize: (value) => {
-    set(() => ({ footerTextSize: value }));
+  setFontSizeText: (value) => {
+    set(() => ({ fontSizeText: value }));
   },
-  setFooterCardHeight: (value) => {
-    set(() => ({ footerCardHeight: value }));
+  setCardHeightText: (value) => {
+    set(() => ({ cardHeightText: value }));
   },
   setBtnNext: (value) => {
     set(() => ({ btnNext: value }));
@@ -405,7 +403,7 @@ const createMapXmlSlice = (set) => ({
     set(() => ({ stepCompleted: value }));
   },
   setLoginFirst: (value) => {
-    set(() => ({ loginFirst: value }));
+    set(() => ({ logInFirst: value }));
   },
   setConsentTitleBarText: (value) => {
     set(() => ({ consentTitleBarText: value }));
@@ -428,8 +426,8 @@ const createMapXmlSlice = (set) => ({
   setLandingHead: (value) => {
     set(() => ({ landingHead: value }));
   },
-  setWelcomeMessage: (value) => {
-    set(() => ({ welcomeMessage: value }));
+  setWelcomeText: (value) => {
+    set(() => ({ welcomeText: value }));
   },
   setAccessCodeText: (value) => {
     set(() => ({ accessCodeText: value }));

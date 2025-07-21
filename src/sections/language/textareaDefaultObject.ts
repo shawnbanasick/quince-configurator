@@ -3,11 +3,11 @@ const showSectionDefaults = () => {
     /*
      ******* MULTIPLE SCREENS  ****************** */
     btnHelp: "Help",
-    footerTextSize: `Text Size`,
-    footerCardHeight: `Card Height`,
+    fontSizeText: `Text Size`,
+    cardHeightText: `Card Height`,
     // LoginFirst: `Please complete the log-in process first.`,
     btnNext: "Continue",
-    stepCompleted: `You have completed this step. Please click on the <b> blue "Continue" button </b> at the bottom right-side of your screen to go to the next step.`,
+    stepCompletedMessage: `You have completed this step. Please click on the <b> blue "Continue" button </b> at the bottom right-side of your screen to go to the next step.`,
     screenOrientationText: "Please Use Portrait Orientation!",
     expandViewMessage:
       'Tap the View "+" button below to expand the view area and hide this message.',
@@ -39,7 +39,7 @@ const showSectionDefaults = () => {
     /*
      ******* WELCOME PAGE  ****************** */
     landingHead: `University Research Project`,
-    welcomeMessage: `<h2>EQ Web Sort Demo Project - iPad Use in the Classroom.</h2><br/><br/><p>Thank you for helping with this research project</p><br/><br/><br/>
+    welcomeText: `<h2>EQ Web Sort Demo Project - iPad Use in the Classroom.</h2><br/><br/><p>Thank you for helping with this research project</p><br/><br/><br/>
     <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
     landingHelpModalHead: `Welcome!`,
     landingHelpModalText: `Thank you for participating in this University Research Project. Please click the "<b>Continue</b>" button at the bottom right side of the screen to go to the next step.`,
@@ -48,7 +48,7 @@ const showSectionDefaults = () => {
 
     /*
      ******** PRESORT  ****************** */
-    loginFirst: "Please complete the log-in process first.",
+    logInFirst: "Please complete the log-in process first.",
     titleBarText: `Preliminary Sorting`,
     presortAgreement: `Agree (3)`,
     presortStatements: `Statements`,
@@ -83,9 +83,9 @@ const showSectionDefaults = () => {
 
     /*
      ******** REFINE SCREEN  ****************** */
-    thinningPageTitle: `Refine Your Evaluations`,
-    thinningPageSubmitButtonText: `Submit`,
-    thinningPageNumStatesToSelect: `Number of Statements to Select`,
+    thinPageTitle: `Refine Your Evaluations`,
+    thinPageSubmitButton: `Submit`,
+    numStatementsToSelect: `Number of Statements to Select`,
     thinningPageCurrentNumStatesSelected: `Current Number of Statements Selected`,
     thinningPreventNavModalHead: `Navigation Disabled`,
     thinningPreventNavModalText: `Please finish the refining process before going to the next step.`,

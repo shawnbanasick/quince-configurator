@@ -24,9 +24,9 @@ const getInitialInstructionPart1 = (state) => state.initialInstructionPart1;
 const getInitialInstructionPart2 = (state) => state.initialInstructionPart2;
 const getInitialInstructionPart3 = (state) => state.initialInstructionPart3;
 const getFinalInstructions = (state) => state.finalInstructions;
-const getThinningPageTitle = (state) => state.thinningPageTitle;
-const getRefinePageSubmitButton = (state) => state.thinningPageSubmitButtonText;
-const getThinningPageNumStatesToSelect = (state) => state.thinningPageNumStatesToSelect;
+const getThinningPageTitle = (state) => state.thinPageTitle;
+const getRefinePageSubmitButton = (state) => state.thinPageSubmitButton;
+const getThinningPageNumStatesToSelect = (state) => state.numStatementsToSelect;
 const getThinningPageCurrentNumStatesSelected = (state) =>
   state.thinningPageCurrentNumStatesSelected;
 const getInitialInstructionNegPart1 = (state) => state.initialInstructionNegPart1;
@@ -47,9 +47,9 @@ const RefineEvaluationsTextInput = () => {
   const initialInstructionPart2 = useStore(getInitialInstructionPart2);
   const initialInstructionPart3 = useStore(getInitialInstructionPart3);
   const finalInstructions = useStore(getFinalInstructions);
-  const thinningPageTitle = useStore(getThinningPageTitle);
+  const thinPageTitle = useStore(getThinningPageTitle);
   const thinPageSubmitButtonText = useStore(getRefinePageSubmitButton);
-  const thinningPageNumStatesToSelect = useStore(getThinningPageNumStatesToSelect);
+  const numStatementsToSelect = useStore(getThinningPageNumStatesToSelect);
   const thinningPageCurrentNumStatesSelected = useStore(getThinningPageCurrentNumStatesSelected);
   const initialInstructionNegPart1 = useStore(getInitialInstructionNegPart1);
   const initialInstructionNegPart2 = useStore(getInitialInstructionNegPart2);
@@ -222,9 +222,9 @@ const RefineEvaluationsTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`8-3. ${t("thinningPageTitle")}`}
-          name="thinningPageTitle"
-          value={thinningPageTitle}
+          label={`8-3. ${t("thinPageTitle")}`}
+          name="thinPageTitle"
+          value={thinPageTitle}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
@@ -233,8 +233,8 @@ const RefineEvaluationsTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`8-4. ${t("thinningPageSubmitButtonText")}`}
-          name="thinningPageSubmitButtonText"
+          label={`8-4. ${t("thinPageSubmitButton")}`}
+          name="thinPageSubmitButton"
           value={thinPageSubmitButtonText}
           onChange={handleTextChange}
           highlight={false}
@@ -244,9 +244,9 @@ const RefineEvaluationsTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`8-5. ${t("thinningPageNumStatesToSelect")}`}
+          label={`8-5. ${t("numStatementsToSelect")}`}
           name="thinPageNumStatesToSelect"
-          value={thinningPageNumStatesToSelect}
+          value={numStatementsToSelect}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""

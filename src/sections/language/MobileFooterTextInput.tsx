@@ -8,8 +8,8 @@ import { useStore } from "../../globalState/useStore";
 const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
 const getLangBtnHelp = (state) => state.btnHelp;
-const getLangFooterTextSize = (state) => state.footerTextSize;
-const getLangFooterCardHeight = (state) => state.footerCardHeight;
+const getLangFontSizeText = (state) => state.fontSizeText;
+const getLangCardHeightText = (state) => state.cardHeightText;
 const getLangBtnNext = (state) => state.btnNext;
 const getLangStepCompleted = (state) => state.stepCompleted;
 const getScreenOrientationText = (state) => state.screenOrientationText;
@@ -18,8 +18,8 @@ const MobileFooterTextInput = () => {
   let displayMode = useStore(getDisplayMode);
   const setText = useStore(getSetText);
   const langBtnHelp = useStore(getLangBtnHelp);
-  const langFooterTextSize = useStore(getLangFooterTextSize);
-  const langFooterCardHeight = useStore(getLangFooterCardHeight);
+  const langFontSizeText = useStore(getLangFontSizeText);
+  const langCardHeightText = useStore(getLangCardHeightText);
   const langBtnNext = useStore(getLangBtnNext);
   const langStepCompleted = useStore(getLangStepCompleted);
   const screenOrientationText = useStore(getScreenOrientationText);
@@ -98,8 +98,8 @@ const MobileFooterTextInput = () => {
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="1-2. Text Size"
-          name="footerTextSize"
-          value={langFooterTextSize}
+          name="fontSizeText"
+          value={langFontSizeText}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
@@ -109,8 +109,8 @@ const MobileFooterTextInput = () => {
           classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label="1-3. Card Height"
-          name="footerCardHeight"
-          value={langFooterCardHeight}
+          name="cardHeightText"
+          value={langCardHeightText}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""

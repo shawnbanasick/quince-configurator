@@ -13,10 +13,10 @@ const showSectionDefaults = (section) => {
   if (section === "multipleClear") {
     selectorArray = [
       "btnHelp",
-      "footerTextSize",
-      "footerCardHeight",
+      "fontSizeText",
+      "cardHeightText",
       "btnNext",
-      "stepCompleted",
+      "stepCompletedMessage",
       // "langLoginFirst",
       "screenOrientationText",
       "mobileTextSize",
@@ -59,7 +59,7 @@ const showSectionDefaults = (section) => {
   if (section === "welcomeClear") {
     selectorArray = [
       "landingHead",
-      "welcomeMessage",
+      "welcomeText",
       "landingHelpModalHead",
       "landingHelpModalText",
       "btnNextLanding",
@@ -90,7 +90,7 @@ const showSectionDefaults = (section) => {
 
   if (section === "presortClear") {
     selectorArray = [
-      "loginFirst",
+      "logInFirst",
       "titleBarText",
       "presortStatements",
       "presortAgreement",
@@ -135,9 +135,9 @@ const showSectionDefaults = (section) => {
       "initialInstructionNegPart1",
       "initialInstructionNegPart2",
       "thinningPageCurrentNumStatesSelected",
-      "thinningPageNumStatesToSelect",
-      "thinningPageSubmitButtonText",
-      "thinningPageTitle",
+      "numStatementsToSelect",
+      "thinPageSubmitButton",
+      "thinPageTitle",
       "thinningHelpModalHead",
       "thinningHelpModalText",
       "thinningPreventNavModalHead",

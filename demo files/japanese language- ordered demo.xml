@@ -7,7 +7,7 @@
     <item order="1-2" id="fontSizeText">文字サイズ</item>
     <item order="1-3" id="cardHeightText">カードの高さ</item>
     <item order="1-4" id="btnNext">続ける</item>
-    <item order="1-5" id="stepCompleteMessage">このステップが完了しました。次のステップに進むには、画面右下の {{{strong}}} 青い「続ける」ボタン {{{/strong}}} をクリックしてください。</item>
+    <item order="1-5" id="stepCompletedMessage">このステップが完了しました。次のステップに進むには、画面右下の {{{strong}}} 青い「続ける」ボタン {{{/strong}}} をクリックしてください。</item>
     <item order="1-6" id="screenOrientationText">縦向きで使用してください！</item>
     <item order="1-7" id="mobileTextSize">テキスト</item>
     <item order="1-8" id="mobileViewSize">ビュー</item>

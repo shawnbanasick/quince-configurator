@@ -13,8 +13,8 @@ const setLanguageSection_JA = (language) => {
 
   useStore.setState({
     btnHelp: "ヘルプ",
-    footerTextSize: `テキストサイズ`,
-    footerCardHeight: `カードの高さ`,
+    fontSizeText: `テキストサイズ`,
+    cardHeightText: `カードの高さ`,
     btnNext: "次",
     stepCompleted: `このステップを完了しました。画面右下の青い「続行」ボタンをクリックして、次のステップに進んでください。`,
     screenOrientationText: `縦向きでご使用ください！`,
@@ -33,13 +33,13 @@ const setLanguageSection_JA = (language) => {
     accessCodeWarning: `アクセスコードが無効です`,
     loginSubmitButtonText: `送信`,
     landingHead: `大学研究プロジェクト`,
-    welcomeMessage: `<h2>EQ Web Sort デモプロジェクト - 教室でのiPad活用</h2><br/><br/><p>この研究プロジェクトにご協力いただきありがとうございます</p><br/><br/><br/>
+    welcomeText: `<h2>EQ Web Sort デモプロジェクト - 教室でのiPad活用</h2><br/><br/><p>この研究プロジェクトにご協力いただきありがとうございます</p><br/><br/><br/>
     <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
     landingHelpModalHead: `ようこそ！`,
     landingHelpModalText: `この大学研究プロジェクトにご参加いただき、ありがとうございます。画面右下の「<b>次へ</b>」ボタンをクリックして次のステップに進んでください。`,
     btnNextLanding: `次へ`,
     btnHelpLanding: `ヘルプ`,
-    loginFirst: `まずログイン手続きを完了してください。`,
+    logInFirst: `まずログイン手続きを完了してください。`,
     titleBarText: `事前分類`,
     presortAgreement: `同意 (3)`,
     presortStatements: `陈述`,

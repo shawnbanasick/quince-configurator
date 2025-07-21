@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
 const getLangLandingHead = (state) => state.landingHead;
-const getLangWelcomeMessage = (state) => state.welcomeMessage;
+const getLangWelcomeText = (state) => state.welcomeText;
 const getLangLandingHelpModalHead = (state) => state.landingHelpModalHead;
 const getLangLandingHelpModalText = (state) => state.landingHelpModalText;
 const getLangBtnNextLanding = (state) => state.btnNextLanding;
@@ -20,7 +20,7 @@ const WelcomeScreenTextInput = () => {
   let displayMode = useStore(getDisplayMode);
   const setText = useStore(getSetText);
   const langLandingHead = useStore(getLangLandingHead);
-  const langWelcomeMessage = useStore(getLangWelcomeMessage);
+  const langWelcomeText = useStore(getLangWelcomeText);
   const langLandingHelpModalHead = useStore(getLangLandingHelpModalHead);
   const langLandingHelpModalText = useStore(getLangLandingHelpModalText);
   const langBtnNextLanding = useStore(getLangBtnNextLanding);
@@ -114,10 +114,10 @@ const WelcomeScreenTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label={`4-2. ${t("welcomeMessage")}`}
-          name="welcomeMessage"
+          label={`4-2. ${t("welcomeText")}`}
+          name="welcomeText"
           height={150}
-          value={langWelcomeMessage}
+          value={langWelcomeText}
           onChange={handleTextChange}
           highlight={true}
           placeholder=""

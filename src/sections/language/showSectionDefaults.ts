@@ -30,10 +30,10 @@ const showSectionDefaults = (section) => {
   if (section === "multipleScreens") {
     selectorArray = [
       "btnHelp",
-      "footerTextSize",
-      "footerCardHeight",
+      "fontSizeText",
+      "cardHeightText",
       "btnNext",
-      "stepCompleted",
+      "stepCompletedMessage",
       "screenOrientationText",
       "mobileTextSize",
       "mobileViewSize",
@@ -75,7 +75,7 @@ const showSectionDefaults = (section) => {
   if (section === "welcomeDef") {
     selectorArray = [
       "landingHead",
-      "welcomeMessage",
+      "welcomeText",
       "landingHelpModalHead",
       "landingHelpModalText",
       "btnNextLanding",
@@ -106,7 +106,7 @@ const showSectionDefaults = (section) => {
 
   if (section === "presortDef") {
     selectorArray = [
-      "loginFirst",
+      "logInFirst",
       "titleBarText",
       "presortStatements",
       "presortAgreement",
@@ -151,9 +151,9 @@ const showSectionDefaults = (section) => {
       "initialInstructionNegPart1",
       "initialInstructionNegPart2",
       "thinningPageCurrentNumStatesSelected",
-      "thinningPageNumStatesToSelect",
-      "thinningPageSubmitButtonText",
-      "thinningPageTitle",
+      "numStatementsToSelect",
+      "thinPageSubmitButton",
+      "thinPageTitle",
       "thinningHelpModalHead",
       "thinningHelpModalText",
       "thinningPreventNavModalHead",

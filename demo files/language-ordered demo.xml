@@ -7,7 +7,7 @@
         <item order="1-2" id="fontSizeText">Text Size</item>
         <item order="1-3" id="cardHeightText">Card Height</item>
         <item order="1-4" id="btnNext">Continue</item>
-        <item order="1-5" id="stepCompleteMessage">You have completed this step. Please click on the {{{strong}}} blue &quot;Continue&quot; button {{{/strong}}} at the bottom right-side of your screen to go to the next step.</item>
+        <item order="1-5" id="stepCompletedMessage">You have completed this step. Please click on the {{{strong}}} blue &quot;Continue&quot; button {{{/strong}}} at the bottom right-side of your screen to go to the next step.</item>
         <item order="1-6" id="screenOrientationText">Please Use Portrait Orientation!</item>
         <item order="1-7" id="mobileTextSize">Text</item>
         <item order="1-8" id="mobileViewSize">View</item>

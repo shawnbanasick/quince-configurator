@@ -35,7 +35,7 @@ const UserTextInput: React.FC<UserTextInputProps> = ({
     return (
       <div className="flex flex-row w-[72vw] focus-within:font-bold">
         <label htmlFor={name} className={classNameLabel}>
-          <mark> {label}</mark>
+          <mark> {label ? label : ""}</mark>
         </label>
         <input
           className={classNameText}
@@ -53,7 +53,7 @@ const UserTextInput: React.FC<UserTextInputProps> = ({
     return (
       <div className="flex flex-row w-[72vw] focus-within:font-bold">
         <label htmlFor={name} className={classNameLabel}>
-          {label}
+          {label ? label : ""}
         </label>
         <input
           className={classNameText}

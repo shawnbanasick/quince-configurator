@@ -13,16 +13,16 @@ const setLanguageSection_EN = (language) => {
 
   useStore.setState({
     btnHelp: "Help",
-    footerTextSize: `Text Size`,
-    footerCardHeight: `Card Height`,
+    fontSizeText: `Text Size`,
+    cardHeightText: `Card Height`,
     btnNext: "Continue",
     stepCompleted: `You have completed this step. Please click on the <b> blue "Continue" button </b> at the bottom right-side of your screen to go to the next step.`,
     screenOrientationText: `Please Use Portrait Orientation!`,
-    expandViewMessage:
-      'Tap the View "+" button below to expand the view area and hide this message.',
     mobileTextSize: `Text`,
     mobileViewSize: `View`,
     mobileModalButtonCancel: `Cancel`,
+    expandViewMessage:
+      'Tap the View "+" button below to expand the view area and hide this message.',
 
     expandViewMessage: `Tap the View "+" button below to expand the view area and hide this message.`,
     mobileTextSize: `Text`,
@@ -42,14 +42,14 @@ const setLanguageSection_EN = (language) => {
     accessCodeWarning: `Access code invalid`,
     loginSubmitButtonText: `Submit`,
     landingHead: `University Research Project`,
-    welcomeMessage: `<h2>Quincy Demo Project - iPad Use in the Classroom.</h2><br/><br/><p>Thank you for helping with this research project</p><br/><br/><br/>
+    welcomeText: `<h2>Quincy Demo Project - iPad Use in the Classroom.</h2><br/><br/><p>Thank you for helping with this research project</p><br/><br/><br/>
     <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
     landingHelpModalHead: `Welcome!`,
     landingHelpModalText: `Thank you for participating in this University Research Project. Please click the "<b>Continue</b>" button at the bottom right side of the screen to go to the next step.`,
     btnNextLanding: `Continue`,
     btnHelpLanding: `Help`,
     mobileWelcomeText: `<h2>Quincy Demo Project - iPad Use in the Classroom.</h2><br/><br/><p>Thank you for helping with this research project!</p><br/><br/><br/> <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
-    loginFirst: "Please complete the log-in process first.",
+    logInFirst: "Please complete the log-in process first.",
     titleBarText: `Preliminary Sorting`,
     presortAgreement: `Agree (3)`,
     presortNeutral: `No Strong Feelings (2)`,
@@ -78,9 +78,9 @@ const setLanguageSection_EN = (language) => {
     mobilePresortProcessCompleteMessage: `The evaluation process is complete. <br/><br/> Please click on the navigation button on the bottom right side to go to the next stage.`,
     mobilePresortPreventNavModalHead: `Navigation Disabled`,
     mobilePresortPreventNavModalText: `Please finish the evaluations before going to the next stage.`,
-    thinningPageTitle: `Refine Your Evaluations`,
-    thinningPageSubmitButtonText: `Submit`,
-    thinningPageNumStatesToSelect: `Number of Statements to Select`,
+    thinPageTitle: `Refine Your Evaluations`,
+    thinPageSubmitButton: `Submit`,
+    numStatementsToSelect: `Number of Statements to Select`,
     thinningPageCurrentNumStatesSelected: `Current Number of Statements Selected`,
     thinningPreventNavModalHead: `Navigation Disabled`,
     thinningPreventNavModalText: `Please finish the refining process before going to the next step.`,
