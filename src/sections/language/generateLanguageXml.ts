@@ -7,182 +7,223 @@ const generateLanguageXml = () => {
    <language version="Quincy ${useStore.getState().version}" htmlParse="true">\n;
 
         <!-- 1. MULTIPLE SCREENS AND FOOTER -->
-        <item id="btnHelp">${encodeHTML(useStore.getState().btnHelp)}</item>
-        <item id="fontSizeText">${encodeHTML(useStore.getState().fontSizeText)}</item>
-        <item id="cardHeightText">${encodeHTML(useStore.getState().cardHeightText)}</item>
-        <item id="btnNext">${encodeHTML(useStore.getState().btnNext)}</item>
-        <item id="stepCompletedMessage">${encodeHTML(useStore.getState().stepCompleted)}</item>
-        <item id="screenOrientationText">${encodeHTML(
+        <item order= "1-1" id="btnHelp">${encodeHTML(useStore.getState().btnHelp)}</item>
+        <item order= "1-2" id="fontSizeText">${encodeHTML(useStore.getState().fontSizeText)}</item>
+        <item order= "1-3" id="cardHeightText">${encodeHTML(
+          useStore.getState().cardHeightText
+        )}</item>
+        <item order= "1-4" id="btnNext">${encodeHTML(useStore.getState().btnNext)}</item>
+        <item order= "1-5" id="stepCompletedMessage">${encodeHTML(
+          useStore.getState().stepCompleted
+        )}</item>
+        <item order= "1-6" id="screenOrientationText">${encodeHTML(
           useStore.getState().screenOrientationText
         )}</item>
-
-        <!-- 1b. MOBILE MULTIPLE SCREENS AND FOOTER -->
-        <item id="mobileTextSize">${encodeHTML(useStore.getState().mobileTextSize)}</item>
-        <item id="mobileViewSize">${encodeHTML(useStore.getState().mobileViewSize)}</item>
-        <item id="mobileModalButtonCancel">${encodeHTML(
+        <item order= "1-7" id="mobileTextSize">${encodeHTML(
+          useStore.getState().mobileTextSize
+        )}</item>
+        <item order= "1-8" id="mobileViewSize">${encodeHTML(
+          useStore.getState().mobileViewSize
+        )}</item>
+        <item order= "1-9" id="mobileModalButtonCancel">${encodeHTML(
           useStore.getState().mobileModalButtonCancel
+        )}</item>
+        <item order= "1-10" id="expandViewMessage">${encodeHTML(
+          useStore.getState().expandViewMessage
         )}</item>
         
         <!-- 2. CONSENT SCREEN -->
-        <item id="consentTitleBarText">${encodeHTML(useStore.getState().consentTitleBarText)}</item>
-        <item id="consentText">${encodeHTML(useStore.getState().consentText)}</item>
-        <item id="consentHelpModalHead">${encodeHTML(
+        <item order= "2-1" id="consentTitleBarText">${encodeHTML(
+          useStore.getState().consentTitleBarText
+        )}</item>
+        <item order= "2-2" id="consentText">${encodeHTML(useStore.getState().consentText)}</item>
+        <item order= "2-3" id="consentHelpModalHead">${encodeHTML(
           useStore.getState().consentHelpModalHead
         )}</item>
-        <item id="consentHelpModalText">${encodeHTML(
+        <item order= "2-4" id="consentHelpModalText">${encodeHTML(
           useStore.getState().consentHelpModalText
         )}</item>
-        <item id="btnHelpConsent">${encodeHTML(useStore.getState().btnHelpConsent)}</item>
-        <item id="btnNextConsent">${encodeHTML(useStore.getState().btnNextConsent)}</item>
+        <item order= "2-5" id="btnHelpConsent">${encodeHTML(
+          useStore.getState().btnHelpConsent
+        )}</item>
+        <item order= "2-6" id="btnNextConsent">${encodeHTML(
+          useStore.getState().btnNextConsent
+        )}</item>
 
         <!-- 3. ACCESS CONTROL - only displayed if access is restricted -->
-        <item id="loginWelcomeText">${encodeHTML(useStore.getState().loginWelcomeText)}</item>
-        <item id="loginHeaderText">${encodeHTML(useStore.getState().loginHeaderText)}</item>
-        <item id="loginPartIdText">${encodeHTML(useStore.getState().loginPartIdText)}</item>
-        <item id="accessCodeText">${encodeHTML(useStore.getState().accessCodeText)}</item>
-        <item id="accessInputText">${encodeHTML(useStore.getState().accessInputText)}</item>
-        <item id="partIdWarning">${encodeHTML(useStore.getState().partIdWarning)}</item>
-        <item id="accessCodeWarning">${encodeHTML(useStore.getState().accessCodeWarning)}</item>
-        <item id="loginSubmitButtonText">${encodeHTML(
+        <item order= "3-1" id="loginWelcomeText">${encodeHTML(
+          useStore.getState().loginWelcomeText
+        )}</item>
+        <item order= "3-2" id="loginHeaderText">${encodeHTML(
+          useStore.getState().loginHeaderText
+        )}</item>
+        <item order= "3-3" id="loginPartIdText">${encodeHTML(
+          useStore.getState().loginPartIdText
+        )}</item>
+        <item order= "3-4" id="accessCodeText">${encodeHTML(
+          useStore.getState().accessCodeText
+        )}</item>
+        <item order= "3-5" id="accessInputText">${encodeHTML(
+          useStore.getState().accessInputText
+        )}</item>
+        <item order= "3-6" id="partIdWarning">${encodeHTML(
+          useStore.getState().partIdWarning
+        )}</item>
+        <item order= "3-7" id="accessCodeWarning">${encodeHTML(
+          useStore.getState().accessCodeWarning
+        )}</item>
+        <item order= "3-8" id="loginSubmitButtonText">${encodeHTML(
           useStore.getState().loginSubmitButtonText
         )}</item>
         
         <!-- 4. WELCOME (LANDING) SCREEN -->
-        <item id="landingHead">${encodeHTML(useStore.getState().landingHead)}</item>
-        <item id="welcomeText">${encodeHTML(useStore.getState().welcomeText)}</item>        
-        <item id="landingHelpModalHead">${encodeHTML(
+        <item order= "4-1" id="landingHead">${encodeHTML(useStore.getState().landingHead)}</item>
+        <item order= "4-2" id="welcomeText">${encodeHTML(
+          useStore.getState().welcomeText
+        )}</item>        
+        <item order= "4-3" id="landingHelpModalHead">${encodeHTML(
           useStore.getState().landingHelpModalHead
         )}</item>
-        <item id="landingHelpModalText">${encodeHTML(
+        <item order= "4-4" id="landingHelpModalText">${encodeHTML(
           useStore.getState().landingHelpModalText
         )}</item>
-        <item id="btnHelpLanding">${encodeHTML(useStore.getState().btnHelpLanding)}</item>
-        <item id="btnNextLanding">${encodeHTML(useStore.getState().btnNextLanding)}</item>
+        <item order= "4-5" id="btnHelpLanding">${encodeHTML(
+          useStore.getState().btnHelpLanding
+        )}</item>
+        <item order= "4-6" id="btnNextLanding">${encodeHTML(
+          useStore.getState().btnNextLanding
+        )}</item>
 
         <!-- 5. MOBILE WELCOME (LANDING) SCREEN -->
-        <item id="mobileWelcomeText">${encodeHTML(useStore.getState().mobileWelcomeText)}</item>
+        <item order= "5-1" id="mobileWelcomeText">${encodeHTML(
+          useStore.getState().mobileWelcomeText
+        )}</item>
 
         <!-- 6. PRESORT: rough sorting into three piles -->
-        <item id="logInFirst">${encodeHTML(useStore.getState().logInFirst)}</item>
-        <item id="titleBarText">${encodeHTML(useStore.getState().titleBarText)}</item>
-        <item id="presortAgreement">${encodeHTML(useStore.getState().presortAgreement)}</item>
-        <item id="presortNeutral">${encodeHTML(useStore.getState().presortNeutral)}</item>
-        <item id="presortDisagreement">${encodeHTML(useStore.getState().presortDisagreement)}</item>
-        <item id="presortStatements">${encodeHTML(useStore.getState().presortStatements)}</item>
-        <item id="presortOnPageInstructions">${encodeHTML(
+        <item order= "6-1" id="logInFirst">${encodeHTML(useStore.getState().logInFirst)}</item>
+        <item order= "6-2" id="titleBarText">${encodeHTML(useStore.getState().titleBarText)}</item>
+        <item order= "6-3" id="presortAgreement">${encodeHTML(
+          useStore.getState().presortAgreement
+        )}</item>
+        <item order= "6-4" id="presortNeutral">${encodeHTML(
+          useStore.getState().presortNeutral
+        )}</item>
+        <item order= "6-5" id="presortDisagreement">${encodeHTML(
+          useStore.getState().presortDisagreement
+        )}</item>
+        <item order= "6-6" id="presortStatements">${encodeHTML(
+          useStore.getState().presortStatements
+        )}</item>
+        <item order= "6-7" id="presortOnPageInstructions">${encodeHTML(
           useStore.getState().presortOnPageInstructions
         )}</item>
-        <item id="presortImageSortInstructions">${encodeHTML(
-          useStore.getState().presortImageSortInstructions
-        )}</item>        
-        <item id="presortModalHead">${encodeHTML(useStore.getState().presortModalHead)}</item>
-        <item id="presortModalText">${encodeHTML(useStore.getState().presortModalText)}</item>
-        <item id="presortPreventNavModalHead">${encodeHTML(
+        <item order= "6-8" id="presortModalHead">${encodeHTML(
+          useStore.getState().presortModalHead
+        )}</item>
+        <item order= "6-9" id="presortModalText">${encodeHTML(
+          useStore.getState().presortModalText
+        )}</item>
+        <item order= "6-10" id="presortPreventNavModalHead">${encodeHTML(
           useStore.getState().presortPreventNavModalHead
         )}</item>
-        <item id="presortPreventNavModalText">${encodeHTML(
+        <item order= "6-11" id="presortPreventNavModalText">${encodeHTML(
           useStore.getState().presortPreventNavModalText
         )}</item>
-        <item id="presortFinishedModalHead">${encodeHTML(
+        <item order= "6-12" id="presortFinishedModalHead">${encodeHTML(
           useStore.getState().presortFinishedModalHead
         )}</item>
-        <item id="presortFinishedModalText">${encodeHTML(
+        <item order= "6-13" id="presortFinishedModalText">${encodeHTML(
           useStore.getState().presortFinishedModalText
         )}</item>
+        <item order= "6-14" id="presortImageSortInstructions">${encodeHTML(
+          useStore.getState().presortImageSortInstructions
+        )}</item>        
 
         <!-- 7. MOBILE PRESORT -->
-        <item id="mobilePresortConditionsOfInstruction">${encodeHTML(
-          useStore.getState().mobilePresortConditionsOfInstruction
-        )}</item>
-        <item id="mobilePresortCompletedLabel">${encodeHTML(
-          useStore.getState().mobilePresortCompletedLabel
-        )}</item>
-        <item id="mobilePresortAssignLeft">${encodeHTML(
-          useStore.getState().mobilePresortAssignLeft
-        )}</item>
-        <item id="mobilePresortAssignRight">${encodeHTML(
-          useStore.getState().mobilePresortAssignRight
-        )}</item>
-        <item id="mobilePresortRedoModalHead">${encodeHTML(
-          useStore.getState().mobilePresortRedoModalHead
-        )}</item>
-        <item id="mobilePresortRedoModalText">${encodeHTML(
-          useStore.getState().mobilePresortRedoModalText
-        )}</item>
-        <item id="mobilePresortRedoModalConfirmButton">${encodeHTML(
-          useStore.getState().mobilePresortRedoModalConfirmButton
-        )}</item>
-        <item id="mobilePresortEvaluationsComplete">${encodeHTML(
-          useStore.getState().mobilePresortEvaluationsComplete
-        )}</item>
-        <item id="mobilePresortHelpModalHead">${encodeHTML(
+        <item order= "7-1" id="mobilePresortHelpModalHead">${encodeHTML(
           useStore.getState().mobilePresortHelpModalHead
         )}</item>
-        <item id="mobilePresortHelpModalText">${encodeHTML(
+        <item order= "7-2" id="mobilePresortHelpModalText">${encodeHTML(
           useStore.getState().mobilePresortHelpModalText
         )}</item>
-        <item id="mobilePresortFinishedModalHead">${encodeHTML(
+        <item order= "7-3" id="mobilePresortConditionsOfInstruction">${encodeHTML(
+          useStore.getState().mobilePresortConditionsOfInstruction
+        )}</item>
+        <item order= "7-4" id="mobilePresortCompletedLabel">${encodeHTML(
+          useStore.getState().mobilePresortCompletedLabel
+        )}</item>
+        <item order= "7-5" id="mobilePresortAssignLeft">${encodeHTML(
+          useStore.getState().mobilePresortAssignLeft
+        )}</item>
+        <item order= "7-6" id="mobilePresortAssignRight">${encodeHTML(
+          useStore.getState().mobilePresortAssignRight
+        )}</item>
+        <item order= "7-7" id="mobilePresortRedoModalHead">${encodeHTML(
+          useStore.getState().mobilePresortRedoModalHead
+        )}</item>
+        <item order= "7-8" id="mobilePresortRedoModalText">${encodeHTML(
+          useStore.getState().mobilePresortRedoModalText
+        )}</item>
+        <item order= "7-9" id="mobilePresortEvaluationsComplete">${encodeHTML(
+          useStore.getState().mobilePresortEvaluationsComplete
+        )}</item>
+        <item order= "7-10" id="mobilePresortFinishedModalHead">${encodeHTML(
           useStore.getState().mobilePresortFinishedModalHead
         )}</item>
-        <item id="mobilePresortFinishedModalText">${encodeHTML(
+        <item order= "7-11" id="mobilePresortFinishedModalText">${encodeHTML(
           useStore.getState().mobilePresortFinishedModalText
         )}</item>
-        <item id="mobilePresortProcessCompleteMessage">${encodeHTML(
-          useStore.getState().mobilePresortProcessCompleteMessage
-        )}</item>
-        <item id="mobilePresortPreventNavModalHead">${encodeHTML(
+        <item order= "7-12" id="mobilePresortPreventNavModalHead">${encodeHTML(
           useStore.getState().mobilePresortPreventNavModalHead
         )}</item>
-        <item id="mobilePresortPreventNavModalText">${encodeHTML(
+        <item order= "7-13" id="mobilePresortPreventNavModalText">${encodeHTML(
           useStore.getState().mobilePresortPreventNavModalText
-        )}</item>
+        )}</item>        
 
         <!-- 8. THINNING -->
-        <item id="thinPageTitle">${encodeHTML(useStore.getState().thinPageTitle)}</item>
-        <item id="thinPageSubmitButton">${encodeHTML(
-          useStore.getState().thinPageSubmitButton
+        <item order= "8-1" id="thinningHelpModalHead">${encodeHTML(
+          useStore.getState().thinningHelpModalHead
         )}</item>
-        <item id="numStatementsToSelect">${encodeHTML(
-          useStore.getState().numStatementsToSelect
-        )}</item>
-        <item id="currentlySelectedNumber">${encodeHTML(
-          useStore.getState().currentlySelectedNumber
-        )}</item>
-        <item id="thinningPreventNavModalHead">${encodeHTML(
-          useStore.getState().thinningPreventNavModalHead
-        )}</item>
-        <item id="thinningPreventNavModalText">${encodeHTML(
-          useStore.getState().thinningPreventNavModalText
-        )}</item>
-       <item id="thinningHelpModalHead">${encodeHTML(
-         useStore.getState().thinningHelpModalHead
-       )}</item>
-        <item id="thinningHelpModalText">${encodeHTML(
-          useStore.getState().thinningHelpModalText
-        )}</item>
-        <item id="thinningConfirmModalHead">${encodeHTML(
-          useStore.getState().thinningConfirmModalHead
-        )}</item>
-        <item id="thinningConfirmModalText">${encodeHTML(
-          useStore.getState().thinningConfirmModalText
-        )}</item>
-        <item id="initialInstructionPart1">${encodeHTML(
-          useStore.getState().initialInstructionPart1
-        )}</item>
-        <item id="initialInstructionPart2">${encodeHTML(
-          useStore.getState().initialInstructionPart2
-        )}</item>
-        <item id="initialInstructionPart3">${encodeHTML(
-          useStore.getState().initialInstructionPart3
-        )}</item>
-        <item id="initialInstructionPartNeg1">${encodeHTML(
-          useStore.getState().initialInstructionPartNeg1
-        )}</item>
-        <item id="initialInstructionPartNeg2">${encodeHTML(
-          useStore.getState().initialInstructionPartNeg2
-        )}</item>
-        <item id="finalInstructions">${encodeHTML(useStore.getState().finalInstructions)}</item>
-
+         <item order= "8-2" id="thinningHelpModalText">${encodeHTML(
+           useStore.getState().thinningHelpModalText
+         )}</item>
+         <item order= "8-3" id="thinPageTitle">${encodeHTML(
+           useStore.getState().thinPageTitle
+         )}</item>
+         <item order= "8-4" id="thinPageSubmitButton">${encodeHTML(
+           useStore.getState().thinPageSubmitButton
+         )}</item>
+         <item order= "8-5" id="numStatementsToSelect">${encodeHTML(
+           useStore.getState().numStatementsToSelect
+         )}</item>
+         <item order= "8-6" id="currentlySelectedNumber">${encodeHTML(
+           useStore.getState().currentlySelectedNumber
+         )}</item>
+         <item order= "8-7" id="initialInstructionPart1">${encodeHTML(
+           useStore.getState().initialInstructionPart1
+         )}</item>
+         <item order= "8-8" id="initialInstructionPart2">${encodeHTML(
+           useStore.getState().initialInstructionPart2
+         )}</item>
+         <item order= "8-9" id="initialInstructionPart3">${encodeHTML(
+           useStore.getState().initialInstructionPart3
+         )}</item>
+         <item order= "8-10" id="initialInstructionPartNeg1">${encodeHTML(
+           useStore.getState().initialInstructionPartNeg1
+         )}</item>
+         <item order= "8-11" id="initialInstructionPartNeg2">${encodeHTML(
+           useStore.getState().initialInstructionPartNeg2
+         )}</item>
+         <item order= "8-12" id="finalInstructions">${encodeHTML(
+           useStore.getState().finalInstructions
+         )}</item>
+         <item order= "8-13" id="thinningPreventNavModalHead">${encodeHTML(
+           useStore.getState().thinningPreventNavModalHead
+         )}</item>
+         <item order= "8-14" id="thinningPreventNavModalText">${encodeHTML(
+           useStore.getState().thinningPreventNavModalText
+         )}</item>
+         
         <!-- 9. MOBILE THINNING -->
         <item id="moveTopMobileHead">${encodeHTML(useStore.getState().moveTopMobileHead)}</item>
         <item id="moveTopMobileText">${encodeHTML(useStore.getState().moveTopMobileText)}</item>
