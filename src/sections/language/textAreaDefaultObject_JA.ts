@@ -168,7 +168,7 @@ const showSectionDefaults_JA = () => {
     postsortModalText: `ページの最下部にあるボタンを使用して、フォントサイズやカードの高さを変更できます。<br/><br/><center><iframe width="560" height="315" src="https://www.youtube.com/embed/EFNlSiaEVVg?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></h3></center>`,
     postsortPreventNavModalHead: `ナビゲーションを無効にしました`,
     postsortPreventNavModalText: `次のステップに進む前に、すべてのカードにコメントを追加してください`,
-    postsortBackButton: `戻る`,
+    postsortBackButtonText: `戻る`,
 
     /*
      ******** モバイル投稿ソート  ****************** */
@@ -214,7 +214,7 @@ const showSectionDefaults_JA = () => {
 
     /*
      ******** EMAIL  ****************** */
-    emailSubmitBtn: `メールクライアントを開いて結果を送信`,
+    btnTransferEmail: `メールクライアントを開いて結果を送信`,
     emailCopyResultsBtn: `結果をクリップボードにコピー`,
     emailCopyAddressBtn: `メールアドレスをクリップボードにコピー`,
     copySuccessMessage: `コピー完了！`,

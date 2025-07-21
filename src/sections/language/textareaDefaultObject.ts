@@ -86,7 +86,7 @@ const showSectionDefaults = () => {
     thinPageTitle: `Refine Your Evaluations`,
     thinPageSubmitButton: `Submit`,
     numStatementsToSelect: `Number of Statements to Select`,
-    thinningPageCurrentNumStatesSelected: `Current Number of Statements Selected`,
+    currentlySelectedNumber: `Current Number of Statements Selected`,
     thinningPreventNavModalHead: `Navigation Disabled`,
     thinningPreventNavModalText: `Please finish the refining process before going to the next step.`,
     thinningHelpModalHead: `Refine Your Evaluations`,
@@ -96,8 +96,8 @@ const showSectionDefaults = () => {
     initialInstructionPart1: `Below are the statements you rated positively in the previous step. Now, pick the number of statements that you <b>MOST AGREE</b>.<br /><br />`,
     initialInstructionPart2: `Next, continue to select the statements that are CLOSEST to your perspective`,
     initialInstructionPart3: `Another set of statements will appear on the screen after you click the orange "Submit" button.`,
-    initialInstructionNegPart1: `Below are the statements you rated positively in the previous step. Now, pick statements that <mark><b>DIFFER THE MOST FROM YOUR PERSPECTIVE</b></mark>.`,
-    initialInstructionNegPart2: `Next, continue to select the statements that are <mark>DIFFER THE MOST</mark> from your perspective.`,
+    initialInstructionPartNeg1: `Below are the statements you rated positively in the previous step. Now, pick statements that <mark><b>DIFFER THE MOST FROM YOUR PERSPECTIVE</b></mark>.`,
+    initialInstructionPartNeg2: `Next, continue to select the statements that are <mark>DIFFER THE MOST</mark> from your perspective.`,
     // agreeMostText: `Next, repeat the process with the remaining statements, but this time please select the cards that you agree with the most.`,
     // agreeLeastText: `Next, repeat the process with the remaining statements, but this time please select the cards that you agree with the least.`,
     finalInstructions: `Refinement process complete. Click on the navigation button on the bottom right side to go to the next stage.`,
@@ -154,7 +154,7 @@ const showSectionDefaults = () => {
     mobileSortScrollBottomModalText: `Please scroll to the bottom and review the ranking of all the statements before going to the next stage.`,
 
     /*
-     ******** POSTSORT  ****************** */
+     ******** 12. POSTSORT  ****************** */
     postsortHeader: `Post-Sort Comments`,
     postsortInstructions: `<h3>Please describe your thoughts about these statements in more detail.</h3>`,
     placeholder: `Click here to add comment`,
@@ -164,10 +164,10 @@ const showSectionDefaults = () => {
     postsortModalText: `You can use the buttons at the bottom of the page to change the font size or card height.<br/><br/><center><iframe width="560" height="315" src="https://www.youtube.com/embed/EFNlSiaEVVg?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></h3></center>`,
     postsortPreventNavModalHead: `Navigation Disabled`,
     postsortPreventNavModalText: `Please add comments to all of the cards before going to the next step.`,
-    postsortBackButton: `Go Back`,
+    postsortBackButtonText: `Go Back`,
 
     /*
-     ******** MOBILE POSTSORT  ****************** */
+     ******** 13. MOBILE POSTSORT  ****************** */
     mobilePostsortPreventNavModalHead: `Navigation Disabled`,
     mobilePostsortPreventNavModalText: `Please add comments to all of the statements before going to the next step.`,
     mobilePostsortSortbarText: `Postsort Comments`,
@@ -206,8 +206,8 @@ const showSectionDefaults = () => {
 
     /*
      ******** EMAIL  ****************** */
-    fallbackMessage: `*** Error - Transmission Failure*** <br/><br/>Please check your internet connection and click the "Submit Data" button again.`,
-    emailSubmitBtn: "Open Email Client and Send Results",
+    checkInternetMessage: `*** Error - Transmission Failure*** <br/><br/>Please check your internet connection and click the "Submit Data" button again.`,
+    btnTransferEmail: "Open Email Client and Send Results",
     sendEmailMessage:
       "Unable to connect with the database.<br/><br/>Please click the button to open your default email client and send an email with your data to the research team.",
     defaultEmailFailModalText:

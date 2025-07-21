@@ -148,9 +148,9 @@ const showSectionDefaults = (section) => {
 
   if (section === "refineDef") {
     selectorArray = [
-      "initialInstructionNegPart1",
-      "initialInstructionNegPart2",
-      "thinningPageCurrentNumStatesSelected",
+      "initialInstructionPartNeg1",
+      "initialInstructionPartNeg2",
+      "currentlySelectedNumber",
       "numStatementsToSelect",
       "thinPageSubmitButton",
       "thinPageTitle",
@@ -245,7 +245,7 @@ const showSectionDefaults = (section) => {
       "postsortModalText",
       "postsortPreventNavModalHead",
       "postsortPreventNavModalText",
-      "postsortBackButton",
+      "postsortBackButtonText",
     ];
 
     setDefaults(selectorArray);
@@ -316,8 +316,8 @@ const showSectionDefaults = (section) => {
   }
   if (section === "emailDef") {
     selectorArray = [
-      "fallbackMessage",
-      "emailSubmitBtn",
+      "checkInternetMessage",
+      "btnTransferEmail",
       "sendEmailMessage",
       "defaultEmailFailModalText",
       "emailCopyAddressBtn",

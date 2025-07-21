@@ -146,7 +146,7 @@ const generateLanguageXml = () => {
           useStore.getState().numStatementsToSelect
         )}</item>
         <item id="currentlySelectedNumber">${encodeHTML(
-          useStore.getState().thinningPageCurrentNumStatesSelected
+          useStore.getState().currentlySelectedNumber
         )}</item>
         <item id="thinningPreventNavModalHead">${encodeHTML(
           useStore.getState().thinningPreventNavModalHead
@@ -176,10 +176,10 @@ const generateLanguageXml = () => {
           useStore.getState().initialInstructionPart3
         )}</item>
         <item id="initialInstructionPartNeg1">${encodeHTML(
-          useStore.getState().initialInstructionNegPart1
+          useStore.getState().initialInstructionPartNeg1
         )}</item>
         <item id="initialInstructionPartNeg2">${encodeHTML(
-          useStore.getState().initialInstructionNegPart2
+          useStore.getState().initialInstructionPartNeg2
         )}</item>
         <item id="finalInstructions">${encodeHTML(useStore.getState().finalInstructions)}</item>
 
@@ -314,7 +314,7 @@ const generateLanguageXml = () => {
           useStore.getState().postsortPreventNavModalText
         )}</item>
         <item id="postsortBackButtonText">${encodeHTML(
-          useStore.getState().postsortBackButton
+          useStore.getState().postsortBackButtonText
         )}</item>
 
        <!-- 12. MOBILE POSTSORT: comments - only displayed if showStep3 = TRUE in config.xml -->
@@ -376,7 +376,7 @@ const generateLanguageXml = () => {
         <item id="mobileSortTitleBar">${encodeHTML(useStore.getState().mobileSortTitleBar)}</item>
 
         <!-- 17. EMAIL -->
-        <item id="btnTransferEmail">${encodeHTML(useStore.getState().emailSubmitBtn)}</item>
+        <item id="btnTransferEmail">${encodeHTML(useStore.getState().btnTransferEmail)}</item>
         <item id="clipboardResults">${encodeHTML(useStore.getState().emailCopyResultsBtn)}</item>  
         <item id="clipboardEmail">${encodeHTML(useStore.getState().emailCopyAddressBtn)}</item>  
         <item id="copiedText">${encodeHTML(useStore.getState().copySuccessMessage)}</item>  

@@ -27,10 +27,9 @@ const getFinalInstructions = (state) => state.finalInstructions;
 const getThinningPageTitle = (state) => state.thinPageTitle;
 const getRefinePageSubmitButton = (state) => state.thinPageSubmitButton;
 const getThinningPageNumStatesToSelect = (state) => state.numStatementsToSelect;
-const getThinningPageCurrentNumStatesSelected = (state) =>
-  state.thinningPageCurrentNumStatesSelected;
-const getInitialInstructionNegPart1 = (state) => state.initialInstructionNegPart1;
-const getInitialInstructionNegPart2 = (state) => state.initialInstructionNegPart2;
+const getThinningPageCurrentNumStatesSelected = (state) => state.currentlySelectedNumber;
+const getInitialInstructionNegPart1 = (state) => state.initialInstructionPartNeg1;
+const getInitialInstructionNegPart2 = (state) => state.initialInstructionPartNeg2;
 const getThinningHelpModalHead = (state) => state.thinningHelpModalHead;
 const getThinningHelpModalText = (state) => state.thinningHelpModalText;
 
@@ -50,9 +49,9 @@ const RefineEvaluationsTextInput = () => {
   const thinPageTitle = useStore(getThinningPageTitle);
   const thinPageSubmitButtonText = useStore(getRefinePageSubmitButton);
   const numStatementsToSelect = useStore(getThinningPageNumStatesToSelect);
-  const thinningPageCurrentNumStatesSelected = useStore(getThinningPageCurrentNumStatesSelected);
-  const initialInstructionNegPart1 = useStore(getInitialInstructionNegPart1);
-  const initialInstructionNegPart2 = useStore(getInitialInstructionNegPart2);
+  const currentlySelectedNumber = useStore(getThinningPageCurrentNumStatesSelected);
+  const initialInstructionPartNeg1 = useStore(getInitialInstructionNegPart1);
+  const initialInstructionPartNeg2 = useStore(getInitialInstructionNegPart2);
   const thinningHelpModalHead = useStore(getThinningHelpModalHead);
   const thinningHelpModalText = useStore(getThinningHelpModalText);
   const { t } = useTranslation();
@@ -255,9 +254,9 @@ const RefineEvaluationsTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`8-6. ${t("thinningPageCurrentNumStatesSelected")}`}
-          name="thinPageCurrentNumStatesSelected"
-          value={thinningPageCurrentNumStatesSelected}
+          label={`8-6. ${t("currentlySelectedNumber")}`}
+          name="currentlySelectedNumber"
+          value={currentlySelectedNumber}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
@@ -322,10 +321,10 @@ const RefineEvaluationsTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[80px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label={`8-10. ${t("initialInstructionNegPart1")}`}
-          name="initialInstructionNegPart1"
+          label={`8-10. ${t("initialInstructionPartNeg1")}`}
+          name="initialInstructionPartNeg1"
           height={150}
-          value={initialInstructionNegPart1}
+          value={initialInstructionPartNeg1}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
@@ -336,10 +335,10 @@ const RefineEvaluationsTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[80px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label={`8-11. ${t("initialInstructionNegPart2")}`}
-          name="initialInstructionNegPart2"
+          label={`8-11. ${t("initialInstructionPartNeg2")}`}
+          name="initialInstructionPartNeg2"
           height={150}
-          value={initialInstructionNegPart2}
+          value={initialInstructionPartNeg2}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""

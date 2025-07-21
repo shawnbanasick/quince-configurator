@@ -132,9 +132,9 @@ const showSectionDefaults = (section) => {
 
   if (section === "refineClear") {
     selectorArray = [
-      "initialInstructionNegPart1",
-      "initialInstructionNegPart2",
-      "thinningPageCurrentNumStatesSelected",
+      "initialInstructionPartNeg1",
+      "initialInstructionPartNeg2",
+      "currentlySelectedNumber",
       "numStatementsToSelect",
       "thinPageSubmitButton",
       "thinPageTitle",
@@ -229,7 +229,7 @@ const showSectionDefaults = (section) => {
       "postsortModalText",
       "postsortPreventNavModalHead",
       "postsortPreventNavModalText",
-      "postsortBackButton",
+      "postsortBackButtonText",
     ];
 
     clearSection(selectorArray);
@@ -302,9 +302,8 @@ const showSectionDefaults = (section) => {
   }
   if (section === "emailClear") {
     selectorArray = [
-      "fallbackMessage",
-      "emailSubmitBtn",
-      "emailSubmitBtn",
+      "checkInternetMessage",
+      "btnTransferEmail",
       "sendEmailMessage",
       "defaultEmailFailModalText",
       "emailCopyAddressBtn",

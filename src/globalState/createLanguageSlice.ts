@@ -88,12 +88,12 @@ const createMapXmlSlice = (set) => ({
   thinPageTitle: `Refine Your Evaluations`,
   thinPageSubmitButton: `Submit`,
   numStatementsToSelect: `Number of Statements to Select`,
-  thinningPageCurrentNumStatesSelected: `Current Number of Statements Selected`,
+  currentlySelectedNumber: `Current Number of Statements Selected`,
   initialInstructionPart1: `Below are the statements you rated positively in the previous step. Now, pick the number of statements that you <b>MOST AGREE</b>.<br /><br />`,
   initialInstructionPart2: `Next, continue to select the statements that are CLOSEST to your perspective`,
   initialInstructionPart3: `Another set of statements will appear on the screen after you click the orange "Submit" button.`,
-  initialInstructionNegPart1: `Below are the statements you rated positively in the previous step. Now, pick statements that <mark><b>DIFFER THE MOST FROM YOUR PERSPECTIVE</b></mark>.`,
-  initialInstructionNegPart2: `Next, continue to select the statements that are <mark>DIFFER THE MOST</mark> from your perspective.`,
+  initialInstructionPartNeg1: `Below are the statements you rated positively in the previous step. Now, pick statements that <mark><b>DIFFER THE MOST FROM YOUR PERSPECTIVE</b></mark>.`,
+  initialInstructionPartNeg2: `Next, continue to select the statements that are <mark>DIFFER THE MOST</mark> from your perspective.`,
   finalInstructions: `Refinement process complete. Click on the navigation button on the bottom right side to go to the next stage.`,
   thinningPreventNavModalHead: `Navigation Disabled`,
   thinningPreventNavModalText: `Please finish the refining process before going to the next step.`,
@@ -155,16 +155,16 @@ const createMapXmlSlice = (set) => ({
 
   /*
    ******** 12. POSTSORT  ****************** */
+  postsortModalHead: `Step 4 of 5`,
+  postsortModalText: `You can use the buttons at the bottom of the page to change the font size or card height.<br/><br/><center><iframe width="560" height="315" src="https://www.youtube.com/embed/EFNlSiaEVVg?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></h3></center>`,
   postsortHeader: `Post-Sort Comments`,
   postsortInstructions: `<h3>Please describe your thoughts about these statements in more detail.</h3>`,
   placeholder: `Click here to add comment`,
   postsortAgreement: `Placed on Agree`,
   postsortDisagreement: `Placed on Disagree`,
-  postsortModalHead: `Step 4 of 5`,
-  postsortModalText: `You can use the buttons at the bottom of the page to change the font size or card height.<br/><br/><center><iframe width="560" height="315" src="https://www.youtube.com/embed/EFNlSiaEVVg?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></h3></center>`,
+  postsortBackButtonText: `Go Back`,
   postsortPreventNavModalHead: `Navigation Disabled`,
   postsortPreventNavModalText: `Please add comments to all of the cards before going to the next step.`,
-  postsortBackButton: `Go Back`,
 
   /*
    ******** 13. MOBILE POSTSORT  ****************** */
@@ -208,7 +208,7 @@ const createMapXmlSlice = (set) => ({
   /*
    ******** 18. FAILURE  ****************** */
   checkInternetMessage: `*** Error - Transmission Failure*** <br/><br/>Please check your internet connection and click the "Submit Data" button again.`,
-  emailSubmitBtn: "Open Email Client and Send Results",
+  btnTransferEmail: "Open Email Client and Send Results",
   sendEmailMessage:
     "Unable to connect with the database.<br/><br/>Please click the button to open your default email client and send an email with your data to the research team.",
   defaultEmailFailModalText:
@@ -610,7 +610,7 @@ const createMapXmlSlice = (set) => ({
     set(() => ({ postsortPreventNavModalText: value }));
   },
   setPostsortBackButton: (value) => {
-    set(() => ({ postsortBackButton: value }));
+    set(() => ({ postsortBackButtonText: value }));
   },
   setSurveyHeader: (value) => {
     set(() => ({ surveyHeader: value }));
@@ -658,7 +658,7 @@ const createMapXmlSlice = (set) => ({
     set(() => ({ goodbyeMessage: value }));
   },
   setEmailSubmitBtn: (value) => {
-    set(() => ({ emailSubmitBtn: value }));
+    set(() => ({ btnTransferEmail: value }));
   },
   setEmailCopyResultsBtn: (value) => {
     set(() => ({ emailCopyResultsBtn: value }));

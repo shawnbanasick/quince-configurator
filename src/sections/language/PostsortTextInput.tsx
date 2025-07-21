@@ -26,7 +26,7 @@ const PostsortTextInput: React.FC = () => {
   const postsortModalText = useStore((state) => state.postsortModalText);
   const postsortPreventNavModalHead = useStore((state) => state.postsortPreventNavModalHead);
   const postsortPreventNavModalText = useStore((state) => state.postsortPreventNavModalText);
-  const postsortBackButton = useStore((state) => state.postsortBackButton);
+  const postsortBackButtonText = useStore((state) => state.postsortBackButtonText);
 
   const handleRefImage1 = () => {
     window.open(postSort1, "Mobile Presort Main Image", "width=800, height=600");
@@ -200,9 +200,9 @@ const PostsortTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`12-8. ${t("postsortBackButton")}`}
-          name="postsortBackButton"
-          value={postsortBackButton}
+          label={`12-8. ${t("postsortBackButtonText")}`}
+          name="postsortBackButtonText"
+          value={postsortBackButtonText}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""

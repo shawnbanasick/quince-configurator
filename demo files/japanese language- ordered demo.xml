@@ -194,6 +194,7 @@
     <item order="13-1" id="mobilePostsortHelpModalHead">ステージ 4/5{{{br/}}} ポストランク付けコメント</item>
     <item order="13-2" id="mobilePostsortHelpModalText">これらのステートメントのランク付けについてコメントしてください。</item>
     <item order="13-3" id="mobilePostsortSortbarText">ポストソートコメント</item>
+    <item order="13-4" id="mobilePostsortPlaceholder">ここをクリックしてコメントを追加してください。</item>
     <item order="13-4" id="mobilePostsortPreventNavModalHead">ナビゲーション無効</item>
     <item order="13-6" id="mobilePostsortPreventNavModalText">次のステップに進む前に、すべてのステートメントにコメントを追加してください。</item>
 

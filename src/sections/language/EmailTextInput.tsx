@@ -18,7 +18,7 @@ const FailureTextInput: React.FC = () => {
   const setText = useStore(getSetText);
 
   const checkInternetMessage = useStore((state) => state.checkInternetMessage);
-  const emailSubmitBtn = useStore((state) => state.emailSubmitBtn);
+  const btnTransferEmail = useStore((state) => state.btnTransferEmail);
   const sendEmailMessage = useStore((state) => state.sendEmailMessage);
   const defaultEmailFailModalText = useStore((state) => state.defaultEmailFailModalText);
   const emailCopyAddressBtn = useStore((state) => state.emailCopyAddressBtn);
@@ -145,9 +145,9 @@ const FailureTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`18-2. ${t("emailSubmitBtn")}`}
-          name="emailSubmitBtn"
-          value={emailSubmitBtn}
+          label={`18-2. ${t("btnTransferEmail")}`}
+          name="btnTransferEmail"
+          value={btnTransferEmail}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
