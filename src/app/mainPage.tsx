@@ -13,6 +13,7 @@ import { Databases } from "../sections/databases/Databases";
 import { setLanguageDefaults } from "./setLanguageDefaults.js";
 import { setLanguageSection_JA } from "./setLanguageSection_JA.js";
 import { setLanguageSection_EN } from "./setLanguageSection_EN.js";
+import { Results } from "../sections/results/Results.js";
 
 // Add the following import statement for the declaration file
 
@@ -50,6 +51,7 @@ export const MainPage = () => {
           <Tab>4. Q Sort Grid</Tab>
           <Tab>5. Language</Tab>
           <Tab>6. Web Host Setup</Tab>
+          <Tab>7. Results Processing</Tab>
         </TabList>
 
         <TabPanel className="flex flex-col justify-center ">
@@ -106,6 +108,9 @@ export const MainPage = () => {
 
         <TabPanel>
           <h2>Any content 7</h2>
+        </TabPanel>
+        <TabPanel>
+          <Results />
         </TabPanel>
       </Tabs>
     </main>
