@@ -4,11 +4,19 @@ import { ResultsUploadButton } from "./ResultsUploadButton";
 import { ExportStaButton } from "./ExportStaButton";
 import { ExportDatButton } from "./ExportDatButton";
 import { ExportToZipButton } from "./ExportToZipButton";
-import { useStore } from "../../globalState/useStore.js";
+import { ExportWordButton } from "./ExportWordButton";
+import { useStore } from "../../globalState/useStore";
 
 // const getDisplayMode = (state) => state.displayMode;
 // const getCurrentStatements = (state) => state.currentStatements;
-const getData = (state) => state.cleanedResults;
+type ExportWordButtonProps = {
+  userData: any; // Replace `any` with your actual data type
+};
+type State = {
+  cleanedResults: any; // Replace `any` with accurate type
+};
+
+const getData = (state: State) => state.cleanedResults;
 
 const Results: React.FC = () => {
   const data = useStore(getData);
@@ -81,6 +89,7 @@ const Results: React.FC = () => {
         <ExportStaButton />
         <ExportDatButton />
         <ExportToZipButton userData={data} participantIdent={selectedOption} />
+        <ExportWordButton userData={data} />
       </div>
 
       <div className="flex flex-col items-center justify-center">
