@@ -1,7 +1,11 @@
 const createResultsSlice = (set) => ({
   cleanedResults: "",
+  rawData: "",
   //   numStatements: 0,
 
+  setRawData: (data) => {
+    set(() => ({ rawData: data }));
+  },
   setCleanedResults: (data) => {
     set(() => ({ cleanedResults: data }));
   },

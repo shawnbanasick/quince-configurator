@@ -4,9 +4,11 @@ import { useStore } from "../../GlobalState/useStore";
 
 type CsvRow = Record<string, string>;
 const getSetCleanedResults = (state) => state.setCleanedResults;
+const getSetRawData = (state) => state.setRawData;
 
 const ResultsUploadButton: React.FC = () => {
   const setCleanedResults = useStore(getSetCleanedResults);
+  const setRawData = useStore(getSetRawData);
   const fileInputRef = useRef<HTMLInputElement>(null);
   // const [data, setData] = useState<CsvRow[]>([]);
 
@@ -33,6 +35,7 @@ const ResultsUploadButton: React.FC = () => {
             return cleanedRow;
           });
           // setData(cleanedData);
+          setRawData(cleanedData);
           setCleanedResults(cleanedData);
           console.log("CSV contents:\n", JSON.stringify(cleanedData, null, 2));
         },

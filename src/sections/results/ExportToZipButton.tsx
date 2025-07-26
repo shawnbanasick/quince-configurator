@@ -5,17 +5,24 @@ import { getCurrentTime } from "./getCurrentTime";
 import { useStore } from "../../GlobalState/useStore";
 import { createQSortPattern } from "./createQSortPattern";
 import { createSortsText } from "./createSortsText";
+import Papa from "papaparse";
+import { csvHeaderRow } from "./csvHeaderRow";
 
 const getCurrentStatements = (state) => state.currentStatements;
 const getProjectName = (state) => state.studyTitle;
 const getQSortPatternObject = (state) => state.qSortPatternObject;
+const getRawData = (state) => state.rawData;
+const headerRow = csvHeaderRow();
 
 const ExportToZipButton = (props) => {
   const { t } = useTranslation();
   const currentStatements = useStore(getCurrentStatements);
   const projectName = useStore(getProjectName);
   const qSortPatternObject = useStore(getQSortPatternObject);
+  const rawData = useStore(getRawData);
   let shouldIncludeTimestamp = true;
+
+  //   console.log(JSON.stringify(rawData));
 
   const handleOnClick = () => {
     if (!currentStatements) {
@@ -49,6 +56,20 @@ const ExportToZipButton = (props) => {
     let sortsBlob = new Blob([sortsTxt], {
       type: "text/plain;charset=utf-8",
     });
+    // write data CSV
+    let resultsCsvBlob;
+    if (rawData) {
+      //   console.log(JSON.stringify(rawData, null, 2));
+      let resultsCsvBlob2 = Papa.unparse({
+        fields: headerRow,
+        delimiter: Papa.RECORD_SEP,
+        data: rawData,
+      });
+
+      resultsCsvBlob = new Blob([resultsCsvBlob2], {
+        type: "text/plain;charset=utf-8",
+      });
+    }
 
     // set name for ZIP file
     let zipNameFile;
@@ -75,6 +96,9 @@ const ExportToZipButton = (props) => {
         zip.file("statements.txt", statementsBlob);
         zip.file("pattern.txt", patternBlob);
         zip.file("sorts.txt", sortsBlob);
+        if (rawData) {
+          zip.file("sortData.csv", resultsCsvBlob);
+        }
 
         // Convert the zip file into a buffer and download
         await zip.generateAsync({ type: "blob" }).then(function (blob) {
