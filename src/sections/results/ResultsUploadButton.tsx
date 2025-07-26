@@ -1,11 +1,14 @@
 import React, { useRef, ChangeEvent, useState } from "react";
 import Papa from "papaparse";
+import { useStore } from "../../GlobalState/useStore";
 
 type CsvRow = Record<string, string>;
+const getSetCleanedResults = (state) => state.setCleanedResults;
 
 const ResultsUploadButton: React.FC = () => {
+  const setCleanedResults = useStore(getSetCleanedResults);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const [data, setData] = useState<CsvRow[]>([]);
+  // const [data, setData] = useState<CsvRow[]>([]);
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -29,7 +32,8 @@ const ResultsUploadButton: React.FC = () => {
             }
             return cleanedRow;
           });
-          setData(cleanedData);
+          // setData(cleanedData);
+          setCleanedResults(cleanedData);
           console.log("CSV contents:\n", JSON.stringify(cleanedData, null, 2));
         },
       });

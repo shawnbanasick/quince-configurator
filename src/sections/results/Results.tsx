@@ -1,27 +1,24 @@
 import React, { useState } from "react";
-// import { useStore } from "../../globalState/useStore.js";
 import { useTranslation } from "react-i18next";
 import { ResultsUploadButton } from "./ResultsUploadButton";
+import { ExportStaButton } from "./ExportStaButton";
+import { ExportDatButton } from "./ExportDatButton";
+import { ExportToZipButton } from "./ExportToZipButton";
+import { useStore } from "../../globalState/useStore.js";
 
 // const getDisplayMode = (state) => state.displayMode;
 // const getCurrentStatements = (state) => state.currentStatements;
+const getData = (state) => state.cleanedResults;
 
 const Results: React.FC = () => {
+  const data = useStore(getData);
   const { t } = useTranslation();
-  // const displayMode = useStore(getDisplayMode);
   const [selectedOption, setSelectedOption] = useState("randomId");
   const [selectedOutputOption, setSelectedOutputOption] = useState("kadeZip");
 
-  // let display;
-  // if (displayMode === "beginner") {
-  //   display = true;
-  // } else {
-  //   display = false;
-  // }
-
-  const handleChange = (event) => {
-    setSelectedOption(event.target.value);
-  };
+  // const handleChange = (event) => {
+  //   setSelectedOption(event.target.value);
+  // };
 
   const options = [
     { value: "randomId", label: "Random Id" },
@@ -80,9 +77,12 @@ const Results: React.FC = () => {
       <div className="flex flex-row w-10/12 justify-center mt-4 mb-6">
         <ResultsUploadButton />
       </div>
-      {/* 
+      <div className="flex flex-row w-10/12 justify-center mt-4 mb-6">
+        <ExportStaButton />
+        <ExportDatButton />
+        <ExportToZipButton userData={data} participantIdent={selectedOption} />
+      </div>
 
-      {/* <MainContent> */}
       <div className="flex flex-col items-center justify-center">
         <h1>Results Area</h1>
       </div>
