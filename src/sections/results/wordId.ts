@@ -1,7 +1,7 @@
 import { HeadingLevel, Paragraph, TextRun } from "docx";
 import { cloneDeep } from "es-toolkit";
 
-const wordId = (data, childArray2) => {
+const wordId = (data, childArray2, childArray3, childArray4) => {
   const workingData = cloneDeep(data);
 
   let childArray = [
@@ -10,6 +10,7 @@ const wordId = (data, childArray2) => {
         new TextRun({
           text: "Individual Participant Data",
           bold: true,
+          size: 40,
         }),
       ],
       heading: HeadingLevel.HEADING_1,
@@ -36,8 +37,9 @@ const wordId = (data, childArray2) => {
       new Paragraph({
         children: [
           new TextRun({
-            text: `Participant #${index + 1}  `,
+            text: `Participant ${index + 1}  `,
             bold: true,
+            size: 34,
           }),
         ],
         spacing: {
@@ -90,6 +92,8 @@ const wordId = (data, childArray2) => {
       })
     );
     childArray.push(...childArray2[index]);
+    childArray.push(...childArray3[index]);
+    childArray.push(...childArray4[index]);
   });
   return childArray;
 };

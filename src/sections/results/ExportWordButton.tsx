@@ -1,14 +1,14 @@
 import React from "react";
-import * as FileSaver from "file-saver";
 import { useTranslation } from "react-i18next";
-import { useStore } from "../../GlobalState/useStore";
 import { wordId } from "./wordId";
 import { wordTime } from "./wordTime";
 import { Document, Packer } from "docx";
+import { wordPresort } from "./wordPresort";
+import { wordPostsort } from "./wordPostsort";
+// import * as FileSaver from "file-saver";
+// import { useStore } from "../../GlobalState/useStore";
 
-// import StaIcon from "../images/STA_Icon.svg";
-
-// You should define types in your global state like this:
+// define types in global state
 interface GlobalState {
   currentStatements: string[];
   studyTitle: string;
@@ -37,9 +37,12 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
     // }
 
     let data = props.userData;
-    // console.log(JSON.stringify(data, null, 2));
+    console.log(JSON.stringify(data[0], null, 2));
+    let childArray4 = wordPostsort(data);
+    let childArray3 = wordPresort(data);
+    // console.log(JSON.stringify(childArray3, null, 2));
     let childArray2 = wordTime(data);
-    let childArray1 = wordId(data, childArray2);
+    let childArray1 = wordId(data, childArray2, childArray3, childArray4);
 
     // childArray1.forEach((item, index) => {
     //     item = [...item, ...childArray2[index]]

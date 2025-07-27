@@ -1,14 +1,11 @@
 import { Paragraph, TextRun } from "docx";
 import { cloneDeep } from "es-toolkit";
 
-type RecordMap = Record<string, any>; // Incoming data can be loosely typed
+type RecordMap = Record<string, any>;
 
 const wordTime = (data: RecordMap): Paragraph[] => {
   const workingData = cloneDeep(data);
   const indentValue = 200;
-  //   const itemParagraphs: ItemParagraph[] =[];
-
-  // If the input is an array of objects (as your original logic suggests)
   const items = Array.isArray(workingData) ? workingData : [workingData];
 
   const itemParagraphs: any = [];
@@ -40,9 +37,6 @@ const wordTime = (data: RecordMap): Paragraph[] => {
     });
     itemParagraphs.push(paragraphs);
   });
-
-  //   console.log(JSON.stringify(itemParagraphs[1], null, 2));
-  //   console.log(itemParagraphs[0].length);
   return itemParagraphs;
 };
 
