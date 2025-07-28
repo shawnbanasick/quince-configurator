@@ -5,6 +5,7 @@ import { wordTime } from "./wordTime";
 import { Document, Packer } from "docx";
 import { wordPresort } from "./wordPresort";
 import { wordPostsort } from "./wordPostsort";
+import { wordSurvey } from "./wordSurvey";
 // import * as FileSaver from "file-saver";
 // import { useStore } from "../../GlobalState/useStore";
 
@@ -38,11 +39,12 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
 
     let data = props.userData;
     console.log(JSON.stringify(data[0], null, 2));
+    let childArray5 = wordSurvey(data);
     let childArray4 = wordPostsort(data);
     let childArray3 = wordPresort(data);
     // console.log(JSON.stringify(childArray3, null, 2));
     let childArray2 = wordTime(data);
-    let childArray1 = wordId(data, childArray2, childArray3, childArray4);
+    let childArray1 = wordId(data, childArray2, childArray3, childArray4, childArray5);
 
     // childArray1.forEach((item, index) => {
     //     item = [...item, ...childArray2[index]]

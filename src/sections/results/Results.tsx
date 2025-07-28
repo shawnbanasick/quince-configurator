@@ -14,12 +14,18 @@ type ExportWordButtonProps = {
 };
 type State = {
   cleanedResults: any; // Replace `any` with accurate type
+  surveyQuestionsArray: any;
 };
 
 const getData = (state: State) => state.cleanedResults;
+const getSurvey = (state: State) => state.surveyQuestionsArray;
 
 const Results: React.FC = () => {
   const data = useStore(getData);
+  const survey = useStore(getSurvey);
+
+  console.log(JSON.stringify(survey, null, 2));
+
   const { t } = useTranslation();
   const [selectedOption, setSelectedOption] = useState("randomId");
   const [selectedOutputOption, setSelectedOutputOption] = useState("kadeZip");

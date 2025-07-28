@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+   <config version="7.0.0" htmlParse="false">
+
+   <!-- GENERAL SETTINGS -->
+   <!-- "setupTarget" options: netlify, firebase, local, email, or sheets -->
+   <item id="studyTitle">Demo Project</item> 
+   <item id="databaseOptions">Include_Google_Options</item>
+   <item id="setupTarget">baserow</item>
+   <item id="baserowToken">9mai4vZoWKfizfMebLLwHYXXg2FvBgzt</item>
+   <item id="baserowDatabaseIdNumber">542139</item>
+   <!-- STEIN -->
+   <item id="steinApiUrl"></item>
+   <!-- EMAIL -->
+   <item id="emailAddress">ken.q.tools@gmail.com</item>  
+   <item id="emailSubject">Quincy Sort Results</item>  
+   <!-- SECOND PROJECT LINKING -->
+   <item id="linkToSecondProject">true</item> 
+   <item id="secondProjectUrl">http://localhost:5173/</item> 
+   <!-- IMAGE OPTIONS  (imageFormat: 169 or 43)-->
+   <item id="useImages">false</item>
+   <item id="numImages">30</item>
+   <item id="imageFileType">jpg</item>
+   <item id="imageFormat">postSortImageModal169</item>
+
+   <!-- FIREBASE OPTIONS -->
+     <item id="firebaseApiKey">AIzaSyAS2BrKXDufDeQ21B9D3g7Kv_UQZsqts08</item>
+     <item id="firebaseAuthDomain">quinceyq-3d549.firebaseapp.com</item>
+     <item id="firebaseDatabaseURL">https://quinceyq-3d549-default-rtdb.asia-southeast1.firebasedatabase.app</item>
+     <item id="firebaseProjectId">quinceyq-3d549</item>
+     <item id="firebaseStorageBucket">quinceyq-3d549.firebasestorage.app</item>
+     <item id="firebaseMessagingSenderId">184968881153</item>
+     <item id="firebaseAppId">1:184968881153:web:e9aab11ad4af09609acc00</item>
+
+   <!-- OTHER GENERAL OPTIONS -->
+   <item id="shuffleCards">false</item>
+   <item id="headerBarColor">#337ab7</item>
+   <item id="devMode">false</item> 
+   <item id="showConsentPage">true</item> 
+   <item id="showConsentPageHelpModal">true</item> 
+   <item id="useThinProcess">true</item> 
+   <item id="useMobileMode">true</item> 
+
+   <!-- ACCESS -->
+   <!-- options: anonymous, partId-access, partId, access -->
+   <item id="initialScreen">partId-access</item>
+   <item id="accessCode">demo</item>
+
+   <!-- LEGACY DEFAULTS (do not change these)-->
+   <item id="setDefaultFontSize">true</item>
+   <item id="defaultFontSize">25</item>
+   <item id="displayNeutralObjects">false</item>
+
+   
+   <!-- PRESORT -->
+   <!-- default colors #2a2a2a, #ccffcc, #e0e0e0, #ffe0f0 -->
+   <item id="greenCardColor">#ccffcc</item>
+   <item id="yellowCardColor">#e0e0e0</item>
+   <item id="pinkCardColor">#ffe0e0</item>
+   <item id="defaultFontColor">#2a2a2a</item>
+
+   <item id="setDefaultFontSizePresort">true</item>
+   <item id="defaultFontSizePresort">22</item>
+   <item id="traceSorts">true</item>
+  
+   <!-- THINNING -->
+   <item id="thinGuidanceModalMaxIterations">2</item>
+
+   <!-- SORT -->
+   <item id="allowUnforcedSorts">false</item>
+   <item id="warnOverloadedColumn">true</item>
+   <item id="condOfInstFontSize">20</item>
+
+   <item id="setMinCardHeightSort">true</item>
+   <item id="minCardHeightSort">120</item>
+   <item id="setDefaultFontSizeSort">true</item>
+   <item id="defaultFontSizeSort">12</item>
+   
+   <item id="sortDirection">positive</item> 
+
+   <!-- POSTSORT -->
+   <item id="showPostsort">true</item>
+   <item id="showSecondPosColumn">false</item>
+   <item id="showSecondNegColumn">false</item>
+   <item id="showBackButton">true</item>
+   <item id="postsortCommentsRequired">true</item>
+
+   <item id="setDefaultFontSizePostsort">true</item>
+   <item id="defaultFontSizePostsort">16</item>
+   <item id="setMinCardHeightPostsort">true</item>
+   <item id="minCardHeightPostsort">120</item>
+
+
+   <!-- SURVEY - Survey Questions -->
+   <item id="showSurvey">true</item>
+
+   <item id="survey">
+       <input type="information"></input>
+       <note bg="goldenrod">All fields marked with an * are {{{b}}}required.{{{/b}}}</note>
+   </item>
+
+   <item id="survey">
+        <input type="text" required="true" limited="true" maxlength="100" restricted="false"></input>
+        <label>1. Have you had classes with me before?*</label>
+        <note>If yes, please {{{i}}}list them here{{{/i}}}. (limit = 100 characters)</note>
+   </item>
+
+   <item id="survey">
+        <input type="textarea" required="false"></input>
+        <label>2. Describe your experience using the iPads in this class</label>
+        <placeholder>input comment here</placeholder>
+   </item>
+
+   <item id="survey">
+        <input type="radio" required="false">Freshman;;;Sophomore;;;Junior;;;Senior</input>
+        <label>3. Year</label>
+        <note>Please select your year</note>
+   </item>
+
+   <item id="survey">
+        <input type="select" required="false">Global Studies;;;Linguistics;;;English Literature</input>
+        <label>4. What is your program focus?</label>
+   </item>
+
+   <item id="survey">
+        <input type="checkbox" required="true">Lecture;;;Group Discussion;;;Active Learning</input>
+        <label>5. What kind of class do you prefer?*</label>
+   </item>
+
+   <item id="survey">
+        <input type="rating2" required="false" scale="Yes;;;No">I have used an iPad in class {{{b}}}before{{{/b}}}.;;; I have used a notebook computer in class before.;;;I have used Moodle before.;;;I have used Quizlet before;;;</input>
+        <label>6. Please respond to the following {{{u}}}statements{{{/u}}}</label>
+   </item>
+
+   <item id="survey">
+        <input type="rating5" required="false" scale="1;;;2;;;3;;;4;;;5">How would you rate the use of iPads in this class?;;;How would you rate this class overall?;;;How was your interaction with {{{u}}}other students?{{{/u}}};;;How was access to the computer lab?</input>
+        <label>7. {{{i}}}Please{{{/i}}} answer the following questions</label>
+   </item>
+
+   <item id="survey">
+        <input type="rating10" required="false" scale="1;;;2;;;3;;;4;;;5;;;6;;;7;;;8;;;9;;;10">How would you rate the use of the Socrative website in this class?;;;How would you rate the use of the {{{b}}}Quizlet{{{/b}}} website in this class?;;;How would you rate the use of Moodle in this class?;;;How would you rate the use of Edmodo in this class?;;;</input>
+        <label>8. {{{u}}}Please{{{/u}}} answer the following questions</label>
+   </item>
+
+
+
+  </config>

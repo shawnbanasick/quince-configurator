@@ -1,7 +1,7 @@
 import { HeadingLevel, Paragraph, TextRun } from "docx";
 import { cloneDeep } from "es-toolkit";
 
-const wordId = (data, childArray2, childArray3, childArray4) => {
+const wordId = (data, childArray2, childArray3, childArray4, childArray5) => {
   const workingData = cloneDeep(data);
 
   let childArray = [
@@ -94,6 +94,7 @@ const wordId = (data, childArray2, childArray3, childArray4) => {
     childArray.push(...childArray2[index]);
     childArray.push(...childArray3[index]);
     childArray.push(...childArray4[index]);
+    childArray.push(...childArray5[index]);
   });
   return childArray;
 };
