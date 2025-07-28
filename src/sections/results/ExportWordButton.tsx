@@ -1,3 +1,4 @@
+import { Paragraph, TextRun, HeadingLevel } from "docx";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { wordId } from "./wordId";
@@ -6,6 +7,8 @@ import { Document, Packer } from "docx";
 import { wordPresort } from "./wordPresort";
 import { wordPostsort } from "./wordPostsort";
 import { wordSurvey } from "./wordSurvey";
+import { wordSurveySummary } from "./wordSurveySummary";
+
 // import * as FileSaver from "file-saver";
 // import { useStore } from "../../GlobalState/useStore";
 
@@ -46,6 +49,7 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
     let childArray2 = wordTime(data);
     let childArray1 = wordId(data, childArray2, childArray3, childArray4, childArray5);
 
+    let summaryArray = wordSurveySummary(data);
     // childArray1.forEach((item, index) => {
     //     item = [...item, ...childArray2[index]]
     // })
@@ -55,6 +59,10 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
         {
           properties: {},
           children: [...childArray1],
+        },
+        {
+          properties: {},
+          children: [...summaryArray],
         },
       ],
     });

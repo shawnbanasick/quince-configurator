@@ -1,15 +1,17 @@
 import { Paragraph, TextRun } from "docx";
 import { stripHtml } from "./stripHtml";
 
-const processSelectQuestion = (entry, question, index, indentValue) => {
+const processCheckboxQuestion = (entry, question, index, indentValue) => {
   let addIndentValue = +indentValue + 200;
   let options = stripHtml(question.options);
   options = options.split(",");
+  console.log(options);
 
   let respondentResponse2: any = [];
   let response1 = stripHtml(entry);
   let response3 = response1.split(":");
   let response2 = response3[1].split(",");
+  console.log(response2);
 
   response2.forEach((value) => {
     let value2 = +value.trim();
@@ -17,21 +19,11 @@ const processSelectQuestion = (entry, question, index, indentValue) => {
     respondentResponse2.push(value3);
   });
 
-  let entry1 = entry.split(":");
-  let indicator = true;
-  if (entry1[1].trim() === "no response") {
-    indicator = false;
-  }
-
   let respondentResponse = respondentResponse2.join(", ");
 
   let response = [
     new Paragraph({
       children: [
-        // new TextRun({
-        //   text: statementNumber2,
-        //   bold: true,
-        // }),
         new TextRun({
           text: `(Item ${index + 1})  ${stripHtml(question.label)}`,
           bold: true,
@@ -47,7 +39,7 @@ const processSelectQuestion = (entry, question, index, indentValue) => {
     new Paragraph({
       children: [
         new TextRun({
-          text: `Type: Selection Input`,
+          text: `Type: Checkbox Input`,
           bold: false,
         }),
       ],
@@ -80,11 +72,11 @@ const processSelectQuestion = (entry, question, index, indentValue) => {
     new Paragraph({
       children: [
         new TextRun({
-          text: indicator ? `Response: ${stripHtml(entry)} - ` : `Response: - `,
+          text: `Response: ${stripHtml(entry)} - `,
           bold: false,
         }),
         new TextRun({
-          text: indicator ? `${respondentResponse}` : `no response`,
+          text: entry ? `${respondentResponse}` : `no response`,
           bold: true,
         }),
       ],
@@ -96,4 +88,4 @@ const processSelectQuestion = (entry, question, index, indentValue) => {
   return response;
 };
 
-export { processSelectQuestion };
+export { processCheckboxQuestion };

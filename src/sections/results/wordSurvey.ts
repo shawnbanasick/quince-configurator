@@ -1,22 +1,17 @@
 import { Paragraph, TextRun } from "docx";
 import { cloneDeep } from "es-toolkit";
 import { useStore } from "../../GlobalState/useStore";
-// import { stripHtml } from "./stripHtml";
 import { processInformationQuestion } from "./processInformationQuestion";
 import { processTextQuestion } from "./processTextQuestion";
 import { processTextAreaQuestion } from "./processTextAreaQuestion";
 import { processRadioQuestion } from "./processRadioQuestion";
 import { processSelectQuestion } from "./processSelectQuestion";
+import { processCheckboxQuestion } from "./processCheckboxQuestion";
+import { processRating2Question } from "./processRating2Question";
+import { processRating5Question } from "./processRating5Question";
+import { processRating10Question } from "./processRating10Question";
 
 type RecordMap = Record<string, any>;
-
-interface GlobalState {
-  currentStatements: string[];
-  surveyQuestionsArray: any;
-}
-
-// const getCurrentStatements = (state: GlobalState) => state.currentStatements;
-// const getSurvey = (state: GlobalState) => state.surveyQuestionsArray;
 
 const wordSurvey = (data: RecordMap): Paragraph[] => {
   const workingData = cloneDeep(data);
@@ -84,36 +79,25 @@ const wordSurvey = (data: RecordMap): Paragraph[] => {
         paragraphs.push(...selectParagraph);
       }
 
-      //   paragraphs.push(
-      //     new Paragraph({
-      //       children: [
-      //         // new TextRun({
-      //         //   text: statementNumber2,
-      //         //   bold: true,
-      //         // }),
-      //         new TextRun({
-      //           text: "Question",
-      //           bold: true,
-      //         }),
-      //       ],
-      //       indent: {
-      //         start: indentValue,
-      //       },
-      //       spacing: {
-      //         before: 100,
-      //       },
-      //     }),
-      //     new Paragraph({
-      //       children: [
-      //         new TextRun({
-      //           text: entry,
-      //         }),
-      //       ],
-      //       indent: {
-      //         start: indentValue,
-      //       },
-      //     })
-      //   );
+      if (questionType === "checkbox") {
+        let checkboxParagraph = processCheckboxQuestion(entry, questionInfo, index, indentValue);
+        paragraphs.push(...checkboxParagraph);
+      }
+
+      if (questionType === "rating2") {
+        let rating2Paragraph = processRating2Question(entry, questionInfo, index, indentValue);
+        paragraphs.push(...rating2Paragraph);
+      }
+
+      if (questionType === "rating5") {
+        let rating5Paragraph = processRating5Question(entry, questionInfo, index, indentValue);
+        paragraphs.push(...rating5Paragraph);
+      }
+
+      if (questionType === "rating10") {
+        let rating10Paragraph = processRating10Question(entry, questionInfo, index, indentValue);
+        paragraphs.push(...rating10Paragraph);
+      }
     });
     itemParagraphs.push(paragraphs);
   });
