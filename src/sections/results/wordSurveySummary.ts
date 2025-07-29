@@ -1,4 +1,4 @@
-import { Paragraph, TextRun } from "docx";
+import { HeadingLevel, Paragraph, TextRun } from "docx";
 import { cloneDeep } from "es-toolkit";
 import { useStore } from "../../GlobalState/useStore";
 
@@ -12,6 +12,8 @@ const wordSurveySummary = (data: RecordMap): Paragraph[] => {
   const items = Array.isArray(workingData) ? workingData : [workingData];
   const itemParagraphs: any = [];
 
+  console.log(JSON.stringify(workingData, null, 2));
+
   // for each participant
   const paragraphs: Paragraph[] = [];
   paragraphs.push(
@@ -20,18 +22,24 @@ const wordSurveySummary = (data: RecordMap): Paragraph[] => {
         new TextRun({
           text: "Questionnaire Results Summary",
           bold: true,
+          size: 40,
         }),
       ],
-      indent: {
-        start: 200,
-      },
-      spacing: {
-        before: 150,
-      },
+      heading: HeadingLevel.HEADING_1,
+      thematicBreak: true,
     })
   );
 
+  let newArray = [];
+  function filterByItemNum1(obj) {
+    return Object.fromEntries(
+      Object.entries(obj).filter(([key, value]) => value.startsWith("itemNum"))
+    );
+  }
+
   items.forEach((item: RecordMap) => {
+    let newObject = filterByItemNum1(item);
+    newArray.push(newObject);
     // Filter for values starting with "(itemNum"
     // const timeEntries = Object.values(item).filter(
     //   (value: any) => typeof value === "string" && value.trim().startsWith("itemNum")
@@ -94,6 +102,7 @@ const wordSurveySummary = (data: RecordMap): Paragraph[] => {
     //     });
     itemParagraphs.push(paragraphs);
   });
+  console.log(JSON.stringify(newArray, null, 2));
   return paragraphs;
 };
 

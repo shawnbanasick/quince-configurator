@@ -6,23 +6,23 @@ const processRating2Question = (entry, question, index, indentValue) => {
   let options = stripHtml(question.options);
   options = options.split(",");
   options = options.filter(Boolean);
-  console.log(options);
+  // console.log(options);
 
   let scale2 = stripHtml(question.scale);
-  console.log(scale2);
+  // console.log(scale2);
   const scale3 = scale2.split(",").map((str) => str.trim());
   //   let scale4 = scale2.join(",");
-  console.log(scale3);
+  // console.log(scale3);
   //   console.log(scale4);
   //   let scale4 = scale2.split(",");
 
-  console.log("question", question);
+  // console.log("question", question);
 
-  console.log("entry: ", entry);
+  // console.log("entry: ", entry);
   let entry4 = entry.split(":");
-  console.log("entry1: ", entry4[1]);
+  // console.log("entry1: ", entry4[1]);
   let entry5 = entry4[1].split(",");
-  console.log("entry5: ", entry5);
+  // console.log("entry5: ", entry5);
 
   //   let entry3 = entry4[1].split(",");
 
