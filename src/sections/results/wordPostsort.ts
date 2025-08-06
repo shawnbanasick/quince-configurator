@@ -27,8 +27,8 @@ const wordPostsort = (data: RecordMap, currentStatements): Paragraph[] => {
       (value: any) => typeof value === "string" && value.trim().startsWith("colu")
     );
 
-    let posComments = [];
-    let negComments = [];
+    let posComments: string[] = [];
+    let negComments: string[] = [];
     timeEntries.forEach((item) => {
       if (item.startsWith("columnN")) {
         negComments.push(item);
@@ -37,7 +37,7 @@ const wordPostsort = (data: RecordMap, currentStatements): Paragraph[] => {
       }
     });
 
-    let sortedPosCommentsPrepArray = [];
+    let sortedPosCommentsPrepArray: any[] = [];
     posComments.forEach((item) => {
       let copy = item;
       let id = copy.slice(6, 9);
@@ -45,8 +45,18 @@ const wordPostsort = (data: RecordMap, currentStatements): Paragraph[] => {
       id = id.replace("(", "");
       sortedPosCommentsPrepArray.push([+id, item]);
     });
-
     let sortedPosCommentsArray = sortedPosCommentsPrepArray.sort((a, b) => b[0] - a[0]);
+
+    let sortedNegCommentsPrepArray: any[] = [];
+    negComments.forEach((item) => {
+      let copy = item;
+      let id = copy.slice(6, 9);
+      id = id.replace("N", "-");
+      id = id.replace(":", "");
+      id = id.replace("(", "");
+      sortedNegCommentsPrepArray.push([+id, item]);
+    });
+    let sortedNegCommentsArray = sortedNegCommentsPrepArray.sort((a, b) => a[0] - b[0]);
 
     paragraphs.push(
       new Paragraph({
@@ -84,7 +94,7 @@ const wordPostsort = (data: RecordMap, currentStatements): Paragraph[] => {
         new Paragraph({
           children: [
             new TextRun({
-              text: `(Col. +${entry[0]}) `,
+              text: `(Col. +${entry[0]})  `,
               bold: true,
             }),
             new TextRun({
@@ -130,10 +140,10 @@ const wordPostsort = (data: RecordMap, currentStatements): Paragraph[] => {
     );
 
     // Clean and map to Paragraphs
-    negComments.forEach((entry: string) => {
-      entry = entry.split(":").slice(1).join(":").trim();
+    sortedNegCommentsArray.forEach((entry: string) => {
+      let entry1 = entry[1].split(":").slice(1).join(":").trim();
 
-      let statementNumber2 = entry.slice(0, 5).trim();
+      let statementNumber2 = entry1.slice(0, 5).trim();
       let statementNumber = statementNumber2
         .replace("(", "")
         .replace(")", "")
@@ -147,6 +157,10 @@ const wordPostsort = (data: RecordMap, currentStatements): Paragraph[] => {
       paragraphs.push(
         new Paragraph({
           children: [
+            new TextRun({
+              text: `(Col. ${entry[0]})  `,
+              bold: true,
+            }),
             new TextRun({
               text: statement,
               bold: true,
@@ -162,7 +176,7 @@ const wordPostsort = (data: RecordMap, currentStatements): Paragraph[] => {
         new Paragraph({
           children: [
             new TextRun({
-              text: entry,
+              text: entry[1],
             }),
           ],
           indent: {
