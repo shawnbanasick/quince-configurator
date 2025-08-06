@@ -12,7 +12,7 @@ const wordSurveySummary = (data: RecordMap): Paragraph[] => {
   const items = Array.isArray(workingData) ? workingData : [workingData];
   const itemParagraphs: any = [];
 
-  console.log(JSON.stringify(workingData, null, 2));
+  // console.log(JSON.stringify(workingData, null, 2));
 
   // for each participant
   const paragraphs: Paragraph[] = [];
@@ -25,84 +25,47 @@ const wordSurveySummary = (data: RecordMap): Paragraph[] => {
           size: 40,
         }),
       ],
+      pageBreakBefore: true,
       heading: HeadingLevel.HEADING_1,
       thematicBreak: true,
     })
   );
 
-  let newArray = [];
-  function filterByItemNum1(obj) {
+  type RecordMap = Record<string, string>;
+  let newArray: Record<string, string>[] = [];
+
+  function filterByItemNum1(obj: RecordMap): Record<string, string> {
     return Object.fromEntries(
-      Object.entries(obj).filter(([key, value]) => value.startsWith("itemNum"))
+      Object.entries(obj).filter(
+        ([_, value]) => typeof value === "string" && value.startsWith("itemNum")
+      )
     );
   }
 
   items.forEach((item: RecordMap) => {
-    let newObject = filterByItemNum1(item);
+    const newObject2 = filterByItemNum1(item);
+    const newObject: Record<string, string> = {};
+
+    const keys = Object.keys(newObject2);
+
+    keys.forEach((entry) => {
+      const string = newObject2[entry];
+      const stringArray = string.split(":");
+
+      if (stringArray.length >= 2) {
+        const newKey = stringArray[0].trim();
+        const newValue = stringArray[1].trim();
+        newObject[newKey] = newValue;
+      }
+    });
+
     newArray.push(newObject);
-    // Filter for values starting with "(itemNum"
-    // const timeEntries = Object.values(item).filter(
-    //   (value: any) => typeof value === "string" && value.trim().startsWith("itemNum")
-    // );
 
-    // console.log(timeEntries);
-
-    // Clean and map to Paragraphs
-    // timeEntries.forEach((entry: string, index: number) => {
-    // for each survey question
-
-    //   let questionInfo = survey[index];
-    //   let questionType = questionInfo.surveyQuestionType;
-    //   console.log(questionType);
-
-    //   if (questionType === "information") {
-    //     let infoParagraph = processInformationQuestion(questionInfo, index, indentValue);
-    //     paragraphs.push(...infoParagraph);
-    //   }
-
-    //   if (questionType === "text") {
-    //     let textParagraph = processTextQuestion(entry, questionInfo, index, indentValue);
-    //     paragraphs.push(...textParagraph);
-    //   }
-
-    //   if (questionType === "textarea") {
-    //     let textAreaParagraph = processTextAreaQuestion(entry, questionInfo, index, indentValue);
-    //     paragraphs.push(...textAreaParagraph);
-    //   }
-
-    //   if (questionType === "radio") {
-    //     let radioParagraph = processRadioQuestion(entry, questionInfo, index, indentValue);
-    //     paragraphs.push(...radioParagraph);
-    //   }
-
-    //   if (questionType === "select") {
-    //     let selectParagraph = processSelectQuestion(entry, questionInfo, index, indentValue);
-    //     paragraphs.push(...selectParagraph);
-    //   }
-
-    //   if (questionType === "checkbox") {
-    //     let checkboxParagraph = processCheckboxQuestion(entry, questionInfo, index, indentValue);
-    //     paragraphs.push(...checkboxParagraph);
-    //   }
-
-    //   if (questionType === "rating2") {
-    //     let rating2Paragraph = processRating2Question(entry, questionInfo, index, indentValue);
-    //     paragraphs.push(...rating2Paragraph);
-    //   }
-
-    //   if (questionType === "rating5") {
-    //     let rating5Paragraph = processRating5Question(entry, questionInfo, index, indentValue);
-    //     paragraphs.push(...rating5Paragraph);
-    //   }
-
-    //   if (questionType === "rating10") {
-    //     let rating10Paragraph = processRating10Question(entry, questionInfo, index, indentValue);
-    //     paragraphs.push(...rating10Paragraph);
-    //   }
-    //     });
     itemParagraphs.push(paragraphs);
   });
-  console.log(JSON.stringify(newArray, null, 2));
+  // console.log(JSON.stringify(newArray, null, 2));
+  // console.log(JSON.stringify(survey, null, 2));
+
   return paragraphs;
 };
 

@@ -52,7 +52,7 @@ const wordSurvey = (data: RecordMap): Paragraph[] => {
 
       let questionInfo = survey[index];
       let questionType = questionInfo.surveyQuestionType;
-      console.log(questionType);
+      // console.log(questionType);
 
       if (questionType === "information") {
         let infoParagraph = processInformationQuestion(questionInfo, index, indentValue);

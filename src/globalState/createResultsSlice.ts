@@ -1,8 +1,12 @@
 const createResultsSlice = (set) => ({
   cleanedResults: "",
   rawData: "",
+  selectedPartId: "randomId",
   //   numStatements: 0,
 
+  setSelectedPartId: (string) => {
+    set(() => ({ selectedPartId: string }));
+  },
   setRawData: (data) => {
     set(() => ({ rawData: data }));
   },

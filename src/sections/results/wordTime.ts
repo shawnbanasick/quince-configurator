@@ -18,7 +18,7 @@ const wordTime = (data: RecordMap): Paragraph[] => {
 
     // Clean and map to Paragraphs
     timeEntries.forEach((entry: string) => {
-      const cleaned = entry.replace("(", "").replace(")", ":");
+      const cleaned = entry.replace("(", "").replace(")", "");
       const cleaned2 = cleaned.slice(6); // remove timeOn
       const cleaned3 = cleaned2.split(":");
       const cleaned4 = cleaned3[0].slice(0, -4);
@@ -26,7 +26,7 @@ const wordTime = (data: RecordMap): Paragraph[] => {
         new Paragraph({
           children: [
             new TextRun({
-              text: `${cleaned4} Page: ${cleaned3[1]}:${cleaned3[2]}:${cleaned3[3]}`,
+              text: `${cleaned4} Page: ${cleaned3[1].trim()}:${cleaned3[2].trim()}:${cleaned3[3].trim()}`,
             }),
           ],
           indent: {

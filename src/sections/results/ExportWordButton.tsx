@@ -1,4 +1,4 @@
-import { Paragraph, TextRun, HeadingLevel } from "docx";
+// import { Paragraph, TextRun, HeadingLevel } from "docx";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { wordId } from "./wordId";
@@ -7,29 +7,40 @@ import { Document, Packer } from "docx";
 import { wordPresort } from "./wordPresort";
 import { wordPostsort } from "./wordPostsort";
 import { wordSurvey } from "./wordSurvey";
+import { wordSorts } from "./wordSorts";
 import { wordSurveySummary } from "./wordSurveySummary";
+import { useStore } from "../../GlobalState/useStore";
+import { getDocParagraphStyles } from "./getDocParagraphStyles";
+import { getDocNumberingStyles } from "./getDocNumberingStyles";
+import { getSection1Headers } from "./getSection1Headers";
+import { getSection1Footers } from "./getSectionFooters";
+import { getSection1Properties } from "./getSection1Properties";
+import { createStatementNumArray } from "./createStatementNumArray";
+import { createRespondentArray } from "./createRespondentArray";
 
-// import * as FileSaver from "file-saver";
-// import { useStore } from "../../GlobalState/useStore";
-
-// define types in global state
 interface GlobalState {
   currentStatements: string[];
   studyTitle: string;
 }
-
-// Define prop types
 interface ExportWordButtonProps {
-  userData?: any; // Replace `any` with a concrete type if available
+  userData?: any; // Replace `any` with a concrete type
+  participantIdent?: string;
+  partNames: string[];
 }
 
-// const getCurrentStatements = (state: GlobalState) => state.currentStatements;
-// const getProjectName = (state: GlobalState) => state.studyTitle;
+const getCurrentStatements = (state: GlobalState) => state.currentStatements;
 
 const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
   const { t } = useTranslation();
-  //   const currentStatements = useStore(getCurrentStatements);
-  //   const projectName = useStore(getProjectName);
+
+  let data = props.userData;
+  const currentStatements = useStore(getCurrentStatements);
+  let array = currentStatements.split("\n");
+  array = array.filter((element) => element);
+  const numStatements = array.length;
+  let statementNumArray = createStatementNumArray(numStatements);
+  let respondentArray = createRespondentArray(data);
+  // let headerArray
 
   const handleOnClick = () => {
     // if (!currentStatements) {
@@ -40,14 +51,30 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
     //   alert("Please load your config.xml file first");
     // }
 
-    let data = props.userData;
+    let projectName = "temp1";
+    let version = "1.0.0";
+    let dateTime = "August 2, 2025";
+
+    let displayPartId = props.participantIdent;
+    console.log("bbb", JSON.stringify(displayPartId));
+
     console.log(JSON.stringify(data[0], null, 2));
+
     let childArray5 = wordSurvey(data);
-    let childArray4 = wordPostsort(data);
+    let childArray4 = wordPostsort(data, currentStatements);
+    let childArray3b = wordSorts(data, props.partNames, statementNumArray, respondentArray);
     let childArray3 = wordPresort(data);
-    // console.log(JSON.stringify(childArray3, null, 2));
     let childArray2 = wordTime(data);
-    let childArray1 = wordId(data, childArray2, childArray3, childArray4, childArray5);
+    let childArray1 = wordId(
+      data,
+      childArray2,
+      childArray3,
+      childArray3b,
+      childArray4,
+      childArray5,
+      displayPartId,
+      numStatements
+    );
 
     let summaryArray = wordSurveySummary(data);
     // childArray1.forEach((item, index) => {
@@ -55,15 +82,27 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
     // })
 
     const doc = new Document({
+      compatibility: {
+        growAutofit: false,
+        doNotAutofitConstrainedTables: true,
+      },
+      styles: getDocParagraphStyles(),
+      numbering: getDocNumberingStyles(),
       sections: [
         {
-          properties: {},
-          children: [...childArray1],
+          properties: getSection1Properties(),
+          headers: getSection1Headers(projectName),
+          footers: getSection1Footers(dateTime, version),
+          // properties: {},
+          children: [...childArray1, ...summaryArray],
         },
-        {
-          properties: {},
-          children: [...summaryArray],
-        },
+        // {
+        //   properties: getSection1Properties(),
+        //   headers: getSection1Headers(projectName),
+        //   footers: getSection1Footers(dateTime, version),
+        //   // properties: {},
+        //   children: [],
+        // },
       ],
     });
     Packer.toBlob(doc).then((blob) => {

@@ -6,33 +6,49 @@ import { ExportDatButton } from "./ExportDatButton";
 import { ExportToZipButton } from "./ExportToZipButton";
 import { ExportWordButton } from "./ExportWordButton";
 import { useStore } from "../../globalState/useStore";
+import { extractPartNames } from "./extractPartNames";
+// import { handleSelectPartId } from "./handleSelectPartId";
 
 // const getDisplayMode = (state) => state.displayMode;
-// const getCurrentStatements = (state) => state.currentStatements;
+
 type ExportWordButtonProps = {
-  userData: any; // Replace `any` with your actual data type
+  userData: any;
+  selectedPartId: string;
+  partNames: string[];
 };
+
 type State = {
   cleanedResults: any; // Replace `any` with accurate type
   surveyQuestionsArray: any;
+  selectedPartId: string;
+  setSelectedPartId: any;
 };
-
 const getData = (state: State) => state.cleanedResults;
-const getSurvey = (state: State) => state.surveyQuestionsArray;
+// const getSurvey = (state: State) => state.surveyQuestionsArray;
 
 const Results: React.FC = () => {
   const data = useStore(getData);
-  const survey = useStore(getSurvey);
+  // const survey = useStore(getSurvey);
+  let names;
 
-  console.log(JSON.stringify(survey, null, 2));
-
+  const nameArrays = extractPartNames(data);
   const { t } = useTranslation();
-  const [selectedOption, setSelectedOption] = useState("randomId");
   const [selectedOutputOption, setSelectedOutputOption] = useState("kadeZip");
+  const [selectedPartId, setSelectedPartId] = useState("randomId");
 
-  // const handleChange = (event) => {
-  //   setSelectedOption(event.target.value);
-  // };
+  let randomIdArray = [...nameArrays[0]];
+  let partIdArray = [...nameArrays[1]];
+  let urlUsercodeArray = [...nameArrays[2]];
+
+  if (selectedPartId === "randomId") {
+    names = randomIdArray;
+  }
+  if (selectedPartId === "partId") {
+    names = partIdArray;
+  }
+  if (selectedPartId === "urlUsercode") {
+    names = urlUsercodeArray;
+  }
 
   const options = [
     { value: "randomId", label: "Random Id" },
@@ -51,14 +67,15 @@ const Results: React.FC = () => {
       <h2>{t("processResultsText")}</h2>
 
       <div className="p-4">
+        {/* PART ID */}
         <h2 className="text-xl mb-4">{t("selectParticipantIdentifier")}:</h2>
         <div className="flex space-x-4">
           {options.map((option) => (
             <button
               key={option.value}
-              onClick={() => setSelectedOption(option.value)}
+              onClick={() => setSelectedPartId(option.value)}
               className={`px-4 py-2 rounded-lg border ${
-                selectedOption === option.value
+                selectedPartId === option.value
                   ? "bg-blue-600 text-white border-blue-600"
                   : "bg-white text-gray-800 border-gray-300"
               }`}
@@ -67,7 +84,7 @@ const Results: React.FC = () => {
             </button>
           ))}
         </div>
-        <p className="mt-4">Selected: {selectedOption}</p>
+        <p className="mt-4">Selected: {selectedPartId}</p>
       </div>
       <div className="p-4">
         <h2 className="text-xl mb-4">{t("selectParticipantIdentifier")}:</h2>
@@ -94,8 +111,8 @@ const Results: React.FC = () => {
       <div className="flex flex-row w-10/12 justify-center mt-4 mb-6">
         <ExportStaButton />
         <ExportDatButton />
-        <ExportToZipButton userData={data} participantIdent={selectedOption} />
-        <ExportWordButton userData={data} />
+        <ExportToZipButton userData={data} participantIdent={selectedPartId} />
+        <ExportWordButton userData={data} participantIdent={selectedPartId} partNames={names} />
       </div>
 
       <div className="flex flex-col items-center justify-center">

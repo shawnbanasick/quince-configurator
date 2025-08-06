@@ -10,21 +10,49 @@ interface GlobalState {
 
 // const getCurrentStatements = (state: GlobalState) => state.currentStatements;
 
-const wordPostsort = (data: RecordMap): Paragraph[] => {
+const wordPostsort = (data: RecordMap, currentStatements): Paragraph[] => {
   const workingData = cloneDeep(data);
+
   const indentValue = 300;
   const items = Array.isArray(workingData) ? workingData : [workingData];
-  const currentStatements = useStore.getState().currentStatements;
   const array = currentStatements.split("\n");
+  // const currentStatements = useStore.getState().currentStatements;
 
   const itemParagraphs: any = [];
   items.forEach((item: RecordMap) => {
     const paragraphs: Paragraph[] = [];
+
+    // Filter for values starting with "(colu"
+    const timeEntries = Object.values(item).filter(
+      (value: any) => typeof value === "string" && value.trim().startsWith("colu")
+    );
+
+    let posComments = [];
+    let negComments = [];
+    timeEntries.forEach((item) => {
+      if (item.startsWith("columnN")) {
+        negComments.push(item);
+      } else {
+        posComments.push(item);
+      }
+    });
+
+    let sortedPosCommentsPrepArray = [];
+    posComments.forEach((item) => {
+      let copy = item;
+      let id = copy.slice(6, 9);
+      id = id.replace(":", "");
+      id = id.replace("(", "");
+      sortedPosCommentsPrepArray.push([+id, item]);
+    });
+
+    let sortedPosCommentsArray = sortedPosCommentsPrepArray.sort((a, b) => b[0] - a[0]);
+
     paragraphs.push(
       new Paragraph({
         children: [
           new TextRun({
-            text: "Post-Sort Comments",
+            text: "Positive Post-Sort Comments",
             bold: true,
           }),
         ],
@@ -36,50 +64,89 @@ const wordPostsort = (data: RecordMap): Paragraph[] => {
         },
       })
     );
-    // Filter for values starting with "(timeOn"
-    const timeEntries = Object.values(item).filter(
-      (value: any) => typeof value === "string" && value.trim().startsWith("colu")
-    );
-
-    // console.log(timeEntries[0]);
 
     // Clean and map to Paragraphs
-    timeEntries.forEach((entry: string) => {
+    sortedPosCommentsArray.forEach((entry: string) => {
+      let entry1 = entry[1].split(":").slice(1).join(":").trim();
+
+      let statementNumber2 = entry1.slice(0, 5).trim();
+      let statementNumber = statementNumber2
+        .replace("(", "")
+        .replace(")", "")
+        .replace("s", "")
+        .replace(":", "")
+        .trim();
+
+      // use statementNumber as index to find statement
+      let statement = array[+statementNumber - 1];
+
+      paragraphs.push(
+        new Paragraph({
+          children: [
+            new TextRun({
+              text: `(Col. +${entry[0]}) `,
+              bold: true,
+            }),
+            new TextRun({
+              text: statement,
+              bold: true,
+            }),
+          ],
+          indent: {
+            start: indentValue,
+          },
+          spacing: {
+            before: 100,
+          },
+        }),
+        new Paragraph({
+          children: [
+            new TextRun({
+              text: entry[1],
+            }),
+          ],
+          indent: {
+            start: indentValue,
+          },
+        })
+      );
+    });
+
+    paragraphs.push(
+      new Paragraph({
+        children: [
+          new TextRun({
+            text: "Negative Post-Sort Comments",
+            bold: true,
+          }),
+        ],
+        indent: {
+          start: 200,
+        },
+        spacing: {
+          before: 100,
+        },
+      })
+    );
+
+    // Clean and map to Paragraphs
+    negComments.forEach((entry: string) => {
       entry = entry.split(":").slice(1).join(":").trim();
+
       let statementNumber2 = entry.slice(0, 5).trim();
       let statementNumber = statementNumber2
         .replace("(", "")
         .replace(")", "")
         .replace("s", "")
+        .replace(":", "")
         .trim();
 
+      // use statementNumber as index to find statement
       let statement = array[+statementNumber - 1];
 
-      //   if (entry.startsWith("(numPos)")) {
-      //     entry = `Number of statements viewed positively: ${entry.slice(9).trim()}`;
-      //   }
-      //   if (entry.startsWith("(numNeu)")) {
-      //     entry = `Number of statements viewed as neutral: ${entry.slice(9).trim()}`;
-      //   }
-      //   if (entry.startsWith("(numNeg)")) {
-      //     entry = `Number of statements viewed negatively: ${entry.slice(9).trim()}`;
-      //   }
-      //   if (entry.startsWith("(pos)")) {
-      //     entry = `Statements viewed positively: ${entry.slice(6).trim()}`;
-      //   }
-      //   if (entry.startsWith("(neu)")) {
-      //     entry = `Statements viewed as neutral: ${entry.slice(6).trim()}`;
-      //   }
-      //   if (entry.startsWith("(neg)")) {
-      //     entry = `Statements viewed negatively: ${entry.slice(6).trim()}`;
-      //   }
       paragraphs.push(
         new Paragraph({
           children: [
-            // new TextRun({
-            //   text: statementNumber2,
-            //   bold: true,
-            // }),
             new TextRun({
               text: statement,
               bold: true,
@@ -104,6 +171,7 @@ const wordPostsort = (data: RecordMap): Paragraph[] => {
         })
       );
     });
+
     itemParagraphs.push(paragraphs);
   });
   return itemParagraphs;

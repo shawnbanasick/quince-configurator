@@ -5,13 +5,11 @@ const processCheckboxQuestion = (entry, question, index, indentValue) => {
   let addIndentValue = +indentValue + 200;
   let options = stripHtml(question.options);
   options = options.split(",");
-  console.log(options);
 
   let respondentResponse2: any = [];
   let response1 = stripHtml(entry);
   let response3 = response1.split(":");
   let response2 = response3[1].split(",");
-  console.log(response2);
 
   response2.forEach((value) => {
     let value2 = +value.trim();

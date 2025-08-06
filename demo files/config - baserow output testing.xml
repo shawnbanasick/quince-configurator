@@ -5,6 +5,7 @@
    <!-- GENERAL SETTINGS -->
    <!-- "setupTarget" options: netlify, firebase, local, email, or sheets -->
    <item id="studyTitle">Demo Project</item> 
+   <item id="creationDate">2025-7-27@10:54</item> 
    <item id="databaseOptions">Include_Google_Options</item>
    <item id="setupTarget">baserow</item>
    <item id="baserowToken">9mai4vZoWKfizfMebLLwHYXXg2FvBgzt</item>
