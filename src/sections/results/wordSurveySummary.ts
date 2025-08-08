@@ -5,6 +5,8 @@ import { processTextSummary } from "./surveySummary/processTextSummary";
 import { processTextareaSummary } from "./surveySummary/processTextareaSummary";
 import { processRadioSummary } from "./surveySummary/processRadioSummary";
 import { processSelectSummary } from "./surveySummary/processSelectSummary";
+import { processCheckboxSummary } from "./surveySummary/processCheckboxSummary";
+import { processRating2Summary } from "./surveySummary/processRating2Summary";
 
 type RecordMap = Record<string, any>;
 
@@ -27,11 +29,9 @@ const wordSurveySummary = (data: RecordMap, surveyQuestionsArray, partNames): Pa
   data.forEach((item) => {
     let surveyItems = filterByItemNum1(item);
     let keys = Object.keys(surveyItems);
-    console.log(keys);
     let tempObj = {};
     keys.forEach((key) => {
       let temp1 = surveyItems[key].split(":");
-      console.log(temp1[0], temp1[1]);
       let newKey = temp1[0];
       let newValue = temp1[1];
       tempObj[newKey] = newValue;
@@ -100,11 +100,29 @@ const wordSurveySummary = (data: RecordMap, surveyQuestionsArray, partNames): Pa
     }
 
     if (item.surveyQuestionType === "select") {
-      let text = "Selection Input";
+      let text = "Selection Input (multiple responses possible)";
       try {
         paragraphs.push(...processSelectSummary(filteredData, partNames, item, index, text));
       } catch (error) {
         console.error("Error processing Selection item:", error);
+      }
+    }
+
+    if (item.surveyQuestionType === "checkbox") {
+      let text = "Checkbox Input (multiple responses possible)";
+      try {
+        paragraphs.push(...processCheckboxSummary(filteredData, partNames, item, index, text));
+      } catch (error) {
+        console.error("Error processing Checkbox item:", error);
+      }
+    }
+
+    if (item.surveyQuestionType === "rating2") {
+      let text = "Rating2 Input";
+      try {
+        paragraphs.push(...processRating2Summary(filteredData, partNames, item, index, text));
+      } catch (error) {
+        console.error("Error processing Rating2 item:", error);
       }
     }
   });

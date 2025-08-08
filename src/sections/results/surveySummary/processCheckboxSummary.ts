@@ -185,7 +185,7 @@ const createOptionParagraphs = (
  * Processes radio button survey data and generates summary paragraphs
  * Supports multiple responses per entry
  */
-const processSelectSummary = (
+const processCheckboxSummary = (
   filteredData: DataEntry[],
   partNames: string[],
   item: SurveyItem,
@@ -236,4 +236,4 @@ const processSelectSummary = (
   return [...headerParagraphs, ...optionParagraphs];
 };
 
-export { processSelectSummary };
+export { processCheckboxSummary };
