@@ -25,10 +25,26 @@ interface ResponseStats {
     count: number;
     percentage: number;
   };
+  scaleOption3: {
+    label: string;
+    count: number;
+    percentage: number;
+  };
+  scaleOption4: {
+    label: string;
+    count: number;
+    percentage: number;
+  };
+  scaleOption5: {
+    label: string;
+    count: number;
+    percentage: number;
+  };
   noResponse: {
     count: number;
     percentage: number;
   };
+  average: number;
 }
 
 interface PositionCounts {
@@ -62,16 +78,25 @@ const countByPosition = (arr2D: any[][]): Map<string, number>[] => {
   return positionCounts;
 };
 
-function calculateScaleAverageGeneric(scaleData) {
+/**
+ * Calculates the average for a single question's responses
+ */
+function calculateQuestionAverage(questionStats: any): number {
   let totalWeightedSum = 0;
   let totalCount = 0;
 
-  scaleData.forEach((option) => {
+  // Get all scale option keys
+  const scaleKeys = Object.keys(questionStats).filter((key) => key.startsWith("scaleOption"));
+
+  scaleKeys.forEach((key) => {
+    const option = questionStats[key];
     const scaleValue = parseInt(option.label);
     const count = option.count;
 
-    totalWeightedSum += scaleValue * count;
-    totalCount += count;
+    if (!isNaN(scaleValue) && count > 0) {
+      totalWeightedSum += scaleValue * count;
+      totalCount += count;
+    }
   });
 
   return totalCount > 0 ? Math.round((totalWeightedSum / totalCount) * 100) / 100 : 0;
@@ -116,7 +141,7 @@ const parseQuestions = (optionsString: string): string[] => {
  * Parses scale labels
  */
 const parseScaleLabels = (scaleString?: string): string[] => {
-  if (!scaleString) return ["Option 1", "Option 2"]; // Default labels
+  if (!scaleString) return ["1", "2", "3", "4", "5"]; // Default numeric labels
   return scaleString.split(";;;").filter(Boolean);
 };
 
@@ -180,38 +205,44 @@ const createQuestionStats = (
     const option5Count = counts["5"] || 0;
     const noResponseCount = counts["nr"] || 0;
 
-    return {
+    const stats = {
       question: stripHtml(question),
       scaleOption1: {
-        label: scaleLabels[0] || "Option 1",
+        label: scaleLabels[0] || "1",
         count: option1Count,
         percentage: calculatePercentage(option1Count, totalResponses),
       },
       scaleOption2: {
-        label: scaleLabels[1] || "Option 2",
+        label: scaleLabels[1] || "2",
         count: option2Count,
         percentage: calculatePercentage(option2Count, totalResponses),
       },
       scaleOption3: {
-        label: scaleLabels[2] || "Option 3",
-        count: option2Count,
+        label: scaleLabels[2] || "3",
+        count: option3Count,
         percentage: calculatePercentage(option3Count, totalResponses),
       },
       scaleOption4: {
-        label: scaleLabels[3] || "Option 4",
-        count: option2Count,
+        label: scaleLabels[3] || "4",
+        count: option4Count,
         percentage: calculatePercentage(option4Count, totalResponses),
       },
       scaleOption5: {
-        label: scaleLabels[4] || "Option 5",
-        count: option2Count,
+        label: scaleLabels[4] || "5",
+        count: option5Count,
         percentage: calculatePercentage(option5Count, totalResponses),
       },
       noResponse: {
         count: noResponseCount,
         percentage: calculatePercentage(noResponseCount, totalResponses),
       },
+      average: 0, // Will be calculated next
     };
+
+    // Calculate average for this question
+    stats.average = calculateQuestionAverage(stats);
+
+    return stats;
   });
 };
 
@@ -254,27 +285,9 @@ const createHeaderParagraphs = (item: SurveyItem, index: number, text: string): 
 const createQuestionParagraphs = (questionStats: ResponseStats[]): Paragraph[] => {
   const paragraphs: Paragraph[] = [];
 
-  console.log(JSON.stringify(questionStats, null, 2));
+  console.log("Question Statistics:", JSON.stringify(questionStats, null, 2));
 
   questionStats.forEach((stats, index) => {
-    // let keys =
-
-    console.log("stats", stats);
-
-    const scaleKeys = Object.keys(stats).filter((key) => key.startsWith("scale"));
-    console.log("stats", scaleKeys);
-
-    let totalWeightedSum = 0;
-    let totalCount = 0;
-    scaleKeys.forEach((item) => {
-      const scaleValue = parseInt(stats[item]["label"]);
-      const count = stats[item]["count"];
-      totalWeightedSum += scaleValue * count;
-      totalCount += count;
-    });
-
-    let average = totalCount > 0 ? Math.round((totalWeightedSum / totalCount) * 100) / 100 : 0;
-
     // Question statement paragraph
     paragraphs.push(
       new Paragraph({
@@ -289,58 +302,83 @@ const createQuestionParagraphs = (questionStats: ResponseStats[]): Paragraph[] =
       })
     );
 
-    // Scale Option 1 response
+    // Average paragraph
     paragraphs.push(
       new Paragraph({
         children: [
           new TextRun({
-            text: `${stats.scaleOption1.label}: `,
-            bold: false,
-          }),
-          new TextRun({
-            text: `Average: ${average.toFixed(1)} (${stats.scaleOption1.count})`,
-            bold: false,
+            text: `Average: ${stats.average.toFixed(1)}`,
+            bold: true,
           }),
         ],
         indent: { start: 400 }, // Double indent for responses
       })
     );
 
-    // Scale Option 2 response
+    // Response breakdown
     paragraphs.push(
       new Paragraph({
         children: [
           new TextRun({
-            text: `${stats.scaleOption2.label}: `,
-            bold: false,
-          }),
-          new TextRun({
-            text: `No Response : " (${stats.noResponse.count})`,
+            text: `Response Breakdown:`,
             bold: false,
           }),
         ],
         indent: { start: 400 },
-        spacing: { after: 200 }, // Space after each question group
       })
     );
 
+    // Individual scale responses
+    const scaleOptions = [
+      stats.scaleOption1,
+      stats.scaleOption2,
+      stats.scaleOption3,
+      stats.scaleOption4,
+      stats.scaleOption5,
+    ];
+
+    scaleOptions.forEach((option) => {
+      if (option.count > 0) {
+        paragraphs.push(
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: `${option.label}: ${option.count} responses (${option.percentage.toFixed(
+                  1
+                )}%)`,
+                bold: false,
+              }),
+            ],
+            indent: { start: 600 }, // Triple indent for individual responses
+          })
+        );
+      }
+    });
+
     // No Response
-    // paragraphs.push(
-    //   new Paragraph({
-    //     children: [
-    //       new TextRun({
-    //         text: `No Response: `,
-    //         bold: false,
-    //       }),
-    //       new TextRun({
-    //         text: `${stats.noResponse.percentage.toFixed(1)}% (${stats.noResponse.count})`,
-    //         bold: false,
-    //       }),
-    //     ],
-    //     indent: { start: 400 },
-    //     spacing: { after: 200 }, // Space after each question group
-    //   })
-    // );
+    if (stats.noResponse.count > 0) {
+      paragraphs.push(
+        new Paragraph({
+          children: [
+            new TextRun({
+              text: `No Response: ${stats.noResponse.count} (${stats.noResponse.percentage.toFixed(
+                1
+              )}%)`,
+              bold: false,
+            }),
+          ],
+          indent: { start: 600 },
+        })
+      );
+    }
+
+    // Space after each question group
+    paragraphs.push(
+      new Paragraph({
+        children: [new TextRun({ text: "" })],
+        spacing: { after: 200 },
+      })
+    );
   });
 
   return paragraphs;
@@ -348,7 +386,7 @@ const createQuestionParagraphs = (questionStats: ResponseStats[]): Paragraph[] =
 
 /**
  * Processes rating survey data and generates summary paragraphs
- * Handles multiple rating questions with binary scale responses
+ * Handles multiple rating questions with 5-point scale responses
  */
 const processRating5Summary = (
   filteredData: DataEntry[],
@@ -391,18 +429,15 @@ const processRating5Summary = (
       totalResponses
     );
 
-    // const average = calculateScaleAverageGeneric(questionStats[0]);
-    // console.log(average);
-
     // Log for debugging
     console.log(`Item ${index + 1} Rating Summary:`, {
       totalParticipants: totalResponses,
       questionsCount: questions.length,
       scaleLabels,
+      responseCounts,
       questionStats,
     });
 
-    console.log(questionStats[0]);
     // Generate document paragraphs
     const headerParagraphs = createHeaderParagraphs(item, index, text);
     const questionParagraphs = createQuestionParagraphs(questionStats);
