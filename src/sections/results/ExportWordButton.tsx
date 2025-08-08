@@ -8,6 +8,7 @@ import { wordPresort } from "./wordPresort";
 import { wordPostsort } from "./wordPostsort";
 import { wordSurvey } from "./wordSurvey";
 import { wordSorts } from "./wordSorts";
+import { wordPartStatements } from "./wordPartStatements";
 import { wordSurveySummary } from "./wordSurveySummary";
 import { useStore } from "../../GlobalState/useStore";
 import { getDocParagraphStyles } from "./getDocParagraphStyles";
@@ -17,10 +18,15 @@ import { getSection1Footers } from "./getSectionFooters";
 import { getSection1Properties } from "./getSection1Properties";
 import { createStatementNumArray } from "./createStatementNumArray";
 import { createRespondentArray } from "./createRespondentArray";
+import { calcNewHeaderArray } from "./calcNewHeaderArray";
+import { formatRawStatements } from "./formatRawStatements";
+import { getCurrentDateTime } from "./getCurrentDateTime";
 
 interface GlobalState {
   currentStatements: string[];
   studyTitle: string;
+  mapInputQsortPattern: number[];
+  surveyQuestionsArray: any[];
 }
 interface ExportWordButtonProps {
   userData?: any; // Replace `any` with a concrete type
@@ -29,18 +35,30 @@ interface ExportWordButtonProps {
 }
 
 const getCurrentStatements = (state: GlobalState) => state.currentStatements;
+const getMapInputQsortPattern = (state: GlobalState) => state.mapInputQsortPattern;
+const getSurveyQuestionsArray = (state: GlobalState) => state.surveyQuestionsArray;
 
 const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
+  const currentStatements = useStore(getCurrentStatements);
+  const mapInputQsortPattern = useStore(getMapInputQsortPattern);
+  const surveyQuestionsArray = useStore(getSurveyQuestionsArray);
   const { t } = useTranslation();
 
-  let data = props.userData;
-  const currentStatements = useStore(getCurrentStatements);
-  let array = currentStatements.split("\n");
-  array = array.filter((element) => element);
-  const numStatements = array.length;
-  let statementNumArray = createStatementNumArray(numStatements);
-  let respondentArray = createRespondentArray(data);
-  // let headerArray
+  const data = props.userData;
+  if (!data) {
+    return;
+  }
+
+  const projectName2 = data[0]["r1"].split("-");
+  const projectName = projectName2[0].slice(15).trim();
+
+  const newHeaderArray = calcNewHeaderArray(mapInputQsortPattern);
+  const statementsArray = formatRawStatements(currentStatements);
+  const numStatements = statementsArray.length;
+  const statementNumArray = createStatementNumArray(numStatements);
+  const respondentArray = createRespondentArray(data);
+  const dateTime = getCurrentDateTime();
+  let version = "1.0.0";
 
   const handleOnClick = () => {
     // if (!currentStatements) {
@@ -51,18 +69,19 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
     //   alert("Please load your config.xml file first");
     // }
 
-    let projectName = "temp1";
-    let version = "1.0.0";
-    let dateTime = "August 2, 2025";
+    // let projectName = "temp1";
 
     let displayPartId = props.participantIdent;
-    console.log("bbb", JSON.stringify(displayPartId));
-
-    console.log(JSON.stringify(data[0], null, 2));
-
-    let childArray5 = wordSurvey(data);
+    let childArray5 = wordSurvey(data, surveyQuestionsArray);
     let childArray4 = wordPostsort(data, currentStatements);
-    let childArray3b = wordSorts(data, props.partNames, statementNumArray, respondentArray);
+    let childArray3b = wordSorts(
+      data,
+      props.partNames,
+      statementNumArray,
+      respondentArray,
+      newHeaderArray,
+      mapInputQsortPattern
+    );
     let childArray3 = wordPresort(data);
     let childArray2 = wordTime(data);
     let childArray1 = wordId(
@@ -75,8 +94,15 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
       displayPartId,
       numStatements
     );
+    let statementsArray = wordPartStatements(
+      data,
+      newHeaderArray,
+      mapInputQsortPattern,
+      currentStatements,
+      [...props.partNames]
+    );
+    let summaryArray = wordSurveySummary(data, surveyQuestionsArray, [...props.partNames]);
 
-    let summaryArray = wordSurveySummary(data);
     // childArray1.forEach((item, index) => {
     //     item = [...item, ...childArray2[index]]
     // })
@@ -94,15 +120,8 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
           headers: getSection1Headers(projectName),
           footers: getSection1Footers(dateTime, version),
           // properties: {},
-          children: [...childArray1, ...summaryArray],
+          children: [...childArray1, ...statementsArray, ...summaryArray],
         },
-        // {
-        //   properties: getSection1Properties(),
-        //   headers: getSection1Headers(projectName),
-        //   footers: getSection1Footers(dateTime, version),
-        //   // properties: {},
-        //   children: [],
-        // },
       ],
     });
     Packer.toBlob(doc).then((blob) => {

@@ -5,10 +5,10 @@ const getSection1Footers = (dateTime, version) => {
     default: new Footer({
       children: [
         new Paragraph({
-          alignment: AlignmentType.CENTER,
+          alignment: AlignmentType.DISTRIBUTE,
           style: "bodyStyle1",
           children: [
-            new TextRun(`Quincy Configurator Version ${version}`.padEnd(25, " ")),
+            new TextRun(`Quincy Configurator v${version}`.padEnd(45, " ")),
             new TextRun(`${dateTime}`),
           ],
         }),

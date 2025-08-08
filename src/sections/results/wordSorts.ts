@@ -1,6 +1,6 @@
 import uniq from "lodash/uniq";
 import zip from "lodash/zip";
-import { Paragraph, HeadingLevel, UnderlineType, TextRun } from "docx";
+import { Paragraph, UnderlineType, TextRun } from "docx";
 // import calcMultiplierArrayT2 from "../../Input/Excel/excelLogic/calcMultiplierArrayT2";
 import isEqual from "lodash/isEqual";
 import i18n from "i18next";
@@ -24,23 +24,18 @@ const reorderByFirstColumn = (a, b) => {
   }
 };
 
-const translationObject = { partQsorts: "Participant Q-sorts" };
+// const translationObject = { partQsorts: "Participant Q-sorts" };
 
-const wordSorts = (data, partNames, statementNumArray, respondentArray2) => {
-  const thisMultiplierArray = useStore.getState().mapInputQsortPattern;
-  let allHeaderNumbersArray = [
-    -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,
-  ];
+const wordSorts = (
+  data,
+  partNames,
+  statementNumArray,
+  respondentArray2,
+  newHeaderArray,
+  mapInputQsortPattern
+) => {
+  //   thisMultiplierArray === mapInputQsortPattern;
   let indentValue = 200;
-
-  let newArray: number[] = [];
-  thisMultiplierArray.forEach((item, index) => {
-    if (item > 0) {
-      newArray.push(allHeaderNumbersArray[index]);
-    }
-  });
-
-  //   let respondentNames
 
   // new Paragraph({
   //   children: [
@@ -59,31 +54,24 @@ const wordSorts = (data, partNames, statementNumArray, respondentArray2) => {
   //   ];
 
   let newString = "";
-  const newArray2 = [...newArray];
-  for (let r = 0; r < newArray2.length; r++) {
-    if (newArray2[r] < 0) {
-      newString = newString + "| " + newArray2[r] + " ";
+  const newHeaderArray2 = [...newHeaderArray];
+  for (let r = 0; r < newHeaderArray2.length; r++) {
+    if (newHeaderArray2[r] < 0) {
+      newString = newString + "| " + newHeaderArray2[r] + " ";
     } else {
-      newString = newString + "|  " + newArray2[r] + " ";
+      newString = newString + "|  " + newHeaderArray2[r] + " ";
     }
   }
   newString = newString + "|";
 
-  console.log(newString);
-
   let unforcedParticipantNamesArray: string[] = [];
   let displayStringsArray: any[] = [];
 
-  //   if (mainDataObject !== undefined) {
   for (let m = 0; m < data.length; m++) {
     const generatedString: any[] = [];
-
     let respondentArray = respondentArray2[m];
 
-    // console.log(respondentArray);
-
     // let thisMultiplierArray2 = [...respondentArray].sort((a, b) => a - b);
-
     // to deal with unforced Q sorts - triangle shape may vary
     //   let thisMultiplierArray = calcMultiplierArrayT2([...thisMultiplierArray2]);
 
@@ -96,8 +84,7 @@ const wordSorts = (data, partNames, statementNumArray, respondentArray2) => {
     unforcedParticipantNamesArray.push(nameString);
     // }
 
-    let maxValue = Math.max(...thisMultiplierArray);
-
+    let maxValue = Math.max(...mapInputQsortPattern);
     let zippedArray2 = zip(statementNumArray, respondentArray);
     zippedArray2.sort(compareSecondColumn);
     let zippedArray = JSON.parse(JSON.stringify(zippedArray2));
@@ -109,7 +96,7 @@ const wordSorts = (data, partNames, statementNumArray, respondentArray2) => {
       // iterate pyramid height
       let textString = ``;
       let isMidRow = false;
-      for (let j = 0; j < newArray.length; j++) {
+      for (let j = 0; j < newHeaderArray.length; j++) {
         // iterate through cols
         let columnCheck = false;
         for (let k = 0; k < zippedArray.length; k++) {
@@ -117,7 +104,7 @@ const wordSorts = (data, partNames, statementNumArray, respondentArray2) => {
           let currentArray = zippedArray[k];
           let comparisonArray = zippedArray[k + 1];
           // if the sort value equals the col value
-          if (currentArray[1] === newArray[j]) {
+          if (currentArray[1] === newHeaderArray[j]) {
             // the comparison array is not undefined
             if (comparisonArray !== undefined) {
               // if the array is the last one
@@ -177,7 +164,6 @@ const wordSorts = (data, partNames, statementNumArray, respondentArray2) => {
           bold: true,
         }),
       ],
-      //   heading: HeadingLevel.HEADING_6,
       spacing: {
         after: 100,
         before: 500,
@@ -200,12 +186,9 @@ const wordSorts = (data, partNames, statementNumArray, respondentArray2) => {
         start: indentValue + 200,
       },
     });
-
     generatedString.push(p1, p2);
 
-    // console.log("test", JSON.stringify(paragraphStrings));
     // Q sort Paragraphs - Sort Values
-
     for (let jj = 0; jj < paragraphStrings.length; jj++) {
       let text;
       if (jj === paragraphStrings.length - 1) {

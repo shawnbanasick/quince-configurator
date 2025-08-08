@@ -13,9 +13,13 @@ import { processRating10Question } from "./processRating10Question";
 
 type RecordMap = Record<string, any>;
 
-const wordSurvey = (data: RecordMap): Paragraph[] => {
+const wordSurvey = (data: RecordMap, surveyQuestionsArray): Paragraph[] => {
   const workingData = cloneDeep(data);
-  const survey = useStore.getState().surveyQuestionsArray;
+  // const survey = useStore.getState().surveyQuestionsArray;
+
+  let survey = [...surveyQuestionsArray];
+  // console.log(JSON.stringify(surveyQuestionsArray));
+
   const indentValue = 300;
   const items = Array.isArray(workingData) ? workingData : [workingData];
 

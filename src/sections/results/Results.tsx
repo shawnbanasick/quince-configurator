@@ -7,7 +7,6 @@ import { ExportToZipButton } from "./ExportToZipButton";
 import { ExportWordButton } from "./ExportWordButton";
 import { useStore } from "../../globalState/useStore";
 import { extractPartNames } from "./extractPartNames";
-// import { handleSelectPartId } from "./handleSelectPartId";
 
 // const getDisplayMode = (state) => state.displayMode;
 
@@ -24,30 +23,30 @@ type State = {
   setSelectedPartId: any;
 };
 const getData = (state: State) => state.cleanedResults;
-// const getSurvey = (state: State) => state.surveyQuestionsArray;
 
 const Results: React.FC = () => {
   const data = useStore(getData);
-  // const survey = useStore(getSurvey);
   let names;
 
-  const nameArrays = extractPartNames(data);
+  console.log(JSON.stringify(data[0]));
   const { t } = useTranslation();
   const [selectedOutputOption, setSelectedOutputOption] = useState("kadeZip");
   const [selectedPartId, setSelectedPartId] = useState("randomId");
 
-  let randomIdArray = [...nameArrays[0]];
-  let partIdArray = [...nameArrays[1]];
-  let urlUsercodeArray = [...nameArrays[2]];
-
-  if (selectedPartId === "randomId") {
-    names = randomIdArray;
-  }
-  if (selectedPartId === "partId") {
-    names = partIdArray;
-  }
-  if (selectedPartId === "urlUsercode") {
-    names = urlUsercodeArray;
+  if (data) {
+    const nameArrays = extractPartNames(data);
+    let randomIdArray = [...nameArrays[0]];
+    let partIdArray = [...nameArrays[1]];
+    let urlUsercodeArray = [...nameArrays[2]];
+    if (selectedPartId === "randomId") {
+      names = randomIdArray;
+    }
+    if (selectedPartId === "partId") {
+      names = partIdArray;
+    }
+    if (selectedPartId === "urlUsercode") {
+      names = urlUsercodeArray;
+    }
   }
 
   const options = [
