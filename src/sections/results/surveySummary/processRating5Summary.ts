@@ -62,6 +62,21 @@ const countByPosition = (arr2D: any[][]): Map<string, number>[] => {
   return positionCounts;
 };
 
+function calculateScaleAverageGeneric(scaleData) {
+  let totalWeightedSum = 0;
+  let totalCount = 0;
+
+  scaleData.forEach((option) => {
+    const scaleValue = parseInt(option.label);
+    const count = option.count;
+
+    totalWeightedSum += scaleValue * count;
+    totalCount += count;
+  });
+
+  return totalCount > 0 ? Math.round((totalWeightedSum / totalCount) * 100) / 100 : 0;
+}
+
 /**
  * Rounds a number to specified decimal places
  */
@@ -160,6 +175,9 @@ const createQuestionStats = (
 
     const option1Count = counts["1"] || 0;
     const option2Count = counts["2"] || 0;
+    const option3Count = counts["3"] || 0;
+    const option4Count = counts["4"] || 0;
+    const option5Count = counts["5"] || 0;
     const noResponseCount = counts["nr"] || 0;
 
     return {
@@ -173,6 +191,21 @@ const createQuestionStats = (
         label: scaleLabels[1] || "Option 2",
         count: option2Count,
         percentage: calculatePercentage(option2Count, totalResponses),
+      },
+      scaleOption3: {
+        label: scaleLabels[2] || "Option 3",
+        count: option2Count,
+        percentage: calculatePercentage(option3Count, totalResponses),
+      },
+      scaleOption4: {
+        label: scaleLabels[3] || "Option 4",
+        count: option2Count,
+        percentage: calculatePercentage(option4Count, totalResponses),
+      },
+      scaleOption5: {
+        label: scaleLabels[4] || "Option 5",
+        count: option2Count,
+        percentage: calculatePercentage(option5Count, totalResponses),
       },
       noResponse: {
         count: noResponseCount,
@@ -221,7 +254,27 @@ const createHeaderParagraphs = (item: SurveyItem, index: number, text: string): 
 const createQuestionParagraphs = (questionStats: ResponseStats[]): Paragraph[] => {
   const paragraphs: Paragraph[] = [];
 
+  console.log(JSON.stringify(questionStats, null, 2));
+
   questionStats.forEach((stats, index) => {
+    // let keys =
+
+    console.log("stats", stats);
+
+    const scaleKeys = Object.keys(stats).filter((key) => key.startsWith("scale"));
+    console.log("stats", scaleKeys);
+
+    let totalWeightedSum = 0;
+    let totalCount = 0;
+    scaleKeys.forEach((item) => {
+      const scaleValue = parseInt(stats[item]["label"]);
+      const count = stats[item]["count"];
+      totalWeightedSum += scaleValue * count;
+      totalCount += count;
+    });
+
+    let average = totalCount > 0 ? Math.round((totalWeightedSum / totalCount) * 100) / 100 : 0;
+
     // Question statement paragraph
     paragraphs.push(
       new Paragraph({
@@ -245,7 +298,7 @@ const createQuestionParagraphs = (questionStats: ResponseStats[]): Paragraph[] =
             bold: false,
           }),
           new TextRun({
-            text: `${stats.scaleOption1.percentage.toFixed(1)}% (${stats.scaleOption1.count})`,
+            text: `Average: ${average.toFixed(1)} (${stats.scaleOption1.count})`,
             bold: false,
           }),
         ],
@@ -262,24 +315,7 @@ const createQuestionParagraphs = (questionStats: ResponseStats[]): Paragraph[] =
             bold: false,
           }),
           new TextRun({
-            text: `${stats.scaleOption2.percentage.toFixed(1)}% (${stats.scaleOption2.count})`,
-            bold: false,
-          }),
-        ],
-        indent: { start: 400 },
-      })
-    );
-
-    // No Response
-    paragraphs.push(
-      new Paragraph({
-        children: [
-          new TextRun({
-            text: `No Response: `,
-            bold: false,
-          }),
-          new TextRun({
-            text: `${stats.noResponse.percentage.toFixed(1)}% (${stats.noResponse.count})`,
+            text: `No Response : " (${stats.noResponse.count})`,
             bold: false,
           }),
         ],
@@ -287,6 +323,24 @@ const createQuestionParagraphs = (questionStats: ResponseStats[]): Paragraph[] =
         spacing: { after: 200 }, // Space after each question group
       })
     );
+
+    // No Response
+    // paragraphs.push(
+    //   new Paragraph({
+    //     children: [
+    //       new TextRun({
+    //         text: `No Response: `,
+    //         bold: false,
+    //       }),
+    //       new TextRun({
+    //         text: `${stats.noResponse.percentage.toFixed(1)}% (${stats.noResponse.count})`,
+    //         bold: false,
+    //       }),
+    //     ],
+    //     indent: { start: 400 },
+    //     spacing: { after: 200 }, // Space after each question group
+    //   })
+    // );
   });
 
   return paragraphs;
@@ -296,7 +350,7 @@ const createQuestionParagraphs = (questionStats: ResponseStats[]): Paragraph[] =
  * Processes rating survey data and generates summary paragraphs
  * Handles multiple rating questions with binary scale responses
  */
-const processRating2Summary = (
+const processRating5Summary = (
   filteredData: DataEntry[],
   partNames: string[],
   item: SurveyItem,
@@ -337,6 +391,9 @@ const processRating2Summary = (
       totalResponses
     );
 
+    // const average = calculateScaleAverageGeneric(questionStats[0]);
+    // console.log(average);
+
     // Log for debugging
     console.log(`Item ${index + 1} Rating Summary:`, {
       totalParticipants: totalResponses,
@@ -345,6 +402,7 @@ const processRating2Summary = (
       questionStats,
     });
 
+    console.log(questionStats[0]);
     // Generate document paragraphs
     const headerParagraphs = createHeaderParagraphs(item, index, text);
     const questionParagraphs = createQuestionParagraphs(questionStats);
@@ -369,4 +427,4 @@ const processRating2Summary = (
   }
 };
 
-export { processRating2Summary, type ResponseStats };
+export { processRating5Summary, type ResponseStats };
