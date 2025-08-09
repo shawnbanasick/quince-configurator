@@ -1,43 +1,23 @@
 import { HeadingLevel, Paragraph, TextRun } from "docx";
 import { cloneDeep } from "es-toolkit";
-import { useStore } from "../../GlobalState/useStore";
 
 type RecordMap = Record<string, any>;
 
 const wordPartStatements = (
   data: RecordMap,
   newHeaderArray2,
-  mapInputQsortPattern2,
   currentStatements,
   displayPartId
 ): Paragraph[] => {
   console.log(JSON.stringify(displayPartId));
 
   const workingData = cloneDeep(data);
-  //   const survey = useStore.getState().surveyQuestionsArray;
   const indentValue = 300;
   const dataItems = Array.isArray(workingData) ? workingData : [workingData];
   const itemParagraphs: any[] = [];
-  const mapInputQsortPattern = mapInputQsortPattern2.filter((num) => num !== 0);
-
   const statementsArray = currentStatements.split("\n");
 
-  //   const partSort3 = data[1]["r20"].split(":");
-  //   const partSort2 = partSort3[1].split("|");
-  //   const partSort: number[] = partSort2.map((str: string) => parseInt(str, 10));
-  //   const sortValueArray: any[] = [];
-  //   partSort.forEach((item, index) => {
-  //     let tempArray = [item, statementsArray[index]];
-  //     sortValueArray.push(tempArray);
-  //   });
-  //   const sortedSortValueArray = sortValueArray.sort(([a], [b]) => b - a);
-
   const newHeaderArray = [...newHeaderArray2].reverse();
-
-  console.log("333", JSON.stringify(mapInputQsortPattern));
-  console.log("333", JSON.stringify(newHeaderArray));
-  //   console.log("333", JSON.stringify(statementsArray));
-  //   console.log("333", JSON.stringify(sortedSortValueArray));
 
   // for each participant
   const paragraphs: Paragraph[] = [];
@@ -55,8 +35,6 @@ const wordPartStatements = (
       thematicBreak: true,
     })
   );
-
-  //   let newArray: Record<string, string>[] = [];
 
   dataItems.forEach((item: RecordMap, index) => {
     let partSort3 = data[index]["r20"].split(":");

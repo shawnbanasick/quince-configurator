@@ -94,18 +94,10 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
       displayPartId,
       numStatements
     );
-    let statementsArray = wordPartStatements(
-      data,
-      newHeaderArray,
-      mapInputQsortPattern,
-      currentStatements,
-      [...props.partNames]
-    );
+    let statementsArray = wordPartStatements(data, newHeaderArray, currentStatements, [
+      ...props.partNames,
+    ]);
     let summaryArray = wordSurveySummary(data, surveyQuestionsArray, [...props.partNames]);
-
-    // childArray1.forEach((item, index) => {
-    //     item = [...item, ...childArray2[index]]
-    // })
 
     const doc = new Document({
       compatibility: {

@@ -14,6 +14,7 @@ const processTextSummary = (
         new TextRun({
           text: `Item ${index + 1}.  ${text}`,
           bold: false,
+          size: 28,
         }),
       ],
       spacing: {
@@ -35,6 +36,9 @@ const processTextSummary = (
           bold: true,
         }),
       ],
+      indent: {
+        left: 200,
+      },
     }),
   ];
 

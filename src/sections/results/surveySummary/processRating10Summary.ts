@@ -311,6 +311,7 @@ const createHeaderParagraphs = (item: SurveyItem, index: number, text: string): 
         new TextRun({
           text: `Item ${index + 1}. ${text}`,
           bold: false,
+          size: 28,
         }),
       ],
       spacing: { before: 300 },
@@ -330,6 +331,9 @@ const createHeaderParagraphs = (item: SurveyItem, index: number, text: string): 
           bold: true,
         }),
       ],
+      indent: {
+        left: 200,
+      },
     }),
   ];
 };

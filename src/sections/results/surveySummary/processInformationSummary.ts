@@ -8,6 +8,7 @@ const processInformationSummary = (item: any, index: number, text: string) => {
         new TextRun({
           text: `Item ${index + 1}.  ${text}`,
           bold: false,
+          size: 28,
         }),
       ],
       spacing: {
