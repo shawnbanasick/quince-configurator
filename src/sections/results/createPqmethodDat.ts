@@ -7,7 +7,7 @@ interface MainDataItem {
 
 interface PQMethodDATParams {
   projectName: string;
-  sorts: number[];
+  sorts: number[][];
   numStatements: number;
   multiplierArray: any[];
   respondentNames: string[];
@@ -167,7 +167,7 @@ const createParticipantLines = (uniqueNames: string[], sortDataArray: string[]):
  */
 const createPQMethodDAT = (
   projectName: string,
-  sorts: number[],
+  sorts: number[][],
   numStatements: number,
   multiplierArray: any[],
   respondentNames: string[]
