@@ -8,6 +8,8 @@ import { processSelectSummary } from "./surveySummary/processSelectSummary";
 import { processCheckboxSummary } from "./surveySummary/processCheckboxSummary";
 import { processRating2Summary } from "./surveySummary/processRating2Summary";
 import { processRating5Summary } from "./surveySummary/processRating5Summary";
+import { processRating10Summary } from "./surveySummary/processRating10Summary";
+
 type RecordMap = Record<string, any>;
 
 const wordSurveySummary = (data: RecordMap, surveyQuestionsArray, partNames): Paragraph[] => {
@@ -132,6 +134,15 @@ const wordSurveySummary = (data: RecordMap, surveyQuestionsArray, partNames): Pa
         paragraphs.push(...processRating5Summary(filteredData, partNames, item, index, text));
       } catch (error) {
         console.error("Error processing Rating 5 item:", error);
+      }
+    }
+
+    if (item.surveyQuestionType === "rating10") {
+      let text = "Rating 10 Input";
+      try {
+        paragraphs.push(...processRating10Summary(filteredData, partNames, item, index, text));
+      } catch (error) {
+        console.error("Error processing Rating 10 item:", error);
       }
     }
   });

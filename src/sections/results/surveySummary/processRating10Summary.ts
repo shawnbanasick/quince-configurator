@@ -40,6 +40,31 @@ interface ResponseStats {
     count: number;
     percentage: number;
   };
+  scaleOption6: {
+    label: string;
+    count: number;
+    percentage: number;
+  };
+  scaleOption7: {
+    label: string;
+    count: number;
+    percentage: number;
+  };
+  scaleOption8: {
+    label: string;
+    count: number;
+    percentage: number;
+  };
+  scaleOption9: {
+    label: string;
+    count: number;
+    percentage: number;
+  };
+  scaleOption10: {
+    label: string;
+    count: number;
+    percentage: number;
+  };
   noResponse: {
     count: number;
     percentage: number;
@@ -141,7 +166,7 @@ const parseQuestions = (optionsString: string): string[] => {
  * Parses scale labels
  */
 const parseScaleLabels = (scaleString?: string): string[] => {
-  if (!scaleString) return ["1", "2", "3", "4", "5"]; // Default numeric labels
+  if (!scaleString) return ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]; // Default numeric labels 1-10
   return scaleString.split(";;;").filter(Boolean);
 };
 
@@ -203,6 +228,11 @@ const createQuestionStats = (
     const option3Count = counts["3"] || 0;
     const option4Count = counts["4"] || 0;
     const option5Count = counts["5"] || 0;
+    const option6Count = counts["6"] || 0;
+    const option7Count = counts["7"] || 0;
+    const option8Count = counts["8"] || 0;
+    const option9Count = counts["9"] || 0;
+    const option10Count = counts["10"] || 0;
     const noResponseCount = counts["nr"] || 0;
 
     const stats = {
@@ -231,6 +261,31 @@ const createQuestionStats = (
         label: scaleLabels[4] || "5",
         count: option5Count,
         percentage: calculatePercentage(option5Count, totalResponses),
+      },
+      scaleOption6: {
+        label: scaleLabels[5] || "6",
+        count: option6Count,
+        percentage: calculatePercentage(option6Count, totalResponses),
+      },
+      scaleOption7: {
+        label: scaleLabels[6] || "7",
+        count: option7Count,
+        percentage: calculatePercentage(option7Count, totalResponses),
+      },
+      scaleOption8: {
+        label: scaleLabels[7] || "8",
+        count: option8Count,
+        percentage: calculatePercentage(option8Count, totalResponses),
+      },
+      scaleOption9: {
+        label: scaleLabels[8] || "9",
+        count: option9Count,
+        percentage: calculatePercentage(option9Count, totalResponses),
+      },
+      scaleOption10: {
+        label: scaleLabels[9] || "10",
+        count: option10Count,
+        percentage: calculatePercentage(option10Count, totalResponses),
       },
       noResponse: {
         count: noResponseCount,
@@ -285,6 +340,8 @@ const createHeaderParagraphs = (item: SurveyItem, index: number, text: string): 
 const createQuestionParagraphs = (questionStats: ResponseStats[]): Paragraph[] => {
   const paragraphs: Paragraph[] = [];
 
+  console.log("Question Statistics:", JSON.stringify(questionStats, null, 2));
+
   questionStats.forEach((stats, index) => {
     // Question statement paragraph
     paragraphs.push(
@@ -333,6 +390,11 @@ const createQuestionParagraphs = (questionStats: ResponseStats[]): Paragraph[] =
       stats.scaleOption3,
       stats.scaleOption4,
       stats.scaleOption5,
+      stats.scaleOption6,
+      stats.scaleOption7,
+      stats.scaleOption8,
+      stats.scaleOption9,
+      stats.scaleOption10,
     ];
 
     scaleOptions.forEach((option) => {
@@ -386,7 +448,7 @@ const createQuestionParagraphs = (questionStats: ResponseStats[]): Paragraph[] =
  * Processes rating survey data and generates summary paragraphs
  * Handles multiple rating questions with 5-point scale responses
  */
-const processRating5Summary = (
+const processRating10Summary = (
   filteredData: DataEntry[],
   partNames: string[],
   item: SurveyItem,
@@ -460,4 +522,4 @@ const processRating5Summary = (
   }
 };
 
-export { processRating5Summary, type ResponseStats };
+export { processRating10Summary, type ResponseStats };
