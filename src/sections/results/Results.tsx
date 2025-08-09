@@ -49,6 +49,8 @@ const Results: React.FC = () => {
     }
   }
 
+  console.log("444", names);
+
   const options = [
     { value: "randomId", label: "Random Id" },
     { value: "partId", label: "Participant Id" },
@@ -109,7 +111,7 @@ const Results: React.FC = () => {
       </div>
       <div className="flex flex-row w-10/12 justify-center mt-4 mb-6">
         <ExportStaButton />
-        <ExportDatButton />
+        <ExportDatButton userData={data} partNames={names} />
         <ExportToZipButton userData={data} participantIdent={selectedPartId} />
         <ExportWordButton userData={data} participantIdent={selectedPartId} partNames={names} />
       </div>

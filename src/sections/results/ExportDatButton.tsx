@@ -2,22 +2,36 @@ import { useTranslation } from "react-i18next";
 import createPQMethodDAT from "./createPqmethodDat";
 import * as FileSaver from "file-saver";
 import { useStore } from "../../GlobalState/useStore";
-// import { cloneDeep } from 'es-toolkit';
 // import DatIcon from '../images/DAT_Icon.svg';
 
 const getProjectName = (state) => state.studyTitle;
 const getCleanedResults = (state) => state.cleanedResults;
+const getCurrentStatements = (state) => state.currentStatements;
+const getMapInputQsortPattern = (state) => state.mapInputQsortPattern;
 
-const ExportDatButton = () => {
+const ExportDatButton = (props) => {
   const { t } = useTranslation();
   const projectName = useStore(getProjectName);
   const results = useStore(getCleanedResults);
-  //   const mainDataObject2 = coreState((state) => state.mainDataObject);
-  //   const mainDataObject = cloneDeep(mainDataObject2);
-  //   const multiplierArray = coreState((state) => state.multiplierArray);
-  //   const projectName = coreState((state) => state.projectName);
-  //   const statements = coreState((state) => state.statements);
-  //   const respondentNames = coreState((state) => state.respondentNames);
+  const currentStatements2 = useStore(getCurrentStatements);
+  const mapInputQsortPattern = useStore(getMapInputQsortPattern);
+
+  if (!results) return;
+
+  const statementsArray = currentStatements2.split("\n").filter((line) => line.trim() !== "");
+  const respondentNames = props.partNames;
+
+  let multiplierArray: any[] = [...mapInputQsortPattern];
+  const numStatements = statementsArray.length;
+
+  let sorts: any[] = [];
+  results.forEach((item) => {
+    let prep1 = item["r20"].slice(5).trim();
+    let prep2 = prep1.split("|");
+    sorts.push(prep2.map((str) => +str));
+  });
+
+  // console.log(JSON.stringify(sorts));
 
   const handleOnClick = async () => {
     if (!projectName) {
@@ -29,19 +43,19 @@ const ExportDatButton = () => {
     console.log(JSON.stringify(results, null, 2));
 
     let datString = createPQMethodDAT(
-      projectName
-      //   mainDataObject,
-      //   multiplierArray,
-      //   statements.length,
-      //   respondentNames
+      projectName,
+      sorts,
+      numStatements,
+      multiplierArray, // Pass a single number, adjust index as needed
+      respondentNames
     );
 
-    console.log(datString);
+    console.log("555", datString);
 
-    // var blob = new Blob([datString], {
-    //   type: "text/plain;charset=ascii",
-    // });
-    // FileSaver.saveAs(blob, `${projectName.substring(0, 8)}.DAT`);
+    var blob = new Blob([datString], {
+      type: "text/plain;charset=ascii",
+    });
+    FileSaver.saveAs(blob, `${projectName.substring(0, 8)}.DAT`);
   };
 
   return (
