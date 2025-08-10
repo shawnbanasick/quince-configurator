@@ -128,8 +128,46 @@ const Results: React.FC = () => {
   const hasData = data && data.length > 0;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-8">
+    <div className="min-h-[100%] bg-gradient-to-br from-slate-50 to-blue-50 py-8">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-center mb-6">
+          <div className="w-20 h-20 bg-gradient-to-br from-blue-300 to-blue-500 rounded-2xl flex items-center justify-center shadow-lg">
+            <svg
+              className="w-[60px] h-[60px]"
+              viewBox="7 7 50 50"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {/* <!-- Chart container (taller and wider) --> */}
+              <rect
+                x="16"
+                y="10"
+                width="32"
+                height="44"
+                rx="3"
+                fill="#E0F2FE"
+                stroke="#0369A1"
+                stroke-width="1.5"
+              />
+
+              {/* <!-- Simplified bar chart --> */}
+              <rect x="20" y="38" width="4" height="12" fill="#38BDF8" />
+              <rect x="28" y="28" width="4" height="22" fill="#0EA5E9" />
+              <rect x="36" y="32" width="4" height="18" fill="#0369A1" />
+
+              {/* <!-- Q character --> */}
+              <circle cx="40" cy="18" r="4" fill="none" stroke="#0EA5E9" stroke-width="2" />
+              <line
+                x1="42.5"
+                y1="20.5"
+                x2="44.5"
+                y2="22.5"
+                stroke="#0EA5E9"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+        </div>
         {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">{t("extractResults")}</h1>

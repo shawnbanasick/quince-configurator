@@ -70,6 +70,11 @@ h6 {
   /* background-image: linear-gradient(to bottom right, #2563eb, #1d4ed8); */
   background-image: linear-gradient(to bottom right, #2b7fff, #155dfc);
   color: white; /* Active tab text color */
-  border-bottom: none;
+  border-bottom: none !important;
+  /* border-bottom: 0; */
   text-decoration: none;
+}
+
+.react-tabs__tab:focus:after {
+  content: none;
 }

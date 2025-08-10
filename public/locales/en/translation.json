@@ -458,5 +458,8 @@
   "linkingBtnText": "Linking Button Text",
 
   "*** RESULTS. ***": "***  RESULTS ***",
-  "selectParticipantIdentifier": "Select Participant Identifier"
+  "selectParticipantIdentifier": "Select Participant Identifier",
+  "extractResults": "Extract Results",
+  "processResultsText": "After finishing...",
+  "loadBaserowButtonOverText": "Load your Baserow results CSV file first."
 }
