@@ -45,14 +45,14 @@ export const MainPage = () => {
       <ToastContainer />
       <Tabs className="h-[98vh] w-[100%] p-2 ">
         <TabList>
-          <Tab>Welcome</Tab>
-          <Tab>1. Database</Tab>
-          <Tab>2. Settings / Questionnaire</Tab>
-          <Tab>3. Statements</Tab>
-          <Tab>4. Q Sort Design</Tab>
-          <Tab>5. Language</Tab>
-          <Tab>6. Web Host</Tab>
-          <Tab>7. Results</Tab>
+          <Tab>{t("welcome")}</Tab>
+          <Tab>1. {t("database")}</Tab>
+          <Tab>2. {t("settings")}</Tab>
+          <Tab>3. {t("statements")}</Tab>
+          <Tab>4. {t("qSortDesign")}</Tab>
+          <Tab>5. {t("userInterfaceLanguage")}</Tab>
+          <Tab>6. {t("webHost")}</Tab>
+          <Tab>7. {t("results")}</Tab>
         </TabList>
 
         <TabPanel className="flex flex-col justify-center">

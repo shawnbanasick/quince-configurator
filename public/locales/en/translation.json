@@ -6,6 +6,14 @@
   "lowerLimit": "Lower Limit",
   "yes": "Yes",
   "no": "No",
+  "welcome": "Welcome",
+  "database": "Database",
+  "settings": "Settings / Questionnaire",
+  "statements": "Statements",
+  "qSortDesign": "Q Sort Design",
+  "userInterfaceLanguage": "User Interface Language",
+  "webHost": "Web Host",
+  "results": "Results",
 
   "*** WELCOME ***": "*** WELCOME PAGE ***",
   "hello": "Hello",
@@ -187,7 +195,8 @@
   "databaseIntroText": "{{{b}}}Baserow{{{/b}}} is a free and open-source online database platform that allows you to create and manage databases without any coding knowledge. It provides a user-friendly interface for creating tables, adding fields, and managing data. Baserow also offers an API that can be used to connect your Quincy project to the database.",
 
   "*** DATABASE - BASEROW ***": "*** DATABASE - BASEROW ***",
-  "baserowStep1": "Create a new user account on Baserow by clicking on the 'Sign Up' button in the upper right corner of the page.",
+  "baserowIntro1": "Follow this visual guide to setup a database to store the Q sort results",
+  "baserowStep1": "Visit {{{u}}}{{{a href='https://baserow.io' rel='noopener noreferrer' target='_blank'}}}{{{strong}}}Baserow.io{{{/strong}}}{{{/a}}}{{{/u}}} and create a new account to get started with the setup process. Click on the 'Sign Up' button in the upper right corner of the page.",
   "baserowStep2": "Next, fill in the required information and click the 'Get Started' button.",
   "baserowStep3": "Click the 'Skip for now' button to bypass the data collection.",
   "baserowStep4": "Click the 'Skip for now' button to bypass the data collection.",
@@ -461,5 +470,6 @@
   "selectParticipantIdentifier": "Select Participant Identifier",
   "extractResults": "Extract Results",
   "processResultsText": "After finishing...",
-  "loadBaserowButtonOverText": "Load your Baserow results CSV file first."
+  "loadBaserowButtonOverText": "Load your Baserow results CSV file first.",
+  "beginExportProcess": ""
 }

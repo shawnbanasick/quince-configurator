@@ -66,9 +66,7 @@ h6 {
 }
 
 .react-tabs__tab--selected {
-  /* background-color: blue;  */
-  /* background-image: linear-gradient(to bottom right, #2563eb, #1d4ed8); */
-  background-image: linear-gradient(to bottom right, #2b7fff, #155dfc);
+  background-image: linear-gradient(to bottom right, #83cafe, #155dfc);
   color: white; /* Active tab text color */
   border-bottom: none !important;
   /* border-bottom: 0; */

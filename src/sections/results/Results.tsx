@@ -34,7 +34,6 @@ const Results: React.FC = () => {
   // Process participant names based on selection
   const getParticipantNames = (): string[] | undefined => {
     if (!data) return undefined;
-
     const nameArrays = extractPartNames(data);
     const [randomIdArray, partIdArray, urlUsercodeArray] = nameArrays;
 
@@ -180,7 +179,9 @@ const Results: React.FC = () => {
         <div className="bg-white rounded-2xl shadow-xl p-1 mb-8 border border-gray-100">
           <div className="flex flex-col justify-center items-center mt-2 mb-1 text-center">
             {/* <h2 className="text-2xl font-semibold text-gray-900 mb-2">Load Data</h2> */}
-            <p className="text-gray-600">Load your Baserow results data to begin analysis</p>
+            <p className="text-gray-600">
+              Load your Baserow results data to begin the export process
+            </p>
             <ResultsUploadButton />
           </div>
         </div>
@@ -197,7 +198,7 @@ const Results: React.FC = () => {
                 </div>
                 <div className="text-center p-6 bg-green-50 rounded-xl">
                   <div className="text-3xl font-bold text-green-600 mb-2">{names?.length || 0}</div>
-                  <div className="text-sm text-gray-600">Unique Participants</div>
+                  <div className="text-sm text-gray-600">Load Settings Files</div>
                 </div>
                 <div className="text-center p-6 bg-purple-50 rounded-xl">
                   <div className="text-3xl font-bold text-purple-600 mb-2">Ready</div>
@@ -230,18 +231,6 @@ const Results: React.FC = () => {
                     />
                   ))}
                 </div>
-
-                {/* <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-                  <p className="text-sm text-gray-600">
-                    <span className="font-medium">Selected:</span>{" "}
-                    {participantOptions.find((opt) => opt.value === selectedPartId)?.label}
-                  </p>
-                  {names && (
-                    <p className="text-sm text-gray-500 mt-1">
-                      <span className="font-medium">Count:</span> {names.length} participants
-                    </p>
-                  )}
-                </div> */}
               </div>
 
               {/* Output Format Selection */}
@@ -332,7 +321,7 @@ const Results: React.FC = () => {
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-2">No Data Available</h3>
             <p className="text-gray-600 mb-6 max-w-md mx-auto">
-              Please load your Baserow CSV data file to begin the analysis and export process.
+              Please load your Baserow CSV data file to begin the export process.
             </p>
           </div>
         )}

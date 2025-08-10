@@ -183,38 +183,17 @@ const Baserow: React.FC = () => {
             <div className="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center font-bold text-lg">
               {step.id}
             </div>
-            {/* <h3 className="text-xl font-semibold">Step {step.id}</h3> */}
             <div>{langArray[index]}</div>
           </div>
         </div>
 
         {/* Step Content */}
         <div className="p-6">
-          <div className="text-gray-700 leading-relaxed mb-6">
-            {isFirst && step.id === 1 ? (
-              <div>
-                Visit{" "}
-                <a
-                  className="text-blue-600 underline underline-offset-2 decoration-2 decoration-blue-300 hover:decoration-blue-500 font-medium transition-colors"
-                  href="https://baserow.io"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <strong>Baserow.io</strong>
-                </a>{" "}
-                and create a new account or log in to your existing account to get started with the
-                setup process.
-              </div>
-            ) : (
-              <div />
-            )}
-          </div>
-
           {/* Image Container */}
-          <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
+          <div className="flex justify-center items-center bg-gray-50 rounded-xl p-4 border border-gray-200">
             <img
               src={step.image}
-              className="w-full max-w-full h-auto rounded-lg shadow-md border border-gray-300"
+              className="w-auto max-w-[500px]  max-h-[500px] rounded-lg shadow-md border border-gray-300"
               style={{ maxWidth: step.imageWidth ? `${step.imageWidth}px` : "none" }}
               alt={step.imageAlt}
               loading="lazy"
@@ -224,34 +203,6 @@ const Baserow: React.FC = () => {
       </div>
     );
   };
-
-  // const ProgressIndicator: React.FC<{ currentStep: number; totalSteps: number }> = ({
-  //   currentStep,
-  //   totalSteps,
-  // }) => (
-  //   <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200 sticky top-8">
-  //     <h3 className="text-lg font-semibold text-gray-900 mb-4">Setup Progress</h3>
-  //     <div className="space-y-3">
-  //       <div className="flex justify-between text-sm text-gray-600">
-  //         <span>
-  //           Step {currentStep} of {totalSteps}
-  //         </span>
-  //         <span>{Math.round((currentStep / totalSteps) * 100)}%</span>
-  //       </div>
-  //       <div className="w-full bg-gray-200 rounded-full h-2">
-  //         <div
-  //           className="bg-gradient-to-r from-blue-500 to-blue-600 h-2 rounded-full transition-all duration-300"
-  //           style={{ width: `${(currentStep / totalSteps) * 100}%` }}
-  //         ></div>
-  //       </div>
-  //     </div>
-  //     <div className="mt-4 text-xs text-gray-500">
-  //       Follow each step carefully to complete the Baserow setup process.
-  //         {description}
-
-  //     </div>
-  //   </div>
-  // );
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-8">
@@ -277,8 +228,7 @@ const Baserow: React.FC = () => {
           </div>
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Baserow Setup Process</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Follow this comprehensive guide to set up your Baserow database for Q-methodology
-            research.
+            {t("baserowIntro1")}
           </p>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mt-4">
             {" "}
