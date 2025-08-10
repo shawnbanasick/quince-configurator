@@ -50,12 +50,20 @@ const ResultsUploadButton: React.FC = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-2">
       <button
         onClick={handleButtonClick}
-        className="w-80 px-6 p-2 bg-orange-300 text-black font-semibold rounded-md hover:opacity-50 focus:outline-none focus:ring-2 border-2 border-gray-600 focus:ring-orange-400 focus:ring-opacity-75 text-center min-h-[70px] select-none"
+        className="flex flex-row items-center min-w-[200px] gap-3 cursor-pointer bg-orange-300 hover:opacity-50 border-2 border-gray-600 rounded-md p-3"
       >
-        Upload CSV
+        <svg className="max-w-[30px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+          />
+        </svg>
+        Load Results File
       </button>
       <input
         type="file"

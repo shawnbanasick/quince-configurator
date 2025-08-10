@@ -31,7 +31,7 @@ interface GlobalState {
 interface ExportWordButtonProps {
   userData?: any; // Replace `any` with a concrete type
   participantIdent?: string;
-  partNames: string[];
+  partNames: string[] | undefined;
 }
 
 const getCurrentStatements = (state: GlobalState) => state.currentStatements;

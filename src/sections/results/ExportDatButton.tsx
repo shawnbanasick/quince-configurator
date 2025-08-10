@@ -17,7 +17,8 @@ interface ResultItem {
 }
 
 interface ExportDatButtonProps {
-  partNames: string[];
+  partNames: string[] | undefined;
+  userData: string[];
 }
 
 // Selector functions with proper typing

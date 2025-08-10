@@ -64,3 +64,12 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+.react-tabs__tab--selected {
+  /* background-color: blue;  */
+  /* background-image: linear-gradient(to bottom right, #2563eb, #1d4ed8); */
+  background-image: linear-gradient(to bottom right, #2b7fff, #155dfc);
+  color: white; /* Active tab text color */
+  border-bottom: none;
+  text-decoration: none;
+}

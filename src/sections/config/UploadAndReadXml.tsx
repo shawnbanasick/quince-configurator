@@ -28,8 +28,7 @@ const getSetNumImages = (state) => state.setNumImages;
 const getSetImageFileType = (state) => state.setImageFileType;
 const getSetImageFormat = (state) => state.setImageFormat;
 const getSetShowConsentPage = (state) => state.setShowConsentPage;
-const getSetShowConsentPageHelpModal = (state) =>
-  state.setShowConsentPageHelpModal;
+const getSetShowConsentPageHelpModal = (state) => state.setShowConsentPageHelpModal;
 const getSetInitialScreen = (state) => state.setInitialScreen;
 const getSetAccessCode = (state) => state.setAccessCode;
 const getSetHeaderBarColor = (state) => state.setHeaderBarColor;
@@ -47,10 +46,8 @@ const getSetShowPostsort = (state) => state.setShowPostsort;
 const getSetShowSecondPosColumn = (state) => state.setShowSecondPosColumn;
 const getSetShowSecondNegColumn = (state) => state.setShowSecondNegColumn;
 const getSetShowBackButton = (state) => state.setShowBackButton;
-const getSetPostsortCommentsRequired = (state) =>
-  state.setPostsortCommentsRequired;
-const getSetDefaultFontSizePostsort = (state) =>
-  state.setDefaultFontSizePostsort;
+const getSetPostsortCommentsRequired = (state) => state.setPostsortCommentsRequired;
+const getSetDefaultFontSizePostsort = (state) => state.setDefaultFontSizePostsort;
 const getSetMinCardHeightPostsort = (state) => state.setMinCardHeightPostsort;
 const getSetShowSurvey = (state) => state.setShowSurvey;
 const getSetSurveyQuestionsArray = (state) => state.setSurveyQuestionsArray;
@@ -96,9 +93,7 @@ const UploadAndParseXML: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [surveyQuestArray, setSurveyQuestArray] = useState<QuestObjType[]>([]);
 
-  const handleFileUpload = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ): void => {
+  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const file = event.target.files?.[0];
     if (file) {
       const reader = new FileReader();
@@ -229,11 +224,7 @@ const UploadAndParseXML: React.FC = () => {
             if (questType === "text") {
               questObj.limited = inputObj[0].attributes?.limited;
               let inputLenVal = inputObj[0].attributes?.maxlength;
-              if (
-                inputLenVal === null ||
-                inputLenVal === undefined ||
-                isNaN(inputLenVal)
-              ) {
+              if (inputLenVal === null || inputLenVal === undefined || isNaN(inputLenVal)) {
                 questObj.maxlength = inputObj[0].attributes?.limitLength;
               } else {
                 questObj.maxlength = inputObj[0].attributes?.maxlength;
@@ -265,11 +256,7 @@ const UploadAndParseXML: React.FC = () => {
               questObj.options = inputObj[0]?.value;
               questObj.note = inputObj[2]?.value;
             }
-            if (
-              questType === "rating2" ||
-              questType === "rating5" ||
-              questType === "rating10"
-            ) {
+            if (questType === "rating2" || questType === "rating5" || questType === "rating10") {
               questObj.scale = inputObj[0].attributes?.scale;
             }
             surveyQuestArray.push(questObj);
@@ -289,11 +276,19 @@ const UploadAndParseXML: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center mt-2">
+    <div className="flex items-center justify-center mt-2">
       <label
-        className="cursor-pointer bg-orange-300 hover:opacity-50 border-2 border-gray-600 rounded-md p-2"
+        className="flex flex-row gap-3 min-w-[250px] cursor-pointer bg-orange-300 hover:opacity-50 border-2 border-gray-600 rounded-md p-2"
         htmlFor="uploadXml"
       >
+        <svg className="max-w-[30px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+          />
+        </svg>
         {t("uploadXmlConfigFile")}
       </label>
       <input
