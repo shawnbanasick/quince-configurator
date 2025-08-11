@@ -281,99 +281,98 @@ const Results: React.FC = () => {
               </div>
             </div>
 
-            {/* Configuration Section */}
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
-              {/* Participant Identifier Selection */}
+            {/* Configuration Section - Only show when numLoadedFiles === 4 */}
+            {numLoadedFiles === 4 && (
+              <div className="grid md:grid-cols-2 gap-8 mb-8">
+                {/* Participant Identifier Selection */}
+                <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+                  <div className="mb-6">
+                    <h2 className="text-2xl font-semibold text-gray-900 mb-2">
+                      {t("selectParticipantIdentifier")}
+                    </h2>
+                    <p className="text-gray-600">
+                      Choose how participants should be identified in exports
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col space-y-4">
+                    {participantOptions.map((option) => (
+                      <OptionButton
+                        key={option.value}
+                        option={option}
+                        isSelected={selectedPartId === option.value}
+                        onClick={() => setSelectedPartId(option.value)}
+                        isFormat={false}
+                      />
+                    ))}
+                  </div>
+                </div>
+
+                {/* Output Format Selection */}
+                <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+                  <div className="mb-6">
+                    <h2 className="text-2xl font-semibold text-gray-900 mb-2">Output Format</h2>
+                    <p className="text-gray-600">Select your preferred export format</p>
+                  </div>
+
+                  <div className="space-y-6">
+                    {outputOptions.map((option) => (
+                      <OptionButton
+                        key={option.value}
+                        option={option}
+                        isSelected={selectedOutputOption === option.value}
+                        onClick={() => setSelectedOutputOption(option.value)}
+                        isFormat={true}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Export Actions Section - Only show when numLoadedFiles === 4 */}
+            {numLoadedFiles === 4 && (
               <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-                <div className="mb-6">
-                  <h2 className="text-2xl font-semibold text-gray-900 mb-2">
-                    {t("selectParticipantIdentifier")}
-                  </h2>
-                  <p className="text-gray-600">
-                    Choose how participants should be identified in exports
-                  </p>
+                <div className="text-center mb-8">
+                  <h2 className="text-2xl font-semibold text-gray-900 mb-2">Export Files</h2>
+                  <p className="text-gray-600">Download your processed data in various formats</p>
                 </div>
 
-                <div className="flex flex-col space-y-4">
-                  {participantOptions.map((option) => (
-                    <OptionButton
-                      key={option.value}
-                      option={option}
-                      isSelected={selectedPartId === option.value}
-                      onClick={() => setSelectedPartId(option.value)}
-                      isFormat={false}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  <div className="flex flex-col items-center space-y-2">
+                    <ExportStaButton />
+                    <span className="text-sm text-gray-500 text-center">
+                      Statements file for analysis
+                    </span>
+                  </div>
+
+                  <div className="flex flex-col items-center space-y-2">
+                    <ExportDatButton userData={data} partNames={names} />
+                    <span className="text-sm text-gray-500 text-center">
+                      Data file for PQMethod
+                    </span>
+                  </div>
+
+                  <div className="flex flex-col items-center space-y-2">
+                    <ExportToZipButton userData={data} participantIdent={selectedPartId} />
+                    <span className="text-sm text-gray-500 text-center">
+                      Complete analysis package
+                    </span>
+                  </div>
+
+                  <div className="flex flex-col items-center space-y-2">
+                    <ExportWordButton
+                      userData={data}
+                      participantIdent={selectedPartId}
+                      partNames={names}
                     />
-                  ))}
+                    <span className="text-sm text-gray-500 text-center">
+                      Formatted report document
+                    </span>
+                  </div>
                 </div>
               </div>
-
-              {/* Output Format Selection */}
-              <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-                <div className="mb-6">
-                  <h2 className="text-2xl font-semibold text-gray-900 mb-2">Output Format</h2>
-                  <p className="text-gray-600">Select your preferred export format</p>
-                </div>
-
-                <div className="space-y-6">
-                  {outputOptions.map((option) => (
-                    <OptionButton
-                      key={option.value}
-                      option={option}
-                      isSelected={selectedOutputOption === option.value}
-                      onClick={() => setSelectedOutputOption(option.value)}
-                      isFormat={true}
-                    />
-                  ))}
-                </div>
-
-                {/* <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-                  <p className="text-sm text-gray-600">
-                    <span className="font-medium">Selected:</span>{" "}
-                    {outputOptions.find((opt) => opt.value === selectedOutputOption)?.label}
-                  </p>
-                </div> */}
-              </div>
-            </div>
-
-            {/* Export Actions Section */}
-            <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-              <div className="text-center mb-8">
-                <h2 className="text-2xl font-semibold text-gray-900 mb-2">Export Files</h2>
-                <p className="text-gray-600">Download your processed data in various formats</p>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div className="flex flex-col items-center space-y-2">
-                  <ExportStaButton />
-                  <span className="text-sm text-gray-500 text-center">
-                    Statements file for analysis
-                  </span>
-                </div>
-
-                <div className="flex flex-col items-center space-y-2">
-                  <ExportDatButton userData={data} partNames={names} />
-                  <span className="text-sm text-gray-500 text-center">Data file for PQMethod</span>
-                </div>
-
-                <div className="flex flex-col items-center space-y-2">
-                  <ExportToZipButton userData={data} participantIdent={selectedPartId} />
-                  <span className="text-sm text-gray-500 text-center">
-                    Complete analysis package
-                  </span>
-                </div>
-
-                <div className="flex flex-col items-center space-y-2">
-                  <ExportWordButton
-                    userData={data}
-                    participantIdent={selectedPartId}
-                    partNames={names}
-                  />
-                  <span className="text-sm text-gray-500 text-center">
-                    Formatted report document
-                  </span>
-                </div>
-              </div>
-            </div>
+            )}
           </div>
         ) : (
           /* No Data State */
