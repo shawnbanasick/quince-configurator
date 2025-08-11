@@ -8,6 +8,11 @@ const createResultsSlice = (set) => ({
   isMapXmlLoaded: false,
   isLanguageXmlLoaded: false,
 
+  hasResultsFileBeenLoaded: false,
+
+  setHasResultsFileBeenLoaded: (Boolean) => {
+    set(() => ({ hasResultsFileBeenLoaded: Boolean }));
+  },
   setIsConfigXmlLoaded: (Boolean) => {
     set(() => ({ isConfigXmlLoaded: Boolean }));
   },

@@ -281,7 +281,7 @@ const UploadAndParseXML: React.FC = () => {
   return (
     <div className="flex items-center justify-center mt-2">
       <label
-        className="flex flex-row gap-3 min-w-[420px] items-center justify-center cursor-pointer bg-orange-300 hover:opacity-50 border-2 border-gray-600 rounded-md p-2"
+        className="flex flex-row gap-3 min-w-[500px] items-center justify-center cursor-pointer bg-orange-300 hover:opacity-50 border border-gray-600 rounded-md p-2"
         htmlFor="uploadXml"
       >
         <svg className="max-w-[30px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">

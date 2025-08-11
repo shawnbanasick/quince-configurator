@@ -122,13 +122,13 @@ const ExportDatButton: React.FC<ExportDatButtonProps> = ({ partNames }) => {
   return (
     <button
       onClick={handleExport}
-      className="min-w-[180px] mr-5 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white py-2 px-4 rounded transition-colors duration-200"
+      className="min-w-[180px] bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white py-2 rounded transition-colors duration-200"
       disabled={!projectName || !results?.length}
       type="button"
       aria-label={t("downloadDatFile")}
     >
       <div className="flex flex-row justify-center items-center w-full h-full">
-        <span className="text-sm font-medium">{t("downloadDatFile")}</span>
+        <span className="text-sm">{t("downloadDatFile")}</span>
       </div>
     </button>
   );

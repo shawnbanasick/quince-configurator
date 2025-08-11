@@ -26,11 +26,11 @@ const DownloadConfigXml: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center mt-2">
       <button
-        className="flex flex-row  gap-2 cursor-pointer bg-orange-300 hover:opacity-50 border-2 border-gray-600 rounded-md p-2"
+        className="flex flex-row  gap-2 cursor-pointer bg-orange-300 hover:opacity-50 border border-gray-600 rounded-md p-2"
         id="downloadXml"
         onClick={handleFileDownload}
       >
-        <div className="flex flex-row items-center justify-center min-w-[420px] gap-2">
+        <div className="flex flex-row items-center justify-center min-h-[30px] min-w-[500px] gap-2">
           <svg className="max-w-[30px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
               strokeLinecap="round"

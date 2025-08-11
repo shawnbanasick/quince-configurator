@@ -21,7 +21,7 @@ const DownloadLanguageXml: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center">
       <button
-        className="cursor-pointer font-semibold bg-orange-300 hover:bg-orange-500 border-2 border-gray-600 rounded-md p-2"
+        className="w-[500px] cursor-pointer font-semibold bg-orange-300 hover:bg-orange-500 border border-gray-600 rounded-md p-2"
         id="downloadXml"
         onClick={handleFileDownload}
       >

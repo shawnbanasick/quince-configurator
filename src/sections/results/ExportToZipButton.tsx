@@ -120,12 +120,12 @@ const ExportToZipButton = (props) => {
   return (
     <button
       onClick={handleOnClick}
-      className="min-w-[180px] mr-5 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded"
+      className="min-w-[180px] bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded"
     >
       <div className="flex flex-row justify-center items-center w-full h-full">
-        <div className="flex justify-center items-center mx-2">
-          {/* <img src={DatIcon} height="50px" alt="CSV Icon" /> */}
-        </div>
+        {/*<div className="flex justify-center items-center mx-2">
+           <img src={DatIcon} height="50px" alt="CSV Icon" /> 
+        </div>*/}
         <p>{t("downloadZipFile")}</p>
       </div>
     </button>

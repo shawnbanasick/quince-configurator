@@ -6,13 +6,18 @@ import { useTranslation } from "react-i18next";
 type CsvRow = Record<string, string>;
 const getSetCleanedResults = (state) => state.setCleanedResults;
 const getSetRawData = (state) => state.setRawData;
+const getSetHasResultsFileBeenLoaded = (state) => state.setHasResultsFileBeenLoaded;
+const getHasResultsFileBeenLoaded = (state) => state.hasResultsFileBeenLoaded;
 
 const ResultsUploadButton: React.FC = () => {
   const { t } = useTranslation();
   const setCleanedResults = useStore(getSetCleanedResults);
   const setRawData = useStore(getSetRawData);
+  const setHasResultsFileBeenLoaded = useStore(getSetHasResultsFileBeenLoaded);
+  const hasResultsFileBeenLoaded = useStore(getHasResultsFileBeenLoaded);
+
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const [hasFileLoaded, setHasFileLoaded] = useState(false);
+  // const [hasFileLoaded, setHasFileLoaded] = useState(false);
 
   // const [data, setData] = useState<CsvRow[]>([]);
 
@@ -41,7 +46,7 @@ const ResultsUploadButton: React.FC = () => {
           // setData(cleanedData);
           setRawData(cleanedData);
           setCleanedResults(cleanedData);
-          setHasFileLoaded(true);
+          setHasResultsFileBeenLoaded(true);
           console.log("CSV contents:\n", JSON.stringify(cleanedData, null, 2));
         },
       });
@@ -58,8 +63,8 @@ const ResultsUploadButton: React.FC = () => {
     <div className="p-2">
       <button
         onClick={handleButtonClick}
-        className={`flex flex-row items-center justify-center min-w-[200px] gap-3 cursor-pointer ${
-          hasFileLoaded ? "bg-green-600 text-white" : "bg-orange-300"
+        className={`flex flex-row items-center justify-center min-w-[300px] gap-3 cursor-pointer ${
+          hasResultsFileBeenLoaded ? "bg-green-600 text-white" : "bg-orange-300"
         }  hover:opacity-50 border border-gray-900 rounded-md p-3`}
       >
         <svg className="max-w-[30px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -70,7 +75,7 @@ const ResultsUploadButton: React.FC = () => {
             d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
           />
         </svg>
-        {hasFileLoaded ? t("resultsFileLoaded") : t("loadResultsButtonText")}
+        {hasResultsFileBeenLoaded ? t("resultsFileLoaded") : t("loadResultsButtonText")}
       </button>
       <input
         type="file"

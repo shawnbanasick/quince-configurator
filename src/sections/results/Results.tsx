@@ -7,6 +7,8 @@ import { ExportToZipButton } from "./ExportToZipButton";
 import { ExportWordButton } from "./ExportWordButton";
 import { useStore } from "../../globalState/useStore";
 import { extractPartNames } from "./extractPartNames";
+import { decodeHTML } from "../utils/decodeHTML.ts";
+import ReactHtmlParser from "html-react-parser";
 
 // Type definitions
 interface State {
@@ -75,17 +77,17 @@ const Results: React.FC = () => {
   const participantOptions: Option[] = [
     {
       value: "randomId",
-      label: "Random ID",
+      label: `${t("randomIdButtonLabel")}`,
       description: "System-generated unique identifiers",
     },
     {
       value: "partId",
-      label: "Participant ID",
+      label: `${t("partIdButtonLabel")}`,
       description: "Custom participant identifiers",
     },
     {
       value: "urlUsercode",
-      label: "URL User Code",
+      label: `${t("urlUsercodeButtonLabel")}`,
       description: "URL-based user identification codes",
     },
   ];
@@ -93,13 +95,13 @@ const Results: React.FC = () => {
   const outputOptions: Option[] = [
     {
       value: "kadeZip",
-      label: "KADE Zip File",
-      description: "Complete analysis package for KADE software",
+      label: `${t("kadeButtonLabel")}`,
+      description: `${t("kadeButtonSubLabel")}`,
     },
     {
       value: "pqMethod",
-      label: "PQMethod Files",
-      description: "Individual files compatible with PQMethod",
+      label: `${t("pqmethodButtonLabel")}`,
+      description: `${t("pqmethodButtonSubLabel")}`,
     },
   ];
 
@@ -221,13 +223,13 @@ const Results: React.FC = () => {
               <h2 className="text-2xl font-semibold text-gray-900 mb-6">{t("fileStatus")}</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="text-center p-6 bg-blue-50 rounded-xl">
-                  <div className="text-3xl font-bold text-blue-600 mb-2">{projectNameText}</div>
+                  <div className="text-2xl font-bold text-blue-600 mb-2">{projectNameText}</div>
                   <div className="text-sm text-gray-600">
                     {data.length} {t("totalResponses")}
                   </div>
                 </div>
                 <div className="text-center p-6 bg-green-50 rounded-xl">
-                  <div className="text-3xl font-bold text-green-600 mb-2">
+                  <div className="text-2xl font-bold text-green-600 mb-2">
                     {numLoadedFiles || 0} {t("settingsFilesLoaded")}
                   </div>
                   <div className="flex flex-wrap w-[260px]  gap-1 justify-center items-center">
@@ -270,7 +272,7 @@ const Results: React.FC = () => {
                   } rounded-xl`}
                 >
                   <div
-                    className={`text-3xl font-bold ${
+                    className={`text-2xl font-bold ${
                       numLoadedFiles === 4 ? "text-green-600" : "text-purple-600"
                     }  mb-2`}
                   >
@@ -290,9 +292,7 @@ const Results: React.FC = () => {
                     <h2 className="text-2xl font-semibold text-gray-900 mb-2">
                       {t("selectParticipantIdentifier")}
                     </h2>
-                    <p className="text-gray-600">
-                      Choose how participants should be identified in exports
-                    </p>
+                    <p className="text-gray-600">{t("identifierSelectionSubTitle")}</p>
                   </div>
 
                   <div className="flex flex-col space-y-4">
@@ -311,8 +311,10 @@ const Results: React.FC = () => {
                 {/* Output Format Selection */}
                 <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
                   <div className="mb-6">
-                    <h2 className="text-2xl font-semibold text-gray-900 mb-2">Output Format</h2>
-                    <p className="text-gray-600">Select your preferred export format</p>
+                    <h2 className="text-2xl font-semibold text-gray-900 mb-2">
+                      {t("outputFormat")}
+                    </h2>
+                    <p className="text-gray-600">{t("selectExportFormat")}</p>
                   </div>
 
                   <div className="space-y-6">
@@ -334,31 +336,44 @@ const Results: React.FC = () => {
             {numLoadedFiles === 4 && (
               <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
                 <div className="text-center mb-8">
-                  <h2 className="text-2xl font-semibold text-gray-900 mb-2">Export Files</h2>
-                  <p className="text-gray-600">Download your processed data in various formats</p>
+                  <h2 className="text-2xl font-semibold text-gray-900 mb-2">
+                    Download Results and Analysis Data Files
+                  </h2>
+                  <div className="text-gray-600">
+                    {selectedOutputOption === "kadeZip"
+                      ? ReactHtmlParser(decodeHTML(t("exportSubtitleKade")))
+                      : t("exportSubtitlePqmethod")}
+                  </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                  <div className="flex flex-col items-center space-y-2">
-                    <ExportStaButton />
-                    <span className="text-sm text-gray-500 text-center">
-                      Statements file for analysis
-                    </span>
-                  </div>
+                {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"> */}
+                <div className="flex flex-row justify-center items-center gap-4">
+                  {selectedOutputOption === "pqMethod" && (
+                    <div className="flex flex-col items-center space-y-2">
+                      <ExportStaButton />
+                      <span className="text-sm text-gray-500 text-center">
+                        {t("staFileForPqmethod")}
+                      </span>
+                    </div>
+                  )}
 
-                  <div className="flex flex-col items-center space-y-2">
-                    <ExportDatButton userData={data} partNames={names} />
-                    <span className="text-sm text-gray-500 text-center">
-                      Data file for PQMethod
-                    </span>
-                  </div>
+                  {selectedOutputOption === "pqMethod" && (
+                    <div className="flex flex-col items-center space-y-2">
+                      <ExportDatButton userData={data} partNames={names} />
+                      <span className="text-sm text-gray-500 text-center">
+                        {t("datFileForPqmethod")}
+                      </span>
+                    </div>
+                  )}
 
-                  <div className="flex flex-col items-center space-y-2">
-                    <ExportToZipButton userData={data} participantIdent={selectedPartId} />
-                    <span className="text-sm text-gray-500 text-center">
-                      Complete analysis package
-                    </span>
-                  </div>
+                  {selectedOutputOption === "kadeZip" && (
+                    <div className="flex flex-col justify-center items-center space-y-2">
+                      <ExportToZipButton userData={data} participantIdent={selectedPartId} />
+                      <span className="text-sm text-gray-500 text-center">
+                        {t("analysisDataForKade")}
+                      </span>
+                    </div>
+                  )}
 
                   <div className="flex flex-col items-center space-y-2">
                     <ExportWordButton
@@ -367,7 +382,7 @@ const Results: React.FC = () => {
                       partNames={names}
                     />
                     <span className="text-sm text-gray-500 text-center">
-                      Formatted report document
+                      {t("wordFileDescription")}
                     </span>
                   </div>
                 </div>
@@ -392,10 +407,8 @@ const Results: React.FC = () => {
                 />
               </svg>
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">No Data Available</h3>
-            <p className="text-gray-600 mb-6 max-w-md mx-auto">
-              Please load your Baserow CSV data file to begin the export process.
-            </p>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">{t("noDataAvailable")}</h3>
+            <p className="text-gray-600 mb-6 max-w-md mx-auto">{t("preUploadResultsFileText")}</p>
           </div>
         )}
       </div>

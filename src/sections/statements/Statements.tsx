@@ -47,15 +47,6 @@ const Statements: React.FC = () => {
   }> = ({ children, icon, description, onClick, component, variant = "primary" }) => (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-all duration-300">
       <div className="flex flex-col items-center text-center space-y-4">
-        <div
-          className={`w-16 h-16 rounded-full flex items-center justify-center ${
-            variant === "primary"
-              ? "bg-gradient-to-br from-blue-500 to-blue-600"
-              : "bg-gradient-to-br from-orange-500 to-orange-600"
-          }`}
-        >
-          <div className="w-8 h-8 text-white">{icon}</div>
-        </div>
         <div>
           <h3 className="text-lg font-semibold text-gray-900 mb-2">{children}</h3>
           <p className="text-sm text-gray-600 mb-4">{description}</p>
@@ -64,11 +55,7 @@ const Statements: React.FC = () => {
           {component || (
             <button
               onClick={onClick}
-              className={`w-full px-6 py-3 font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-opacity-75 ${
-                variant === "primary"
-                  ? "bg-blue-600 hover:bg-blue-700 text-white focus:ring-blue-200"
-                  : "bg-orange-500 hover:bg-orange-600 text-white focus:ring-orange-200"
-              }`}
+              className="flex items-center justify-center w-[500px] px-6 p-2 bg-orange-300 text-black font-semibold rounded-md hover:opacity-50 focus:outline-none focus:ring-2 border border-gray-600 focus:ring-orange-400 focus:ring-opacity-75 text-center h-[40px] select-none"
             >
               {children}
             </button>

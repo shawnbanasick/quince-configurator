@@ -52,7 +52,7 @@ const UploadAndReadXmlStatements: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center">
       <label
-        className="w-80 px-6 p-2 bg-orange-300 text-black font-semibold rounded-md hover:opacity-50 focus:outline-none focus:ring-2 border-2 border-gray-600 focus:ring-orange-400 focus:ring-opacity-75 text-center min-h-[70px] select-none"
+        className="flex items-center justify-center w-[500px] px-6 p-2 bg-orange-300 text-black font-semibold rounded-md hover:opacity-50 focus:outline-none focus:ring-2 border border-gray-600 focus:ring-orange-400 focus:ring-opacity-75 text-center min-h-[40px] select-none"
         htmlFor="uploadXml"
       >
         {t("loadStatements")}
