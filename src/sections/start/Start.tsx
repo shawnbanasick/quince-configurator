@@ -50,7 +50,7 @@ const Start = () => {
           rx="4"
           fill="#E0F2FE"
           stroke="#0369A1"
-          stroke-width="1.0"
+          strokeWidth="1.0"
         />
 
         {/* <!-- Configuration toggles/switches --> */}
@@ -64,15 +64,15 @@ const Start = () => {
         <rect x="26" y="35.5" width="6" height="4" rx="2" fill="#0EA5E9" />
 
         {/* <!-- Q character --> */}
-        <circle cx="40" cy="43" r="4" fill="none" stroke="#0EA5E9" stroke-width="2.5" />
+        <circle cx="40" cy="43" r="4" fill="none" stroke="#0EA5E9" strokeWidth="2.5" />
         <line
           x1="42.5"
           y1="45.5"
           x2="45"
           y2="48"
           stroke="#0EA5E9"
-          stroke-width="2.5"
-          stroke-linecap="round"
+          strokeWidth="2.5"
+          strokeLinecap="round"
         />
 
         {/* <!-- Small indicator dots --> */}

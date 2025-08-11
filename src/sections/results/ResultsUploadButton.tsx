@@ -1,15 +1,19 @@
 import React, { useRef, ChangeEvent, useState } from "react";
 import Papa from "papaparse";
 import { useStore } from "../../GlobalState/useStore";
+import { useTranslation } from "react-i18next";
 
 type CsvRow = Record<string, string>;
 const getSetCleanedResults = (state) => state.setCleanedResults;
 const getSetRawData = (state) => state.setRawData;
 
 const ResultsUploadButton: React.FC = () => {
+  const { t } = useTranslation();
   const setCleanedResults = useStore(getSetCleanedResults);
   const setRawData = useStore(getSetRawData);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const [hasFileLoaded, setHasFileLoaded] = useState(false);
+
   // const [data, setData] = useState<CsvRow[]>([]);
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -37,6 +41,7 @@ const ResultsUploadButton: React.FC = () => {
           // setData(cleanedData);
           setRawData(cleanedData);
           setCleanedResults(cleanedData);
+          setHasFileLoaded(true);
           console.log("CSV contents:\n", JSON.stringify(cleanedData, null, 2));
         },
       });
@@ -53,7 +58,9 @@ const ResultsUploadButton: React.FC = () => {
     <div className="p-2">
       <button
         onClick={handleButtonClick}
-        className="flex flex-row items-center min-w-[200px] gap-3 cursor-pointer bg-orange-300 hover:opacity-50 border-2 border-gray-600 rounded-md p-3"
+        className={`flex flex-row items-center justify-center min-w-[200px] gap-3 cursor-pointer ${
+          hasFileLoaded ? "bg-green-600 text-white" : "bg-orange-300"
+        }  hover:opacity-50 border border-gray-900 rounded-md p-3`}
       >
         <svg className="max-w-[30px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
@@ -63,7 +70,7 @@ const ResultsUploadButton: React.FC = () => {
             d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
           />
         </svg>
-        Load Results File
+        {hasFileLoaded ? t("resultsFileLoaded") : t("loadResultsButtonText")}
       </button>
       <input
         type="file"

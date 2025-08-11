@@ -51,6 +51,7 @@ const getSetDefaultFontSizePostsort = (state) => state.setDefaultFontSizePostsor
 const getSetMinCardHeightPostsort = (state) => state.setMinCardHeightPostsort;
 const getSetShowSurvey = (state) => state.setShowSurvey;
 const getSetSurveyQuestionsArray = (state) => state.setSurveyQuestionsArray;
+const getSetIsConfigXmlLoaded = (state) => state.setIsConfigXmlLoaded;
 
 const UploadAndParseXML: React.FC = () => {
   const setStudyTitle = useStore(getSetStudyTitle);
@@ -87,6 +88,7 @@ const UploadAndParseXML: React.FC = () => {
   const setMinCardHeightPostsort = useStore(getSetMinCardHeightPostsort);
   const setShowSurvey = useStore(getSetShowSurvey);
   const setSurveyQuestionsArray = useStore(getSetSurveyQuestionsArray);
+  const setIsConfigXmlLoaded = useStore(getSetIsConfigXmlLoaded);
   const { t } = useTranslation();
 
   const [xmlContent, setXmlContent] = useState<string | null>(null);
@@ -261,6 +263,7 @@ const UploadAndParseXML: React.FC = () => {
             }
             surveyQuestArray.push(questObj);
             setSurveyQuestionsArray(surveyQuestArray);
+            setIsConfigXmlLoaded(true);
           }
         });
         return;

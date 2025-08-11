@@ -7,15 +7,15 @@ import { stripHtmlDivs } from "./stripHtmlDivs";
 
 const getSetCurrentStatements = (state) => state.setCurrentStatements;
 const getSetNumStatements = (state) => state.setNumStatements;
+const getSetIsStatementsXmlLoaded = (state) => state.setIsStatementsXmlLoaded;
 
 const UploadAndReadXmlStatements: React.FC = () => {
   const { t } = useTranslation();
   const setCurrentStatements = useStore(getSetCurrentStatements);
   const setNumStatements = useStore(getSetNumStatements);
+  const setIsStatementsXmlLoaded = useStore(getSetIsStatementsXmlLoaded);
 
-  const handleFileUpload = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ): void => {
+  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const file = event.target.files?.[0];
     if (file) {
       const reader = new FileReader();
@@ -36,6 +36,7 @@ const UploadAndReadXmlStatements: React.FC = () => {
           statementString += itemString;
         });
         setCurrentStatements(statementString);
+        setIsStatementsXmlLoaded(true);
         return;
       };
 

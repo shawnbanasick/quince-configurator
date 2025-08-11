@@ -2,7 +2,24 @@ const createResultsSlice = (set) => ({
   cleanedResults: "",
   rawData: "",
   selectedPartId: "randomId",
-  //   numStatements: 0,
+
+  isConfigXmlLoaded: false,
+  isStatementsXmlLoaded: false,
+  isMapXmlLoaded: false,
+  isLanguageXmlLoaded: false,
+
+  setIsConfigXmlLoaded: (Boolean) => {
+    set(() => ({ isConfigXmlLoaded: Boolean }));
+  },
+  setIsStatementsXmlLoaded: (Boolean) => {
+    set(() => ({ isStatementsXmlLoaded: Boolean }));
+  },
+  setIsMapXmlLoaded: (Boolean) => {
+    set(() => ({ isMapXmlLoaded: Boolean }));
+  },
+  setIsLanguageXmlLoaded: (Boolean) => {
+    set(() => ({ isLanguageXmlLoaded: Boolean }));
+  },
 
   setSelectedPartId: (string) => {
     set(() => ({ selectedPartId: string }));
@@ -13,13 +30,6 @@ const createResultsSlice = (set) => ({
   setCleanedResults: (data) => {
     set(() => ({ cleanedResults: data }));
   },
-
-  //   setNumStatements: (num) => {
-  //     set(() => ({ numStatements: num }));
-  //   },
-  //   setCurrentStatements: (statements) => {
-  //     set(() => ({ currentStatements: statements }));
-  //   },
 });
 
 export default createResultsSlice;

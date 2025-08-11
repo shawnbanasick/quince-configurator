@@ -20,6 +20,7 @@
   "selectLanguage": "言語を選択",
   "displaysIndepthDescriptionsAndDirections": "詳細な説明と指示を表示します",
   "selectConfiguratorDisplayMode": "コンフィギュレータ表示モードを選択",
+  "configuratorIntro1": "Quincy Configurator simplifies the set-up and testing of an {{{a target='_blank' rel='noopener noreferrer' href='https://github.com/shawnbanasick/eq-web-sort' }}} Quincy {{{/a}}} project for online Q sorting. It provides guided editing of the Q sort configuration files and offers increased control over the design of the Q sort. To test your setup before hosting it on the web, use the Ken-Q Tools Mini-Server available here.",
   "Novice": "初心者",
   "Expert": "専門家",
   "configPara1": "config.jsonファイルには2つのセクションがあります。最初のセクションにはプロジェクト全体の構造の設定が含まれています。2番目のセクションには、参加者がQソートを完了する前および/または後に（オプションで）アンケートを生成する質問ジェネレータが含まれています。",

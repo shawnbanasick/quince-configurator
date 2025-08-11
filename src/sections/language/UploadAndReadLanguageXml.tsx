@@ -6,13 +6,15 @@ import { useTranslation } from "react-i18next";
 import { useStore } from "../../globalState/useStore";
 
 const getSetText = (state) => state.setText;
-// import XmlUploadErrorModal from "./XmlUploadErrorModal";
+const getSetIsLanguageXmlLoaded = (state) => state.setIsLanguageXmlLoaded;
 
 const UploadAndReadLanguageXml = () => {
   console.log("UploadAndReadLanguageXml component rendered");
 
   const { t } = useTranslation();
   const setText = useStore(getSetText);
+  const setIsLanguageXmlLoaded = useStore(getSetIsLanguageXmlLoaded);
+
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFileUpload = () => {
@@ -37,6 +39,7 @@ const UploadAndReadLanguageXml = () => {
           setText(item.attributes.id, decodeHTML(item.value, true));
           console.log(`Setting text for ${item.attributes.id}: ${decodeHTML(item.value)}`);
         });
+        setIsLanguageXmlLoaded(true);
       } catch (error) {
         console.error("Error reading file", error);
         // setError("Error reading file");

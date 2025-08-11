@@ -14,6 +14,10 @@ interface State {
   surveyQuestionsArray: any;
   selectedPartId: string;
   setSelectedPartId: (id: string) => void;
+  isConfigXmlLoaded: boolean;
+  isStatementsXmlLoaded: boolean;
+  isMapXmlLoaded: boolean;
+  isLanguageXmlLoaded: boolean;
 }
 
 interface Option {
@@ -23,13 +27,30 @@ interface Option {
 }
 
 const getData = (state: State) => state.cleanedResults;
+const getIsConfigXmlLoaded = (state: State) => state.isConfigXmlLoaded;
+const getIsStatementsXmlLoaded = (state: State) => state.isStatementsXmlLoaded;
+const getIsMapXmlLoaded = (state: State) => state.isMapXmlLoaded;
+const getIsLanguageXmlLoaded = (state: State) => state.isLanguageXmlLoaded;
 
 const Results: React.FC = () => {
   const { t } = useTranslation();
   const data = useStore(getData);
+  const isConfigXmlLoaded = useStore(getIsConfigXmlLoaded);
+  const isStatementsXmlLoaded = useStore(getIsStatementsXmlLoaded);
+  const isMapXmlLoaded = useStore(getIsMapXmlLoaded);
+  const isLanguageXmlLoaded = useStore(getIsLanguageXmlLoaded);
 
   const [selectedOutputOption, setSelectedOutputOption] = useState("kadeZip");
   const [selectedPartId, setSelectedPartId] = useState("randomId");
+
+  // get count of uploaded files to visual for user
+  const loadedSettingsFilesArray = [
+    isConfigXmlLoaded,
+    isLanguageXmlLoaded,
+    isMapXmlLoaded,
+    isStatementsXmlLoaded,
+  ];
+  let numLoadedFiles = loadedSettingsFilesArray.filter(Boolean).length;
 
   // Process participant names based on selection
   const getParticipantNames = (): string[] | undefined => {
@@ -126,6 +147,16 @@ const Results: React.FC = () => {
 
   const hasData = data && data.length > 0;
 
+  let projectNameText;
+  if (hasData) {
+    let projectName3 = data[0]["r1"] || "";
+    if (projectName3.length > 0) {
+      projectName3 = projectName3.split(":");
+      projectName3 = projectName3[1].split("-");
+      projectNameText = projectName3[0].trim();
+    }
+  }
+
   return (
     <div className="min-h-[100%] bg-gradient-to-br from-slate-50 to-blue-50 py-8">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -145,7 +176,7 @@ const Results: React.FC = () => {
                 rx="3"
                 fill="#E0F2FE"
                 stroke="#0369A1"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
 
               {/* <!-- Simplified bar chart --> */}
@@ -154,15 +185,15 @@ const Results: React.FC = () => {
               <rect x="36" y="32" width="4" height="18" fill="#0369A1" />
 
               {/* <!-- Q character --> */}
-              <circle cx="40" cy="18" r="4" fill="none" stroke="#0EA5E9" stroke-width="2" />
+              <circle cx="40" cy="18" r="4" fill="none" stroke="#0EA5E9" strokeWidth="2" />
               <line
                 x1="42.5"
                 y1="20.5"
                 x2="44.5"
                 y2="22.5"
                 stroke="#0EA5E9"
-                stroke-width="2"
-                stroke-linecap="round"
+                strokeWidth="2"
+                strokeLinecap="round"
               />
             </svg>
           </div>
@@ -178,31 +209,74 @@ const Results: React.FC = () => {
         {/* Data Upload Section */}
         <div className="bg-white rounded-2xl shadow-xl p-1 mb-8 border border-gray-100">
           <div className="flex flex-col justify-center items-center mt-2 mb-1 text-center">
-            {/* <h2 className="text-2xl font-semibold text-gray-900 mb-2">Load Data</h2> */}
-            <p className="text-gray-600">
-              Load your Baserow results data to begin the export process
-            </p>
+            <p className="text-gray-600">{t("beginExportProcess")}</p>
             <ResultsUploadButton />
           </div>
         </div>
 
         {hasData ? (
-          <>
+          <div className="transition-all duration-200 ease-in-out">
             {/* Data Summary Section */}
             <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 mt-8 mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-6">Export Status</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-6">{t("fileStatus")}</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="text-center p-6 bg-blue-50 rounded-xl">
-                  <div className="text-3xl font-bold text-blue-600 mb-2">{data.length}</div>
-                  <div className="text-sm text-gray-600">Total Responses</div>
+                  <div className="text-3xl font-bold text-blue-600 mb-2">{projectNameText}</div>
+                  <div className="text-sm text-gray-600">
+                    {data.length} {t("totalResponses")}
+                  </div>
                 </div>
                 <div className="text-center p-6 bg-green-50 rounded-xl">
-                  <div className="text-3xl font-bold text-green-600 mb-2">{names?.length || 0}</div>
-                  <div className="text-sm text-gray-600">Load Settings Files</div>
+                  <div className="text-3xl font-bold text-green-600 mb-2">
+                    {numLoadedFiles || 0} {t("settingsFilesLoaded")}
+                  </div>
+                  <div className="flex flex-wrap w-[260px]  gap-1 justify-center items-center">
+                    <div
+                      className={`text-sm border border-gray-900 ${
+                        isConfigXmlLoaded ? "bg-green-600 text-white" : "bg-yellow-100 text-black"
+                      } rounded-md w-[120px]`}
+                    >
+                      config.xml
+                    </div>
+                    <div
+                      className={`text-sm border border-gray-900 ${
+                        isStatementsXmlLoaded
+                          ? "bg-green-600 text-white"
+                          : "bg-yellow-100 text-black"
+                      } rounded-md w-[120px]`}
+                    >
+                      statements.xml
+                    </div>
+                    <div
+                      className={`text-sm border border-gray-600 ${
+                        isMapXmlLoaded ? "bg-green-600 text-white" : "bg-yellow-100 text-black"
+                      } rounded-md w-[120px]`}
+                    >
+                      map.xml
+                    </div>
+                    <div
+                      className={`text-sm border border-gray-600 ${
+                        isLanguageXmlLoaded ? "bg-green-600 text-white" : "bg-yellow-100 text-black"
+                      } rounded-md w-[120px]`}
+                    >
+                      language.xml
+                    </div>
+                  </div>
+                  <div className="text-sm text-gray-600"></div>
                 </div>
-                <div className="text-center p-6 bg-purple-50 rounded-xl">
-                  <div className="text-3xl font-bold text-purple-600 mb-2">Ready</div>
-                  <div className="text-sm text-gray-600">Status</div>
+                <div
+                  className={`text-center p-6 ${
+                    numLoadedFiles === 4 ? "bg-green-50" : "bg-purple-50"
+                  } rounded-xl`}
+                >
+                  <div
+                    className={`text-3xl font-bold ${
+                      numLoadedFiles === 4 ? "text-green-600" : "text-purple-600"
+                    }  mb-2`}
+                  >
+                    {numLoadedFiles === 4 ? t("ready") : t("loadSettingsFiles")}
+                  </div>
+                  <div className="text-sm text-gray-600">{t("status")}</div>
                 </div>
               </div>
             </div>
@@ -300,7 +374,7 @@ const Results: React.FC = () => {
                 </div>
               </div>
             </div>
-          </>
+          </div>
         ) : (
           /* No Data State */
           <div className="bg-white rounded-2xl shadow-xl p-12 text-center border border-gray-100">

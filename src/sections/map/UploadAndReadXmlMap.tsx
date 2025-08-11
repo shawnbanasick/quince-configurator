@@ -9,6 +9,7 @@ const getSetNumber = (state) => state.setNumber;
 const getSetColor = (state) => state.setColor;
 const getSetMapColorPalette = (state) => state.setMapColorPalette;
 const getSetQSortPatternObject = (state) => state.setQSortPatternObject;
+const getSetIsMapXmlLoaded = (state) => state.setIsMapXmlLoaded;
 
 const UploadAndReadXmlMap: React.FC = () => {
   const { t } = useTranslation();
@@ -16,10 +17,9 @@ const UploadAndReadXmlMap: React.FC = () => {
   const setColor = useStore(getSetColor);
   const setMapColorPalette = useStore(getSetMapColorPalette);
   const setQSortPatternObject = useStore(getSetQSortPatternObject);
+  const setIsMapXmlLoaded = useStore(getSetIsMapXmlLoaded);
 
-  const handleFileUpload = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ): void => {
+  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const file = event.target.files?.[0];
     if (file) {
       const reader = new FileReader();
@@ -56,10 +56,7 @@ const UploadAndReadXmlMap: React.FC = () => {
           }
           qSortPatternObject[item] = `${countArray[index]}`;
         });
-        localStorage.setItem(
-          "qSortPatternObject",
-          JSON.stringify(qSortPatternObject)
-        );
+        localStorage.setItem("qSortPatternObject", JSON.stringify(qSortPatternObject));
 
         setQSortPatternObject(qSortPatternObject);
 
@@ -86,6 +83,7 @@ const UploadAndReadXmlMap: React.FC = () => {
           let designation3 = `colCol${item}`;
           setColor(designation3, colorsArray[index]);
           localStorage.setItem(designation3, colorsArray[index]);
+          setIsMapXmlLoaded(true);
         });
         return;
       };
