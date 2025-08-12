@@ -344,8 +344,6 @@ const createHeaderParagraphs = (item: SurveyItem, index: number, text: string): 
 const createQuestionParagraphs = (questionStats: ResponseStats[]): Paragraph[] => {
   const paragraphs: Paragraph[] = [];
 
-  console.log("Question Statistics:", JSON.stringify(questionStats, null, 2));
-
   questionStats.forEach((stats, index) => {
     // Question statement paragraph
     paragraphs.push(

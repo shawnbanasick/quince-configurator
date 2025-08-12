@@ -210,9 +210,9 @@ const wordPartStatements = (
     // Initialize result with header
     const allParagraphs: Paragraph[] = [createHeaderParagraph()];
 
-    console.log(
-      `Processing ${workingData.length} participants with ${statementsArray.length} statements`
-    );
+    // console.log(
+    //   `Processing ${workingData.length} participants with ${statementsArray.length} statements`
+    // );
 
     // Process each participant
     workingData.forEach((participant, index) => {
@@ -234,7 +234,7 @@ const wordPartStatements = (
         // Add to result
         allParagraphs.push(...participantParagraphs);
 
-        console.log(`Processed participant ${index + 1}: ${participantIds[index]}`);
+        // console.log(`Processed participant ${index + 1}: ${participantIds[index]}`);
       } catch (error) {
         console.error(`Error processing participant ${index + 1}:`, error);
 
@@ -256,7 +256,6 @@ const wordPartStatements = (
       }
     });
 
-    console.log(`Generated ${allParagraphs.length} total paragraphs`);
     return allParagraphs;
   } catch (error) {
     console.error("Error in wordPartStatements:", error);

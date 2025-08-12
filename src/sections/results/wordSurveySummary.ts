@@ -23,12 +23,12 @@ const wordSurveySummary = (data: RecordMap, surveyQuestionsArray, partNames): Pa
     );
   }
 
-  const indentValue = 300;
-  const items = Array.isArray(workingData) ? workingData : [workingData];
-  const itemParagraphs: any = [];
+  // const indentValue = 300;
+  // const items = Array.isArray(workingData) ? workingData : [workingData];
+  // const itemParagraphs: any = [];
 
   const filteredData: any[] = [];
-  data.forEach((item) => {
+  workingData.forEach((item) => {
     let surveyItems = filterByItemNum1(item);
     let keys = Object.keys(surveyItems);
     let tempObj = {};
@@ -40,9 +40,6 @@ const wordSurveySummary = (data: RecordMap, surveyQuestionsArray, partNames): Pa
     });
     filteredData.push(tempObj);
   });
-
-  console.log("ccc", JSON.stringify(surveyQuestionsArray, null, 2));
-  console.log("ccc", JSON.stringify(filteredData, null, 2));
 
   // for each participant
   const paragraphs: Paragraph[] = [];
@@ -146,8 +143,6 @@ const wordSurveySummary = (data: RecordMap, surveyQuestionsArray, partNames): Pa
       }
     }
   });
-  // console.log(JSON.stringify(newArray, null, 2));
-  // console.log(JSON.stringify(survey, null, 2));
 
   return paragraphs;
 };

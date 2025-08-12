@@ -1,35 +1,6 @@
-import Image from "../../assets/images/qq-brand-image.png";
-import Button from "../utils/Button";
-import { useStore } from "../../globalState/useStore.js";
-import { useTranslation } from "react-i18next";
-
-const getShowDescriptionPro = (state) => state.showDescriptionPro;
-const getShowDescriptionBeginner = (state) => state.showDescriptionBeginner;
-const getSetShowDescriptionPro = (state) => state.setShowDescriptionPro;
-const getSetShowDescriptionBeginner = (state) => state.setShowDescriptionBeginner;
-const getSetDisplayMode = (state) => state.setDisplayMode;
+// import Image from "../../assets/images/qq-brand-image.png";
 
 const Start = () => {
-  const { t } = useTranslation();
-  const showDescriptionPro = useStore(getShowDescriptionPro);
-  const showDescriptionBeginner = useStore(getShowDescriptionBeginner);
-  const setShowDescriptionPro = useStore(getSetShowDescriptionPro);
-  const setShowDescriptionBeginner = useStore(getSetShowDescriptionBeginner);
-  const setDisplayMode = useStore(getSetDisplayMode);
-
-  const setMode = (e) => {
-    const mode = e.target.id;
-    if (mode === "pro") {
-      setShowDescriptionPro(true);
-      setShowDescriptionBeginner(false);
-      setDisplayMode("pro");
-    } else {
-      setShowDescriptionPro(false);
-      setShowDescriptionBeginner(true);
-      setDisplayMode("beginner");
-    }
-  };
-
   return (
     <div className="flex flex-col items-center justify-center  w-[100%]">
       {/* <img src={Image} className=" w-1/12 justify-self-center" alt="Configurator Hero Image" /> */}
@@ -93,14 +64,13 @@ const Start = () => {
           Quincy
         </a>{" "}
         project for online Q sorting. It provides guided editing of the Q sort configuration files
-        and offers increased control over the design of the Q sort. To test your setup before
-        hosting it on the web, use the Ken-Q Tools Mini-Server available here.
+        and offers increased control over the design of the Q sort.
       </div>
       {/* <div className="justify-self-center mt-4 mb-8">
         Citation:
         <br /> Banasick, S. (2025). Quincy Configurator (Version 1.0.0)
       </div> */}
-      <h2 className="text-center mt-10">{t("selectConfiguratorDisplayMode")}</h2>
+      {/* <h2 className="text-center mt-10">{t("selectConfiguratorDisplayMode")}</h2>
       <div className="flex flex-row justify-self-center mt-4">
         <Button
           id="beginner"
@@ -124,7 +94,7 @@ const Start = () => {
       <div className="justify-self-center mt-3">
         {showDescriptionPro && <p>shows only the essential configurations</p>}
         {showDescriptionBeginner && <p>{t("displaysIndepthDescriptionsAndDirections")}</p>}
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -1,10 +1,5 @@
-import uniq from "lodash/uniq";
 import zip from "lodash/zip";
 import { Paragraph, UnderlineType, TextRun } from "docx";
-// import calcMultiplierArrayT2 from "../../Input/Excel/excelLogic/calcMultiplierArrayT2";
-import isEqual from "lodash/isEqual";
-import i18n from "i18next";
-import { useStore } from "../../GlobalState/useStore";
 
 const compareSecondColumn = (a, b) => {
   if (a[1] === b[1]) {
@@ -24,8 +19,6 @@ const reorderByFirstColumn = (a, b) => {
   }
 };
 
-// const translationObject = { partQsorts: "Participant Q-sorts" };
-
 const wordSorts = (
   data,
   partNames,
@@ -34,24 +27,7 @@ const wordSorts = (
   newHeaderArray,
   mapInputQsortPattern
 ) => {
-  //   thisMultiplierArray === mapInputQsortPattern;
   let indentValue = 200;
-
-  // new Paragraph({
-  //   children: [
-  //     new TextRun({
-  //       text: `${translationObject.partQsorts}`,
-  //       bold: true,
-  //     }),
-  //   ],
-  //   heading: HeadingLevel.HEADING_1,
-  //   thematicBreak: true,
-  //   spacing: {
-  //     before: 400,
-  //     after: 400,
-  //   },
-  // }),
-  //   ];
 
   let newString = "";
   const newHeaderArray2 = [...newHeaderArray];
@@ -70,19 +46,8 @@ const wordSorts = (
   for (let m = 0; m < data.length; m++) {
     const generatedString: any[] = [];
     let respondentArray = respondentArray2[m];
-
-    // let thisMultiplierArray2 = [...respondentArray].sort((a, b) => a - b);
-    // to deal with unforced Q sorts - triangle shape may vary
-    //   let thisMultiplierArray = calcMultiplierArrayT2([...thisMultiplierArray2]);
-
-    // let unforcedTest = isEqual(multiplierArray, thisMultiplierArray);
     let nameString = partNames[m];
-    // if (!unforcedTest) {
-    //   nameString = `${nameString}     ** ${i18n.t("Unforced Q sort")} **`;
-    //   unforcedParticipantNamesArray.push(nameString);
-    // } else {
     unforcedParticipantNamesArray.push(nameString);
-    // }
 
     let maxValue = Math.max(...mapInputQsortPattern);
     let zippedArray2 = zip(statementNumArray, respondentArray);
@@ -221,28 +186,8 @@ const wordSorts = (
       }
       generatedString.push(text);
     }
-
-    /*
-    // // End of Doc - Q Sorts as flat arrays
-    let text = new Paragraph({
-      //   //   text: `${partNames[m]}: ${respondentArray[m].join(",")}`,
-      text: `${partNames[m]}`,
-      indent: {
-        start: 600,
-        hanging: 500,
-      },
-      spacing: {
-        after: 100,
-        before: 500,
-      },
-    });
-    displayStringsArray.push(text);
-    */
     displayStringsArray.push(generatedString);
   }
-  //   }  // end check for main data object
-  //   generatedString.push(...displayStringsArray);
-  console.log(displayStringsArray[0].length);
   return displayStringsArray;
 };
 

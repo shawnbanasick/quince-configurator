@@ -13,11 +13,12 @@ import baserow8 from "../../assets/images/baserow8.png";
 import baserow9 from "../../assets/images/baserow9.png";
 import baserow10 from "../../assets/images/baserow10.png";
 import baserow11 from "../../assets/images/baserow11.png";
-import baserow12 from "../../assets/images/baserow14.png";
-import baserow13 from "../../assets/images/baserow15.png";
-import baserow14 from "../../assets/images/baserow16.png";
-import baserow15 from "../../assets/images/baserow17.png";
-import baserow16 from "../../assets/images/baserow19.png";
+import baserow12 from "../../assets/images/baserow12.png";
+import baserow13 from "../../assets/images/baserow13.png";
+import baserow14 from "../../assets/images/baserow14.png";
+import baserow15 from "../../assets/images/baserow15.png";
+import baserow16 from "../../assets/images/baserow16.png";
+import baserow17 from "../../assets/images/baserow17.png";
 
 interface StepData {
   id: number;
@@ -48,6 +49,7 @@ const Baserow: React.FC = () => {
   const step14Text = ReactHtmlParser(decodeHTML(t("baserowStep14"))) || "";
   const step15Text = ReactHtmlParser(decodeHTML(t("baserowStep15"))) || "";
   const step16Text = ReactHtmlParser(decodeHTML(t("baserowStep16"))) || "";
+  const step17Text = ReactHtmlParser(decodeHTML(t("baserowStep16"))) || "";
 
   const langArray = [
     step1Text,
@@ -66,6 +68,7 @@ const Baserow: React.FC = () => {
     step14Text,
     step15Text,
     step16Text,
+    step17Text,
   ];
 
   // Configuration for all steps
@@ -168,6 +171,12 @@ const Baserow: React.FC = () => {
       image: baserow16,
       imageAlt: "Final configuration",
     },
+    {
+      id: 17,
+      text: "Complete the final configuration steps and verify that all features are working correctly for your Q-methodology research project.",
+      image: baserow17,
+      imageAlt: "Final configuration",
+    },
   ];
 
   const StepCard: React.FC<{ step: StepData; isFirst?: boolean; index: number }> = ({
@@ -227,13 +236,13 @@ const Baserow: React.FC = () => {
             </div>
           </div>
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Baserow Setup Process</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <div className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             {t("baserowIntro1")}
-          </p>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mt-4">
+          </div>
+          <div className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mt-4">
             {" "}
             {description}
-          </p>
+          </div>
         </div>
 
         {/* Main Content */}

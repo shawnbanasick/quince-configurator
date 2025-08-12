@@ -32,7 +32,7 @@ const wordId = (
     new Paragraph({
       children: [
         new TextRun({
-          text: `Creation Date: ${projectDate[0]} at ${projectDate[1]}`,
+          text: `Project Creation Date: ${projectDate[0]} at ${projectDate[1]}`,
           bold: true,
           size: 24,
         }),

@@ -14,15 +14,41 @@ import { setLanguageDefaults } from "./setLanguageDefaults.js";
 import { setLanguageSection_JA } from "./setLanguageSection_JA.js";
 import { setLanguageSection_EN } from "./setLanguageSection_EN.js";
 import { Results } from "../sections/results/Results.js";
+import Button from "../sections/utils/Button";
+import { useStore } from "../globalState/useStore.js";
 
 // Add the following import statement for the declaration file
 
 // const languages = ["en", "ru", "tm", "ja", "ko", "zh", "es", "fr", "de"];
 const languages = ["en", "ja"];
 
+const getShowDescriptionPro = (state) => state.showDescriptionPro;
+const getShowDescriptionBeginner = (state) => state.showDescriptionBeginner;
+const getSetShowDescriptionPro = (state) => state.setShowDescriptionPro;
+const getSetShowDescriptionBeginner = (state) => state.setShowDescriptionBeginner;
+const getSetDisplayMode = (state) => state.setDisplayMode;
+
 export const MainPage = () => {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
+  const showDescriptionPro = useStore(getShowDescriptionPro);
+  const showDescriptionBeginner = useStore(getShowDescriptionBeginner);
+  const setShowDescriptionPro = useStore(getSetShowDescriptionPro);
+  const setShowDescriptionBeginner = useStore(getSetShowDescriptionBeginner);
+  const setDisplayMode = useStore(getSetDisplayMode);
+
+  const setMode = (e) => {
+    const mode = e.target.id;
+    if (mode === "pro") {
+      setShowDescriptionPro(true);
+      setShowDescriptionBeginner(false);
+      setDisplayMode("pro");
+    } else {
+      setShowDescriptionPro(false);
+      setShowDescriptionBeginner(true);
+      setDisplayMode("beginner");
+    }
+  };
 
   if (currentLanguage === "ja") {
     setLanguageSection_JA(currentLanguage);
@@ -57,29 +83,58 @@ export const MainPage = () => {
 
         <TabPanel className="flex flex-col justify-center">
           <div className="justify-self-right w-[100%]">
-            <div className="pl-6 w-[100%]">
-              <div>{t("selectLanguage")}</div>
-              <div className="space-x-2">
-                {languages.map((lng) => {
-                  return (
-                    <button
-                      onClick={() => onChangeLanguage(lng)}
-                      key={uuidv4()}
-                      className={clsx(
-                        "bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md",
-                        {
-                          "bg-opacity-100": lng === currentLanguage,
-                          "bg-opacity-50": lng !== currentLanguage,
-                        }
-                      )}
-                    >
-                      {lng.toUpperCase()}
-                    </button>
-                  );
-                })}
+            <div className="flex flex-row justify-between pl-6 pr-6 w-[100%]">
+              <div id="selectLanguageDiv" className="">
+                <div>{t("selectLanguage")}</div>
+                <div className="flex flex-row space-x-2">
+                  {languages.map((lng) => {
+                    return (
+                      <button
+                        onClick={() => onChangeLanguage(lng)}
+                        key={uuidv4()}
+                        className={clsx(
+                          "bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md",
+                          {
+                            "bg-opacity-100": lng === currentLanguage,
+                            "bg-opacity-50": lng !== currentLanguage,
+                          }
+                        )}
+                      >
+                        {lng.toUpperCase()}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
-              <Start />
+              <div id="displayModeDiv" className="">
+                <div className="text-center">{t("selectConfiguratorDisplayMode")}</div>
+                <div className="flex flex-row justify-self-center">
+                  <Button
+                    id="beginner"
+                    styleClass={`bg-blue-500 hover:bg-blue-700 ${
+                      showDescriptionBeginner ? "bg-opacity-100" : "bg-opacity-50"
+                    }`}
+                    label={t("novice")}
+                    onClick={setMode}
+                  ></Button>
+                  <Button
+                    id="pro"
+                    label={t("expert")}
+                    styleClass={`bg-[#3b82f6]  hover:bg-blue-700 ${
+                      showDescriptionPro ? "bg-opacity-100" : "bg-opacity-50"
+                    }`}
+                    onClick={setMode}
+                  ></Button>
+                </div>
+                <div className="justify-self-center">
+                  {showDescriptionPro && <div>{t("displaysEssentialInformation")}</div>}
+                  {showDescriptionBeginner && (
+                    <div>{t("displaysIndepthDescriptionsAndDirections")}</div>
+                  )}
+                </div>
+              </div>
             </div>
+            <Start />
           </div>
 
           {/* <a
