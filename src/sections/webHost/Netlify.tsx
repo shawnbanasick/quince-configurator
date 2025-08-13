@@ -19,8 +19,6 @@ import baserow14 from "../../assets/images/baserow14.png";
 import baserow15 from "../../assets/images/baserow15.png";
 import baserow16 from "../../assets/images/baserow16.png";
 import baserow17 from "../../assets/images/baserow17.png";
-import baserow18 from "../../assets/images/baserow18.png";
-import { DownloadBaserowCsv } from "./DownloadBaserowCsv.js";
 
 interface StepData {
   id: number;
@@ -30,7 +28,7 @@ interface StepData {
   imageAlt: string;
 }
 
-const Baserow: React.FC = () => {
+const Netlify: React.FC = () => {
   const { t } = useTranslation();
   const description = ReactHtmlParser(decodeHTML(t("databaseIntroText"))) || "";
 
@@ -51,8 +49,7 @@ const Baserow: React.FC = () => {
   const step14Text = ReactHtmlParser(decodeHTML(t("baserowStep14"))) || "";
   const step15Text = ReactHtmlParser(decodeHTML(t("baserowStep15"))) || "";
   const step16Text = ReactHtmlParser(decodeHTML(t("baserowStep16"))) || "";
-  const step17Text = ReactHtmlParser(decodeHTML(t("baserowStep17"))) || "";
-  const step18Text = ReactHtmlParser(decodeHTML(t("baserowStep18"))) || "";
+  const step17Text = ReactHtmlParser(decodeHTML(t("baserowStep16"))) || "";
 
   const langArray = [
     step1Text,
@@ -72,7 +69,6 @@ const Baserow: React.FC = () => {
     step15Text,
     step16Text,
     step17Text,
-    step18Text,
   ];
 
   // Configuration for all steps
@@ -181,17 +177,10 @@ const Baserow: React.FC = () => {
       image: baserow17,
       imageAlt: "Final configuration",
     },
-    {
-      id: 18,
-      text: "Complete the final configuration steps and verify that all features are working correctly for your Q-methodology research project.",
-      image: baserow18,
-      imageAlt: "Final configuration",
-    },
   ];
 
   const StepCard: React.FC<{ step: StepData; isFirst?: boolean; index: number }> = ({
     step,
-    isFirst = false,
     index,
   }) => {
     return (
@@ -229,23 +218,50 @@ const Baserow: React.FC = () => {
         {/* Header Section */}
         <div className="text-center mb-12">
           <div className="flex items-center justify-center mb-6">
-            <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg">
+            <div className="w-20 h-20 bg-gradient-to-br from-teal-400 to-teal-600 rounded-2xl flex items-center justify-center shadow-lg">
               <svg
-                className="w-10 h-10 text-white"
+                className="w-14 h-14 text-white"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
+                {/* Server rack */}
+                <rect x="3" y="4" width="18" height="16" rx="2" strokeWidth={1} />
+
+                {/* Server compartments */}
+                <line x1="3" y1="8" x2="21" y2="8" strokeWidth={1} />
+                <line x1="3" y1="12" x2="21" y2="12" strokeWidth={1} />
+                <line x1="3" y1="16" x2="21" y2="16" strokeWidth={1} />
+
+                {/* Server indicators/lights */}
+                <circle cx="6" cy="6" r="1" fill="currentColor" />
+                <circle cx="9" cy="6" r="1" fill="currentColor" />
+
+                <circle cx="6" cy="10" r="1" fill="currentColor" />
+                <circle cx="9" cy="10" r="1" fill="currentColor" />
+
+                <circle cx="6" cy="14" r="1" fill="currentColor" />
+                <circle cx="9" cy="14" r="1" fill="currentColor" />
+
+                {/* Network/connectivity symbol */}
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                  strokeWidth={1}
+                  d="M16 6l2 2-2 2M20 8h-4"
+                />
+
+                {/* Cloud connection indicator */}
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1}
+                  d="M14 18c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2z"
                 />
               </svg>
             </div>
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Baserow Setup Process</h1>
+          <div className="text-4xl font-bold text-gray-900 mb-4">{t("netlifyTitleText")}</div>
           <div className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             {t("baserowIntro1")}
           </div>
@@ -253,7 +269,6 @@ const Baserow: React.FC = () => {
             {" "}
             {description}
           </div>
-          <DownloadBaserowCsv />
         </div>
 
         {/* Main Content */}
@@ -277,15 +292,18 @@ const Baserow: React.FC = () => {
                   />
                 </svg>
               </div>
-              <div className="text-2xl font-bold mb-2">{t("setupComplete")}</div>
-              <div className="text-green-100 max-w-2xl mx-auto">{t("setupCompleteMessage")}</div>
+              <h3 className="text-2xl font-bold mb-2">Setup Complete!</h3>
+              <p className="text-green-100 max-w-2xl mx-auto">
+                Congratulations! You have successfully completed the Baserow setup process. Your
+                database is now ready for Q-methodology research data collection.
+              </p>
             </div>
           </div>
         </div>
       </div>
 
       {/* Help Section */}
-      {/* <div className="mt-12 bg-blue-50 border border-blue-200 rounded-2xl p-6">
+      <div className="mt-12 bg-blue-50 border border-blue-200 rounded-2xl p-6">
         <div className="flex items-start space-x-4">
           <div className="flex-shrink-0 w-8 h-8 text-blue-600">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -310,9 +328,9 @@ const Baserow: React.FC = () => {
             </ul>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };
 
-export { Baserow };
+export { Netlify };

@@ -7,6 +7,7 @@ import { v4 as uuidv4 } from "uuid";
 import { Config } from "../sections/config/Config";
 import { Language } from "../sections/language/Language";
 import { Map } from "../sections/map/Map";
+import { WebHost } from "../sections/webHost/Webhost";
 import { ToastContainer } from "react-toastify";
 import { Statements } from "../sections/statements/Statements";
 import { Databases } from "../sections/databases/Databases";
@@ -161,9 +162,8 @@ export const MainPage = () => {
         <TabPanel>
           <Language />
         </TabPanel>
-
         <TabPanel>
-          <h2>Any content 7</h2>
+          <WebHost />
         </TabPanel>
         <TabPanel>
           <Results />

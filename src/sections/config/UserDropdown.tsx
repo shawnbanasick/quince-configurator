@@ -7,31 +7,25 @@ const getSurveyQuestionType = (state) => state.surveyQuestionType;
 const getSetSurveyQuestionType = (state) => state.setSurveyQuestionType;
 const getSetDetailsArray = (state) => state.setDetailsArray;
 const getSetShowSurveytextImage = (state) => state.setShowSurveytextImage;
-const getSetShowSurveytextareaImage = (state) =>
-  state.setShowSurveytextareaImage;
+const getSetShowSurveytextareaImage = (state) => state.setShowSurveytextareaImage;
 const getSetShowSurveyradioImage = (state) => state.setShowSurveyradioImage;
 const getSetShowSurveyselectImage = (state) => state.setShowSurveyselectImage;
-const getSetShowSurveycheckboxImage = (state) =>
-  state.setShowSurveycheckboxImage;
+const getSetShowSurveycheckboxImage = (state) => state.setShowSurveycheckboxImage;
 const getSetShowSurveyrating2Image = (state) => state.setShowSurveyrating2Image;
 const getSetShowSurveyrating5Image = (state) => state.setShowSurveyrating5Image;
-const getSetShowSurveyrating10Image = (state) =>
-  state.setShowSurveyrating10Image;
-const getSetShowSurveyinformationImage = (state) =>
-  state.setShowSurveyinformationImage;
+const getSetShowSurveyrating10Image = (state) => state.setShowSurveyrating10Image;
+const getSetShowSurveyinformationImage = (state) => state.setShowSurveyinformationImage;
 const getSetShowSurveylikertImage = (state) => state.setShowSurveylikertImage;
 
 const getSetSurveyQuestionLabel = (state) => state.setSurveyQuestionLabel;
 const getSetSurveyQuestionNote = (state) => state.setSurveyQuestionNote;
 const getSetSurveyQuestionOptions = (state) => state.setSurveyQuestionOptions;
 const getSetSurveyQuestionScale = (state) => state.setSurveyQuestionScale;
-const getSetSurveyQuestionPlaceholder = (state) =>
-  state.setSurveyQuestionPlaceholder;
+const getSetSurveyQuestionPlaceholder = (state) => state.setSurveyQuestionPlaceholder;
 const getSetSurveyAnswerLenMax = (state) => state.setSurveyAnswerLenMax;
 const getSetSurveyAnswerRestricted = (state) => state.setSurveyAnswerRestricted;
 
-const getSetSurveyAnswerLenIsLimited = (state) =>
-  state.setSurveyAnswerLenIsLimited;
+const getSetSurveyAnswerLenIsLimited = (state) => state.setSurveyAnswerLenIsLimited;
 
 const UserDropdown: React.FC = () => {
   const { t } = useTranslation();
@@ -48,17 +42,13 @@ const UserDropdown: React.FC = () => {
   const setShowSurveyrating2Image = useStore(getSetShowSurveyrating2Image);
   const setShowSurveyrating5Image = useStore(getSetShowSurveyrating5Image);
   const setShowSurveyrating10Image = useStore(getSetShowSurveyrating10Image);
-  const setShowSurveyinformationImage = useStore(
-    getSetShowSurveyinformationImage
-  );
+  const setShowSurveyinformationImage = useStore(getSetShowSurveyinformationImage);
   const setShowSurveylikertImage = useStore(getSetShowSurveylikertImage);
   const setSurveyQuestionLabel = useStore(getSetSurveyQuestionLabel);
   const setSurveyQuestionNote = useStore(getSetSurveyQuestionNote);
   const setSurveyQuestionOptions = useStore(getSetSurveyQuestionOptions);
   const setSurveyQuestionScale = useStore(getSetSurveyQuestionScale);
-  const setSurveyQuestionPlaceholder = useStore(
-    getSetSurveyQuestionPlaceholder
-  );
+  const setSurveyQuestionPlaceholder = useStore(getSetSurveyQuestionPlaceholder);
   const setSurveyAnswerLenMax = useStore(getSetSurveyAnswerLenMax);
   const setSurveyAnswerRestricted = useStore(getSetSurveyAnswerRestricted);
   const setSurveyAnswerLenIsLimited = useStore(getSetSurveyAnswerLenIsLimited);
@@ -142,7 +132,7 @@ const UserDropdown: React.FC = () => {
         <option id="3">radio</option>
         <option id="4">select</option>
         <option id="5">checkbox</option>
-        <option id="6">likert</option>
+        {/* <option id="6">likert</option> */}
         <option id="7">rating2</option>
         <option id="8">rating5</option>
         <option id="9">rating10</option>
