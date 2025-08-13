@@ -245,7 +245,7 @@ const Baserow: React.FC = () => {
               </svg>
             </div>
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Baserow Setup Process</h1>
+          <div className="text-4xl font-bold text-gray-900 mb-4">{t("baserowSetupProcess")}</div>
           <div className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             {t("baserowIntro1")}
           </div>

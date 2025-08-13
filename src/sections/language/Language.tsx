@@ -65,7 +65,7 @@ const Language: React.FC = () => {
     variant?: "primary" | "secondary" | "accent";
   }> = ({ title, description, icon, children, variant = "primary" }) => {
     const variants = {
-      primary: "from-blue-600 to-purple-600",
+      primary: "from-blue-400 to-blue-600",
       secondary: "from-green-600 to-teal-600",
       accent: "from-orange-500 to-red-500",
     };

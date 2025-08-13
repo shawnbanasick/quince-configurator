@@ -192,7 +192,7 @@
   "missingMobileColumnLabels": "Error: Missing mobile column labels. Please enter the correct number of mobile column labels.",
 
   "*** DATABASE - MAIN PAGE ***": "*** DATABASE - MAIN PAGE ***",
-  "baserowSetupProcess": "Baserow Database Setup Process",
+  "baserowSetupProcess": "Database Setup",
 
   "*** DATABASE - BASEROW ***": "*** DATABASE - BASEROW ***",
   "baserowIntro1": "Follow this visual guide to setup a database to store the Q sort results",
@@ -523,5 +523,24 @@
   "downloadResultsAndAnalysis": "Download Results and Analysis Data Files",
 
   "*** NETLIFY ***": "*** NETLIFY ***",
-  "netlifyTitleText": "Netlify Web Hosting"
+  "netlifyTitleText": "Web Hosting Setup",
+
+  "*** NETLIFY ***": "*** NETLIFY ***",
+  "netlifyIntro1": "Follow this visual guide to create a web page for your Q sort project",
+  "netlifyIntroText": "{{{b}}}Quincy uses Netlify to host your project on the web. {{{/b}}} {{{u}}}{{{a href='https://www.netlify.com/' rel='noopener noreferrer' target='_blank'}}}Netlify{{{/a}}}{{{/u}}} is a well-known web hosting company that has a free tier for small sites. You don't need any programming skills to use it.{{{br /}}}{{{br /}}}This guide will show you how to {{{b}}}setup{{{/b}}} and {{{b}}}update{{{/b}}} (see step 12) your project's website.",
+  "netlifyStep1": "Visit {{{u}}}{{{a href='https://www.netlify.com/' rel='noopener noreferrer' target='_blank'}}}{{{strong}}}Netlify{{{/strong}}}{{{/a}}}{{{/u}}} and create a new account by clicking on the 'Sign Up' button at the top of the page.",
+  "netlifyStep2": "Next, click on the 'Sign up with email' link.",
+  "netlifyStep3": "Enter your Email and Password information, and click the 'Sign up' button.",
+  "netlifyStep4": "Enter the requested background information.",
+  "netlifyStep5": "On the 'Deploy your first project' box, click on 'Skip this step for now'.",
+  "netlifyStep6": "On the 'Add your project to Netlify' dialog box, look for the 'deploy manually' area. Click on the 'browse to upload' link and select your Quincy project's {{{b}}}FOLDER{{{/b}}} (not the individual files).",
+  "netlifyStep7": "Netlify will now have generated your project's web page, but it has a randomly assigned name. To change it, click on the 'View project' button.",
+  "netlifyStep8": "Then click on 'Project configuration' on the left side of the page.",
+  "netlifyStep9": "Click on the 'Change project name' button.",
+  "netlifyStep10": "Input your project's name, and then click the 'Save' button.",
+  "netlifyStep11": "Netlify should now show your project's new URL using the project name. Your project is now available on the web with this URL address.",
+  "netlifyStep12": "If you want to {{{b}}}UPDATE{{{/b}}} your project after making a change with the Configurator, login to your Netlify account and click on your project's name. Your project's name should be at the top of the page. Then, click on 'Deploys' on the left side of the page.",
+  "netlifyStep13": "In the 'Deploys' box, click on the 'browse to upload' link and select your project's {{{b}}}FOLDER{{{/b}}}. In a few minutes your project will be updated on the web.",
+  "netlifySetupComplete": "Web Hosting Setup Complete!",
+  "netlifySetupCompleteMessage": "Congratulations! You have successfully setup your project on the web. Your website is now ready for use."
 }

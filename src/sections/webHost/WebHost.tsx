@@ -11,7 +11,7 @@ const WebHost = () => {
   const displayMode = useStore(getDisplayMode);
 
   // Decode Language XML
-  const description = ReactHtmlParser(decodeHTML(t("databaseIntroText"))) || "";
+  const description = ReactHtmlParser(decodeHTML(t("netlifyIntroText"))) || "";
 
   let display;
   if (displayMode === "beginner") {
