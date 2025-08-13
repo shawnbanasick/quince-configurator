@@ -1,46 +1,56 @@
 import React from "react";
+import Papa from "papaparse";
 import * as FileSaver from "file-saver";
 import { useTranslation } from "react-i18next";
-import { useStore } from "../../GlobalState/useStore";
-// import StaIcon from "../images/STA_Icon.svg";
-
-// Define types for state values if not already defined
-// type CoreState = {
-//   projectName: string;
-//   statements: string[];
-// };
-
-const getCurrentStatements = (state) => state.currentStatements;
-const getProjectName = (state) => state.studyTitle;
 
 const DownloadBaserowCsv: React.FC = () => {
   const { t } = useTranslation();
-  const currentStatements = useStore(getCurrentStatements);
-  const projectName = useStore(getProjectName);
+  const projectName = "baserowHeader";
+
+  const generateSampleCsvData = () => {
+    // Generate single row with r1, r2, r3... to r300
+    const sampleData: string[] = [];
+    for (let i = 1; i <= 300; i++) {
+      sampleData.push(`r${i}`);
+    }
+    return [sampleData]; // Return as single row array
+  };
 
   const handleOnClick = () => {
-    if (!currentStatements) {
-      alert("Please load your statements.xml file first");
-      return;
-    }
-    if (!projectName) {
-      alert("Please load your config.xml file first");
-    }
+    try {
+      // Generate sample data
+      const csvData = generateSampleCsvData();
 
-    const blob = new Blob([currentStatements], {
-      type: "text/plain;charset=ascii",
-    });
-    FileSaver.saveAs(blob, `${projectName.substring(0, 8)}.STA`);
+      // Convert to CSV using Papaparse
+      const csvString = Papa.unparse(csvData, {
+        header: false,
+        delimiter: ",",
+        quotes: true,
+        quoteChar: '"',
+        escapeChar: '"',
+        skipEmptyLines: true,
+      });
+
+      // Create blob and download
+      const blob = new Blob([csvString], {
+        type: "text/csv;charset=utf-8;",
+      });
+
+      const filename = `${projectName}.csv`;
+      FileSaver.saveAs(blob, filename);
+    } catch (error) {
+      console.error("Error generating CSV:", error);
+      alert("Error generating CSV file. Please try again.");
+    }
   };
 
   return (
     <button
       onClick={handleOnClick}
-      className="border border-gray-900 min-w-[180px]  bg-orange-300 hover:opacity-50 text-white mt-6 py-2 px-4 rounded"
+      className="border border-gray-900 min-w-[180px] bg-orange-300 hover:opacity-50 text-white mt-6 p-2 px-4 rounded"
     >
-      <div className="flex flex-row justify-center items-cente h-[30px] w-[300px] gap-2 ">
+      <div className="flex flex-row justify-center items-center h-[30px] w-[360px] gap-2">
         <div className="flex justify-center items-center">
-          {/* <img src={StaIcon} height="50px" alt="CSV Icon" /> */}
           <svg
             className="w-10 h-10 text-black"
             fill="none"
@@ -55,7 +65,7 @@ const DownloadBaserowCsv: React.FC = () => {
             />
           </svg>
         </div>
-        <div className="text-black">{t("downloadBaserowCsvFile")}</div>
+        <div className="text-black">{t("baserowHeaderDownloadButton")}</div>
       </div>
     </button>
   );

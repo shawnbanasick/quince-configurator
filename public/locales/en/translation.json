@@ -193,12 +193,12 @@
 
   "*** DATABASE - MAIN PAGE ***": "*** DATABASE - MAIN PAGE ***",
   "baserowSetupProcess": "Baserow Database Setup Process",
-  "illustratedSetupGuideForBaserowDatabase": "Illustrated Setup Guide for Data Storage",
-  "databaseIntroText": "{{{b}}}Baserow{{{/b}}} is a free and open-source online database platform that allows you to create and manage databases without any coding knowledge. It provides a user-friendly interface for creating tables, adding fields, and managing data. Baserow also offers an API that can be used to connect your Quincy project to the database.",
 
   "*** DATABASE - BASEROW ***": "*** DATABASE - BASEROW ***",
   "baserowIntro1": "Follow this visual guide to setup a database to store the Q sort results",
-  "baserowStep1": "Visit {{{u}}}{{{a href='https://baserow.io' rel='noopener noreferrer' target='_blank'}}}{{{strong}}}Baserow.io{{{/strong}}}{{{/a}}}{{{/u}}} and create a new account to get started with the setup process. Click on the 'Sign Up' button in the upper right corner of the page.",
+  "databaseIntroText": "{{{b}}}Quincy uses Baserow to store your participant data safely. {{{/b}}} {{{u}}}{{{a href='https://baserow.io/' rel='noopener noreferrer' target='_blank'}}}Baserow{{{/a}}}{{{/u}}} is an online database that follows strict privacy rules (GDPR, IPAA, and SOC2). It is a European company and their servers are located in Germany. You can read more about their policies on the {{{u}}}{{{a href='https://baserow.io/faq' rel='noopener noreferrer' target='_blank'}}}{{{strong}}}Baserow FAQ{{{/strong}}}{{{/a}}}{{{/u}}} - just click on the 'Security' section.{{{br /}}}{{{br /}}} Baserow makes it easy to create tables and manage your Q sort data through a simple interface. It's free to use for projects with less than  3,000 participants! {{{br /}}} {{{br /}}}{{{b}}}Getting started:{{{/b}}} Click the orange button below to download a file called 'baserowHeader.csv'. You'll need this file to complete your setup. Then go to Step 1 of the visual guide",
+  "baserowHeaderDownloadButton": "Download Baserow Header File",
+  "baserowStep1": "Visit {{{u}}}{{{a href='https://baserow.io' rel='noopener noreferrer' target='_blank'}}}{{{strong}}}Baserow.io{{{/strong}}}{{{/a}}}{{{/u}}} and create a new account by clicking on the 'Sign Up' button in the upper right corner of the page.",
   "baserowStep2": "Next, fill in the required information and click the 'Get Started' button.",
   "baserowStep3": "Click the 'Skip for now' button to bypass the data collection.",
   "baserowStep4": "Click the 'Skip for now' button to bypass the data collection.",

@@ -249,7 +249,7 @@ const Baserow: React.FC = () => {
           <div className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             {t("baserowIntro1")}
           </div>
-          <div className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mt-4">
+          <div className="text-xl text-gray-600 mt-6 max-w-3xl mx-auto leading-relaxed mt-4">
             {" "}
             {description}
           </div>
