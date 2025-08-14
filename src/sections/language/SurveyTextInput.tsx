@@ -54,7 +54,7 @@ const SurveyTextInput: React.FC = () => {
     displayMode = false;
   }
   return (
-    <div className="outline outline-2 outline-slate-500 p-2 w-[78vw] max-w-[78vw] rounded-sm bg-gray-100">
+    <div className="outline outline-2 outline-slate-500 p-2 w-[100%] rounded-sm bg-gray-100">
       <div className="flex flex-row justify-between mb-4">
         <h2>14. {t("questionnaireScreen")}</h2>
         <div className="flex flex-row gap-4">

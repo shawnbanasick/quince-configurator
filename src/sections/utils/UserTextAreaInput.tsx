@@ -44,7 +44,7 @@ const UserTextAreaInput: React.FC<UserTextAreaInputProps> = ({
 
   if (highlight === true) {
     return (
-      <div className="flex flex-row w-[72vw] focus-within:font-bold">
+      <div className="flex flex-row w-[100%] focus-within:font-bold">
         <label htmlFor={name} className={classNameLabel}>
           <mark>{label ? label : ""}</mark>
         </label>
@@ -60,7 +60,7 @@ const UserTextAreaInput: React.FC<UserTextAreaInputProps> = ({
     1;
   } else {
     return (
-      <div className="flex flex-row items-center w-[72vw] focus-within:font-bold">
+      <div className="flex flex-row items-center w-[100%] focus-within:font-bold">
         <label htmlFor={name} className={classNameLabel}>
           {label ? label : ""}
         </label>

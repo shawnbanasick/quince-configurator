@@ -65,14 +65,17 @@ const Language: React.FC = () => {
     variant?: "primary" | "secondary" | "accent";
   }> = ({ title, description, icon, children, variant = "primary" }) => {
     const variants = {
-      primary: "from-blue-400 to-blue-600",
+      primary: "from-blue-400 to-purple-600",
       secondary: "from-green-600 to-teal-600",
       accent: "from-orange-500 to-red-500",
     };
 
     return (
-      <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden mb-8">
-        <div className={`bg-gradient-to-r ${variants[variant]} text-white p-6`}>
+      <div
+        id="cards"
+        className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden w-[83vw] max-w-[1500px] mb-8"
+      >
+        <div className={`bg-gradient-to-r from-blue-600 to-blue-800} text-white p-6`}>
           <div className="flex items-center space-x-4">
             <div className="w-10 h-10 bg-white bg-opacity-20 rounded-lg flex items-center justify-center">
               <div className="w-6 h-6 text-white">{icon}</div>
@@ -337,13 +340,13 @@ const Language: React.FC = () => {
 
         {/* Introduction Section - Beginner Mode */}
         {isBeginnerMode && (
-          <div className="mb-8">
+          <div className="flex items-center justify-center mb-8">
             <LanguageIntroText />
           </div>
         )}
 
         {/* Configuration Sections */}
-        <div className="space-y-8">
+        <div className="flex flex-col items-center justify-center">
           {screenSections.map((section, index) => (
             <ConfigSection
               key={index}
@@ -359,49 +362,6 @@ const Language: React.FC = () => {
               </div>
             </ConfigSection>
           ))}
-        </div>
-
-        {/* Progress Indicator */}
-        <div className="mt-12 bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-6 text-center">
-            Configuration Progress
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-            {screenSections.map((section, index) => (
-              <div key={index} className="text-center p-4 bg-gray-50 rounded-lg">
-                <div className="w-8 h-8 mx-auto mb-2 text-gray-600">{section.icon}</div>
-                <div className="text-xs font-medium text-gray-700">{section.title}</div>
-                <div className="w-full bg-gray-200 rounded-full h-1 mt-2">
-                  <div className="bg-blue-600 h-1 rounded-full w-3/4"></div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Help Section */}
-        <div className="mt-8 bg-indigo-50 border border-indigo-200 rounded-xl p-6">
-          <div className="flex items-start space-x-4">
-            <div className="flex-shrink-0 w-6 h-6 text-indigo-600">
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </div>
-            <div className="text-indigo-800">
-              <h3 className="font-semibold mb-2">Language Configuration Tips</h3>
-              <ul className="text-sm leading-relaxed space-y-1">
-                <li>• Configure text for both desktop and mobile versions of each screen</li>
-                <li>• Use clear, concise language that participants will easily understand</li>
-                <li>• Test your configuration on different devices to ensure proper display</li>
-                <li>• Consider your target audience when writing instructions and labels</li>
-              </ul>
-            </div>
-          </div>
         </div>
       </div>
     </div>

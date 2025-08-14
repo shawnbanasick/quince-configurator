@@ -40,7 +40,7 @@ const ProjectLinkingTextInput: React.FC = () => {
     displayMode = false;
   }
   return (
-    <div className="outline outline-2 outline-slate-500 p-2 w-[78vw] max-w-[78vw] rounded-sm">
+    <div className="outline outline-2 outline-slate-500 p-2 w-[100%] rounded-sm">
       <div className="flex flex-row justify-between mb-4">
         <h2>19. {t("projectLinkingScreen")}</h2>
         <div className="flex flex-row gap-4">
