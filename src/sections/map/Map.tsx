@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useStore } from "../../globalState/useStore.js";
 import { useTranslation } from "react-i18next";
 import { Radio } from "../utils/RadioButtons";
@@ -17,6 +17,18 @@ import { setClearAllColors } from "./setClearAllColors.js";
 import { UploadAndReadXmlMap } from "./UploadAndReadXmlMap.js";
 import { generateMapXml } from "./generateMapXml.js";
 import { UserTextAreaInput } from "../utils/UserTextAreaInput.js";
+import { EmojiN5 } from "./emoji/EmojiN5.js";
+import { EmojiN4 } from "./emoji/EmojiN4.js";
+import { EmojiN3 } from "./emoji/EmojiN3.js";
+import { EmojiN2 } from "./emoji/EmojiN2.js";
+import { EmojiN1 } from "./emoji/EmojiN1.js";
+import { Emoji0 } from "./emoji/Emoji0";
+import { Emoji1 } from "./emoji/Emoji1";
+import { Emoji2 } from "./emoji/Emoji2";
+import { Emoji3 } from "./emoji/Emoji3";
+import { Emoji4 } from "./emoji/Emoji4";
+import { Emoji5 } from "./emoji/Emoji5";
+import { ToggleSwitch } from "./ToggleSwitch";
 
 // Type definitions
 interface State {
@@ -34,8 +46,24 @@ interface State {
   mobileHeadersDefault7: string;
   mobileHeadersDefault9: string;
   mobileHeadersDefault11: string;
+  mobileHeadersDefault13: string;
   numStatements: number;
   allStatementsAllocated: boolean;
+  useColLabelNumsDesktop: boolean;
+  useColLabelNumsMobile: boolean;
+  useColLabelTextDesktop: boolean;
+  useColLabelTextMobile: boolean;
+  useColLabelEmojiDesktop: boolean;
+  useColLabelEmojiMobile: boolean;
+  setUseColLabelNumsDesktop: (value: boolean) => void;
+  setUseColLabelNumsMobile: (value: boolean) => void;
+  setUseColLabelTextDesktop: (value: boolean) => void;
+  setUseColLabelTextMobile: (value: boolean) => void;
+  setUseColLabelEmojiDesktop: (value: boolean) => void;
+  setUseColLabelEmojiMobile: (value: boolean) => void;
+  emojiArray: any[];
+  setEmojiArray: (value: any[]) => void;
+  setEmojiArrayType: (value: string) => void;
 }
 
 const getDisplayMode = (state: State) => state.displayMode;
@@ -52,8 +80,24 @@ const getMobileHeadersDefault5 = (state: State) => state.mobileHeadersDefault5;
 const getMobileHeadersDefault7 = (state: State) => state.mobileHeadersDefault7;
 const getMobileHeadersDefault9 = (state: State) => state.mobileHeadersDefault9;
 const getMobileHeadersDefault11 = (state: State) => state.mobileHeadersDefault11;
+const getMobileHeadersDefault13 = (state: State) => state.mobileHeadersDefault13;
 const getNumStatements = (state: State) => state.numStatements;
 const getAllStatementsAllocated = (state: State) => state.allStatementsAllocated;
+const getUseColLabelNumsDesktop = (state: State) => state.useColLabelNumsDesktop;
+const getUseColLabelNumsMobile = (state: State) => state.useColLabelNumsMobile;
+const getUseColLabelTextDesktop = (state: State) => state.useColLabelTextDesktop;
+const getUseColLabelTextMobile = (state: State) => state.useColLabelTextMobile;
+const getUseColLabelEmojiDesktop = (state: State) => state.useColLabelEmojiDesktop;
+const getUseColLabelEmojiMobile = (state: State) => state.useColLabelEmojiMobile;
+const getSetUseColLabelNumsDesktop = (state: State) => state.setUseColLabelNumsDesktop;
+const getSetUseColLabelNumsMobile = (state: State) => state.setUseColLabelNumsMobile;
+const getSetUseColLabelTextDesktop = (state: State) => state.setUseColLabelTextDesktop;
+const getSetUseColLabelTextMobile = (state: State) => state.setUseColLabelTextMobile;
+const getSetUseColLabelEmojiDesktop = (state: State) => state.setUseColLabelEmojiDesktop;
+const getSetUseColLabelEmojiMobile = (state: State) => state.setUseColLabelEmojiMobile;
+const getSetEmojiArray = (state: State) => state.setEmojiArray;
+const getEmojiArray = (state: State) => state.emojiArray;
+const getSetEmojiArrayType = (state: State) => state.setEmojiArrayType;
 
 const Map: React.FC = () => {
   const { t } = useTranslation();
@@ -71,10 +115,29 @@ const Map: React.FC = () => {
   const mobileHeadersDefault7 = useStore(getMobileHeadersDefault7);
   const mobileHeadersDefault9 = useStore(getMobileHeadersDefault9);
   const mobileHeadersDefault11 = useStore(getMobileHeadersDefault11);
+  const mobileHeadersDefault13 = useStore(getMobileHeadersDefault13);
   const numStatements = useStore(getNumStatements);
   const allStatementsAllocated = useStore(getAllStatementsAllocated);
+  const useColLabelNumsDesktop = useStore(getUseColLabelNumsDesktop);
+  const useColLabelNumsMobile = useStore(getUseColLabelNumsMobile);
+  const useColLabelTextDesktop = useStore(getUseColLabelTextDesktop);
+  const useColLabelTextMobile = useStore(getUseColLabelTextMobile);
+  const useColLabelEmojiDesktop = useStore(getUseColLabelEmojiDesktop);
+  const useColLabelEmojiMobile = useStore(getUseColLabelEmojiMobile);
+
+  const setUseColLabelNumsDesktop = useStore(getSetUseColLabelNumsDesktop);
+  const setUseColLabelNumsMobile = useStore(getSetUseColLabelNumsMobile);
+  const setUseColLabelTextDesktop = useStore(getSetUseColLabelTextDesktop);
+  const setUseColLabelTextMobile = useStore(getSetUseColLabelTextMobile);
+  const setUseColLabelEmojiDesktop = useStore(getSetUseColLabelEmojiDesktop);
+  const setUseColLabelEmojiMobile = useStore(getSetUseColLabelEmojiMobile);
+  const emojiArray = useStore(getEmojiArray);
+  const setEmojiArray = useStore(getSetEmojiArray);
+  const setEmojiArrayType = useStore(getSetEmojiArrayType);
 
   const isBeginnerMode = displayMode === "beginner";
+
+  const [isSwitchDisabled, setIsSwitchDisabled] = useState(false);
 
   // Color palette handlers
   const colorPaletteActions = {
@@ -99,13 +162,92 @@ const Map: React.FC = () => {
     }
   };
 
+  const emoji5Array: any[] = [
+    <EmojiN5 size={50} />,
+    <EmojiN4 size={50} />,
+    <EmojiN3 size={50} />,
+    <EmojiN2 size={50} />,
+    <EmojiN1 size={50} />,
+    <Emoji0 size={50} />,
+    <Emoji1 size={50} />,
+    <Emoji2 size={50} />,
+    <Emoji3 size={50} />,
+    <Emoji4 size={50} />,
+    <Emoji5 size={50} />,
+  ];
+
+  const emoji4Array: any[] = [
+    <EmojiN5 size={50} />,
+    <EmojiN3 size={50} />,
+    <EmojiN2 size={50} />,
+    <EmojiN1 size={50} />,
+    <Emoji0 size={50} />,
+    <Emoji1 size={50} />,
+    <Emoji2 size={50} />,
+    <Emoji3 size={50} />,
+    <Emoji5 size={50} />,
+  ];
+
+  const emoji3Array: any[] = [
+    <EmojiN3 size={50} />,
+    <EmojiN2 size={50} />,
+    <EmojiN1 size={50} />,
+    <Emoji0 size={50} />,
+    <Emoji1 size={50} />,
+    <Emoji2 size={50} />,
+    <Emoji3 size={50} />,
+  ];
+
+  const emoji2Array: any[] = [
+    <EmojiN2 size={50} />,
+    <EmojiN1 size={50} />,
+    <Emoji0 size={50} />,
+    <Emoji1 size={50} />,
+    <Emoji2 size={50} />,
+  ];
+
   const handleMobileLabelsChange = (value: string): void => {
+    console.log(value);
+    if (value === "labels5") {
+      // setColNums("-2, -1, 0, +1, +2");
+      setEmojiArray([...emoji2Array]);
+      setIsSwitchDisabled(false);
+      setEmojiArrayType("emoji2Array");
+    }
+    if (value === "labels7") {
+      // setColNums("-3, -2, -1, 0, +1, +2, +3");
+      setIsSwitchDisabled(false);
+      setEmojiArray([...emoji3Array]);
+      setEmojiArrayType("emoji3Array");
+    }
+    if (value === "labels9") {
+      // setColNums("-4, -3, -2, -1, 0, +1, +2, +3, +4");
+      setIsSwitchDisabled(false);
+      setEmojiArray([...emoji4Array]);
+      setEmojiArrayType("emoji4Array");
+    }
+    if (value === "labels11") {
+      // setColNums("-5, -4, -3, -2, -1, 0, +1, +2, +3, +4, +5");
+      setIsSwitchDisabled(false);
+      setEmojiArray([...emoji5Array]);
+      setEmojiArrayType("emoji5Array");
+    }
+    if (value === "labels13") {
+      // setColNums("-6, -5, -4, -3, -2, -1, 0, +1, +2, +3, +4, +5, +6");
+      setEmojiArray([]);
+      setIsSwitchDisabled(true);
+      setUseColLabelEmojiDesktop(false);
+      setUseColLabelEmojiMobile(false);
+      setEmojiArrayType("");
+    }
+
     setMobileHeadersDefaultLabels(value);
     const labelMappings = {
       labels5: mobileHeadersDefault5,
       labels7: mobileHeadersDefault7,
       labels9: mobileHeadersDefault9,
       labels11: mobileHeadersDefault11,
+      labels13: mobileHeadersDefault13,
     };
 
     const labelText = labelMappings[value as keyof typeof labelMappings];
@@ -130,7 +272,6 @@ const Map: React.FC = () => {
 
   const numHeaderLabels = countMobileHeaders(mobileHeadersText);
   const numMissingHeaders = numMapTotalColumns - numHeaderLabels;
-
   const handleDownloadMap = (): void => {
     try {
       // Validation checks
@@ -168,23 +309,13 @@ const Map: React.FC = () => {
 
   const ActionButton: React.FC<{
     children: React.ReactNode;
-    icon: React.ReactNode;
     description: string;
     onClick?: () => void;
     component?: React.ReactNode;
     variant?: "primary" | "secondary";
-  }> = ({ children, icon, description, onClick, component, variant = "primary" }) => (
+  }> = ({ children, description, onClick, component, variant = "primary" }) => (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-all duration-300">
       <div className="flex flex-col items-center text-center space-y-4">
-        <div
-          className={`w-16 h-16 rounded-full flex items-center justify-center ${
-            variant === "primary"
-              ? "bg-gradient-to-br from-blue-500 to-blue-600"
-              : "bg-gradient-to-br from-blue-500 to-blue-600"
-          }`}
-        >
-          <div className="w-8 h-8 text-white">{icon}</div>
-        </div>
         <div>
           <h3 className="text-lg font-semibold text-gray-900 mb-2">{children}</h3>
           <p className="text-sm text-gray-600 mb-4">{description}</p>
@@ -212,7 +343,8 @@ const Map: React.FC = () => {
   }> = ({ title, options, selectedValue, onChange, name }) => (
     <div className="mb-8">
       <h3 className="text-lg font-semibold text-gray-900 mb-4">{title}</h3>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+      {/* <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3"> */}
+      <div className="flex flex-row gap-3 flex-wrap">
         {options.map((option) => (
           <div key={option.value} className="flex items-center">
             <Radio
@@ -284,6 +416,7 @@ const Map: React.FC = () => {
     { value: "labels7", label: t("steps4MobileHeaders") },
     { value: "labels9", label: t("steps5MobileHeaders") },
     { value: "labels11", label: t("steps6MobileHeaders") },
+    { value: "labels13", label: t("steps7MobileHeaders") },
   ];
 
   return (
@@ -292,7 +425,7 @@ const Map: React.FC = () => {
         {/* Header Section */}
         <div className="text-center mb-12">
           <div className="flex items-center justify-center mb-6">
-            <div className="w-20 h-20 bg-gradient-to-br from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
+            <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
               <svg
                 className="w-10 h-10 text-white"
                 fill="none"
@@ -312,44 +445,6 @@ const Map: React.FC = () => {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             {t("qSortGridSettings")}
           </p>
-        </div>
-
-        {/* Action Buttons Section */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <ActionButton
-            icon={
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                />
-              </svg>
-            }
-            description="Upload an existing map XML file to load your grid configuration"
-            component={<UploadAndReadXmlMap />}
-          >
-            Upload Map File
-          </ActionButton>
-
-          <ActionButton
-            icon={
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                />
-              </svg>
-            }
-            description="Download your current map configuration as an XML file"
-            onClick={handleDownloadMap}
-            variant="secondary"
-          >
-            {t("saveMap")}
-          </ActionButton>
         </div>
 
         {/* Introduction Section - Beginner Mode */}
@@ -377,51 +472,110 @@ const Map: React.FC = () => {
           </div>
         )}
 
+        {/* Action Buttons Section */}
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <ActionButton
+            description="Upload an existing map XML file to load your grid configuration"
+            component={<UploadAndReadXmlMap />}
+          >
+            Upload Map File
+          </ActionButton>
+
+          <ActionButton
+            description="Download your current map configuration as an XML file"
+            onClick={handleDownloadMap}
+            variant="secondary"
+          >
+            {t("saveMap")}
+          </ActionButton>
+        </div>
+
         {/* Map Input Section */}
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden mb-8">
-          <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-8">
-            <h2 className="text-2xl font-semibold mb-2">Grid Layout</h2>
-            <p className="text-purple-100">Configure your Q-sort grid structure</p>
+          <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-8">
+            <div className="text-2xl font-semibold mb-2">{t("columnsLayout")}</div>
+            <div className="text-purple-100">{t("columnsLayoutSubTitle")}</div>
           </div>
-          <div className="p-8">
+          <div className="pl-11 mt-4">{t("mapInputElementTitle")}</div>
+          <div className="">
             <MapInputElement numStatements={numStatements} />
           </div>
+
+          {/* Configuration Options */}
+          <div className="p-8 pt-2 mt-4">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">{t("colorSettings")}</h2>
+            {/* Color Palette Options */}
+            <RadioGroup
+              title={`${t("mapColorPalette")}`}
+              options={colorPaletteOptions}
+              selectedValue={mapColorPalette}
+              onChange={handleMapColorPaletteChange}
+              name="colorPalette"
+            />
+            {/* Column Color Style */}
+            <RadioGroup
+              title={`${t("mapColColors")}`}
+              options={colorStyleOptions}
+              selectedValue={mapColColorsStyle}
+              onChange={handleMapColColorsChange}
+              name="colorStyle"
+            />
+          </div>
         </div>
 
-        {/* Configuration Options */}
-        <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 mb-8">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-8">Visual Configuration</h2>
-
-          {/* Color Palette Options */}
-          <RadioGroup
-            title={`1. ${t("mapColorPalette")}`}
-            options={colorPaletteOptions}
-            selectedValue={mapColorPalette}
-            onChange={handleMapColorPaletteChange}
-            name="colorPalette"
-          />
-
-          {/* Column Color Style */}
-          <RadioGroup
-            title={`2. ${t("mapColColors")}`}
-            options={colorStyleOptions}
-            selectedValue={mapColColorsStyle}
-            onChange={handleMapColColorsChange}
-            name="colorStyle"
-          />
-        </div>
-
-        {/* Mobile Headers Configuration */}
+        {/* Column Labels Configuration */}
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-semibold text-gray-900">3. {t("mobileHeadersText")}</h2>
+            <h2 className="text-2xl font-semibold text-gray-900">{t("columnLabelsBoxTitle")}</h2>
             <StatusBadge status={headerStatus.status}>{headerStatus.message}</StatusBadge>
           </div>
 
-          {/* Default Options */}
-          <div className="mb-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">{t("defaultOptions")}</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          <div>
+            Number labels are the default for all Q sort designs, but can be disabled to remove all
+            column labels.
+          </div>
+
+          {/* NUMBERS - Column Headers - Numbers */}
+          <div className="text-lg mt-2 font-semibold text-gray-900 mb-1">Numbers</div>
+          <div className="flex flex-col gap-3 mt-4">
+            <div className="ml-4 space-y-3">
+              <ToggleSwitch
+                label="Use Numbers - Desktop"
+                labelPosition="left"
+                checked={useColLabelNumsDesktop}
+                onChange={() => setUseColLabelNumsDesktop(!useColLabelNumsDesktop)}
+                variant="green"
+              />
+              {/* <p className="text-sm text-gray-600">
+                  Current value:{" "}
+                  <span className="font-mono">{useColLabelNumsDesktop.toString()}</span>
+                  </p> */}
+            </div>
+            <div className="ml-4 space-y-3">
+              <ToggleSwitch
+                label="Use Numbers - Mobile"
+                labelPosition="left"
+                checked={useColLabelNumsMobile}
+                onChange={() => setUseColLabelNumsMobile(!useColLabelNumsMobile)}
+                variant="green"
+              />
+              {/* <p className="text-sm text-gray-600">
+                  Current value: <span className="font-mono">{controlledValue.toString()}</span>
+                  </p> */}
+            </div>
+          </div>
+
+          {/* Header Sample Text */}
+
+          <div className="mt-12">
+            If you are using a negative-to-positive Q sort pattern (for example, -4 to +4), you can
+            use text labels or emojis in combination with, or instead of, number labels.
+          </div>
+
+          {/* PRESET LEVELS */}
+          <div className="mb-6 mt-2">
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">{t("mapColsPresetLevels")}</h3>
+            <div className="flex flex-row gap-3 ml-4 flex-wrap">
               {defaultLabelOptions.map((option) => (
                 <div key={option.value} className="flex items-center">
                   <Radio
@@ -437,11 +591,37 @@ const Map: React.FC = () => {
             </div>
           </div>
 
-          {/* Custom Headers Input */}
+          {/* TEXT DESCRIPTIONS - Custom Text Label Input */}
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Custom Headers</h3>
+            <div className="text-lg font-semibold text-gray-900 mb-1">Text Descriptions</div>
+            <div className="ml-4 flex flex-col gap-3 mt-4">
+              <div className="space-y-3">
+                <ToggleSwitch
+                  label="Use Text - Desktop"
+                  labelPosition="left"
+                  checked={useColLabelTextDesktop}
+                  onChange={() => setUseColLabelTextDesktop(!useColLabelTextDesktop)}
+                  variant="green"
+                />
+                {/* <p className="text-sm text-gray-600">
+                  Current value: <span className="font-mono">{controlledValue.toString()}</span>
+                </p> */}
+              </div>
+              <div className="space-y-3">
+                <ToggleSwitch
+                  label="Use Text - Mobile"
+                  labelPosition="left"
+                  checked={useColLabelTextMobile}
+                  onChange={() => setUseColLabelTextMobile(!useColLabelTextMobile)}
+                  variant="green"
+                />
+                {/* <p className="text-sm text-gray-600">
+                  Current value: <span className="font-mono">{controlledValue.toString()}</span>
+                </p> */}
+              </div>
+            </div>
             <UserTextAreaInput
-              classNameText="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"
+              classNameText="w-full ml-4 mt-3 px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"
               classNameLabel=""
               label=""
               name="mobileHeadersText"
@@ -452,14 +632,53 @@ const Map: React.FC = () => {
               disabled={false}
               tabIndex="0"
             />
-            <p className="text-sm text-gray-500 mt-2">
+            <div className="text-sm ml-4 text-gray-500 mt-2">
               Enter column headers separated by commas. Total needed: {numMapTotalColumns}
-            </p>
+            </div>
+
+            <div className="flex flex-row mt-6">
+              <div className=" w-[100px] text-lg font-semibold text-gray-900 mr-2">Emoji</div>
+              {isSwitchDisabled && <div>{`(Emoji not available for -6 to +6 Q sort designs)`}</div>}
+            </div>
+            <div className="flex flex-col gap-3 ml-4 mt-4">
+              <div className="space-y-3 ">
+                <ToggleSwitch
+                  label="Use Emoji - Desktop"
+                  labelPosition="left"
+                  disabled={isSwitchDisabled}
+                  checked={useColLabelEmojiDesktop}
+                  onChange={() => setUseColLabelEmojiDesktop(!useColLabelEmojiDesktop)}
+                  variant="green"
+                />
+                {/* <p className="text-sm text-gray-600">
+                  Current value: <span className="font-mono">{controlledValue.toString()}</span>
+                </p> */}
+              </div>
+              <div className="space-y-3">
+                <ToggleSwitch
+                  label="Use Emoji - Mobile"
+                  labelPosition="left"
+                  disabled={isSwitchDisabled}
+                  checked={useColLabelEmojiMobile}
+                  onChange={() => setUseColLabelEmojiMobile(!useColLabelEmojiMobile)}
+                  variant="green"
+                />
+                {/* <p className="text-sm text-gray-600">
+                  Current value: <span className="font-mono">{controlledValue.toString()}</span>
+                </p> */}
+              </div>
+            </div>
+
+            <div className="flex flex-row gap-4 ml-4 mt-6 min-h-[60px]">
+              {emojiArray.map((element) => {
+                return element;
+              })}
+            </div>
           </div>
         </div>
 
         {/* Status Information */}
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="text-center p-6 bg-blue-50 rounded-xl">
             <div className="text-3xl font-bold text-blue-600 mb-2">{numStatements}</div>
             <div className="text-sm text-gray-600">Total Statements</div>
@@ -472,7 +691,7 @@ const Map: React.FC = () => {
             <div className="text-3xl font-bold text-purple-600 mb-2">{numHeaderLabels}</div>
             <div className="text-sm text-gray-600">Header Labels</div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

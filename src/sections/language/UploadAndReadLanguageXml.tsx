@@ -72,9 +72,17 @@ const UploadAndReadLanguageXml = () => {
         ref={fileInputRef}
       />
       <button
-        className="w-[500px] px-6 p-2 bg-orange-300 text-black font-semibold rounded-md hover:bg-orange-500 focus:outline-none focus:ring-2 border border-gray-900 focus:ring-orange-400 focus:ring-opacity-75 text-center min-h-[40px] select-none"
+        className="flex flex-row gap-2 justify-center items-center w-[500px] px-6 p-2 bg-orange-300 text-black font-semibold rounded-md hover:bg-orange-500 focus:outline-none focus:ring-2 border border-gray-900 focus:ring-orange-400 focus:ring-opacity-75 text-center min-h-[40px] select-none"
         onClick={handleFileUpload}
       >
+        <svg className="max-w-[30px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+          />
+        </svg>
         {t("loadLanguage")}
       </button>
     </div>

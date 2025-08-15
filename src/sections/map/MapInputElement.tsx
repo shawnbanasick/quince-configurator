@@ -206,17 +206,17 @@ const MapInputElement = (props) => {
   ]);
 
   return (
-    <div className="flex flex-col mt-10 mb-10 w-auto">
+    <div className="flex flex-col items-center justify-center mt-4 mb-1 w-auto">
       <div className="flex flex-row">
-        <div className="flex items-center h-[50px] w-[250px] pr-4 pl-2">
+        <div className="flex items-center h-[50px] w-[250px] pr-4">
           {`${t("qSortPattern")}`} &nbsp;&nbsp;&nbsp; {` >>>`}
         </div>
         {props.numStatements > 0 ? (
-          <div className={`flex pl-2 pr-2 rounded-sm items-center ${displayTitles.inputColor} `}>
+          <div className={`flex  pr-2 rounded-sm items-center ${displayTitles.inputColor} `}>
             {displayTitles.inputTitle}
           </div>
         ) : (
-          <div className="flex items-center h-[50px] w-[66vw] pr-4 pl-2 rounded-md">
+          <div className="flex items-center h-[50px] w-[66vw] pr-4  rounded-md">
             {`${t("noStatementsLoaded")}`}
           </div>
         )}

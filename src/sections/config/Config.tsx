@@ -33,7 +33,7 @@ const Config: React.FC = () => {
     icon: React.ReactNode;
     description: string;
     // component: React.ReactNode;
-  }> = ({ children, icon, description }) => (
+  }> = ({ children, description }) => (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 hover:shadow-xl transition-all duration-300">
       <div className="flex flex-col items-center text-center space-y-4">
         <div>
@@ -78,55 +78,6 @@ const Config: React.FC = () => {
             {t("configSettings")}
           </p>
         </div>
-
-        {/* Action Buttons Section */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <ActionButton
-            icon={
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                />
-              </svg>
-            }
-            description="Load an existing configuration file to continue working with saved settings or to modify a previous project."
-          >
-            <div className="">
-              <UploadAndReadXML />
-            </div>
-          </ActionButton>
-
-          <ActionButton
-            icon={
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                />
-              </svg>
-            }
-            description="Download your current configuration as an XML file for backup or sharing"
-          >
-            <div className="flex-1 max-w-md">
-              <DownloadConfigXml />
-            </div>
-          </ActionButton>
-        </div>
-        {/* 
-        <div className="bg-white rounded-2xl shadow-xl p-8 mb-8 border border-gray-100">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-6 text-center">File Operations</h2>
-          <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
-            <div className="flex-shrink-0">
-              <div className="w-px h-16 bg-gray-200 hidden sm:block"></div>
-              <div className="w-16 h-px bg-gray-200 sm:hidden"></div>
-            </div>
-          </div>
-        </div> */}
 
         {/* Information Cards - Only show in beginner mode */}
         {isBeginnerMode && (
@@ -186,6 +137,45 @@ const Config: React.FC = () => {
             </div>
           </div>
         )}
+
+        {/* Action Buttons Section */}
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <ActionButton
+            icon={
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                />
+              </svg>
+            }
+            description="Load an existing configuration file to continue working with saved settings or to modify a previous project."
+          >
+            <div className="">
+              <UploadAndReadXML />
+            </div>
+          </ActionButton>
+
+          <ActionButton
+            icon={
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                />
+              </svg>
+            }
+            description="Download your current configuration as an XML file for backup or sharing"
+          >
+            <div className="flex-1 max-w-md">
+              <DownloadConfigXml />
+            </div>
+          </ActionButton>
+        </div>
 
         {/* Configuration Sections */}
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">

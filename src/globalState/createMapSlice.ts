@@ -54,7 +54,18 @@ const createMapXmlSlice = (set) => ({
     "Very Strongly Agree, Strongly Agree, Agree, Agree Somewhat, Neutral, Disagree Somewhat, Disagree, Strongly Disagree, Very Strongly Disagree",
   mobileHeadersDefault11:
     "Very Strongly Agree, Strongly Agree, Agree, Agree Somewhat, Slightly Agree, Neutral, Very Slightly Disagree, Disagree Somewhat, Disagree, Strongly Disagree, Very Strongly Disagree",
+  mobileHeadersDefault13:
+    "Completely Agree, Very Strongly Agree, Strongly Agree, Agree, Agree Somewhat, Slightly Agree, Neutral, Very Slightly Disagree, Disagree Somewhat, Disagree, Strongly Disagree, Very Strongly Disagree, Completely Disagree",
   allStatementsAllocated: false,
+  useColLabelNumsDesktop: true,
+  useColLabelNumsMobile: true,
+  useColLabelTextDesktop: false,
+  useColLabelTextMobile: false,
+  useColLabelEmojiDesktop: false,
+  useColLabelEmojiMobile: false,
+  emojiArray: [],
+  emojiArrayType: "",
+  colTextLabelsArray: [],
 
   /*
    ******** GENERIC STATE CHANGE  ****************** */
@@ -62,6 +73,33 @@ const createMapXmlSlice = (set) => ({
   setColor: (stateDesig, color) => set(() => ({ [stateDesig]: color })),
   setNumber: (stateDesig, number) => set(() => ({ [stateDesig]: number })),
 
+  setColTextLabelsArray: (array) => {
+    set(() => ({ colTextLabelsArray: array }));
+  },
+  setEmojiArray: (array) => {
+    set(() => ({ emojiArray: array }));
+  },
+  setEmojiArrayType: (string) => {
+    set(() => ({ emojiArrayType: string }));
+  },
+  setUseColLabelNumsDesktop: (Boolean) => {
+    set(() => ({ useColLabelNumsDesktop: Boolean }));
+  },
+  setUseColLabelNumsMobile: (Boolean) => {
+    set(() => ({ useColLabelNumsMobile: Boolean }));
+  },
+  setUseColLabelTextDesktop: (Boolean) => {
+    set(() => ({ useColLabelTextDesktop: Boolean }));
+  },
+  setUseColLabelTextMobile: (Boolean) => {
+    set(() => ({ useColLabelTextMobile: Boolean }));
+  },
+  setUseColLabelEmojiDesktop: (Boolean) => {
+    set(() => ({ useColLabelEmojiDesktop: Boolean }));
+  },
+  setUseColLabelEmojiMobile: (Boolean) => {
+    set(() => ({ useColLabelEmojiMobile: Boolean }));
+  },
   setAllStatementsAllocated: (value) => {
     set(() => ({ allStatementsAllocated: value }));
   },

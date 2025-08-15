@@ -41,18 +41,15 @@ const Language: React.FC = () => {
     children: React.ReactNode;
     icon: React.ReactNode;
     description: string;
-    component: React.ReactNode;
-  }> = ({ children, icon, description, component }) => (
+    // component: React.ReactNode;
+  }> = ({ children, description }) => (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-all duration-300">
       <div className="flex flex-col items-center text-center space-y-4">
-        <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
-          <div className="w-8 h-8 text-white">{icon}</div>
-        </div>
         <div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">{children}</h3>
           <p className="text-sm text-gray-600 mb-4">{description}</p>
+          <h3 className="text-lg font-semibold text-gray-900 mb-2">{children}</h3>
         </div>
-        <div className="w-full">{component}</div>
+        {/* <div className="w-full">{component}</div> */}
       </div>
     </div>
   );
@@ -301,6 +298,13 @@ const Language: React.FC = () => {
           </p>
         </div>
 
+        {/* Introduction Section - Beginner Mode */}
+        {isBeginnerMode && (
+          <div className="flex items-center justify-center mb-8">
+            <LanguageIntroText />
+          </div>
+        )}
+
         {/* Action Buttons Section */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           <ActionButton
@@ -315,9 +319,10 @@ const Language: React.FC = () => {
               </svg>
             }
             description="Upload an existing language XML file to load your text configuration"
-            component={<UploadAndReadLanguageXml />}
           >
-            Upload Language File
+            <div>
+              <UploadAndReadLanguageXml />
+            </div>
           </ActionButton>
 
           <ActionButton
@@ -332,21 +337,15 @@ const Language: React.FC = () => {
               </svg>
             }
             description="Download your current language configuration as an XML file"
-            component={<DownloadLanguageXml />}
           >
-            Download Language File
+            <div>
+              <DownloadLanguageXml />
+            </div>
           </ActionButton>
         </div>
 
-        {/* Introduction Section - Beginner Mode */}
-        {isBeginnerMode && (
-          <div className="flex items-center justify-center mb-8">
-            <LanguageIntroText />
-          </div>
-        )}
-
         {/* Configuration Sections */}
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center text-black justify-center">
           {screenSections.map((section, index) => (
             <ConfigSection
               key={index}
