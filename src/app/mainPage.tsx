@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from "uuid";
 import { Config } from "../sections/config/Config";
 import { Language } from "../sections/language/Language";
 import { Map } from "../sections/map/Map";
-import { WebHost } from "../sections/webHost/Webhost";
+import { WebHost } from "../sections/webHost/WebHost";
 import { ToastContainer } from "react-toastify";
 import { Statements } from "../sections/statements/Statements";
 import { Databases } from "../sections/databases/Databases";
@@ -15,41 +15,45 @@ import { setLanguageDefaults } from "./setLanguageDefaults.js";
 import { setLanguageSection_JA } from "./setLanguageSection_JA.js";
 import { setLanguageSection_EN } from "./setLanguageSection_EN.js";
 import { Results } from "../sections/results/Results.js";
-import Button from "../sections/utils/Button";
+// import Button from "../sections/utils/Button";
 import { useStore } from "../globalState/useStore.js";
+import UkFlag from "../assets/images/UkFlag.svg?react";
+import JapanFlag from "../assets/images/JapanFlag.svg?react";
 
 // Add the following import statement for the declaration file
 
 // const languages = ["en", "ru", "tm", "ja", "ko", "zh", "es", "fr", "de"];
 const languages = ["en", "ja"];
 
-const getShowDescriptionPro = (state) => state.showDescriptionPro;
-const getShowDescriptionBeginner = (state) => state.showDescriptionBeginner;
-const getSetShowDescriptionPro = (state) => state.setShowDescriptionPro;
-const getSetShowDescriptionBeginner = (state) => state.setShowDescriptionBeginner;
-const getSetDisplayMode = (state) => state.setDisplayMode;
+// const getShowDescriptionPro = (state) => state.showDescriptionPro;
+// const getShowDescriptionBeginner = (state) => state.showDescriptionBeginner;
+// const getSetShowDescriptionPro = (state) => state.setShowDescriptionPro;
+// const getSetShowDescriptionBeginner = (state) => state.setShowDescriptionBeginner;
+// const getSetDisplayMode = (state) => state.setDisplayMode;
 
 export const MainPage = () => {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-  const showDescriptionPro = useStore(getShowDescriptionPro);
-  const showDescriptionBeginner = useStore(getShowDescriptionBeginner);
-  const setShowDescriptionPro = useStore(getSetShowDescriptionPro);
-  const setShowDescriptionBeginner = useStore(getSetShowDescriptionBeginner);
-  const setDisplayMode = useStore(getSetDisplayMode);
+  // const showDescriptionPro = useStore(getShowDescriptionPro);
+  // const showDescriptionBeginner = useStore(getShowDescriptionBeginner);
+  // const setShowDescriptionPro = useStore(getSetShowDescriptionPro);
+  // const setShowDescriptionBeginner = useStore(getSetShowDescriptionBeginner);
+  // const setDisplayMode = useStore(getSetDisplayMode);
 
-  const setMode = (e) => {
-    const mode = e.target.id;
-    if (mode === "pro") {
-      setShowDescriptionPro(true);
-      setShowDescriptionBeginner(false);
-      setDisplayMode("pro");
-    } else {
-      setShowDescriptionPro(false);
-      setShowDescriptionBeginner(true);
-      setDisplayMode("beginner");
-    }
-  };
+  // const setMode = (e) => {
+  //   const mode = e.target.id;
+  //   if (mode === "pro") {
+  //     setShowDescriptionPro(true);
+  //     setShowDescriptionBeginner(false);
+  //     setDisplayMode("pro");
+  //   } else {
+  //     setShowDescriptionPro(false);
+  //     setShowDescriptionBeginner(true);
+  //     setDisplayMode("beginner");
+  //   }
+  // };
+
+  const flagArray = [<UkFlag className="w-[25px]" />, <JapanFlag className="w-[25px]" />];
 
   if (currentLanguage === "ja") {
     setLanguageSection_JA(currentLanguage);
@@ -58,6 +62,8 @@ export const MainPage = () => {
   if (currentLanguage === "en") {
     setLanguageSection_EN(currentLanguage);
   }
+
+  console.log("language: ", navigator.language);
 
   const onChangeLanguage = (lng: string) => {
     console.log(lng);
@@ -68,9 +74,10 @@ export const MainPage = () => {
 
   return (
     // space-y is top margin
-    <main className="w-[100%] flex flex-col space-y-4  items-center justify-center bg-gradient-to-br from-slate-50 to-blue-50">
+    // <main className="w-[100%] flex flex-col space-y-4  items-center justify-center bg-gradient-to-br from-slate-50 to-blue-50 bg-[#f5f5f5]">
+    <main className="w-[100%] flex flex-col space-y-4  items-center justify-center bg-[#f5f5f5]">
       <ToastContainer />
-      <Tabs className="h-[98vh] w-[100%] p-2 ">
+      <Tabs className="h-[98vh] w-[100%] p-2 bg-[#f5f5f5]">
         <TabList>
           <Tab>{t("welcome")}</Tab>
           <Tab>1. {t("database")}</Tab>
@@ -88,26 +95,29 @@ export const MainPage = () => {
               <div id="selectLanguageDiv" className="">
                 <div>{t("selectLanguage")}</div>
                 <div className="flex flex-row space-x-2">
-                  {languages.map((lng) => {
+                  {languages.map((lng, index) => {
                     return (
                       <button
                         onClick={() => onChangeLanguage(lng)}
                         key={uuidv4()}
                         className={clsx(
-                          "bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md",
+                          "bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md w-[80px] ",
                           {
                             "bg-opacity-100": lng === currentLanguage,
                             "bg-opacity-50": lng !== currentLanguage,
                           }
                         )}
                       >
-                        {lng.toUpperCase()}
+                        <div className="flex flex-row gap-2 justify-center">
+                          {lng.toUpperCase()}
+                          {flagArray[index]}
+                        </div>
                       </button>
                     );
                   })}
                 </div>
               </div>
-              <div id="displayModeDiv" className="">
+              {/* <div id="displayModeDiv" className="">
                 <div className="text-center">{t("selectConfiguratorDisplayMode")}</div>
                 <div className="flex flex-row justify-self-center">
                   <Button
@@ -133,7 +143,7 @@ export const MainPage = () => {
                     <div>{t("displaysIndepthDescriptionsAndDirections")}</div>
                   )}
                 </div>
-              </div>
+              </div> */}
             </div>
             <Start />
           </div>

@@ -1,71 +1,110 @@
 // import Image from "../../assets/images/qq-brand-image.png";
+// import ConfiguratorIcon from "../../assets/images/ConfiguratorIcon.svg?react";
+import HeroImage from "../../assets/images/HeroImage.svg?react";
+import EditFilesIcon from "../../assets/images/EditFilesViz.svg?react";
+import DropZoneViz from "../../assets/images/DropFilesViz.svg?react";
 
 const Start = () => {
   return (
-    <div className="flex flex-col items-center justify-center  w-[100%]">
+    <div className="flex flex-col items-center justify-center  w-[100%] bg-[#f5f5f5]  text-gray-900">
       {/* <img src={Image} className=" w-1/12 justify-self-center" alt="Configurator Hero Image" /> */}
 
-      <svg
-        className="mt-4"
-        width="200"
-        height="200"
-        viewBox="0 0 64 60"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        {/* <!-- Main configuration container --> */}
-        <rect
-          x="16"
-          y="12"
-          width="32"
-          height="40"
-          rx="4"
-          fill="#E0F2FE"
-          stroke="#0369A1"
-          strokeWidth="1.0"
-        />
+      {/* <ConfiguratorIcon /> */}
+      <HeroImage className="w-[70vw]" />
 
-        {/* <!-- Configuration toggles/switches --> */}
-        <rect x="20" y="20" width="12" height="3" rx="1.5" fill="#94A3B8" />
-        <rect x="28" y="19.5" width="6" height="4" rx="2" fill="#0EA5E9" />
-
-        <rect x="20" y="28" width="12" height="3" rx="1.5" fill="#94A3B8" />
-        <rect x="20" y="27.5" width="6" height="4" rx="2" fill="#0EA5E9" />
-
-        <rect x="20" y="36" width="12" height="3" rx="1.5" fill="#94A3B8" />
-        <rect x="26" y="35.5" width="6" height="4" rx="2" fill="#0EA5E9" />
-
-        {/* <!-- Q character --> */}
-        <circle cx="40" cy="43" r="4" fill="none" stroke="#0EA5E9" strokeWidth="2.5" />
-        <line
-          x1="42.5"
-          y1="45.5"
-          x2="45"
-          y2="48"
-          stroke="#0EA5E9"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-        />
-
-        {/* <!-- Small indicator dots --> */}
-        <circle cx="22" cy="46" r="1" fill="#0369A1" />
-        <circle cx="26" cy="46" r="1" fill="#38BDF8" />
-        <circle cx="30" cy="46" r="1" fill="#0EA5E9" />
-      </svg>
-      <div className="text-center text-6xl mb-4  mt-6">Quincy Configurator</div>
-
+      {/* HOW IS IT? */}
+      <div className="mt-8 w-9/12 align-self-center font-semibold text-3xl">What is this?</div>
       <div className="mt-2 w-9/12 align-self-center text-base">
-        Quincy Configurator simplifies the set-up and testing of an{" "}
+        Quince is software for online Q sorting and (optional) questionnaires. It is the combination
+        of two projects - EQ Web Sort and Poet-Q. It consists of a package of tools that allow
+        researchers to easily configure, deploy, and manage Q sorting projects. For desktop
+        computers it provides participants with a clean, intuitive drag-and-drop interface that
+        simulates the feel of paper-based card sorting. On mobile phones, the software adapts for a
+        touch-based interface, making online Q sorting an accessible experience for all
+        participants.
+      </div>
+      <div className="mt-5 w-9/12 align-self-center text-base">
+        The software and recommended setup is completely free. The only cost is the time you spend
+        learning how to setup a Quince project.
+      </div>
+
+      {/* FEATURES */}
+      <div className="mt-8 w-9/12 align-self-center font-semibold text-3xl">Features</div>
+      <div className="w-9/12 align-self-center flex justify-start">
+        <ul className="space-y-1 text-gray-900">
+          <li className="flex items-center h-2 p-3">
+            <span className="w-2 h-2 bg-[#3b82f6] rounded-full mr-3"></span>
+            uses multilingual interface - use almost any (left-to-right) language for your project
+          </li>
+          <li className="flex items-center h-2 p-3">
+            <span className="w-2 h-2 bg-[#3b82f6] rounded-full mr-3"></span>
+            includes (optional) participant questionnaire
+          </li>
+          <li className="flex items-center h-2 p-3">
+            <span className="w-2 h-2 bg-[#3b82f6] rounded-full mr-3"></span>
+            works on desktop and mobile phone
+          </li>
+          <li className="flex items-center h-2 p-3">
+            <span className="w-2 h-2 bg-[#3b82f6] rounded-full mr-3"></span>
+            uses GDPR compliant database service
+          </li>
+          <li className="flex items-center h-2 p-3">
+            <span className="w-2 h-2 bg-[#3b82f6] rounded-full mr-3"></span>
+            generates detailed results report (view a sample results file here)
+          </li>
+          <li className="flex items-center h-2 p-3">
+            <span className="w-2 h-2 bg-[#3b82f6] rounded-full mr-3"></span>
+            generates a formated results file for easy input into analysis software like KADE or
+            PQMethod
+          </li>
+          <li className="flex items-center h-2 p-3">
+            <span className="w-2 h-2 bg-[#3b82f6] rounded-full mr-3"></span>
+            requires only basic computer skills - no programming knowledge is needed
+          </li>
+        </ul>
+      </div>
+
+      {/* HOW DOES IT WORK? */}
+      <div className="mt-8 w-9/12 align-self-center font-semibold text-3xl">How does it work?</div>
+      <div className="mt-5 w-9/12 align-self-center text-base -indent-6 pl-6">
+        The Configurator provides guided editing of the Quince settings and visual guides for the
+        setup of the database and webhosting.
+      </div>
+      <div className="mt-8 w-7/12 align-self-center text-2xl -indent-6 pl-6">
+        1. Sign-up for the database service. (Tab 1 above)
+      </div>
+      <div className="mt-8 w-7/12 align-self-center text-2xl -indent-6 pl-6">
+        2. Customize the Quince settings files according to your project's needs. (Tabs 2-5)
+      </div>
+      <EditFilesIcon className="mt-8" />
+      <div className="mt-8 w-7/12 align-self-center text-2xl -indent-6 pl-6">
+        3. Sign-up for the webhost service and upload the Quince template folder. (Tab 6)
+      </div>
+      <DropZoneViz className="mt-8" />
+      <div className="mt-8 w-7/12 align-self-center text-2xl -indent-6 pl-6">
+        4. Your project is online! (Always do a pilot study to confirm that everything is working)
+      </div>
+      <div className="mt-8 w-7/12 align-self-center text-2xl mb-8 -indent-6 pl-6">
+        5. When your project is finished, load your project's customized settings files back into
+        this configurator in Tabs 2-5, and then load your results file from the database (Tab 7).
+        You can then download the results report and analysis input files.
+      </div>
+
+      {/* HOW TO START?
+      <div className="mt-8 w-9/12 align-self-center font-semibold text-3xl">How to start?</div> */}
+      <div className="mt-2 w-9/12 align-self-center text-base">
+        The Quince template files can be downloaded{" "}
         <a
           className="text-blue-600 underline underline-offset-2 decoration-4 decoration-blue-300 hover:decoration-blue-400"
           target="_blank"
           rel="noopener noreferrer"
           href="https://github.com/shawnbanasick/eq-web-sort"
         >
-          Quincy
-        </a>{" "}
-        project for online Q sorting. It provides guided editing of the Q sort configuration files
-        and offers increased control over the design of the Q sort.
+          here
+        </a>
+        .
       </div>
+
       {/* <div className="justify-self-center mt-4 mb-8">
         Citation:
         <br /> Banasick, S. (2025). Quincy Configurator (Version 1.0.0)

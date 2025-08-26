@@ -1,4 +1,4 @@
-const createMapXmlSlice = (set) => ({
+const createLangXmlSlice = (set) => ({
   /*
    ******** 1. MULTIPLE AND FOOTER ****************** */
   btnHelp: "Help",
@@ -11,6 +11,9 @@ const createMapXmlSlice = (set) => ({
   mobileViewSize: `View`,
   mobileModalButtonCancel: `Cancel`,
   expandViewMessage: `Tap the View "+" button below to expand the view area and hide this message.`,
+  langDisplayAllMode: false,
+  languageDisplayAll: false,
+  languageDisplayEssential: true,
 
   /*
    ******** 2. CONSENT PAGE  ****************** */
@@ -259,6 +262,17 @@ const createMapXmlSlice = (set) => ({
 
   /*
    ******** SET VALUES  ****************** */
+  setLangDisplayAllMode: (value) => {
+    set(() => ({ langDisplayAllMode: value }));
+  },
+
+  setLanguageDisplayAll: (value) => {
+    set(() => ({ languageDisplayAll: value }));
+  },
+
+  setLanguageDisplayEssential: (value) => {
+    set(() => ({ languageDisplayEssential: value }));
+  },
 
   setRefineTitlePage: (value) => {
     set(() => ({ refineTitlePage: value }));
@@ -689,4 +703,4 @@ const createMapXmlSlice = (set) => ({
   },
 });
 
-export default createMapXmlSlice;
+export default createLangXmlSlice;

@@ -8,7 +8,7 @@
   "no": "No",
   "welcome": "Welcome",
   "database": "Database",
-  "settings": "Settings / Questionnaire",
+  "settings": "General Settings",
   "statements": "Statements",
   "qSortDesign": "Q Sort Design",
   "userInterfaceLanguage": "User Interface Language",
@@ -227,6 +227,9 @@
   "setupCompleteMessage": "Congratulations! You have successfully completed the Baserow database setup process. Your database is now ready for data collection.",
 
   "*** LANGUAGE PAGE ***": "***  LANGUAGE PAGE  ***",
+  "settingsViewOptions": "Settings View Options",
+  "essentialOptions": "Required Settings",
+  "allOptions": "All Settings",
   "loadLanguage": "Load language.xml File",
   "downloadXmlLanguageFile": "Download language.xml File",
   "languageSubtitle": "User Interface Language Settings for Desktop and Mobile",
@@ -548,5 +551,7 @@
   "netlifyStep12": "If you want to {{{b}}}UPDATE{{{/b}}} your project after making a change with the Configurator, login to your Netlify account and click on your project's name. Your project's name should be at the top of the page. Then, click on 'Deploys' on the left side of the page.",
   "netlifyStep13": "In the 'Deploys' box, click on the 'browse to upload' link and select your project's {{{b}}}FOLDER{{{/b}}}. In a few minutes your project will be updated on the web.",
   "netlifySetupComplete": "Web Hosting Setup Complete!",
-  "netlifySetupCompleteMessage": "Congratulations! You have successfully setup your project on the web. Your website is now ready for use."
+  "netlifySetupCompleteMessage": "Congratulations! You have successfully setup your project on the web. Your website is now ready for use.",
+
+  "checkInternetMessage": "Check Internet Message"
 }

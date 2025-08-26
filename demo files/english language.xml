@@ -227,7 +227,7 @@
         <item id="copyTextError">Error: Please try again.</item>  
         <item id="defaultEmailClientFail">Your default email client should have automatically opened with the results in the email body. If it didn&apos;t, please use the buttons below to copy and paste your information into an email.</item>   
         <item id="emailBodyMessage">You don&apos;t have to add anything to this email. Please just click the SEND button.</item>
-        <item id="emailSubjectText">Quincy Q-Sort Results</item>
+        <item id="emailSubjectText">Quince Q-Sort Results</item>
 
         <!-- LINKING -->
         <item id="linkedProjectFallbackMessage">Please click the button to begin the next Q sort</item>   

@@ -9,7 +9,7 @@ const getSetText = (state) => state.setText;
 const getSetIsLanguageXmlLoaded = (state) => state.setIsLanguageXmlLoaded;
 
 const UploadAndReadLanguageXml = () => {
-  console.log("UploadAndReadLanguageXml component rendered");
+  // console.log("UploadAndReadLanguageXml component rendered");
 
   const { t } = useTranslation();
   const setText = useStore(getSetText);
