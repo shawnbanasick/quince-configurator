@@ -29,6 +29,7 @@ import { Emoji3 } from "./emoji/Emoji3";
 import { Emoji4 } from "./emoji/Emoji4";
 import { Emoji5 } from "./emoji/Emoji5";
 import { ToggleSwitch } from "./ToggleSwitch";
+import ReactHTMLParser from "html-react-parser";
 
 // Type definitions
 interface State {
@@ -315,16 +316,16 @@ const Map: React.FC = () => {
     variant?: "primary" | "secondary";
   }> = ({ children, description, onClick, component, variant = "primary" }) => (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-all duration-300">
-      <div className="flex flex-col items-center text-center space-y-4">
+      <div className="flex flex-col justify-center items-center text-center space-y-4">
         <div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">{children}</h3>
+          {/* <h3 className="text-lg font-semibold text-gray-900 mb-2">{children}</h3> */}
           <p className="text-sm text-gray-600 mb-4">{description}</p>
         </div>
-        <div className="w-full">
+        <div className="flex justify-center items-center w-full ">
           {component || (
             <button
               onClick={onClick}
-              className={`flex items-center justify-center w-[500px] px-6 p-2 bg-orange-300 text-black font-semibold rounded-md hover:opacity-50 focus:outline-none focus:ring-2 border border-gray-600 focus:ring-orange-400 focus:ring-opacity-75 text-center h-[40px] select-none`}
+              className={`flex flex-row gap-3 min-w-[500px] items-center font-semibold justify-center cursor-pointer bg-orange-300 hover:opacity-50 border border-gray-600 rounded-md p-2`}
             >
               {children}
             </button>
@@ -448,44 +449,123 @@ const Map: React.FC = () => {
         </div>
 
         {/* Introduction Section - Beginner Mode */}
-        {isBeginnerMode && (
-          <div className="bg-blue-50 border border-blue-200 rounded-2xl p-8 mb-8">
-            <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0 w-8 h-8 text-blue-600">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <div className="text-blue-800 space-y-4 leading-relaxed">
-                <p>{t("mapIntroText1")}</p>
-                <p>{t("mapIntroText2")}</p>
-                <p>{t("mapIntroText3")}</p>
-                <p>{t("mapIntroText4")}</p>
-                <p>{t("mapIntroText5")}</p>
+        <div className="flex flex-col gap-5">
+          {isBeginnerMode && (
+            <div className="bg-blue-50 border border-blue-200 rounded-2xl p-8 ">
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-8 h-8 text-blue-600">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <div className="text-blue-800 space-y-4 leading-relaxed">
+                  <p>{ReactHTMLParser(t("mapIntroText1"))}</p>
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
+          {isBeginnerMode && (
+            <div className="bg-blue-50 border border-blue-200 rounded-2xl p-8 mb-6">
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-8 h-8 text-blue-600">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <div className="text-blue-800 space-y-4 leading-relaxed">
+                  <p>{ReactHTMLParser(t("mapIntroText2"))}</p>
+                </div>
+              </div>
+            </div>
+          )}
+          {/* {isBeginnerMode && (
+            <div className="bg-blue-50 border border-blue-200 rounded-2xl p-8 ">
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-8 h-8 text-blue-600">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <div className="text-blue-800 space-y-4 leading-relaxed">
+                  <p>{t("mapIntroText3")}</p>
+                </div>
+              </div>
+            </div>
+          )}
+          {isBeginnerMode && (
+            <div className="bg-blue-50 border border-blue-200 rounded-2xl p-8 ">
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-8 h-8 text-blue-600">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <div className="text-blue-800 space-y-4 leading-relaxed">
+                  <p>{t("mapIntroText4")}</p>
+                </div>
+              </div>
+            </div>
+          )}
+          {isBeginnerMode && (
+            <div className="bg-blue-50 border border-blue-200 rounded-2xl p-8 mb-8">
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-8 h-8 text-blue-600">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <div className="text-blue-800 space-y-4 leading-relaxed">
+                  <p>{t("mapIntroText5")}</p>
+                </div>
+              </div>
+            </div>
+          )} */}
+        </div>
 
         {/* Action Buttons Section */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <ActionButton
-            description="Upload an existing map XML file to load your grid configuration"
-            component={<UploadAndReadXmlMap />}
-          >
+          <ActionButton description={t("uploadMapDescription")} component={<UploadAndReadXmlMap />}>
             Upload Map File
           </ActionButton>
 
           <ActionButton
-            description="Download your current map configuration as an XML file"
+            description={t("downloadMapDescription")}
             onClick={handleDownloadMap}
             variant="secondary"
           >
+            <svg className="max-w-[30px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              />
+            </svg>
             {t("saveMap")}
           </ActionButton>
         </div>
