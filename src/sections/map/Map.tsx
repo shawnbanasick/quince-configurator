@@ -420,7 +420,7 @@ const Map: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-8">
+    <div className="min-h-screen bg-[#f5f5f5] py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-12">
@@ -436,15 +436,15 @@ const Map: React.FC = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                  d="M4 4v8M8 4v12M12 4v16M16 4v12M20 4v8"
                 />
               </svg>
             </div>
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Q-Sort Grid Configuration</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            {t("qSortGridSettings")}
-          </p>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">{t("mapPageTitle")}</h1>
+          <div className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            {t("mapPageTitleDescription")}
+          </div>
         </div>
 
         {/* Introduction Section - Beginner Mode */}

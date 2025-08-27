@@ -47,7 +47,7 @@ const Config: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-8">
+    <div className="min-h-screen bg-gradient-to-br bg-[#f5f5f5] py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-12">
@@ -74,7 +74,7 @@ const Config: React.FC = () => {
               </svg>
             </div>
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Configuration Settings</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">{t("configPageTitle")}</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             {ReactHtmlParser(t("configSettings"))}
           </p>
@@ -83,12 +83,12 @@ const Config: React.FC = () => {
         {/* Information Cards - Only show in beginner mode */}
         {isBeginnerMode && (
           <div className="mb-8">
-            <div className="text-center mb-8">
+            {/* <div className="text-center mb-8">
               <h2 className="text-2xl font-semibold text-gray-900 mb-2">Getting Started</h2>
               <p className="text-gray-600">
-                Learn about configuration settings and how to use them effectively
+                Customize your settings and save them in the 'config.xml' file
               </p>
-            </div>
+            </div> */}
 
             <div className="grid gap-6">
               <InfoCard
@@ -104,6 +104,21 @@ const Config: React.FC = () => {
                 }
               >
                 {ReactHtmlParser(t("configPara1"))}
+              </InfoCard>
+
+              <InfoCard
+                icon={
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                }
+              >
+                {ReactHtmlParser(t("configPara1b"))}
               </InfoCard>
 
               <InfoCard
@@ -179,10 +194,10 @@ const Config: React.FC = () => {
         </div>
 
         {/* Configuration Sections */}
-        <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+        <div className="bg-[#f5f5f5] rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
           <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6">
-            <h2 className="text-2xl font-semibold mb-2">Configuration Sections</h2>
-            <p className="text-blue-100">Customize your study parameters and settings</p>
+            <h2 className="text-2xl font-semibold mb-2">{t("configurationSections")}</h2>
+            <p className="text-blue-100">{t("configurationSectionsDescription")}</p>
           </div>
           <div className="p-12">
             <ConfigSections />

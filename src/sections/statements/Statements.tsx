@@ -56,14 +56,14 @@ const Statements: React.FC = () => {
     <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-all duration-300">
       <div className="flex flex-col items-center text-center space-y-4">
         <div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">{children}</h3>
-          <p className="text-sm text-gray-600 mb-4">{description}</p>
+          {/* <h3 className="text-lg font-semibold text-gray-900 mb-2">{children}</h3> */}
+          <div className="text-sm text-gray-600 mb-4 min-h-[40px]">{description}</div>
         </div>
         <div className="w-full">
           {component || (
             <button
               onClick={onClick}
-              className="flex items-center justify-center w-[500px] px-6 p-2 bg-orange-300 text-black font-semibold rounded-md hover:opacity-50 focus:outline-none focus:ring-2 border border-gray-600 focus:ring-orange-400 focus:ring-opacity-75 text-center h-[40px] select-none"
+              className="flex flex-row gap-3 min-w-[500px] items-center justify-center cursor-pointer bg-orange-300 hover:opacity-50 border border-gray-600 rounded-md p-2"
             >
               {children}
             </button>
@@ -117,10 +117,10 @@ const Statements: React.FC = () => {
     };
   };
 
-  const stats = getStatementStats();
+  // const stats = getStatementStats();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-8">
+    <div className="min-h-screen bg-[#f5f5f5] py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-12">
@@ -141,78 +141,12 @@ const Statements: React.FC = () => {
               </svg>
             </div>
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Statement List</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">{t("statementPageTitle")}</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            {/* {t("listOfStatements")} */}
+            {t("statementPageTitleDescription")}
           </p>
         </div>
 
-        {/* Action Buttons Section */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <ActionButton
-            icon={
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                />
-              </svg>
-            }
-            description="Upload an existing statements XML file to load your statement list"
-            component={<UploadAndReadXmlStatements />}
-          >
-            Upload Statements
-          </ActionButton>
-
-          <ActionButton
-            icon={
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                />
-              </svg>
-            }
-            description="Download your current statements as an XML file for backup or sharing"
-            onClick={handleDownloadStatements}
-            variant="secondary"
-          >
-            {t("saveStatements")}
-          </ActionButton>
-        </div>
-
-        {/* Statistics Section */}
-        {/* {currentStatements && (
-          <div className="bg-white rounded-2xl shadow-xl p-8 mb-8 border border-gray-100">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-6 text-center">
-              Statement Statistics
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <StatsCard
-                title="Total Statements"
-                value={stats.count}
-                description="Number of statements"
-                color="blue"
-              />
-              <StatsCard
-                title="Total Words"
-                value={stats.words}
-                description="Across all statements"
-                color="green"
-              />
-              <StatsCard
-                title="Characters"
-                value={stats.characters.toLocaleString()}
-                description="Total character count"
-                color="purple"
-              />
-            </div>
-          </div>
-        )} */}
         {displayMode ? (
           <div id="infoCardContainer">
             {/* INFO 1 */}
@@ -291,6 +225,81 @@ const Statements: React.FC = () => {
             </div>
           </div>
         ) : null}
+
+        {/* Action Buttons Section */}
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <ActionButton
+            icon={
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                />
+              </svg>
+            }
+            description={t("uploadStatementsXmlDescriptionText")}
+            component={<UploadAndReadXmlStatements />}
+          >
+            Upload Statements
+          </ActionButton>
+
+          <ActionButton
+            icon={
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                />
+              </svg>
+            }
+            description={t("downloadStatementsXmlDescriptionText")}
+            onClick={handleDownloadStatements}
+            variant="secondary"
+          >
+            <svg className="max-w-[30px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              />
+            </svg>
+            {t("saveStatements")}
+          </ActionButton>
+        </div>
+
+        {/* Statistics Section */}
+        {/* {currentStatements && (
+          <div className="bg-white rounded-2xl shadow-xl p-8 mb-8 border border-gray-100">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-6 text-center">
+              Statement Statistics
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <StatsCard
+                title="Total Statements"
+                value={stats.count}
+                description="Number of statements"
+                color="blue"
+              />
+              <StatsCard
+                title="Total Words"
+                value={stats.words}
+                description="Across all statements"
+                color="green"
+              />
+              <StatsCard
+                title="Characters"
+                value={stats.characters.toLocaleString()}
+                description="Total character count"
+                color="purple"
+              />
+            </div>
+          </div>
+        )} */}
 
         {/* Statement Editor Section */}
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
