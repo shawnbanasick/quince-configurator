@@ -208,7 +208,7 @@ const MobilePresortTextInput = () => {
           name="mobilePresortConditionsOfInstruction"
           value={mobilePresortConditionsOfInstruction}
           onChange={handleTextChange}
-          highlight={false}
+          highlight={true}
           placeholder=""
           disabled={false}
         />

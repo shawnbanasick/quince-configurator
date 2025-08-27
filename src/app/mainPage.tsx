@@ -15,7 +15,7 @@ import { setLanguageDefaults } from "./setLanguageDefaults.js";
 import { setLanguageSection_JA } from "./setLanguageSection_JA.js";
 import { setLanguageSection_EN } from "./setLanguageSection_EN.js";
 import { Results } from "../sections/results/Results.js";
-// import Button from "../sections/utils/Button";
+import Button from "../sections/utils/Button";
 import { useStore } from "../globalState/useStore.js";
 import UkFlag from "../assets/images/UkFlag.svg?react";
 import JapanFlag from "../assets/images/JapanFlag.svg?react";
@@ -25,33 +25,33 @@ import JapanFlag from "../assets/images/JapanFlag.svg?react";
 // const languages = ["en", "ru", "tm", "ja", "ko", "zh", "es", "fr", "de"];
 const languages = ["en", "ja"];
 
-// const getShowDescriptionPro = (state) => state.showDescriptionPro;
-// const getShowDescriptionBeginner = (state) => state.showDescriptionBeginner;
-// const getSetShowDescriptionPro = (state) => state.setShowDescriptionPro;
-// const getSetShowDescriptionBeginner = (state) => state.setShowDescriptionBeginner;
-// const getSetDisplayMode = (state) => state.setDisplayMode;
+const getShowDescriptionPro = (state) => state.showDescriptionPro;
+const getShowDescriptionBeginner = (state) => state.showDescriptionBeginner;
+const getSetShowDescriptionPro = (state) => state.setShowDescriptionPro;
+const getSetShowDescriptionBeginner = (state) => state.setShowDescriptionBeginner;
+const getSetDisplayMode = (state) => state.setDisplayMode;
 
 export const MainPage = () => {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-  // const showDescriptionPro = useStore(getShowDescriptionPro);
-  // const showDescriptionBeginner = useStore(getShowDescriptionBeginner);
-  // const setShowDescriptionPro = useStore(getSetShowDescriptionPro);
-  // const setShowDescriptionBeginner = useStore(getSetShowDescriptionBeginner);
-  // const setDisplayMode = useStore(getSetDisplayMode);
+  const showDescriptionPro = useStore(getShowDescriptionPro);
+  const showDescriptionBeginner = useStore(getShowDescriptionBeginner);
+  const setShowDescriptionPro = useStore(getSetShowDescriptionPro);
+  const setShowDescriptionBeginner = useStore(getSetShowDescriptionBeginner);
+  const setDisplayMode = useStore(getSetDisplayMode);
 
-  // const setMode = (e) => {
-  //   const mode = e.target.id;
-  //   if (mode === "pro") {
-  //     setShowDescriptionPro(true);
-  //     setShowDescriptionBeginner(false);
-  //     setDisplayMode("pro");
-  //   } else {
-  //     setShowDescriptionPro(false);
-  //     setShowDescriptionBeginner(true);
-  //     setDisplayMode("beginner");
-  //   }
-  // };
+  const setMode = (e) => {
+    const mode = e.target.id;
+    if (mode === "pro") {
+      setShowDescriptionPro(true);
+      setShowDescriptionBeginner(false);
+      setDisplayMode("pro");
+    } else {
+      setShowDescriptionPro(false);
+      setShowDescriptionBeginner(true);
+      setDisplayMode("beginner");
+    }
+  };
 
   const flagArray = [<UkFlag className="w-[25px]" />, <JapanFlag className="w-[25px]" />];
 
@@ -117,7 +117,7 @@ export const MainPage = () => {
                   })}
                 </div>
               </div>
-              {/* <div id="displayModeDiv" className="">
+              <div id="displayModeDiv" className="">
                 <div className="text-center">{t("selectConfiguratorDisplayMode")}</div>
                 <div className="flex flex-row justify-self-center">
                   <Button
@@ -143,7 +143,7 @@ export const MainPage = () => {
                     <div>{t("displaysIndepthDescriptionsAndDirections")}</div>
                   )}
                 </div>
-              </div> */}
+              </div>
             </div>
             <Start />
           </div>

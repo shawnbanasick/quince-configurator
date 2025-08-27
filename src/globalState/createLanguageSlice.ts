@@ -38,7 +38,7 @@ const createLangXmlSlice = (set) => ({
   /*
    ******** 4. WELCOME (LANDING) SCREEN   ****************** */
   landingHead: `University Research Project`,
-  welcomeText: `<h2>Quincy Demo Project - iPad Use in the Classroom.</h2><br/><br/><p>Thank you for helping with this research project</p><br/><br/><br/>
+  welcomeText: `<h2>Quince Demo Project - iPad Use in the Classroom.</h2><br/><br/><p>Thank you for helping with this research project</p><br/><br/><br/>
     <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
   landingHelpModalHead: `Welcome!`,
   landingHelpModalText: `Thank you for participating in this University Research Project. Please click the "<b>Continue</b>" button at the bottom right side of the screen to go to the next step.`,
@@ -47,7 +47,7 @@ const createLangXmlSlice = (set) => ({
 
   /*
    ******** 5. MOBILE WELCOME (LANDING) SCREEN   ****************** */
-  mobileWelcomeText: `<h2>Quincy Demo Project - iPad Use in the Classroom.</h2><br/><br/><p>Thank you for helping with this research project!</p><br/><br/><br/> <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
+  mobileWelcomeText: `<h2>Quince Demo Project - iPad Use in the Classroom.</h2><br/><br/><p>Thank you for helping with this research project!</p><br/><br/><br/> <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
 
   /*
    ******** 6. PRESORT  ****************** */
@@ -199,7 +199,7 @@ const createLangXmlSlice = (set) => ({
   transferTextBelow: `Please wait for the confirmation message that indicates your data have been sent to the server successfully.`,
   goodbyeMessage: `<div>Thank You!</div> <br /><div>You can now close the browser tab</div>`,
 
-  // transferOkModalText: `Thank you for using Quincy!<br/><br/>You can now close your browser tab.`,
+  // transferOkModalText: `Thank you for using Quince!<br/><br/>You can now close your browser tab.`,
   // transferOkModalHeader: `Success - The data have been sent to the server.`,
   // transferFailModalHeader: `Connection to server failed`,
   // transferFailModalText: `Please try again in a few moments.`,
@@ -220,7 +220,7 @@ const createLangXmlSlice = (set) => ({
   clipboardResults: "Copy Results to Clipboard",
   copiedText: "Copied!",
   downloadResultsButtonText: `Download Results`,
-  emailSubjectText: `Q-sort Results - Quincy Demo Project`,
+  emailSubjectText: `Q-sort Results - Quince Demo Project`,
   emailBodyMessage:
     "You don't have to add anything to this email. Please just click the SEND button.",
 

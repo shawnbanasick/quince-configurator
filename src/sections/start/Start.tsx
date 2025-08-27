@@ -107,7 +107,7 @@ const Start = () => {
 
       {/* <div className="justify-self-center mt-4 mb-8">
         Citation:
-        <br /> Banasick, S. (2025). Quincy Configurator (Version 1.0.0)
+        <br /> Banasick, S. (2025). Quince Configurator (Version 1.0.0)
       </div> */}
       {/* <h2 className="text-center mt-10">{t("selectConfiguratorDisplayMode")}</h2>
       <div className="flex flex-row justify-self-center mt-4">

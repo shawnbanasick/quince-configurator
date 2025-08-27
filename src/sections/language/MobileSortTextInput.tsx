@@ -167,7 +167,7 @@ const MobileSortTextInput: React.FC = () => {
           height={150}
           value={mobileSortConditionsOfInstruction}
           onChange={handleTextChange}
-          highlight={false}
+          highlight={true}
           placeholder=""
           disabled={false}
           tabIndex="0"

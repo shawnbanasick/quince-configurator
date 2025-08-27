@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import UploadAndReadXML from "./UploadAndReadXml.js";
 import { ConfigSections } from "./ConfigSections.js";
 import { DownloadConfigXml } from "./DownloadConfigXml.js";
+import ReactHtmlParser from "html-react-parser";
 
 // Type definitions
 interface State {
@@ -34,10 +35,10 @@ const Config: React.FC = () => {
     description: string;
     // component: React.ReactNode;
   }> = ({ children, description }) => (
-    <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 hover:shadow-xl transition-all duration-300">
-      <div className="flex flex-col items-center text-center space-y-4">
+    <div className="flex justify-center items-center bg-white rounded-2xl shadow-lg border border-gray-200 p-4 hover:shadow-xl transition-all duration-300">
+      <div className="flex flex-col w-[100%] items-center justify-center text-center space-y-4">
         <div>
-          <p className="text-sm min-h-[40px] text-gray-600 mb-4">{description}</p>
+          <div className="text-sm w-[500px] min-h-[40px] text-gray-600 mb-4">{description}</div>
           <h3 className="text-lg font-semibold text-gray-900 mb-2">{children}</h3>
         </div>
         {/* <div className="w-full">{component}</div> */}
@@ -75,7 +76,7 @@ const Config: React.FC = () => {
           </div>
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Configuration Settings</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            {t("configSettings")}
+            {ReactHtmlParser(t("configSettings"))}
           </p>
         </div>
 
@@ -102,7 +103,7 @@ const Config: React.FC = () => {
                   </svg>
                 }
               >
-                {t("configPara1")}
+                {ReactHtmlParser(t("configPara1"))}
               </InfoCard>
 
               <InfoCard
@@ -117,7 +118,7 @@ const Config: React.FC = () => {
                   </svg>
                 }
               >
-                {t("configPara2")}
+                {ReactHtmlParser(t("configPara2"))}
               </InfoCard>
 
               <InfoCard
@@ -132,7 +133,7 @@ const Config: React.FC = () => {
                   </svg>
                 }
               >
-                {t("configPara3")}
+                {ReactHtmlParser(t("configPara3"))}
               </InfoCard>
             </div>
           </div>
@@ -151,7 +152,7 @@ const Config: React.FC = () => {
                 />
               </svg>
             }
-            description="Load an existing configuration file to continue working with saved settings or to modify a previous project."
+            description={t("configLoadXmlDescription")}
           >
             <div className="">
               <UploadAndReadXML />
@@ -169,9 +170,9 @@ const Config: React.FC = () => {
                 />
               </svg>
             }
-            description="Download your current configuration as an XML file for backup or sharing"
+            description={t("configDownloadXmlDescription")}
           >
-            <div className="flex-1 max-w-md">
+            <div className="">
               <DownloadConfigXml />
             </div>
           </ActionButton>

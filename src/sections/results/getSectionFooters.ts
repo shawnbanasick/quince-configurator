@@ -8,7 +8,7 @@ const getSection1Footers = (dateTime, version) => {
           alignment: AlignmentType.DISTRIBUTE,
           style: "bodyStyle1",
           children: [
-            new TextRun(`Quincy Configurator v${version}`.padEnd(45, " ")),
+            new TextRun(`Quince Configurator v${version}`.padEnd(45, " ")),
             new TextRun(`${dateTime}`),
           ],
         }),

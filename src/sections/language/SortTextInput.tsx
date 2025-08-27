@@ -168,7 +168,7 @@ const SortTextInput: React.FC = () => {
           height={150}
           value={condOfInst}
           onChange={handleTextChange}
-          highlight={false}
+          highlight={true}
           placeholder=""
           disabled={false}
           tabIndex="0"

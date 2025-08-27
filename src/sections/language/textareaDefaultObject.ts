@@ -218,7 +218,7 @@ const showSectionDefaults = () => {
     downloadResultsButtonText: `Download Results`,
     emailBodyMessage:
       "You don't have to add anything to this email. Please just click the SEND button.",
-    emailSubjectText: `Quincy Q-sort Results`,
+    emailSubjectText: `Quince Q-sort Results`,
 
     /*
      ******** 19. SECOND PROJECT LINK  ****************** */

@@ -13,11 +13,19 @@ interface State {
 
 const getCurrentStatements = (state: State): string => state.currentStatements;
 const getVersion = (state: State): string => state.version;
+const getDisplayMode = (state) => state.displayMode;
 
 const Statements: React.FC = () => {
   const { t } = useTranslation();
   const currentStatements = useStore(getCurrentStatements);
   const version = useStore(getVersion);
+  let displayMode = useStore(getDisplayMode);
+
+  if (displayMode === "beginner") {
+    displayMode = true;
+  } else {
+    displayMode = false;
+  }
 
   const handleDownloadStatements = (): void => {
     try {
@@ -65,26 +73,26 @@ const Statements: React.FC = () => {
     </div>
   );
 
-  const StatsCard: React.FC<{
-    title: string;
-    value: string | number;
-    description: string;
-    color: "blue" | "green" | "purple";
-  }> = ({ title, value, description, color }) => {
-    const colorClasses = {
-      blue: "bg-blue-50 text-blue-600",
-      green: "bg-green-50 text-green-600",
-      purple: "bg-purple-50 text-purple-600",
-    };
+  // const StatsCard: React.FC<{
+  //   title: string;
+  //   value: string | number;
+  //   description: string;
+  //   color: "blue" | "green" | "purple";
+  // }> = ({ title, value, description, color }) => {
+  //   const colorClasses = {
+  //     blue: "bg-blue-50 text-blue-600",
+  //     green: "bg-green-50 text-green-600",
+  //     purple: "bg-purple-50 text-purple-600",
+  //   };
 
-    return (
-      <div className={`text-center p-6 rounded-xl ${colorClasses[color]}`}>
-        <div className="text-3xl font-bold mb-2">{value}</div>
-        <div className="text-sm font-medium mb-1">{title}</div>
-        <div className="text-xs opacity-75">{description}</div>
-      </div>
-    );
-  };
+  //   return (
+  //     <div className={`text-center p-6 rounded-xl ${colorClasses[color]}`}>
+  //       <div className="text-3xl font-bold mb-2">{value}</div>
+  //       <div className="text-sm font-medium mb-1">{title}</div>
+  //       <div className="text-xs opacity-75">{description}</div>
+  //     </div>
+  //   );
+  // };
 
   // Calculate statement statistics
   const getStatementStats = () => {
@@ -133,9 +141,9 @@ const Statements: React.FC = () => {
               </svg>
             </div>
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Statement Management</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Statement List</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            {t("listOfStatements")}
+            {/* {t("listOfStatements")} */}
           </p>
         </div>
 
@@ -178,7 +186,7 @@ const Statements: React.FC = () => {
         </div>
 
         {/* Statistics Section */}
-        {currentStatements && (
+        {/* {currentStatements && (
           <div className="bg-white rounded-2xl shadow-xl p-8 mb-8 border border-gray-100">
             <h2 className="text-2xl font-semibold text-gray-900 mb-6 text-center">
               Statement Statistics
@@ -204,7 +212,85 @@ const Statements: React.FC = () => {
               />
             </div>
           </div>
-        )}
+        )} */}
+        {displayMode ? (
+          <div id="infoCardContainer">
+            {/* INFO 1 */}
+            <div className="flex flex-col gap-3">
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0 w-6 h-6 text-blue-600">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </div>
+                  <div className="text-blue-800">
+                    <h3 className="font-semibold mb-2">Previous Projects</h3>
+                    <p className="text-sm leading-relaxed">
+                      If you want to modify statements from a previous Quince project, you can click
+                      on the orange "Load statements.xml File" button to upload the statements.xml
+                      file.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* INFO 2 */}
+              <div className=" bg-blue-50 border border-blue-200 rounded-xl p-6">
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0 w-6 h-6 text-blue-600">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </div>
+                  <div className="text-blue-800">
+                    <h3 className="font-semibold mb-2">New Projects</h3>
+                    <p className="text-sm leading-relaxed">
+                      If you want to create new statements, you can type them directly into the text
+                      box below, or paste statements from another file. Each statement must be on a
+                      new line.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* INFO 3 */}
+              <div className="mb-8 bg-blue-50 border border-blue-200 rounded-xl p-6">
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0 w-6 h-6 text-blue-600">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </div>
+                  <div className="text-blue-800">
+                    <h3 className="font-semibold mb-2">Save Statement File</h3>
+                    <p className="text-sm leading-relaxed">
+                      After you have finished adding or modifying your statements, you must save the
+                      file. click the orange button at the top right side of the page and save your
+                      information as 'statements.xml' in the settings folder (replacing the default
+                      file).
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : null}
 
         {/* Statement Editor Section */}
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
@@ -215,30 +301,6 @@ const Statements: React.FC = () => {
           <div className="p-8">
             <div className="max-w-5xl mx-auto">
               <StatementTextArea />
-            </div>
-          </div>
-        </div>
-
-        {/* Help Section */}
-        <div className="mt-8 bg-blue-50 border border-blue-200 rounded-xl p-6">
-          <div className="flex items-start space-x-4">
-            <div className="flex-shrink-0 w-6 h-6 text-blue-600">
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </div>
-            <div className="text-blue-800">
-              <h3 className="font-semibold mb-2">Statement Guidelines</h3>
-              <p className="text-sm leading-relaxed">
-                Enter each statement on a new line. Statements should be clear, concise, and
-                relevant to your research topic. The optimal number of statements for Q-methodology
-                typically ranges from 20-60 depending on your study design.
-              </p>
             </div>
           </div>
         </div>

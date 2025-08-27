@@ -1,7 +1,7 @@
 import { version } from "react";
 
 const createConfigXmlSlice = (set, get) => ({
-  version: "Quincy 1.0.0",
+  version: "Quince 1.0.0",
   devMode: false,
   useMobileMode: true,
   traceSorts: true,

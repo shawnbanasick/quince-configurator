@@ -4,7 +4,7 @@ import { useStore } from "../../globalState/useStore.js";
 const generateLanguageXml = () => {
   let data = `<?xml version="1.0" encoding="UTF-8"?>
 
-   <language version="Quincy ${useStore.getState().version}" htmlParse="true">\n;
+   <language version="Quince ${useStore.getState().version}" htmlParse="true">\n;
 
         <!-- 1. MULTIPLE SCREENS AND FOOTER -->
         <item order= "1-1" id="btnHelp">${encodeHTML(useStore.getState().btnHelp)}</item>
