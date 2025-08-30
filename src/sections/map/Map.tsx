@@ -30,6 +30,7 @@ import { Emoji4 } from "./emoji/Emoji4";
 import { Emoji5 } from "./emoji/Emoji5";
 import { ToggleSwitch } from "./ToggleSwitch";
 import ReactHTMLParser from "html-react-parser";
+import { v4 as uuid } from "uuid";
 
 // Type definitions
 interface State {
@@ -84,14 +85,14 @@ const getMobileHeadersDefault11 = (state: State) => state.mobileHeadersDefault11
 const getMobileHeadersDefault13 = (state: State) => state.mobileHeadersDefault13;
 const getNumStatements = (state: State) => state.numStatements;
 const getAllStatementsAllocated = (state: State) => state.allStatementsAllocated;
-const getUseColLabelNumsDesktop = (state: State) => state.useColLabelNumsDesktop;
-const getUseColLabelNumsMobile = (state: State) => state.useColLabelNumsMobile;
+// const getUseColLabelNumsDesktop = (state: State) => state.useColLabelNumsDesktop;
+// const getUseColLabelNumsMobile = (state: State) => state.useColLabelNumsMobile;
 const getUseColLabelTextDesktop = (state: State) => state.useColLabelTextDesktop;
 const getUseColLabelTextMobile = (state: State) => state.useColLabelTextMobile;
 const getUseColLabelEmojiDesktop = (state: State) => state.useColLabelEmojiDesktop;
 const getUseColLabelEmojiMobile = (state: State) => state.useColLabelEmojiMobile;
-const getSetUseColLabelNumsDesktop = (state: State) => state.setUseColLabelNumsDesktop;
-const getSetUseColLabelNumsMobile = (state: State) => state.setUseColLabelNumsMobile;
+// const getSetUseColLabelNumsDesktop = (state: State) => state.setUseColLabelNumsDesktop;
+// const getSetUseColLabelNumsMobile = (state: State) => state.setUseColLabelNumsMobile;
 const getSetUseColLabelTextDesktop = (state: State) => state.setUseColLabelTextDesktop;
 const getSetUseColLabelTextMobile = (state: State) => state.setUseColLabelTextMobile;
 const getSetUseColLabelEmojiDesktop = (state: State) => state.setUseColLabelEmojiDesktop;
@@ -119,15 +120,15 @@ const Map: React.FC = () => {
   const mobileHeadersDefault13 = useStore(getMobileHeadersDefault13);
   const numStatements = useStore(getNumStatements);
   const allStatementsAllocated = useStore(getAllStatementsAllocated);
-  const useColLabelNumsDesktop = useStore(getUseColLabelNumsDesktop);
-  const useColLabelNumsMobile = useStore(getUseColLabelNumsMobile);
+  // const useColLabelNumsDesktop = useStore(getUseColLabelNumsDesktop);
+  // const useColLabelNumsMobile = useStore(getUseColLabelNumsMobile);
   const useColLabelTextDesktop = useStore(getUseColLabelTextDesktop);
   const useColLabelTextMobile = useStore(getUseColLabelTextMobile);
   const useColLabelEmojiDesktop = useStore(getUseColLabelEmojiDesktop);
   const useColLabelEmojiMobile = useStore(getUseColLabelEmojiMobile);
 
-  const setUseColLabelNumsDesktop = useStore(getSetUseColLabelNumsDesktop);
-  const setUseColLabelNumsMobile = useStore(getSetUseColLabelNumsMobile);
+  // const setUseColLabelNumsDesktop = useStore(getSetUseColLabelNumsDesktop);
+  // const setUseColLabelNumsMobile = useStore(getSetUseColLabelNumsMobile);
   const setUseColLabelTextDesktop = useStore(getSetUseColLabelTextDesktop);
   const setUseColLabelTextMobile = useStore(getSetUseColLabelTextMobile);
   const setUseColLabelEmojiDesktop = useStore(getSetUseColLabelEmojiDesktop);
@@ -138,7 +139,13 @@ const Map: React.FC = () => {
 
   const isBeginnerMode = displayMode === "beginner";
 
-  const [isSwitchDisabled, setIsSwitchDisabled] = useState(false);
+  // mangage disable column label switches
+  const [isSwitchDisabled, setIsSwitchDisabled] = useState(true);
+  const [isSortEmojiSwitchDisabled, setIsSortEmojiSwitchDisabled] = useState(false);
+  let sortEmojiSwitchDisabled = true;
+  if (isSortEmojiSwitchDisabled === false && isSwitchDisabled === false) {
+    sortEmojiSwitchDisabled = false;
+  }
 
   // Color palette handlers
   const colorPaletteActions = {
@@ -208,35 +215,34 @@ const Map: React.FC = () => {
   ];
 
   const handleMobileLabelsChange = (value: string): void => {
-    console.log(value);
     if (value === "labels5") {
       // setColNums("-2, -1, 0, +1, +2");
       setEmojiArray([...emoji2Array]);
-      setIsSwitchDisabled(false);
+      setIsSortEmojiSwitchDisabled(false);
       setEmojiArrayType("emoji2Array");
     }
     if (value === "labels7") {
       // setColNums("-3, -2, -1, 0, +1, +2, +3");
-      setIsSwitchDisabled(false);
+      setIsSortEmojiSwitchDisabled(false);
       setEmojiArray([...emoji3Array]);
       setEmojiArrayType("emoji3Array");
     }
     if (value === "labels9") {
       // setColNums("-4, -3, -2, -1, 0, +1, +2, +3, +4");
-      setIsSwitchDisabled(false);
+      setIsSortEmojiSwitchDisabled(false);
       setEmojiArray([...emoji4Array]);
       setEmojiArrayType("emoji4Array");
     }
     if (value === "labels11") {
       // setColNums("-5, -4, -3, -2, -1, 0, +1, +2, +3, +4, +5");
-      setIsSwitchDisabled(false);
+      setIsSortEmojiSwitchDisabled(false);
       setEmojiArray([...emoji5Array]);
       setEmojiArrayType("emoji5Array");
     }
     if (value === "labels13") {
       // setColNums("-6, -5, -4, -3, -2, -1, 0, +1, +2, +3, +4, +5, +6");
       setEmojiArray([]);
-      setIsSwitchDisabled(true);
+      setIsSortEmojiSwitchDisabled(true);
       setUseColLabelEmojiDesktop(false);
       setUseColLabelEmojiMobile(false);
       setEmojiArrayType("");
@@ -255,6 +261,8 @@ const Map: React.FC = () => {
     if (labelText) {
       setMobileHeadersText(labelText);
     }
+
+    setIsSwitchDisabled(false);
   };
 
   const handleMapColColorsChange = (value: string): void => {
@@ -310,7 +318,7 @@ const Map: React.FC = () => {
 
   const ActionButton: React.FC<{
     children: React.ReactNode;
-    description: string;
+    description: React.ReactNode;
     onClick?: () => void;
     component?: React.ReactNode;
     variant?: "primary" | "secondary";
@@ -319,7 +327,7 @@ const Map: React.FC = () => {
       <div className="flex flex-col justify-center items-center text-center space-y-4">
         <div>
           {/* <h3 className="text-lg font-semibold text-gray-900 mb-2">{children}</h3> */}
-          <p className="text-sm text-gray-600 mb-4">{description}</p>
+          <div className="text-sm text-gray-600 mb-4 min-h-[40px]">{description}</div>
         </div>
         <div className="flex justify-center items-center w-full ">
           {component || (
@@ -554,7 +562,7 @@ const Map: React.FC = () => {
           </ActionButton>
 
           <ActionButton
-            description={t("downloadMapDescription")}
+            description={ReactHTMLParser(t("downloadMapDescription"))}
             onClick={handleDownloadMap}
             variant="secondary"
           >
@@ -566,7 +574,7 @@ const Map: React.FC = () => {
                 d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
               />
             </svg>
-            {t("saveMap")}
+            {ReactHTMLParser(t("saveMap"))}
           </ActionButton>
         </div>
 
@@ -610,52 +618,15 @@ const Map: React.FC = () => {
             <StatusBadge status={headerStatus.status}>{headerStatus.message}</StatusBadge>
           </div>
 
-          <div>
-            Number labels are the default for all Q sort designs, but can be disabled to remove all
-            column labels.
-          </div>
+          <div>First, select the appropriate preset level for your project.</div>
 
           {/* NUMBERS - Column Headers - Numbers */}
-          <div className="text-lg mt-2 font-semibold text-gray-900 mb-1">Numbers</div>
-          <div className="flex flex-col gap-3 mt-4">
-            <div className="ml-4 space-y-3">
-              <ToggleSwitch
-                label="Use Numbers - Desktop"
-                labelPosition="left"
-                checked={useColLabelNumsDesktop}
-                onChange={() => setUseColLabelNumsDesktop(!useColLabelNumsDesktop)}
-                variant="green"
-              />
-              {/* <p className="text-sm text-gray-600">
-                  Current value:{" "}
-                  <span className="font-mono">{useColLabelNumsDesktop.toString()}</span>
-                  </p> */}
-            </div>
-            <div className="ml-4 space-y-3">
-              <ToggleSwitch
-                label="Use Numbers - Mobile"
-                labelPosition="left"
-                checked={useColLabelNumsMobile}
-                onChange={() => setUseColLabelNumsMobile(!useColLabelNumsMobile)}
-                variant="green"
-              />
-              {/* <p className="text-sm text-gray-600">
-                  Current value: <span className="font-mono">{controlledValue.toString()}</span>
-                  </p> */}
-            </div>
+          <div className="text-lg mt-2 font-semibold text-gray-900 mb-1">
+            {t("mapColsPresetLevels")}
           </div>
-
-          {/* Header Sample Text */}
-
-          <div className="mt-12">
-            If you are using a negative-to-positive Q sort pattern (for example, -4 to +4), you can
-            use text labels or emojis in combination with, or instead of, number labels.
-          </div>
-
           {/* PRESET LEVELS */}
-          <div className="mb-6 mt-2">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">{t("mapColsPresetLevels")}</h3>
-            <div className="flex flex-row gap-3 ml-4 flex-wrap">
+          <div className="mb-4 mt-2">
+            <div className="flex flex-row gap-3 ml-6 flex-wrap">
               {defaultLabelOptions.map((option) => (
                 <div key={option.value} className="flex items-center">
                   <Radio
@@ -670,17 +641,62 @@ const Map: React.FC = () => {
               ))}
             </div>
           </div>
+          {/* <div className="flex flex-col gap-3 mt-4">
+            <div className="ml-4 space-y-3">
+              <ToggleSwitch
+                label="Use Numbers - Desktop"
+                labelPosition="left"
+                checked={useColLabelNumsDesktop}
+                onChange={() => setUseColLabelNumsDesktop(!useColLabelNumsDesktop)}
+                variant="green"
+              />
+
+            </div>
+            <div className="ml-4 space-y-3">
+              <ToggleSwitch
+                label="Use Numbers - Mobile"
+                labelPosition="left"
+                checked={useColLabelNumsMobile}
+                onChange={() => setUseColLabelNumsMobile(!useColLabelNumsMobile)}
+                variant="green"
+              />
+            </div>
+          </div> */}
+
+          {/* Header Sample Text */}
+
+          {/* <div className="mt-12">
+            If you are using a negative-to-positive Q sort pattern (for example, -4 to +4), you can
+            use text labels or emojis in combination with, or instead of, number labels.
+          </div> */}
 
           {/* TEXT DESCRIPTIONS - Custom Text Label Input */}
           <div>
-            <div className="text-lg font-semibold text-gray-900 mb-1">Text Descriptions</div>
+            <div className="text-lg font-semibold text-gray-900 mt-8 mb-1">
+              Pre-Sort Column Labels
+            </div>
+            <div className="space-y-3 mb-8 ml-4">
+              <ToggleSwitch
+                label="Use Pre-Sort Emoji"
+                labelPosition="left"
+                disabled={isSortEmojiSwitchDisabled}
+                checked={useColLabelEmojiMobile}
+                onChange={() => setUseColLabelEmojiMobile(!useColLabelEmojiMobile)}
+                variant="green"
+              />
+              {/* <p className="text-sm text-gray-600">
+                  Current value: <span className="font-mono">{controlledValue.toString()}</span>
+                </p> */}
+            </div>
+            <div className="text-lg font-semibold text-gray-900 mb-1">Sort Column Labels</div>
             <div className="ml-4 flex flex-col gap-3 mt-4">
               <div className="space-y-3">
                 <ToggleSwitch
-                  label="Use Text - Desktop"
+                  label="Use Sort Numbers"
                   labelPosition="left"
                   checked={useColLabelTextDesktop}
                   onChange={() => setUseColLabelTextDesktop(!useColLabelTextDesktop)}
+                  disabled={isSwitchDisabled}
                   variant="green"
                 />
                 {/* <p className="text-sm text-gray-600">
@@ -689,43 +705,94 @@ const Map: React.FC = () => {
               </div>
               <div className="space-y-3">
                 <ToggleSwitch
-                  label="Use Text - Mobile"
+                  label="Use Sort Text"
                   labelPosition="left"
                   checked={useColLabelTextMobile}
                   onChange={() => setUseColLabelTextMobile(!useColLabelTextMobile)}
+                  disabled={isSwitchDisabled}
                   variant="green"
                 />
                 {/* <p className="text-sm text-gray-600">
                   Current value: <span className="font-mono">{controlledValue.toString()}</span>
                 </p> */}
               </div>
-            </div>
-            <UserTextAreaInput
-              classNameText="w-full ml-4 mt-3 px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"
-              classNameLabel=""
-              label=""
-              name="mobileHeadersText"
-              height={120}
-              value={mobileHeadersText}
-              highlight={false}
-              placeholder="Separate with commas. For example: 'Very Important, Important, Neutral, Less Important, Not Important'"
-              disabled={false}
-              tabIndex="0"
-            />
-            <div className="text-sm ml-4 text-gray-500 mt-2">
-              Enter column headers separated by commas. Total needed: {numMapTotalColumns}
+              <UserTextAreaInput
+                classNameText="w-full ml-6 px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"
+                classNameLabel=""
+                label=""
+                name="mobileHeadersText"
+                height={120}
+                value={mobileHeadersText}
+                highlight={false}
+                placeholder="Separate with commas. For example: 'Very Important, Important, Neutral, Less Important, Not Important'"
+                disabled={false}
+                tabIndex="0"
+              />
+              <div className="text-sm ml-6 text-gray-500 ">
+                Enter column headers separated by commas. Total needed: {numMapTotalColumns}
+              </div>
+
+              <div>
+                <div className="space-y-3 mt-2">
+                  <ToggleSwitch
+                    label="Use Sort Emoji"
+                    labelPosition="left"
+                    disabled={sortEmojiSwitchDisabled}
+                    checked={useColLabelEmojiMobile}
+                    onChange={() => setUseColLabelEmojiMobile(!useColLabelEmojiMobile)}
+                    variant="green"
+                  />
+                  {/* <p className="text-sm text-gray-600">
+                  Current value: <span className="font-mono">{controlledValue.toString()}</span>
+                </p> */}
+                </div>
+              </div>
+              <div className="flex flex-row mt-2 mb-8 ml-8 gap-2  min-h-[60px]">
+                {isSortEmojiSwitchDisabled ? (
+                  <div>{`(Emoji not available for -6 to +6 Q sort designs)`}</div>
+                ) : (
+                  emojiArray.map((element) => {
+                    return <div key={uuid()}>{element}</div>;
+                  })
+                )}
+              </div>
             </div>
 
-            <div className="flex flex-row mt-6">
-              <div className=" w-[100px] text-lg font-semibold text-gray-900 mr-2">Emoji</div>
-              {isSwitchDisabled && <div>{`(Emoji not available for -6 to +6 Q sort designs)`}</div>}
+            <div className=" w-[300px] text-lg font-semibold text-gray-900 mr-2">
+              Post-Sort Column Labels
+            </div>
+            <div className="space-y-3 ml-4 mb-4 mt-4">
+              <ToggleSwitch
+                label="Use Sort Numbers"
+                labelPosition="left"
+                checked={useColLabelTextDesktop}
+                onChange={() => setUseColLabelTextDesktop(!useColLabelTextDesktop)}
+                disabled={isSwitchDisabled}
+                variant="green"
+              />
+              {/* <p className="text-sm text-gray-600">
+                  Current value: <span className="font-mono">{controlledValue.toString()}</span>
+                </p> */}
+            </div>
+            <div className="space-y-3 ml-4">
+              <ToggleSwitch
+                label="Use Sort Text"
+                labelPosition="left"
+                checked={useColLabelTextMobile}
+                onChange={() => setUseColLabelTextMobile(!useColLabelTextMobile)}
+                disabled={isSwitchDisabled}
+                variant="green"
+              />
+              {/* <p className="text-sm text-gray-600">
+                  Current value: <span className="font-mono">{controlledValue.toString()}</span>
+                </p> */}
             </div>
             <div className="flex flex-col gap-3 ml-4 mt-4">
               <div className="space-y-3 ">
                 <ToggleSwitch
-                  label="Use Emoji - Desktop"
+                  label="Use Emoji"
                   labelPosition="left"
-                  disabled={isSwitchDisabled}
+                  disabled={isSortEmojiSwitchDisabled}
                   checked={useColLabelEmojiDesktop}
                   onChange={() => setUseColLabelEmojiDesktop(!useColLabelEmojiDesktop)}
                   variant="green"
@@ -734,25 +801,6 @@ const Map: React.FC = () => {
                   Current value: <span className="font-mono">{controlledValue.toString()}</span>
                 </p> */}
               </div>
-              <div className="space-y-3">
-                <ToggleSwitch
-                  label="Use Emoji - Mobile"
-                  labelPosition="left"
-                  disabled={isSwitchDisabled}
-                  checked={useColLabelEmojiMobile}
-                  onChange={() => setUseColLabelEmojiMobile(!useColLabelEmojiMobile)}
-                  variant="green"
-                />
-                {/* <p className="text-sm text-gray-600">
-                  Current value: <span className="font-mono">{controlledValue.toString()}</span>
-                </p> */}
-              </div>
-            </div>
-
-            <div className="flex flex-row gap-4 ml-4 mt-6 min-h-[60px]">
-              {emojiArray.map((element) => {
-                return element;
-              })}
             </div>
           </div>
         </div>

@@ -19,13 +19,13 @@ const Start = () => {
         of two projects - EQ Web Sort and Poet-Q. It consists of a package of tools that allow
         researchers to easily configure, deploy, and manage Q sorting projects. For desktop
         computers it provides participants with a clean, intuitive drag-and-drop interface that
-        simulates the feel of paper-based card sorting. On mobile phones, the software adapts for a
+        simulates the feel of paper-based card sorting. On mobile phones, the software adapts to a
         touch-based interface, making online Q sorting an accessible experience for all
         participants.
       </div>
       <div className="mt-5 w-9/12 align-self-center text-base">
-        The software and recommended setup is completely free. The only cost is the time you spend
-        learning how to setup a Quince project.
+        The software and required online services are free to use. The only cost is the time you
+        spend learning how to setup a Quince project.
       </div>
 
       {/* FEATURES */}

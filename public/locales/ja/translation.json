@@ -148,6 +148,8 @@
   "listOfStatements": "ステートメントのリスト",
 
   "*** MAP ***": "*** MAP OPTIONS ***",
+  "mapPageTitle": "Qソートデザイン",
+  "mapPageTitleDescription": "列サイズ、色、ラベル",
   "qSortPattern": "Qソートパターン",
   "mapColorPalette": "Qソートグリッドの色パレット",
   "steps2": "2 steps",
@@ -180,9 +182,9 @@
   "labelsMatch": "ラベルが一致",
   "mapIntroText1": "以前のQuinceプロジェクトから\"map.xml\"ファイルをお持ちの場合、オレンジ色の\"Load map.xml File Data\"ボタンをクリックしてファイルをアップロードし、編集を行うことができます。以前のプロジェクトからファイルをお持ちでない場合は、以下のフォームにデータを入力して新しいファイルを作成できます。",
   "mapIntroText2": "Q-sort グリッドの各列に必要なステートメントの数を入力してください。すべてのステートメントが割り当てられると、\"Q Sort Pattern\"のテキストの背景色が緑色に変わります。強制しない Q-sort の場合、理想的なステートメントの数を入力してください。",
-  "mapIntroText3": "次に、Q-sort グリッドで使用する色パレットを選択またはカスタマイズします。デフォルトの色パレットが利用可能です。または、独自のカラーパレットを作成できます。色パレットは、Q-sort グリッドのヘッダーに適用されます。または、ヘッダーと列本文の両方に適用されます。\"色を適用しない\"オプションを選択すると、すべての色が薄い灰色になります。",
-  "mapIntroText4": "最後に、モバイルヘッダーのテキストラベルを設定できます。これらのラベルは自由に変更でき、Q-sortグリッドのモバイル版でのみ使用されます。",
-  "mapIntroText5": "すべてのオプションの設定が完了したら、ページ上部のオレンジ色のボタンをクリックし、設定フォルダーに \"map.xml\" として情報を保存してください（デフォルトのファイルを上書きします）。",
+  "uploadMapDescription": "保存された設定で作業を続けるか、以前のプロジェクトを修正するために既存のmap.xmlファイルを読み込む",
+  "downloadMapDescription": "現在のカスタマイゼーションをQuinceテンプレート設定フォルダーに保存する",
+
   "statementsLeft": "残りのステートメント",
   "allStatementsAssigned": "すべてのステートメントが割り当てられました",
   "overAllocatedStatements": "割り当てられたステートメントが多すぎます",
@@ -517,5 +519,27 @@
   "baserowExportIntro1": "Baserowデータのダウンロード - ビジュアルガイド",
   "baserowExportIntro2": "",
   "baserowExportIntro3": "",
-  "downloadResultsAndAnalysis": "結果と分析データファイルのダウンロード"
+  "downloadResultsAndAnalysis": "結果と分析データファイルのダウンロード",
+
+  "*** NETLIFY ***": "*** NETLIFY ***",
+  "netlifyTitleText": "ウェブホスティングセットアップ",
+
+  "*** NETLIFY ***": "*** NETLIFY ***",
+  "netlifyIntro1": "Qソートプロジェクトのウェブページを作成するためのビジュアルガイドに従ってください",
+  "netlifyIntroText": "{{{b}}}QuinceはNetlifyを使用してプロジェクトをウェブ上でホストします。{{{/b}}} {{{u}}}{{{a href='https://www.netlify.com/' rel='noopener noreferrer' target='_blank'}}}Netlify{{{/a}}}{{{/u}}}は小規模サイト向けの無料プランがある有名なウェブホスティング会社です。使用にプログラミングスキルは不要です。{{{br /}}}{{{br /}}}このガイドでは{{{b}}}新しいプロジェクトのセットアップ{{{/b}}}または{{{b}}}既存のプロジェクトの更新{{{/b}}}方法を説明します（ステップ12をご覧ください）。",
+  "netlifyStep1": "{{{u}}}{{{a href='https://www.netlify.com/' rel='noopener noreferrer' target='_blank'}}}{{{strong}}}Netlify{{{/strong}}}{{{/a}}}{{{/u}}}にアクセスし、ページ上部の「Sign Up」ボタンをクリックして新しいアカウントを作成してください。",
+  "netlifyStep2": "次に、「Sign up with email」リンクをクリックしてください。",
+  "netlifyStep3": "メールアドレスとパスワードを入力し、「Sign up」ボタンをクリックしてください。",
+  "netlifyStep4": "要求された背景情報を入力してください。",
+  "netlifyStep5": "「Deploy your first project」ボックスで、「Skip this step for now」をクリックしてください。",
+  "netlifyStep6": "「Add your project to Netlify」ダイアログボックスで、「deploy manually」エリアを探してください。「browse to upload」リンクをクリックし、Quinceプロジェクトの{{{b}}}フォルダー{{{/b}}}を選択してください（個別ファイルではありません）。",
+  "netlifyStep7": "Netlifyはプロジェクトのウェブページを生成しましたが、ランダムに割り当てられた名前になっています。変更するには、「View project」ボタンをクリックしてください。",
+  "netlifyStep8": "次に、ページの左側にある「Project configuration」をクリックしてください。",
+  "netlifyStep9": "「Change project name」ボタンをクリックしてください。",
+  "netlifyStep10": "プロジェクト名を入力し、「Save」ボタンをクリックしてください。",
+  "netlifyStep11": "Netlifyはプロジェクト名を使用した新しいURLを表示します。プロジェクトはこのURLアドレスでウェブ上で利用可能になりました。",
+  "netlifyStep12": "コンフィギュレーターで変更を加えた後にプロジェクトを{{{b}}}更新{{{/b}}}したい場合は、Netlifyアカウントにログインし、プロジェクト名をクリックしてください。プロジェクト名はページの上部に表示されているはずです。その後、ページの左側にある「Deploys」をクリックしてください。",
+  "netlifyStep13": "「Deploys」ボックスで、「browse to upload」リンクをクリックし、プロジェクトの{{{b}}}フォルダー{{{/b}}}を選択してください。数分でプロジェクトがウェブ上で更新されます。",
+  "netlifySetupComplete": "ウェブホスティングセットアップ完了！",
+  "netlifySetupCompleteMessage": "おめでとうございます！プロジェクトのウェブセットアップが正常に完了しました。ウェブサイトの準備が整いました。"
 }

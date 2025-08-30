@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { StatementTextArea } from "./StatementTextArea";
 import { UploadAndReadXmlStatements } from "./UploadAndReadXmlStatements";
 import { generateStatementsXml } from "./generateStatementsXml.ts";
+import ReactHtmlParser from "html-react-parser";
 
 // Type definitions
 interface State {
@@ -48,7 +49,7 @@ const Statements: React.FC = () => {
   const ActionButton: React.FC<{
     children: React.ReactNode;
     icon: React.ReactNode;
-    description: string;
+    description: React.ReactNode;
     onClick?: () => void;
     component?: React.ReactNode;
     variant?: "primary" | "secondary";
@@ -95,27 +96,27 @@ const Statements: React.FC = () => {
   // };
 
   // Calculate statement statistics
-  const getStatementStats = () => {
-    if (!currentStatements) return { count: 0, words: 0, characters: 0 };
+  // const getStatementStats = () => {
+  //   if (!currentStatements) return { count: 0, words: 0, characters: 0 };
 
-    const statements = currentStatements
-      .split("\n")
-      .map((line) => line.trim())
-      .filter((line) => line !== "");
+  //   const statements = currentStatements
+  //     .split("\n")
+  //     .map((line) => line.trim())
+  //     .filter((line) => line !== "");
 
-    const totalWords = statements.reduce(
-      (acc, statement) => acc + statement.split(/\s+/).filter((word) => word !== "").length,
-      0
-    );
+  //   const totalWords = statements.reduce(
+  //     (acc, statement) => acc + statement.split(/\s+/).filter((word) => word !== "").length,
+  //     0
+  //   );
 
-    const totalCharacters = statements.reduce((acc, statement) => acc + statement.length, 0);
+  //   const totalCharacters = statements.reduce((acc, statement) => acc + statement.length, 0);
 
-    return {
-      count: statements.length,
-      words: totalWords,
-      characters: totalCharacters,
-    };
-  };
+  //   return {
+  //     count: statements.length,
+  //     words: totalWords,
+  //     characters: totalCharacters,
+  //   };
+  // };
 
   // const stats = getStatementStats();
 
@@ -239,7 +240,7 @@ const Statements: React.FC = () => {
                 />
               </svg>
             }
-            description={t("uploadStatementsXmlDescriptionText")}
+            description={ReactHtmlParser(t("uploadStatementsXmlDescriptionText"))}
             component={<UploadAndReadXmlStatements />}
           >
             Upload Statements
@@ -256,7 +257,7 @@ const Statements: React.FC = () => {
                 />
               </svg>
             }
-            description={t("downloadStatementsXmlDescriptionText")}
+            description={ReactHtmlParser(t("downloadStatementsXmlDescriptionText"))}
             onClick={handleDownloadStatements}
             variant="secondary"
           >

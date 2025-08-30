@@ -211,8 +211,8 @@ const Results: React.FC = () => {
 
         {/* Data Upload Section */}
         <div className="bg-white rounded-2xl shadow-xl p-1 mb-8 border border-gray-100">
-          <div className="flex flex-col justify-center items-center mt-2 mb-1 text-center">
-            <p className="text-gray-600">{t("beginExportProcess")}</p>
+          <div className="flex flex-col  justify-center items-center mt-2 mb-1 text-center">
+            <div className="text-gray-600 w-[90%] mb-2">{t("beginExportProcess")}</div>
             <ResultsUploadButton />
           </div>
         </div>

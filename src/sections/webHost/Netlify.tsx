@@ -15,10 +15,6 @@ import netlify10 from "../../assets/images/netlify10.png";
 import netlify11 from "../../assets/images/netlify11.png";
 import netlify12 from "../../assets/images/netlify12.png";
 import netlify13 from "../../assets/images/netlify13.png";
-// import netlify14 from "../../assets/images/netlify14.png";
-// import netlify15 from "../../assets/images/netlify15.png";
-// import netlify16 from "../../assets/images/netlify16.png";
-// import netlify17 from "../../assets/images/netlify17.png";
 
 interface StepData {
   id: number;
@@ -213,7 +209,7 @@ const Netlify: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-8">
+    <div className="min-h-screen bg-[#f5f5f5] py-8">
       <div className="max-w-9/10 mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-12">

@@ -4,6 +4,7 @@ import { useStore } from "../../globalState/useStore";
 import { useTranslation } from "react-i18next";
 import { setClearAllColors } from "./setClearAllColors";
 import { setClearAllColNumbers } from "./setClearAllColNumbers";
+import ReactHTMLParser from "html-react-parser";
 
 const getSetNumber = (state) => state.setNumber;
 const getSetColor = (state) => state.setColor;
@@ -111,7 +112,7 @@ const UploadAndReadXmlMap: React.FC = () => {
             d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
           />
         </svg>
-        {t("loadMap")}
+        {ReactHTMLParser(t("loadMap"))}
       </label>
       <input
         className="hidden"

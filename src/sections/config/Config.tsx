@@ -32,7 +32,7 @@ const Config: React.FC = () => {
   const ActionButton: React.FC<{
     children: React.ReactNode;
     icon: React.ReactNode;
-    description: string;
+    description: React.ReactNode;
     // component: React.ReactNode;
   }> = ({ children, description }) => (
     <div className="flex justify-center items-center bg-white rounded-2xl shadow-lg border border-gray-200 p-4 hover:shadow-xl transition-all duration-300">
@@ -167,7 +167,7 @@ const Config: React.FC = () => {
                 />
               </svg>
             }
-            description={t("configLoadXmlDescription")}
+            description={ReactHtmlParser(t("configLoadXmlDescription"))}
           >
             <div className="">
               <UploadAndReadXML />
@@ -185,7 +185,7 @@ const Config: React.FC = () => {
                 />
               </svg>
             }
-            description={t("configDownloadXmlDescription")}
+            description={ReactHtmlParser(t("configDownloadXmlDescription"))}
           >
             <div className="">
               <DownloadConfigXml />
