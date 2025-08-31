@@ -68,22 +68,20 @@ const PostsortTextInput: React.FC = () => {
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="postsortDef"
-            className="bg-slate-300 p-2 rounded-md w-[130px] h-[50px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[170px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
-            Use Defaults
+            {t("useDefaults")}
           </button>
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="postsortClear"
-            className="bg-slate-300 p-2 rounded-md w-[130px] h-[50px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[170px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleClearAll}
           >
-            Clear Section
+            {t("clearSection")}
           </button>
-          <div className="flex items-center h-[50px] p-2 justify-center ">
-            <p>Images:</p>
-          </div>
+          <div className="flex items-center h-[50px] p-2 justify-center ">{t("images")}</div>
           <button
             className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage1"

@@ -1,4 +1,3 @@
-// import { UserTextInput } from "../utils/UserTextInput";
 import { UserTextAreaInput } from "../utils/UserTextAreaInput";
 import showSectionDefaults from "./showSectionDefaults";
 import clearSection from "./clearSection";
@@ -51,7 +50,7 @@ const MobileWelcomeScreenTextInput = () => {
             className="bg-slate-300 p-2 rounded-md w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
-            Use Defaults
+            {t("useDefaults")}
           </button>
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
@@ -59,12 +58,10 @@ const MobileWelcomeScreenTextInput = () => {
             className="bg-slate-300 p-2 rounded-md w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleClearAll}
           >
-            Clear Section
+            {t("clearSection")}
           </button>
           {/* <RefImageButton */}
-          <div className="flex items-center p-2 justify-center  h-[50px]">
-            <p>Images:</p>
-          </div>
+          <div className="flex items-center p-2 justify-center  h-[50px]">{t("images")}</div>
           <button
             className="bg-slate-300 p-2 rounded-md w-[30px]  h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="consentImage"

@@ -18,8 +18,11 @@ import { SubmitTextInput } from "./SubmitTextInput.js";
 import { MobileSubmitTextInput } from "./MobileSubmitTextInput.js";
 import { FailureTextInput } from "./EmailTextInput.js";
 import { ProjectLinkingTextInput } from "./ProjectLinkingTextInput.js";
+import { useTranslation } from "react-i18next";
 
 const LanguageConfigSections: React.FC = () => {
+  const { t } = useTranslation();
+
   const ConfigSection: React.FC<{
     title: string;
     description: string;
@@ -57,8 +60,8 @@ const LanguageConfigSections: React.FC = () => {
   // Organize components by categories
   const screenSections = [
     {
-      title: "Multi-Screen Configuration",
-      description: "Configure settings that apply to multiple screens",
+      title: t("multiScreenConfigurations"),
+      description: t("multiScreenConfigurationsSubTitle"),
       icon: (
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
@@ -73,8 +76,8 @@ const LanguageConfigSections: React.FC = () => {
       variant: "primary" as const,
     },
     {
-      title: "Access & Consent",
-      description: "Configure access control and consent page content",
+      title: t("accessAndConsent"),
+      description: t("accessAndConsentSubTitle"),
       icon: (
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
@@ -89,8 +92,8 @@ const LanguageConfigSections: React.FC = () => {
       variant: "secondary" as const,
     },
     {
-      title: "Welcome Screens",
-      description: "Configure welcome messages for desktop and mobile",
+      title: t("welcomeScreens"),
+      description: t("welcomeScreensSubTitle"),
       icon: (
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
@@ -108,8 +111,8 @@ const LanguageConfigSections: React.FC = () => {
       variant: "primary" as const,
     },
     {
-      title: "Pre-sort Configuration",
-      description: "Set up pre-sorting instructions and interface",
+      title: t("presortConfiguration"),
+      description: t("presortConfigurationSubTitle"),
       icon: (
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
@@ -127,8 +130,8 @@ const LanguageConfigSections: React.FC = () => {
       variant: "secondary" as const,
     },
     {
-      title: "Refinement Process",
-      description: "Configure the statement refinement and evaluation phase",
+      title: t("refinementProcess"),
+      description: t("refinementProcessSubTitle"),
       icon: (
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
@@ -146,8 +149,8 @@ const LanguageConfigSections: React.FC = () => {
       variant: "accent" as const,
     },
     {
-      title: "Sorting Interface",
-      description: "Configure the main Q-sort sorting interface",
+      title: t("sortingInterface"),
+      description: t("sortingInterfaceSubTitle"),
       icon: (
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
@@ -162,8 +165,8 @@ const LanguageConfigSections: React.FC = () => {
       variant: "primary" as const,
     },
     {
-      title: "Post-sort Activities",
-      description: "Configure post-sorting questionnaire and feedback",
+      title: t("postsortCommentsInterface"),
+      description: t("postsortCommentsInterfaceSubTitle"),
       icon: (
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
@@ -181,8 +184,8 @@ const LanguageConfigSections: React.FC = () => {
       variant: "secondary" as const,
     },
     {
-      title: "Survey Configuration",
-      description: "Set up additional survey questions and forms",
+      title: t("surveyConfiguration"),
+      description: t("surveyConfigurationSubTitle"),
       icon: (
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
@@ -197,8 +200,8 @@ const LanguageConfigSections: React.FC = () => {
       variant: "accent" as const,
     },
     {
-      title: "Submission & Completion",
-      description: "Configure submission process and completion messages",
+      title: t("submissionAndCompletion"),
+      description: t("submissionAndCompletionSubTitle"),
       icon: (
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
@@ -213,8 +216,8 @@ const LanguageConfigSections: React.FC = () => {
       variant: "primary" as const,
     },
     {
-      title: "System Configuration",
-      description: "Configure error messages and project linking",
+      title: t("errorsAndLinking"),
+      description: t("errorsAndLinkingSubTitle"),
       icon: (
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path

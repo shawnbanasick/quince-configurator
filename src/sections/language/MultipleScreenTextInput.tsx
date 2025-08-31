@@ -66,7 +66,7 @@ const MultipleScreenTextInput = () => {
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="multipleScreens"
-            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[230px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
             {t("useDefaults")}
@@ -74,7 +74,7 @@ const MultipleScreenTextInput = () => {
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="multipleClear"
-            className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[230px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleClearAll}
           >
             {t("clearSection")}

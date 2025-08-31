@@ -98,7 +98,7 @@ const LanguageHeader: React.FC = () => {
                 </svg>
               </div>
             </div>
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">Language Configuration</h1>
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">{t("languagePageTitle")}</h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               {t("languageSubtitle")}
             </p>
@@ -124,7 +124,7 @@ const LanguageHeader: React.FC = () => {
                   />
                 </svg>
               }
-              description="Upload an existing language XML file to load your text configuration"
+              description={t("uploadLanguageXml")}
             >
               <div>
                 <UploadAndReadLanguageXml />
@@ -142,7 +142,7 @@ const LanguageHeader: React.FC = () => {
                   />
                 </svg>
               }
-              description="Download your current language configuration as an XML file"
+              description={t("downloadLanguageXml")}
             >
               <div>
                 <DownloadLanguageXml />

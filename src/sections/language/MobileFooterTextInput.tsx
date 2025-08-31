@@ -61,7 +61,7 @@ const MobileFooterTextInput = () => {
             className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
-            Use Defaults
+            {t("useDefaults")}
           </button>
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
@@ -69,7 +69,7 @@ const MobileFooterTextInput = () => {
             className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleClearAll}
           >
-            Clear Section
+            {t("clearSection")}
           </button>
           {/* <RefImageButton */}
           {/* <button

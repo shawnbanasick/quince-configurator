@@ -57,15 +57,17 @@ const createMapXmlSlice = (set) => ({
   mobileHeadersDefault13:
     "Completely Agree, Very Strongly Agree, Strongly Agree, Agree, Agree Somewhat, Slightly Agree, Neutral, Very Slightly Disagree, Disagree Somewhat, Disagree, Strongly Disagree, Very Strongly Disagree, Completely Disagree",
   allStatementsAllocated: false,
-  useColLabelNumsDesktop: true,
-  useColLabelNumsMobile: true,
-  useColLabelTextDesktop: false,
-  useColLabelTextMobile: false,
-  useColLabelEmojiDesktop: false,
-  useColLabelEmojiMobile: false,
   emojiArray: [],
   emojiArrayType: "",
   colTextLabelsArray: [],
+
+  useColLabelEmojiPresort: false,
+  useColLabelNums: true,
+  useColLabelText: false,
+  useColLabelEmoji: false,
+  useColLabelNumsPostsort: true,
+  useColLabelTextPostsort: false,
+  useColLabelEmojiPostsort: false,
 
   /*
    ******** GENERIC STATE CHANGE  ****************** */
@@ -73,33 +75,38 @@ const createMapXmlSlice = (set) => ({
   setColor: (stateDesig, color) => set(() => ({ [stateDesig]: color })),
   setNumber: (stateDesig, number) => set(() => ({ [stateDesig]: number })),
 
-  setColTextLabelsArray: (array) => {
-    set(() => ({ colTextLabelsArray: array }));
-  },
   setEmojiArray: (array) => {
     set(() => ({ emojiArray: array }));
   },
   setEmojiArrayType: (string) => {
     set(() => ({ emojiArrayType: string }));
   },
-  setUseColLabelNumsDesktop: (Boolean) => {
-    set(() => ({ useColLabelNumsDesktop: Boolean }));
+  setColTextLabelsArray: (array) => {
+    set(() => ({ colTextLabelsArray: array }));
   },
-  setUseColLabelNumsMobile: (Boolean) => {
-    set(() => ({ useColLabelNumsMobile: Boolean }));
+
+  setUseColLabelEmojiPresort: (Boolean) => {
+    set(() => ({ useColLabelEmojiPresort: Boolean }));
   },
-  setUseColLabelTextDesktop: (Boolean) => {
-    set(() => ({ useColLabelTextDesktop: Boolean }));
+  setUseColLabelNums: (Boolean) => {
+    set(() => ({ useColLabelNums: Boolean }));
   },
-  setUseColLabelTextMobile: (Boolean) => {
-    set(() => ({ useColLabelTextMobile: Boolean }));
+  setUseColLabelText: (Boolean) => {
+    set(() => ({ useColLabelText: Boolean }));
   },
-  setUseColLabelEmojiDesktop: (Boolean) => {
-    set(() => ({ useColLabelEmojiDesktop: Boolean }));
+  setUseColLabelEmoji: (Boolean) => {
+    set(() => ({ useColLabelEmoji: Boolean }));
   },
-  setUseColLabelEmojiMobile: (Boolean) => {
-    set(() => ({ useColLabelEmojiMobile: Boolean }));
+  setUseColLabelNumsPostsort: (Boolean) => {
+    set(() => ({ useColLabelNumsPostsort: Boolean }));
   },
+  setUseColLabelTextPostsort: (Boolean) => {
+    set(() => ({ useColLabelTextPostsort: Boolean }));
+  },
+  setUseColLabelEmojiPostsort: (Boolean) => {
+    set(() => ({ useColLabelEmojiPostsort: Boolean }));
+  },
+
   setAllStatementsAllocated: (value) => {
     set(() => ({ allStatementsAllocated: value }));
   },

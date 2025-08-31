@@ -207,7 +207,7 @@ const LanguageIntroText = () => {
             >
               {t("languageIntroText16")}
             </a>
-            &nbsp;(for main sections){" "}
+            {/* &nbsp;(for main sections){" "} */}
           </li>
 
           <li>
@@ -219,7 +219,7 @@ const LanguageIntroText = () => {
             >
               {t("languageIntroText17")}
             </a>
-            &nbsp;(for modal dialog boxes){" "}
+            {/* &nbsp;(for modal dialog boxes){" "} */}
           </li>
 
           <li>
@@ -233,7 +233,7 @@ const LanguageIntroText = () => {
             </a>{" "}
           </li>
         </div>
-        {`See the default text below for more HTML examples.`}
+        {t("languageIntroText18b")}
       </div>
     </div>
   ) : null;

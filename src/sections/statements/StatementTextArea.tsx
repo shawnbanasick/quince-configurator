@@ -38,9 +38,9 @@ const StatementTextArea = () => {
       {displayMode && (
         // <DisplayModeText>
         <div className=" ml-[10px] mb-[50px] w-[78vw] max-w-[1200px] text-[20px] p-[10px] bg-[whitesmoke] rounded-[5px] border-[1.5px] border-black">
-          <b>HTML Formatting</b>
+          <b>{t("htmlFormatting")}</b>
           <br />
-          Statements can include simple HTML formatting if desired:
+          {t("htmlFormattingSubTitle")}
           <ul className="indent-6">
             <li>
               &lt;b&gt;bold&lt;/b&gt; = <b>bold </b>
@@ -60,7 +60,6 @@ const StatementTextArea = () => {
               </b>
             </li>
           </ul>
-          Other information on HTML paired tag formatting can be found in the Config section.
         </div>
       )}
       <label>{t("enterOrPasteStatements")}: </label>

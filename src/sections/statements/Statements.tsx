@@ -53,14 +53,13 @@ const Statements: React.FC = () => {
     onClick?: () => void;
     component?: React.ReactNode;
     variant?: "primary" | "secondary";
-  }> = ({ children, icon, description, onClick, component, variant = "primary" }) => (
+  }> = ({ children, description, onClick, component }) => (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-all duration-300">
-      <div className="flex flex-col items-center text-center space-y-4">
+      <div className="flex flex-col items-center justify-center text-center">
         <div>
-          {/* <h3 className="text-lg font-semibold text-gray-900 mb-2">{children}</h3> */}
           <div className="text-sm text-gray-600 mb-4 min-h-[40px]">{description}</div>
         </div>
-        <div className="w-full">
+        <div className="flex justify-center items-center w-[100%]">
           {component || (
             <button
               onClick={onClick}
@@ -73,52 +72,6 @@ const Statements: React.FC = () => {
       </div>
     </div>
   );
-
-  // const StatsCard: React.FC<{
-  //   title: string;
-  //   value: string | number;
-  //   description: string;
-  //   color: "blue" | "green" | "purple";
-  // }> = ({ title, value, description, color }) => {
-  //   const colorClasses = {
-  //     blue: "bg-blue-50 text-blue-600",
-  //     green: "bg-green-50 text-green-600",
-  //     purple: "bg-purple-50 text-purple-600",
-  //   };
-
-  //   return (
-  //     <div className={`text-center p-6 rounded-xl ${colorClasses[color]}`}>
-  //       <div className="text-3xl font-bold mb-2">{value}</div>
-  //       <div className="text-sm font-medium mb-1">{title}</div>
-  //       <div className="text-xs opacity-75">{description}</div>
-  //     </div>
-  //   );
-  // };
-
-  // Calculate statement statistics
-  // const getStatementStats = () => {
-  //   if (!currentStatements) return { count: 0, words: 0, characters: 0 };
-
-  //   const statements = currentStatements
-  //     .split("\n")
-  //     .map((line) => line.trim())
-  //     .filter((line) => line !== "");
-
-  //   const totalWords = statements.reduce(
-  //     (acc, statement) => acc + statement.split(/\s+/).filter((word) => word !== "").length,
-  //     0
-  //   );
-
-  //   const totalCharacters = statements.reduce((acc, statement) => acc + statement.length, 0);
-
-  //   return {
-  //     count: statements.length,
-  //     words: totalWords,
-  //     characters: totalCharacters,
-  //   };
-  // };
-
-  // const stats = getStatementStats();
 
   return (
     <div className="min-h-screen bg-[#f5f5f5] py-8">
@@ -165,12 +118,7 @@ const Statements: React.FC = () => {
                     </svg>
                   </div>
                   <div className="text-blue-800">
-                    <h3 className="font-semibold mb-2">Previous Projects</h3>
-                    <p className="text-sm leading-relaxed">
-                      If you want to modify statements from a previous Quince project, you can click
-                      on the orange "Load statements.xml File" button to upload the statements.xml
-                      file.
-                    </p>
+                    <div className="mb-2">{ReactHtmlParser(t("statementInfoCard1"))}</div>
                   </div>
                 </div>
               </div>
@@ -188,13 +136,8 @@ const Statements: React.FC = () => {
                       />
                     </svg>
                   </div>
-                  <div className="text-blue-800">
-                    <h3 className="font-semibold mb-2">New Projects</h3>
-                    <p className="text-sm leading-relaxed">
-                      If you want to create new statements, you can type them directly into the text
-                      box below, or paste statements from another file. Each statement must be on a
-                      new line.
-                    </p>
+                  <div className="flex flex-row gap-2 text-blue-800">
+                    <div className="mb-2">{ReactHtmlParser(t("statementInfoCard2"))}</div>
                   </div>
                 </div>
               </div>
@@ -213,13 +156,7 @@ const Statements: React.FC = () => {
                     </svg>
                   </div>
                   <div className="text-blue-800">
-                    <h3 className="font-semibold mb-2">Save Statement File</h3>
-                    <p className="text-sm leading-relaxed">
-                      After you have finished adding or modifying your statements, you must save the
-                      file. click the orange button at the top right side of the page and save your
-                      information as 'statements.xml' in the settings folder (replacing the default
-                      file).
-                    </p>
+                    <div className="mb-2">{ReactHtmlParser(t("statementInfoCard3"))}</div>
                   </div>
                 </div>
               </div>
@@ -228,7 +165,7 @@ const Statements: React.FC = () => {
         ) : null}
 
         {/* Action Buttons Section */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <div className="flex flex-row gap-8 mb-12">
           <ActionButton
             icon={
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -273,40 +210,11 @@ const Statements: React.FC = () => {
           </ActionButton>
         </div>
 
-        {/* Statistics Section */}
-        {/* {currentStatements && (
-          <div className="bg-white rounded-2xl shadow-xl p-8 mb-8 border border-gray-100">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-6 text-center">
-              Statement Statistics
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <StatsCard
-                title="Total Statements"
-                value={stats.count}
-                description="Number of statements"
-                color="blue"
-              />
-              <StatsCard
-                title="Total Words"
-                value={stats.words}
-                description="Across all statements"
-                color="green"
-              />
-              <StatsCard
-                title="Characters"
-                value={stats.characters.toLocaleString()}
-                description="Total character count"
-                color="purple"
-              />
-            </div>
-          </div>
-        )} */}
-
         {/* Statement Editor Section */}
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
           <div className="bg-gradient-to-r from-green-600 to-blue-600 text-white p-8">
-            <h2 className="text-2xl font-semibold mb-2">Statement Editor</h2>
-            <p className="text-green-100">Create and edit your Q-sort statements</p>
+            <h2 className="text-2xl font-semibold mb-2">{t("statementEditor")}</h2>
+            <div className="text-green-100">{t("createOrEditYourQsortStatements")}</div>
           </div>
           <div className="p-8">
             <div className="max-w-5xl mx-auto">
