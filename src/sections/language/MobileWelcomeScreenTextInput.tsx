@@ -46,7 +46,7 @@ const MobileWelcomeScreenTextInput = () => {
         <div className="flex flex-row gap-4">
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
-            id="welcomeDef"
+            id="mobileWelcomeDef"
             className="bg-slate-300 p-2 rounded-md w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
@@ -54,7 +54,7 @@ const MobileWelcomeScreenTextInput = () => {
           </button>
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
-            id="welcomeClear"
+            id="mobileWelcomeClear"
             className="bg-slate-300 p-2 rounded-md w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleClearAll}
           >

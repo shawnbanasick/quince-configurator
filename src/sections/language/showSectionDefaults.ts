@@ -85,6 +85,12 @@ const showSectionDefaults = (section) => {
     setDefaults(selectorArray);
   }
 
+  if (section === "mobileWelcomeDef") {
+    selectorArray = ["mobileWelcomeText"];
+
+    setDefaults(selectorArray);
+  }
+
   if (section === "localDef") {
     selectorArray = [
       "LocalHeader",

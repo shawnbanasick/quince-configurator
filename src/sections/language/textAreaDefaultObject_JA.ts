@@ -25,9 +25,8 @@ const showSectionDefaults_JA = () => {
     btnHelpConsent: `連絡先情報`,
 
     /*
-     ******* アクセスページ  ****************** */
+     ******* ACCESS PAGE  ****************** */
     loginWelcomeText: `<center><h3>ようこそ！</h3></center><br/> このQメソドロジー研究プロジェクトへのご参加ありがとうございます。<br/>以下のフォームを使用して<b>サインイン</b>してください。`,
-
     loginHeaderText: `サインイン`,
     loginPartIdText: `お名前または参加者IDを入力してください`,
     accessCodeText: `アクセスコード`,
@@ -37,7 +36,7 @@ const showSectionDefaults_JA = () => {
     loginSubmitButtonText: `送信`,
 
     /*
-     ******* ウェルカムページ  ****************** */
+     ******* WELCOME PAGE  ****************** */
     landingHead: `大学研究プロジェクト`,
     welcomeText: `<h2>EQ Web Sort デモプロジェクト - 教室でのiPad活用</h2><br/><br/><p>この研究プロジェクトにご協力いただきありがとうございます</p><br/><br/><br/>
     <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
@@ -45,7 +44,7 @@ const showSectionDefaults_JA = () => {
     landingHelpModalText: `この大学研究プロジェクトにご参加いただき、ありがとうございます。画面右下の「<b>次へ</b>」ボタンをクリックして次のステップに進んでください。`,
     btnNextLanding: `次へ`,
     btnHelpLanding: `ヘルプ`,
-
+    mobileWelcomeText: `<h2>Quinceデモプロジェクト - 教室でのiPad活用</h2><br/><br/><p>本研究プロジェクトへのご協力に感謝いたします！</p><br/><br/><br/> <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
     /*
      ******** 事前分類 ****************** */
     logInFirst: `まずログイン手続きを完了してください。`,
@@ -90,20 +89,25 @@ const showSectionDefaults_JA = () => {
 
     /*
      ******** REFINE SCREEN  ****************** */
+    thinPageTitle: `評価を洗練させる`,
+    thinPageSubmitButton: `送信`,
+    thinningHelpModalHead: `評価を洗練させる`,
+    thinningHelpModalText: `前回の段階で評価した陳述を再度ご検討ください。ご自身の見解を最もよく表現していると思われるものを選択してください。`,
+    numStatementsToSelect: `選択するステートメントの数`,
+    currentlySelectedNumber: `現在選択されているステートメントの数`,
     thinningPreventNavModalHead: `ナビゲーションが無効です`,
     thinningPreventNavModalText: `次のステップに進む前に、精査プロセスを完了してください。`,
     thinningConfirmModalHead: `選択が不完全です`,
     thinningConfirmModalText: `必要な数の文を選択してください`,
-    initialInstructionPart1: `以下は、前のステップで肯定的に評価した文です。次に、最も同意する文の数を<b>選択</b>してください。<br /><br />`,
-    initialInstructionPart2: `次に、あなたの見解に最も近い文を選択してください`,
-    initialInstructionPart3: `オレンジ色の「送信」ボタンをクリックすると、画面に別の文のセットが表示されます`,
-
-    agreeMostText: `次に、残りの文に対して同じプロセスを繰り返してください。ただし、今回は最も同意するカードを選択してください。`,
-    agreeLeastText: `次に、残りの文に対して同じプロセスを繰り返してください。ただし、今回は最も同意しないカードを選択してください。`,
+    initialInstructionPart1: `以下の項目は、前のステップで肯定的に評価したものです。次に、<b>最も同意する</b>項目の数を選んでください。<br /><br />`,
+    initialInstructionPart2: `次に、あなたの見解に最も近い記述を選び続けてください`,
+    initialInstructionPart3: `オレンジ色の「送信」ボタンをクリックすると、別のメッセージが表示されます。`,
+    initialInstructionPartNeg1: `以下の項目は、前のステップで肯定的に評価したものです。次に、<mark><b>あなたの視点から最も異なるもの</b></mark>を選んでください。`,
+    initialInstructionPartNeg2: `次に、あなたの視点から見て<mark>最も異なる</mark>記述を続けて選択してください。`,
     finalInstructions: `精査プロセスが完了しました。画面右下のナビゲーションボタンをクリックして次の段階に進んでください。`,
 
     /*
-     ******** モバイル精緻化画面  ****************** */
+     ******** MOBILE REFINE SCREEN  ****************** */
     moveTopMobileHead: `移動を確認`,
     moveTopMobileText: `この文をリストの上部に移動しますか？`,
     moveAllTopMobileText: `選択したすべての文をリストの上部に移動しますか？`,
@@ -112,6 +116,7 @@ const showSectionDefaults_JA = () => {
     mobileModalButtonCancel: `キャンセル`,
     mobileThinConditionsOfInstruction: `評価を精査してください`,
     mobileThinSubmitButtonText: `送信`,
+    mobileThinSelectedText: "選ばれた",
 
     mobileThinHelpModalHead: `評価を精査してください`,
     mobileThinHelpModalText: `この段階では、評価した文を<b></b>レビューし</b>、あなたの視点から最も類似または最も異なるものを選択する必要があります。<br/><br/>すべての文を確認するには、<b>下にスクロール</b>してください。<br/><br/>文を選択するには、文のコンテナをタップしてください。文の色が黄色に変わります。<br/><br/>正しい数の文を選択すると、「送信」ボタンが<b>青色</b>に変わります。<br/><br/>文を比較しやすくするため、文の右側または左側にある上下の矢印をタップして<b>並べ替え</b>ることができます。<br/><br/>選択したステートメントのグループをリストの上部に移動するには、ステートメントを<b>長押し</b>（約1秒間）します。`,

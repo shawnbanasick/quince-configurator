@@ -195,7 +195,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`8-11. ${t("thinningHelpModalHead")}`}
+          label={`8-1. ${t("thinningHelpModalHead")}`}
           name="thinningHelpModalHead"
           value={thinningHelpModalHead}
           onChange={handleTextChange}

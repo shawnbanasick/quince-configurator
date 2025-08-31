@@ -69,6 +69,12 @@ const showSectionDefaults = (section) => {
     clearSection(selectorArray);
   }
 
+  if (section === "mobileWelcomeClear") {
+    selectorArray = ["mobileWelcomeText"];
+
+    clearSection(selectorArray);
+  }
+
   if (section === "localClear") {
     selectorArray = [
       "LocalHeader",
