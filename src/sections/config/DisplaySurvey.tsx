@@ -18,6 +18,7 @@ import EditIcon from "../../assets/images/editIcon.svg";
 import { DeleteSurveyItemModal } from "./DeleteSurveyItemModal";
 import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
+import { decodeHTML } from "../utils/decodeHTML";
 
 const getSurveyQuestionsArray = (state) => state.surveyQuestionsArray;
 const getSetSurveyQuestionsArray = (state) => state.setSurveyQuestionsArray;
@@ -117,6 +118,13 @@ const SurveyPageQuestions = () => {
     const targetObject = surveyQuestionsArray[clickedItemIndex];
     const keys = Object.keys(targetObject);
 
+    setSurveyQuestionLabel("");
+    setSurveyQuestionNote("");
+    setSurveyQuestionScale("");
+    setSurveyQuestionOptions("");
+
+    console.log("xx", JSON.stringify(targetObject, null, 2));
+
     setIsEditingSurveyQuestion(true);
     setIsEditingSurveyQuestionIndex(clickedItemIndex);
 
@@ -128,28 +136,36 @@ const SurveyPageQuestions = () => {
         setSurveyAnswerRequired(targetObject[key]);
       }
       if (key === "label") {
-        setSurveyQuestionLabel(targetObject[key]);
+        setSurveyQuestionLabel(decodeHTML(targetObject[key], true));
       }
       if (key === "note") {
-        setSurveyQuestionNote(targetObject[key]);
+        setSurveyQuestionNote(decodeHTML(targetObject[key], true));
       }
       if (key === "options") {
-        setSurveyQuestionOptions(targetObject[key]);
+        setSurveyQuestionOptions(decodeHTML(targetObject[key], true));
       }
       if (key === "scale") {
-        setSurveyQuestionScale(targetObject[key]);
+        setSurveyQuestionScale(decodeHTML(targetObject[key], true));
       }
       if (key === "placeholder") {
         setSurveyQuestionPlaceholder(targetObject[key]);
       }
       if (key === "limited") {
-        setSurveyAnswerLenIsLimited(targetObject[key]);
+        let value2 = false;
+        if (targetObject[key] === "true" || targetObject[key] === true) {
+          value2 = true;
+        }
+        setSurveyAnswerLenIsLimited(value2);
       }
-      if (key === "length") {
+      if (key === "limitLength") {
         setSurveyAnswerLenMax(targetObject[key]);
       }
       if (key === "restricted") {
-        setSurveyAnswerRestricted(targetObject[key]);
+        let value = false;
+        if (targetObject[key] === "true" || targetObject[key] === true) {
+          value = true;
+        }
+        setSurveyAnswerRestricted(value);
       }
       if (key === "bg") {
         setConfigSurveyInfoBarColor(targetObject[key]);

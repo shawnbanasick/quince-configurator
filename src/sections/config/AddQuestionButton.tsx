@@ -27,17 +27,13 @@ const getSurveyQuestionScale = (state) => state.surveyQuestionScale;
 const getSurveyQuestionOptions = (state) => state.surveyQuestionOptions;
 const getSurveyQuestionPlaceholder = (state) => state.surveyQuestionPlaceholder;
 const getConfigSurveyInfoBarColor = (state) => state.configSurveyInfoBarColor;
-const getTriggerOptionsWarningModal = (state) =>
-  state.triggerOptionsWarningModal;
+const getTriggerOptionsWarningModal = (state) => state.triggerOptionsWarningModal;
 const getSurveyQuestionsArray = (state) => state.surveyQuestionsArray;
 const getSetSurveyQuestionsArray = (state) => state.setSurveyQuestionsArray;
 const getIsEditingSurveyQuestion = (state) => state.isEditingSurveyQuestion;
-const getIsEditingSurveyQuestionIndex = (state) =>
-  state.isEditingSurveyQuestionIndex;
-const getSetIsEditingSurveyQuestionIndex = (state) =>
-  state.setIsEditingSurveyQuestionIndex;
-const getSetIsEditingSurveyQuestion = (state) =>
-  state.setIsEditingSurveyQuestion;
+const getIsEditingSurveyQuestionIndex = (state) => state.isEditingSurveyQuestionIndex;
+const getSetIsEditingSurveyQuestionIndex = (state) => state.setIsEditingSurveyQuestionIndex;
+const getSetIsEditingSurveyQuestion = (state) => state.setIsEditingSurveyQuestion;
 
 interface newItemObjType {
   surveyQuestionType?: string;
@@ -45,14 +41,14 @@ interface newItemObjType {
   label?: string;
   note?: string;
   limited?: boolean;
+  limitLength?: number;
   restricted?: boolean;
-  scale?: boolean;
+  scale?: string;
   options?: string;
   placeholder?: string;
   bg?: string;
   id?: string;
   content?: string[];
-  length?: number;
 }
 
 const getOptionsArray = (options) => {
@@ -87,12 +83,8 @@ const AddQuestionButton: React.FC = () => {
   const surveyQuestionsArray = useStore(getSurveyQuestionsArray);
   const setSurveyQuestionsArray = useStore(getSetSurveyQuestionsArray);
   const isEditingSurveyQuestion = useStore(getIsEditingSurveyQuestion);
-  const isEditingSurveyQuestionIndex = useStore(
-    getIsEditingSurveyQuestionIndex
-  );
-  const setIsEditingSurveyQuestionIndex = useStore(
-    getSetIsEditingSurveyQuestionIndex
-  );
+  const isEditingSurveyQuestionIndex = useStore(getIsEditingSurveyQuestionIndex);
+  const setIsEditingSurveyQuestionIndex = useStore(getSetIsEditingSurveyQuestionIndex);
   const setIsEditingSurveyQuestion = useStore(getSetIsEditingSurveyQuestion);
   const { t } = useTranslation();
 
@@ -142,7 +134,7 @@ const AddQuestionButton: React.FC = () => {
         note: "",
         limited: false,
         restricted: false,
-        scale: false,
+        scale: "",
         options: "",
         placeholder: "",
         bg: "",
@@ -153,15 +145,11 @@ const AddQuestionButton: React.FC = () => {
 
       if (displayBoolean.required === true) {
         newItemObj.required = surveyAnswerRequired;
-        newItemArray.push(
-          `<b>answer required (true/false):</b> ${surveyAnswerRequired}`
-        );
+        newItemArray.push(`<b>answer required (true/false):</b> ${surveyAnswerRequired}`);
       }
       if (displayBoolean.label === true) {
         newItemObj.label = surveyQuestionLabel;
-        newItemArray.push(
-          `<b>label text:</b> ${decodeHTML(surveyQuestionLabel)}`
-        );
+        newItemArray.push(`<b>label text:</b> ${decodeHTML(surveyQuestionLabel)}`);
       }
       if (displayBoolean.note === true) {
         newItemObj.note = surveyQuestionNote;
@@ -169,11 +157,8 @@ const AddQuestionButton: React.FC = () => {
       }
       if (displayBoolean.limited === true) {
         newItemObj.limited = surveyAnswerLenIsLimited;
-        newItemObj.length = surveyAnswerLenMax;
-        if (
-          surveyAnswerLenIsLimited === "false" ||
-          surveyAnswerLenIsLimited === false
-        ) {
+        newItemObj.limitLength = +surveyAnswerLenMax;
+        if (surveyAnswerLenIsLimited === "false" || surveyAnswerLenIsLimited === false) {
           newItemArray.push(`<b>length limit:</b> false`);
         } else {
           newItemArray.push(

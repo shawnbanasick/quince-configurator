@@ -102,8 +102,8 @@ const SurveyQuestionInput: React.FC = () => {
   };
 
   const handleSurveyQuestionScaleChange = (inputValue: any) => {
+    console.log("xx", inputValue.target.value);
     setSurveyQuestionScale(inputValue.target.value);
-    console.log(inputValue.target.value);
   };
 
   // const handleSurveyQuestionPlaceholderChange = (inputValue: any) => {

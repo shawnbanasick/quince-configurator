@@ -44,6 +44,7 @@ const SurveyTextElement = (props) => {
     }
     // limit length (from config.xml)
     if (props.opts.limited === "true" || props.opts.limited === true) {
+      console.log("xx", props.opts);
       if (value.length > +props.opts.limitLength) {
         value = value.substring(0, +props.opts.limitLength);
       }
