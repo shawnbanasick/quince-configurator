@@ -15,13 +15,14 @@ const SurveyTextElement = (props) => {
   let questionId = `itemNum${props.opts.itemNum}`;
   const checkRequiredQuestionsComplete = props.check;
   const labelText = ReactHtmlParser(decodeHTML(props.opts.label)) || "";
-  const placeholder =
-    ReactHtmlParser(decodeHTML(props.opts.placeholder, true)) || "";
+  // const placeholder = ReactHtmlParser(decodeHTML(props?.opts?.placeholder, true)) || "";
   const noteText = ReactHtmlParser(decodeHTML(props.opts.note)) || "";
   let displayNoteText = true;
   if (noteText.length < 1 || noteText === "") {
     displayNoteText = false;
   }
+
+  console.log(props);
 
   // PERSISTENT STATE
   const [userText, setUserText] = useState("");
@@ -102,7 +103,7 @@ const SurveyTextElement = (props) => {
           className="border border-1 border-gray-300 p-[5px] w-full rounded-md"
           type="text"
           value={userText}
-          placeholder={placeholder}
+          // placeholder={placeholder}
           onChange={handleOnChange}
         />
       </div>

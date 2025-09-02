@@ -1,53 +1,53 @@
 import React from "react";
-import { useStore } from "../../globalState/useStore";
 import { useTranslation } from "react-i18next";
-import { UserNumInput } from "../utils/UserNumInput";
-import { Radio } from "../utils/RadioButtons";
-import Image from "../../assets/images/infoIcon.svg";
+// import { useStore } from "../../globalState/useStore";
+// import { UserNumInput } from "../utils/UserNumInput";
+// import { Radio } from "../utils/RadioButtons";
+// import Image from "../../assets/images/infoIcon.svg";
 
-import clsx from "clsx";
+// import clsx from "clsx";
 
-const getUseImages = (state) => state.useImages;
-const getSetUseImages = (state) => state.setUseImages;
-const getNumImages = (state) => state.numImages;
-const getSetNumImages = (state) => state.setNumImages;
-const getImageFileType = (state) => state.imageFileType;
-const getSetImageFileType = (state) => state.setImageFileType;
-const getImageFormat = (state) => state.imageFormat;
-const getSetImageFormat = (state) => state.setImageFormat;
+// const getUseImages = (state) => state.useImages;
+// const getSetUseImages = (state) => state.setUseImages;
+// const getNumImages = (state) => state.numImages;
+// const getSetNumImages = (state) => state.setNumImages;
+// const getImageFileType = (state) => state.imageFileType;
+// const getSetImageFileType = (state) => state.setImageFileType;
+// const getImageFormat = (state) => state.imageFormat;
+// const getSetImageFormat = (state) => state.setImageFormat;
 
 const Config4SortImages: React.FC = () => {
-  const useImages = useStore(getUseImages);
-  const setUseImages = useStore(getSetUseImages);
-  const numImages = useStore(getNumImages);
-  const setNumImages = useStore(getSetNumImages);
-  const imageFileType = useStore(getImageFileType);
-  const setImageFileType = useStore(getSetImageFileType);
-  const imageFormat = useStore(getImageFormat);
-  const setImageFormat = useStore(getSetImageFormat);
+  // const useImages = useStore(getUseImages);
+  // const numImages = useStore(getNumImages);
+  // const imageFileType = useStore(getImageFileType);
+  // const setUseImages = useStore(getSetUseImages);
+  // const imageFormat = useStore(getImageFormat);
+  // const setNumImages = useStore(getSetNumImages);
+  // const setImageFileType = useStore(getSetImageFileType);
+  // const setImageFormat = useStore(getSetImageFormat);
   const { t } = useTranslation();
 
-  const handleNumberInput = (input: any) => {
-    setNumImages(input);
-  };
+  // const handleNumberInput = (input: any) => {
+  //   setNumImages(input);
+  // };
 
-  const handleImageFileTypeChange = (inputValue: any) => {
-    console.log(inputValue);
-    setImageFileType(inputValue);
-  };
+  // const handleImageFileTypeChange = (inputValue: any) => {
+  //   console.log(inputValue);
+  //   setImageFileType(inputValue);
+  // };
 
-  const handleImageFormatChange = (inputValue: any) => {
-    console.log(inputValue);
-    setImageFormat(inputValue);
-  };
+  // const handleImageFormatChange = (inputValue: any) => {
+  //   console.log(inputValue);
+  //   setImageFormat(inputValue);
+  // };
 
-  const handleUseImagesChange = (inputValue: React.ChangeEvent<HTMLInputElement>) => {
-    if (inputValue.target.value === "true") {
-      setUseImages(true);
-    } else {
-      setUseImages(false);
-    }
-  };
+  // const handleUseImagesChange = (inputValue: React.ChangeEvent<HTMLInputElement>) => {
+  //   if (inputValue.target.value === "true") {
+  //     setUseImages(true);
+  //   } else {
+  //     setUseImages(false);
+  //   }
+  // };
 
   return (
     <div className="flex flex-col  pt-6 pb-2 hover:bg-gray-100 hover:outline outline-2 outline-zinc-600 p-2 hover:rounded-md">
@@ -64,9 +64,12 @@ const Config4SortImages: React.FC = () => {
       </div>
       <br />
       <span className="text-md">
-        <mark>{t("imageSortDisabled")}</mark>
+        {"("} {t("imageSortDisabled")} {")"}
       </span>
+
+      {/* temporarily disabled until image sorting is restored 
       <div className="flex flex-row h-[60px] content-center gap-5 mt-3 text-opacity-50">
+
         <span className="content-center text-gray-400">{`4a. ${t("sortImages")}:`}</span>
         <div className="content-center">
           <label
@@ -94,7 +97,6 @@ const Config4SortImages: React.FC = () => {
           </label>
         </div>
         <div className="content-center">
-          {/* temporarily disabled until image sorting is restored */}
           <label
             className={clsx(
               "bg-opacity-50 bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
@@ -180,6 +182,7 @@ const Config4SortImages: React.FC = () => {
           handleChange={handleImageFormatChange}
         />
       </div>
+        */}
     </div>
   );
 };

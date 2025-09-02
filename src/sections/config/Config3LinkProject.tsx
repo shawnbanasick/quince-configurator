@@ -97,7 +97,7 @@ const Config3LinkProject: React.FC = () => {
         classNameLabel={`min-w-[170px] content-center pt-1 mr-1 disabled:opacity-50 ${
           linkToSecondProject ? "" : "text-slate-400"
         } select-none`}
-        highlight={true}
+        highlight={false}
         label={`3b. ${t("secondProjectUrlAddress")}:`}
         placeholder={t("enterSecondProjectUrlAddress")}
         disabled={!linkToSecondProject}

@@ -64,7 +64,7 @@
   "numberOfImages": "Number of Images",
   "imageFileType": "Image File Type",
   "imageFormat": "Image Format",
-  "imageSortDisabled": "Image sorting is currently unavailable, but will be restored in a future release.",
+  "imageSortDisabled": "Image sorting is currently unavailable, but will be added in a future release.",
 
   "*** CONFIG 5 - CONSENT PAGE OPTIONS ***": "*** CONFIG TEXT LANDING PAGE OPTIONS ***",
   "consentPageOptions": "Consent Page Options",

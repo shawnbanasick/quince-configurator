@@ -103,7 +103,9 @@ const Config10PostsortOptions: React.FC = () => {
       </div>
 
       <div className="flex flex-row h-[60px] content-center gap-5 mt-3">
-        <span className="content-center">{`10a. ${t("showPostsort")}:`}</span>
+        <span className="content-center">
+          <mark>{`10a. ${t("showPostsort")}:`}</mark>
+        </span>
         <div className="content-center">
           <label
             className={clsx(
@@ -316,7 +318,9 @@ const Config10PostsortOptions: React.FC = () => {
           </div>
 
           <div className="flex flex-row h-[60px] content-center gap-5 mt-3">
-            <span className="content-center">{`10e. ${t("postsortCommentsRequired")}:`}</span>
+            <span className="content-center">
+              <mark>{`10e. ${t("postsortCommentsRequired")}:`}</mark>
+            </span>
             <div className="content-center">
               <label
                 className={clsx(

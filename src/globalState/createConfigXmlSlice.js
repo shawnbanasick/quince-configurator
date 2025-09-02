@@ -6,45 +6,60 @@ const createConfigXmlSlice = (set, get) => ({
   useMobileMode: true,
   traceSorts: true,
 
+  // FILE INFORMATION
+  configFileVersion: "1.0.1",
+  iterationDate: "2025-09-15",
+
+  // GENERAL SETTINGS
   studyTitle: "My Study Title",
+  creationDate: "",
+  setupTarget: "baserow", // baserow or local only
+  baserowToken: "",
+  baserowDatabaseIdNumber: "",
+
+  // EMAIL
+  emailAddress: "",
+  emailSubjectLine: "Quince Sort Results",
+
+  // SECOND PROJECT LINKING
   linkToSecondProject: false,
   secondProjectUrl: "",
+
+  // IMAGE OPTIONS
   useImages: false,
   numImages: 0,
   imageFileType: "jpg",
   imageFormat: "letterbox",
 
-  setupTarget: "baserow",
-  baserowToken: "",
-  baserowDatabaseId: "",
-  emailAddress: "",
-  emailSubjectLine: "Q Sort Results",
-
+  // OTHER GENERAL OPTIONS
+  shuffleCards: true,
+  headerBarColor: "#337ab7",
   showConsentPage: false,
   showConsentPageHelpModal: true,
 
+  // ACCESS  (anonymous, partId-access, partId, access)
   initialScreen: "anonymous",
   accessCode: "",
 
-  headerBarColor: "#337ab7",
+  // PRE-SORT
   greenCardColor: "#ccffcc",
   yellowCardColor: "#e0e0e0",
   pinkCardColor: "#ffe0e0",
   defaultFontColor: "#2a2a2a",
-
-  shuffleCards: true,
   defaultFontSizePresort: 22,
 
+  // THINNING
   useThinProcess: true,
   thinGuidanceModalMaxIterations: 2,
 
-  condOfInstFontSize: 20,
-  sortDirection: "positive",
+  // SORTING
   allowUnforcedSorts: false,
   warnOverloadedColumn: true,
+  condOfInstFontSize: 20,
   minCardHeightSort: 120,
   defaultFontSizeSort: 16,
 
+  // POST-SORT
   showPostsort: true,
   showSecondPosColumn: false,
   showSecondNegColumn: false,
@@ -53,7 +68,10 @@ const createConfigXmlSlice = (set, get) => ({
   defaultFontSizePostsort: 16,
   minCardHeightPostsort: 120,
 
+  // SURVEY
   showSurvey: true,
+
+  // *** ALL OTHERS
   detailsArray: [
     `<b>1. Answer Required (not shown in image): </b>true`,
     `<b>2. Label: </b>Age*`,
@@ -104,8 +122,8 @@ const createConfigXmlSlice = (set, get) => ({
   setBaserowToken: (token) => {
     set(() => ({ baserowToken: token }));
   },
-  setBaserowDatabaseId: (id) => {
-    set(() => ({ baserowDatabaseId: id }));
+  setBaserowDatabaseIdNumber: (id) => {
+    set(() => ({ baserowDatabaseIdNumber: id }));
   },
   setVersion: (version) => {
     set(() => ({ version: version }));

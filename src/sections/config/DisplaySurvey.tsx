@@ -27,20 +27,14 @@ const getSetSurveyQuestionLabel = (state) => state.setSurveyQuestionLabel;
 const getSetSurveyQuestionNote = (state) => state.setSurveyQuestionNote;
 const getSetSurveyQuestionOptions = (state) => state.setSurveyQuestionOptions;
 const getSetSurveyQuestionScale = (state) => state.setSurveyQuestionScale;
-const getSetSurveyQuestionPlaceholder = (state) =>
-  state.setSurveyQuestionPlaceholder;
-const getSetSurveyAnswerLenIsLimited = (state) =>
-  state.setSurveyAnswerLenIsLimited;
+const getSetSurveyQuestionPlaceholder = (state) => state.setSurveyQuestionPlaceholder;
+const getSetSurveyAnswerLenIsLimited = (state) => state.setSurveyAnswerLenIsLimited;
 const getSetSurveyAnswerLenMax = (state) => state.setSurveyAnswerLenMax;
 const getSetSurveyAnswerRestricted = (state) => state.setSurveyAnswerRestricted;
-const getSetConfigSurveyInfoBarColor = (state) =>
-  state.setConfigSurveyInfoBarColor;
-const getSetIsEditingSurveyQuestion = (state) =>
-  state.setIsEditingSurveyQuestion;
-const getSetIsEditingSurveyQuestionIndex = (state) =>
-  state.setIsEditingSurveyQuestionIndex;
-const getSetTriggerSurveyQuestionDeleteModal = (state) =>
-  state.setTriggerSurveyQuestionDeleteModal;
+const getSetConfigSurveyInfoBarColor = (state) => state.setConfigSurveyInfoBarColor;
+const getSetIsEditingSurveyQuestion = (state) => state.setIsEditingSurveyQuestion;
+const getSetIsEditingSurveyQuestionIndex = (state) => state.setIsEditingSurveyQuestionIndex;
+const getSetTriggerSurveyQuestionDeleteModal = (state) => state.setTriggerSurveyQuestionDeleteModal;
 
 const SurveyPageQuestions = () => {
   const checkRequiredQuestionsComplete = false;
@@ -52,20 +46,14 @@ const SurveyPageQuestions = () => {
   const setSurveyQuestionNote = useStore(getSetSurveyQuestionNote);
   const setSurveyQuestionOptions = useStore(getSetSurveyQuestionOptions);
   const setSurveyQuestionScale = useStore(getSetSurveyQuestionScale);
-  const setSurveyQuestionPlaceholder = useStore(
-    getSetSurveyQuestionPlaceholder
-  );
+  const setSurveyQuestionPlaceholder = useStore(getSetSurveyQuestionPlaceholder);
   const setSurveyAnswerLenIsLimited = useStore(getSetSurveyAnswerLenIsLimited);
   const setSurveyAnswerLenMax = useStore(getSetSurveyAnswerLenMax);
   const setSurveyAnswerRestricted = useStore(getSetSurveyAnswerRestricted);
   const setConfigSurveyInfoBarColor = useStore(getSetConfigSurveyInfoBarColor);
   const setIsEditingSurveyQuestion = useStore(getSetIsEditingSurveyQuestion);
-  const setIsEditingSurveyQuestionIndex = useStore(
-    getSetIsEditingSurveyQuestionIndex
-  );
-  const setTriggerSurveyQuestionDeleteModal = useStore(
-    getSetTriggerSurveyQuestionDeleteModal
-  );
+  const setIsEditingSurveyQuestionIndex = useStore(getSetIsEditingSurveyQuestionIndex);
+  const setTriggerSurveyQuestionDeleteModal = useStore(getSetTriggerSurveyQuestionDeleteModal);
   const { t } = useTranslation();
 
   const notifyReadyForEdit = () => {
@@ -89,8 +77,7 @@ const SurveyPageQuestions = () => {
     }
     // if not at end, move up
     const temp = surveyQuestionsArray[clickedItemIndex];
-    surveyQuestionsArray[clickedItemIndex] =
-      surveyQuestionsArray[clickedItemIndex - 1];
+    surveyQuestionsArray[clickedItemIndex] = surveyQuestionsArray[clickedItemIndex - 1];
     surveyQuestionsArray[clickedItemIndex - 1] = temp;
     setSurveyQuestionsArray([...surveyQuestionsArray]);
     return;
@@ -103,8 +90,7 @@ const SurveyPageQuestions = () => {
     }
     // if not at the beginning, move up
     const temp = surveyQuestionsArray[clickedItemIndex];
-    surveyQuestionsArray[clickedItemIndex] =
-      surveyQuestionsArray[clickedItemIndex + 1];
+    surveyQuestionsArray[clickedItemIndex] = surveyQuestionsArray[clickedItemIndex + 1];
     surveyQuestionsArray[clickedItemIndex + 1] = temp;
     setSurveyQuestionsArray([...surveyQuestionsArray]);
     return;
@@ -177,6 +163,8 @@ const SurveyPageQuestions = () => {
       return <div>{t("noQuestionsAdded")}</div>;
     } else {
       const QuestionList = surveyQuestionsArray.map((object, index) => {
+        console.log("ee", JSON.stringify(object, null, 2));
+
         if (object.surveyQuestionType === "text") {
           return (
             <div key={uuid()} className="flex flex-row rounded-md">

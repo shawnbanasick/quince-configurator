@@ -32,8 +32,7 @@ const getShowSurvey = (state) => state.showSurvey;
 const getDetailsArray = (state) => state.detailsArray;
 const getSurveyQuestionType = (state) => state.surveyQuestionType;
 const getConfigSurveyInfoBarColor = (state) => state.configSurveyInfoBarColor;
-const getSetConfigSurveyInfoBarColor = (state) =>
-  state.setConfigSurveyInfoBarColor;
+const getSetConfigSurveyInfoBarColor = (state) => state.setConfigSurveyInfoBarColor;
 const getDisplayOptionsSemiWarn = (state) => state.displayOptionsSemiWarn;
 
 const getSurveyAnswerRequired = (state) => state.surveyAnswerRequired;
@@ -43,8 +42,7 @@ const getSetSurveyQuestionLabel = (state) => state.setSurveyQuestionLabel;
 const getSurveyQuestionNote = (state) => state.surveyQuestionNote;
 const getSetSurveyQuestionNote = (state) => state.setSurveyQuestionNote;
 const getSurveyAnswerLenIsLimited = (state) => state.surveyAnswerLenIsLimited;
-const getSetSurveyAnswerLenIsLimited = (state) =>
-  state.setSurveyAnswerLenIsLimited;
+const getSetSurveyAnswerLenIsLimited = (state) => state.setSurveyAnswerLenIsLimited;
 const getSurveyAnswerLenMax = (state) => state.surveyAnswerLenMax;
 const getSetSurveyAnswerLenMax = (state) => state.setSurveyAnswerLenMax;
 const getSurveyAnswerRestricted = (state) => state.surveyAnswerRestricted;
@@ -53,9 +51,8 @@ const getSurveyQuestionScale = (state) => state.surveyQuestionScale;
 const getSetSurveyQuestionScale = (state) => state.setSurveyQuestionScale;
 const getSurveyQuestionOptions = (state) => state.surveyQuestionOptions;
 const getSetSurveyQuestionOptions = (state) => state.setSurveyQuestionOptions;
-const getSurveyQuestionPlaceholder = (state) => state.surveyQuestionPlaceholder;
-const getSetSurveyQuestionPlaceholder = (state) =>
-  state.setSurveyQuestionPlaceholder;
+// const getSurveyQuestionPlaceholder = (state) => state.surveyQuestionPlaceholder;
+// const getSetSurveyQuestionPlaceholder = (state) => state.setSurveyQuestionPlaceholder;
 
 const SurveyQuestionInput: React.FC = () => {
   const showSurvey = useStore(getShowSurvey);
@@ -77,10 +74,8 @@ const SurveyQuestionInput: React.FC = () => {
   const setSurveyQuestionScale = useStore(getSetSurveyQuestionScale);
   const surveyQuestionOptions = useStore(getSurveyQuestionOptions);
   const setSurveyQuestionOptions = useStore(getSetSurveyQuestionOptions);
-  const surveyQuestionPlaceholder = useStore(getSurveyQuestionPlaceholder);
-  const setSurveyQuestionPlaceholder = useStore(
-    getSetSurveyQuestionPlaceholder
-  );
+  // const surveyQuestionPlaceholder = useStore(getSurveyQuestionPlaceholder);
+  // const setSurveyQuestionPlaceholder = useStore(getSetSurveyQuestionPlaceholder);
   const surveyAnswerLenIsLimited = useStore(getSurveyAnswerLenIsLimited);
   const setSurveyAnswerLenIsLimited = useStore(getSetSurveyAnswerLenIsLimited);
   const surveyAnswerRestricted = useStore(getSurveyAnswerRestricted);
@@ -111,10 +106,10 @@ const SurveyQuestionInput: React.FC = () => {
     console.log(inputValue.target.value);
   };
 
-  const handleSurveyQuestionPlaceholderChange = (inputValue: any) => {
-    setSurveyQuestionPlaceholder(inputValue.target.value);
-    console.log(inputValue.target.value);
-  };
+  // const handleSurveyQuestionPlaceholderChange = (inputValue: any) => {
+  //   setSurveyQuestionPlaceholder(inputValue.target.value);
+  //   console.log(inputValue.target.value);
+  // };
 
   const handleSurveyAnswerLenMaxChange = (inputValue: any) => {
     console.log(inputValue);
@@ -122,6 +117,9 @@ const SurveyQuestionInput: React.FC = () => {
   };
 
   const handleSurveyAnswerRequiredChange = (inputValue: any) => {
+    console.log(inputValue);
+    console.log(inputValue.target.value);
+
     if (inputValue.target.value === "true") {
       setSurveyAnswerRequired(true);
     } else {
@@ -148,17 +146,15 @@ const SurveyQuestionInput: React.FC = () => {
   };
 
   return (
-    <>
+    <div className=" mt-12">
       {/* <GlobalStyle />
       <StyledToastContainer />
       <OptionsWarningModal /> */}
-      <span className="text-lg font-title font-semibold mt-8">
-        {t("surveyQuestionGenerator")}
-      </span>
+      <span className="text-lg font-title font-semibold">{t("surveyQuestionGenerator")}</span>
       {/* {showSurvey === "true" && ( */}
       <div>
         <div>
-          <h3>{t("exampleItem")}</h3>
+          <h3>{t("exampleItem")}:</h3>
           <SurveyImageContainer />
           <div className="mt-4 bg-slate-100">
             <div className="mt-4">
@@ -173,18 +169,13 @@ const SurveyQuestionInput: React.FC = () => {
             )}
             {displayOptionsSemiWarn && (
               // <SeparatorWarning>
-              <div>
-                Separate scale or options with three semicolons
-                &nbsp;&nbsp;&nbsp; ;;;
-              </div>
+              <div>Separate scale or options with three semicolons &nbsp;&nbsp;&nbsp; ;;;</div>
             )}
           </div>
         </div>
         <div>
           <div className="mt-4">
-            <span className="text-lg font-title font-semibold">
-              {t("newItemSettings")}:
-            </span>
+            <span className="text-lg font-title font-semibold">{t("newItemSettings")}:</span>
           </div>
           <div className="flex flex-row w-12/12 justify-between items-end mt-3">
             <UserDropdown />
@@ -192,9 +183,7 @@ const SurveyQuestionInput: React.FC = () => {
           </div>
           <div className="flex flex-row h-[60px] content-center items-center gap-5 mt-3">
             <span
-              className={`content-center ${
-                displayBoolean.required ? "" : "text-slate-400"
-              }`}
+              className={`content-center ${displayBoolean.required ? "" : "text-slate-400"}`}
             >{`2. ${t("surveyAnswerRequired")}:`}</span>
             <div className="">
               <label
@@ -303,7 +292,7 @@ const SurveyQuestionInput: React.FC = () => {
             onChange={handleSurveyQuestionScaleChange}
           />
 
-          <UserTextInput
+          {/* <UserTextInput
             classNameText={`mt-1 block min-w-[576px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
             classNameLabel={`w-auto content-center pt-1 mr-3 disabled:opacity-50 select-none ${
               displayBoolean.placeholder ? "" : "text-slate-400"
@@ -315,13 +304,11 @@ const SurveyQuestionInput: React.FC = () => {
             value={surveyQuestionPlaceholder}
             onChange={handleSurveyQuestionPlaceholderChange}
             label="7. Placeholder:"
-          />
+          /> */}
           <div className="flex flex-row h-[60px] content-center items-center gap-5 mt-3">
             <span
-              className={`content-center ${
-                displayBoolean.limited ? "" : "text-slate-400"
-              }`}
-            >{`8. ${t("surveyAnswerLenIsLimited")}:`}</span>
+              className={`content-center ${displayBoolean.limited ? "" : "text-slate-400"}`}
+            >{`7. ${t("surveyAnswerLenIsLimited")}:`}</span>
             <div className="">
               <label
                 className={clsx(
@@ -383,7 +370,7 @@ const SurveyQuestionInput: React.FC = () => {
             upperLimit={999}
             lowerLimit={0}
             step={1}
-            label={`9. ${t("surveyAnswerMaximumLength")}:`}
+            label={`8. ${t("surveyAnswerMaximumLength")}:`}
             highlight={true}
             placeholder=""
             disabled={!displayBoolean.maxLen}
@@ -394,10 +381,8 @@ const SurveyQuestionInput: React.FC = () => {
 
           <div className="flex flex-row h-[60px] content-center items-center gap-5 mt-3">
             <span
-              className={`content-center ${
-                displayBoolean.restricted ? "" : "text-slate-400"
-              }`}
-            >{`10. ${t("surveyAnswerRestricted")}:`}</span>
+              className={`content-center ${displayBoolean.restricted ? "" : "text-slate-400"}`}
+            >{`9. ${t("surveyAnswerRestricted")}:`}</span>
             <div className="">
               <label
                 className={clsx(
@@ -451,14 +436,10 @@ const SurveyQuestionInput: React.FC = () => {
               </label>
             </div>
           </div>
-          <div
-            className={`flex flex-row h-[40px] content-center items-center gap-5 mt-1`}
-          >
+          <div className={`flex flex-row h-[40px] content-center items-center gap-5 mt-1`}>
             <span
-              className={`content-center ${
-                displayBoolean.bg ? "" : "text-slate-400"
-              }`}
-            >{`11. ${t("surveyInfoBarColor")}:`}</span>
+              className={`content-center ${displayBoolean.bg ? "" : "text-slate-400"}`}
+            >{`10. ${t("surveyInfoBarColor")}:`}</span>
             <div
               className="w-10 h-5 rounded-md outline outline-1 outline-zinc-600"
               style={{ backgroundColor: configSurveyInfoBarColor }}
@@ -479,7 +460,7 @@ const SurveyQuestionInput: React.FC = () => {
         {/* </SettingsContainer> */}
       </div>
       {/* )} */}
-    </>
+    </div>
   );
 };
 

@@ -2,51 +2,46 @@ import React from "react";
 import { useStore } from "../../globalState/useStore";
 import { useTranslation } from "react-i18next";
 import { UserTextInput } from "../utils/UserTextInput";
-// import { Radio } from "../utils/RadioButtons";
 
-// const getSetupTarget = (state) => state.setupTarget;
-// const getSetSetupTarget = (state) => state.setSetupTarget;
 const getEmailAddress = (state) => state.emailAddress;
 const getSetEmailAddress = (state) => state.setEmailAddress;
-const getEmailSubjectLine = (state) => state.emailSubjectLine;
-const getSetEmailSubjectLine = (state) => state.setEmailSubjectLine;
 const getBaserowToken = (state) => state.baserowToken;
 const getSetBaserowToken = (state) => state.setBaserowToken;
-const getBaserowDatabaseId = (state) => state.baserowDatabaseId;
-const getSetBaserowDatabaseId = (state) => state.setBaserowDatabaseId;
+const getBaserowDatabaseIdNumber = (state) => state.baserowDatabaseIdNumber;
+const getSetBaserowDatabaseIdNumber = (state) => state.setBaserowDatabaseIdNumber;
+// const getSetupTarget = (state) => state.setupTarget;
+// const getSetSetupTarget = (state) => state.setSetupTarget;
+// const getEmailSubjectLine = (state) => state.emailSubjectLine;
+// const getSetEmailSubjectLine = (state) => state.setEmailSubjectLine;
 
 const Config2SetupTarget: React.FC = () => {
-  // const setupTarget = useStore(getSetupTarget);
-  // const setSetupTarget = useStore(getSetSetupTarget);
   const emailAddress = useStore(getEmailAddress);
   const setEmailAddress = useStore(getSetEmailAddress);
-  const emailSubjectLine = useStore(getEmailSubjectLine);
-  const setEmailSubjectLine = useStore(getSetEmailSubjectLine);
   const baserowToken = useStore(getBaserowToken);
   const setBaserowToken = useStore(getSetBaserowToken);
-  const baserowDatabaseId = useStore(getBaserowDatabaseId);
-  const setBaserowDatabaseId = useStore(getSetBaserowDatabaseId);
+  const baserowDatabaseIdNumber = useStore(getBaserowDatabaseIdNumber);
+  const setBaserowDatabaseIdNumber = useStore(getSetBaserowDatabaseIdNumber);
   const { t } = useTranslation();
-
-  // Language XML Decoding
+  // const setSetupTarget = useStore(getSetSetupTarget);
+  // const setEmailSubjectLine = useStore(getSetEmailSubjectLine);
+  // const emailSubjectLine = useStore(getEmailSubjectLine);
+  // const setupTarget = useStore(getSetupTarget);
   // const setupTargetText = t("setupTarget") || "";
+  // const handleEmailSubjectTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   setEmailSubjectLine(event.target.value);
+  // };
+  // Language XML Decoding
 
   const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmailAddress(event.target.value);
   };
 
   const handleBaserowTokenChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    // Handle Baserow token change logic here
     setBaserowToken(event.target.value);
   };
 
   const handleBaserowDatabaseIdChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    // Handle Baserow database ID change logic here
-    setBaserowDatabaseId(event.target.value);
-  };
-
-  const handleEmailSubjectTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setEmailSubjectLine(event.target.value);
+    setBaserowDatabaseIdNumber(event.target.value);
   };
 
   return (
@@ -74,8 +69,8 @@ const Config2SetupTarget: React.FC = () => {
           label={`2b. ${t("baserowDatabaseIdNumber")}:`}
           placeholder={t("enterBaserowDatabaseIdNumber")}
           disabled={false}
-          name="baserowDatabaseId"
-          value={baserowDatabaseId}
+          name="baserowDatabaseIdNumber"
+          value={baserowDatabaseIdNumber}
           onChange={handleBaserowDatabaseIdChange}
         />
       </div>

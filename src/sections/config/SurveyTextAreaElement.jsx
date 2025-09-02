@@ -19,7 +19,7 @@ const SurveyTextAreaElement = (props) => {
   const labelText = ReactHtmlParser(decodeHTML(props.opts.label)) || "";
   const noteText = ReactHtmlParser(decodeHTML(props.opts.note)) || "";
   // true removes div holder so placeholder text renders properly
-  const placeholder = ReactHtmlParser(decodeHTML(props.opts.placeholder, true)) || "";
+  // const placeholder = ReactHtmlParser(decodeHTML(props.opts.placeholder, true)) || "";
   let displayNoteText = true;
   if (noteText.length < 1 || noteText === "") {
     displayNoteText = false;
@@ -94,7 +94,7 @@ const SurveyTextAreaElement = (props) => {
           cols="33"
           value={userText}
           className="border border-1 border-gray-300 p-[5px] w-full rounded-md"
-          placeholder={placeholder}
+          // placeholder={placeholder}
           onChange={handleOnChange}
         />
       </div>

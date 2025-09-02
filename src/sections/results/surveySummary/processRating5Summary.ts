@@ -57,11 +57,11 @@ interface PositionCounts {
 const countByPosition = (arr2D: any[][]): Map<string, number>[] => {
   if (!arr2D.length) return [];
 
-  const maxLength = Math.max(...arr2D.map((row) => row.length));
+  const limitLength = Math.max(...arr2D.map((row) => row.length));
   const positionCounts: Map<string, number>[] = [];
 
   // Initialize a Map for each position
-  for (let pos = 0; pos < maxLength; pos++) {
+  for (let pos = 0; pos < limitLength; pos++) {
     positionCounts[pos] = new Map<string, number>();
   }
 

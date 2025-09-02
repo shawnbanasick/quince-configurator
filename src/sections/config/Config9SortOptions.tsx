@@ -94,7 +94,7 @@ const Config9SortOptions: React.FC = () => {
         onChange={handleCondOfInstFontSizeChange}
       />
 
-      <div className="flex flex-row h-[70px] content-center gap-5 mt-1">
+      {/* <div className="flex flex-row h-[70px] content-center gap-5 mt-1">
         <span className={`content-center`}>{`9b. ${t("sortDirection")}:`}</span>
         <Radio
           name="sortDirection"
@@ -113,10 +113,12 @@ const Config9SortOptions: React.FC = () => {
           isChecked={sortDirection === "positive"}
           handleChange={handleSortDirectionChange}
         />
-      </div>
+      </div> */}
 
       <div className="flex flex-row h-[60px] content-center gap-5 mt-3">
-        <span className="content-center">{`9c. ${t("allowUnforcedSorts")}:`}</span>
+        <span className="content-center">
+          <mark>{`9b. ${t("allowUnforcedSorts")}:`}</mark>
+        </span>
         <div className="content-center">
           <label
             className={clsx(
@@ -167,7 +169,7 @@ const Config9SortOptions: React.FC = () => {
       </div>
 
       <div className="flex flex-row h-[60px] content-center gap-5 mt-3">
-        <span className="content-center">{`9d. ${t("warnOverloadedColumns")}:`}</span>
+        <span className="content-center">{`9c. ${t("warnOverloadedColumns")}:`}</span>
         <div className="content-center">
           <label
             className={clsx(
@@ -220,7 +222,7 @@ const Config9SortOptions: React.FC = () => {
         classNameNum={`mt-4 block min-w-[80px] px-3 py-2 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 outline outline-1 outline-zinc-600 ml-4`}
         classNameLabel={`flex flex-row content-center min-w-[170px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
         highlight={true}
-        label={`9e. ${t("defaultFontSizeSort")}:`}
+        label={`9d. ${t("defaultFontSizeSort")}:`}
         placeholder=""
         upperLimit={199}
         lowerLimit={6}
@@ -235,7 +237,7 @@ const Config9SortOptions: React.FC = () => {
         classNameNum={`mt-6 mb-2 block min-w-[80px] px-3 py-2 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 outline outline-1 outline-zinc-600 ml-4`}
         classNameLabel={`flex flex-row content-center min-w-[170px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
         highlight={true}
-        label={`9f. ${t("minCardHeightSort")}:`}
+        label={`9e. ${t("minCardHeightSort")}:`}
         placeholder=""
         upperLimit={199}
         lowerLimit={6}

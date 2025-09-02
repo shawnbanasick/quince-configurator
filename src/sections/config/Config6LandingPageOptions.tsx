@@ -44,7 +44,9 @@ const Config6LandingPageOptions: React.FC = () => {
       </div>
 
       <div className="flex flex-row h-[70px] content-center gap-5 mt-1">
-        <span className={`content-center`}>{`6a. ${t("accessMode")}:`}</span>
+        <span className={`content-center`}>
+          <mark>{`6a. ${t("accessMode")}:`}</mark>
+        </span>
         <Radio
           name="accessMode"
           value="anonymous"

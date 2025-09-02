@@ -10,7 +10,8 @@ interface QuestObjType {
   note?: string;
   bg?: string;
   limited?: string;
-  maxlength?: string;
+  limitLength?: string;
+  limitLength?: string;
   restricted?: string;
   placeholder?: string;
   options?: string;
@@ -52,6 +53,8 @@ const getSetMinCardHeightPostsort = (state) => state.setMinCardHeightPostsort;
 const getSetShowSurvey = (state) => state.setShowSurvey;
 const getSetSurveyQuestionsArray = (state) => state.setSurveyQuestionsArray;
 const getSetIsConfigXmlLoaded = (state) => state.setIsConfigXmlLoaded;
+const getSetBaserowToken = (state) => state.setBaserowToken;
+const getSetBaserowDatabaseIdNumber = (state) => state.setBaserowDatabaseIdNumber;
 
 const UploadAndParseXML: React.FC = () => {
   const setStudyTitle = useStore(getSetStudyTitle);
@@ -89,6 +92,9 @@ const UploadAndParseXML: React.FC = () => {
   const setShowSurvey = useStore(getSetShowSurvey);
   const setSurveyQuestionsArray = useStore(getSetSurveyQuestionsArray);
   const setIsConfigXmlLoaded = useStore(getSetIsConfigXmlLoaded);
+  const setBaserowToken = useStore(getSetBaserowToken);
+  const setBaserowDatabaseIdNumber = useStore(getSetBaserowDatabaseIdNumber);
+
   const { t } = useTranslation();
 
   const [xmlContent, setXmlContent] = useState<string | null>(null);
@@ -118,6 +124,12 @@ const UploadAndParseXML: React.FC = () => {
           }
           if (item?.attributes?.id === "emailSubjectLine") {
             setEmailSubjectLine(item?.value);
+          }
+          if (item?.attributes?.id === "baserowToken") {
+            setBaserowToken(item?.value);
+          }
+          if (item?.attributes?.id === "baserowDatabaseIdNumber") {
+            setBaserowDatabaseIdNumber(item?.value);
           }
           if (item?.attributes?.id === "linkToSecondProject") {
             setLinkToSecondProject(item?.value === "true");
@@ -211,42 +223,58 @@ const UploadAndParseXML: React.FC = () => {
           }
 
           if (xmlObjectArray[index].attributes.id === "survey") {
-            let inputObj = xmlObjectArray[index].children;
+            let inputObjArray = xmlObjectArray[index].children;
             let questObj: QuestObjType = {};
-            let questType = inputObj[0].attributes?.type;
+
+            // for all questions
+            let mainNameObj = inputObjArray.find((item) => item.name === "input");
+            let questType = mainNameObj?.attributes?.type;
             questObj.surveyQuestionType = questType;
-            questObj.required = inputObj[0].attributes?.required;
+            questObj.required = mainNameObj?.attributes?.required;
+
+            // info objects
+            let labelObj = inputObjArray.find((item) => item.name === "label");
+            let noteObj = inputObjArray.find((item) => item.name === "note");
+            let scaleObj = inputObjArray.find((item) => item.name === "scale");
+            let optionsObj = inputObjArray.find((item) => item.name === "options");
+
+            // transformations
+            if (questType === "likert") {
+              questObj.surveyQuestionType = "checkbox";
+              questType = "checkbox";
+            }
+
             if (questType !== "information") {
-              questObj.label = inputObj[1]?.value;
+              questObj.label = labelObj?.value;
             }
+
             if (questType === "information") {
-              questObj.note = inputObj[1]?.value;
-              questObj.bg = inputObj[1]?.attributes?.bg;
+              questObj.note = noteObj?.value;
+              questObj.bg = inputObjArray[1]?.attributes?.bg;
             }
+
             if (questType === "text") {
-              questObj.limited = inputObj[0].attributes?.limited;
-              let inputLenVal = inputObj[0].attributes?.maxlength;
+              console.log("ee", mainNameObj, null, 2);
+              questObj.limited = mainNameObj?.attributes?.limited;
+              let inputLenVal = mainNameObj?.attributes?.limitLength;
               if (inputLenVal === null || inputLenVal === undefined || isNaN(inputLenVal)) {
-                questObj.maxlength = inputObj[0].attributes?.limitLength;
+                questObj.limitLength = mainNameObj?.attributes?.limitLength;
               } else {
-                questObj.maxlength = inputObj[0].attributes?.maxlength;
+                questObj.limitLength = mainNameObj?.attributes?.limitLength;
               }
-              questObj.restricted = inputObj[0].attributes?.restricted;
-              questObj.note = inputObj[2]?.value;
-              questObj.placeholder = inputObj[3]?.value;
+              questObj.restricted = mainNameObj?.attributes?.restricted;
+              questObj.note = noteObj.value;
             }
+
             if (questType === "textarea") {
-              questObj.note = inputObj[2]?.value;
-              questObj.placeholder = inputObj[3]?.value;
+              // let labelObj = inputObjArray.find((item) => item.name === "label");
+              // let noteObj = inputObjArray.find((item) => item.name === "note");
+              questObj.label = labelObj?.value || "";
+              questObj.note = noteObj?.value || "";
             }
             if (questType === "radio") {
-              questObj[inputObj[2].name] = inputObj[2]?.value;
-              questObj.options = inputObj[0]?.value;
-            }
-            if (questType === "likert") {
-              questObj.required = inputObj[0].attributes?.required;
-              questObj.scale = inputObj[0].attributes?.scale;
-              questObj.label = inputObj[1]?.value;
+              questObj[inputObjArray[2].name] = inputObjArray[2]?.value;
+              questObj.options = inputObjArray[0]?.value;
             }
             if (
               questType === "select" ||
@@ -255,11 +283,11 @@ const UploadAndParseXML: React.FC = () => {
               questType === "rating5" ||
               questType === "rating10"
             ) {
-              questObj.options = inputObj[0]?.value;
-              questObj.note = inputObj[2]?.value;
+              questObj.options = inputObjArray[0]?.value;
+              questObj.note = inputObjArray[2]?.value;
             }
             if (questType === "rating2" || questType === "rating5" || questType === "rating10") {
-              questObj.scale = inputObj[0].attributes?.scale;
+              questObj.scale = inputObjArray[0].attributes?.scale;
             }
             surveyQuestArray.push(questObj);
             setSurveyQuestionsArray(surveyQuestArray);

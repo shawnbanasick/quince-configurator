@@ -107,9 +107,9 @@ const UserDropdown: React.FC = () => {
     if (category === "information") {
       setShowSurveyinformationImage(true);
     }
-    if (category === "likert") {
-      setShowSurveylikertImage(true);
-    }
+    // if (category === "likert") {
+    //   setShowSurveylikertImage(true);
+    // }
     const detailsArray2 = exportSurveyObject();
     setDetailsArray(detailsArray2[category]);
     clearInputForm();

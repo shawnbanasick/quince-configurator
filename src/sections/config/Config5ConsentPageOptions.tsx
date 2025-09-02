@@ -16,24 +16,19 @@ const Config5ConsentPageOptions: React.FC = () => {
   const setShowConsentPageHelpModal = useStore(getSetShowConsentPageHelpModal);
 
   const showConsentPage = useStore(getShowConsetPage);
-  console.log("showConsentPage", showConsentPage);
   const setShowConsentPage = useStore(getSetShowConsentPage);
   const { t } = useTranslation();
 
   const handleShowConsentPageChange = (input: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(input.target.value);
     if (input.target.value === "true") {
       setShowConsentPage(true);
     } else {
       setShowConsentPage(false);
     }
-    // console.log("showConsentPage", showConsentPage);
   };
 
   const handleShowConsentPageHelpModalChange = (input: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(input.target.value);
     setShowConsentPageHelpModal(input.target.value === "true" ? true : false);
-    // console.log("showConsentPageHelpModal", showConsentPageHelpModal);
   };
 
   return (
@@ -48,7 +43,9 @@ const Config5ConsentPageOptions: React.FC = () => {
         /> */}
       </div>
       <div className="flex flex-row h-[60px] content-center gap-5 mt-3">
-        <span className="content-center">{`5a. ${t("showConsentPage")}:`}</span>
+        <span className="content-center">
+          <mark>{`5a. ${t("showConsentPage")}:`}</mark>
+        </span>
         <div className="content-center">
           <label
             className={clsx(

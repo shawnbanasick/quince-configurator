@@ -4,8 +4,8 @@ import { decodeHTML } from "../utils/decodeHTML";
 
 const SurveyInformationElement = (props) => {
   let infoText = "";
-  if (typeof props.opts.options === "string") {
-    infoText = ReactHtmlParser(decodeHTML(props.opts.options));
+  if (typeof props.opts.note === "string") {
+    infoText = ReactHtmlParser(decodeHTML(props.opts.note));
   }
 
   const [color, setColor] = useState(props.opts.bg);

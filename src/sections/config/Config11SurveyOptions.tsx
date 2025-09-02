@@ -34,7 +34,9 @@ const Config11SurveyOptions: React.FC = () => {
       </div>
 
       <div className="flex flex-row h-[60px] content-center gap-5 mt-3">
-        <span className="content-center">{`11a. ${t("includeSurvey")}:`}</span>
+        <span className="content-center">
+          <mark>{`11a. ${t("includeSurvey")}:`}</mark>
+        </span>
         <div className="content-center">
           <label
             className={clsx(

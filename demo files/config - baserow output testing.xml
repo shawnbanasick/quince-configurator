@@ -101,7 +101,7 @@
    </item>
 
    <item id="survey">
-        <input type="text" required="true" limited="true" maxlength="100" restricted="false"></input>
+        <input type="text" required="true" limited="true" limitLength="100" restricted="false"></input>
         <label>1. Have you had classes with me before?*</label>
         <note>If yes, please {{{i}}}list them here{{{/i}}}. (limit = 100 characters)</note>
    </item>

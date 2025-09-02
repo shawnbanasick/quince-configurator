@@ -165,7 +165,7 @@ const generateConfigXml = () => {
     if (itemObject.surveyQuestionType === "text") {
       let restrictedString;
       let limitedString;
-      let maxLengthNum;
+      let limitLengthNum;
       if (itemObject.restricted === true || itemObject.restricted === "true") {
         restrictedString = `restricted="true"`;
       } else {
@@ -173,17 +173,17 @@ const generateConfigXml = () => {
       }
       if (itemObject.limited === true || itemObject.limited === "true") {
         limitedString = `true`;
-        maxLengthNum = +itemObject.limitLength;
-        if (maxLengthNum === undefined || maxLengthNum === null || isNaN(maxLengthNum))
-          maxLengthNum = itemObject.maxlength;
+        limitLengthNum = +itemObject.limitLength;
+        if (limitLengthNum === undefined || limitLengthNum === null || isNaN(limitLengthNum))
+          limitLengthNum = itemObject.limitLength;
       } else {
         limitedString = `false`;
-        maxLengthNum = 99999;
+        limitLengthNum = 99999;
       }
 
       label = `        <label>${encodeHTML(itemObject.label)}</label>\n`;
       const note = `        <note>${encodeHTML(itemObject.note)}</note>\n`;
-      const input = `        <input type="text" required="${itemObject.required}" limited="${limitedString}" limitLength="${maxLengthNum}" ${restrictedString}></input>\n`;
+      const input = `        <input type="text" required="${itemObject.required}" limited="${limitedString}" limitLength="${limitLengthNum}" ${restrictedString}></input>\n`;
       const placeholder = `        <placeholder>${itemObject.placeholder}</placeholder>\n`;
 
       item = accumulatorString.concat(open, input, label, note, placeholder, close);
@@ -197,7 +197,7 @@ const generateConfigXml = () => {
       } else {
         restrictedString = ``;
       }
-      const input = `        <input type="text" required="${itemObject.required}" maxlength="${itemObject.maxlength}" ${restrictedString}></input>\n`;
+      const input = `        <input type="text" required="${itemObject.required}" limitLength="${itemObject.limitLength}" ${restrictedString}></input>\n`;
       label = `        <label>${encodeHTML(itemObject.label)}</label>\n`;
       const note = `        <note>${encodeHTML(itemObject.note)}</note>\n`;
       const placeholder = `        <placeholder>${itemObject.placeholder}</placeholder>\n`;
