@@ -19,6 +19,7 @@ import { DeleteSurveyItemModal } from "./DeleteSurveyItemModal";
 import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
 import { decodeHTML } from "../utils/decodeHTML";
+import { exportSurveyObject } from "./exportSurveyObject";
 
 const getSurveyQuestionsArray = (state) => state.surveyQuestionsArray;
 const getSetSurveyQuestionsArray = (state) => state.setSurveyQuestionsArray;
@@ -36,6 +37,17 @@ const getSetConfigSurveyInfoBarColor = (state) => state.setConfigSurveyInfoBarCo
 const getSetIsEditingSurveyQuestion = (state) => state.setIsEditingSurveyQuestion;
 const getSetIsEditingSurveyQuestionIndex = (state) => state.setIsEditingSurveyQuestionIndex;
 const getSetTriggerSurveyQuestionDeleteModal = (state) => state.setTriggerSurveyQuestionDeleteModal;
+const getSetShowSurveytextImage = (state) => state.setShowSurveytextImage;
+const getSetShowSurveytextareaImage = (state) => state.setShowSurveytextareaImage;
+const getSetShowSurveyradioImage = (state) => state.setShowSurveyradioImage;
+const getSetShowSurveyselectImage = (state) => state.setShowSurveyselectImage;
+const getSetShowSurveycheckboxImage = (state) => state.setShowSurveycheckboxImage;
+const getSetShowSurveyrating2Image = (state) => state.setShowSurveyrating2Image;
+const getSetShowSurveyrating5Image = (state) => state.setShowSurveyrating5Image;
+const getSetShowSurveyrating10Image = (state) => state.setShowSurveyrating10Image;
+const getSetShowSurveyinformationImage = (state) => state.setShowSurveyinformationImage;
+const getSetShowSurveylikertImage = (state) => state.setShowSurveylikertImage;
+const getSetDetailsArray = (state) => state.setDetailsArray;
 
 const SurveyPageQuestions = () => {
   const checkRequiredQuestionsComplete = false;
@@ -55,6 +67,18 @@ const SurveyPageQuestions = () => {
   const setIsEditingSurveyQuestion = useStore(getSetIsEditingSurveyQuestion);
   const setIsEditingSurveyQuestionIndex = useStore(getSetIsEditingSurveyQuestionIndex);
   const setTriggerSurveyQuestionDeleteModal = useStore(getSetTriggerSurveyQuestionDeleteModal);
+  const setShowSurveytextImage = useStore(getSetShowSurveytextImage);
+  const setShowSurveytextareaImage = useStore(getSetShowSurveytextareaImage);
+  const setShowSurveyradioImage = useStore(getSetShowSurveyradioImage);
+  const setShowSurveyselectImage = useStore(getSetShowSurveyselectImage);
+  const setShowSurveycheckboxImage = useStore(getSetShowSurveycheckboxImage);
+  const setShowSurveyrating2Image = useStore(getSetShowSurveyrating2Image);
+  const setShowSurveyrating5Image = useStore(getSetShowSurveyrating5Image);
+  const setShowSurveyrating10Image = useStore(getSetShowSurveyrating10Image);
+  const setShowSurveyinformationImage = useStore(getSetShowSurveyinformationImage);
+  const setShowSurveylikertImage = useStore(getSetShowSurveylikertImage);
+  const setDetailsArray = useStore(getSetDetailsArray);
+
   const { t } = useTranslation();
 
   const notifyReadyForEdit = () => {
@@ -70,6 +94,56 @@ const SurveyPageQuestions = () => {
   };
 
   const itemToDeleteIndexRef = useRef(-1);
+
+  const handleCategoryChange = (category) => {
+    clearImages();
+    setSurveyQuestionType(category);
+    if (category === "text") {
+      setShowSurveytextImage(true);
+    }
+    if (category === "textarea") {
+      setShowSurveytextareaImage(true);
+    }
+    if (category === "radio") {
+      setShowSurveyradioImage(true);
+    }
+    if (category === "select") {
+      setShowSurveyselectImage(true);
+    }
+    if (category === "checkbox") {
+      setShowSurveycheckboxImage(true);
+    }
+    if (category === "rating2") {
+      setShowSurveyrating2Image(true);
+    }
+    if (category === "rating5") {
+      setShowSurveyrating5Image(true);
+    }
+    if (category === "rating10") {
+      setShowSurveyrating10Image(true);
+    }
+    if (category === "information") {
+      setShowSurveyinformationImage(true);
+    }
+    // if (category === "likert") {
+    //   setShowSurveylikertImage(true);
+    // }
+    const detailsArray2 = exportSurveyObject();
+    setDetailsArray(detailsArray2[category]);
+  };
+
+  const clearImages = () => {
+    setShowSurveytextImage(false);
+    setShowSurveytextareaImage(false);
+    setShowSurveyradioImage(false);
+    setShowSurveyselectImage(false);
+    setShowSurveycheckboxImage(false);
+    setShowSurveyrating2Image(false);
+    setShowSurveyrating5Image(false);
+    setShowSurveyrating10Image(false);
+    setShowSurveyinformationImage(false);
+    setShowSurveylikertImage(false);
+  };
 
   const handleMoveUp = (e) => {
     const clickedItemIndex = parseInt(e.target.id);
@@ -117,6 +191,9 @@ const SurveyPageQuestions = () => {
     const clickedItemIndex = parseInt(e.target.id);
     const targetObject = surveyQuestionsArray[clickedItemIndex];
     const keys = Object.keys(targetObject);
+    clearImages();
+    let category = targetObject.surveyQuestionType;
+    handleCategoryChange(category);
 
     setSurveyQuestionLabel("");
     setSurveyQuestionNote("");

@@ -240,8 +240,8 @@ const UploadAndParseXML: React.FC = () => {
 
             // transformations
             if (questType === "likert") {
-              questObj.surveyQuestionType = "checkbox";
-              questType = "checkbox";
+              questObj.note = noteObj?.value || "";
+              questObj.options = mainNameObj?.attributes?.scale;
             }
 
             if (questType !== "information") {
@@ -289,6 +289,12 @@ const UploadAndParseXML: React.FC = () => {
             if (questType === "rating2" || questType === "rating5" || questType === "rating10") {
               questObj.scale = inputObjArray[0].attributes?.scale;
             }
+
+            if (questType === "likert") {
+              questObj.surveyQuestionType = "radio";
+              questType = "radio";
+            }
+
             surveyQuestArray.push(questObj);
             setSurveyQuestionsArray(surveyQuestArray);
             setIsConfigXmlLoaded(true);

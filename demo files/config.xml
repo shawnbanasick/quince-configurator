@@ -137,6 +137,11 @@
         <label>8. {{{u}}}Please{{{/u}}} answer the following questions</label>
    </item>
 
+   <item id="survey">
+        <input type="likert" required="true" scale="Very Unconcerned;;;Unconcerned;;;Neutral;;;Concerned;;;Very Concerned">.</input>
+        <label>8. How concerned are you about the amount of time that you spend looking at screens?* (TV, smartphone, computer, iPad, etc.)</label>
+   </item>
+
 
 
   </config>
