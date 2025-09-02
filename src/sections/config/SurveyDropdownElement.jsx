@@ -3,8 +3,23 @@ import { MultiSelect } from "react-multi-select-component";
 import ReactHtmlParser from "html-react-parser";
 import { decodeHTML } from "../utils/decodeHTML";
 import flatten from "lodash/flatten";
+import { useTranslation } from "react-i18next";
 
 const SurveyDropdownElement = (props) => {
+  const { t } = useTranslation();
+
+  let overrideStrings = {
+    allItemsAreSelected: t("allItemsAreSelected"),
+    clearSearch: t("clearSearch"),
+    clearSelected: t("clearSelected"),
+    noOptions: t("noOptions"),
+    search: t("search"),
+    selectAll: t("selectAll"),
+    selectAllFiltered: t("selectAllFiltered"),
+    selectSomeItems: t("selectSomeItems"),
+    create: t("create"),
+  };
+
   // HELPER FUNCTION
   const getOptionsArray = (options) => {
     let array = options.split(";;;");
@@ -26,9 +41,7 @@ const SurveyDropdownElement = (props) => {
   let questionId = props.opts.id;
   const labelText = ReactHtmlParser(decodeHTML(props.opts.label)) || "";
   let originalOptions = props.opts.options.split(";;;") || [];
-  originalOptions = originalOptions.map((x) =>
-    ReactHtmlParser(decodeHTML(x.trim()))
-  );
+  originalOptions = originalOptions.map((x) => ReactHtmlParser(decodeHTML(x.trim())));
   const noteText = ReactHtmlParser(decodeHTML(props.opts.note)) || "";
   let displayNoteText = true;
   if (noteText.length < 1 || noteText === "") {
@@ -46,8 +59,7 @@ const SurveyDropdownElement = (props) => {
 
   // HANDLE ON CHANGE
   const handleOnChange = (e) => {
-    const resultsSurvey =
-      JSON.parse(localStorage.getItem("resultsSurvey")) || {};
+    const resultsSurvey = JSON.parse(localStorage.getItem("resultsSurvey")) || {};
     setSelected(e);
 
     let newArray = flatten(originalOptions);
@@ -117,6 +129,7 @@ const SurveyDropdownElement = (props) => {
           labelledBy="Select"
           onChange={handleOnChange}
           value={selected}
+          overrideStrings={overrideStrings}
         />
       </div>
     );

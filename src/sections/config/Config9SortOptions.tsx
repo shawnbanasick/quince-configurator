@@ -6,7 +6,7 @@ import { UserNumInput } from "../utils/UserNumInput";
 import { Radio } from "../utils/RadioButtons";
 import clsx from "clsx";
 
-const getSortDirection = (state) => state.sortDirection;
+// const getSortDirection = (state) => state.sortDirection;
 const getSetSortDirection = (state) => state.setSortDirection;
 const getAllowUnforcedSorts = (state) => state.allowUnforcedSorts;
 const getSetAllowUnforcedSorts = (state) => state.setAllowUnforcedSorts;
@@ -22,7 +22,7 @@ const getSetDefaultFontSizeSort = (state) => state.setDefaultFontSizeSort;
 
 const Config9SortOptions: React.FC = () => {
   const { t } = useTranslation();
-  const sortDirection = useStore(getSortDirection);
+  // const sortDirection = useStore(getSortDirection);
   const setSortDirection = useStore(getSetSortDirection);
   const allowUnforcedSorts = useStore(getAllowUnforcedSorts);
   const setAllowUnforcedSorts = useStore(getSetAllowUnforcedSorts);

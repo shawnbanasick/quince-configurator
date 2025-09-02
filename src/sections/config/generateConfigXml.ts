@@ -30,7 +30,7 @@ const generateConfigXml = () => {
   const warnOverloadedColumn = useStore.getState().warnOverloadedColumn;
   const minCardHeightSort = useStore.getState().minCardHeightSort;
   const defaultFontSizeSort = useStore.getState().defaultFontSizeSort;
-  const sortDirection = useStore.getState().sortDirection;
+  // const sortDirection = useStore.getState().sortDirection;
   const showPostsort = useStore.getState().showPostsort;
   const showSecondPosColumn = useStore.getState().showSecondPosColumn;
   const showSecondNegColumn = useStore.getState().showSecondNegColumn;
@@ -42,7 +42,7 @@ const generateConfigXml = () => {
   const surveyQuestionsArray = useStore.getState().surveyQuestionsArray;
   const defaultFontSizePresort = useStore.getState().defaultFontSizePresort;
   const baserowToken = useStore.getState().baserowToken;
-  const baserowDatabaseId = useStore.getState().baserowDatabaseId;
+  const baserowDatabaseIdNumber = useStore.getState().baserowDatabaseIdNumber;
   //   const defaultFontSize = useStore.getState().defaultFontSize;
   //   const displayNeutralObjects = useStore.getState().displayNeutralObjects;
   // const presortTrace = useStore.getState().presortTrace;
@@ -90,7 +90,7 @@ const generateConfigXml = () => {
 
    <!-- 2. DATABASE SETUP -->
    <item id="baserowToken">${baserowToken}</item>
-   <item id="baserowDatabaseIdNumber">${baserowDatabaseId}</item>
+   <item id="baserowDatabaseIdNumber">${baserowDatabaseIdNumber}</item>
    <item id="emailAddress">${emailAddress}</item>
    <item id="emailSubjectLine">${emailSubjectLine}</item>
 
@@ -127,7 +127,6 @@ const generateConfigXml = () => {
 
    <!-- 9. SORT -->
    <item id="condOfInstFontSize">${condOfInstFontSize}</item>
-   <item id="sortDirection">${sortDirection}</item> 
    <item id="allowUnforcedSorts">${allowUnforcedSorts}</item>
    <item id="warnOverloadedColumn">${warnOverloadedColumn}</item>
    <item id="setMinCardHeightSort">true</item>
@@ -184,9 +183,8 @@ const generateConfigXml = () => {
       label = `        <label>${encodeHTML(itemObject.label)}</label>\n`;
       const note = `        <note>${encodeHTML(itemObject.note)}</note>\n`;
       const input = `        <input type="text" required="${itemObject.required}" limited="${limitedString}" limitLength="${limitLengthNum}" ${restrictedString}></input>\n`;
-      const placeholder = `        <placeholder>${itemObject.placeholder}</placeholder>\n`;
 
-      item = accumulatorString.concat(open, input, label, note, placeholder, close);
+      item = accumulatorString.concat(open, input, label, note, close);
     }
 
     // for TEXT-RESTRICTED items
@@ -200,8 +198,7 @@ const generateConfigXml = () => {
       const input = `        <input type="text" required="${itemObject.required}" limitLength="${itemObject.limitLength}" ${restrictedString}></input>\n`;
       label = `        <label>${encodeHTML(itemObject.label)}</label>\n`;
       const note = `        <note>${encodeHTML(itemObject.note)}</note>\n`;
-      const placeholder = `        <placeholder>${itemObject.placeholder}</placeholder>\n`;
-      item = accumulatorString.concat(open, input, label, note, placeholder, close);
+      item = accumulatorString.concat(open, input, label, note, close);
     }
 
     // for TEXTAREA items
@@ -209,8 +206,7 @@ const generateConfigXml = () => {
       const input = `        <input type="textarea" required="${itemObject.required}"></input>\n`;
       label = `        <label>${encodeHTML(itemObject.label)}</label>\n`;
       const note = `        <note>${encodeHTML(itemObject.note)}</note>\n`;
-      const placeholder = `        <placeholder>${itemObject.placeholder}</placeholder>\n`;
-      item = accumulatorString.concat(open, input, label, note, placeholder, close);
+      item = accumulatorString.concat(open, input, label, note, close);
     }
 
     // for RADIO items
