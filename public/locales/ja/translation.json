@@ -106,6 +106,7 @@
   "positive": "ポジティブ",
   "defaultFontSizeSort": "デフォルトフォントサイズ",
   "minCardHeightSort": "ステートメントカードの最小高さ",
+  "unforcedSortsNotPossible": "強制されないソートは将来のリリースで追加される予定です",
 
   "*** CONFIG 10 - POSTSORT OPTIONS ***": "*** CONFIG POSTSORT OPTIONS ***",
   "postsortOptions": "ポストソートオプション",

@@ -235,8 +235,8 @@ const UploadAndParseXML: React.FC = () => {
             // info objects
             let labelObj = inputObjArray.find((item) => item.name === "label");
             let noteObj = inputObjArray.find((item) => item.name === "note");
-            let scaleObj = inputObjArray.find((item) => item.name === "scale");
             let optionsObj = inputObjArray.find((item) => item.name === "options");
+            // let scaleObj = inputObjArray.find((item) => item.name === "scale");
 
             // transformations
             if (questType === "likert") {
@@ -274,7 +274,8 @@ const UploadAndParseXML: React.FC = () => {
             }
             if (questType === "radio") {
               questObj[inputObjArray[2].name] = inputObjArray[2]?.value;
-              questObj.options = inputObjArray[0]?.value;
+              // questObj.options = inputObjArray[0]?.value;
+              questObj.options = mainNameObj?.value || "";
             }
             if (
               questType === "select" ||
@@ -283,10 +284,15 @@ const UploadAndParseXML: React.FC = () => {
               questType === "rating5" ||
               questType === "rating10"
             ) {
-              questObj.options = inputObjArray[0]?.value;
-              questObj.note = inputObjArray[2]?.value;
+              console.log("88", labelObj);
+              questObj.options = mainNameObj?.value || "";
+              questObj.note = noteObj?.value || "";
+              questObj.label = labelObj.value || "";
             }
             if (questType === "rating2" || questType === "rating5" || questType === "rating10") {
+              console.log(inputObjArray);
+              // questObj.scale = scaleObj?.value || "";
+              // questObj.scale = mainNameObj?.attributes?.scale;
               questObj.scale = inputObjArray[0].attributes?.scale;
             }
 

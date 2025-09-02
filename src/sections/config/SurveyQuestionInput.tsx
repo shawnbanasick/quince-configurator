@@ -120,7 +120,7 @@ const SurveyQuestionInput: React.FC = () => {
     console.log(inputValue);
     console.log(inputValue.target.value);
 
-    if (inputValue.target.value === "true") {
+    if (inputValue.target.value === "true" || inputValue.target.value === true) {
       setSurveyAnswerRequired(true);
     } else {
       setSurveyAnswerRequired(false);
@@ -129,7 +129,7 @@ const SurveyQuestionInput: React.FC = () => {
 
   const handleSurveyAnswerLenIsLimitedChange = (inputValue: any) => {
     console.log(inputValue.target.value);
-    if (inputValue.target.value === "true") {
+    if (inputValue.target.value === "true" || inputValue.target.value === true) {
       setSurveyAnswerLenIsLimited(true);
     } else {
       setSurveyAnswerLenIsLimited(false);
@@ -138,7 +138,7 @@ const SurveyQuestionInput: React.FC = () => {
 
   const handleSurveyAnswerRestrictedChange = (inputValue: any) => {
     console.log(inputValue.target.value);
-    if (inputValue.target.value === "true") {
+    if (inputValue.target.value === "true" || inputValue.target.value === true) {
       setSurveyAnswerRestricted(true);
     } else {
       setSurveyAnswerRestricted(false);

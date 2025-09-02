@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 const getSurveyQuestionType = (state) => state.surveyQuestionType;
 const getSetSurveyQuestionType = (state) => state.setSurveyQuestionType;
 const getSetDetailsArray = (state) => state.setDetailsArray;
+
 const getSetShowSurveytextImage = (state) => state.setShowSurveytextImage;
 const getSetShowSurveytextareaImage = (state) => state.setShowSurveytextareaImage;
 const getSetShowSurveyradioImage = (state) => state.setShowSurveyradioImage;

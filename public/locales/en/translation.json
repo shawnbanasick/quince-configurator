@@ -106,6 +106,7 @@
   "positive": "positive",
   "defaultFontSizeSort": "Default Font Size",
   "minCardHeightSort": "Minimum Default Statement Card Height",
+  "unforcedSortsNotPossible": "Unforced sorts will be added in a future release",
 
   "*** CONFIG 10 - POSTSORT OPTIONS ***": "*** CONFIG POSTSORT OPTIONS ***",
   "postsortOptions": "Post-Sort Options",

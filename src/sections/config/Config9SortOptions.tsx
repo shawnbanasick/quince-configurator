@@ -115,10 +115,11 @@ const Config9SortOptions: React.FC = () => {
         />
       </div> */}
 
-      <div className="flex flex-row h-[60px] content-center gap-5 mt-3">
-        <span className="content-center">
-          <mark>{`9b. ${t("allowUnforcedSorts")}:`}</mark>
-        </span>
+      <div className="opacity-100 mt-3 mb-1 text-black">
+        <div className="content-center mt-3">{`(${t("unforcedSortsNotPossible")})`}</div>
+      </div>
+      <div className="flex flex-row h-[60px] content-center gap-5  opacity-30">
+        <span className="content-center">{`9b. ${t("allowUnforcedSorts")}:`}</span>
         <div className="content-center">
           <label
             className={clsx(
@@ -138,6 +139,7 @@ const Config9SortOptions: React.FC = () => {
               id="allowUnforcedSortsTrue" // htlmlFor targets this id.
               value="true"
               onChange={handleAllowUnforcedSortsChange}
+              disabled={true}
             />
             {t("true")}
           </label>
@@ -168,7 +170,7 @@ const Config9SortOptions: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex flex-row h-[60px] content-center gap-5 mt-3">
+      <div className="flex flex-row h-[60px] content-center gap-5 mt-3 opacity-30">
         <span className="content-center">{`9c. ${t("warnOverloadedColumns")}:`}</span>
         <div className="content-center">
           <label
@@ -189,6 +191,7 @@ const Config9SortOptions: React.FC = () => {
               id="warnOverloadedColumnTrue" // htlmlFor targets this id.
               value="true"
               onChange={handleWarnOverloadedColumnChange}
+              disabled={true}
             />
             {t("true")}
           </label>
