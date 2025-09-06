@@ -27,7 +27,7 @@ const getMobilePresortFinishedModalHead = (state) => state.mobilePresortFinished
 const getMobilePresortFinishedModalText = (state) => state.mobilePresortFinishedModalText;
 const getMobilePresortPreventNavModalHead = (state) => state.mobilePresortPreventNavModalHead;
 const getMobilePresortPreventNavModalText = (state) => state.mobilePresortPreventNavModalText;
-// const getMobilePresortProcessCompleteMessage = (state) => state.mobilePresortProcessCompleteMessage;
+const getMobilePresortProcessCompleteMessage = (state) => state.mobilePresortProcessCompleteMessage;
 // const getMobilePresortRedoModalText = (state) => state.mobilePresortRedoModalText;
 
 const MobilePresortTextInput = () => {
@@ -46,8 +46,8 @@ const MobilePresortTextInput = () => {
   const mobilePresortFinishedModalText = useStore(getMobilePresortFinishedModalText);
   const mobilePresortPreventNavModalHead = useStore(getMobilePresortPreventNavModalHead);
   const mobilePresortPreventNavModalText = useStore(getMobilePresortPreventNavModalText);
+  const mobilePresortProcessCompleteMessage = useStore(getMobilePresortProcessCompleteMessage);
   const { t } = useTranslation();
-  // const mobilePresortProcessCompleteMessage = useStore(getMobilePresortProcessCompleteMessage);
   // const mobilePresortRedoModalText = useStore(getMobilePresortRedoModalText);
 
   const handleRefImage1 = () => {
@@ -336,6 +336,19 @@ const MobilePresortTextInput = () => {
           name="mobilePresortPreventNavModalText"
           height={150}
           value={mobilePresortPreventNavModalText}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+          tabIndex="0"
+        />
+        <UserTextAreaInput
+          classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[60px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
+          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center has-[:focus]:font-bold`}
+          label={`7-14. ${t("mobilePresortProcessCompleteMessage")}`}
+          name="mobilePresortProcessCompleteMessage"
+          height={150}
+          value={mobilePresortProcessCompleteMessage}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""

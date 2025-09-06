@@ -301,22 +301,22 @@ const MobileRefineEvaluationsTextInput = () => {
           tabIndex="0"
         />
 
-        {/* <UserTextInput
+        <UserTextAreaInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`9-9. ${t("mobileGuidanceModalRight1Header")}`}
+          label={`9-8. ${t("mobileGuidanceModalRight1Header")}`}
           name="mobileGuidanceModalRight1Header"
+          height={150}
           value={mobileGuidanceModalRight1Header}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
           disabled={false}
         />
-
         <UserTextAreaInput
-          classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
-          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label={`9-10. ${t("mobileGuidanceModalRight1Text")}`}
+          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
+          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+          label={`9-9. ${t("mobileGuidanceModalRight1Text")}`}
           name="mobileGuidanceModalRight1Text"
           height={150}
           value={mobileGuidanceModalRight1Text}
@@ -324,33 +324,6 @@ const MobileRefineEvaluationsTextInput = () => {
           highlight={false}
           placeholder=""
           disabled={false}
-          tabIndex="0"
-        /> */}
-
-        <UserTextInput
-          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
-          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`9-8. ${t("mobileGuidanceModalRight2Header")}`}
-          name="mobileGuidanceModalRight2Header"
-          value={mobileGuidanceModalRight2Header}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-        />
-
-        <UserTextAreaInput
-          classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
-          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label={`9-9. ${t("mobileGuidanceModalRight2Text")}`}
-          name="mobileGuidanceModalRight2Text"
-          height={150}
-          value={mobileGuidanceModalRight2Text}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-          tabIndex="0"
         />
 
         <UserTextInput
@@ -382,7 +355,33 @@ const MobileRefineEvaluationsTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`9-12. ${t("mobileThinScrollBottomModalHead")}`}
+          label={`9-12. ${t("mobileGuidanceModalRight2Header")}`}
+          name="mobileGuidanceModalRight2Header"
+          value={mobileGuidanceModalRight2Header}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+        />
+
+        <UserTextAreaInput
+          classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
+          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
+          label={`9-13. ${t("mobileGuidanceModalRight2Text")}`}
+          name="mobileGuidanceModalRight2Text"
+          height={150}
+          value={mobileGuidanceModalRight2Text}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+          tabIndex="0"
+        />
+
+        <UserTextInput
+          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
+          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+          label={`9-14. ${t("mobileThinScrollBottomModalHead")}`}
           name="mobileThinScrollBottomModalHead"
           value={mobileThinScrollBottomModalHead}
           onChange={handleTextChange}
@@ -394,7 +393,7 @@ const MobileRefineEvaluationsTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[80px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label={`9-13. ${t("mobileThinScrollBottomModalText")}`}
+          label={`9-15. ${t("mobileThinScrollBottomModalText")}`}
           name="mobileThinScrollBottomModalText"
           height={150}
           value={mobileThinScrollBottomModalText}
@@ -408,7 +407,7 @@ const MobileRefineEvaluationsTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`9-14. ${t("moveTopMobileHead")}`}
+          label={`9-16. ${t("moveTopMobileHead")}`}
           name="moveTopMobileHead"
           value={moveTopMobileHead}
           onChange={handleTextChange}
@@ -416,21 +415,24 @@ const MobileRefineEvaluationsTextInput = () => {
           placeholder=""
           disabled={false}
         />
-        {/* <UserTextInput
+
+        <UserTextAreaInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label="8-2. Confirm Move Modal Text"
-          name="moveTopMobileText"
-          value={moveTopMobileText}
+          label={`9-17. ${t("moveAllTopMobileText")}`}
+          name="moveAllTopMobileText"
+          height={150}
+          value={moveAllTopMobileText}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
           disabled={false}
-        /> */}
+        />
+
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`9-15. ${t("moveAllTopMobileText")}`}
+          label={`9-18. ${t("moveAllTopMobileText")}`}
           name="moveAllTopMobileText"
           value={moveAllTopMobileText}
           onChange={handleTextChange}
@@ -441,7 +443,7 @@ const MobileRefineEvaluationsTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`9-16. ${t("moveTopMobileButtonOK")}`}
+          label={`9-19. ${t("moveTopMobileButtonOK")}`}
           name="moveTopMobileButtonOK"
           value={moveTopMobileButtonOK}
           onChange={handleTextChange}
@@ -452,7 +454,7 @@ const MobileRefineEvaluationsTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`9-17. ${t("mobileThinPreventNavModalHead")}`}
+          label={`9-20. ${t("mobileThinPreventNavModalHead")}`}
           name="mobileThinPreventNavModalHead"
           value={mobileThinPreventNavModalHead}
           onChange={handleTextChange}
@@ -464,7 +466,7 @@ const MobileRefineEvaluationsTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[60px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label={`9-18. ${t("mobileThinPreventNavModalText")}`}
+          label={`9-21. ${t("mobileThinPreventNavModalText")}`}
           name="mobileThinPreventNavModalText"
           height={150}
           value={mobileThinPreventNavModalText}
@@ -478,7 +480,7 @@ const MobileRefineEvaluationsTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`9-19. ${t("mobileThinProcessCompleteMessage")}`}
+          label={`9-22. ${t("mobileThinProcessCompleteMessage")}`}
           name="mobileThinProcessCompleteMessage"
           height={150}
           value={mobileThinProcessCompleteMessage}

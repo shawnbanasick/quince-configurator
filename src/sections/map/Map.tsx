@@ -39,8 +39,8 @@ interface State {
   setMapColorPalette: (value: string) => void;
   mapColColorsStyle: string;
   setMapColColorsStyle: (value: string) => void;
-  mobileHeadersText: string;
-  setMobileHeadersText: (value: string) => void;
+  colTextLabelsArray: string;
+  setcolTextLabelsArray: (value: string) => void;
   numMapTotalColumns: number;
   mobileHeadersDefaultLabels: string;
   setMobileHeadersDefaultLabels: (value: string) => void;
@@ -91,8 +91,8 @@ const getMapColorPalette = (state: State) => state.mapColorPalette;
 const getSetMapColorPalette = (state: State) => state.setMapColorPalette;
 const getMapColColorsStyle = (state: State) => state.mapColColorsStyle;
 const getSetMapColColorsStyle = (state: State) => state.setMapColColorsStyle;
-const getMobileHeadersText = (state: State) => state.mobileHeadersText;
-const getSetMobileHeadersText = (state: State) => state.setMobileHeadersText;
+const getcolTextLabelsArray = (state: State) => state.colTextLabelsArray;
+const getSetcolTextLabelsArray = (state: State) => state.setcolTextLabelsArray;
 const getNumMapTotalColumns = (state: State) => state.numMapTotalColumns;
 const getMobileHeadersDefaultLabels = (state: State) => state.mobileHeadersDefaultLabels;
 const getSetMobileHeadersDefaultLabels = (state: State) => state.setMobileHeadersDefaultLabels;
@@ -144,8 +144,8 @@ const Map: React.FC = () => {
   const setMapColorPalette = useStore(getSetMapColorPalette);
   const mapColColorsStyle = useStore(getMapColColorsStyle);
   const setMapColColorsStyle = useStore(getSetMapColColorsStyle);
-  const mobileHeadersText = useStore(getMobileHeadersText);
-  const setMobileHeadersText = useStore(getSetMobileHeadersText);
+  const colTextLabelsArray = useStore(getcolTextLabelsArray);
+  const setcolTextLabelsArray = useStore(getSetcolTextLabelsArray);
   const numMapTotalColumns = useStore(getNumMapTotalColumns);
   const mobileHeadersDefaultLabels = useStore(getMobileHeadersDefaultLabels);
   const setMobileHeadersDefaultLabels = useStore(getSetMobileHeadersDefaultLabels);
@@ -279,7 +279,7 @@ const Map: React.FC = () => {
       setUseColLabelEmojiPresort(false);
       setUseColLabelEmojiPostsort(false);
       setEmojiArrayType("");
-      setMobileHeadersText("");
+      setcolTextLabelsArray("");
     }
 
     setMobileHeadersDefaultLabels(value);
@@ -294,7 +294,7 @@ const Map: React.FC = () => {
 
     const labelText = labelMappings[value as keyof typeof labelMappings];
     if (labelText) {
-      setMobileHeadersText(labelText);
+      setcolTextLabelsArray(labelText);
     }
 
     setIsSwitchDisabled(false);
@@ -314,7 +314,7 @@ const Map: React.FC = () => {
     return items.length;
   };
 
-  const numHeaderLabels = countMobileHeaders(mobileHeadersText);
+  const numHeaderLabels = countMobileHeaders(colTextLabelsArray);
   const numMissingHeaders = numMapTotalColumns - numHeaderLabels;
   const handleDownloadMap = (): void => {
     try {
@@ -329,10 +329,10 @@ const Map: React.FC = () => {
         return;
       }
 
-      if (numMissingHeaders !== 0) {
-        alert(t("missingMobileColumnLabels"));
-        return;
-      }
+      // if (numMissingHeaders !== 0) {
+      //   alert(t("missingMobileColumnLabels"));
+      //   return;
+      // }
 
       // Generate and download XML
       const data = generateMapXml();
@@ -677,9 +677,9 @@ const Map: React.FC = () => {
                   classNameText="w-full ml-6 px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"
                   classNameLabel=""
                   label=""
-                  name="mobileHeadersText"
+                  name="colTextLabelsArray"
                   height={120}
-                  value={mobileHeadersText}
+                  value={colTextLabelsArray}
                   highlight={false}
                   placeholder={t("columnTextInputPlaceholder")}
                   disabled={false}

@@ -1,4 +1,9 @@
 const encodeHTML = (string) => {
+  // if (string === undefined || string === null) {
+  //   console.log("there was an undefined value or null value passed to encodeHTML.ts");
+  //   return;
+  // }
+
   try {
     let shouldDoReplace = true; // string.includes("<");
 
@@ -14,10 +19,7 @@ const encodeHTML = (string) => {
         .replace(/'/g, "&apos;");
       return stringText5;
     } else {
-      return string
-        .replace(/&/g, "&amp;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&apos;");
+      return string.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/'/g, "&apos;");
     }
   } catch (error) {
     console.log("There was an error encoding into HTML");

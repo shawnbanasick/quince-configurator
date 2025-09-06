@@ -94,27 +94,6 @@ const Config9SortOptions: React.FC = () => {
         onChange={handleCondOfInstFontSizeChange}
       />
 
-      {/* <div className="flex flex-row h-[70px] content-center gap-5 mt-1">
-        <span className={`content-center`}>{`9b. ${t("sortDirection")}:`}</span>
-        <Radio
-          name="sortDirection"
-          value="negative"
-          label={t("negative")}
-          align="left"
-          disabled={false}
-          isChecked={sortDirection === "negative"}
-          handleChange={handleSortDirectionChange}
-        />
-        <Radio
-          name="sortDirection"
-          value="positive"
-          label={t("positive")}
-          disabled={false}
-          isChecked={sortDirection === "positive"}
-          handleChange={handleSortDirectionChange}
-        />
-      </div> */}
-
       <div className="opacity-100 mt-3 mb-1 text-black">
         <div className="content-center mt-3">{`(${t("unforcedSortsNotPossible")})`}</div>
       </div>
@@ -170,7 +149,7 @@ const Config9SortOptions: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex flex-row h-[60px] content-center gap-5 mt-3 opacity-30">
+      <div className="flex flex-row h-[60px] content-center gap-5 mt-3">
         <span className="content-center">{`9c. ${t("warnOverloadedColumns")}:`}</span>
         <div className="content-center">
           <label
@@ -191,7 +170,7 @@ const Config9SortOptions: React.FC = () => {
               id="warnOverloadedColumnTrue" // htlmlFor targets this id.
               value="true"
               onChange={handleWarnOverloadedColumnChange}
-              disabled={true}
+              disabled={false}
             />
             {t("true")}
           </label>
@@ -216,6 +195,7 @@ const Config9SortOptions: React.FC = () => {
               value="false"
               checked={!warnOverloadedColumn}
               onChange={handleWarnOverloadedColumnChange}
+              disabled={false}
             />
             {t("false")}
           </label>

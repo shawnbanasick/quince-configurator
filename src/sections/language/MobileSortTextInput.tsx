@@ -34,6 +34,9 @@ const MobileSortTextInput: React.FC = () => {
   const mobileSortScrollBottomModalText = useStore(
     (state) => state.mobileSortScrollBottomModalText
   );
+  const mobileSortSwapModalSuccessMessage = useStore(
+    (state) => state.mobileSortSwapModalSuccessMessage
+  );
 
   const handleRefImage1 = () => {
     window.open(mobileSort1, "Mobile Presort Main Image", "width=800, height=600");
@@ -225,6 +228,17 @@ const MobileSortTextInput: React.FC = () => {
           label={`11-7. ${t("mobileSortSwapModalConfirmButton")}`}
           name="mobileSortSwapModalConfirmButton"
           value={mobileSortSwapModalConfirmButton}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+        />
+        <UserTextInput
+          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
+          classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
+          label={`11-8. ${t("mobileSortSwapModalSuccessMessage")}`}
+          name="mobileSortSwapModalSuccessMessage"
+          value={mobileSortSwapModalSuccessMessage}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""

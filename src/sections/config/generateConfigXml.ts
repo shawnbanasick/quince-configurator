@@ -30,7 +30,6 @@ const generateConfigXml = () => {
   const warnOverloadedColumn = useStore.getState().warnOverloadedColumn;
   const minCardHeightSort = useStore.getState().minCardHeightSort;
   const defaultFontSizeSort = useStore.getState().defaultFontSizeSort;
-  // const sortDirection = useStore.getState().sortDirection;
   const showPostsort = useStore.getState().showPostsort;
   const showSecondPosColumn = useStore.getState().showSecondPosColumn;
   const showSecondNegColumn = useStore.getState().showSecondNegColumn;
@@ -61,6 +60,10 @@ const generateConfigXml = () => {
   //     appState.configLogoHtml = "EQ_default.svg";
   //   }
 
+  // SAVE FOR LATER RESTORATION
+  //  <item id="allowUnforcedSorts">${allowUnforcedSorts}</item>
+  //  <item id="warnOverloadedColumn">${warnOverloadedColumn}</item>
+
   // STUDY TITLE
   if (studyTitle === null || studyTitle === undefined) {
     studyTitle = "my Q study";
@@ -79,16 +82,21 @@ const generateConfigXml = () => {
    <config version="${version}" htmlParse="false">\n`;
 
   const data2 = `
-   <!-- 0. HIDDEN OPTIONS -->
+   <!-- HIDDEN OPTIONS -->
    <item id="devMode">false</item> 
    <item id="traceSorts">true</item> 
    <item id="thinGuidanceModalMaxIterations">2</item>
 
+   <!-- 0. FILE INFORMATION -->
+   <item order="0-1" id="configFileVersion">1.0.0</item>
+   <item order="0-2" id="iterationDate">2025-08-31</item>
 
    <!-- 1. STUDY TITLE -->
    <item id="studyTitle">${studyTitle}</item> 
 
    <!-- 2. DATABASE SETUP -->
+   <!-- "setupTarget" options: baserow or local -->
+   <item id="setupTarget">baserow</item>
    <item id="baserowToken">${baserowToken}</item>
    <item id="baserowDatabaseIdNumber">${baserowDatabaseIdNumber}</item>
    <item id="emailAddress">${emailAddress}</item>
@@ -113,38 +121,33 @@ const generateConfigXml = () => {
    <item id="initialScreen">${initialScreen}</item>
    <item id="accessCode">${accessCode}</item>
    
-   <!-- 7. COLORS  -->
+   <!-- 7. COLOR SETTINGS  -->
    <!-- defaults = #2a2a2a (font), #ccffcc (right), #e0e0e0 (center), #ffe0f0 (left) -->
    <item id="headerBarColor">${headerBarColor}</item>
+   <item id="defaultFontColor">${defaultFontColor}</item>
+   
+   <!-- 8. PRESORT OPTIONS -->
+   <item id="shuffleCards">${shuffleCards}</item>
    <item id="greenCardColor">${greenCardColor}</item>
    <item id="yellowCardColor">${yellowCardColor}</item>
    <item id="pinkCardColor">${pinkCardColor}</item>
-   <item id="defaultFontColor">${defaultFontColor}</item>
-   
-   <!-- 8. PRESORT -->
-   <item id="shuffleCards">${shuffleCards}</item>
    <item id="defaultFontSizePresort">${defaultFontSizePresort}</item>
 
-   <!-- 9. SORT -->
+   <!-- 9. SORT OPTIONS -->
    <item id="condOfInstFontSize">${condOfInstFontSize}</item>
-   <item id="allowUnforcedSorts">${allowUnforcedSorts}</item>
+   <item id="allowUnforcedSorts">false</item>
    <item id="warnOverloadedColumn">${warnOverloadedColumn}</item>
-   <item id="setMinCardHeightSort">true</item>
    <item id="minCardHeightSort">${minCardHeightSort}</item>
-   <item id="setDefaultFontSizeSort">true</item>
    <item id="defaultFontSizeSort">${defaultFontSizeSort}</item>
 
-   <!-- POSTSORT -->
+   <!-- POSTSORT OPTIONS -->
    <item id="showPostsort">${showPostsort}</item>
    <item id="showSecondPosColumn">${showSecondPosColumn}</item>
    <item id="showSecondNegColumn">${showSecondNegColumn}</item>
    <item id="showBackButton">${showBackButton}</item>
    <item id="postsortCommentsRequired">${postsortCommentsRequired}</item>
-   <item id="setDefaultFontSizePostsort">true</item>
    <item id="defaultFontSizePostsort">${defaultFontSizePostsort}</item>
-   <item id="setMinCardHeightPostsort">true</item>
    <item id="minCardHeightPostsort">${minCardHeightPostsort}</item>
-
 
    <!-- SURVEY - Survey Questions -->
    <item id="showSurvey">${showSurvey}</item>\n\n`;

@@ -10,7 +10,7 @@
   "database": "データベース",
   "settings": "一般設定",
   "statements": "ステートメント",
-  "qSortDesign": "Q ソート設計",
+  "qSortDesign": "Qソートグリッド",
   "userInterfaceLanguage": "ユーザーインターフェース言語",
   "webHost": "ウェブホスト",
   "results": "結果",
@@ -176,7 +176,7 @@
   "createOrEditYourQsortStatements": "Qソートステートメントを作成・編集",
 
   "*** MAP ***": "*** MAP OPTIONS ***",
-  "mapPageTitle": "Qソートデザイン",
+  "mapPageTitle": "Qソートグリッド",
   "mapPageTitleDescription": "列サイズ、色、ラベル",
   "qSortPattern": "Qソートパターン",
 
@@ -198,7 +198,7 @@
   "custom": "カスタム",
   "clearAll": "すべてクリア",
   "mapColColors": "Qソートグリッドの列色",
-  "mobileHeadersText": "モバイルヘッダーのテキスト",
+  "colTextLabelsArray": "モバイルヘッダーのテキスト",
   "headers": "ヘッダー",
   "headersAndColumns": "ヘッダーと列",
   "noColoring": "色なし",
@@ -487,6 +487,7 @@
   "mobileSortHelpModalText": "ヘルプモーダルテキスト",
   "mobileSortScrollBottomModalHead": "リストの下部までスクロールする必要があります モーダルタイトル",
   "mobileSortScrollBottomModalText": "リストの一番下までスクロールする必要があります モーダルテキスト",
+  "mobileSortSwapModalSuccessMessage": "スワップモーダル成功メッセージ",
 
   "*** LANGUAGE 12. Postsort ***": "***  LANGUAGE PAGE  ***",
   "postsortCommentsScreen": "ソート後のコメント画面",

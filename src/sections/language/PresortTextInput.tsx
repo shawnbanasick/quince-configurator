@@ -25,6 +25,9 @@ const getPresortFinishedModalHead = (state) => state.presortFinishedModalHead;
 const getPresortFinishedModalText = (state) => state.presortFinishedModalText;
 const getLangLogInFirst = (state) => state.logInFirst;
 const getPresortStatements = (state) => state.presortStatements;
+const getPress1 = (state) => state.press1;
+const getPress2 = (state) => state.press2;
+const getPress3 = (state) => state.press3;
 
 const PresortTextInput = () => {
   let displayMode = useStore(getDisplayMode);
@@ -43,6 +46,9 @@ const PresortTextInput = () => {
   const presortFinishedModalText = useStore(getPresortFinishedModalText);
   const logInFirst = useStore(getLangLogInFirst);
   const presortStatements = useStore(getPresortStatements);
+  const press1 = useStore(getPress1);
+  const press2 = useStore(getPress2);
+  const press3 = useStore(getPress3);
   const { t } = useTranslation();
 
   const handleRefImage = (e) => {
@@ -180,6 +186,17 @@ const PresortTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+          label={`6-3b. ${t("press3")}`}
+          name="press3"
+          value={press3}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+        />
+        <UserTextInput
+          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
+          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label={`6-4. ${t("presortNeutral")}`}
           name="presortNeutral"
           value={presortNeutral}
@@ -191,6 +208,18 @@ const PresortTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+          label={`6-4b. ${t("press2")}`}
+          name="press2"
+          value={press2}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+        />
+
+        <UserTextInput
+          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
+          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label={`6-5. ${t("presortDisagreement")}`}
           name="presortDisagreement"
           value={presortDisagreement}
@@ -199,7 +228,17 @@ const PresortTextInput = () => {
           placeholder=""
           disabled={false}
         />
-
+        <UserTextInput
+          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
+          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+          label={`6-5b. ${t("press1")}`}
+          name="press1"
+          value={press1}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+        />
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}

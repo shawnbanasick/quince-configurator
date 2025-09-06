@@ -27,6 +27,7 @@ const showSectionDefaults = (section) => {
     });
   };
 
+  // section 1
   if (section === "multipleScreens") {
     selectorArray = [
       "btnHelp",
@@ -44,6 +45,7 @@ const showSectionDefaults = (section) => {
     setDefaults(selectorArray);
   }
 
+  // section 2
   if (section === "consentDef") {
     selectorArray = [
       "consentTitleBarText",
@@ -57,6 +59,7 @@ const showSectionDefaults = (section) => {
     setDefaults(selectorArray);
   }
 
+  // section 3
   if (section === "accessDef") {
     selectorArray = [
       "loginWelcomeText",
@@ -72,6 +75,7 @@ const showSectionDefaults = (section) => {
     setDefaults(selectorArray);
   }
 
+  // section 4
   if (section === "welcomeDef") {
     selectorArray = [
       "landingHead",
@@ -85,31 +89,14 @@ const showSectionDefaults = (section) => {
     setDefaults(selectorArray);
   }
 
+  // section 5
   if (section === "mobileWelcomeDef") {
     selectorArray = ["mobileWelcomeText"];
 
     setDefaults(selectorArray);
   }
 
-  if (section === "localDef") {
-    selectorArray = [
-      "LocalHeader",
-      "PartIdText",
-      "UsercodeText",
-      "LocalStartButtonText",
-      "LocalDeleteButtonText",
-      "LocalDownloadButtonText",
-      "StoredQsortsHeaderText",
-      "LocalDeleteModalHead",
-      "LocalDeleteModalText",
-      "LocalParticipantsText",
-      "LocalSaveBeforeDeleteModalHeader",
-      "LocalSaveBeforeDeleteModalText",
-    ];
-
-    setDefaults(selectorArray);
-  }
-
+  // section 6
   if (section === "presortDef") {
     selectorArray = [
       "logInFirst",
@@ -126,11 +113,15 @@ const showSectionDefaults = (section) => {
       "presortFinishedModalHead",
       "presortFinishedModalText",
       "presortOnPageInstructions",
+      "press1",
+      "press2",
+      "press3",
     ];
 
     setDefaults(selectorArray);
   }
 
+  // section 7
   if (section === "mobilePresortDef") {
     selectorArray = [
       "mobilePresortConditionsOfInstruction",
@@ -147,11 +138,13 @@ const showSectionDefaults = (section) => {
       "mobilePresortFinishedModalText",
       "mobilePresortPreventNavModalHead",
       "mobilePresortPreventNavModalText",
+      "mobilePresortProcessCompleteMessage",
     ];
 
     setDefaults(selectorArray);
   }
 
+  // section 8
   if (section === "refineDef") {
     selectorArray = [
       "initialInstructionPartNeg1",
@@ -177,6 +170,7 @@ const showSectionDefaults = (section) => {
     setDefaults(selectorArray);
   }
 
+  // section 9
   if (section === "mobileRefineDef") {
     selectorArray = [
       "moveTopMobileHead",
@@ -207,6 +201,7 @@ const showSectionDefaults = (section) => {
     setDefaults(selectorArray);
   }
 
+  // section 10
   if (section === "sortDef") {
     selectorArray = [
       "sortHelpModalHead",
@@ -225,6 +220,7 @@ const showSectionDefaults = (section) => {
     setDefaults(selectorArray);
   }
 
+  // section 11
   if (section === "mobileSortDef") {
     selectorArray = [
       "mobileSortSwapModalHead",
@@ -235,11 +231,13 @@ const showSectionDefaults = (section) => {
       "mobileSortHelpModalText",
       "mobileSortScrollBottomModalHead",
       "mobileSortScrollBottomModalText",
+      "mobileSortSwapModalSuccessMessage",
     ];
 
     setDefaults(selectorArray);
   }
 
+  // section 12
   if (section === "postsortDef") {
     selectorArray = [
       "postsortHeader",
@@ -257,6 +255,7 @@ const showSectionDefaults = (section) => {
     setDefaults(selectorArray);
   }
 
+  // section 13
   if (section === "mobilePostsortDef") {
     selectorArray = [
       "mobilePostsortPreventNavModalHead",
@@ -270,6 +269,7 @@ const showSectionDefaults = (section) => {
     setDefaults(selectorArray);
   }
 
+  // section 14
   if (section === "surveyDef") {
     selectorArray = [
       "surveyHeader",
@@ -282,12 +282,14 @@ const showSectionDefaults = (section) => {
     setDefaults(selectorArray);
   }
 
+  // section 15
   if (section === "mobileSurveyDef") {
     selectorArray = ["mobileSurveyHelpModalHead", "mobileSurveyHelpModalText"];
 
     setDefaults(selectorArray);
   }
 
+  // section 16
   if (section === "submitDef") {
     selectorArray = [
       "btnTransfer",
@@ -304,22 +306,14 @@ const showSectionDefaults = (section) => {
     setDefaults(selectorArray);
   }
 
+  // section 17
   if (section === "mobileSubmitDef") {
     selectorArray = ["mobileSortTitleBar"];
 
     setDefaults(selectorArray);
   }
 
-  if (section === "localSubmitDef") {
-    selectorArray = [
-      "LocalSaveDataButton",
-      "LocalSubmitSuccessModalHeader",
-      "LocalSubmitSuccessModalText",
-      "ReturnToLocalPanelButtonText",
-    ];
-
-    setDefaults(selectorArray);
-  }
+  // section 18
   if (section === "emailDef") {
     selectorArray = [
       "checkInternetMessage",
@@ -336,8 +330,42 @@ const showSectionDefaults = (section) => {
 
     setDefaults(selectorArray);
   }
+
+  // section 19
   if (section === "linkingDef") {
     selectorArray = ["linkingFallbackMessage", "linkingBtnText"];
+
+    setDefaults(selectorArray);
+  }
+
+  // section 20
+  if (section === "localDef") {
+    selectorArray = [
+      "LocalHeader",
+      "PartIdText",
+      "UsercodeText",
+      "LocalStartButtonText",
+      "LocalDeleteButtonText",
+      "LocalDownloadButtonText",
+      "StoredQsortsHeaderText",
+      "LocalDeleteModalHead",
+      "LocalDeleteModalText",
+      "LocalParticipantsText",
+      "LocalSaveBeforeDeleteModalHeader",
+      "LocalSaveBeforeDeleteModalText",
+    ];
+
+    setDefaults(selectorArray);
+  }
+
+  // section 21
+  if (section === "localSubmitDef") {
+    selectorArray = [
+      "LocalSaveDataButton",
+      "LocalSubmitSuccessModalHeader",
+      "LocalSubmitSuccessModalText",
+      "ReturnToLocalPanelButtonText",
+    ];
 
     setDefaults(selectorArray);
   }

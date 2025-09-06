@@ -6,6 +6,10 @@ const generateLanguageXml = () => {
 
    <language version="Quince ${useStore.getState().version}" htmlParse="true">\n;
 
+        <!-- 0. FILE INFORMATION -->
+        <item order="0-1" id="languageFileVersion">1.0.0</item>
+        <item order="0-2" id="iterationDate">2025-08-31</item>
+
         <!-- 1. MULTIPLE SCREENS AND FOOTER -->
         <item order= "1-1" id="btnHelp">${encodeHTML(useStore.getState().btnHelp)}</item>
         <item order= "1-2" id="fontSizeText">${encodeHTML(useStore.getState().fontSizeText)}</item>
@@ -14,7 +18,7 @@ const generateLanguageXml = () => {
         )}</item>
         <item order= "1-4" id="btnNext">${encodeHTML(useStore.getState().btnNext)}</item>
         <item order= "1-5" id="stepCompletedMessage">${encodeHTML(
-          useStore.getState().stepCompleted
+          useStore.getState().stepCompletedMessage
         )}</item>
         <item order= "1-6" id="screenOrientationText">${encodeHTML(
           useStore.getState().screenOrientationText
@@ -105,12 +109,15 @@ const generateLanguageXml = () => {
         <item order= "6-3" id="presortAgreement">${encodeHTML(
           useStore.getState().presortAgreement
         )}</item>
+         <item order= "6-3b" id="press1">${encodeHTML(useStore.getState().press1)}</item>
         <item order= "6-4" id="presortNeutral">${encodeHTML(
           useStore.getState().presortNeutral
         )}</item>
+         <item order= "6-4b" id="press2">${encodeHTML(useStore.getState().press2)}</item>
         <item order= "6-5" id="presortDisagreement">${encodeHTML(
           useStore.getState().presortDisagreement
         )}</item>
+         <item order= "6-5b" id="press3">${encodeHTML(useStore.getState().press3)}</item>
         <item order= "6-6" id="presortStatements">${encodeHTML(
           useStore.getState().presortStatements
         )}</item>
@@ -161,8 +168,8 @@ const generateLanguageXml = () => {
         <item order= "7-7" id="mobilePresortRedoModalHead">${encodeHTML(
           useStore.getState().mobilePresortRedoModalHead
         )}</item>
-        <item order= "7-8" id="mobilePresortRedoModalText">${encodeHTML(
-          useStore.getState().mobilePresortRedoModalText
+        <item order= "7-8" id="mobilePresortRedoModalConfirmButton">${encodeHTML(
+          useStore.getState().mobilePresortRedoModalConfirmButton
         )}</item>
         <item order= "7-9" id="mobilePresortEvaluationsComplete">${encodeHTML(
           useStore.getState().mobilePresortEvaluationsComplete
@@ -178,7 +185,11 @@ const generateLanguageXml = () => {
         )}</item>
         <item order= "7-13" id="mobilePresortPreventNavModalText">${encodeHTML(
           useStore.getState().mobilePresortPreventNavModalText
-        )}</item>        
+        )}</item>      
+        <item order= "7-14" id="mobilePresortProcessCompleteMessage">${encodeHTML(
+          useStore.getState().mobilePresortProcessCompleteMessage
+        )}</item>      
+             
 
         <!-- 8. THINNING -->
         <item order= "8-1" id="thinningHelpModalHead">${encodeHTML(
@@ -225,222 +236,268 @@ const generateLanguageXml = () => {
          )}</item>
          
         <!-- 9. MOBILE THINNING -->
-        <item id="moveTopMobileHead">${encodeHTML(useStore.getState().moveTopMobileHead)}</item>
-        <item id="moveTopMobileText">${encodeHTML(useStore.getState().moveTopMobileText)}</item>
-        <item id="moveAllTopMobileText">${encodeHTML(
-          useStore.getState().moveAllTopMobileText
-        )}</item>
-        <item id="moveTopMobileButtonOK">${encodeHTML(
-          useStore.getState().moveTopMobileButtonOK
-        )}</item>
-        <item id="mobileThinConditionsOfInstruction">${encodeHTML(
-          useStore.getState().mobileThinConditionsOfInstruction
-        )}</item>
-        <item id="mobileThinSubmitButtonText">${encodeHTML(
-          useStore.getState().mobileThinSubmitButtonText
-        )}</item>
-        <item id="mobileThinHelpModalHead">${encodeHTML(
+        <item order="9-1" id="mobileThinHelpModalHead">${encodeHTML(
           useStore.getState().mobileThinHelpModalHead
         )}</item>
-        <item id="mobileThinHelpModalText">${encodeHTML(
+        <item order="9-2" id="mobileThinHelpModalText">${encodeHTML(
           useStore.getState().mobileThinHelpModalText
         )}</item>
-        <item id="mobileThinPreventNavModalHead">${encodeHTML(
-          useStore.getState().mobileThinPreventNavModalHead
+        <item order="9-3" id="mobileThinConditionsOfInstruction">${encodeHTML(
+          useStore.getState().mobileThinConditionsOfInstruction
         )}</item>
-        <item id="mobileThinPreventNavModalText">${encodeHTML(
-          useStore.getState().mobileThinPreventNavModalText
+          <item order="9-4" id="mobileThinSelectedText">${encodeHTML(
+            useStore.getState().mobileThinSelectedText
+          )}</item>
+        <item order="9-5" id="mobileThinSubmitButtonText">${encodeHTML(
+          useStore.getState().mobileThinSubmitButtonText
         )}</item>
-        <item id="mobileThinProcessCompleteMessage">${encodeHTML(
-          useStore.getState().mobileThinProcessCompleteMessage
-        )}</item>
-        <item id="mobileGuidanceModalRight1Header">${encodeHTML(
-          useStore.getState().mobileGuidanceModalRight1Header
-        )}</item>
-        <item id="mobileGuidanceModalRight1Text">${encodeHTML(
-          useStore.getState().mobileGuidanceModalRight1Text
-        )}</item>
-        <item id="mobileGuidanceModalRight2Header">${encodeHTML(
-          useStore.getState().mobileGuidanceModalRight2Header
-        )}</item>
-        <item id="mobileGuidanceModalRight2Text">${encodeHTML(
-          useStore.getState().mobileGuidanceModalRight2Text
-        )}</item>
-        <item id="mobileGuidanceModalLeft1Header">${encodeHTML(
+        <item order="9-6" id="mobileGuidanceModalLeft1Header">${encodeHTML(
           useStore.getState().mobileGuidanceModalLeft1Header
         )}</item>
-        <item id="mobileGuidanceModalLeft1Text">${encodeHTML(
+        <item order="9-7" id="mobileGuidanceModalLeft1Text">${encodeHTML(
           useStore.getState().mobileGuidanceModalLeft1Text
         )}</item>
-        <item id="mobileGuidanceModalLeft2Header">${encodeHTML(
+        <item order="9-8" id="mobileGuidanceModalRight2Header">${encodeHTML(
+          useStore.getState().mobileGuidanceModalRight2Header
+        )}</item>
+        <item order="9-9" id="mobileGuidanceModalRight2Text">${encodeHTML(
+          useStore.getState().mobileGuidanceModalRight2Text
+        )}</item>
+        <item order="9-10" id="mobileGuidanceModalLeft2Header">${encodeHTML(
           useStore.getState().mobileGuidanceModalLeft2Header
         )}</item>
-        <item id="mobileGuidanceModalLeft2Text">${encodeHTML(
+        <item order="9-11" id="mobileGuidanceModalLeft2Text">${encodeHTML(
           useStore.getState().mobileGuidanceModalLeft2Text
         )}</item>
-        <item id="mobileThinScrollBottomModalHead">${encodeHTML(
+        <item order="9-12" id="mobileThinScrollBottomModalHead">${encodeHTML(
           useStore.getState().mobileThinScrollBottomModalHead
         )}</item>
-        <item id="mobileThinScrollBottomModalText">${encodeHTML(
+        <item order="9-13" id="mobileThinScrollBottomModalText">${encodeHTML(
           useStore.getState().mobileThinScrollBottomModalText
+        )}</item>
+        <item order="9-14" id="moveTopMobileHead">${encodeHTML(
+          useStore.getState().moveTopMobileHead
+        )}</item>
+        <item order="9-15" id="moveTopMobileText">${encodeHTML(
+          useStore.getState().moveTopMobileText
+        )}</item>
+        <item order="9-16" id="moveTopMobileButtonOK">${encodeHTML(
+          useStore.getState().moveTopMobileButtonOK
+        )}</item>
+        <item order="9-17" id="mobileThinPreventNavModalHead">${encodeHTML(
+          useStore.getState().mobileThinPreventNavModalHead
+        )}</item>
+        <item order="9-18" id="mobileThinPreventNavModalText">${encodeHTML(
+          useStore.getState().mobileThinPreventNavModalText
+        )}</item>
+        <item order="9-19" id="mobileThinProcessCompleteMessage">${encodeHTML(
+          useStore.getState().mobileThinProcessCompleteMessage
+        )}</item>
+        <item order="9-20" id="moveAllTopMobileText">${encodeHTML(
+          useStore.getState().moveAllTopMobileText
+        )}</item>
+        <item order="9-21" id="mobileGuidanceModalRight1Header">${encodeHTML(
+          useStore.getState().mobileGuidanceModalRight1Header
+        )}</item>
+        <item order="9-22" id="mobileGuidanceModalRight1Text">${encodeHTML(
+          useStore.getState().mobileGuidanceModalRight1Text
         )}</item>
 
         <!-- 10. SORT -->
-        <item id="sortHelpModalHead">${encodeHTML(useStore.getState().sortHelpModalHead)}</item>
-        <item id="sortHelpModalText">${encodeHTML(useStore.getState().sortHelpModalText)}</item>
-        <item id="sortAgreement">${encodeHTML(useStore.getState().sortAgreement)}</item>
-        <item id="sortDisagreement">${encodeHTML(useStore.getState().sortDisagreement)}</item>
-        <item id="condOfInst">${encodeHTML(useStore.getState().condOfInst)}</item>
-        <item id="sortingCompleteModalHead">${encodeHTML(
-          useStore.getState().sortingCompleteModalHead
+        <item order="10-1" id="sortHelpModalHead">${encodeHTML(
+          useStore.getState().sortHelpModalHead
         )}</item>
-        <item id="sortingCompleteModalText">${encodeHTML(
-          useStore.getState().sortingCompleteModalText
+        <item order="10-2" id="sortHelpModalText">${encodeHTML(
+          useStore.getState().sortHelpModalText
         )}</item>
-        <item id="sortPreventNavModalHead">${encodeHTML(
-          useStore.getState().sortPreventNavModalHead
+        <item order="10-3"  id="sortAgreement">${encodeHTML(
+          useStore.getState().sortAgreement
         )}</item>
-        <item id="sortPreventNavModalText">${encodeHTML(
-          useStore.getState().sortPreventNavModalText
+        <item order="10-4" id="sortDisagreement">${encodeHTML(
+          useStore.getState().sortDisagreement
         )}</item>
-        <item id="sortOverloadedColumnModalHead">${encodeHTML(
+        <item order="10-5" id="condOfInst">${encodeHTML(useStore.getState().condOfInst)}</item>
+        <item order="10-6" id="sortOverloadedColumnModalHead">${encodeHTML(
           useStore.getState().sortOverloadedColumnModalHead
         )}</item>
-        <item id="sortOverloadedColumnModalText">${encodeHTML(
+        <item order="10-7" id="sortOverloadedColumnModalText">${encodeHTML(
           useStore.getState().sortOverloadedColumnModalText
         )}</item>
+              
 
         <!-- 11. MOBILE SORT -->
-        <item id="mobileSortSwapModalHead">${encodeHTML(
-          useStore.getState().mobileSortSwapModalHead
-        )}</item>
-        <item id="mobileSortSwapModalText">${encodeHTML(
-          useStore.getState().mobileSortSwapModalText
-        )}</item>
-        <item id="mobileSortSwapModalConfirmButton">${encodeHTML(
-          useStore.getState().mobileSortSwapModalConfirmButton
-        )}</item>
-        <item id="mobileSortConditionsOfInstruction">${encodeHTML(
-          useStore.getState().mobileSortConditionsOfInstruction
-        )}</item>
-        <item id="mobileSortHelpModalHead">${encodeHTML(
+        <item order="11-1" id="mobileSortHelpModalHead">${encodeHTML(
           useStore.getState().mobileSortHelpModalHead
         )}</item>
-        <item id="mobileSortHelpModalText">${encodeHTML(
+        <item order="11-2" id="mobileSortHelpModalText">${encodeHTML(
           useStore.getState().mobileSortHelpModalText
         )}</item>
-        <item id="mobileSortScrollBottomModalHead">${encodeHTML(
+        <item order="11-3" id="mobileSortConditionsOfInstruction">${encodeHTML(
+          useStore.getState().mobileSortConditionsOfInstruction
+        )}</item>
+        <item order="11-4" id="mobileSortScrollBottomModalHead">${encodeHTML(
           useStore.getState().mobileSortScrollBottomModalHead
         )}</item>
-        <item id="mobileSortScrollBottomModalText">${encodeHTML(
+        <item order="11-5" id="mobileSortScrollBottomModalText">${encodeHTML(
           useStore.getState().mobileSortScrollBottomModalText
         )}</item>
-
-       <!-- 11. POSTSORT: comments - only displayed if showStep3 = TRUE in config.xml -->
-        <item id="postsortHeader">${encodeHTML(useStore.getState().postsortHeader)}</item>
-        <item id="postsortInstructions">${encodeHTML(
-          useStore.getState().postsortInstructions
+        <item order="11-6" id="mobileSortSwapModalHead">${encodeHTML(
+          useStore.getState().mobileSortSwapModalHead
         )}</item>
-        <item id="placeholder">${encodeHTML(useStore.getState().placeholder)}</item>
-        <item id="postsortAgreement">${encodeHTML(useStore.getState().postsortAgreement)}</item>
-        <item id="postsortDisagreement">${encodeHTML(
+        <item order="11-7" id="mobileSortSwapModalText">${encodeHTML(
+          useStore.getState().mobileSortSwapModalText
+        )}</item>
+        <item order="11-8" id="mobileSortSwapModalSuccessMessage">${encodeHTML(
+          useStore.getState().mobileSortSwapModalSuccessMessage
+        )}</item>
+
+       <!-- 12. POSTSORT: comments - only displayed if showStep3 = TRUE in config.xml -->
+       <item order="12-1" id="postsortModalHead">${encodeHTML(
+         useStore.getState().postsortModalHead
+       )}</item>
+       <item order="12-2" id="postsortModalText">${encodeHTML(
+         useStore.getState().postsortModalText
+       )}</item>
+       <item order="12-3" id="postsortHeader">${encodeHTML(
+         useStore.getState().postsortHeader
+       )}</item>
+       <item order="12-4" id="postsortInstructions">${encodeHTML(
+         useStore.getState().postsortInstructions
+       )}</item>
+        <item order="12-5" id="placeholder">${encodeHTML(useStore.getState().placeholder)}</item>
+        <item order="12-6" id="placedOn">${encodeHTML(useStore.getState().placedOn)}</item>
+        <item order="12-7" id="postsortAgreement">${encodeHTML(
+          useStore.getState().postsortAgreement
+        )}</item>
+        <item order="12-8" id="postsortDisagreement">${encodeHTML(
           useStore.getState().postsortDisagreement
         )}</item>
-        <item id="postsortModalHead">${encodeHTML(useStore.getState().postsortModalHead)}</item>
-        <item id="postsortModalText">${encodeHTML(useStore.getState().postsortModalText)}</item>
-        <item id="postsortPreventNavModalHead">${encodeHTML(
-          useStore.getState().postsortPreventNavModalHead
-        )}</item>
-        <item id="postsortPreventNavModalText">${encodeHTML(
-          useStore.getState().postsortPreventNavModalText
-        )}</item>
-        <item id="postsortBackButtonText">${encodeHTML(
+        <item order="12-9" id="postsortBackButtonText">${encodeHTML(
           useStore.getState().postsortBackButtonText
         )}</item>
+        <item order="12-10" id="postsortPreventNavModalHead">${encodeHTML(
+          useStore.getState().postsortPreventNavModalHead
+        )}</item>
+        <item order="12-11" id="postsortPreventNavModalText">${encodeHTML(
+          useStore.getState().postsortPreventNavModalText
+        )}</item>
 
-       <!-- 12. MOBILE POSTSORT: comments - only displayed if showStep3 = TRUE in config.xml -->
-       <item id="mobilePostsortPreventNavModalHead">${encodeHTML(
-         useStore.getState().mobilePostsortPreventNavModalHead
-       )}</item>
-       <item id="mobilePostsortPreventNavModalText">${encodeHTML(
-         useStore.getState().mobilePostsortPreventNavModalText
-       )}</item>
-       <item id="mobilePostsortSortbarText">${encodeHTML(
-         useStore.getState().mobilePostsortSortbarText
-       )}</item>
-       <item id="mobilePostsortHelpModalHead">${encodeHTML(
+
+       <!-- 13. MOBILE POSTSORT: comments - only displayed if showStep3 = TRUE in config.xml -->
+       <item order="13-1" id="mobilePostsortHelpModalHead">${encodeHTML(
          useStore.getState().mobilePostsortHelpModalHead
        )}</item>
-       <item id="mobilePostsortHelpModalText">${encodeHTML(
+       <item order="13-2" id="mobilePostsortHelpModalText">${encodeHTML(
          useStore.getState().mobilePostsortHelpModalText
        )}</item>
-
-        <!-- 13. SURVEY: Additional questions, only displayed if showStep4 == TRUE -->
-        <item id="surveyHeader">${encodeHTML(useStore.getState().surveyHeader)}</item>
-        <item id="surveyModalHead">${encodeHTML(useStore.getState().surveyModalHead)}</item>
-        <item id="surveyModalText">${encodeHTML(useStore.getState().surveyModalText)}</item>
-        <item id="surveyPreventNavModalHead">${encodeHTML(
+       <item order="13-3" id="mobilePostsortSortbarText">${encodeHTML(
+         useStore.getState().mobilePostsortSortbarText
+       )}</item>
+       <item order="13-4" id="mobilePostsortPlaceholder">${encodeHTML(
+         useStore.getState().mobilePostsortPlaceholder
+       )}</item>
+       <item order="13-5" id="mobilePostsortPreventNavModalHead">${encodeHTML(
+         useStore.getState().mobilePostsortPreventNavModalHead
+       )}</item>
+       <item order="13-6" id="mobilePostsortPreventNavModalText">${encodeHTML(
+         useStore.getState().mobilePostsortPreventNavModalText
+       )}</item>
+       
+        <!-- 14. SURVEY: Additional questions, only displayed if showStep4 == TRUE -->
+        <item order="14-1" id="surveyModalHead">${encodeHTML(
+          useStore.getState().surveyModalHead
+        )}</item>
+        <item order="14-2" id="surveyModalText">${encodeHTML(
+          useStore.getState().surveyModalText
+        )}</item>
+        <item order="14-3" id="surveyHeader">${encodeHTML(useStore.getState().surveyHeader)}</item>
+        <item order="14-4" id="surveyPreventNavModalHead">${encodeHTML(
           useStore.getState().surveyPreventNavModalHead
         )}</item>
-        <item id="surveyPreventNavModalText">${encodeHTML(
+        <item order="14-5" id="surveyPreventNavModalText">${encodeHTML(
           useStore.getState().surveyPreventNavModalText
         )}</item>
-       
-        <!-- 14. MOBILE SURVEY: Additional questions, only displayed if showStep4 == true -->
-        <item id="mobileSurveyHelpModalHead">${encodeHTML(
+
+        <!-- 15. MOBILE SURVEY: Additional questions, only displayed if showStep4 == true -->
+        <item order="15-1" id="mobileSurveyHelpModalHead">${encodeHTML(
           useStore.getState().mobileSurveyHelpModalHead
         )}</item>
-        <item id="mobileSurveyHelpModalText">${encodeHTML(
+        <item order="15-2" id="mobileSurveyHelpModalText">${encodeHTML(
           useStore.getState().mobileSurveyHelpModalText
         )}</item>
 
-        <!-- 15. SUBMIT -->
-        <item id="btnTransfer">${encodeHTML(useStore.getState().btnTransfer)}</item>
-        <item id="transferHead">${encodeHTML(useStore.getState().transferHead)}</item>
-        <item id="transferTextAbove">${encodeHTML(useStore.getState().transferTextAbove)}</item>
-        <item id="transferTextBelow">${encodeHTML(useStore.getState().transferTextBelow)}</item>
-        <item id="transferOkModalHeader">${encodeHTML(
+        <!-- 16. SUBMIT -->
+        <item order="16-1" id="btnTransfer">${encodeHTML(useStore.getState().btnTransfer)}</item>
+        <item order="16-2" id="transferHead">${encodeHTML(useStore.getState().transferHead)}</item>
+        <item order="16-3" id="transferTextAbove">${encodeHTML(
+          useStore.getState().transferTextAbove
+        )}</item>
+        <item order="16-4" id="transferTextBelow">${encodeHTML(
+          useStore.getState().transferTextBelow
+        )}</item>
+        <item order="16-5" id="transferOkModalHeader">${encodeHTML(
           useStore.getState().transferOkModalHeader
         )}</item>   
-        <item id="transferOkModalText">${encodeHTML(useStore.getState().transferOkModalText)}</item>
-        <item id="transferFailModalHeader">${encodeHTML(
+        <item order="16-6" id="transferOkModalText">${encodeHTML(
+          useStore.getState().transferOkModalText
+        )}</item>
+        <item order="16-7" id="transferFailModalHeader">${encodeHTML(
           useStore.getState().transferFailModalHeader
         )}</item>   
-        <item id="transferFailModalText">${encodeHTML(
+        <item order="16-8" id="transferFailModalText">${encodeHTML(
           useStore.getState().transferFailModalText
         )}</item>   
-        <item id="fallbackMessage">${encodeHTML(useStore.getState().fallbackMessage)}</item>   
-        <item id="btnDownload">${encodeHTML(useStore.getState().btnDownload)}</item>   
-        <item id="goodbyeMessage">${encodeHTML(useStore.getState().goodbyeMessage)}</item>   
+        <item order="16-9" id="fallbackMessage">${encodeHTML(
+          useStore.getState().fallbackMessage
+        )}</item>   
+        <item order="16-10" id="btnDownload">${encodeHTML(
+          useStore.getState().btnDownload
+        )}</item>   
+        <item order="16-11" id="goodbyeMessage">${encodeHTML(
+          useStore.getState().goodbyeMessage
+        )}</item>   
 
-        <!-- 16. MOBILE SUBMIT -->
-        <item id="mobileSortTitleBar">${encodeHTML(useStore.getState().mobileSortTitleBar)}</item>
+        <!-- 17. MOBILE SUBMIT -->
+        <item order="17-1" id="mobileSortTitleBar">${encodeHTML(
+          useStore.getState().mobileSortTitleBar
+        )}</item>
 
-        <!-- 17. EMAIL -->
-        <item id="btnTransferEmail">${encodeHTML(useStore.getState().btnTransferEmail)}</item>
-        <item id="clipboardResults">${encodeHTML(useStore.getState().clipboardResults)}</item>  
-        <item id="clipboardEmail">${encodeHTML(useStore.getState().clipboardEmail)}</item>  
-        <item id="copiedText">${encodeHTML(useStore.getState().copiedText)}</item>  
-        <item id="downloadResultsButtonText">${encodeHTML(
-          useStore.getState().downloadResultsButtonText
+        <!-- 18. EMAIL -->
+        <item order="18-1" id="checkInternetMessage">${encodeHTML(
+          useStore.getState().checkInternetMessage
+        )}</item>
+        <item order="18-2" id="btnTransferEmail">${encodeHTML(
+          useStore.getState().btnTransferEmail
+        )}</item>
+        <item order="18-3" id="submitFailMessage">${encodeHTML(
+          useStore.getState().submitFailMessage
         )}</item>  
-        <item id="emailSubmit
-        <item id="copyTextError">${encodeHTML(useStore.getState().copyFailMessage)}</item>  
-        <item id="defaultEmailClientFail">${encodeHTML(
+        <item order="18-4" id="defaultEmailClientFail">${encodeHTML(
           useStore.getState().defaultEmailClientFail
         )}</item>   
-        <item id="emailBodyMessage">${encodeHTML(useStore.getState().emailBodyMessage)}</item>
-        <item id="emailSubjectText">${encodeHTML(useStore.getState().emailSubjectText)}</item>
+        <item order="18-5" id="clipboardEmail">${encodeHTML(
+          useStore.getState().clipboardEmail
+        )}</item>  
+        <item order="18-6" id="clipboardResults">${encodeHTML(
+          useStore.getState().clipboardResults
+        )}</item>  
+        <item order="18-7" id="copiedText">${encodeHTML(useStore.getState().copiedText)}</item>  
+        <item order="18-8" id="downloadResultsButtonText">${encodeHTML(
+          useStore.getState().downloadResultsButtonText
+        )}</item>  
+        <item order="18-9" id="emailBodyMessage">${encodeHTML(
+          useStore.getState().emailBodyMessage
+        )}</item>
 
-        <!-- 18. LINKING -->
-        <item id="linkedProjectFallbackMessage">${encodeHTML(
-          useStore.getState().linkingFallbackMessage
+        <!-- 19. LINKING -->
+        <item order="19-" id="linkedProjectMessage">${encodeHTML(
+          useStore.getState().linkedProjectMessage
         )}</item>   
-         <item id="linkedProjectBtnMessage">${encodeHTML(
-           useStore.getState().linkingBtnText
+         <item order="19-" id="linkedProjectBtnMessage">${encodeHTML(
+           useStore.getState().linkedProjectBtnMessage
          )}</item>   
 
-                 <!-- LOCAL DATA COLLECTION -->  
+        <!-- 20. LOCAL DATA COLLECTION -->  
         <item id="localHeader">${encodeHTML(useStore.getState().localHeader)}</item>
         <item id="partIdText">${encodeHTML(useStore.getState().partIdText)}</item>
         <item id="usercodeText">${encodeHTML(useStore.getState().usercodeText)}</item>

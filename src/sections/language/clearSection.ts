@@ -10,6 +10,7 @@ const clearSection = (array) => {
 const showSectionDefaults = (section) => {
   let selectorArray: string[] = [];
 
+  // section 1
   if (section === "multipleClear") {
     selectorArray = [
       "btnHelp",
@@ -28,6 +29,7 @@ const showSectionDefaults = (section) => {
     clearSection(selectorArray);
   }
 
+  // section 2
   if (section === "consentClear") {
     selectorArray = [
       "consentTitleBarText",
@@ -41,6 +43,7 @@ const showSectionDefaults = (section) => {
     clearSection(selectorArray);
   }
 
+  // section 3
   if (section === "accessClear") {
     selectorArray = [
       "loginWelcomeText",
@@ -56,6 +59,7 @@ const showSectionDefaults = (section) => {
     clearSection(selectorArray);
   }
 
+  // section 4
   if (section === "welcomeClear") {
     selectorArray = [
       "landingHead",
@@ -69,31 +73,14 @@ const showSectionDefaults = (section) => {
     clearSection(selectorArray);
   }
 
+  // section 5
   if (section === "mobileWelcomeClear") {
     selectorArray = ["mobileWelcomeText"];
 
     clearSection(selectorArray);
   }
 
-  if (section === "localClear") {
-    selectorArray = [
-      "LocalHeader",
-      "PartIdText",
-      "UsercodeText",
-      "LocalStartButtonText",
-      "LocalDeleteButtonText",
-      "LocalDownloadButtonText",
-      "StoredQsortsHeaderText",
-      "LocalDeleteModalHead",
-      "LocalDeleteModalText",
-      "LocalParticipantsText",
-      "LocalSaveBeforeDeleteModalHeader",
-      "LocalSaveBeforeDeleteModalText",
-    ];
-
-    clearSection(selectorArray);
-  }
-
+  // section 6
   if (section === "presortClear") {
     selectorArray = [
       "logInFirst",
@@ -110,11 +97,15 @@ const showSectionDefaults = (section) => {
       "presortFinishedModalHead",
       "presortFinishedModalText",
       "presortOnPageInstructions",
+      "press1",
+      "press2",
+      "press3",
     ];
 
     clearSection(selectorArray);
   }
 
+  // section 7
   if (section === "mobilePresortClear") {
     selectorArray = [
       "mobilePresortConditionsOfInstruction",
@@ -131,11 +122,13 @@ const showSectionDefaults = (section) => {
       "mobilePresortFinishedModalText",
       "mobilePresortPreventNavModalHead",
       "mobilePresortPreventNavModalText",
+      "mobilePresortProcessCompleteMessage",
     ];
 
     clearSection(selectorArray);
   }
 
+  // section 8
   if (section === "refineClear") {
     selectorArray = [
       "initialInstructionPartNeg1",
@@ -161,6 +154,7 @@ const showSectionDefaults = (section) => {
     clearSection(selectorArray);
   }
 
+  // section 9
   if (section === "mobileRefineClear") {
     selectorArray = [
       "moveTopMobileHead",
@@ -191,6 +185,7 @@ const showSectionDefaults = (section) => {
     clearSection(selectorArray);
   }
 
+  // section 10
   if (section === "sortClear") {
     selectorArray = [
       "sortHelpModalHead",
@@ -209,6 +204,7 @@ const showSectionDefaults = (section) => {
     clearSection(selectorArray);
   }
 
+  // section 11
   if (section === "mobileSortClear") {
     selectorArray = [
       "mobileSortSwapModalHead",
@@ -219,11 +215,13 @@ const showSectionDefaults = (section) => {
       "mobileSortHelpModalText",
       "mobileSortScrollBottomModalHead",
       "mobileSortScrollBottomModalText",
+      "mobileSortSwapModalSuccessMessage",
     ];
 
     clearSection(selectorArray);
   }
 
+  // section 12
   if (section === "postsortClear") {
     selectorArray = [
       "postsortHeader",
@@ -241,6 +239,7 @@ const showSectionDefaults = (section) => {
     clearSection(selectorArray);
   }
 
+  // section 13
   if (section === "mobilePostsortClear") {
     selectorArray = [
       "mobilePostsortPreventNavModalHead",
@@ -254,6 +253,7 @@ const showSectionDefaults = (section) => {
     clearSection(selectorArray);
   }
 
+  // section 14
   if (section === "surveyClear") {
     selectorArray = [
       "surveyHeader",
@@ -266,12 +266,14 @@ const showSectionDefaults = (section) => {
     clearSection(selectorArray);
   }
 
+  // section 15
   if (section === "mobileSurveyClear") {
     selectorArray = ["mobileSurveyHelpModalHead", "mobileSurveyHelpModalText"];
 
     clearSection(selectorArray);
   }
 
+  // section 16
   if (section === "submitClear") {
     selectorArray = [
       "btnTransfer",
@@ -290,22 +292,14 @@ const showSectionDefaults = (section) => {
     clearSection(selectorArray);
   }
 
+  // section 17
   if (section === "mobileSubmitClear") {
     selectorArray = ["mobileSortTitleBar"];
 
     clearSection(selectorArray);
   }
 
-  if (section === "localSubmitClear") {
-    selectorArray = [
-      "LocalSaveDataButton",
-      "LocalSubmitSuccessModalHeader",
-      "LocalSubmitSuccessModalText",
-      "ReturnToLocalPanelButtonText",
-    ];
-
-    clearSection(selectorArray);
-  }
+  // section 18
   if (section === "emailClear") {
     selectorArray = [
       "checkInternetMessage",
@@ -323,8 +317,42 @@ const showSectionDefaults = (section) => {
 
     clearSection(selectorArray);
   }
+
+  // section 19
   if (section === "linkingClear") {
     selectorArray = ["linkingFallbackMessage", "linkingBtnText"];
+
+    clearSection(selectorArray);
+  }
+
+  // section 20
+  if (section === "localClear") {
+    selectorArray = [
+      "LocalHeader",
+      "PartIdText",
+      "UsercodeText",
+      "LocalStartButtonText",
+      "LocalDeleteButtonText",
+      "LocalDownloadButtonText",
+      "StoredQsortsHeaderText",
+      "LocalDeleteModalHead",
+      "LocalDeleteModalText",
+      "LocalParticipantsText",
+      "LocalSaveBeforeDeleteModalHeader",
+      "LocalSaveBeforeDeleteModalText",
+    ];
+
+    clearSection(selectorArray);
+  }
+
+  // section 21
+  if (section === "localSubmitClear") {
+    selectorArray = [
+      "LocalSaveDataButton",
+      "LocalSubmitSuccessModalHeader",
+      "LocalSubmitSuccessModalText",
+      "ReturnToLocalPanelButtonText",
+    ];
 
     clearSection(selectorArray);
   }

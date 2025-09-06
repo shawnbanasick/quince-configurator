@@ -37,7 +37,7 @@ const showSectionDefaults = () => {
     loginSubmitButtonText: `Submit`,
 
     /*
-     ******* WELCOME PAGE  ****************** */
+     ******* #4 WELCOME PAGE  ****************** */
     landingHead: `University Research Project`,
     welcomeText: `<h2>EQ Web Sort Demo Project - iPad Use in the Classroom.</h2><br/><br/><p>Thank you for helping with this research project</p><br/><br/><br/>
     <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
@@ -45,10 +45,13 @@ const showSectionDefaults = () => {
     landingHelpModalText: `Thank you for participating in this University Research Project. Please click the "<b>Continue</b>" button at the bottom right side of the screen to go to the next step.`,
     btnNextLanding: `Continue`,
     btnHelpLanding: `Help`,
+
+    /*
+     ******* #5 MOBILE WELCOME PAGE  ****************** */
     mobileWelcomeText: `<h2>Quince Demo Project - iPad Use in the Classroom.</h2><br/><br/><p>Thank you for helping with this research project!</p><br/><br/><br/> <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
 
     /*
-     ******** PRESORT  ****************** */
+     ******** #6  PRESORT  ****************** */
     logInFirst: "Please complete the log-in process first.",
     titleBarText: `Preliminary Sorting`,
     presortAgreement: `Agree (3)`,
@@ -63,9 +66,12 @@ const showSectionDefaults = () => {
     presortFinishedModalHead: `Preliminary Sorting Complete`,
     presortFinishedModalText: `You have completed this step. Please click the "Continue" button in the bottom right side of the page to go to the next step.`,
     presortOnPageInstructions: `<div style="font-size: 24px">Click and drag on the cards  or press the "1", "2", or "3" keys to sort the statements.</div>`,
+    press1: `(press 1)`,
+    press2: `(press 2)`,
+    press3: `(press 3)`,
 
     /*
-     ******** MOBILE PRESORT  ****************** */
+     ******** #7 MOBILE PRESORT  ****************** */
     mobilePresortConditionsOfInstruction: `Evaluate the Statements According to Your Experience of using the iPads in the Class`,
     mobilePresortCompletedLabel: `Completed Evaluations`,
     mobilePresortAssignLeft: `Different from My Perspective`,
@@ -78,9 +84,9 @@ const showSectionDefaults = () => {
     mobilePresortHelpModalText: `Tap on the appropriate button to assign a value to each statement. <br /><br /> If you feel that the statement is <b>similar to your perspective</b>, tap the green "+" button.<br /><br /> If you feel that the statement is <b>different from your perspective</b>, tap the red "-" button. <br /><br />If you are unsure, tap the "?" button. <br /><br /> There are <b>33 statements</b> in this survey. <br /><br /> If you want to <b>change</b> your evaluation, tap the <b>redo icon</b> next to the statement.`,
     mobilePresortFinishedModalHead: `Stage 1 of 5<br />Statement Evaluation`,
     mobilePresortFinishedModalText: `The evaluation process is complete. <br/><br/> Please <b>review the statements</b> to confirm your evaluations.  <br /><br />If you want to make a change, tap the "redo" icon to the left of the statement.<br /><br />When you are satisfied with all of your evaluations, tap the <b>navigation button</b> on the bottom right.`,
-    mobilePresortProcessCompleteMessage: `The evaluation process is complete. <br/><br/> Please click on the navigation button on the bottom right side to go to the next stage.`,
     mobilePresortPreventNavModalHead: `Navigation Disabled`,
     mobilePresortPreventNavModalText: `Please finish the evaluations before going to the next stage.`,
+    mobilePresortProcessCompleteMessage: `The evaluation process is complete. <br/><br/> Please click on the navigation button on the bottom right side to go to the next stage.`,
 
     /*
      ******** REFINE SCREEN  ****************** */
@@ -104,7 +110,7 @@ const showSectionDefaults = () => {
     finalInstructions: `Refinement process complete. Click on the navigation button on the bottom right side to go to the next stage.`,
 
     /*
-     ******** MOBILE REFINE SCREEN  ****************** */
+     ******** #9 MOBILE REFINE SCREEN  ****************** */
     moveTopMobileHead: `Confirm Move`,
     moveTopMobileText: `Move this statement to the top of the list?`,
     moveAllTopMobileText: `Move all selected statements to the top of the list?`,
@@ -130,7 +136,7 @@ const showSectionDefaults = () => {
     mobileThinScrollBottomModalText: `Please scroll to the bottom and review all the statements before confirming your selections.`,
 
     /*
-     ******** SORT  ****************** */
+     ******** #10 SORT  ****************** */
     sortHelpModalHead: `Step 3 of 5`,
     sortHelpModalText: `In this step, please click and drag the statement cards to the appropriate column based on your perspective and the researcher's instructions at the top of the page. <br/><br/><center><iframe width="560" height="315" src="https://www.youtube.com/embed/iRxC9Vv3dLo?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
     sortAgreement: `Agree`,
@@ -144,15 +150,16 @@ const showSectionDefaults = () => {
     sortOverloadedColumnModalText: `One of the columns has too many cards (it will be outlined in orange and have a dashed border). Please adjust the placement of the cards so that all columns have the correct number.`,
 
     /*
-     ******** MOBILE SORT  ****************** */
-    mobileSortSwapModalHead: `Swap Statement Rankings?`,
-    mobileSortSwapModalText: `Click "Confirm" to swap.`,
-    mobileSortSwapModalConfirmButton: `Swap`,
+     ******** #11 MOBILE SORT  ****************** */
     mobileSortConditionsOfInstruction: `Rank the Statements According to Your Experience of using the iPads in the Class`,
     mobileSortHelpModalHead: `Stage 3 of 5<br/> Final Statement Ranking`,
     mobileSortHelpModalText: `The statements have been ranked based on your previous evaluations.<br/><br/> Those statements that are closest to your perspective should be at the top of the list. Those that are farthest from your perspective should be at the bottom of the list.<br/><br/>You will need to <b>scroll down</b> to see all of the statements.<br/><br/>Please <b>review the rankings</b> and make any necessary changes to the ranking of the statements so that the ordering <b>accurately reflects your perspective</b>. <br/><br/><mark>This is the most critical stage of the survey, so please review the statement rankings carefully.</mark><br/><br/> To <b>swap the positions of neighboring statements</b>, tap the up or down arrows on the right or left side of the statement.<br/><br/>To <b>swap the positions of statements that are separated</b>, tap on two statements (the statement color will change to yellow) and a swap confirmation message will appear.<br/><br/>When you are satisfied with all of the rankings, tap the navigation button on the bottom right.`,
     mobileSortScrollBottomModalHead: `Navigation Disabled`,
     mobileSortScrollBottomModalText: `Please scroll to the bottom and review the ranking of all the statements before going to the next stage.`,
+    mobileSortSwapModalHead: `Swap Statement Rankings?`,
+    mobileSortSwapModalText: `Click "Confirm" to swap.`,
+    mobileSortSwapModalConfirmButton: `Swap`,
+    mobileSortSwapModalSuccessMessage: "The positions of the statements were successfully swapped.",
 
     /*
      ******** 12. POSTSORT  ****************** */

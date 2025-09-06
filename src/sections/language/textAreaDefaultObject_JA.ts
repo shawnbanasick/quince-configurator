@@ -36,7 +36,7 @@ const showSectionDefaults_JA = () => {
     loginSubmitButtonText: `送信`,
 
     /*
-     ******* WELCOME PAGE  ****************** */
+     ******* #4 WELCOME PAGE  ****************** */
     landingHead: `大学研究プロジェクト`,
     welcomeText: `<h2>EQ Web Sort デモプロジェクト - 教室でのiPad活用</h2><br/><br/><p>この研究プロジェクトにご協力いただきありがとうございます</p><br/><br/><br/>
     <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
@@ -44,30 +44,33 @@ const showSectionDefaults_JA = () => {
     landingHelpModalText: `この大学研究プロジェクトにご参加いただき、ありがとうございます。画面右下の「<b>次へ</b>」ボタンをクリックして次のステップに進んでください。`,
     btnNextLanding: `次へ`,
     btnHelpLanding: `ヘルプ`,
-    mobileWelcomeText: `<h2>Quinceデモプロジェクト - 教室でのiPad活用</h2><br/><br/><p>本研究プロジェクトへのご協力に感謝いたします！</p><br/><br/><br/> <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
-    /*
-     ******** 事前分類 ****************** */
-    logInFirst: `まずログイン手続きを完了してください。`,
 
+    /*
+     ******* #5 MOBILE WELCOME PAGE  ****************** */
+    mobileWelcomeText: `<h2>Quinceデモプロジェクト - 教室でのiPad活用</h2><br/><br/><p>本研究プロジェクトへのご協力に感謝いたします！</p><br/><br/><br/> <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
+
+    /*
+     ******** #6 PRESORT ****************** */
+    logInFirst: `まずログイン手続きを完了してください。`,
     titleBarText: `事前分類`,
     presortAgreement: `同意 (3)`,
     presortStatements: `陈述`,
     presortNeutral: `特に感じない (2)`,
     presortDisagreement: `反対 (1)`,
     presortImageSortInstructions: `画像を拡大するには、マウス ポインターを画像の上に置き、ダブルクリックしてください。<br/><br/> 画像を比較するには、キーボードの<u>Shift</u>キーを押したまま、マウスで2つの画像をクリックしてください。`,
-
     presortModalHead: `ステップ1/4`,
     presortModalText: `以下の文を注意深く読み、3つの山に分けます：同意しない文の山、同意する文の山、残りの文の山。後で変更可能です。<br/><br/>この指示をもう一度読みたい場合は、画面左下のヘルプボタンをクリックしてください。<br/><br/><center><iframe width="560" height="315" src="https://www.youtube.com/embed/vtnLuKzpcKQ?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
     presortPreventNavModalHead: `ナビゲーション無効`,
     presortPreventNavModalText: `次のステップに進む前に、事前ソートを完了してください。`,
     presortFinishedModalHead: `事前ソート完了`,
-
     presortFinishedModalText: `このステップは完了しました。ページの右下にある「次へ」ボタンをクリックして次のステップに進んでください。`,
     presortOnPageInstructions: `<div style="font-size: 24px">カードをクリックしてドラッグするか、または「1」「2」「3」キーを押して文を並べ替えてください。</div>`,
+    press1: `(1を押してください)`,
+    press2: `(2を押してください)`,
+    press3: `(3を押してください)`,
 
     /*
-     ******** モバイル事前分類  ****************** */
-
+     ******** #7 MOBILE PRESORT  ****************** */
     mobilePresortConditionsOfInstruction: `クラスのiPad使用経験に基づいて文を評価してください`,
     mobilePresortCompletedLabel: `評価完了`,
     mobilePresortAssignLeft: `私の見解と異なる`,
@@ -88,7 +91,7 @@ const showSectionDefaults_JA = () => {
     mobilePresortPreventNavModalText: `次の段階に進む前に評価を完了してください。`,
 
     /*
-     ******** REFINE SCREEN  ****************** */
+     ******** #8 REFINE SCREEN  ****************** */
     thinPageTitle: `評価を洗練させる`,
     thinPageSubmitButton: `送信`,
     thinningHelpModalHead: `評価を洗練させる`,
@@ -107,7 +110,7 @@ const showSectionDefaults_JA = () => {
     finalInstructions: `精査プロセスが完了しました。画面右下のナビゲーションボタンをクリックして次の段階に進んでください。`,
 
     /*
-     ******** MOBILE REFINE SCREEN  ****************** */
+     ******** #9 MOBILE REFINE SCREEN  ****************** */
     moveTopMobileHead: `移動を確認`,
     moveTopMobileText: `この文をリストの上部に移動しますか？`,
     moveAllTopMobileText: `選択したすべての文をリストの上部に移動しますか？`,
@@ -138,7 +141,7 @@ const showSectionDefaults_JA = () => {
     mobileThinScrollBottomModalText: `選択を確認する前に、画面下までスクロールしてすべての文を確認してください。`,
 
     /*
-     ******** SORT  ****************** */
+     ******** #10 SORT  ****************** */
     sortHelpModalHead: `ステップ 3/5`,
     sortHelpModalText: `このステップでは、ご自身の視点とページ上部の研究者の指示に基づいて、ステートメントカードを適切な列にドラッグアンドドロップしてください。<br/><br/><center><iframe width="560" height=「315」 src="https://www.youtube.com/embed/iRxC9Vv3dLo?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
 
@@ -154,7 +157,7 @@ const showSectionDefaults_JA = () => {
     sortOverloadedColumnModalText: `列の1つにカードが多すぎます（オレンジ色で囲まれ、破線枠で表示されます）。すべての列が正しい枚数になるようにカードの配置を調整してください。`,
 
     /*
-     ******** モバイル並べ替え  ****************** */
+     ******** #11 MOBILE SORT  ****************** */
     mobileSortSwapModalHead: `ステートメントのランキングを交換しますか？`,
     mobileSortSwapModalText: `「確認」をクリックして交換してください。`,
 
@@ -164,6 +167,7 @@ const showSectionDefaults_JA = () => {
     mobileSortHelpModalText: `文は、以前の評価に基づいてランク付けされています。<br/><br/> あなたの見解に最も近い文はリストの上部に、最も遠い文は下部に配置してください。<br/><br/>すべてのコメントを確認するには、<b>下にスクロール</b>してください。<br/><br/><b>ランキングを確認</b>し、必要に応じてコメントの順位を変更して、順序が<b>あなたの見解を正確に反映</b>するようにしてください。<br/><br/><mark>これは調査で最も重要な段階です。コメントのランキングを慎重に確認してください。</mark><br/><br/> 隣接する文書の位置を交換するには、文書の右または左にある上下の矢印をタップしてください。<br/><br/>分離された文書の位置を交換するには、2つの文書をタップ（文書の色が黄色に変わります）し、交換確認メッセージが表示されます。<br/><br/>すべての順位に満足したら、画面右下のナビゲーションボタンをタップしてください。`,
     mobileSortScrollBottomModalHead: `ナビゲーション無効`,
     mobileSortScrollBottomModalText: `次の段階に進む前に、画面下までスクロールしてすべての文の順位を確認してください。`,
+    mobileSortSwapModalSuccessMessage: "ステートメントの位置の入れ替えは正常に完了しました。",
 
     /*
      ******** POSTSORT  ****************** */

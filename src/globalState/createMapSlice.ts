@@ -44,7 +44,7 @@ const createMapXmlSlice = (set) => ({
   colCol13: "#e0e0e0",
   qSortPattern: [],
   mapInputQsortPattern: [],
-  mobileHeadersText: "",
+  colTextLabelsArray: "",
   numMapTotalColumns: 0,
   mobileHeadersDefaultLabels: "",
   mobileHeadersDefault5: "Strongly Agree, Agree, Neutral, Disagree, Strongly Disagree",
@@ -59,7 +59,7 @@ const createMapXmlSlice = (set) => ({
   allStatementsAllocated: false,
   emojiArray: [],
   emojiArrayType: "",
-  colTextLabelsArray: [],
+  // colTextLabelsArray: [],
 
   useColLabelEmojiPresort: false,
   useColLabelNums: true,
@@ -81,9 +81,9 @@ const createMapXmlSlice = (set) => ({
   setEmojiArrayType: (string) => {
     set(() => ({ emojiArrayType: string }));
   },
-  setColTextLabelsArray: (array) => {
-    set(() => ({ colTextLabelsArray: array }));
-  },
+  // setColTextLabelsArray: (array) => {
+  //   set(() => ({ colTextLabelsArray: array }));
+  // },
 
   setUseColLabelEmojiPresort: (Boolean) => {
     set(() => ({ useColLabelEmojiPresort: Boolean }));
@@ -116,8 +116,8 @@ const createMapXmlSlice = (set) => ({
   setMapNumTotalColumns: (num) => {
     set(() => ({ numMapTotalColumns: num }));
   },
-  setMobileHeadersText: (text) => {
-    set(() => ({ mobileHeadersText: text }));
+  setcolTextLabelsArray: (text) => {
+    set(() => ({ colTextLabelsArray: text }));
   },
   setMapColorPalette: (palette) => {
     set(() => ({ mapColorPalette: palette }));

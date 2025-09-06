@@ -58,7 +58,13 @@ const generateMapXml = () => {
 
   let data = `<?xml version="1.0" encoding="UTF-8"?>
 
-   <map version="${releaseVersion}" htmlParse="false">\n`;
+   <map version="${releaseVersion}" htmlParse="false">;
+
+     <!-- 0. FILE INFORMATION -->
+     <item order="0-1" id="mapFileVersion">1.0.0</item>
+     <item order="0-2" id="iterationDate">2025-08-31</item>
+    
+     <!-- 1. Q SORT GRID DESIGN AND COLORS -->\n`;
 
   // CALC COL ARRAYS
   let filteredQSortPatternObject = Object.keys(qSortPatternObject).reduce((property, index) => {
@@ -139,30 +145,27 @@ const generateMapXml = () => {
   const columnHeadersColorsText = `     <item id="columnHeadersColorsArray">${columnHeadersColorsString}</item>\n`;
   const columnColorsText = `     <item id="columnColorsArray">${columnColorsString}</item>\n`;
 
-  const mobileHeadersTextValue = useStore.getState().mobileHeadersText;
-  const useColLabelNumsDesktopValue = useStore.getState().useColLabelNumsDesktop;
-  const useColLabelNumsMobileValue = useStore.getState().useColLabelNumsMobile;
-  const useColLabelTextDesktopValue = useStore.getState().useColLabelTextDesktop;
-  const useColLabelTextMobileValue = useStore.getState().useColLabelTextMobile;
-  const useColLabelEmojiDesktopValue = useStore.getState().useColLabelEmojiDesktop;
-  const useColLabelEmojiMobileValue = useStore.getState().useColLabelEmojiMobile;
+  const colTextLabelsArrayValue = useStore.getState().colTextLabelsArray;
   const emojiArrayTypeValue = useStore.getState().emojiArrayType;
+  const useColLabelEmojiPresortValue = useStore.getState().useColLabelEmojiPresort;
+  const useColLabelNumsValue = useStore.getState().useColLabelNums;
+  const useColLabelTextValue = useStore.getState().useColLabelText;
+  const useColLabelEmojiValue = useStore.getState().useColLabelEmoji;
+  const useColLabelEmojiPostsortValue = useStore.getState().useColLabelEmojiPostsort;
+  const useColLabelTextPostsortValue = useStore.getState().useColLabelTextPostsort;
+  const useColLabelNumsPostsortValue = useStore.getState().useColLabelNumsPostsort;
 
-  const mobileHeadersText = `     <item id="colHeadersText">${mobileHeadersTextValue}</item>\n`;
-
-  const useColLabelNumsDesktop = `     <item id="useColLabelNumsDesktop">${useColLabelNumsDesktopValue}</item>\n`;
-
-  const useColLabelNumsMobile = `     <item id="useColLabelNumsMobile">${useColLabelNumsMobileValue}</item>\n`;
-
-  const useColLabelTextDesktop = `     <item id="useColLabelTextDesktop">${useColLabelTextDesktopValue}</item>\n`;
-
-  const useColLabelTextMobile = `     <item id="useColLabelTextMobile">${useColLabelTextMobileValue}</item>\n`;
-
-  const useColLabelEmojiDesktop = `     <item id="useColLabelEmojiDesktop">${useColLabelEmojiDesktopValue}</item>\n`;
-
-  const useColLabelEmojiMobile = `     <item id="useColLabelEmojiMobile">${useColLabelEmojiMobileValue}</item>\n`;
-
+  const colTextLabelsArray = `     <item id="colTextLabelsArray">${colTextLabelsArrayValue}</item>\n`;
   const emojiArrayType = `     <item id="emojiArrayType">${emojiArrayTypeValue}</item>\n`;
+  const useColLabelEmojiPresort = `     <item id="useColLabelEmojiPresort">${useColLabelEmojiPresortValue}</item>\n`;
+  const useColLabelNums = `     <item id="useColLabelNums">${useColLabelNumsValue}</item>\n`;
+  const useColLabelText = `     <item id="useColLabelText">${useColLabelTextValue}</item>\n`;
+  const useColLabelEmoji = `     <item id="useColLabelEmoji">${useColLabelEmojiValue}</item>\n`;
+  const useColLabelEmojiPostsort = `     <item id="useColLabelEmojiPostsort">${useColLabelEmojiPostsortValue}</item>\n`;
+  const useColLabelTextPostsort = `     <item id="useColLabelTextPostsort">${useColLabelTextPostsortValue}</item>\n`;
+  const useColLabelNumsPostsort = `     <item id="useColLabelNumsPostsort">${useColLabelNumsPostsortValue}</item>\n`;
+
+  let header2 = `\n     <!-- 2. COLUMN LABELS --> \n`;
 
   // Concat arrays into file
   data = data.concat(
@@ -171,14 +174,16 @@ const generateMapXml = () => {
     qSortPatternArrayText,
     columnHeadersColorsText,
     columnColorsText,
-    mobileHeadersText,
-    useColLabelNumsDesktop,
-    useColLabelNumsMobile,
-    useColLabelTextDesktop,
-    useColLabelTextMobile,
-    useColLabelEmojiDesktop,
-    useColLabelEmojiMobile,
-    emojiArrayType
+    header2,
+    colTextLabelsArray,
+    emojiArrayType,
+    useColLabelEmojiPresort,
+    useColLabelNums,
+    useColLabelText,
+    useColLabelEmoji,
+    useColLabelEmojiPostsort,
+    useColLabelTextPostsort,
+    useColLabelNumsPostsort
   );
 
   // end file
