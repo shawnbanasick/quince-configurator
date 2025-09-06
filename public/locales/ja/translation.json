@@ -26,7 +26,7 @@
   "Expert": "専門家",
   "configPara1": "config.jsonファイルには2つのセクションがあります。最初のセクションにはプロジェクト全体の構造の設定が含まれています。2番目のセクションには、参加者がQソートを完了する前および/または後に（オプションで）アンケートを生成する質問ジェネレータが含まれています。",
   "configPara1b": "<mark>強調表示された</mark>オプションは、プロジェクトに合わせてカスタマイズする必要があります",
-  "configPara2": "このバージョンのコンフィギュレータで作成された他のEQ Web Sortプロジェクトのconfig.xmlファイルがある場合は、下のオレンジ色の\"config.xmlファイルのデータを読み込む\"ボタンをクリックして編集用にそのデータを読み込むことができます。以前のプロジェクトからファイルを持っていない場合は、settingsフォルダからデフォルトのconfig.jsonファイルを読み込むか、すべてのデータを自分で入力して新しいファイルを作成することができます。",
+  "configPara2": "このバージョンのコンフィギュレータで作成された他のQuince Sortプロジェクトのconfig.xmlファイルがある場合は、下のオレンジ色の\"config.xmlファイルのデータを読み込む\"ボタンをクリックして編集用にそのデータを読み込むことができます。以前のプロジェクトからファイルを持っていない場合は、settingsフォルダからデフォルトのconfig.jsonファイルを読み込むか、すべてのデータを自分で入力して新しいファイルを作成することができます。",
   "configPara3": "データの追加が完了したら、ページの下部にあるオレンジ色のボタンをクリックして、情報を\"config.json\"としてsettingsフォルダに保存してください（デフォルトのファイルを置き換えます）。",
 
   "*** CONFIG TEXT ***": "*** CONFIG TEXT ***",
@@ -401,6 +401,9 @@
   "presortPreventNavModalText": "ナビゲーション防止モーダルテキスト",
   "presortFinishedModalHead": "事前分類完了モーダルタイトル",
   "presortFinishedModalText": "事前分類完了モーダルテキスト",
+  "press1": "キーボード入力メッセージ - ネガティブ",
+  "press2": "キーボード入力メッセージ - ニュートラル",
+  "press3": "キーボード入力メッセージ - ポジティブ",
 
   "*** LANGUAGE 7. Mobile Presort Screen ***": "***  言語ページ  ***",
   "mobilePresortScreen": "モバイルプリソート画面",
@@ -494,6 +497,7 @@
   "postsortHeader": "タイトルバーテキスト",
   "postsortInstructions": "指示",
   "placeholder": "コメントボックス入力プレースホルダー",
+  "postsortPlacedOn": "「置かれた場所」テキスト",
   "postsortAgreement": "同意テキスト",
   "postsortDisagreement": "同意しないテキスト",
   "postsortModalHead": "ヘルプモーダルタイトル",

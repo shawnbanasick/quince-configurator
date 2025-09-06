@@ -124,8 +124,7 @@ const createLangXmlSlice = (set) => ({
   moveAllTopMobileText: `Move all selected statements to the top of the list?`,
   mobileGuidanceModalRight1Header: `Stage 2 of 5<br/> Refinement Process`,
   mobileGuidanceModalRight1Text: `There are several steps in this Stage. <br/><br/>Step 1. Please look at all of the statements that you evaluated <b>positively</b> and select those that are <b>closest to your perspective</b>.<br/><br/>You may need to <b>scroll</b> down to see all of the statements.`,
-  // moveTopMobileText: `Move this statement to the top of the list?`,
-  // mobileModalButtonCancel: `Cancel`,
+  moveTopMobileText: `Move this statement to the top of the list?`,
 
   /*
    ******** 10. SORT  ****************** */
@@ -136,10 +135,6 @@ const createLangXmlSlice = (set) => ({
   condOfInst: `Sort the cards according to your experience with the iPads this semester`,
   sortOverloadedColumnModalHead: `Navigation Disabled`,
   sortOverloadedColumnModalText: `One of the columns has too many cards (it will be outlined in orange and have a dashed border). Please adjust the placement of the cards so that all columns have the correct number.`,
-  //   sortingCompleteModalHead: `Sorting Complete`,
-  //   sortingCompleteModalText: `You have completed the initial sorting. Please take a moment to confirm your placement of the cards.<br/><br/>When you are satisfied with their placement, please click on the <b>blue "Continue" button</b> at the bottom right-side of your screen to go to the next step.`,
-  //   sortPreventNavModalHead: `Navigation Disabled`,
-  //   sortPreventNavModalText: `Please finish the grid sorting before going to the next step.`,
 
   /*
    ******** 11. MOBILE SORT  ****************** */
@@ -160,7 +155,7 @@ const createLangXmlSlice = (set) => ({
   postsortHeader: `Post-Sort Comments`,
   postsortInstructions: `<h3>Please describe your thoughts about these statements in more detail.</h3>`,
   placeholder: `Click here to add comment`,
-  placedOn: `Placed on`,
+  postsortPlacedOn: `Placed on`,
   postsortAgreement: `Placed on Agree`,
   postsortDisagreement: `Placed on Disagree`,
   postsortBackButtonText: `Go Back`,

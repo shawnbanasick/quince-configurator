@@ -39,7 +39,7 @@ const showSectionDefaults = () => {
     /*
      ******* #4 WELCOME PAGE  ****************** */
     landingHead: `University Research Project`,
-    welcomeText: `<h2>EQ Web Sort Demo Project - iPad Use in the Classroom.</h2><br/><br/><p>Thank you for helping with this research project</p><br/><br/><br/>
+    welcomeText: `<h2>Quince Sort Demo Project - iPad Use in the Classroom.</h2><br/><br/><p>Thank you for helping with this research project</p><br/><br/><br/>
     <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
     landingHelpModalHead: `Welcome!`,
     landingHelpModalText: `Thank you for participating in this University Research Project. Please click the "<b>Continue</b>" button at the bottom right side of the screen to go to the next step.`,
@@ -166,6 +166,7 @@ const showSectionDefaults = () => {
     postsortHeader: `Post-Sort Comments`,
     postsortInstructions: `<h3>Please describe your thoughts about these statements in more detail.</h3>`,
     placeholder: `Click here to add comment`,
+    postsortPlacedOn: `Placed on`,
     postsortAgreement: `Placed on Agree`,
     postsortDisagreement: `Placed on Disagree`,
     postsortModalHead: `Step 4 of 5`,
@@ -203,7 +204,7 @@ const showSectionDefaults = () => {
     transferTextAbove: `<h1>Ready to Submit</h1><br/><br/> <h2>Please click the "Submit Data" button to transmit your results.</h2>`,
     transferTextBelow: `Please wait for the confirmation message that indicates your data have been sent to the server successfully.`,
     transferOkModalHeader: `Success - The data have been sent to the server.`,
-    transferOkModalText: `Thank you for using EQ Web Sort!<br/><br/>You can now close your browser tab.`,
+    transferOkModalText: `Thank you for using Quince Sort!<br/><br/>You can now close your browser tab.`,
     transferFailModalHeader: `Connection to server failed`,
     transferFailModalText: `Please try again in a few moments.`,
     goodbyeMessage: `<div>Thank You!</div> <br/><div>You can now close the browser tab</div>`,

@@ -5,10 +5,7 @@ import defObject_JA from "./textAreaDefaultObject_JA";
 import { useStore } from "../../GlobalState/useStore";
 
 const showSectionDefaults = (section) => {
-  console.log("test");
   let currentLang: string = localStorage.getItem("i18nextLng") || '""';
-
-  console.log(currentLang);
 
   let defObj;
   if (currentLang === "ja") {
@@ -243,6 +240,7 @@ const showSectionDefaults = (section) => {
       "postsortHeader",
       "postsortInstructions",
       "placeholder",
+      "postsortPlacedOn",
       "postsortAgreement",
       "postsortDisagreement",
       "postsortModalHead",

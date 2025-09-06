@@ -38,7 +38,7 @@ const showSectionDefaults_JA = () => {
     /*
      ******* #4 WELCOME PAGE  ****************** */
     landingHead: `大学研究プロジェクト`,
-    welcomeText: `<h2>EQ Web Sort デモプロジェクト - 教室でのiPad活用</h2><br/><br/><p>この研究プロジェクトにご協力いただきありがとうございます</p><br/><br/><br/>
+    welcomeText: `<h2>Quince Sortデモプロジェクト - 教室でのiPad活用</h2><br/><br/><p>この研究プロジェクトにご協力いただきありがとうございます</p><br/><br/><br/>
     <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
     landingHelpModalHead: `ようこそ！`,
     landingHelpModalText: `この大学研究プロジェクトにご参加いただき、ありがとうございます。画面右下の「<b>次へ</b>」ボタンをクリックして次のステップに進んでください。`,
@@ -47,7 +47,7 @@ const showSectionDefaults_JA = () => {
 
     /*
      ******* #5 MOBILE WELCOME PAGE  ****************** */
-    mobileWelcomeText: `<h2>Quinceデモプロジェクト - 教室でのiPad活用</h2><br/><br/><p>本研究プロジェクトへのご協力に感謝いたします！</p><br/><br/><br/> <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
+    mobileWelcomeText: `<h2>Quince Sortデモプロジェクト - 教室でのiPad活用</h2><br/><br/><p>本研究プロジェクトへのご協力に感謝いたします！</p><br/><br/><br/> <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
 
     /*
      ******** #6 PRESORT ****************** */
@@ -144,14 +144,12 @@ const showSectionDefaults_JA = () => {
      ******** #10 SORT  ****************** */
     sortHelpModalHead: `ステップ 3/5`,
     sortHelpModalText: `このステップでは、ご自身の視点とページ上部の研究者の指示に基づいて、ステートメントカードを適切な列にドラッグアンドドロップしてください。<br/><br/><center><iframe width="560" height=「315」 src="https://www.youtube.com/embed/iRxC9Vv3dLo?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
-
     sortAgreement: `同意`,
     sortDisagreement: `不同意`,
     condOfInst: `この学期にiPadを使用した経験に基づいてカードを並べ替えてください`,
     sortingCompleteModalHead: `並べ替え完了`,
     sortingCompleteModalText: `初期の並べ替えが完了しました。カードの配置を確認してください。<br/><br/>配置に満足したら、画面右下の<b>青い「次へ」ボタン</b>をクリックして次のステップに進んでください。`,
     sortPreventNavModalHead: `ナビゲーション無効`,
-
     sortPreventNavModalText: `次のステップに進む前にグリッドの並べ替えを完了してください。`,
     sortOverloadedColumnModalHead: `ナビゲーションが無効です`,
     sortOverloadedColumnModalText: `列の1つにカードが多すぎます（オレンジ色で囲まれ、破線枠で表示されます）。すべての列が正しい枚数になるようにカードの配置を調整してください。`,
@@ -160,7 +158,6 @@ const showSectionDefaults_JA = () => {
      ******** #11 MOBILE SORT  ****************** */
     mobileSortSwapModalHead: `ステートメントのランキングを交換しますか？`,
     mobileSortSwapModalText: `「確認」をクリックして交換してください。`,
-
     mobileSortSwapModalConfirmButton: `入れ替え`,
     mobileSortConditionsOfInstruction: `クラスでのiPadの使用経験に基づいて文をランク付けしてください`,
     mobileSortHelpModalHead: `5段階中3段階目<br/> 最終的な文のランク付け`,
@@ -170,11 +167,11 @@ const showSectionDefaults_JA = () => {
     mobileSortSwapModalSuccessMessage: "ステートメントの位置の入れ替えは正常に完了しました。",
 
     /*
-     ******** POSTSORT  ****************** */
-
+     ******** #12 POSTSORT  ****************** */
     postsortHeader: `ポストソート コメント`,
     postsortInstructions: `<h3>これらの文について、より詳細なご意見を記入してください。</h3>`,
     placeholder: `コメントを追加するにはここをクリック`,
+    postsortPlacedOn: `置かれた場所: `,
     postsortAgreement: `同意に配置`,
     postsortDisagreement: `反対に配置`,
     postsortModalHead: `ステップ 4/5`,
@@ -184,7 +181,7 @@ const showSectionDefaults_JA = () => {
     postsortBackButtonText: `戻る`,
 
     /*
-     ******** モバイル投稿ソート  ****************** */
+     ******** #13 MOBILE POSTSORT  ****************** */
     mobilePostsortPreventNavModalHead: `ナビゲーションを無効にしました`,
     mobilePostsortPreventNavModalText: `次のステップに進む前に、すべてのコメントにコメントを追加してください`,
     mobilePostsortSortbarText: `投稿後のコメント`,
@@ -193,7 +190,7 @@ const showSectionDefaults_JA = () => {
     mobilePostsortHelpModalText: `これらの投稿のランキングについてコメントしてください。`,
 
     /*
-     ******** アンケート  ****************** */
+     ******** #14 SURVEY  ****************** */
     surveyHeader: `投稿後のアンケート`,
     surveyModalHead: `ステップ 5/5`,
     surveyModalText: `最後に、ご自身の背景に関する以下の質問にお答えください。タイトルに「*」が付いた質問は必須です。<br/><br/><center><iframe width="560" height=「315」 src="https://www.youtube.com/embed/68MHzgLn1zg?rel=0" title="YouTube動画プレイヤー" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
@@ -213,7 +210,7 @@ const showSectionDefaults_JA = () => {
     transferTextAbove: `<h1>送信準備完了</h1><br/><br/> <h2>「データを送信」ボタンをクリックして結果を送信してください。</h2>`,
     transferTextBelow: `送信確認メッセージが表示されない場合は、<br/>数分待ってから送信ボタンを再度クリックしてください。`,
     transferOkModalHeader: `成功 - データがサーバーに送信されました。`,
-    transferOkModalText: `EQ Web Sortをご利用いただきありがとうございました。<br/><br/>ブラウザのタブを閉じても構いません。`,
+    transferOkModalText: `Quince Sortをご利用いただきありがとうございました。<br/><br/>ブラウザのタブを閉じても構いません。`,
 
     transferFailModalHeader: `サーバーへの接続に失敗しました`,
     transferFailModalText: `しばらくしてからもう一度お試しください。`,

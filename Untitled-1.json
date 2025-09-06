@@ -47,7 +47,7 @@
           "type": "element",
           "name": "item",
           "attributes": { "id": "emailSubject" },
-          "children": [{ "type": "text", "text": "EQ Web Sort Results" }]
+          "children": [{ "type": "text", "text": "Quince Sort Results" }]
         },
         { "type": "text", "text": "  \n   \n   " },
         {
@@ -499,9 +499,7 @@
               "type": "element",
               "name": "note",
               "attributes": {},
-              "children": [
-                { "type": "text", "text": "Based on your current course load" }
-              ]
+              "children": [{ "type": "text", "text": "Based on your current course load" }]
             },
             { "type": "text", "text": "\n   " }
           ]
@@ -529,9 +527,7 @@
               "type": "element",
               "name": "label",
               "attributes": {},
-              "children": [
-                { "type": "text", "text": "4. What is your program focus?" }
-              ]
+              "children": [{ "type": "text", "text": "4. What is your program focus?" }]
             },
             { "type": "text", "text": "\n        " },
             {
@@ -760,9 +756,7 @@
               "type": "element",
               "name": "note",
               "attributes": {},
-              "children": [
-                { "type": "text", "text": "Please answer all of the ratings" }
-              ]
+              "children": [{ "type": "text", "text": "Please answer all of the ratings" }]
             },
             { "type": "text", "text": "\n   " }
           ]
@@ -806,9 +800,7 @@
               "type": "element",
               "name": "note",
               "attributes": {},
-              "children": [
-                { "type": "text", "text": "Please answer all of the ratings" }
-              ]
+              "children": [{ "type": "text", "text": "Please answer all of the ratings" }]
             },
             { "type": "text", "text": "\n   " }
           ]
@@ -852,9 +844,7 @@
               "type": "element",
               "name": "note",
               "attributes": {},
-              "children": [
-                { "type": "text", "text": "Please answer all of the ratings" }
-              ]
+              "children": [{ "type": "text", "text": "Please answer all of the ratings" }]
             },
             { "type": "text", "text": "\n   " }
           ]

@@ -314,11 +314,11 @@ const MobileRefineEvaluationsTextInput = () => {
           disabled={false}
         />
         <UserTextAreaInput
-          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
+          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 h-[130px] py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label={`9-9. ${t("mobileGuidanceModalRight1Text")}`}
           name="mobileGuidanceModalRight1Text"
-          height={150}
+          height={250}
           value={mobileGuidanceModalRight1Text}
           onChange={handleTextChange}
           highlight={false}

@@ -26,7 +26,7 @@
 
     <!-- LANDING SCREEN -->
     <item id="landingHead">グローバル・スタディーズ学科</item>
-    <item id="welcomeText">{{{h2}}}EQ Web Sort デモプロジェクト - 教室でのiPadの使用{{{/h2}}}{{{br/}}}{{{br/}}}{{{p}}}この研究プロジェクトにご協力いただきありがとうございます{{{/p}}}{{{br/}}}{{{br/}}}{{{br/}}} {{{center}}}{{{iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/lMy4ARVEcCI?rel=0&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen}}}{{{/iframe}}}{{{/center}}}</item>
+    <item id="welcomeText">{{{h2}}}Quince Sort デモプロジェクト - 教室でのiPadの使用{{{/h2}}}{{{br/}}}{{{br/}}}{{{p}}}この研究プロジェクトにご協力いただきありがとうございます{{{/p}}}{{{br/}}}{{{br/}}}{{{br/}}} {{{center}}}{{{iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/lMy4ARVEcCI?rel=0&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen}}}{{{/iframe}}}{{{/center}}}</item>
     
     <!-- MOBILE LANDING SCREEN -->
     <item id="mobileWelcomeText">新設されたグローバル・スタディーズ学科の初年度に関する学生の意見を収集するための調査にご協力いただき、ありがとうございます。この調査は、学科のプログラムやサポート体制を改善し、今後の学生体験をより良いものにすることを目的としています。率直なご意見や感想をお聞かせいただけると幸いです。回答は匿名で扱われ、調査結果は統計的な目的でのみ使用されます。

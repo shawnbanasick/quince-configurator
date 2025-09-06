@@ -400,6 +400,9 @@
   "presortPreventNavModalText": "Prevent Navigation Modal Text",
   "presortFinishedModalHead": "Pre-sort Complete Modal Title",
   "presortFinishedModalText": "Pre-sort Complete Modal Text",
+  "press1": "Keyboard Input Message - Negative",
+  "press2": "Keyboard Input Message - Neutral",
+  "press3": "Keyboard Input Message - Positive",
 
   "*** LANGUAGE 7. Mobile Presort Screen ***": "***  LANGUAGE PAGE  ***",
   "mobilePresortScreen": "Mobile Pre-sort Screen",
@@ -481,7 +484,6 @@
   "mobileSortSwapModalHead": "Position Swap Modal Title",
   "mobileSortSwapModalText": "Position Swap Modal Text",
   "mobileSortSwapModalConfirmButton": "Swap Modal Confirm Button",
-
   "mobileSortConditionsOfInstruction": "Conditions of Instruction",
   "mobileSortHelpModalHead": "Help Modal Title",
   "mobileSortHelpModalText": "Help Modal Text",
@@ -496,7 +498,7 @@
   "postsortHeader": "Title Bar Text",
   "postsortInstructions": "Instructions",
   "placeholder": "Comment Box Input Placeholders",
-  "postsortPlacedOn": "'Placed on...'",
+  "postsortPlacedOn": "'Placed on' Text",
   "postsortAgreement": "Agreement Text",
   "postsortDisagreement": "Disagreement Text",
   "postsortPreventNavModalHead": "Prevent Navigation Modal Title",

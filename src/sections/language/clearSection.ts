@@ -227,6 +227,7 @@ const showSectionDefaults = (section) => {
       "postsortHeader",
       "postsortInstructions",
       "placeholder",
+      "postsortPlacedOn",
       "postsortAgreement",
       "postsortDisagreement",
       "postsortModalHead",

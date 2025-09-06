@@ -4,7 +4,7 @@ import { useStore } from "../../globalState/useStore.js";
 const generateLanguageXml = () => {
   let data = `<?xml version="1.0" encoding="UTF-8"?>
 
-   <language version="Quince ${useStore.getState().version}" htmlParse="true">\n;
+   <language version="Quince ${useStore.getState().version}" htmlParse="true">;
 
         <!-- 0. FILE INFORMATION -->
         <item order="0-1" id="languageFileVersion">1.0.0</item>
@@ -365,7 +365,7 @@ const generateLanguageXml = () => {
          useStore.getState().postsortInstructions
        )}</item>
         <item order="12-5" id="placeholder">${encodeHTML(useStore.getState().placeholder)}</item>
-        <item order="12-6" id="placedOn">${encodeHTML(useStore.getState().placedOn)}</item>
+        <item order="12-6" id="placedOn">${encodeHTML(useStore.getState().postsortPlacedOn)}</item>
         <item order="12-7" id="postsortAgreement">${encodeHTML(
           useStore.getState().postsortAgreement
         )}</item>
@@ -491,10 +491,10 @@ const generateLanguageXml = () => {
 
         <!-- 19. LINKING -->
         <item order="19-" id="linkedProjectMessage">${encodeHTML(
-          useStore.getState().linkedProjectMessage
+          useStore.getState().linkingFallbackMessage
         )}</item>   
          <item order="19-" id="linkedProjectBtnMessage">${encodeHTML(
-           useStore.getState().linkedProjectBtnMessage
+           useStore.getState().linkingBtnText
          )}</item>   
 
         <!-- 20. LOCAL DATA COLLECTION -->  
