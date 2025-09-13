@@ -38,7 +38,7 @@ const showSectionDefaults_JA = () => {
     /*
      ******* #4 WELCOME PAGE  ****************** */
     landingHead: `大学研究プロジェクト`,
-    welcomeText: `<h2>Quince Sortデモプロジェクト - 教室でのiPad活用</h2><br/><br/><p>この研究プロジェクトにご協力いただきありがとうございます</p><br/><br/><br/>
+    welcomeText: `<h2>Quinceデモプロジェクト - 教室でのiPad活用</h2><br/><br/><p>この研究プロジェクトにご協力いただきありがとうございます</p><br/><br/><br/>
     <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
     landingHelpModalHead: `ようこそ！`,
     landingHelpModalText: `この大学研究プロジェクトにご参加いただき、ありがとうございます。画面右下の「<b>次へ</b>」ボタンをクリックして次のステップに進んでください。`,
@@ -47,7 +47,7 @@ const showSectionDefaults_JA = () => {
 
     /*
      ******* #5 MOBILE WELCOME PAGE  ****************** */
-    mobileWelcomeText: `<h2>Quince Sortデモプロジェクト - 教室でのiPad活用</h2><br/><br/><p>本研究プロジェクトへのご協力に感謝いたします！</p><br/><br/><br/> <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
+    mobileWelcomeText: `<h2>Quinceデモプロジェクト - 教室でのiPad活用</h2><br/><br/><p>本研究プロジェクトへのご協力に感謝いたします！</p><br/><br/><br/> <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
 
     /*
      ******** #6 PRESORT ****************** */
@@ -210,7 +210,7 @@ const showSectionDefaults_JA = () => {
     transferTextAbove: `<h1>送信準備完了</h1><br/><br/> <h2>「データを送信」ボタンをクリックして結果を送信してください。</h2>`,
     transferTextBelow: `送信確認メッセージが表示されない場合は、<br/>数分待ってから送信ボタンを再度クリックしてください。`,
     transferOkModalHeader: `成功 - データがサーバーに送信されました。`,
-    transferOkModalText: `Quince Sortをご利用いただきありがとうございました。<br/><br/>ブラウザのタブを閉じても構いません。`,
+    transferOkModalText: `Quinceをご利用いただきありがとうございました。<br/><br/>ブラウザのタブを閉じても構いません。`,
 
     transferFailModalHeader: `サーバーへの接続に失敗しました`,
     transferFailModalText: `しばらくしてからもう一度お試しください。`,

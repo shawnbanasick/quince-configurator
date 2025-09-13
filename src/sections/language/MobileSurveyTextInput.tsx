@@ -49,7 +49,7 @@ const MobileSurveyTextInput: React.FC = () => {
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="mobileSurveyDef"
-            className="bg-slate-300 p-2 rounded-md w-[170px]  h-[50px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[200px]  h-[50px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
             {t("useDefaults")}
@@ -57,7 +57,7 @@ const MobileSurveyTextInput: React.FC = () => {
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="mobileSurveyClear"
-            className="bg-slate-300 p-2 rounded-md w-[170px]  h-[50px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[200px]  h-[50px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleClearAll}
           >
             {t("clearSection")}

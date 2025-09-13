@@ -1,6 +1,8 @@
 import { useStore } from "../globalState/useStore.js";
 
 const setLanguageDefaults = (language) => {
+  console.log(language);
+
   if (!language) {
     console.error("Language is not defined");
     return;

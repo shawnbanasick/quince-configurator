@@ -344,8 +344,8 @@ const generateLanguageXml = () => {
         <item order="11-6" id="mobileSortSwapModalHead">${encodeHTML(
           useStore.getState().mobileSortSwapModalHead
         )}</item>
-        <item order="11-7" id="mobileSortSwapModalText">${encodeHTML(
-          useStore.getState().mobileSortSwapModalText
+        <item order="11-7" id="mobileSortSwapModalConfirmButton">${encodeHTML(
+          useStore.getState().mobileSortSwapModalConfirmButton
         )}</item>
         <item order="11-8" id="mobileSortSwapModalSuccessMessage">${encodeHTML(
           useStore.getState().mobileSortSwapModalSuccessMessage

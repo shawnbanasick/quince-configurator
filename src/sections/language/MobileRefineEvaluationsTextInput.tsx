@@ -132,7 +132,7 @@ const MobileRefineEvaluationsTextInput = () => {
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="mobileRefineDef"
-            className="bg-slate-300 p-2 rounded-md h-[50px] w-[170px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md h-[50px] w-[190px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
             {t("useDefaults")}
@@ -140,7 +140,7 @@ const MobileRefineEvaluationsTextInput = () => {
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="mobileRefineClear"
-            className="bg-slate-300 p-2 rounded-md h-[50px] w-[170px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md h-[50px] w-[210px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleClearAll}
           >
             {t("clearSection")}

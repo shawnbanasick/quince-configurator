@@ -1,8 +1,10 @@
 // import Image from "../../assets/images/qq-brand-image.png";
 // import ConfiguratorIcon from "../../assets/images/ConfiguratorIcon.svg?react";
 import HeroImage from "../../assets/images/HeroImage.svg?react";
-import EditFilesIcon from "../../assets/images/EditFilesViz.svg?react";
+// import EditFilesIcon from "../../assets/images/EditFilesViz.svg?react";
 import DropZoneViz from "../../assets/images/DropFilesViz.svg?react";
+import newSetupFilesViz from "../../assets/images/newSetupFilesViz.png";
+import editFilesViz from "../../assets/images/EditFilesViz.png";
 
 const Start = () => {
   return (
@@ -12,16 +14,15 @@ const Start = () => {
       {/* <ConfiguratorIcon /> */}
       <HeroImage className="w-[70vw]" />
 
-      {/* HOW IS IT? */}
+      {/* WHAT IS IT? */}
       <div className="mt-8 w-9/12 align-self-center font-semibold text-3xl">What is this?</div>
       <div className="mt-2 w-9/12 align-self-center text-base">
-        Quince is software for online Q sorting and (optional) questionnaires. It is the combination
-        of two projects - EQ Web Sort and Poet-Q. It consists of a package of tools that allow
-        researchers to easily configure, deploy, and manage Q sorting projects. For desktop
-        computers it provides participants with a clean, intuitive drag-and-drop interface that
-        simulates the feel of paper-based card sorting. On mobile phones, the software adapts to a
-        touch-based interface, making online Q sorting an accessible experience for all
-        participants.
+        Quince is software for digital Q sorting. It is the combination of two projects - EQ Web
+        Sort and Poet-Q. It consists of a package of tools that allow researchers to easily
+        configure, deploy, and manage Q sorting projects. For desktop computers it provides
+        participants with a clean, intuitive drag-and-drop interface that simulates the feel of
+        paper-based card sorting. On mobile phones, the software adapts to a touch-based interface,
+        making online Q sorting an accessible experience for all participants.
       </div>
       <div className="mt-5 w-9/12 align-self-center text-base">
         The software and required online services are free to use. The only cost is the time you
@@ -76,7 +77,18 @@ const Start = () => {
       <div className="mt-8 w-7/12 align-self-center text-2xl -indent-6 pl-6">
         2. Customize the Quince settings files according to your project's needs. (Tabs 2-5)
       </div>
-      <EditFilesIcon className="mt-8" />
+      <img
+        src={newSetupFilesViz}
+        className="w-auto max-w-[800px]  max-h-[500px] mt-8"
+        alt={"edit new files visualization"}
+        loading="lazy"
+      />
+      <img
+        src={editFilesViz}
+        className="w-auto max-w-[800px]  max-h-[500px] mt-8"
+        alt={"edit files visualization"}
+        loading="lazy"
+      />
       <div className="mt-8 w-7/12 align-self-center text-2xl -indent-6 pl-6">
         3. Sign-up for the webhost service and upload the Quince template folder. (Tab 6)
       </div>

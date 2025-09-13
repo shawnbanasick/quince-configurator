@@ -41,10 +41,10 @@ const LanguageHeader: React.FC = () => {
     description: string;
   }> = ({ children, description }) => (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-all duration-300">
-      <div className="flex flex-col items-center text-center space-y-4">
-        <div>
+      <div className="flex flex-col w-[100%] items-center text-center space-y-4">
+        <div className="w-[80%]">
           <p className="text-sm text-gray-600 mb-4">{description}</p>
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">{children}</h3>
+          <div className="text-lg font-semibold text-gray-900 mb-2">{children}</div>
         </div>
       </div>
     </div>

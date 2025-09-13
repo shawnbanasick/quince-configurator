@@ -107,7 +107,7 @@ const MobilePresortTextInput = () => {
           {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="mobilePresortDef"
-            className="bg-slate-300 p-2 rounded-md w-[180px] h-[50px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
             {t("useDefaults")}
@@ -115,7 +115,7 @@ const MobilePresortTextInput = () => {
           {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="mobilePresortClear"
-            className="bg-slate-300 p-2 rounded-md w-[180px] h-[50px] hover:bg-slate-400 hover:font-semibold"
+            className="bg-slate-300 p-2 rounded-md w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleClearAll}
           >
             {t("clearSection")}

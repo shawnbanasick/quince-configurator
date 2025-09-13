@@ -154,7 +154,7 @@ const LanguageIntroText = () => {
         <br />
         <b>{`CodePen Examples: `}</b>
         {/* <ListContainer> */}
-        <div className="mt-[5px] mb-2">
+        <div className="mt-[5px] mb-2 pl-10">
           <li>
             <a
               href="https://codepen.io/shawnbanasick/pen/gOxOQrr"

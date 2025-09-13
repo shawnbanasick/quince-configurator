@@ -57,10 +57,12 @@ export const MainPage = () => {
 
   if (currentLanguage === "ja") {
     setLanguageSection_JA(currentLanguage);
+    setLanguageDefaults("ja");
   }
 
   if (currentLanguage === "en") {
     setLanguageSection_EN(currentLanguage);
+    setLanguageDefaults("en");
   }
 
   console.log("language: ", navigator.language);
@@ -101,7 +103,7 @@ export const MainPage = () => {
                         onClick={() => onChangeLanguage(lng)}
                         key={uuidv4()}
                         className={clsx(
-                          "bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md w-[80px] ",
+                          "bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md w-[100px] ",
                           {
                             "bg-opacity-100": lng === currentLanguage,
                             "bg-opacity-50": lng !== currentLanguage,

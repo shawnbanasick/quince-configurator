@@ -25,7 +25,7 @@ const InputDiv = (props) => {
 
   return (
     <div
-      className={`flex flex-col justify-center items-center h-[100px] w-auto bg-gray-300 p-1 rounded-md`}
+      className={`flex flex-col justify-center items-center h-[120px] w-auto bg-gray-300 p-1 rounded-md`}
     >
       <label
         className="flex justify-center w-[40px] h-[20px] text-center, mb-1 "
