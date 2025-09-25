@@ -10,23 +10,23 @@ const generateConfigXml = () => {
   // const setupTarget = useStore.getState().setupTarget;
   const imageFormat = useStore.getState().imageFormat;
   const emailAddress = useStore.getState().emailAddress;
-  const emailSubjectLine = useStore.getState().emailSubjectLine;
+  // const emailSubjectLine = useStore.getState().emailSubjectLine;
   const linkToSecondProject = useStore.getState().linkToSecondProject;
   const secondProjectUrl = useStore.getState().secondProjectUrl;
-  const useImages = useStore.getState().useImages;
-  const numImages = useStore.getState().numImages;
-  const imageFileType = useStore.getState().imageFileType;
+  // const useImages = useStore.getState().useImages;
+  // const numImages = useStore.getState().numImages;
+  // const imageFileType = useStore.getState().imageFileType;
   const shuffleCards = useStore.getState().shuffleCards;
   const headerBarColor = useStore.getState().headerBarColor;
   const showConsentPage = useStore.getState().showConsentPage;
   const showConsentPageHelpModal = useStore.getState().showConsentPageHelpModal;
   const accessCode = useStore.getState().accessCode;
-  const greenCardColor = useStore.getState().greenCardColor;
-  const yellowCardColor = useStore.getState().yellowCardColor;
-  const pinkCardColor = useStore.getState().pinkCardColor;
+  // const greenCardColor = useStore.getState().greenCardColor;
+  // const yellowCardColor = useStore.getState().yellowCardColor;
+  // const pinkCardColor = useStore.getState().pinkCardColor;
   const defaultFontColor = useStore.getState().defaultFontColor;
   const condOfInstFontSize = useStore.getState().condOfInstFontSize;
-  const allowUnforcedSorts = useStore.getState().allowUnforcedSorts;
+  // const allowUnforcedSorts = useStore.getState().allowUnforcedSorts;
   const warnOverloadedColumn = useStore.getState().warnOverloadedColumn;
   const minCardHeightSort = useStore.getState().minCardHeightSort;
   const defaultFontSizeSort = useStore.getState().defaultFontSizeSort;
@@ -43,10 +43,7 @@ const generateConfigXml = () => {
   const baserowToken = useStore.getState().baserowToken;
   const baserowDatabaseIdNumber = useStore.getState().baserowDatabaseIdNumber;
   //   const defaultFontSize = useStore.getState().defaultFontSize;
-  //   const displayNeutralObjects = useStore.getState().displayNeutralObjects;
-  // const presortTrace = useStore.getState().presortTrace;
   //   const presortMinCardHeight = useStore.getState().presortMinCardHeight;
-  // const thinGuidanceModalMaxIterations = useStore.getState().thinGuidanceModalMaxIterations;
 
   //   let defaultLogo = appState.configLogoHtml;
   //   defaultLogo = defaultLogo.replace(/\s/g, "");
@@ -63,6 +60,28 @@ const generateConfigXml = () => {
   // SAVE FOR LATER RESTORATION
   //  <item id="allowUnforcedSorts">${allowUnforcedSorts}</item>
   //  <item id="warnOverloadedColumn">${warnOverloadedColumn}</item>
+
+  //  <item order="8-b" id="greenCardColor">${greenCardColor}</item>
+  //  <item order="8-c" id="yellowCardColor">${yellowCardColor}</item>
+  //  <item order="8-d" id="pinkCardColor">${pinkCardColor}</item>
+
+  //  <item id="useImages">${useImages}</item>
+  //  <item id="numImages">${numImages}</item>
+  //  <item id="imageFileType">${imageFileType}</item>
+  //  <item id="imageFormat">${imageFormat}</item>
+
+  let getCurrentTimestamp = () => {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.getMonth() + 1; // getMonth() returns 0-11
+    const day = now.getDate();
+    const hours = now.getHours();
+    const minutes = now.getMinutes().toString().padStart(2, "0");
+
+    return `${year}-${month}-${day}@${hours}:${minutes}`;
+  };
+
+  const creationDate = getCurrentTimestamp();
 
   // STUDY TITLE
   if (studyTitle === null || studyTitle === undefined) {
@@ -82,75 +101,85 @@ const generateConfigXml = () => {
    <config version="${version}" htmlParse="false">\n`;
 
   const data2 = `
-   <!-- HIDDEN OPTIONS -->
+   <!-- HIDDEN OPTIONS - DO NOT DELETE OR CHANGE -->
    <item id="devMode">false</item> 
    <item id="traceSorts">true</item> 
    <item id="thinGuidanceModalMaxIterations">2</item>
+   <item id="setDefaultFontSize">true</item>
+   <item id="setDefaultFontSizePresort">true</item>
+   <item id="setDefaultFontSizeSort">true</item>
+   <item id="setDefaultFontSizePostsort">true</item>
+   <item id="setMinCardHeightPostsort">true</item>
+   <item id="useThinProcess">true</item> 
+   <item id="useMobileMode">true</item> 
+   <item id="emailSubjectLine">Quince Sort Results</item>  
+   <item id="setupTarget">baserow</item>
+   <item id="greenCardColor">#E1E1E1</item>
+   <item id="yellowCardColor">#E1E1E1</item>
+   <item id="pinkCardColor">#E1E1E1</item>
+   <item id="sortDirection">positive</item> 
 
    <!-- 0. FILE INFORMATION -->
-   <item order="0-1" id="configFileVersion">1.0.0</item>
-   <item order="0-2" id="iterationDate">2025-08-31</item>
+   <item order="0-a" id="configFileVersion">1.0.0</item>
+   <item order="0-b" id="iterationDate">2025-08-31</item>
 
    <!-- 1. STUDY TITLE -->
-   <item id="studyTitle">${studyTitle}</item> 
+   <item order="1-a" id="studyTitle">${studyTitle}</item> 
+   <item order="1--" id="creationDate">${creationDate}</item> 
+
 
    <!-- 2. DATABASE SETUP -->
    <!-- "setupTarget" options: baserow or local -->
-   <item id="setupTarget">baserow</item>
-   <item id="baserowToken">${baserowToken}</item>
-   <item id="baserowDatabaseIdNumber">${baserowDatabaseIdNumber}</item>
-   <item id="emailAddress">${emailAddress}</item>
-   <item id="emailSubjectLine">${emailSubjectLine}</item>
+   <item order="2-a" id="baserowToken">${baserowToken}</item>
+   <item order="2-b" id="baserowDatabaseIdNumber">${baserowDatabaseIdNumber}</item>
+   <item order="2-c" id="emailAddress">${emailAddress}</item>
 
    <!-- 3. SECOND PROJECT LINKING -->
-   <item id="linkToSecondProject">${linkToSecondProject}</item> 
-   <item id="secondProjectUrl">${secondProjectUrl}</item> 
+   <item order="3-a" id="linkToSecondProject">${linkToSecondProject}</item> 
+   <item order="3-b" id="secondProjectUrl">${secondProjectUrl}</item> 
 
    <!-- 4. STATEMENT OR IMAGE SORT  (imageFormat: 169 or 43)-->
-   <item id="useImages">${useImages}</item>
-   <item id="numImages">${numImages}</item>
-   <item id="imageFileType">${imageFileType}</item>
-   <item id="imageFormat">${imageFormat}</item>
+   <item order="4-a" id="useImages">false</item>
+   <item order="4-b" id="numImages">30</item>
+   <item order="4-c" id="imageFileType">jpg</item>
+   <item order="4-d" id="imageFormat">postSortImageModal169</item>
 
    <!-- 5. CONSENT PAGE OPTIONS -->
-   <item id="showConsentPage">${showConsentPage}</item>
-   <item id="showConsentPageHelpModal">${showConsentPageHelpModal}</item>
+   <item order="5-a" id="showConsentPage">${showConsentPage}</item>
+   <item order="5-b" id="showConsentPageHelpModal">${showConsentPageHelpModal}</item>
    
    <!-- 6. PROJECT ACCESS OPTIONS -->
    <!-- options: anonymous, partId-access, partId, access -->
-   <item id="initialScreen">${initialScreen}</item>
-   <item id="accessCode">${accessCode}</item>
+   <item order="6-a" id="initialScreen">${initialScreen}</item>
+   <item order="6-b" id="accessCode">${accessCode}</item>
    
    <!-- 7. COLOR SETTINGS  -->
    <!-- defaults = #2a2a2a (font), #ccffcc (right), #e0e0e0 (center), #ffe0f0 (left) -->
-   <item id="headerBarColor">${headerBarColor}</item>
-   <item id="defaultFontColor">${defaultFontColor}</item>
+   <item order="7-a" id="headerBarColor">${headerBarColor}</item>
+   <item order="7-b" id="defaultFontColor">${defaultFontColor}</item>
    
    <!-- 8. PRESORT OPTIONS -->
-   <item id="shuffleCards">${shuffleCards}</item>
-   <item id="greenCardColor">${greenCardColor}</item>
-   <item id="yellowCardColor">${yellowCardColor}</item>
-   <item id="pinkCardColor">${pinkCardColor}</item>
-   <item id="defaultFontSizePresort">${defaultFontSizePresort}</item>
+   <item order="8-a" id="shuffleCards">${shuffleCards}</item>
+   <item order="8-b" id="defaultFontSizePresort">${defaultFontSizePresort}</item>
 
    <!-- 9. SORT OPTIONS -->
-   <item id="condOfInstFontSize">${condOfInstFontSize}</item>
-   <item id="allowUnforcedSorts">false</item>
-   <item id="warnOverloadedColumn">${warnOverloadedColumn}</item>
-   <item id="minCardHeightSort">${minCardHeightSort}</item>
-   <item id="defaultFontSizeSort">${defaultFontSizeSort}</item>
+   <item order="9-a" id="condOfInstFontSize">${condOfInstFontSize}</item>
+   <item order="9-b" id="allowUnforcedSorts">false</item>
+   <item order="9-c" id="warnOverloadedColumn">${warnOverloadedColumn}</item>
+   <item order="9-d" id="defaultFontSizeSort">${defaultFontSizeSort}</item>
+   <item order="9-e" id="minCardHeightSort">${minCardHeightSort}</item>
 
-   <!-- POSTSORT OPTIONS -->
-   <item id="showPostsort">${showPostsort}</item>
-   <item id="showSecondPosColumn">${showSecondPosColumn}</item>
-   <item id="showSecondNegColumn">${showSecondNegColumn}</item>
-   <item id="showBackButton">${showBackButton}</item>
-   <item id="postsortCommentsRequired">${postsortCommentsRequired}</item>
-   <item id="defaultFontSizePostsort">${defaultFontSizePostsort}</item>
-   <item id="minCardHeightPostsort">${minCardHeightPostsort}</item>
+   <!-- 10. POSTSORT OPTIONS -->
+   <item order="10-a" id="showPostsort">${showPostsort}</item>
+   <item order="10-b" id="showSecondPosColumn">${showSecondPosColumn}</item>
+   <item order="10-c" id="showSecondNegColumn">${showSecondNegColumn}</item>
+   <item order="10-d" id="showBackButton">${showBackButton}</item>
+   <item order="10-e" id="postsortCommentsRequired">${postsortCommentsRequired}</item>
+   <item order="10-f" id="defaultFontSizePostsort">${defaultFontSizePostsort}</item>
+   <item order="10-g" id="minCardHeightPostsort">${minCardHeightPostsort}</item>
 
-   <!-- SURVEY - Survey Questions -->
-   <item id="showSurvey">${showSurvey}</item>\n\n`;
+   <!-- 11. SURVEY - Survey Questions -->
+   <item order="11-a" id="showSurvey">${showSurvey}</item>\n\n`;
 
   let data = data1.concat(data2);
 
@@ -209,7 +238,8 @@ const generateConfigXml = () => {
       const input = `        <input type="textarea" required="${itemObject.required}"></input>\n`;
       label = `        <label>${encodeHTML(itemObject.label)}</label>\n`;
       const note = `        <note>${encodeHTML(itemObject.note)}</note>\n`;
-      item = accumulatorString.concat(open, input, label, note, close);
+      const placeholder = `        <placeholder>input comment here</placeholder>\n`;
+      item = accumulatorString.concat(open, input, label, note, placeholder, close);
     }
 
     // for RADIO items

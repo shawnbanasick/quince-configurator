@@ -372,7 +372,7 @@ const Config10PostsortOptions: React.FC = () => {
           <UserNumInput
             classNameNum={`mt-2 block min-w-[80px] px-3 py-2 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 outline outline-1 outline-zinc-600 ml-4`}
             classNameLabel={`flex flex-row content-center min-w-[170px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-            highlight={true}
+            highlight={false}
             label={`10f. ${t("defaultFontSizePostsort")}:`}
             placeholder=""
             upperLimit={199}

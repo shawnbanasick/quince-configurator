@@ -55,7 +55,7 @@ const getSetSurveyQuestionOptions = (state) => state.setSurveyQuestionOptions;
 // const getSetSurveyQuestionPlaceholder = (state) => state.setSurveyQuestionPlaceholder;
 
 const SurveyQuestionInput: React.FC = () => {
-  const showSurvey = useStore(getShowSurvey);
+  // const showSurvey = useStore(getShowSurvey);
   const detailsArray = useStore(getDetailsArray);
   const surveyQuestionType = useStore(getSurveyQuestionType);
   const { t } = useTranslation();
@@ -88,21 +88,21 @@ const SurveyQuestionInput: React.FC = () => {
 
   const handleSurveyQuestionLabelChange = (inputValue: any) => {
     setSurveyQuestionLabel(inputValue.target.value);
-    console.log(inputValue.target.value);
+    // console.log(inputValue.target.value);
   };
 
   const handleSurveyQuestionNoteChange = (inputValue: any) => {
     setSurveyQuestionNote(inputValue.target.value);
-    console.log(inputValue.target.value);
+    // console.log(inputValue.target.value);
   };
 
   const handleSurveyQuestionOptionsChange = (inputValue: any) => {
     setSurveyQuestionOptions(inputValue.target.value);
-    console.log(inputValue.target.value);
+    // console.log(inputValue.target.value);
   };
 
   const handleSurveyQuestionScaleChange = (inputValue: any) => {
-    console.log("xx", inputValue.target.value);
+    // console.log("xx", inputValue.target.value);
     setSurveyQuestionScale(inputValue.target.value);
   };
 
@@ -112,13 +112,13 @@ const SurveyQuestionInput: React.FC = () => {
   // };
 
   const handleSurveyAnswerLenMaxChange = (inputValue: any) => {
-    console.log(inputValue);
+    // console.log(inputValue);
     setSurveyAnswerLenMax(inputValue);
   };
 
   const handleSurveyAnswerRequiredChange = (inputValue: any) => {
-    console.log(inputValue);
-    console.log(inputValue.target.value);
+    // console.log(inputValue);
+    // console.log(inputValue.target.value);
 
     if (inputValue.target.value === "true" || inputValue.target.value === true) {
       setSurveyAnswerRequired(true);
@@ -128,7 +128,7 @@ const SurveyQuestionInput: React.FC = () => {
   };
 
   const handleSurveyAnswerLenIsLimitedChange = (inputValue: any) => {
-    console.log(inputValue.target.value);
+    // console.log(inputValue.target.value);
     if (inputValue.target.value === "true" || inputValue.target.value === true) {
       setSurveyAnswerLenIsLimited(true);
     } else {
@@ -137,7 +137,7 @@ const SurveyQuestionInput: React.FC = () => {
   };
 
   const handleSurveyAnswerRestrictedChange = (inputValue: any) => {
-    console.log(inputValue.target.value);
+    // console.log(inputValue.target.value);
     if (inputValue.target.value === "true" || inputValue.target.value === true) {
       setSurveyAnswerRestricted(true);
     } else {

@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+   <language version="Quince 1.0.1" htmlParse="true">
+        <!-- 0. FILE INFORMATION -->
+        <item order="0-1" id="langFileVersion">1.0.1</item>
+        <item order="0-2" id="creationDate">2025-08-31</item>
+
+        <!-- 1. MULTIPLE SCREENS AND FOOTER -->
+        <item order="1-1" id="btnHelp">ヘルプ</item>
+        <item order="1-2" id="fontSizeText">テキストサイズ</item>
+        <item order="1-3" id="cardHeightText">カードの高さ</item>
+        <item order="1-4" id="btnNext">続ける</item>
+        <item order="1-5" id="stepCompleteMessage">このステップが完了しました。画面の右下にある{{{strong}}}青い「続ける」ボタン{{{/strong}}}をクリックして次のステップに進んでください。</item>
+        <item order="1-6" id="screenOrientationText">縦向きでご利用ください！</item>
+        <item order="1-7" id="mobileTextSize">テキスト</item>
+        <item order="1-8" id="mobileViewSize">表示</item>
+        <item order="1-9" id="mobileModalButtonCancel">キャンセル</item>
+        <item order="1-10" id="expandViewMessage">下の表示「+」ボタンをタップして表示エリアを拡張し、このメッセージを非表示にしてください。</item>
+
+        <!-- 2. CONSENT: get permission from participants-->
+        <item order="2-1" id="consentTitleBarText">研究参加同意</item>
+        <item order="2-2" id="consentText">[機関・組織名]の[主任研究者名]が実施する研究への参加にご招待いたします。参加を決定する前に、なぜこの研究が実施されるのか、何を伴うのかを理解することが重要です。以下の情報を注意深くお読みください。ご質問がございましたら、お気軽に研究チームにお問い合わせください。{{{br /}}}{{{br /}}}{{{b}}}研究の目的{{{/b}}}{{{br /}}}この研究の目的は[目的を簡潔に記述、例：学習者のパフォーマンスに対する新しい教授法の効果を理解する]ことです。この研究により[研究のより広い意味や目標について言及]への洞察を得ることができます。{{{br /}}}{{{br /}}}{{{b}}}研究手順{{{/b}}}{{{br /}}}参加に同意していただいた場合、[手順の説明、参加者が何をするか、所要時間、頻度を含む]をお願いします。例えば、一連のステートメントの評価、ソート、そしてソートについての振り返りをお願いします。さらに、最後に短いアンケートがあります。研究には約[時間、例：45分]かかります。{{{br /}}}{{{br /}}}{{{b}}}利益{{{/b}}}{{{br /}}}参加による直接的な利益はないかもしれませんが、この研究で収集された情報は[潜在的な利益の説明、例：教育方法の改善、科学的知識への貢献など]に役立つ可能性があります。また、[該当する場合、個人的な利益について説明]への個人的な洞察を得られる可能性もあります。{{{br /}}}{{{br /}}}{{{b}}}機密性{{{/b}}}{{{br /}}}この研究で収集されるすべての情報は厳重に機密として扱われます。データは安全に保存され、研究チームのみがアクセスできます。この研究から生じる報告書や出版物において、あなたの身元が明かされることはありません。[データの匿名化、暗号化、安全な保存方法について説明]。{{{br /}}}{{{br /}}}{{{b}}}自発的参加{{{/b}}}{{{br /}}}この研究への参加は完全に自発的です。参加を辞退する、またはいつでも撤回する自由があり、ペナルティや権利の損失はありません。撤回を決定した場合は、ウェブページを閉じてください。その時点まで収集されたデータは削除されます。{{{br /}}}{{{br /}}}{{{b}}}同意{{{/b}}}{{{br /}}}このページ下部の「同意する」ボタンをクリックすることで、提供された情報を読み理解し、この研究への参加に同意することを示します。この研究についてご質問がある場合は、[主任研究者名と連絡先情報]にお問い合わせください。</item>
+         <item order="2-3" id="consentHelpModalHead">連絡先情報</item>
+        <item order="2-4" id="consentHelpModalText">この大学研究プロジェクトへの参加ありがとうございます。研究チームには電話（1-555-867-5309）またはメール（researchTeam@myMail.com）でお問い合わせいただけます。</item>
+        <item order="2-5" id="btnHelpConsent">連絡先情報</item>
+        <item order="2-6" id="btnNextConsent">同意して続ける</item>
+
+        <!-- 3. ACCESS CONTROL (LANDING) - only displayed if access is restricted -->
+        <item order="3-1" id="loginWelcomeText">{{{center}}}{{{h3}}}ようこそ！{{{/h3}}}{{{/center}}}{{{br}}}このQメソドロジー研究プロジェクトへの参加ありがとうございます。{{{br}}}以下のフォームを使用して{{{strong}}}サインイン{{{/strong}}}し、プロセスを開始してください。</item>
+        <item order="3-2" id="loginHeaderText">サインイン</item>
+        <item order="3-3" id="loginPartIdText">お名前または参加者IDを入力してください</item>
+        <item order="3-4" id="accessCodeText">アクセスコード</item>
+        <item order="3-5" id="accessInputText">この調査のアクセスコードを入力してください。</item>
+        <item order="3-6" id="partIdWarning">無効な名前またはID</item>
+        <item order="3-7" id="accessCodeWarning">アクセスコードが無効</item>
+        <item order="3-8" id="loginSubmitButtonText">送信</item>
+
+        <!-- 4. WELCOME (LANDING) SCREEN -->
+        <item order="4-1" id="landingHead">大学研究プロジェクト</item>
+        <item order="4-2"  id="welcomeText">{{{h2}}}Quinceデモプロジェクト - 教室でのiPad使用{{{/h2}}}{{{br/}}}{{{br/}}}{{{p}}}この研究プロジェクトへのご協力ありがとうございます{{{/p}}}{{{br/}}}{{{br/}}}{{{br/}}} </item>
+        <item order="4-3"  id="landingHelpModalHead">ようこそ！</item>
+        <item order="4-4"  id="landingHelpModalText">この大学研究プロジェクトへの参加ありがとうございます。画面右下の「{{{b}}}続ける{{{/b}}}」ボタンをクリックして次のステップに進んでください。</item>
+        <item order="4-5"  id="btnNextLanding">開始</item>
+        <item order="4-6"  id="btnHelpLanding">ヘルプ</item>
+        
+        <!-- 5. MOBILE WELCOME (LANDING) SCREEN -->
+        <item order="5-1" id="mobileWelcomeText">{{{h2}}}Quinceデモプロジェクト - 教室でのiPad使用{{{/h2}}}{{{br/}}}{{{br/}}}{{{p}}}この研究プロジェクトへのご協力ありがとうございます！{{{/p}}}{{{br/}}}{{{br/}}}{{{br/}}} </item>
+
+        <!-- 6. PRE-SORT: rough sorting into three piles -->
+        <item order="6-1" id="logInFirst">まずログインプロセスを完了してください。</item>
+        <item order="6-2" id="titleBarText">予備的ソート</item>
+        <item order="6-3" id="presortAgreement">同意する</item>
+        <item order="6-3b" id="press1">（1を押す）</item>
+        <item order="6-4" id="presortNeutral">強い意見なし</item>
+        <item order="6-4b" id="press2">（2を押す）</item>
+        <item order="6-5" id="presortDisagreement">同意しない</item>
+        <item order="6-5b" id="press3">（3を押す）</item>
+        <item order="6-6" id="presortStatements">ステートメント</item>
+        <item order="6-7" id="presortOnPageInstructions">{{{div style=&quot;font-size: 24px&quot;}}}カードをクリック＆ドラッグするか、「1」「2」「3」キーを押してステートメントをソートしてください。{{{/div}}}</item>
+        <item order="6-8" id="presortModalHead">ステップ1／4</item>
+        <item order="6-9" id="presortModalText">以下のステートメントを注意深く読み、3つの山に分けてください：同意しないステートメントの山、同意するステートメントの山、そしてその他の山です。後で変更可能です。{{{br/}}}{{{br/}}}この指示をもう一度読みたい場合は、左下のヘルプボタンをクリックしてください。{{{br/}}}{{{br/}}}</item>
+        <item order="6-10" id="presortPreventNavModalHead">ナビゲーション無効</item>
+        <item order="6-11" id="presortPreventNavModalText">次のステップに進む前に予備的ソートを完了してください。</item>
+        <item order="6-12" id="presortFinishedModalHead">予備的ソート完了</item>
+        <item order="6-13" id="presortFinishedModalText">このステップが完了しました。ページ右下の「続ける」ボタンをクリックして次のステップに進んでください。</item>
+        <item order="6-14" id="presortImageSortInstructions">画像を拡大するには、マウスポインターを画像上に移動してダブルクリックしてください。{{{br/}}}{{{br/}}}画像を比較するには、キーボードの{{{b}}}{{{i}}}Shift{{{/i}}}{{{/b}}}キーを{{{u}}}押し続けながら{{{/u}}}、マウスで2つの画像をダブルクリックしてください。</item>
+      
+        <!-- 7. MOBILE PRESORT:  -->
+        <item order="7-1" id="mobilePresortHelpModalHead">ステージ1／5{{{br /}}}ステートメント評価</item>
+        <item order="7-2" id="mobilePresortHelpModalText">この調査には{{{b}}}33のステートメント{{{/b}}}があります。{{{br /}}}{{{br /}}}それらは画面上部のグレーのボックスに1つずつ表示されます。あなたの視点に応じて各ステートメントに値を割り当てるため、適切なボタンをタップしてください。{{{br /}}}{{{br /}}}ステートメントが{{{b}}}あなたの視点に似ている{{{/b}}}と感じる場合は、緑色の「+」ボタンをタップしてください。
+        {{{br/}}}{{{br/}}} {{{center}}}{{{img src="https://github.com/shawnbanasick/quince/blob/development/src/assets/evalBoxes.svg?raw=true"  width="200"/}}}{{{/center}}}{{{br /}}}{{{br /}}}ステートメントが{{{b}}}あなたの視点と異なる{{{/b}}}と感じる場合は、赤い「-」ボタンをタップしてください。{{{br /}}}{{{br /}}}ステートメントについて確信がない場合は、白いボックスの「?」をタップしてください。{{{br /}}}{{{br /}}}後で評価を{{{b}}}変更{{{/b}}}したい場合は、ステートメントの横にある{{{b}}}やり直しアイコン{{{/b}}}をタップしてください。{{{br/}}}{{{br/}}} {{{center}}}{{{img src="https://github.com/shawnbanasick/quince/blob/development/src/assets/redoBox.svg?raw=true" /  width="200" /}}}{{{/center}}}{{{br/}}}{{{br /}}}ページ下部のボタンを使用してテキストと表示エリアのサイズを調整できます。
+        {{{br/}}}{{{center}}}{{{br /}}}{{{img src="https://github.com/shawnbanasick/quince/blob/development/src/assets/adjText.svg?raw=true"  width="150"/}}}{{{/center}}}
+        {{{br/}}}{{{br/}}} {{{center}}}{{{img src="https://github.com/shawnbanasick/quince/blob/development/src/assets/adjView.svg?raw=true"  width="150"/}}}{{{/center}}}{{{br /}}}この指示をもう一度見たい場合は、メインページ上部の「?」ボタンをタップしてください。{{{br /}}}{{{br /}}}{{{center}}}{{{img src="https://github.com/shawnbanasick/quince/blob/development/src/assets/helpSymbol.png?raw=true" width="30"/}}}</item>
+        <item order="7-3" id="mobilePresortConditionsOfInstruction">クラスでのiPad使用体験に基づいてステートメントを評価してください</item>
+        <item order="7-4" id="mobilePresortCompletedLabel">完了した評価</item>
+        <item order="7-5" id="mobilePresortAssignLeft">私の視点と異なる</item>
+        <item order="7-6" id="mobilePresortAssignRight">私の視点に似ている</item>
+        <item order="7-7" id="mobilePresortRedoModalHead">ステートメントの再評価</item>
+        <item order="7-8" id="mobilePresortRedoModalConfirmButton">確認</item>
+        <item order="7-9" id="mobilePresortEvaluationsComplete">{{{div}}}{{{b}}}すべてのステートメントが評価されました。{{{/b}}} {{{br /}}}{{{br /}}}評価を確認するためにステートメントを見直してください。{{{br /}}}{{{br /}}}{{{div}}}</item>
+        <item order="7-10" id="mobilePresortFinishedModalHead">ステージ1／5{{{br /}}}ステートメント評価</item>
+        <item order="7-11" id="mobilePresortFinishedModalText">評価プロセスが完了しました。{{{br/}}}{{{br/}}}評価を確認するために{{{b}}}ステートメントを見直し{{{/b}}}てください。{{{br /}}}{{{br /}}}変更したい場合は、ステートメント左側の「やり直し」アイコンをタップしてください。{{{br /}}}{{{br /}}}すべての評価に満足したら、右下の{{{b}}}「続ける」ボタン{{{/b}}}をタップしてください。</item>
+        <item order="7-12" id="mobilePresortPreventNavModalHead">ナビゲーション無効</item>
+        <item order="7-13" id="mobilePresortPreventNavModalText">次のステージに進む前に評価を完了してください。</item>
+        <item order="7-14" id="mobilePresortProcessCompleteMessage">評価プロセスが完了しました。{{{br/}}}{{{br/}}}右下の「続ける」ボタンをクリックして次のステージに進んでください。</item>
+    
+        <!-- 8. THINNING:  -->
+        <item order="8-1" id="thinningHelpModalHead">評価の絞り込み</item>
+        <item order="8-2" id="thinningHelpModalText">前のステージで評価したステートメントをもう一度見てください。あなたの視点を最もよく表現していると思うものを選んでください。</item>
+        <item order="8-3" id="thinPageTitle">評価を絞り込む</item>
+        <item order="8-4" id="thinPageSubmitButton">送信</item>
+        <item order="8-5" id="numStatementsToSelect">選択するステートメント数</item>
+        <item order="8-6" id="currentlySelectedNumber">現在選択されているステートメント数</item>
+        <item order="8-7" id="initialInstructionPart1">以下は前のステップで肯定的に評価したステートメントです。{{{mark}}}{{{b}}}最も同意する{{{/b}}}{{{/mark}}}ステートメントを選んでください。</item>
+        <item order="8-8" id="initialInstructionPart2">次に、あなたの視点に{{{mark}}}最も近い{{{/mark}}}ステートメントを選び続けてください。</item>
+        <item order="8-9" id="initialInstructionPart3">「送信」ボタンをクリックした後、別のステートメントセットが画面に表示されます。</item>
+        <item order="8-10" id="initialInstructionPartNeg1">以下は前のステップで肯定的に評価したステートメントです。{{{mark}}}{{{b}}}あなたの視点と最も異なる{{{/b}}}{{{/mark}}}ステートメントを選んでください。</item>
+        <item order="8-11" id="initialInstructionPartNeg2">次に、あなたの視点と{{{mark}}}最も異なる{{{/mark}}}ステートメントを選び続けてください。</item>
+        <item order="8-12" id="finalInstructions">絞り込みプロセスが完了しました。{{{br /}}}{{{br /}}}残りのステートメントは自動的に配置されました。次のステージでは、すべてのステートメントの配置を確認してください。{{{br /}}}{{{br /}}}右下の「続ける」ボタンをクリックして次のステージを開始してください。</item>
+        <item order="8-13" id="thinningPreventNavModalHead">ナビゲーション無効</item>
+        <item order="8-14" id="thinningPreventNavModalText">次のステップに進む前に評価の絞り込みを完了してください。</item>
+       
+      <!-- 9 MOBILE THINNING:  -->
+        <item order="9-1" id="mobileThinHelpModalHead">ステップ2／5{{{br/}}}絞り込みプロセス</item>
+        <item order="9-2" id="mobileThinHelpModalText">このステージでは前のステップで行った評価を絞り込むことを求められます。{{{br/}}}{{{br/}}}ステートメントを{{{b}}}注意深く見直し{{{/b}}}てください。{{{br/}}}{{{br/}}}まず、あなたの視点に{{{b}}}最も似ている{{{/b}}}ものを選ぶよう求められます。{{{br/}}}{{{br/}}}次に、あなたの視点と{{{b}}}最も異なる{{{/b}}}ものを選ぶよう求められます。{{{br/}}}{{{br/}}}{{{b}}}ステートメントを選択{{{/b}}}するには、ステートメントコンテナをタップしてください。ステートメントの色が黄色に変わります。{{{br/}}}{{{br/}}}{{{b}}}正しい数{{{/b}}}のステートメントを選択すると、{{{b}}}「送信」{{{/b}}}ボタンの色が{{{b}}}青{{{/b}}}に変わります。送信ボタンをクリックして次のステップに進んでください。{{{br/}}}{{{br/}}}送信ボタンをタップする前に、すべてのステートメントを表示するために{{{b}}}スクロールダウン{{{/b}}}する必要がある場合があります。{{{br/}}}{{{br/}}}ステートメントを比較しやすくするため、ステートメントの右側または左側にある上下矢印をタップして{{{b}}}並べ替え{{{/b}}}ることができます。{{{br/}}}{{{br/}}}{{{center}}}{{{br /}}}{{{img src="https://github.com/shawnbanasick/quince/blob/development/src/assets/upDownArrows.svg?raw=true"  width="250"/}}}{{{/center}}}{{{br /}}}{{{br /}}}
+        また、ステートメントの{{{b}}}右側{{{/b}}}の矢印を{{{b}}}長押し{{{/b}}}（約1秒）することで、{{{b}}}選択したステートメントのグループ{{{/b}}}をリストの上部に移動させることもできます。{{{br /}}}{{{br /}}}{{{center}}}{{{br /}}}{{{img src="https://github.com/shawnbanasick/quince/blob/development/src/assets/longPressArrow.svg?raw=true"  width="250"/}}}{{{/center}}}{{{br /}}}{{{br /}}}
+        この指示をもう一度見たい場合は、メインページ上部の「?」ボタンをタップしてください。{{{br /}}}{{{br /}}}{{{center}}}{{{img src="https://github.com/shawnbanasick/quince/blob/development/src/assets/helpSymbol.png?raw=true" width="30"/}}}</item>     
+        <item order="9-3" id="mobileThinConditionsOfInstruction">評価を絞り込む</item>
+        <item order="9-4" id="mobileThinSelectedText">選択済み</item>
+        <item order="9-5" id="mobileThinSubmitButtonText">送信</item>
+        <item order="9-6" id="mobileGuidanceModalLeft1Header">ステージ2／5{{{br/}}}絞り込みプロセス</item>
+        <item order="9-7" id="mobileGuidanceModalLeft1Text">ステップ2。次に、否定的に評価したすべてのステートメントを見て、あなたの視点と{{{b}}}最も異なる{{{/b}}}ものを{{{b}}}選択{{{/b}}}してください。{{{br/}}}{{{br/}}}すべてのステートメントを見るために{{{b}}}スクロールダウン{{{/b}}}する必要がある場合があります。</item>
+        <item order="9-8" id="mobileGuidanceModalRight2Header">ステージ2／5{{{br/}}}絞り込みプロセス</item>
+        <item order="9-9" id="mobileGuidanceModalRight2Text">次に、{{{b}}}肯定的{{{/b}}}に評価した残りのステートメントをもう一度見て、あなたの視点に{{{b}}}最も近い{{{/b}}}{{{b}}}次のセット{{{/b}}}のステートメントを選択してください。</item>
+        <item order="9-10" id="mobileGuidanceModalLeft2Header">ステージ2／5{{{br/}}}絞り込みプロセス</item>
+        <item order="9-11" id="mobileGuidanceModalLeft2Text">次に、{{{b}}}否定的{{{/b}}}に評価した残りのステートメントをもう一度見て、あなたの視点と{{{b}}}最も異なる{{{/b}}}{{{b}}}次のセット{{{/b}}}のステートメントを{{{b}}}選択{{{/b}}}してください。</item>
+        <item order="9-12" id="mobileThinScrollBottomModalHead">確認無効</item>
+        <item order="9-13" id="mobileThinScrollBottomModalText">選択を送信する前に、最下部までスクロールしてすべてのステートメントを確認してください。</item>
+        <item order="9-14" id="moveTopMobileHead">移動の確認</item>
+        <item order="9-15" id="moveTopMobileText">このステートメントをリストの上部に移動しますか？</item>
+        <item order="9-16" id="moveTopMobileButtonOK">はい</item>
+        <item order="9-17" id="mobileThinPreventNavModalHead">ナビゲーション無効</item>
+        <item order="9-18" id="mobileThinPreventNavModalText">次のページに進む前に絞り込みプロセスを完了してください。</item>
+        <item order="9-19" id="mobileThinProcessCompleteMessage">絞り込みプロセスが完了しました。{{{br/}}}{{{br/}}}右下の「続ける」ボタンをクリックして次のステージに進んでください。</item>
+        <item order="9-20" id="moveAllTopMobileText">選択したすべてのステートメントをリストの上部に移動しますか？</item>
+        <item order="9-21" id="mobileGuidanceModalRight1Header">ステージ2／5{{{br/}}}絞り込みプロセス</item>
+        <item order="9-22" id="mobileGuidanceModalRight1Text">このステージにはいくつかのステップがあります。{{{br/}}}{{{br/}}}ステップ1。{{{b}}}肯定的{{{/b}}}に評価したすべてのステートメントを見て、あなたの視点に{{{b}}}最も近い{{{/b}}}ものを選択してください。{{{br/}}}{{{br/}}}すべてのステートメントを見るために{{{b}}}スクロール{{{/b}}}ダウンする必要がある場合があります。</item> 
+
+        <!-- 10. SORT: sorting -->
+        <item order="10-1" id="sortHelpModalHead">ステップ3／5</item>
+        <item order="10-2" id="sortHelpModalText">このステップでは、ページ上部の研究者の指示とあなたの視点に基づいて、ステートメントカードを適切な列にクリック＆ドラッグしてください。{{{br/}}}{{{br/}}}ステートメントの位置を変更するには、希望する列にクリック＆ドラッグしてください。{{{br/}}}{{{br/}}}各列のステートメント数は制限されています。列の背景色がオレンジに変わった場合、その列にステートメントが多すぎます。列の色が正常に戻るまで、ステートメントを隣接する列のいずれかに移動してください。{{{br/}}}{{{br/}}}ページ下部の「+」と「-」ボタンをクリックすることで、ステートメントのテキストサイズとステートメントボックスのサイズを調整できます。</item>
+        <item order="10-3" id="sortAgreement">同意する</item>
+        <item order="10-4" id="sortDisagreement">同意しない</item>
+        <item order="10-5" id="condOfInst">今学期のiPad体験に基づいてカードをソートしてください</item>
+        <item order="10-6" id="sortOverloadedColumnModalHead">ナビゲーション無効</item>
+        <item order="10-7" id="sortOverloadedColumnModalText">いずれかの列にステートメントが多すぎます（オレンジで囲まれ、破線の境界線があります）。すべての列が正しい数になるようにステートメントの配置を調整してください。</item>
+
+
+        <!-- 11. MOBILE SORT: sorting -->
+        <item order="11-1" id="mobileSortHelpModalHead">ステージ3／5{{{br/}}}最終ステートメントランキング</item>
+        <item order="11-2" id="mobileSortHelpModalText">ステートメントは以前の評価に基づいてランク付けされています。{{{br/}}}{{{br/}}}あなたの視点に最も近いステートメントは、濃い緑色のセクションの表示エリア上部にあるはずです。{{{br /}}}{{{center}}}{{{br /}}}{{{img src="https://github.com/shawnbanasick/quince/blob/development/src/assets/GroupColors.png?raw=true"  width="150"/}}}{{{/center}}}{{{br /}}}あなたの視点から最も遠いものは、濃い赤色のセクションのリスト下部にあるはずです。{{{br/}}}{{{br/}}}すべてのステートメントを見るために{{{b}}}スクロールダウン{{{/b}}}する必要があります。{{{br/}}}{{{br/}}}ランキングを{{{b}}}確認{{{/b}}}し、順序があなたの視点を{{{b}}}正確に反映{{{/b}}}するように、ステートメントのランキングに必要な変更を加えてください。{{{br/}}}{{{br/}}}{{{mark}}}これは調査の最も重要なステージですので、ステートメントのランキングを注意深く確認し、必要に応じてステートメントの位置を変更してください。{{{/mark}}}{{{br/}}}{{{br/}}}
+        隣接するステートメントの位置を{{{b}}}交換{{{/b}}}するには、ステートメントの右側または左側の上下矢印をタップしてください。{{{br /}}}{{{br /}}}{{{center}}}{{{br /}}}{{{img src="https://github.com/shawnbanasick/quince/blob/development/src/assets/sortUpDownArrows.svg?raw=true"  width="250"/}}}{{{/center}}}{{{br /}}}{{{br /}}}離れているステートメントの位置を{{{b}}}交換{{{/b}}}するには、ステートメントボックスをタップして2つのステートメントを選択し（ステートメントの色が黄色に変わります）、交換確認メッセージが自動的に表示されます。{{{br/}}}
+        
+        {{{br /}}}{{{center}}}{{{br /}}}{{{img src="https://github.com/shawnbanasick/quince/blob/development/src/assets/sortSwap.svg?raw=true"  width="250"/}}}{{{/center}}}{{{br /}}}
+        
+        {{{br/}}}「交換」ボタンをタップして交換を確認してください。「キャンセル」ボタンをタップすると、ステートメントは元の位置に残ります。{{{br/}}}{{{br/}}}すべてのステートメントランキングに満足したら、右下の「続ける」ボタンをタップしてください。{{{br/}}}{{{br/}}}
+        この指示をもう一度見たい場合は、メインページ上部の「?」ボタンをタップしてください。{{{br /}}}{{{br /}}}{{{center}}}{{{img src="https://github.com/shawnbanasick/quince/blob/development/src/assets/helpSymbol.png?raw=true" width="30"/}}}</item>
+        <item order="11-3" id="mobileSortConditionsOfInstruction">クラスでのiPad使用体験に基づいてステートメントをランキングしてください</item>
+        <item order="11-4" id="mobileSortScrollBottomModalHead">ナビゲーション無効</item>
+        <item order="11-5" id="mobileSortScrollBottomModalText">次のステージに進む前に、最下部までスクロールしてすべてのステートメントのランキングを確認してください。</item>
+        <item order="11-6" id="mobileSortSwapModalHead">ステートメントランキングを交換しますか？</item>
+        <item order="11-7" id="mobileSortSwapModalConfirmButton">交換</item>
+        <item order="11-8" id="mobileSortSwapModalSuccessMessage">ステートメントの位置が正常に交換されました。</item>
+        
+
+        <!-- 12. POSTSORT: comments - only displayed if selected in config.xml -->
+        <item order="12-1" id="postsortModalHead">ステップ4／5</item>
+        <item order="12-2" id="postsortModalText">ページ下部の「+」と「-」ボタンを使用して、ステートメントのフォントサイズまたはステートメントボックスの高さを変更できます。{{{br/}}}{{{br/}}}</item>
+        <item order="12-3" id="postsortHeader">ポストソートコメント</item>
+        <item order="12-4" id="postsortInstructions">{{{h3}}}これらのステートメントについてのお考えをより詳しくお聞かせください。{{{/h3}}}</item>
+        <item order="12-5" id="placeholder">コメントを追加するにはここをクリック</item>
+        <item order="12-6" id="postsortPlacedOn">配置場所</item>
+        <item order="12-7" id="postsortAgreement">「同意する」に配置</item>
+        <item order="12-8" id="postsortDisagreement">「同意しない」に配置</item>
+        <item order="12-9" id="postsortBackButtonText">戻る</item>
+        <item order="12-10" id="postsortPreventNavModalHead">ナビゲーション無効</item>
+        <item order="12-11" id="postsortPreventNavModalText">次のステップに進む前に、すべてのカードにコメントを追加してください。</item>
+
+
+        <!-- 13. MOBILE POSTSORT: comments - displayed if showStep3 = true -->
+        <item order="13-1" id="mobilePostsortHelpModalHead">ステージ4／5{{{br/}}}ポストランキングコメント</item>
+        <item order="13-2" id="mobilePostsortHelpModalText">これらのステートメントのランキングについてコメントしてください。</item>
+        <item order="13-3" id="mobilePostsortSortbarText">ポストランキングコメント</item>
+        <item order="13-4" id="mobilePostsortPlaceholder">コメントを追加するにはここをクリック</item>
+        <item order="13-5" id="mobilePostsortPreventNavModalHead">ナビゲーション無効</item>
+        <item order="13-6" id="mobilePostsortPreventNavModalText">次のステップに進む前に、すべてのステートメントにコメントを追加してください。</item>
+        
+
+        <!-- 14. SURVEY: Additional questions, displayed if showStep4 == true -->
+        <item order="14-1" id="surveyModalHead">ステップ5／5</item>
+        <item order="14-2" id="surveyModalText">最後に、あなたの背景に関する以下の質問にお答えください。タイトルに「*」が付いている質問は必須です。{{{br/}}}{{{br/}}}</item>
+        <item order="14-3" id="surveyHeader">ポストランキングアンケート</item>
+        <item order="14-4" id="surveyPreventNavModalHead">ナビゲーション無効</item>
+        <item order="14-5" id="surveyPreventNavModalText">次のステップに進む前に、必須質問（黄色で囲まれた）にお答えください。</item>
+       
+        <!-- 15. MOBILE SURVEY: questions displayed if showStep4 == true -->
+        <item order="15-1" id="mobileSurveyHelpModalHead">ステージ5／5{{{br/}}}ポストランキングアンケート</item>
+        <item order="15-2" id="mobileSurveyHelpModalText">これらの背景質問にお答えください。{{{br /}}}{{{br /}}}一部の質問は、最終ステップに進む前に回答を提供する必要がある場合があります。</item>
+
+       
+        <!-- 16. SUBMIT -->
+        <item order="16-1" id="btnTransfer">データを送信</item>
+        <item order="16-2" id="transferHead">最終ステップ</item>
+        <item order="16-3" id="transferTextAbove">{{{h1}}}送信準備完了{{{/h1}}}{{{br/}}}{{{br/}}} {{{h2}}}「データを送信」ボタンをクリックして結果を送信してください。{{{/h2}}}</item>
+        <item order="16-4" id="transferTextBelow">データがサーバーに正常に送信されたことを示す確認メッセージをお待ちください。</item>
+        <item order="16-5" id="transferOkModalHeader">成功 - データがサーバーに送信されました。</item>   
+        <item order="16-6" id="transferOkModalText">Quinceをご利用いただきありがとうございました！{{{br/}}}{{{br/}}}ブラウザタブを閉じることができます。</item>
+        <item order="16-7" id="transferFailModalHeader">サーバーへの接続に失敗しました</item>   
+        <item order="16-8" id="transferFailModalText">しばらく待ってからもう一度お試しください。</item>   
+        <item order="16-9" id="fallbackMessage">データ送信に失敗しました。結果をダウンロードして、ken.q.tools@gmail.com に添付ファイルとしてメールしてください。ありがとうございます！</item>   
+        <item order="16-10" id="btnDownload">ダウンロード</item>   
+        <item order="16-11" id="goodbyeMessage">{{{div}}}ありがとうございました！{{{/div}}} {{{br/}}}{{{div}}}ブラウザタブを閉じることができます{{{/div}}}</item>   
+        
+
+        <!-- 17. MOBILE SUBMIT -->
+         <item order="17-1" id="mobileSortTitleBar">データを送信</item>
+
+        <!-- 18. FAILURE -->
+        <item order="18-1" id="checkInternetMessage">*** エラー - 送信失敗 *** {{{br/}}}インターネット接続を確認して、「データを送信」ボタンを再度クリックしてください。</item>
+        <item order="18-2" id="btnTransferEmail">メールクライアントを開いて結果を送信</item>
+        <item order="18-3" id="submitFailMessage">データベースに接続できません。{{{br/}}}{{{br/}}}上のボタンをクリックしてデータ付きのメールを送信してください。</item>
+        <item order="18-4" id="defaultEmailClientFail">デフォルトのメールクライアントが結果を本文に含めて自動的に開かれているはずです。開かれなかった場合は、下のボタンを使用して情報をコピーしてメールに貼り付けてください。{{{br/}}}{{{br/}}}バックアップとして結果をコンピュータにダウンロードするボタンもあります。</item>   
+        <item order="18-5" id="clipboardEmail">メールアドレスをクリップボードにコピー</item>  
+        <item order="18-6" id="clipboardResults">結果をクリップボードにコピー</item>  
+        <item order="18-7" id="copiedText">コピーしました！</item>  
+        <item order="18-8" id="downloadResultsButtonText">結果をダウンロード</item>  
+        <item order="18-9" id="emailBodyMessage">このメールに何も追加する必要はありません。送信ボタンをクリックするだけです。</item>
+
+        <!-- 19. LINKING -->
+        <item order="19-1" id="linkedProjectMessage">次のQソートを開始するにはボタンをクリックしてください</item>   
+         <item order="19-2" id="linkedProjectBtnMessage">次のQソートを開始</item>   
+
+        <!-- 20. LOCAL DATA COLLECTION -->  
+        <item order="20-1" id="localHeader">オフラインQソートコントロールパネル</item>
+        <item order="20-2" id="partIdText">参加者名</item>
+        <item order="20-3" id="usercodeText">ユーザーコード</item>
+        <item order="20-4" id="localStartButtonText">Qソート開始</item>
+        <item order="20-5" id="localDeleteButtonText">削除</item>
+        <item order="20-6" id="localDownloadButtonText">Qソートデータをディスクに保存</item>
+        <item order="20-7" id="storedQsortsHeaderText">保存されたQソート</item>
+        <item order="20-8" id="localDeleteModalHead">ブラウザに保存されたデータを削除しますか？</item>
+        <item order="20-9" id="localDeleteModalText">これにより、現在ブラウザに保存されている参加者のQソートデータが削除されます。通常、新しいプロジェクトを開始するときにのみ実行します。{{{br}}}{{{br}}}{{{b}}}注意 - 削除されたデータは復元できません。{{{/b}}} {{{br}}}{{{br}}} {{{center}}}{{{/center}}}</item>
+        <item order="20-10" id="localParticipantsText">参加者</item>
+        <item order="20-11" id="localSaveBeforeDeleteModalHeader">削除無効</item>
+        <item order="20-12" id="localSaveBeforeDeleteModalText">削除する前にQソートデータをディスクに保存してください。</item>
+        <item order="20-13" id="localSaveDataButton">参加者データをブラウザメモリに保存</item>
+        <item order="20-14" id="localSubmitSuccessModalHeader">成功</item>
+        <item order="20-15" id="localSubmitSuccessModalText">参加者のQソートデータがブラウザメモリに正常に保存されました</item>
+        <item order="20-16" id="returnToLocalPanelButtonText">コントロールパネルに戻る</item>
+
+
+   </language>

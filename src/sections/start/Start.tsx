@@ -4,6 +4,8 @@ import newSetupFilesViz from "../../assets/images/newSetupFilesViz.png";
 import editFilesViz from "../../assets/images/editFilesViz.png";
 import settingsFolder from "../../assets/images/settingsFolder.png";
 import quinceTemplate from "../../assets/images/quinceTemplate.png";
+import qrCodeEnglish from "../../assets/images/qr-code-english.png";
+import qrCodeJapanese from "../../assets/images/qr-code-japanese.png";
 import { useTranslation } from "react-i18next";
 
 const Start = () => {
@@ -78,30 +80,50 @@ const Start = () => {
         </ul>
       </div>
       <div className="mt-8 w-9/12 align-self-center font-semibold text-3xl">Demo Links</div>
-      <div className="w-9/12 align-self-center flex flex-col justify-start">
-        <div className="ml-4">
-          <span>English - </span>
-          <a
-            className="text-blue-600 underline underline-offset-2 decoration-4 decoration-blue-300 hover:decoration-blue-400"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://quince-sort.netlify.app/#/"
-          >
-            Link
-          </a>{" "}
+      <div className="w-9/12 align-self-center flex flex-row justify-start ml-6 gap-6">
+        {/* English Card */}
+        <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-shadow duration-300">
+          <div className="flex flex-col items-center text-center">
+            <h3 className="text-lg font-semibold text-gray-900 mb-3">English</h3>
+            <a
+              className="text-blue-600 underline underline-offset-2 decoration-4 decoration-blue-300 hover:decoration-blue-400 mb-4"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://quince-sort.netlify.app/#/"
+            >
+              Launch Demo
+            </a>
+            <img
+              src={qrCodeEnglish}
+              className="w-auto max-w-[100px] max-h-[180px]"
+              alt="QR code for English demo"
+              loading="lazy"
+            />
+          </div>
         </div>
-        <div className="ml-4">
-          <span>Japanese - </span>
-          <a
-            className="text-blue-600 underline underline-offset-2 decoration-4 decoration-blue-300 hover:decoration-blue-400"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://quince-sort-japanese.netlify.app/"
-          >
-            Link
-          </a>{" "}
+
+        {/* Japanese Card */}
+        <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-shadow duration-300">
+          <div className="flex flex-col items-center text-center">
+            <h3 className="text-lg font-semibold text-gray-900 mb-3">Japanese</h3>
+            <a
+              className="text-blue-600 underline underline-offset-2 decoration-4 decoration-blue-300 hover:decoration-blue-400 mb-4"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://quince-sort-japanese.netlify.app/"
+            >
+              Launch Demo
+            </a>
+            <img
+              src={qrCodeJapanese}
+              className="w-auto max-w-[100px] max-h-[180px]"
+              alt="QR code for Japanese demo"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
+
       {/* HOW DOES IT WORK? */}
       <div className="flex flex-col justify-center items-center">
         <div className="mt-8 w-9/12 align-self-center font-semibold text-3xl">

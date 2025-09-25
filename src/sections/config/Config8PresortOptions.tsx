@@ -63,12 +63,12 @@ const Config8PresortOptions: React.FC = () => {
           alt="info icon"
         /> */}
       </div>
-      <button
+      {/* <button
         className={`bg-slate-400 w-[200px] h-6 hover:bg-opacity-50 text-white px-2 pb-1 mt-1 rounded-md select-none`}
         onClick={restoreDefaultColors}
       >
         {t("restoreDefaultColors")}
-      </button>
+      </button> */}
 
       <div className="flex flex-row h-[60px] content-center gap-5 mt-3">
         <span className="content-center">{`8a. ${t("shuffleCards")}:`}</span>
@@ -121,7 +121,7 @@ const Config8PresortOptions: React.FC = () => {
         </div>
       </div>
 
-      <div className={`flex flex-row h-[40px] content-center items-center gap-5 mt-1`}>
+      {/* <div className={`flex flex-row h-[40px] content-center items-center gap-5 mt-1`}>
         <span className={`content-center`}>{`8b. ${t("greenCardColor")}:`}</span>
         <div
           className="w-10 h-5 rounded-md outline outline-1 outline-zinc-600"
@@ -150,13 +150,13 @@ const Config8PresortOptions: React.FC = () => {
           <ColorPicker baseColor={pinkCardColor} onChange={setPinkCardColor} />
         </div>
         <span>{pinkCardColor}</span>
-      </div>
+      </div> */}
 
       <UserNumInput
         classNameNum={`mt-2 block min-w-[80px] px-3 py-2 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 outline outline-1 outline-zinc-600 ml-4`}
         classNameLabel={`flex flex-row content-center min-w-[170px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
         highlight={true}
-        label={`8e. ${t("defaultFontSizePresort")}:`}
+        label={`8b. ${t("defaultFontSizePresort")}:`}
         placeholder={t("defaultFontSizePresortPlaceholder")}
         upperLimit={199}
         lowerLimit={6}

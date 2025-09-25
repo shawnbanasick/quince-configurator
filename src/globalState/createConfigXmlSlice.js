@@ -31,11 +31,13 @@ const createConfigXmlSlice = (set, get) => ({
   imageFileType: "jpg",
   imageFormat: "letterbox",
 
+  // CONSENT PAGE OPTIONS
+  showConsentPage: false,
+  showConsentPageHelpModal: true,
+
   // OTHER GENERAL OPTIONS
   shuffleCards: true,
   headerBarColor: "#337ab7",
-  showConsentPage: false,
-  showConsentPageHelpModal: true,
 
   // ACCESS  (anonymous, partId-access, partId, access)
   initialScreen: "anonymous",
@@ -64,12 +66,12 @@ const createConfigXmlSlice = (set, get) => ({
   showSecondPosColumn: false,
   showSecondNegColumn: false,
   showBackButton: true,
-  postsortCommentsRequired: true,
+  postsortCommentsRequired: false,
   defaultFontSizePostsort: 16,
   minCardHeightPostsort: 120,
 
   // SURVEY
-  showSurvey: true,
+  showSurvey: false,
 
   // *** ALL OTHERS
   detailsArray: [
