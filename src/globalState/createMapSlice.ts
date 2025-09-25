@@ -1,6 +1,6 @@
 const createMapXmlSlice = (set) => ({
   mapColorPalette: "steps",
-  mapColColorsStyle: "headers",
+  mapColColorsStyle: "headersAndColumns",
   activeValueM6: "0",
   activeValueM5: "0",
   activeValueM4: "0",

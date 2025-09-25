@@ -2,6 +2,25 @@ import encodeHTML from "../utils/encodeHTML";
 import { useStore } from "../../globalState/useStore.js";
 
 const generateLanguageXml = () => {
+  // STUDY TITLE
+  let studyTitle = useStore.getState().studyTitle;
+  if (studyTitle === null || studyTitle === undefined) {
+    studyTitle = "my Q study";
+  }
+
+  let getCurrentTimestamp = () => {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.getMonth() + 1; // getMonth() returns 0-11
+    const day = now.getDate();
+    const hours = now.getHours();
+    const minutes = now.getMinutes().toString().padStart(2, "0");
+
+    return `${year}-${month}-${day}@${hours}:${minutes}`;
+  };
+
+  const creationDate = getCurrentTimestamp();
+
   let data = `<?xml version="1.0" encoding="UTF-8"?>
 
    <language version="Quince ${useStore.getState().version}" htmlParse="true">;
@@ -9,6 +28,8 @@ const generateLanguageXml = () => {
         <!-- 0. FILE INFORMATION -->
         <item order="0-1" id="languageFileVersion">1.0.0</item>
         <item order="0-2" id="iterationDate">2025-08-31</item>
+        <item order="0-3" id="studyTitle">${studyTitle}</item> 
+        <item order="0-4" id="creationDate">${creationDate}</item> 
 
         <!-- 1. MULTIPLE SCREENS AND FOOTER -->
         <item order= "1-1" id="btnHelp">${encodeHTML(useStore.getState().btnHelp)}</item>
@@ -490,52 +511,54 @@ const generateLanguageXml = () => {
         )}</item>
 
         <!-- 19. LINKING -->
-        <item order="19-" id="linkedProjectMessage">${encodeHTML(
+        <item order="19-1" id="linkedProjectMessage">${encodeHTML(
           useStore.getState().linkingFallbackMessage
         )}</item>   
-         <item order="19-" id="linkedProjectBtnMessage">${encodeHTML(
+         <item order="19-2" id="linkedProjectBtnMessage">${encodeHTML(
            useStore.getState().linkingBtnText
          )}</item>   
 
         <!-- 20. LOCAL DATA COLLECTION -->  
-        <item id="localHeader">${encodeHTML(useStore.getState().localHeader)}</item>
-        <item id="partIdText">${encodeHTML(useStore.getState().partIdText)}</item>
-        <item id="usercodeText">${encodeHTML(useStore.getState().usercodeText)}</item>
-        <item id="localStartButtonText">${encodeHTML(
+        <item order="20-1" id="localHeader">${encodeHTML(useStore.getState().localHeader)}</item>
+        <item order="20-2" id="partIdText">${encodeHTML(useStore.getState().partIdText)}</item>
+        <item order="20-3" id="usercodeText">${encodeHTML(useStore.getState().usercodeText)}</item>
+        <item order="20-4" id="localStartButtonText">${encodeHTML(
           useStore.getState().localStartButtonText
         )}</item>
-        <item id="localDeleteButtonText">${encodeHTML(
+        <item order="20-5" id="localDeleteButtonText">${encodeHTML(
           useStore.getState().localDeleteButtonText
         )}</item>
-        <item id="localDownloadButtonText">${encodeHTML(
+        <item order="20-6" id="localDownloadButtonText">${encodeHTML(
           useStore.getState().localDownloadButtonText
         )}</item>
-        <item id="storedQsortsHeaderText">${encodeHTML(
+        <item order="20-7" id="storedQsortsHeaderText">${encodeHTML(
           useStore.getState().storedQsortsHeaderText
         )}</item>
-        <item id="localDeleteModalHead">${encodeHTML(
+        <item order="20-8" id="localDeleteModalHead">${encodeHTML(
           useStore.getState().localDeleteModalHead
         )}</item>
-        <item id="localDeleteModalText">${encodeHTML(
+        <item order="20-9" id="localDeleteModalText">${encodeHTML(
           useStore.getState().localDeleteModalText
         )}</item>
-        <item id="localParticipantsText">${encodeHTML(
+        <item order="20-10" id="localParticipantsText">${encodeHTML(
           useStore.getState().localParticipantsText
         )}</item>
-        <item id="localSaveDataButton">${encodeHTML(useStore.getState().localSaveDataButton)}</item>
-        <item id="localSubmitSuccessModalHeader">${encodeHTML(
+        <item order="20-11" id="localSaveDataButton">${encodeHTML(
+          useStore.getState().localSaveDataButton
+        )}</item>
+        <item order="20-12" id="localSubmitSuccessModalHeader">${encodeHTML(
           useStore.getState().localSubmitSuccessModalHeader
         )}</item>
-        <item id="localSubmitSuccessModalText">${encodeHTML(
+        <item order="20-13" id="localSubmitSuccessModalText">${encodeHTML(
           useStore.getState().localSubmitSuccessModalText
         )}</item>
-        <item id="localSaveBeforeDeleteModalHeader">${encodeHTML(
+        <item order="20-14" id="localSaveBeforeDeleteModalHeader">${encodeHTML(
           useStore.getState().localSaveBeforeDeleteModalHeader
         )}</item>
-        <item id="localSaveBeforeDeleteModalText">${encodeHTML(
+        <item order="20-15" id="localSaveBeforeDeleteModalText">${encodeHTML(
           useStore.getState().localSaveBeforeDeleteModalText
         )}</item>
-        <item id="returnToLocalPanelButtonText">${encodeHTML(
+        <item order="20-16" id="returnToLocalPanelButtonText">${encodeHTML(
           useStore.getState().returnToLocalPanelButtonText
         )}</item>
 

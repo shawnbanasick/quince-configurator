@@ -49,6 +49,12 @@ const generateMapXml = () => {
 
   let qSortPatternObject = useStore.getState().qSortPatternObject;
 
+  // STUDY TITLE
+  let studyTitle = useStore.getState().studyTitle;
+  if (studyTitle === null || studyTitle === undefined) {
+    studyTitle = "my Q study";
+  }
+
   if (qSortPatternObject === null) {
     qSortPatternObject = JSON.parse(localStorage.getItem("qSortPatternObject") || '""');
   }
@@ -56,13 +62,28 @@ const generateMapXml = () => {
   const releaseVersion = useStore.getState().version;
   const mapColColorsStyle = useStore.getState().mapColColorsStyle;
 
+  let getCurrentTimestamp = () => {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.getMonth() + 1; // getMonth() returns 0-11
+    const day = now.getDate();
+    const hours = now.getHours();
+    const minutes = now.getMinutes().toString().padStart(2, "0");
+
+    return `${year}-${month}-${day}@${hours}:${minutes}`;
+  };
+
+  const creationDate = getCurrentTimestamp();
+
   let data = `<?xml version="1.0" encoding="UTF-8"?>
 
    <map version="${releaseVersion}" htmlParse="false">;
 
-     <!-- 0. FILE INFORMATION -->
-     <item order="0-1" id="mapFileVersion">1.0.0</item>
-     <item order="0-2" id="iterationDate">2025-08-31</item>
+    <!-- 0. FILE INFORMATION -->
+      <item order="0-1" id="mapFileVersion">1.0.0</item>
+      <item order="0-2" id="iterationDate">2025-08-31</item>
+      <item order="0-3" id="studyTitle">${studyTitle}</item> 
+      <item order="0-4" id="creationDate">${creationDate}</item> 
     
      <!-- 1. Q SORT GRID DESIGN AND COLORS -->\n`;
 
