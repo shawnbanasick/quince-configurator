@@ -159,6 +159,7 @@ const createHeaderParagraph = (): Paragraph => {
 /**
  * Validates input parameters
  */
+
 const validateInputs = (params: WordPartStatementsParams): void => {
   const { data, sortHeaders, statements, participantIds } = params;
 
@@ -194,7 +195,11 @@ const wordPartStatements = (
   statements: string,
   participantIds: string[]
 ): Paragraph[] => {
+  console.log(sortHeaders);
+
   try {
+    console.log("sort Headers", sortHeaders);
+
     // Validate inputs
     validateInputs({ data, sortHeaders, statements, participantIds });
 

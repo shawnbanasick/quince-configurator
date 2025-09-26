@@ -60,7 +60,7 @@ const createMapXmlSlice = (set) => ({
   emojiArray: [],
   emojiArrayType: "",
   // colTextLabelsArray: [],
-
+  qSortHeaderNumbers: [],
   useColLabelEmojiPresort: false,
   useColLabelNums: true,
   useColLabelText: false,
@@ -74,6 +74,10 @@ const createMapXmlSlice = (set) => ({
   setText: (stateDesig, text) => set(() => ({ [stateDesig]: text })),
   setColor: (stateDesig, color) => set(() => ({ [stateDesig]: color })),
   setNumber: (stateDesig, number) => set(() => ({ [stateDesig]: number })),
+
+  setQsortHeaderNumbers: (array) => {
+    set(() => ({ qSortHeaderNumbers: array }));
+  },
 
   setEmojiArray: (array) => {
     set(() => ({ emojiArray: array }));

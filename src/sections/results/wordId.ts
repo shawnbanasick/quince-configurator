@@ -11,6 +11,17 @@ const wordId = (
   displayPartId,
   numStatements
 ) => {
+  console.log(
+    data,
+    childArray2,
+    childArray3,
+    childArray3b,
+    childArray4,
+    childArray5,
+    displayPartId,
+    numStatements
+  );
+
   const workingData = cloneDeep(data);
   let projectNameTitleString2 = workingData[0]["r1"].slice(15);
   let projectNameTitleString = projectNameTitleString2.split(" - ");
@@ -86,6 +97,8 @@ const wordId = (
       counter = 1; // Reset counter for new ID
     }
     previousId = item["r2"];
+
+    console.log(displayPartId);
 
     let identCode;
     if (displayPartId === "randomId") identCode = id.slice(11);

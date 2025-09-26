@@ -21,6 +21,8 @@ import { createRespondentArray } from "./createRespondentArray";
 import { calcNewHeaderArray } from "./calcNewHeaderArray";
 import { formatRawStatements } from "./formatRawStatements";
 import { getCurrentDateTime } from "./getCurrentDateTime";
+import { getCurrentDate } from "./getCurrentDate";
+import { getCurrentTime } from "./getCurrentTime";
 
 interface GlobalState {
   currentStatements: string[];
@@ -43,6 +45,12 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
   const mapInputQsortPattern = useStore(getMapInputQsortPattern);
   const surveyQuestionsArray = useStore(getSurveyQuestionsArray);
   const { t } = useTranslation();
+  let shouldIncludeTimestamp = true;
+
+  // create file name timeStamp
+  const newDate = new Date();
+  const timeStamp = `${getCurrentDate(newDate)}_${getCurrentTime(newDate)}`;
+  let nameFile = "";
 
   const data = props.userData;
   if (!data) {
@@ -59,6 +67,20 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
   const respondentArray = createRespondentArray(data);
   const dateTime = getCurrentDateTime();
   let version = "1.0.0";
+
+  // set name for ZIP file
+  if (shouldIncludeTimestamp === true) {
+    nameFile = `Quince_Results_${projectName}_${timeStamp}`;
+  } else {
+    nameFile = `Quince_Results_${projectName}`;
+  }
+  // set name for FILE NAME TEXT file
+  let txtNameFile;
+  if (shouldIncludeTimestamp === true) {
+    txtNameFile = `(archive)_KADE_results_${projectName}_${timeStamp}.txt`;
+  } else {
+    txtNameFile = `(archive)_KADE_results_${projectName}.txt`;
+  }
 
   const handleOnClick = () => {
     // if (!currentStatements) {
@@ -121,7 +143,7 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
       // Create a temporary <a> tag to trigger download
       const link = document.createElement("a");
       link.href = url;
-      link.download = "example.docx";
+      link.download = `${nameFile}.docx`;
       document.body.appendChild(link);
       link.click();
 

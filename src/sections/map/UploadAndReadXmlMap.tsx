@@ -11,6 +11,7 @@ const getSetColor = (state) => state.setColor;
 const getSetMapColorPalette = (state) => state.setMapColorPalette;
 const getSetQSortPatternObject = (state) => state.setQSortPatternObject;
 const getSetIsMapXmlLoaded = (state) => state.setIsMapXmlLoaded;
+const getSetQsortHeaderNumbers = (state) => state.setQsortHeaderNumbers;
 
 const UploadAndReadXmlMap: React.FC = () => {
   const { t } = useTranslation();
@@ -19,6 +20,7 @@ const UploadAndReadXmlMap: React.FC = () => {
   const setMapColorPalette = useStore(getSetMapColorPalette);
   const setQSortPatternObject = useStore(getSetQSortPatternObject);
   const setIsMapXmlLoaded = useStore(getSetIsMapXmlLoaded);
+  const setQsortHeaderNumbers = useStore(getSetQsortHeaderNumbers);
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const file = event.target.files?.[0];
@@ -31,17 +33,21 @@ const UploadAndReadXmlMap: React.FC = () => {
         const xml = parser.parseFromString(data, "text/xml");
         const xmlObjectArray = xml.getElementsByTagName("item");
 
+        console.log(xmlObjectArray);
+
         let nameArray, countArray, colorsArray;
         if (xmlObjectArray.length > 0) {
           // read file contents
-          nameArray = xmlObjectArray[1]?.value.split(",");
-          countArray = xmlObjectArray[2]?.value.split(",");
-          colorsArray = xmlObjectArray[3]?.value.split(",");
+          nameArray = xmlObjectArray[3]?.value.split(",");
+          countArray = xmlObjectArray[4]?.value.split(",");
+          colorsArray = xmlObjectArray[5]?.value.split(",");
         }
 
         console.log("nameArray", JSON.stringify(nameArray));
         console.log("countArray", JSON.stringify(countArray));
         console.log("colorsArray", JSON.stringify(colorsArray));
+
+        setQsortHeaderNumbers(countArray);
 
         // reset color pallette button value
         setMapColorPalette("custom");
