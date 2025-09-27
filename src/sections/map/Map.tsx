@@ -362,9 +362,9 @@ const Map: React.FC = () => {
       <div className="flex flex-col justify-center items-center text-center space-y-4">
         <div>
           {/* <h3 className="text-lg font-semibold text-gray-900 mb-2">{children}</h3> */}
-          <div className="text-sm text-gray-600 mb-4 min-h-[40px]">{description}</div>
+          <div className="text-sm text-gray-600 mb-4 min-h-[60px]">{description}</div>
         </div>
-        <div className="flex justify-center items-center w-full ">
+        <div className="flex justify-center items-center w-full">
           {component || (
             <button
               onClick={onClick}

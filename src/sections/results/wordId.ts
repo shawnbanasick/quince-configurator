@@ -9,29 +9,21 @@ const wordId = (
   childArray4,
   childArray5,
   displayPartId,
-  numStatements
+  numStatements,
+  showSurvey
 ) => {
-  console.log(
-    data,
-    childArray2,
-    childArray3,
-    childArray3b,
-    childArray4,
-    childArray5,
-    displayPartId,
-    numStatements
-  );
-
   const workingData = cloneDeep(data);
   let projectNameTitleString2 = workingData[0]["r1"].slice(15);
   let projectNameTitleString = projectNameTitleString2.split(" - ");
-  let projectDate = projectNameTitleString[1].split("@");
+  let projectDate = projectNameTitleString[projectNameTitleString.length - 1].split("@");
+  projectNameTitleString.pop();
+  projectNameTitleString = projectNameTitleString.join(" - ");
 
   let childArray = [
     new Paragraph({
       children: [
         new TextRun({
-          text: projectNameTitleString[0],
+          text: projectNameTitleString,
           bold: true,
           size: 64,
         }),
@@ -97,8 +89,6 @@ const wordId = (
       counter = 1; // Reset counter for new ID
     }
     previousId = item["r2"];
-
-    console.log(displayPartId);
 
     let identCode;
     if (displayPartId === "randomId") identCode = id.slice(11);
@@ -189,7 +179,9 @@ const wordId = (
     childArray.push(...childArray3[index]);
     childArray.push(...childArray3b[index]);
     childArray.push(...childArray4[index]);
-    childArray.push(...childArray5[index]);
+    if (showSurvey === true || showSurvey === "true") {
+      childArray.push(...childArray5[index]);
+    }
   });
   return childArray;
 };

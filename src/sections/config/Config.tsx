@@ -38,7 +38,7 @@ const Config: React.FC = () => {
     <div className="flex justify-center items-center bg-white rounded-2xl shadow-lg border border-gray-200 p-4 hover:shadow-xl transition-all duration-300">
       <div className="flex flex-col w-[100%] items-center justify-center text-center space-y-4">
         <div>
-          <div className="text-sm w-[500px] min-h-[40px] text-gray-600 mb-4">{description}</div>
+          <div className="text-sm w-[500px] min-h-[60px] text-gray-600 mb-4">{description}</div>
           <h3 className="text-lg font-semibold text-gray-900 mb-2">{children}</h3>
         </div>
         {/* <div className="w-full">{component}</div> */}

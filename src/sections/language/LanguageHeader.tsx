@@ -5,6 +5,7 @@ import { LanguageIntroText } from "./LanguageIntroText";
 import { UploadAndReadLanguageXml } from "./UploadAndReadLanguageXml.js";
 import { DownloadLanguageXml } from "./DownloadLanguageXml.js";
 import Button from "../../sections/utils/Button";
+import ReactHTMLParser from "html-react-parser";
 
 const getLanguageDisplayAll = (state) => state.languageDisplayAll;
 const getLanguageDisplayEssential = (state) => state.languageDisplayEssential;
@@ -38,13 +39,13 @@ const LanguageHeader: React.FC = () => {
   const ActionButton: React.FC<{
     children: React.ReactNode;
     icon: React.ReactNode;
-    description: string;
+    description: React.ReactNode;
   }> = ({ children, description }) => (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-all duration-300">
       <div className="flex flex-col w-[100%] items-center text-center space-y-4">
         <div className="w-[80%]">
-          <p className="text-sm text-gray-600 mb-4">{description}</p>
-          <div className="text-lg font-semibold text-gray-900 mb-2">{children}</div>
+          <div className="text-sm text-gray-600 mb-4 min-h-[90px]">{description}</div>
+          <div className="text-lg font-semibold text-gray-900 mb-2 self-end">{children}</div>
         </div>
       </div>
     </div>
@@ -112,7 +113,7 @@ const LanguageHeader: React.FC = () => {
           }
 
           {/* Action Buttons Section */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 gap-8 mb-12 w-[86%] justify-self-center">
             <ActionButton
               icon={
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -124,7 +125,7 @@ const LanguageHeader: React.FC = () => {
                   />
                 </svg>
               }
-              description={t("uploadLanguageXml")}
+              description={ReactHTMLParser(t("uploadLanguageXml"))}
             >
               <div>
                 <UploadAndReadLanguageXml />
@@ -142,7 +143,7 @@ const LanguageHeader: React.FC = () => {
                   />
                 </svg>
               }
-              description={t("downloadLanguageXml")}
+              description={ReactHTMLParser(t("downloadLanguageXml"))}
             >
               <div>
                 <DownloadLanguageXml />

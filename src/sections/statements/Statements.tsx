@@ -57,7 +57,7 @@ const Statements: React.FC = () => {
     <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-all duration-300">
       <div className="flex flex-col items-center justify-center text-center">
         <div>
-          <div className="text-sm text-gray-600 mb-4 min-h-[40px]">{description}</div>
+          <div className="text-sm text-gray-600 mb-4 min-h-[60px]">{description}</div>
         </div>
         <div className="flex justify-center items-center w-[100%]">
           {component || (

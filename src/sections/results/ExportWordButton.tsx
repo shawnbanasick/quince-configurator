@@ -29,6 +29,7 @@ interface GlobalState {
   studyTitle: string;
   mapInputQsortPattern: number[];
   surveyQuestionsArray: any[];
+  showSurvey: boolean;
 }
 interface ExportWordButtonProps {
   userData?: any; // Replace `any` with a concrete type
@@ -39,12 +40,15 @@ interface ExportWordButtonProps {
 const getCurrentStatements = (state: GlobalState) => state.currentStatements;
 const getMapInputQsortPattern = (state: GlobalState) => state.mapInputQsortPattern;
 const getSurveyQuestionsArray = (state: GlobalState) => state.surveyQuestionsArray;
+const getShowSurvey = (state: GlobalState) => state.showSurvey;
 
 const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
   const currentStatements = useStore(getCurrentStatements);
   const mapInputQsortPattern = useStore(getMapInputQsortPattern);
   const surveyQuestionsArray = useStore(getSurveyQuestionsArray);
+  const showSurvey = useStore(getShowSurvey);
   const { t } = useTranslation();
+
   let shouldIncludeTimestamp = true;
 
   // create file name timeStamp
@@ -106,7 +110,9 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
     );
     let childArray3 = wordPresort(data);
     let childArray2 = wordTime(data);
-    let childArray1 = wordId(
+
+    let childArray1;
+    childArray1 = wordId(
       data,
       childArray2,
       childArray3,
@@ -114,12 +120,19 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
       childArray4,
       childArray5,
       displayPartId,
-      numStatements
+      numStatements,
+      showSurvey
     );
+
     let statementsArray = wordPartStatements(data, newHeaderArray, currentStatements, [
       ...props.partNames,
     ]);
-    let summaryArray = wordSurveySummary(data, surveyQuestionsArray, [...props.partNames]);
+    let summaryArray = wordSurveySummary(
+      data,
+      surveyQuestionsArray,
+      [...props.partNames],
+      showSurvey
+    );
 
     const doc = new Document({
       compatibility: {

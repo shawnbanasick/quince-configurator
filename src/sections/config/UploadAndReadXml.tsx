@@ -303,8 +303,8 @@ const UploadAndParseXML: React.FC = () => {
 
             surveyQuestArray.push(questObj);
             setSurveyQuestionsArray(surveyQuestArray);
-            setIsConfigXmlLoaded(true);
           }
+          setIsConfigXmlLoaded(true);
         });
         return;
       };

@@ -12,7 +12,6 @@ const Config1StudyTitle: React.FC = () => {
   const { t } = useTranslation();
 
   const handleStudyTitleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(event.target.value);
     setStudyTitle(event.target.value);
   };
 

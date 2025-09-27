@@ -12,7 +12,12 @@ import { processRating10Summary } from "./surveySummary/processRating10Summary";
 
 type RecordMap = Record<string, any>;
 
-const wordSurveySummary = (data: RecordMap, surveyQuestionsArray, partNames): Paragraph[] => {
+const wordSurveySummary = (
+  data: RecordMap,
+  surveyQuestionsArray,
+  partNames,
+  showSurvey
+): Paragraph[] => {
   const workingData = cloneDeep(data);
 
   function filterByItemNum1(obj: RecordMap): Record<string, string> {
@@ -43,20 +48,23 @@ const wordSurveySummary = (data: RecordMap, surveyQuestionsArray, partNames): Pa
 
   // for each participant
   const paragraphs: Paragraph[] = [];
-  paragraphs.push(
-    new Paragraph({
-      children: [
-        new TextRun({
-          text: "Questionnaire Summary Results",
-          bold: true,
-          size: 40,
-        }),
-      ],
-      pageBreakBefore: true,
-      heading: HeadingLevel.HEADING_1,
-      thematicBreak: true,
-    })
-  );
+
+  if (showSurvey === true || showSurvey === "true") {
+    paragraphs.push(
+      new Paragraph({
+        children: [
+          new TextRun({
+            text: "Questionnaire Summary Results",
+            bold: true,
+            size: 40,
+          }),
+        ],
+        pageBreakBefore: true,
+        heading: HeadingLevel.HEADING_1,
+        thematicBreak: true,
+      })
+    );
+  }
 
   type RecordMap = Record<string, string>;
   // let newArray: Record<string, string>[] = [];

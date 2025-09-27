@@ -38,14 +38,10 @@ const UploadAndReadXmlMap: React.FC = () => {
         let nameArray, countArray, colorsArray;
         if (xmlObjectArray.length > 0) {
           // read file contents
-          nameArray = xmlObjectArray[3]?.value.split(",");
-          countArray = xmlObjectArray[4]?.value.split(",");
-          colorsArray = xmlObjectArray[5]?.value.split(",");
+          nameArray = xmlObjectArray[1]?.value.split(",");
+          countArray = xmlObjectArray[2]?.value.split(",");
+          colorsArray = xmlObjectArray[3]?.value.split(",");
         }
-
-        console.log("nameArray", JSON.stringify(nameArray));
-        console.log("countArray", JSON.stringify(countArray));
-        console.log("colorsArray", JSON.stringify(colorsArray));
 
         setQsortHeaderNumbers(countArray);
 
@@ -66,8 +62,6 @@ const UploadAndReadXmlMap: React.FC = () => {
         localStorage.setItem("qSortPatternObject", JSON.stringify(qSortPatternObject));
 
         setQSortPatternObject(qSortPatternObject);
-
-        console.log(JSON.stringify(qSortPatternObject));
 
         // clear all colors
         setClearAllColors();

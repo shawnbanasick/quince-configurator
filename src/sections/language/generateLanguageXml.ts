@@ -23,7 +23,7 @@ const generateLanguageXml = () => {
 
   let data = `<?xml version="1.0" encoding="UTF-8"?>
 
-   <language version="Quince ${useStore.getState().version}" htmlParse="true">;
+   <language version="${useStore.getState().version}" htmlParse="true">;
 
         <!-- 0. FILE INFORMATION -->
         <item order="0-1" id="languageFileVersion">1.0.0</item>
