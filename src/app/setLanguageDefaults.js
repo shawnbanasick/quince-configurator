@@ -15,28 +15,27 @@ const setLanguageDefaults = (language) => {
 
   if (language === "en") {
     useStore.setState({
-      mobileHeadersDefault5: "Strongly Agree, Agree, Neutral, Disagree, Strongly Disagree",
+      mobileHeadersDefault5: "Strongly Disagree, Disagree, Neutral, Agree, Strongly Agree",
       mobileHeadersDefault7:
-        "Strongly Agree, Agree, Agree Somewhat, Neutral, Disagree Somewhat, Disagree, Strongly Disagree",
+        "Strongly Disagree, Disagree, Disagree Somewhat, Neutral, Agree Somewhat, Agree, Strongly Agree",
       mobileHeadersDefault9:
-        "Very Strongly Agree, Strongly Agree, Agree, Agree Somewhat, Neutral, Disagree Somewhat, Disagree, Strongly Disagree, Very Strongly Disagree",
+        "Very Strongly Disagree, Strongly Disagree, Disagree, Disagree Somewhat, Neutral, Agree Somewhat, Agree, Strongly Agree, Very Strongly Agree",
       mobileHeadersDefault11:
-        "Very Strongly Agree, Strongly Agree, Agree, Agree Somewhat, Slightly Agree, Neutral, Very Slightly Disagree, Disagree Somewhat, Disagree, Strongly Disagree, Very Strongly Disagree",
+        "Very Strongly Disagree, Strongly Disagree, Disagree, Disagree Somewhat, Very Slightly Disagree, Neutral, Slightly Agree, Agree Somewhat, Agree, Strongly Agree, Very Strongly Agree",
       mobileHeadersDefault13:
-        "Completely Agree, Very Strongly Agree, Strongly Agree, Agree, Agree Somewhat, Slightly Agree, Neutral, Very Slightly Disagree, Disagree Somewhat, Disagree, Strongly Disagree, Very Strongly Disagree, Completely Disagree",
+        "Completely Disagree, Very Strongly Disagree, Strongly Disagree, Disagree, Disagree Somewhat, Very Slightly Disagree, Neutral, Slightly Agree, Agree Somewhat, Agree, Strongly Agree, Very Strongly Agree, Completely Agree",
     });
   }
   if (language === "ja") {
     useStore.setState({
-      mobileHeadersDefault5: "強く同意する, 同意する, 中立, 反対する, 強く反対する",
-      mobileHeadersDefault7:
-        "強く同意する, 同意する, やや同意する, 中立, やや反対する, 反対する, 強く反対する",
+      mobileHeadersDefault5: "反対, やや反対, 中立, やや賛成, 賛成",
+      mobileHeadersDefault7: "強く反対, 反対, やや反対, 中立, やや賛成, 賛成, 強く賛成",
       mobileHeadersDefault9:
-        "非常に強く同意, 強く同意, 同意, やや同意, 中立, やや反対, 反対, 強く反対, 非常に強く反対",
+        "強く反対, かなり反対, 反対, やや反対, 中立, やや賛成, 賛成, かなり賛成, 強く賛成",
       mobileHeadersDefault11:
-        "非常に強く同意, 強く同意, 同意, やや同意, やや同意, 中立, やや反対, やや反対, 反対, 強く反対, 非常に強く反対",
+        "強く反対, かなり反対, 反対, やや反対, どちらかといえば反対, 中立, どちらかといえば賛成, やや賛成, 賛成, かなり賛成, 強く賛成",
       mobileHeadersDefault13:
-        "完全に同意する, 非常に強く同意する, 強く同意する, 同意する, やや同意する, 少し同意する, 中立, 非常にわずかに反対する, やや反対する, 反対する, 強く反対する, 非常に強く反対する, 完全に反対する",
+        "完全に反対, 強く反対, かなり反対, 反対, やや反対, どちらかといえば反対, 中立, どちらかといえば賛成, やや賛成, 賛成, かなり賛成, 強く賛成, 完全に賛成",
     });
   }
   return;

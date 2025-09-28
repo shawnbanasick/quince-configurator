@@ -26,10 +26,10 @@ const generateLanguageXml = () => {
    <language version="${useStore.getState().version}" htmlParse="true">;
 
         <!-- 0. FILE INFORMATION -->
-        <item order="0-1" id="languageFileVersion">1.0.0</item>
-        <item order="0-2" id="iterationDate">2025-08-31</item>
-        <item order="0-3" id="studyTitle">${studyTitle}</item> 
-        <item order="0-4" id="creationDate">${creationDate}</item> 
+        <info order="0-1" id="languageFileVersion">1.0.0</info>
+        <info order="0-2" id="iterationDate">2025-08-31</info>
+        <info order="0-3" id="studyTitle">${studyTitle}</info> 
+        <info order="0-4" id="creationDate">${creationDate}</info> 
 
         <!-- 1. MULTIPLE SCREENS AND FOOTER -->
         <item order= "1-1" id="btnHelp">${encodeHTML(useStore.getState().btnHelp)}</item>

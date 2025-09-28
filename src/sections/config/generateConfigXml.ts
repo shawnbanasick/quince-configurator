@@ -120,12 +120,12 @@ const generateConfigXml = () => {
    <item id="sortDirection">positive</item> 
 
    <!-- 0. FILE INFORMATION -->
-   <item order="0-a" id="configFileVersion">1.0.0</item>
-   <item order="0-b" id="iterationDate">2025-08-31</item>
+   <info order="0-a" id="configFileVersion">1.0.0</info>
+   <info order="0-b" id="iterationDate">2025-08-31</info>
+   <info order="1--" id="creationDate">${creationDate}</info> 
 
    <!-- 1. STUDY TITLE -->
    <item order="1-a" id="studyTitle">${studyTitle}</item> 
-   <item order="1--" id="creationDate">${creationDate}</item> 
 
 
    <!-- 2. DATABASE SETUP -->

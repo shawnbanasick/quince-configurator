@@ -35,10 +35,10 @@ const generateStatementsXml = (statements, version) => {
    <statements version="${version}" htmlParse="false">;
 
     <!-- 0. FILE INFORMATION -->
-    <item order="0-1" id="statementsFileVersion">1.0.0</item>
-    <item order="0-2" id="iterationDate">2025-08-31</item>
-    <item order="0-3" id="studyTitle">${studyTitle}</item> 
-    <item order="0-4" id="creationDate">${creationDate}</item> 
+    <info order="0-1" id="statementsFileVersion">1.0.0</info>
+    <info order="0-2" id="iterationDate">2025-08-31</info>
+    <info order="0-3" id="studyTitle">${studyTitle}</info> 
+    <info order="0-4" id="creationDate">${creationDate}</info> 
 
     <!-- 1. STATEMENTS -->\n`;
 
