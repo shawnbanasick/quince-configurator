@@ -2,8 +2,9 @@ import { UserTextInput } from "../utils/UserTextInput";
 import { UserTextAreaInput } from "../utils/UserTextAreaInput";
 import showSectionDefaults from "./showSectionDefaults";
 import clearSection from "./clearSection";
-// import showRefImage from "./showRefImage";
 import { useStore } from "../../globalState/useStore";
+// import showRefImage from "./showRefImage";
+import { useTranslation } from "react-i18next";
 
 const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
@@ -23,6 +24,7 @@ const MobileFooterTextInput = () => {
   const langBtnNext = useStore(getLangBtnNext);
   const langStepCompleted = useStore(getLangStepCompleted);
   const screenOrientationText = useStore(getScreenOrientationText);
+  const { t } = useTranslation();
 
   console.log("langBtnHelp", langBtnHelp);
 
