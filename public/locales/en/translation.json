@@ -32,7 +32,7 @@
   "what0": "What is this?",
   "what1": "Quince is software for digital Q sorting. It is the combination of two previous Q sorting projects - EQ Web Sort (Shawn Banasick) and POETQ (Stephen Jeffares). The software consists of two parts - a ZIP file that contains the <b>Quince Template</b> files, and the <b>Configurator</b> (this web page) that you will use to modify the template's 'settings' files to meet the needs of your Q sort project. Almost all aspects of the Q sort can be customized in Quince. No computer programming skills are required to create a Quince project. Everything can be done by pointing/clicking or by dragging/dropping.",
   "what2": "Quince is open source software.",
-  "what3": "The required online database service is free to use for projects with less than 1,000 participants. The only cost for a Quince project is the time you spend learning how to setup it up.",
+  "what3": "The required online database service is free to use for projects with less than 1,000 participants. The only cost for a Quince project is the time you spend learning how to do the setup.",
   "features0": "Features",
   "features1": "step-by-step refinement process before Q sort (adapted from POETQ) which helps to reduce Q sort errors",
   "features2": "adaptive user interface that works on both desktop and mobile devices",

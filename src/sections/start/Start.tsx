@@ -200,14 +200,12 @@ const Start = () => {
         </div>
         <div className="mt-8 w-7/12 align-self-center text-2xl -indent-6 pl-6">
           3. {ReactHTMLParser(t("setup7"))}
-          <br />
           <img
             src={newSetupFilesViz}
-            className="w-auto max-w-[800px]  max-h-[500px] mt-8"
+            className="w-auto max-w-[800px]  max-h-[500px] mt-8 justify-self-center mb-8"
             alt={"edit new files visualization"}
             loading="lazy"
           />
-          <br />
           {ReactHTMLParser(t("setup8"))}
         </div>
         <div className="mt-8 w-7/12 align-self-center text-2xl -indent-6 pl-6">
