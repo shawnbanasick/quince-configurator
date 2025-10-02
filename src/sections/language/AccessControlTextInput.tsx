@@ -30,7 +30,7 @@ const AccessControlTextInput = () => {
   const accessCodeText = useStore(getAccessCodeText);
   const { t } = useTranslation();
 
-  const handleRefImage = (e: any) => {
+  const handleRefImage = () => {
     window.open(access1, "Access Image 1", "width=800, height=600");
     return false;
   };
@@ -59,7 +59,6 @@ const AccessControlTextInput = () => {
       <div className="flex flex-row justify-between mb-4">
         <h2>{`3. ${t("accessControlScreen")}`} </h2>
         <div className="flex flex-row gap-4">
-          {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="accessDef"
             className="bg-slate-300 p-2 rounded-md w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
@@ -67,7 +66,6 @@ const AccessControlTextInput = () => {
           >
             {t("useDefaults")}
           </button>
-          {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="accessClear"
             className="bg-slate-300 p-2 rounded-md w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
@@ -82,7 +80,6 @@ const AccessControlTextInput = () => {
           <button
             className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="consentImage"
-            // marginRight="35px"
             onClick={handleRefImage}
           >
             1
@@ -190,81 +187,3 @@ const AccessControlTextInput = () => {
 };
 
 export { AccessControlTextInput };
-
-// const SectionContainer = styled.div`
-//   * {
-//     // outline: 1px solid red;
-//   }
-// `;
-
-// const HeaderButtonBar = styled.div`
-//   display: flex;
-//   flex-direction: row;
-//   align-items: baseline;
-//   justify-content: space-between;
-//   width: 100%;
-// `;
-
-// const DefaultsButton = styled.button`
-//   box-sizing: border-box;
-//   align-self: flex-end;
-//   margin-bottom: 10px;
-//   color: var(--font-color);
-//   transition: 0.3s ease all;
-//   user-select: none;
-
-//   &:hover {
-//     opacity: 1;
-//     box-shadow: inset 0 0 0 1px #666, 0 0 1px transparent;
-//   }
-
-//   &:active {
-//     transform: translateY(1px);
-//     filter: brightness(80%);
-//   }
-// `;
-
-// const ClearAllButton = styled.button`
-//   box-sizing: border-box;
-//   align-self: flex-end;
-//   margin-bottom: 10px;
-//   margin-left: 10px;
-//   color: var(--font-color);
-//   transition: 0.3s ease all;
-//   user-select: none;
-
-//   &:hover {
-//     opacity: 1;
-//     box-shadow: inset 0 0 0 1px #666, 0 0 1px transparent;
-//   }
-
-//   &:active {
-//     transform: translateY(1px);
-//     filter: brightness(80%);
-//   }
-// `;
-
-// const RefImageButton = styled.button`
-//   box-sizing: border-box;
-//   align-self: flex-end;
-//   margin-bottom: 10px;
-//   margin-left: 10px;
-//   margin-right: ${(props) => props.marginRight};
-//   justify-self: flex-end;
-//   color: var(--font-color);
-//   user-select: none;
-
-//   &:hover {
-//     opacity: 1;
-//     box-shadow: inset 0 0 0 1px #666, 0 0 1px transparent;
-//   }
-
-//   &:active {
-//     transform: translateY(1px);
-//     filter: brightness(80%);
-//   }
-// `;
-
-// const SectionTitle = styled.h3`
-//   margin-top: 20px;
-// `;

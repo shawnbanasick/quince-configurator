@@ -42,9 +42,9 @@ const MobileFooterTextInput = () => {
     setText(e.target.name, e.target.value);
   };
 
-  const handleRefImage = (e: any) => {
-    // showRefImage(e.target.id);
-  };
+  // const handleRefImage = (e: any) => {
+  // showRefImage(e.target.id);
+  // };
 
   if (displayMode === "beginner") {
     displayMode = true;

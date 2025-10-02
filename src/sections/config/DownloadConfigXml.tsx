@@ -1,14 +1,9 @@
-import React, { useState } from "react";
-// import { useStore } from "../../globalState/useStore";
+import React from "react";
 import { useTranslation } from "react-i18next";
 import { generateConfigXml } from "./generateConfigXml";
 
 const DownloadConfigXml: React.FC = () => {
   const { t } = useTranslation();
-
-  //   const [xmlContent, setXmlContent] = useState<string | null>(null);
-  //   const [error, setError] = useState<string | null>(null);
-  //   const [surveyQuestArray, setSurveyQuestArray] = useState<QuestObjType[]>([]);
 
   const handleFileDownload = () => {
     const xmlContent = generateConfigXml();

@@ -28,7 +28,7 @@ import { useStore } from "../../globalState/useStore";
 //   });
 // };
 
-const getShowSurvey = (state) => state.showSurvey;
+// const getShowSurvey = (state) => state.showSurvey;
 const getDetailsArray = (state) => state.detailsArray;
 const getSurveyQuestionType = (state) => state.surveyQuestionType;
 const getConfigSurveyInfoBarColor = (state) => state.configSurveyInfoBarColor;
@@ -465,97 +465,3 @@ const SurveyQuestionInput: React.FC = () => {
 };
 
 export { SurveyQuestionInput };
-
-// const Title = styled.h1`
-//   font-size: 25px;
-//   width: 70vw;
-//   margin-left: 10px;
-// `;
-
-// const SurveyContainer = styled.div`
-//   margin-bottom: 25px;
-//   padding-left: 10px;
-// `;
-
-// const ExampleContainer = styled.div`
-//   border: 3px solid black;
-//   border-top-right-radius: 5px;
-//   border-top-left-radius: 5px;
-//   background: var(--second-theme-color);
-//   margin-top: 20px;
-//   margin-bottom: 0px;
-//   padding-left: 10px;
-//   width: 75vw;
-//   max-width: 1200px;
-//   height: auto;
-//   transition: opacity 3s ease-in-out;
-// `;
-
-// const SettingsContainer = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   border: 3px solid black;
-//   border-top: 0px solid black;
-//   border-bottom-left-radius: 5px;
-//   border-bottom-right-radius: 5px;
-//   margin-top: 0px;
-//   margin-bottom: 5px;
-//   padding-top: 10px;
-//   padding-left: 10px;
-//   padding-bottom: 5px;
-//   width: 75vw;
-//   max-width: 1200px;
-// `;
-
-// const AddItemButton = styled(GeneralButton)`
-//   margin-left: 70px; // 68vw;
-//   margin-top: 50px; // 68vw;
-//   margin-bottom: 10px; // 68vw;
-//   width: 150px;
-// `;
-
-// const ImageContainer = styled.div`
-//   width: clamp(250px, 70vw, 1175px);
-// `;
-
-// const StyledToastContainer = styled(ToastContainer).attrs({
-//   // custom props
-// })`
-//   .Toastify__toast--success {
-//     padding-left: 40px;
-//     background-color: var(--main-theme-color);
-//     width: 200px;
-//   }
-// `;
-
-// const ColorLabel = styled.div`
-//   display: flex;
-//   flex-direction: row;
-//   margin-left: 70px;
-//   margin-top: 20px;
-//   align-items: center;
-//   gap: 20px;
-// `;
-
-// const SettingsTextContainer = styled.h3`
-//   margin-top: 30px;
-//   margin-bottom: 0px;
-//   margin-left: 30px;
-
-//   ul {
-//     font-family: arial;
-//     font-weight: normal;
-//     margin-top: 3px;
-//     list-style-type: none;
-//   }
-// `;
-
-// const SeparatorWarning = styled.div`
-//   background-color: goldenrod;
-//   font-weight: bold;
-//   padding: 10px;
-//   width: 465px;
-//   margin-bottom: 10px;
-//   margin-left: 20px;
-//   border-radius: 5px;
-// `;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import XMLParser from "react-xml-parser";
 import { useStore } from "../../globalState/useStore";
 import { useTranslation } from "react-i18next";
@@ -11,11 +11,11 @@ interface QuestObjType {
   bg?: string;
   limited?: string;
   limitLength?: string;
-  limitLength?: string;
   restricted?: string;
   placeholder?: string;
   options?: string;
   scale?: string;
+  surveyQuestArray?: any[];
 }
 
 const getSetStudyTitle = (state) => state.setStudyTitle;
@@ -97,9 +97,11 @@ const UploadAndParseXML: React.FC = () => {
 
   const { t } = useTranslation();
 
-  const [xmlContent, setXmlContent] = useState<string | null>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [surveyQuestArray, setSurveyQuestArray] = useState<QuestObjType[]>([]);
+  // const [xmlContent, setXmlContent] = useState<string | null>(null);
+  // const [error, setError] = useState<string | null>(null);
+  // const [surveyQuestArray, setSurveyQuestArray] = useState<QuestObjType[]>([]);
+
+  const surveyQuestArray: QuestObjType[] = [];
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const file = event.target.files?.[0];
@@ -235,7 +237,7 @@ const UploadAndParseXML: React.FC = () => {
             // info objects
             let labelObj = inputObjArray.find((item) => item.name === "label");
             let noteObj = inputObjArray.find((item) => item.name === "note");
-            let optionsObj = inputObjArray.find((item) => item.name === "options");
+            // let optionsObj = inputObjArray.find((item) => item.name === "options");
             // let scaleObj = inputObjArray.find((item) => item.name === "scale");
 
             // transformations
@@ -311,7 +313,7 @@ const UploadAndParseXML: React.FC = () => {
 
       reader.onerror = () => {
         console.error("Error reading file");
-        setError("Error reading file");
+        // setError("Error reading file");
       };
 
       reader.readAsText(file);

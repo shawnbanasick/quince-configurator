@@ -82,9 +82,9 @@ interface State {
   setEmojiArrayType: (value: string) => void;
 }
 
-interface EmojiProps {
-  size: number;
-}
+// interface EmojiProps {
+//   size: number;
+// }
 
 const getDisplayMode = (state: State) => state.displayMode;
 const getMapColorPalette = (state: State) => state.mapColorPalette;
@@ -357,7 +357,7 @@ const Map: React.FC = () => {
     onClick?: () => void;
     component?: React.ReactNode;
     variant?: "primary" | "secondary";
-  }> = ({ children, description, onClick, component, variant = "primary" }) => (
+  }> = ({ children, description, onClick, component }) => (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-all duration-300">
       <div className="flex flex-col justify-center items-center text-center space-y-4">
         <div>
@@ -740,22 +740,6 @@ const Map: React.FC = () => {
               </div>
             </div>
           </div>
-
-          {/* Status Information */}
-          {/* <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="text-center p-6 bg-blue-50 rounded-xl">
-            <div className="text-3xl font-bold text-blue-600 mb-2">{numStatements}</div>
-            <div className="text-sm text-gray-600">Total Statements</div>
-          </div>
-          <div className="text-center p-6 bg-green-50 rounded-xl">
-            <div className="text-3xl font-bold text-green-600 mb-2">{numMapTotalColumns}</div>
-            <div className="text-sm text-gray-600">Grid Columns</div>
-          </div>
-          <div className="text-center p-6 bg-purple-50 rounded-xl">
-            <div className="text-3xl font-bold text-purple-600 mb-2">{numHeaderLabels}</div>
-            <div className="text-sm text-gray-600">Header Labels</div>
-          </div>
-        </div> */}
         </div>
       </div>
     </div>

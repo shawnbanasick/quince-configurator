@@ -1,12 +1,7 @@
 import { Paragraph, TextRun } from "docx";
 import { cloneDeep } from "es-toolkit";
-import { useStore } from "../../GlobalState/useStore";
 
 type RecordMap = Record<string, any>;
-
-interface GlobalState {
-  currentStatements: string[];
-}
 
 // const getCurrentStatements = (state: GlobalState) => state.currentStatements;
 

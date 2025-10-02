@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import XMLParser from "react-xml-parser";
-// import getNameTranslationObject from "./getNameTranslationObject";
 import { decodeHTML } from "../utils/decodeHTML";
 import { useTranslation } from "react-i18next";
 import { useStore } from "../../globalState/useStore";
@@ -9,8 +8,6 @@ const getSetText = (state) => state.setText;
 const getSetIsLanguageXmlLoaded = (state) => state.setIsLanguageXmlLoaded;
 
 const UploadAndReadLanguageXml = () => {
-  // console.log("UploadAndReadLanguageXml component rendered");
-
   const { t } = useTranslation();
   const setText = useStore(getSetText);
   const setIsLanguageXmlLoaded = useStore(getSetIsLanguageXmlLoaded);
@@ -23,7 +20,7 @@ const UploadAndReadLanguageXml = () => {
     }
   };
 
-  const handleFileSelection = async (event: React.ChangeEvent<HTMLInputElement>): void => {
+  const handleFileSelection = async (event: React.ChangeEvent<HTMLInputElement>): Promise<void> => {
     const file = event.target.files?.[0];
     if (file) {
       try {
@@ -33,7 +30,6 @@ const UploadAndReadLanguageXml = () => {
         const xmlObjectArray = xml.getElementsByTagName("item");
         const keys = xmlObjectArray.map((item) => item.attributes.id);
         console.log("Keys from XML:", keys);
-        // console.log("Parsed XML object array:", JSON.stringify(xmlObjectArray, null, 2));
 
         xmlObjectArray.forEach((item) => {
           setText(item.attributes.id, decodeHTML(item.value, true));
@@ -42,7 +38,6 @@ const UploadAndReadLanguageXml = () => {
         setIsLanguageXmlLoaded(true);
       } catch (error) {
         console.error("Error reading file", error);
-        // setError("Error reading file");
       }
     }
   };

@@ -29,13 +29,7 @@ const LanguageConfigSections: React.FC = () => {
     icon: React.ReactNode;
     children: React.ReactNode;
     variant?: "primary" | "secondary" | "accent";
-  }> = ({ title, description, icon, children, variant = "primary" }) => {
-    const variants = {
-      primary: "from-blue-400 to-purple-600",
-      secondary: "from-green-600 to-teal-600",
-      accent: "from-orange-500 to-red-500",
-    };
-
+  }> = ({ title, description, icon, children }) => {
     return (
       <div
         id="cards"

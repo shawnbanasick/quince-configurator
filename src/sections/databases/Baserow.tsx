@@ -191,7 +191,7 @@ const Baserow: React.FC = () => {
 
   const StepCard: React.FC<{ step: StepData; isFirst?: boolean; index: number }> = ({
     step,
-    isFirst = false,
+    // isFirst = false,
     index,
   }) => {
     return (

@@ -1,5 +1,5 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 import { useStore } from "../../globalState/useStore.js";
 
 interface UserTextAreaInputProps {
@@ -13,12 +13,12 @@ interface UserTextAreaInputProps {
   value: string;
   height: number;
   disabled: boolean;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const getSetText = (state) => state.setText;
 
 const UserTextAreaInput: React.FC<UserTextAreaInputProps> = ({
-  // tabIndex,
   classNameText,
   classNameLabel,
   highlight,
@@ -26,11 +26,7 @@ const UserTextAreaInput: React.FC<UserTextAreaInputProps> = ({
   placeholder,
   name,
   value,
-  // onChange,
-  // height,
 }) => {
-  // props = label, stateId, sectionName, width, left
-  // const { t } = useTranslation();
   const setText = useStore(getSetText);
   const key = `${name}`; // ${sectionName}
 
@@ -77,29 +73,3 @@ const UserTextAreaInput: React.FC<UserTextAreaInputProps> = ({
 };
 
 export { UserTextAreaInput };
-
-// const UserText = styled.textarea((props) => ({
-//   width: `${width + 26}%`,
-//   height: `${height}px`,
-//   marginLeft: `${left}px`,
-//   marginTop: `15px`,
-//   marginBottom: `15px`,
-//   paddingLeft: `10px`,
-// }));
-
-// const InputContainerDiv = styled.div`
-//   display: flex;
-//   margin-left: 70px;
-//   flex-direction: row;
-//   justify-content: flex-start;
-//   align-items: center;
-// `;
-
-// const TitleSpan = styled.span`
-//   margin-right: 10px;
-// `;
-
-// const TitleSpanHighlight = styled.div`
-//   margin-right: 10px;
-//   background-color: #ffff00;
-// `;

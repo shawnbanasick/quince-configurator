@@ -5,7 +5,7 @@ import clearSection from "./clearSection";
 import { useStore } from "../../globalState/useStore";
 import { useTranslation } from "react-i18next";
 
-const getDisplayMode = (state) => state.displayMode;
+// const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
 const getLangBtnHelp = (state) => state.btnHelp;
 const getLangFontSizeText = (state) => state.fontSizeText;
@@ -19,7 +19,7 @@ const getmobileModalButtonCancel = (state) => state.mobileModalButtonCancel;
 const getmobileExpandViewMessage = (state) => state.expandViewMessage;
 
 const MultipleScreenTextInput = () => {
-  let displayMode = useStore(getDisplayMode);
+  // let displayMode = useStore(getDisplayMode);
   const setText = useStore(getSetText);
   const langBtnHelp = useStore(getLangBtnHelp);
   const langFontSizeText = useStore(getLangFontSizeText);
@@ -38,24 +38,24 @@ const MultipleScreenTextInput = () => {
     showSectionDefaults(e.target.id);
   };
 
-  const handleClearAll = (e) => {
+  const handleClearAll = (e: any) => {
     clearSection(e.target.id);
   };
 
-  const handleTextChange = (e) => {
+  const handleTextChange = (e: any) => {
     console.log("handleTextChange", e.target.value);
     setText(e.target.name, e.target.value);
   };
 
-  const handleRefImage = (e) => {
-    // showRefImage(e.target.id);
-  };
+  // const handleRefImage = (e) => {
+  // showRefImage(e.target.id);
+  // };
 
-  if (displayMode === "beginner") {
-    displayMode = true;
-  } else {
-    displayMode = false;
-  }
+  // if (displayMode === "beginner") {
+  //   displayMode = true;
+  // } else {
+  //   displayMode = false;
+  // }
 
   return (
     <div className="outline outline-2 outline-slate-500  p-2 w-[100%]  rounded-sm">

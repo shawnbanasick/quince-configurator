@@ -25,7 +25,7 @@ const FailureTextInput: React.FC = () => {
   const clipboardResults = useStore((state) => state.clipboardResults);
   const copiedText = useStore((state) => state.copiedText);
   const downloadResultsButtonText = useStore((state) => state.downloadResultsButtonText);
-  const btnDownload = useStore((state) => state.btnDownload);
+  // const btnDownload = useStore((state) => state.btnDownload);
   const emailBodyMessage = useStore((state) => state.emailBodyMessage);
   const emailSubjectText = useStore((state) => state.emailSubjectText);
 

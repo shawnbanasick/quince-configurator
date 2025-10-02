@@ -1,20 +1,20 @@
 import React from "react";
 import { useStore } from "../../globalState/useStore";
 import { useTranslation } from "react-i18next";
-import Image from "../../assets/images/infoIcon.svg";
 import { UserNumInput } from "../utils/UserNumInput";
 import clsx from "clsx";
-import { ColorPicker } from "./ColorPicker";
+// import Image from "../../assets/images/infoIcon.svg";
+// import { ColorPicker } from "./ColorPicker";
 
 const getShuffleCards = (state) => state.shuffleCards;
 const getSetShuffleCards = (state) => state.setShuffleCards;
 
-const getGreenCardColor = (state) => state.greenCardColor;
-const getSetGreenCardColor = (state) => state.setGreenCardColor;
-const getPinkCardColor = (state) => state.pinkCardColor;
-const getSetPinkCardColor = (state) => state.setPinkCardColor;
-const getYellowCardColor = (state) => state.yellowCardColor;
-const getSetYellowCardColor = (state) => state.setYellowCardColor;
+// const getGreenCardColor = (state) => state.greenCardColor;
+// const getSetGreenCardColor = (state) => state.setGreenCardColor;
+// const getPinkCardColor = (state) => state.pinkCardColor;
+// const getSetPinkCardColor = (state) => state.setPinkCardColor;
+// const getYellowCardColor = (state) => state.yellowCardColor;
+// const getSetYellowCardColor = (state) => state.setYellowCardColor;
 
 const getDefaultFontSizePresort = (state) => state.defaultFontSizePresort;
 const getSetDefaultFontSizePresort = (state) => state.setDefaultFontSizePresort;
@@ -26,18 +26,18 @@ const Config8PresortOptions: React.FC = () => {
   const defaultFontSizePresort = useStore(getDefaultFontSizePresort);
   const setDefaultFontSizePresort = useStore(getSetDefaultFontSizePresort);
 
-  const greenCardColor = useStore(getGreenCardColor);
-  const setGreenCardColor = useStore(getSetGreenCardColor);
-  const pinkCardColor = useStore(getPinkCardColor);
-  const setPinkCardColor = useStore(getSetPinkCardColor);
-  const yellowCardColor = useStore(getYellowCardColor);
-  const setYellowCardColor = useStore(getSetYellowCardColor);
+  // const greenCardColor = useStore(getGreenCardColor);
+  // const pinkCardColor = useStore(getPinkCardColor);
+  // const yellowCardColor = useStore(getYellowCardColor);
+  // const setGreenCardColor = useStore(getSetGreenCardColor);
+  // const setPinkCardColor = useStore(getSetPinkCardColor);
+  // const setYellowCardColor = useStore(getSetYellowCardColor);
 
-  const restoreDefaultColors = () => {
-    setGreenCardColor("#ccffcc");
-    setYellowCardColor("#e0e0e0");
-    setPinkCardColor("#ffe0e0");
-  };
+  // const restoreDefaultColors = () => {
+  //   setGreenCardColor("#ccffcc");
+  //   setYellowCardColor("#e0e0e0");
+  //   setPinkCardColor("#ffe0e0");
+  // };
 
   const handleShuffleCardsChange = (input: React.ChangeEvent<HTMLInputElement>) => {
     console.log(input.target.value);

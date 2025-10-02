@@ -3,11 +3,8 @@ import { useStore } from "../../globalState/useStore";
 import { shouldDisplayObject } from "./shouldDisplayObject";
 import { decodeHTML } from "../utils/decodeHTML";
 import { useTranslation } from "react-i18next";
-import { ToastContainer, toast } from "react-toastify";
-
-// import clearAddItemForm from "./clearAddItemForm";
-import HtmlParser from "html-react-parser";
 import clone from "lodash/clone";
+import { toast } from "react-toastify";
 
 const getShowSurveyradioImage = (state) => state.showSurveyradioImage;
 const getShowSurveyselectImage = (state) => state.showSurveyselectImage;
@@ -106,9 +103,9 @@ const AddQuestionButton: React.FC = () => {
     });
   };
 
-  const addSurveyQuestionItem = () => {
-    let displayOptionsSemiWarn = false;
+  // let displayOptionsSemiWarn = false;
 
+  const addSurveyQuestionItem = () => {
     if (
       showSurveyrating5Image === true ||
       showSurveyrating10Image === true ||
@@ -118,14 +115,14 @@ const AddQuestionButton: React.FC = () => {
       showSurveycheckboxImage === true ||
       showSurveylikertImage === true
     ) {
-      displayOptionsSemiWarn = true;
+      // displayOptionsSemiWarn = true;
     }
 
     const displayBoolean2 = shouldDisplayObject();
     const displayBoolean = displayBoolean2[surveyQuestionType];
 
     try {
-      displayOptionsSemiWarn = false;
+      // displayOptionsSemiWarn = false;
 
       const newItemObj: newItemObjType = {
         surveyQuestionType: "",
@@ -202,7 +199,7 @@ const AddQuestionButton: React.FC = () => {
           }
         }
 
-        displayOptionsSemiWarn = true;
+        // displayOptionsSemiWarn = true;
         newItemObj.options = surveyQuestionOptions;
         newItemArray.push(`options: ${decodeHTML(surveyQuestionOptions)}`);
       }

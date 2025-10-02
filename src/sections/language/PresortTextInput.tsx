@@ -9,7 +9,6 @@ import presort2 from "../../assets/images/presort-welcome-modal-1.png";
 import presort3 from "../../assets/images/presort-nav-disabled.png";
 import presort4 from "../../assets/images/presort-complete-1.png";
 
-const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
 const getTitleBarText = (state) => state.titleBarText;
 const getPresortAgreement = (state) => state.presortAgreement;
@@ -30,7 +29,6 @@ const getPress2 = (state) => state.press2;
 const getPress3 = (state) => state.press3;
 
 const PresortTextInput = () => {
-  let displayMode = useStore(getDisplayMode);
   const setText = useStore(getSetText);
   const titleBarText = useStore(getTitleBarText);
   const presortAgreement = useStore(getPresortAgreement);
@@ -51,44 +49,38 @@ const PresortTextInput = () => {
   const press3 = useStore(getPress3);
   const { t } = useTranslation();
 
-  const handleRefImage = (e) => {
+  const handleRefImage = () => {
     window.open(presort1, "Presort Main Image 1", "width=800, height=600");
     return false;
   };
 
-  const handleRefImage2 = (e) => {
+  const handleRefImage2 = () => {
     window.open(presort2, "Presort Welcome Image 1", "width=800, height=600");
     return false;
   };
 
-  const handleRefImage3 = (e) => {
+  const handleRefImage3 = () => {
     window.open(presort3, "Presort Prevent Navigation Image", "width=800, height=600");
     return false;
   };
 
-  const handleRefImage4 = (e) => {
+  const handleRefImage4 = () => {
     window.open(presort4, "Presort Prevent Navigation Image", "width=800, height=600");
     return false;
   };
 
-  const handleShowDefaults = (e) => {
+  const handleShowDefaults = (e: any) => {
     showSectionDefaults(e.target.id);
   };
 
-  const handleTextChange = (e) => {
+  const handleTextChange = (e: any) => {
     console.log("handleTextChange", e.target.value);
     setText(e.target.name, e.target.value);
   };
 
-  const handleClearAll = (e) => {
+  const handleClearAll = (e: any) => {
     clearSection(e.target.id);
   };
-
-  if (displayMode === "beginner") {
-    displayMode = true;
-  } else {
-    displayMode = false;
-  }
 
   return (
     <div className="outline outline-2 outline-slate-500 p-2 w-[100%] rounded-sm bg-gray-100">

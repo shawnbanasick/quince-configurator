@@ -16,7 +16,6 @@ import mobileThin8 from "../../assets/images/mobile-thin-8.png";
 const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
 const getMoveTopMobileHead = (state) => state.moveTopMobileHead;
-const getMoveTopMobileText = (state) => state.moveTopMobileText;
 const getMoveAllTopMobileText = (state) => state.moveAllTopMobileText;
 const getMoveTopMobileButtonOK = (state) => state.moveTopMobileButtonOK;
 const getMobileThinConditionsOfInstruction = (state) => state.mobileThinConditionsOfInstruction;
@@ -42,7 +41,6 @@ const MobileRefineEvaluationsTextInput = () => {
   let displayMode = useStore(getDisplayMode);
   const setText = useStore(getSetText);
   const moveTopMobileHead = useStore(getMoveTopMobileHead);
-  const moveTopMobileText = useStore(getMoveTopMobileText);
   const moveAllTopMobileText = useStore(getMoveAllTopMobileText);
   const moveTopMobileButtonOK = useStore(getMoveTopMobileButtonOK);
   const mobileThinConditionsOfInstruction = useStore(getMobileThinConditionsOfInstruction);
@@ -129,7 +127,6 @@ const MobileRefineEvaluationsTextInput = () => {
       <div className="flex flex-row justify-between mb-4">
         <h2>{`9. ${t("mobileRefineEvaluationsScreen")}`} </h2>
         <div className="flex flex-row gap-4">
-          {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="mobileRefineDef"
             className="bg-slate-300 p-2 rounded-md h-[50px] w-[190px] hover:bg-slate-400 hover:font-semibold"
@@ -137,7 +134,6 @@ const MobileRefineEvaluationsTextInput = () => {
           >
             {t("useDefaults")}
           </button>
-          {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="mobileRefineClear"
             className="bg-slate-300 p-2 rounded-md h-[50px] w-[210px] hover:bg-slate-400 hover:font-semibold"
@@ -150,7 +146,6 @@ const MobileRefineEvaluationsTextInput = () => {
             className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage1"
             name="mobilePresortImage1"
-            // marginRight="35px"
             onClick={handleRefImage1}
           >
             1
@@ -158,7 +153,6 @@ const MobileRefineEvaluationsTextInput = () => {
           <button
             className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage2"
-            // marginRight="35px"
             onClick={handleRefImage2}
           >
             2
@@ -166,7 +160,6 @@ const MobileRefineEvaluationsTextInput = () => {
           <button
             className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage3"
-            // marginRight="35px"
             onClick={handleRefImage3}
           >
             3
@@ -174,7 +167,6 @@ const MobileRefineEvaluationsTextInput = () => {
           <button
             className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage4"
-            // marginRight="35px"
             onClick={handleRefImage4}
           >
             4
@@ -182,7 +174,6 @@ const MobileRefineEvaluationsTextInput = () => {
           <button
             className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage5"
-            // marginRight="35px"
             onClick={handleRefImage5}
           >
             5
@@ -190,7 +181,6 @@ const MobileRefineEvaluationsTextInput = () => {
           <button
             className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage6"
-            // marginRight="35px"
             onClick={handleRefImage6}
           >
             6
@@ -198,7 +188,6 @@ const MobileRefineEvaluationsTextInput = () => {
           <button
             className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage6"
-            // marginRight="35px"
             onClick={handleRefImage7}
           >
             7
@@ -206,7 +195,6 @@ const MobileRefineEvaluationsTextInput = () => {
           <button
             className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage6"
-            // marginRight="35px"
             onClick={handleRefImage8}
           >
             8
@@ -310,6 +298,7 @@ const MobileRefineEvaluationsTextInput = () => {
           value={mobileGuidanceModalRight1Header}
           onChange={handleTextChange}
           highlight={false}
+          tabIndex="0"
           placeholder=""
           disabled={false}
         />
@@ -323,6 +312,7 @@ const MobileRefineEvaluationsTextInput = () => {
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
+          tabIndex="0"
           disabled={false}
         />
 
@@ -426,6 +416,7 @@ const MobileRefineEvaluationsTextInput = () => {
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
+          tabIndex="0"
           disabled={false}
         />
 
@@ -487,6 +478,7 @@ const MobileRefineEvaluationsTextInput = () => {
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
+          tabIndex="0"
           disabled={false}
         />
       </div>

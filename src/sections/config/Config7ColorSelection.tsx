@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { useStore } from "../../globalState/useStore";
 import { useTranslation } from "react-i18next";
-import Image from "../../assets/images/infoIcon.svg";
+// import Image from "../../assets/images/infoIcon.svg";
 import { ColorPicker } from "./ColorPicker";
 
 const getHeaderBarColor = (state) => state.headerBarColor;

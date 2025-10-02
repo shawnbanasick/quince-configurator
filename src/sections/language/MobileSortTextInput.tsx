@@ -19,7 +19,7 @@ const MobileSortTextInput: React.FC = () => {
   const { t } = useTranslation();
 
   const mobileSortSwapModalHead = useStore((state) => state.mobileSortSwapModalHead);
-  const mobileSortSwapModalText = useStore((state) => state.mobileSortSwapModalText);
+  // const mobileSortSwapModalText = useStore((state) => state.mobileSortSwapModalText);
   const mobileSortSwapModalConfirmButton = useStore(
     (state) => state.mobileSortSwapModalConfirmButton
   );

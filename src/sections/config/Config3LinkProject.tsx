@@ -2,7 +2,7 @@ import React from "react";
 import { useStore } from "../../globalState/useStore";
 import { useTranslation } from "react-i18next";
 import { UserTextInput } from "../utils/UserTextInput";
-import Image from "../../assets/images/infoIcon.svg";
+// import Image from "../../assets/images/infoIcon.svg";
 import clsx from "clsx";
 
 const getLinkToSecondProject = (state) => state.linkToSecondProject;

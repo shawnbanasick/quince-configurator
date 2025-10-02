@@ -1,7 +1,7 @@
 import React from "react";
 import { useStore } from "../../globalState/useStore";
 import { useTranslation } from "react-i18next";
-import Image from "../../assets/images/infoIcon.svg";
+// import Image from "../../assets/images/infoIcon.svg";
 import { UserNumInput } from "../utils/UserNumInput";
 import clsx from "clsx";
 

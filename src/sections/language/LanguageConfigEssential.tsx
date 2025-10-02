@@ -2,23 +2,9 @@ import React from "react";
 import { ConsentPageTextInput } from "./ConsentPageTextInput.js";
 import { WelcomeScreenTextInput } from "./WelcomeScreenTextInput.js";
 import { MobileWelcomeScreenTextInput } from "./MobileWelcomeScreenTextInput.js";
-
-// import { MultipleScreenTextInput } from "./MultipleScreenTextInput";
-// import { AccessControlTextInput } from "./AccessControlTextInput.js";
-// import { PresortTextInput } from "./PresortTextInput.js";
 import { MobilePresortTextInput } from "./MobilePresortTextInput.js";
-// import { RefineEvaluationsTextInput } from "./RefineEvaluationsTextInput.js";
-// import { MobileRefineEvaluationsTextInput } from "./MobileRefineEvaluationsTextInput.js";
 import { SortTextInput } from "./SortTextInput.js";
 import { MobileSortTextInput } from "./MobileSortTextInput.js";
-// import { PostsortTextInput } from "./PostsortTextInput.js";
-// import { MobilePostsortTextInput } from "./MobilePostsortTextInput.js";
-// import { SurveyTextInput } from "./SurveyTextInput.js";
-// import { MobileSurveyTextInput } from "./MobileSurveyTextInput.js";
-// import { SubmitTextInput } from "./SubmitTextInput.js";
-// import { MobileSubmitTextInput } from "./MobileSubmitTextInput.js";
-// import { FailureTextInput } from "./EmailTextInput.js";
-// import { ProjectLinkingTextInput } from "./ProjectLinkingTextInput.js";
 
 const LanguageConfigEssential: React.FC = () => {
   const ConfigSection: React.FC<{
@@ -27,13 +13,7 @@ const LanguageConfigEssential: React.FC = () => {
     icon: React.ReactNode;
     children: React.ReactNode;
     variant?: "primary" | "secondary" | "accent";
-  }> = ({ title, description, icon, children, variant = "primary" }) => {
-    const variants = {
-      primary: "from-blue-400 to-purple-600",
-      secondary: "from-green-600 to-teal-600",
-      accent: "from-orange-500 to-red-500",
-    };
-
+  }> = ({ title, description, icon, children }) => {
     return (
       <div
         id="cards"

@@ -78,25 +78,8 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
   } else {
     nameFile = `Quince_Results_${projectName}`;
   }
-  // set name for FILE NAME TEXT file
-  let txtNameFile;
-  if (shouldIncludeTimestamp === true) {
-    txtNameFile = `(archive)_KADE_results_${projectName}_${timeStamp}.txt`;
-  } else {
-    txtNameFile = `(archive)_KADE_results_${projectName}.txt`;
-  }
 
   const handleOnClick = () => {
-    // if (!currentStatements) {
-    //   alert("Please load your statements.xml file first");
-    //   return;
-    // }
-    // if (!projectName) {
-    //   alert("Please load your config.xml file first");
-    // }
-
-    // let projectName = "temp1";
-
     let displayPartId = props.participantIdent;
     let childArray5 = wordSurvey(data, surveyQuestionsArray);
     let childArray4 = wordPostsort(data, currentStatements);
@@ -125,12 +108,12 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
     );
 
     let statementsArray = wordPartStatements(data, newHeaderArray, currentStatements, [
-      ...props.partNames,
+      ...(props.partNames ?? []),
     ]);
     let summaryArray = wordSurveySummary(
       data,
       surveyQuestionsArray,
-      [...props.partNames],
+      [...(props.partNames ?? [])],
       showSurvey
     );
 
@@ -146,7 +129,6 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
           properties: getSection1Properties(),
           headers: getSection1Headers(projectName),
           footers: getSection1Footers(dateTime, version),
-          // properties: {},
           children: [...childArray1, ...statementsArray, ...summaryArray],
         },
       ],

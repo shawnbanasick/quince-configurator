@@ -13,20 +13,20 @@ import { Config10PostsortOptions } from "./Config10PostsortOptions";
 import { Config11SurveyOptions } from "./Config11SurveyOptions";
 import { SurveyQuestionInput } from "./SurveyQuestionInput";
 
-const getDisplayMode = (state) => state.displayMode;
+// const getDisplayMode = (state) => state.displayMode;
 const getShowSurvey = (state) => state.showSurvey;
 
 const ConfigSections: React.FC = () => {
   // const { t } = useTranslation();
-  const displayMode = useStore(getDisplayMode);
+  // const displayMode = useStore(getDisplayMode);
   const showSurvey = useStore(getShowSurvey);
 
-  let display;
-  if (displayMode === "beginner") {
-    display = true;
-  } else {
-    display = false;
-  }
+  // let display;
+  // if (displayMode === "beginner") {
+  //   display = true;
+  // } else {
+  //   display = false;
+  // }
 
   return (
     <>

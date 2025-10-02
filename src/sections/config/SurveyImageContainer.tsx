@@ -1,4 +1,4 @@
-import TextImage from "../../assets/images/testImage.png";
+// import TextImage from "../../assets/images/testImage.png";
 import TextAreaImage from "../../assets/images/textAreaImage.png";
 import RadioImage from "../../assets/images/radioImage.png";
 import Scale2Image from "../../assets/images/rating2Image.png";
@@ -18,8 +18,7 @@ const getShowSurveylikertImage = (state) => state.showSurveylikertImage;
 const getShowSurveyrating2Image = (state) => state.showSurveyrating2Image;
 const getShowSurveyrating5Image = (state) => state.showSurveyrating5Image;
 const getShowSurveyrating10Image = (state) => state.showSurveyrating10Image;
-const getShowSurveyinformationImage = (state) =>
-  state.showSurveyinformationImage;
+const getShowSurveyinformationImage = (state) => state.showSurveyinformationImage;
 
 const SurveyImageContainer = () => {
   const showSurveyinformationImage = useStore(getShowSurveyinformationImage);

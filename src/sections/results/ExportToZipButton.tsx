@@ -22,8 +22,6 @@ const ExportToZipButton = (props) => {
   const rawData = useStore(getRawData);
   let shouldIncludeTimestamp = true;
 
-  //   console.log(JSON.stringify(rawData));
-
   const handleOnClick = () => {
     if (!currentStatements) {
       alert("Please load your statements.xml file first");
@@ -59,7 +57,6 @@ const ExportToZipButton = (props) => {
     // write data CSV
     let resultsCsvBlob;
     if (rawData) {
-      //   console.log(JSON.stringify(rawData, null, 2));
       let resultsCsvBlob2 = Papa.unparse({
         fields: headerRow,
         delimiter: Papa.RECORD_SEP,
@@ -77,13 +74,6 @@ const ExportToZipButton = (props) => {
       zipNameFile = `KADE_input_${projectName}_${timeStamp}`;
     } else {
       zipNameFile = `KADE_input_${projectName}`;
-    }
-    // set name for FILE NAME TEXT file
-    let txtNameFile;
-    if (shouldIncludeTimestamp === true) {
-      txtNameFile = `(archive)_KADE_results_${projectName}_${timeStamp}.txt`;
-    } else {
-      txtNameFile = `(archive)_KADE_results_${projectName}.txt`;
     }
 
     (async () => {

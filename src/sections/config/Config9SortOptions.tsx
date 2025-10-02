@@ -1,13 +1,10 @@
 import React from "react";
 import { useStore } from "../../globalState/useStore";
 import { useTranslation } from "react-i18next";
-import Image from "../../assets/images/infoIcon.svg";
 import { UserNumInput } from "../utils/UserNumInput";
-import { Radio } from "../utils/RadioButtons";
 import clsx from "clsx";
+// import Image from "../../assets/images/infoIcon.svg";
 
-// const getSortDirection = (state) => state.sortDirection;
-const getSetSortDirection = (state) => state.setSortDirection;
 const getAllowUnforcedSorts = (state) => state.allowUnforcedSorts;
 const getSetAllowUnforcedSorts = (state) => state.setAllowUnforcedSorts;
 const getWarnOverloadedColumn = (state) => state.warnOverloadedColumn;
@@ -15,15 +12,13 @@ const getSetWarnOverloadedColumn = (state) => state.setWarnOverloadedColumn;
 const getConditionOfInstFontSize = (state) => state.condOfInstFontSize;
 const getSetConditionOfInstFontSize = (state) => state.setCondOfInstFontSize;
 const getDefaultFontSizeSort = (state) => state.defaultFontSizeSort;
-// const getSetDefaultFontSizeSort = (state) => state.setDefaultFontSizeSort;
 const getMinCardHeightSort = (state) => state.minCardHeightSort;
 const getSetMinCardHeightSort = (state) => state.setMinCardHeightSort;
 const getSetDefaultFontSizeSort = (state) => state.setDefaultFontSizeSort;
+// const getSetDefaultFontSizeSort = (state) => state.setDefaultFontSizeSort;
 
 const Config9SortOptions: React.FC = () => {
   const { t } = useTranslation();
-  // const sortDirection = useStore(getSortDirection);
-  const setSortDirection = useStore(getSetSortDirection);
   const allowUnforcedSorts = useStore(getAllowUnforcedSorts);
   const setAllowUnforcedSorts = useStore(getSetAllowUnforcedSorts);
   const warnOverloadedColumn = useStore(getWarnOverloadedColumn);
@@ -57,10 +52,6 @@ const Config9SortOptions: React.FC = () => {
     } else {
       setAllowUnforcedSorts(false);
     }
-  };
-
-  const handleSortDirectionChange = (inputValue: any) => {
-    setSortDirection(inputValue);
   };
 
   const handleCondOfInstFontSizeChange = (inputValue: any) => {

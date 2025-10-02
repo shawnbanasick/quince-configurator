@@ -1,6 +1,5 @@
 import { Paragraph, TextRun } from "docx";
 import { cloneDeep } from "es-toolkit";
-import { useStore } from "../../GlobalState/useStore";
 import { processInformationQuestion } from "./processInformationQuestion";
 import { processTextQuestion } from "./processTextQuestion";
 import { processTextAreaQuestion } from "./processTextAreaQuestion";
@@ -15,10 +14,7 @@ type RecordMap = Record<string, any>;
 
 const wordSurvey = (data: RecordMap, surveyQuestionsArray): Paragraph[] => {
   const workingData = cloneDeep(data);
-  // const survey = useStore.getState().surveyQuestionsArray;
-
   let survey = [...surveyQuestionsArray];
-  // console.log(JSON.stringify(surveyQuestionsArray));
 
   const indentValue = 300;
   const items = Array.isArray(workingData) ? workingData : [workingData];
@@ -48,15 +44,12 @@ const wordSurvey = (data: RecordMap, surveyQuestionsArray): Paragraph[] => {
       (value: any) => typeof value === "string" && value.trim().startsWith("itemNum")
     );
 
-    // console.log(timeEntries);
-
     // Clean and map to Paragraphs
     timeEntries.forEach((entry: string, index: number) => {
       // for each survey question
 
       let questionInfo = survey[index];
       let questionType = questionInfo.surveyQuestionType;
-      // console.log(questionType);
 
       if (questionType === "information") {
         let infoParagraph = processInformationQuestion(questionInfo, index, indentValue);

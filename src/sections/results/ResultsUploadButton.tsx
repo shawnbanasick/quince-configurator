@@ -1,4 +1,4 @@
-import React, { useRef, ChangeEvent, useState } from "react";
+import React, { useRef, ChangeEvent } from "react";
 import Papa from "papaparse";
 import { useStore } from "../../GlobalState/useStore";
 import { useTranslation } from "react-i18next";
@@ -17,9 +17,6 @@ const ResultsUploadButton: React.FC = () => {
   const hasResultsFileBeenLoaded = useStore(getHasResultsFileBeenLoaded);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
-  // const [hasFileLoaded, setHasFileLoaded] = useState(false);
-
-  // const [data, setData] = useState<CsvRow[]>([]);
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -43,7 +40,6 @@ const ResultsUploadButton: React.FC = () => {
             }
             return cleanedRow;
           });
-          // setData(cleanedData);
           setRawData(cleanedData);
           setCleanedResults(cleanedData);
           setHasResultsFileBeenLoaded(true);
