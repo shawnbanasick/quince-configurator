@@ -1,8 +1,5 @@
 const stripHtmlDivs = (string) => {
   try {
-    // let shouldDoReplace = string.includes("{{{");
-    // console.log("string", string);
-    // if (shouldDoReplace === true) {
     if (true) {
       const replaceOpenDiv = /{{{div}}}{{{div}}}/gi;
       const replaceRegOpenDiv = /<div>/gi;

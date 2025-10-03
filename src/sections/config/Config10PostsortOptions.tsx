@@ -38,7 +38,6 @@ const Config10PostsortOptions: React.FC = () => {
   const setMinCardHeightPostsort = useStore(getSetMinCardHeightPostsort);
 
   const handleShowPostsortChange = (input: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(input.target.value);
     if (input.target.value === "true") {
       setShowPostsort(true);
     } else {
@@ -47,7 +46,6 @@ const Config10PostsortOptions: React.FC = () => {
   };
 
   const handleShowSecondPosColumnChange = (input: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(input.target.value);
     if (input.target.value === "true") {
       setShowSecondPosColumn(true);
     } else {
@@ -56,7 +54,6 @@ const Config10PostsortOptions: React.FC = () => {
   };
 
   const handleShowSecondNegColumnChange = (input: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(input.target.value);
     if (input.target.value === "true") {
       setShowSecondNegColumn(true);
     } else {
@@ -65,7 +62,6 @@ const Config10PostsortOptions: React.FC = () => {
   };
 
   const handleShowBackButtonChange = (input: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(input.target.value);
     if (input.target.value === "true") {
       setShowBackButton(true);
     } else {
@@ -74,7 +70,6 @@ const Config10PostsortOptions: React.FC = () => {
   };
 
   const handlePostsortCommentsRequiredChange = (input: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(input.target.value);
     if (input.target.value === "true") {
       setPostsortCommentsRequired(true);
     } else {

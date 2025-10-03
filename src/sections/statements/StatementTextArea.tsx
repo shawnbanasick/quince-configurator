@@ -1,9 +1,5 @@
-// import React from "react";
 import { useStore } from "../../globalState/useStore.js";
 import { useTranslation } from "react-i18next";
-
-// import appState from "../../GlobalState/appState";
-// import UploadStatementsXmlButton from "./UploadStatementsXmlButton";
 
 const getDisplayMode = (state) => state.displayMode;
 const getCurrentStatements = (state) => state.currentStatements;
@@ -24,7 +20,6 @@ const StatementTextArea = () => {
   }
 
   const handleChange = (event) => {
-    console.log(event.target.value);
     let statementInput = event.target.value;
     setCurrentStatements(statementInput);
     // get the number of statements
@@ -33,10 +28,8 @@ const StatementTextArea = () => {
   };
 
   return (
-    // <Container>
     <div className="flex flex-col items-center justify-center">
       {displayMode && (
-        // <DisplayModeText>
         <div className=" ml-[10px] mb-[50px] w-[78vw] max-w-[1200px] text-[20px] p-[10px] bg-[whitesmoke] rounded-[5px] border-[1.5px] border-black">
           <b>{t("htmlFormatting")}</b>
           <br />
@@ -74,32 +67,3 @@ const StatementTextArea = () => {
 };
 
 export { StatementTextArea };
-
-// const StatementTextsInput = styled.textarea`
-//   width: clamp(500px, 80vw, 1500px);
-//   height: 400px;
-//   margin-top: 10px;
-//   margin-bottom: 30px;
-//   user-select: all;
-// `;
-
-// const Container = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   user-select: none;
-// `;
-
-// const DisplayModeText = styled.div`
-//   align-self: left;
-//   margin-left: 10px;
-//   margin-top: 40px;
-//   margin-bottom: 30px;
-//   width: 78vw;
-//   max-width: 1200px;
-//   font-size: 20px;
-//   padding: 10px;
-//   background: whitesmoke;
-//   border-radius: 3px;
-
-//   border: 2px solid black;
-// `;

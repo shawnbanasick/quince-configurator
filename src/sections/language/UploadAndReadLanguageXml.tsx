@@ -1,5 +1,5 @@
-import { useRef } from "react";
 import XMLParser from "react-xml-parser";
+import { useRef } from "react";
 import { decodeHTML } from "../utils/decodeHTML";
 import { useTranslation } from "react-i18next";
 import { useStore } from "../../globalState/useStore";
@@ -28,12 +28,9 @@ const UploadAndReadLanguageXml = () => {
         const parser = new XMLParser();
         const xml = parser.parseFromString(data, "text/xml");
         const xmlObjectArray = xml.getElementsByTagName("item");
-        const keys = xmlObjectArray.map((item) => item.attributes.id);
-        console.log("Keys from XML:", keys);
 
         xmlObjectArray.forEach((item) => {
           setText(item.attributes.id, decodeHTML(item.value, true));
-          console.log(`Setting text for ${item.attributes.id}: ${decodeHTML(item.value)}`);
         });
         setIsLanguageXmlLoaded(true);
       } catch (error) {

@@ -1,9 +1,4 @@
 const encodeHTML = (string) => {
-  // if (string === undefined || string === null) {
-  //   console.log("there was an undefined value or null value passed to encodeHTML.ts");
-  //   return;
-  // }
-
   try {
     let shouldDoReplace = true; // string.includes("<");
 

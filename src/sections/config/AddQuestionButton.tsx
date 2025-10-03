@@ -180,7 +180,7 @@ const AddQuestionButton: React.FC = () => {
 
         let testArray = getOptionsArray(currentScale);
         if (testArray.length < 2) {
-          console.log("there is an issue");
+          console.log("there is an issue with the addQuestionButton file");
           triggerOptionsWarningModal(true);
           return null;
         }
@@ -193,7 +193,7 @@ const AddQuestionButton: React.FC = () => {
         let testArray = getOptionsArray(currentOptions);
         if (testArray.length < 2) {
           if (surveyQuestionType !== "information") {
-            console.log("there is an issue");
+            console.log("there is an issue with the addQuestionButton file");
             triggerOptionsWarningModal(true);
             return null;
           }

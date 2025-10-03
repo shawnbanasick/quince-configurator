@@ -43,7 +43,6 @@ const ResultsUploadButton: React.FC = () => {
           setRawData(cleanedData);
           setCleanedResults(cleanedData);
           setHasResultsFileBeenLoaded(true);
-          console.log("CSV contents:\n", JSON.stringify(cleanedData, null, 2));
         },
       });
       // Optional: parse CSV here

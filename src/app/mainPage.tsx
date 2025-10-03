@@ -20,8 +20,6 @@ import { useStore } from "../globalState/useStore.js";
 import UkFlag from "../assets/images/UkFlag.svg?react";
 import JapanFlag from "../assets/images/JapanFlag.svg?react";
 
-// Add the following import statement for the declaration file
-
 // const languages = ["en", "ru", "tm", "ja", "ko", "zh", "es", "fr", "de"];
 const languages = ["en", "ja"];
 
@@ -75,8 +73,6 @@ export const MainPage = () => {
   };
 
   return (
-    // space-y is top margin
-    // <main className="w-[100%] flex flex-col space-y-4  items-center justify-center bg-gradient-to-br from-slate-50 to-blue-50 bg-[#f5f5f5]">
     <main className="w-[100%] flex flex-col space-y-4  items-center justify-center bg-[#f5f5f5]">
       <ToastContainer />
       <Tabs className="h-[98vh] w-[100%] p-2 bg-[#f5f5f5]">
@@ -149,14 +145,6 @@ export const MainPage = () => {
             </div>
             <Start />
           </div>
-
-          {/* <a
-            href="https://github.com/ecomnazar/react-i18n-boilerplate"
-            target="_blank"
-            className="text-[#0c8492]"
-          >
-            https://github.com/ecomnazar/react-i18n-boilerplate
-          </a> */}
         </TabPanel>
 
         <TabPanel>

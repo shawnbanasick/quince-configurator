@@ -19,7 +19,6 @@ const MobileSortTextInput: React.FC = () => {
   const { t } = useTranslation();
 
   const mobileSortSwapModalHead = useStore((state) => state.mobileSortSwapModalHead);
-  // const mobileSortSwapModalText = useStore((state) => state.mobileSortSwapModalText);
   const mobileSortSwapModalConfirmButton = useStore(
     (state) => state.mobileSortSwapModalConfirmButton
   );
@@ -63,7 +62,6 @@ const MobileSortTextInput: React.FC = () => {
   };
 
   const handleTextChange = (e) => {
-    // console.log("handleTextChange", e.target.value);
     setText(e.target.name, e.target.value);
   };
 
@@ -82,7 +80,6 @@ const MobileSortTextInput: React.FC = () => {
       <div className="flex flex-row justify-between mb-4">
         <h2>{`11. ${t("mobileSortScreen")}`} </h2>
         <div className="flex flex-row gap-4">
-          {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="mobileSortDef"
             className="bg-slate-300 p-2 rounded-md w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
@@ -90,7 +87,6 @@ const MobileSortTextInput: React.FC = () => {
           >
             {t("useDefaults")}
           </button>
-          {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="mobileSortClear"
             className="bg-slate-300 p-2 rounded-md w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
@@ -103,7 +99,6 @@ const MobileSortTextInput: React.FC = () => {
             className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage1"
             name="mobilePresortImage1"
-            // marginRight="35px"
             onClick={handleRefImage1}
           >
             1
@@ -111,7 +106,6 @@ const MobileSortTextInput: React.FC = () => {
           <button
             className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage2"
-            // marginRight="35px"
             onClick={handleRefImage2}
           >
             2
@@ -119,7 +113,6 @@ const MobileSortTextInput: React.FC = () => {
           <button
             className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage3"
-            // marginRight="35px"
             onClick={handleRefImage3}
           >
             3
@@ -127,7 +120,6 @@ const MobileSortTextInput: React.FC = () => {
           <button
             className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage3"
-            // marginRight="35px"
             onClick={handleRefImage4}
           >
             4
@@ -209,19 +201,7 @@ const MobileSortTextInput: React.FC = () => {
           placeholder=""
           disabled={false}
         />
-        {/* <UserTextAreaInput
-          classNameText="flex-1 mt-1 block min-w-[400px] h-[60px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
-          classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`11-7. ${t("mobileSortSwapModalText")}`}
-          name="mobileSortSwapModalText"
-          height={150}
-          value={mobileSortSwapModalText}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-          tabIndex="0"
-        /> */}
+
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"

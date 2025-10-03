@@ -97,10 +97,6 @@ const UploadAndParseXML: React.FC = () => {
 
   const { t } = useTranslation();
 
-  // const [xmlContent, setXmlContent] = useState<string | null>(null);
-  // const [error, setError] = useState<string | null>(null);
-  // const [surveyQuestArray, setSurveyQuestArray] = useState<QuestObjType[]>([]);
-
   const surveyQuestArray: QuestObjType[] = [];
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>): void => {
@@ -237,8 +233,6 @@ const UploadAndParseXML: React.FC = () => {
             // info objects
             let labelObj = inputObjArray.find((item) => item.name === "label");
             let noteObj = inputObjArray.find((item) => item.name === "note");
-            // let optionsObj = inputObjArray.find((item) => item.name === "options");
-            // let scaleObj = inputObjArray.find((item) => item.name === "scale");
 
             // transformations
             if (questType === "likert") {
@@ -256,7 +250,6 @@ const UploadAndParseXML: React.FC = () => {
             }
 
             if (questType === "text") {
-              console.log("ee", mainNameObj, null, 2);
               questObj.limited = mainNameObj?.attributes?.limited;
               let inputLenVal = mainNameObj?.attributes?.limitLength;
               if (inputLenVal === null || inputLenVal === undefined || isNaN(inputLenVal)) {
@@ -269,14 +262,11 @@ const UploadAndParseXML: React.FC = () => {
             }
 
             if (questType === "textarea") {
-              // let labelObj = inputObjArray.find((item) => item.name === "label");
-              // let noteObj = inputObjArray.find((item) => item.name === "note");
               questObj.label = labelObj?.value || "";
               questObj.note = noteObj?.value || "";
             }
             if (questType === "radio") {
               questObj[inputObjArray[2].name] = inputObjArray[2]?.value;
-              // questObj.options = inputObjArray[0]?.value;
               questObj.options = mainNameObj?.value || "";
             }
             if (
@@ -286,15 +276,11 @@ const UploadAndParseXML: React.FC = () => {
               questType === "rating5" ||
               questType === "rating10"
             ) {
-              console.log("88", labelObj);
               questObj.options = mainNameObj?.value || "";
               questObj.note = noteObj?.value || "";
               questObj.label = labelObj.value || "";
             }
             if (questType === "rating2" || questType === "rating5" || questType === "rating10") {
-              console.log(inputObjArray);
-              // questObj.scale = scaleObj?.value || "";
-              // questObj.scale = mainNameObj?.attributes?.scale;
               questObj.scale = inputObjArray[0].attributes?.scale;
             }
 
@@ -313,7 +299,6 @@ const UploadAndParseXML: React.FC = () => {
 
       reader.onerror = () => {
         console.error("Error reading file");
-        // setError("Error reading file");
       };
 
       reader.readAsText(file);

@@ -34,7 +34,6 @@ const MultipleScreenTextInput = () => {
   const { t } = useTranslation();
 
   const handleShowDefaults = (e) => {
-    console.log("handleShowDefaults", e.target.id);
     showSectionDefaults(e.target.id);
   };
 
@@ -43,7 +42,6 @@ const MultipleScreenTextInput = () => {
   };
 
   const handleTextChange = (e: any) => {
-    console.log("handleTextChange", e.target.value);
     setText(e.target.name, e.target.value);
   };
 
@@ -51,19 +49,12 @@ const MultipleScreenTextInput = () => {
   // showRefImage(e.target.id);
   // };
 
-  // if (displayMode === "beginner") {
-  //   displayMode = true;
-  // } else {
-  //   displayMode = false;
-  // }
-
   return (
     <div className="outline outline-2 outline-slate-500  p-2 w-[100%]  rounded-sm">
       <div className="flex flex-row justify-between mb-4">
         <h2>1. {t("multipleScreens")}</h2>
 
         <div className="flex flex-row gap-4">
-          {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="multipleScreens"
             className="bg-slate-300 p-2 rounded-md w-[230px] hover:bg-slate-400 hover:font-semibold"
@@ -71,7 +62,6 @@ const MultipleScreenTextInput = () => {
           >
             {t("useDefaults")}
           </button>
-          {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="multipleClear"
             className="bg-slate-300 p-2 rounded-md w-[230px] hover:bg-slate-400 hover:font-semibold"

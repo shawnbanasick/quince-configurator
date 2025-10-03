@@ -28,7 +28,6 @@ const getMobilePresortFinishedModalText = (state) => state.mobilePresortFinished
 const getMobilePresortPreventNavModalHead = (state) => state.mobilePresortPreventNavModalHead;
 const getMobilePresortPreventNavModalText = (state) => state.mobilePresortPreventNavModalText;
 const getMobilePresortProcessCompleteMessage = (state) => state.mobilePresortProcessCompleteMessage;
-// const getMobilePresortRedoModalText = (state) => state.mobilePresortRedoModalText;
 
 const MobilePresortTextInput = () => {
   let displayMode = useStore(getDisplayMode);
@@ -48,7 +47,6 @@ const MobilePresortTextInput = () => {
   const mobilePresortPreventNavModalText = useStore(getMobilePresortPreventNavModalText);
   const mobilePresortProcessCompleteMessage = useStore(getMobilePresortProcessCompleteMessage);
   const { t } = useTranslation();
-  // const mobilePresortRedoModalText = useStore(getMobilePresortRedoModalText);
 
   const handleRefImage1 = () => {
     window.open(mobilePresort1, "Mobile Presort Main Image", "width=800, height=600");
@@ -85,7 +83,6 @@ const MobilePresortTextInput = () => {
   };
 
   const handleTextChange = (e: any) => {
-    console.log("handleTextChange", e.target.value);
     setText(e.target.name, e.target.value);
   };
 
@@ -104,7 +101,6 @@ const MobilePresortTextInput = () => {
       <div className="flex flex-row justify-between mb-4">
         <h2>{`7. ${t("mobilePresortScreen")}`} </h2>
         <div className="flex flex-row gap-4">
-          {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="mobilePresortDef"
             className="bg-slate-300 p-2 rounded-md w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
@@ -112,7 +108,6 @@ const MobilePresortTextInput = () => {
           >
             {t("useDefaults")}
           </button>
-          {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="mobilePresortClear"
             className="bg-slate-300 p-2 rounded-md w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
@@ -125,7 +120,6 @@ const MobilePresortTextInput = () => {
             className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage1"
             name="mobilePresortImage1"
-            // marginRight="35px"
             onClick={handleRefImage1}
           >
             1
@@ -133,7 +127,6 @@ const MobilePresortTextInput = () => {
           <button
             className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage2"
-            // marginRight="35px"
             onClick={handleRefImage2}
           >
             2
@@ -141,7 +134,6 @@ const MobilePresortTextInput = () => {
           <button
             className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage3"
-            // marginRight="35px"
             onClick={handleRefImage3}
           >
             3
@@ -149,7 +141,6 @@ const MobilePresortTextInput = () => {
           <button
             className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage4"
-            // marginRight="35px"
             onClick={handleRefImage4}
           >
             4
@@ -157,7 +148,6 @@ const MobilePresortTextInput = () => {
           <button
             className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage5"
-            // marginRight="35px"
             onClick={handleRefImage5}
           >
             5
@@ -165,7 +155,6 @@ const MobilePresortTextInput = () => {
           <button
             className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage6"
-            // marginRight="35px"
             onClick={handleRefImage6}
           >
             6
@@ -255,17 +244,6 @@ const MobilePresortTextInput = () => {
           disabled={false}
         />
 
-        {/* <UserTextInput
-          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
-          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`7-6. ${t("mobilePresortRedoModalText")}`}
-          name="mobilePresortRedoModalText"
-          value={mobilePresortRedoModalText}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-        /> */}
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}

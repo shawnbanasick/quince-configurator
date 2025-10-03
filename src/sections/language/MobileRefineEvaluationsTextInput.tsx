@@ -1,9 +1,9 @@
 import { UserTextInput } from "../utils/UserTextInput";
+import { useStore } from "../../globalState/useStore";
 import { UserTextAreaInput } from "../utils/UserTextAreaInput";
+import { useTranslation } from "react-i18next";
 import showSectionDefaults from "./showSectionDefaults";
 import clearSection from "./clearSection";
-import { useStore } from "../../globalState/useStore";
-import { useTranslation } from "react-i18next";
 import mobileThin1 from "../../assets/images/mobile-thin-1.png";
 import mobileThin2 from "../../assets/images/mobile-thin-2.png";
 import mobileThin3 from "../../assets/images/mobile-thin-3.png";
@@ -13,7 +13,6 @@ import mobileThin6 from "../../assets/images/mobile-thin-6.png";
 import mobileThin7 from "../../assets/images/mobile-thin-7.png";
 import mobileThin8 from "../../assets/images/mobile-thin-8.png";
 
-const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
 const getMoveTopMobileHead = (state) => state.moveTopMobileHead;
 const getMoveAllTopMobileText = (state) => state.moveAllTopMobileText;
@@ -38,7 +37,6 @@ const getMobileThinScrollBottomModalText = (state) => state.mobileThinScrollBott
 const getMobileThinSelectedText = (state) => state.mobileThinSelectedText;
 
 const MobileRefineEvaluationsTextInput = () => {
-  let displayMode = useStore(getDisplayMode);
   const setText = useStore(getSetText);
   const moveTopMobileHead = useStore(getMoveTopMobileHead);
   const moveAllTopMobileText = useStore(getMoveAllTopMobileText);
@@ -108,19 +106,12 @@ const MobileRefineEvaluationsTextInput = () => {
   };
 
   const handleTextChange = (e) => {
-    console.log("handleTextChange", e.target.value);
     setText(e.target.name, e.target.value);
   };
 
   const handleClearAll = (e) => {
     clearSection(e.target.id);
   };
-
-  if (displayMode === "beginner") {
-    displayMode = true;
-  } else {
-    displayMode = false;
-  }
 
   return (
     <div className="outline outline-2 outline-slate-500 p-2 w-[100%] rounded-sm">

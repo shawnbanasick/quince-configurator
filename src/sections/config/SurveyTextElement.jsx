@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import ReactHtmlParser from "html-react-parser";
 import { decodeHTML } from "../utils/decodeHTML";
 
@@ -15,14 +15,11 @@ const SurveyTextElement = (props) => {
   let questionId = `itemNum${props.opts.itemNum}`;
   const checkRequiredQuestionsComplete = props.check;
   const labelText = ReactHtmlParser(decodeHTML(props.opts.label)) || "";
-  // const placeholder = ReactHtmlParser(decodeHTML(props?.opts?.placeholder, true)) || "";
   const noteText = ReactHtmlParser(decodeHTML(props.opts.note)) || "";
   let displayNoteText = true;
   if (noteText.length < 1 || noteText === "") {
     displayNoteText = false;
   }
-
-  console.log(props);
 
   // PERSISTENT STATE
   const [userText, setUserText] = useState("");
@@ -44,7 +41,6 @@ const SurveyTextElement = (props) => {
     }
     // limit length (from config.xml)
     if (props.opts.limited === "true" || props.opts.limited === true) {
-      console.log("xx", props.opts);
       if (value.length > +props.opts.limitLength) {
         value = value.substring(0, +props.opts.limitLength);
       }

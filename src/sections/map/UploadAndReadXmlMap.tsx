@@ -33,8 +33,6 @@ const UploadAndReadXmlMap: React.FC = () => {
         const xml = parser.parseFromString(data, "text/xml");
         const xmlObjectArray = xml.getElementsByTagName("item");
 
-        console.log(xmlObjectArray);
-
         let nameArray, countArray, colorsArray;
         if (xmlObjectArray.length > 0) {
           // read file contents
@@ -68,10 +66,6 @@ const UploadAndReadXmlMap: React.FC = () => {
         // clear column count numbers
         setClearAllColNumbers();
 
-        // nameArray ["N4","N3","N2","N1","0","1","2","3","4"]
-        // countArray ["2","3","4","5","5","5","4","3","2"]
-        // colorsArray ["#F98080","#F8B4B4","#FBD5D5","#FDE8E8","#F3F4F6","#DEF7EC","#BCF0DA","#84E1BC","#31C48D"]
-
         // set colors and column count numbers
         nameArray.forEach((item, index) => {
           // set count numbers
@@ -91,7 +85,6 @@ const UploadAndReadXmlMap: React.FC = () => {
 
       reader.onerror = () => {
         console.error("Error reading file");
-        // setError("Error reading file");
       };
 
       reader.readAsText(file);

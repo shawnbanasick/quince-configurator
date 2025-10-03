@@ -18,7 +18,6 @@ const Config6LandingPageOptions: React.FC = () => {
   const { t } = useTranslation();
 
   const handleInitialScreenChange = (inputValue: any) => {
-    console.log("Initial screen changed:", inputValue);
     setInitialScreen(inputValue);
   };
 

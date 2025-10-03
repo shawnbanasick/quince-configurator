@@ -40,7 +40,6 @@ const Config8PresortOptions: React.FC = () => {
   // };
 
   const handleShuffleCardsChange = (input: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(input.target.value);
     if (input.target.value === "true") {
       setShuffleCards(true);
     } else {

@@ -1,5 +1,4 @@
 import React from "react";
-// import { useTranslation } from "react-i18next";
 import { useStore } from "../../globalState/useStore.js";
 
 interface UserTextAreaInputProps {
@@ -32,7 +31,6 @@ const UserTextAreaInput: React.FC<UserTextAreaInputProps> = ({
 
   const handleChange = (event) => {
     event.preventDefault();
-    console.log("UserTextAreaInput handleChange", event.target.value);
     const value = event.target.value;
     setText(key, value);
     localStorage.setItem(key, value);

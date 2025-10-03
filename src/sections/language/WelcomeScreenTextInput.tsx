@@ -7,7 +7,6 @@ import welcome1 from "../../assets/images/welcome-1.png";
 import welcome2 from "../../assets/images/welcome-2.png";
 import { useTranslation } from "react-i18next";
 
-const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
 const getLangLandingHead = (state) => state.landingHead;
 const getLangWelcomeText = (state) => state.welcomeText;
@@ -17,7 +16,6 @@ const getLangBtnNextLanding = (state) => state.btnNextLanding;
 const getLangBtnHelpLanding = (state) => state.btnHelpLanding;
 
 const WelcomeScreenTextInput = () => {
-  let displayMode = useStore(getDisplayMode);
   const setText = useStore(getSetText);
   const langLandingHead = useStore(getLangLandingHead);
   const langWelcomeText = useStore(getLangWelcomeText);
@@ -42,7 +40,6 @@ const WelcomeScreenTextInput = () => {
   };
 
   const handleTextChange = (e) => {
-    console.log("handleTextChange", e.target.value);
     setText(e.target.name, e.target.value);
   };
 
@@ -50,18 +47,11 @@ const WelcomeScreenTextInput = () => {
     clearSection(e.target.id);
   };
 
-  if (displayMode === "beginner") {
-    displayMode = true;
-  } else {
-    displayMode = false;
-  }
-
   return (
     <div className="outline outline-2 outline-slate-500 p-2 w-[100%] rounded-sm bg-gray-100">
       <div className="flex flex-row justify-between mb-4">
         <h2>{`4. ${t("welcomeScreen")}`} </h2>
         <div className="flex flex-row gap-4">
-          {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="welcomeDef"
             className="bg-slate-300 p-2 rounded-md w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
@@ -69,7 +59,6 @@ const WelcomeScreenTextInput = () => {
           >
             {t("useDefaults")}
           </button>
-          {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="welcomeClear"
             className="bg-slate-300 p-2 rounded-md w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
@@ -77,12 +66,10 @@ const WelcomeScreenTextInput = () => {
           >
             {t("clearSection")}
           </button>
-          {/* <RefImageButton */}
           <div className="flex items-center p-2 justify-center  h-[50px] ">{t("images")}</div>
           <button
             className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="consentImage"
-            // marginRight="35px"
             onClick={handleRefImage}
           >
             1
@@ -90,7 +77,6 @@ const WelcomeScreenTextInput = () => {
           <button
             className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="consentImage"
-            // marginRight="35px"
             onClick={handleRefImage2}
           >
             2

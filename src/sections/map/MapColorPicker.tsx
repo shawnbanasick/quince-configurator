@@ -11,7 +11,6 @@ const MapColorPicker = (props) => {
   const mapColorPalette = useStore((state) => state.mapColorPalette);
 
   const handleOnChange = useDebouncyFn((e) => {
-    console.log(props.stateDesig);
     setColorInStore(props.stateDesig, e);
     localStorage.setItem(props.stateDesig, e);
     setColor(e);
@@ -28,9 +27,7 @@ const MapColorPicker = (props) => {
     }
   }, [props, mapColorPalette]);
 
-  return (
-    <PopoverPicker color={color} onChange={handleOnChange} left={props.left} />
-  );
+  return <PopoverPicker color={color} onChange={handleOnChange} left={props.left} />;
 };
 
 export { MapColorPicker };

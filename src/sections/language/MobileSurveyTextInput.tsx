@@ -7,11 +7,9 @@ import clearSection from "./clearSection";
 import { useTranslation } from "react-i18next";
 import mobileSurvey1 from "../../assets/images/mobile-survey-1.png";
 
-const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
 
 const MobileSurveyTextInput: React.FC = () => {
-  let displayMode = useStore(getDisplayMode);
   const setText = useStore(getSetText);
   const mobileSurveyHelpModalHead = useStore((state) => state.mobileSurveyHelpModalHead);
   const mobileSurveyHelpModalText = useStore((state) => state.mobileSurveyHelpModalText);
@@ -27,7 +25,6 @@ const MobileSurveyTextInput: React.FC = () => {
   };
 
   const handleTextChange = (e) => {
-    console.log("handleTextChange", e.target.value);
     setText(e.target.name, e.target.value);
   };
 
@@ -35,18 +32,12 @@ const MobileSurveyTextInput: React.FC = () => {
     clearSection(e.target.id);
   };
 
-  if (displayMode === "beginner") {
-    displayMode = true;
-  } else {
-    displayMode = false;
-  }
   return (
     <div className="outline outline-2 outline-slate-500 p-2 w-[100%] rounded-sm">
       <div className="flex flex-row justify-between mb-4">
         <h2>15. {t("mobileQuestionnaireScreen")}</h2>
 
         <div className="flex flex-row gap-4">
-          {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="mobileSurveyDef"
             className="bg-slate-300 p-2 rounded-md w-[200px]  h-[50px] hover:bg-slate-400 hover:font-semibold"
@@ -54,7 +45,6 @@ const MobileSurveyTextInput: React.FC = () => {
           >
             {t("useDefaults")}
           </button>
-          {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="mobileSurveyClear"
             className="bg-slate-300 p-2 rounded-md w-[200px]  h-[50px] hover:bg-slate-400 hover:font-semibold"
@@ -67,7 +57,6 @@ const MobileSurveyTextInput: React.FC = () => {
             className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage1"
             name="mobilePresortImage1"
-            // marginRight="35px"
             onClick={handleRefImage1}
           >
             1

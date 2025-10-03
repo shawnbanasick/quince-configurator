@@ -13,7 +13,6 @@ const Config11SurveyOptions: React.FC = () => {
   const setShowSurvey = useStore(getSetShowSurvey);
 
   const handleShowSurveyChange = (input: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(input.target.value);
     if (input.target.value === "true") {
       setShowSurvey(true);
     } else {

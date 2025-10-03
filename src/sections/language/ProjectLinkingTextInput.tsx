@@ -6,11 +6,9 @@ import clearSection from "./clearSection";
 import { useTranslation } from "react-i18next";
 import linking1 from "../../assets/images/linking-1.png";
 
-const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
 
 const ProjectLinkingTextInput: React.FC = () => {
-  let displayMode = useStore(getDisplayMode);
   const setText = useStore(getSetText);
   const linkingFallbackMessage = useStore((state) => state.linkingFallbackMessage);
   const linkingBtnText = useStore((state) => state.linkingBtnText);
@@ -26,7 +24,6 @@ const ProjectLinkingTextInput: React.FC = () => {
   };
 
   const handleTextChange = (e: any) => {
-    console.log("handleTextChange", e.target.value);
     setText(e.target.name, e.target.value);
   };
 
@@ -34,17 +31,11 @@ const ProjectLinkingTextInput: React.FC = () => {
     clearSection(e.target.id);
   };
 
-  if (displayMode === "beginner") {
-    displayMode = true;
-  } else {
-    displayMode = false;
-  }
   return (
     <div className="outline outline-2 outline-slate-500 p-2 w-[100%] rounded-sm">
       <div className="flex flex-row justify-between mb-4">
         <h2>19. {t("projectLinkingScreen")}</h2>
         <div className="flex flex-row gap-4">
-          {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="linkingDef"
             className="bg-slate-300 p-2 rounded-md w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
@@ -52,7 +43,6 @@ const ProjectLinkingTextInput: React.FC = () => {
           >
             {t("useDefaults")}
           </button>
-          {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="linkingClear"
             className="bg-slate-300 p-2 rounded-md w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
@@ -65,7 +55,6 @@ const ProjectLinkingTextInput: React.FC = () => {
             className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
             id="linkingImage1"
             name="linkingImage1"
-            // marginRight="35px"
             onClick={handleRefImage1}
           >
             1

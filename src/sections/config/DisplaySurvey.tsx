@@ -200,8 +200,6 @@ const SurveyPageQuestions = () => {
     setSurveyQuestionScale("");
     setSurveyQuestionOptions("");
 
-    console.log("xx", JSON.stringify(targetObject, null, 2));
-
     setIsEditingSurveyQuestion(true);
     setIsEditingSurveyQuestionIndex(clickedItemIndex);
 
@@ -256,8 +254,6 @@ const SurveyPageQuestions = () => {
       return <div>{t("noQuestionsAdded")}</div>;
     } else {
       const QuestionList = surveyQuestionsArray.map((object, index) => {
-        console.log("ee", JSON.stringify(object, null, 2));
-
         if (object.surveyQuestionType === "text") {
           return (
             <div key={uuid()} className="flex flex-row rounded-md">

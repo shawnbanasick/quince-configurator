@@ -5,12 +5,10 @@ import { useStore } from "../../GlobalState/useStore";
 import mobileWelcome1 from "../../assets/images/mobile_welcome-1.png";
 import { useTranslation } from "react-i18next";
 
-const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
 const getMobileWelcomeText = (state) => state.mobileWelcomeText;
 
 const MobileWelcomeScreenTextInput = () => {
-  let displayMode = useStore(getDisplayMode);
   const setText = useStore(getSetText);
   const mobileWelcomeText = useStore(getMobileWelcomeText);
   const { t } = useTranslation();
@@ -25,7 +23,6 @@ const MobileWelcomeScreenTextInput = () => {
   };
 
   const handleTextChange = (e: any) => {
-    console.log("handleTextChange", e.target.value);
     setText(e.target.name, e.target.value);
   };
 
@@ -33,18 +30,11 @@ const MobileWelcomeScreenTextInput = () => {
     clearSection(e.target.id);
   };
 
-  if (displayMode === "beginner") {
-    displayMode = true;
-  } else {
-    displayMode = false;
-  }
-
   return (
     <div className="outline outline-2 outline-slate-500 p-2 w-[100%] rounded-sm">
       <div className="flex flex-row justify-between mb-4">
         <h2>{`5. ${t("mobileWelcomeScreen")}`} </h2>
         <div className="flex flex-row gap-4">
-          {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="mobileWelcomeDef"
             className="bg-slate-300 p-2 rounded-md w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
@@ -52,7 +42,6 @@ const MobileWelcomeScreenTextInput = () => {
           >
             {t("useDefaults")}
           </button>
-          {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="mobileWelcomeClear"
             className="bg-slate-300 p-2 rounded-md w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
@@ -60,25 +49,14 @@ const MobileWelcomeScreenTextInput = () => {
           >
             {t("clearSection")}
           </button>
-          {/* <RefImageButton */}
           <div className="flex items-center p-2 justify-center  h-[50px]">{t("images")}</div>
           <button
             className="bg-slate-300 p-2 rounded-md w-[30px]  h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="consentImage"
-            // marginRight="35px"
             onClick={handleRefImage}
           >
             1
           </button>
-          {/*
-          <button
-            className="bg-slate-300 p-2 rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
-            id="consentImage"
-            // marginRight="35px"
-            onClick={handleRefImage2}
-          >
-            2
-          </button> */}
         </div>
       </div>
       <div className="pl-10">

@@ -29,9 +29,6 @@ const wordSorts = (
 ) => {
   let indentValue = 200;
 
-  // console.log("header array", JSON.stringify(newHeaderArray, null, 2));
-  // console.log("header array", JSON.stringify(mapInputQsortPattern, null, 2));
-
   let newString = "";
   const newHeaderArray2 = [...newHeaderArray];
   for (let r = 0; r < newHeaderArray2.length; r++) {

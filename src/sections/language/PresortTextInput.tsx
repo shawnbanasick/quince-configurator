@@ -15,7 +15,6 @@ const getPresortAgreement = (state) => state.presortAgreement;
 const getPresortNeutral = (state) => state.presortNeutral;
 const getPresortDisagreement = (state) => state.presortDisagreement;
 const getPresortOnPageInstructions = (state) => state.presortOnPageInstructions;
-// const getPresortImageSortInstructions = (state) => state.presortImageSortInstructions;
 const getPresortModalHead = (state) => state.presortModalHead;
 const getPresortModalText = (state) => state.presortModalText;
 const getPresortPreventNavModalHead = (state) => state.presortPreventNavModalHead;
@@ -35,7 +34,6 @@ const PresortTextInput = () => {
   const presortNeutral = useStore(getPresortNeutral);
   const presortDisagreement = useStore(getPresortDisagreement);
   const presortOnPageInstructions = useStore(getPresortOnPageInstructions);
-  // const presortImageSortInstructions = useStore(getPresortImageSortInstructions);
   const presortModalHead = useStore(getPresortModalHead);
   const presortModalText = useStore(getPresortModalText);
   const presortPreventNavModalHead = useStore(getPresortPreventNavModalHead);
@@ -74,7 +72,6 @@ const PresortTextInput = () => {
   };
 
   const handleTextChange = (e: any) => {
-    console.log("handleTextChange", e.target.value);
     setText(e.target.name, e.target.value);
   };
 
@@ -87,7 +84,6 @@ const PresortTextInput = () => {
       <div className="flex flex-row justify-between mb-4">
         <h2>{`6. ${t("presortScreen")}`} </h2>
         <div className="flex flex-row gap-4">
-          {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="presortDef"
             className="bg-slate-300 p-2 rounded-md w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
@@ -95,7 +91,6 @@ const PresortTextInput = () => {
           >
             {t("useDefaults")}
           </button>
-          {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="presortClear"
             className="bg-slate-300 p-2 rounded-md w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
@@ -107,7 +102,6 @@ const PresortTextInput = () => {
           <button
             className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="consentImage"
-            // marginRight="35px"
             onClick={handleRefImage}
           >
             1
@@ -115,7 +109,6 @@ const PresortTextInput = () => {
           <button
             className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="consentImage"
-            // marginRight="35px"
             onClick={handleRefImage2}
           >
             2
@@ -123,7 +116,6 @@ const PresortTextInput = () => {
           <button
             className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="consentImage"
-            // marginRight="35px"
             onClick={handleRefImage3}
           >
             3
@@ -131,7 +123,6 @@ const PresortTextInput = () => {
           <button
             className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="consentImage"
-            // marginRight="35px"
             onClick={handleRefImage4}
           >
             4

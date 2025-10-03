@@ -83,13 +83,6 @@ const ExportDatButton: React.FC<ExportDatButtonProps> = ({ partNames }) => {
       const sorts = processSorts();
       const numStatements = statementsArray.length;
 
-      console.log("Export data:", {
-        projectName,
-        numStatements,
-        sortsCount: sorts.length,
-        respondentNamesCount: partNames?.length || 0,
-      });
-
       // Generate DAT file content
       const datString = createPQMethodDAT(
         projectName,

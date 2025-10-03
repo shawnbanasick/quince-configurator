@@ -9,11 +9,9 @@ import survey1 from "../../assets/images/survey-1.png";
 import survey2 from "../../assets/images/survey-2.png";
 import survey3 from "../../assets/images/survey-3.png";
 
-const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
 
 const SurveyTextInput: React.FC = () => {
-  let displayMode = useStore(getDisplayMode);
   const setText = useStore(getSetText);
   const surveyHeader = useStore((state) => state.surveyHeader);
   const surveyModalHead = useStore((state) => state.surveyModalHead);
@@ -40,7 +38,6 @@ const SurveyTextInput: React.FC = () => {
   };
 
   const handleTextChange = (e: any) => {
-    console.log("handleTextChange", e.target.value);
     setText(e.target.name, e.target.value);
   };
 
@@ -48,17 +45,11 @@ const SurveyTextInput: React.FC = () => {
     clearSection(e.target.id);
   };
 
-  if (displayMode === "beginner") {
-    displayMode = true;
-  } else {
-    displayMode = false;
-  }
   return (
     <div className="outline outline-2 outline-slate-500 p-2 w-[100%] rounded-sm bg-gray-100">
       <div className="flex flex-row justify-between mb-4">
         <h2>14. {t("questionnaireScreen")}</h2>
         <div className="flex flex-row gap-4">
-          {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="surveyDef"
             className="bg-slate-300 p-2 rounded-md w-[200px]  h-[50px] hover:bg-slate-400 hover:font-semibold"
@@ -66,7 +57,6 @@ const SurveyTextInput: React.FC = () => {
           >
             {t("useDefaults")}
           </button>
-          {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="surveyClear"
             className="bg-slate-300 p-2 rounded-md w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
@@ -79,7 +69,6 @@ const SurveyTextInput: React.FC = () => {
             className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage1"
             name="mobilePresortImage1"
-            // marginRight="35px"
             onClick={handleRefImage1}
           >
             1
@@ -88,7 +77,6 @@ const SurveyTextInput: React.FC = () => {
             className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage2"
             name="mobilePresortImage2"
-            // marginRight="35px"
             onClick={handleRefImage2}
           >
             2
@@ -97,7 +85,6 @@ const SurveyTextInput: React.FC = () => {
             className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage3"
             name="mobilePresortImage3"
-            // marginRight="35px"
             onClick={handleRefImage3}
           >
             3

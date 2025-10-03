@@ -211,10 +211,6 @@ const wordPartStatements = (
     // Initialize result with header
     const allParagraphs: Paragraph[] = [createHeaderParagraph()];
 
-    // console.log(
-    //   `Processing ${workingData.length} participants with ${statementsArray.length} statements`
-    // );
-
     // Process each participant
     workingData.forEach((participant, index) => {
       try {
@@ -234,8 +230,6 @@ const wordPartStatements = (
 
         // Add to result
         allParagraphs.push(...participantParagraphs);
-
-        // console.log(`Processed participant ${index + 1}: ${participantIds[index]}`);
       } catch (error) {
         console.error(`Error processing participant ${index + 1}:`, error);
 

@@ -48,7 +48,6 @@ const MobilePostsortTextInput: React.FC = () => {
   };
 
   const handleTextChange = (e: any) => {
-    console.log("handleTextChange", e.target.value);
     setText(e.target.name, e.target.value);
   };
 
@@ -67,7 +66,6 @@ const MobilePostsortTextInput: React.FC = () => {
       <div className="flex flex-row justify-between mb-4">
         <h2>{`13. ${t("mobilePostsortCommentsScreen")}`} </h2>
         <div className="flex flex-row gap-4">
-          {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="mobilePostsortDef"
             className="bg-slate-300 p-2 rounded-md  w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
@@ -75,7 +73,6 @@ const MobilePostsortTextInput: React.FC = () => {
           >
             {t("useDefaults")}
           </button>
-          {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="mobilePostsortClear"
             className="bg-slate-300 p-2 rounded-md  w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
@@ -88,7 +85,6 @@ const MobilePostsortTextInput: React.FC = () => {
             className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage1"
             name="mobilePresortImage1"
-            // marginRight="35px"
             onClick={handleRefImage1}
           >
             1
@@ -96,7 +92,6 @@ const MobilePostsortTextInput: React.FC = () => {
           <button
             className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage2"
-            // marginRight="35px"
             onClick={handleRefImage2}
           >
             2
@@ -104,7 +99,6 @@ const MobilePostsortTextInput: React.FC = () => {
           <button
             className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage3"
-            // marginRight="35px"
             onClick={handleRefImage3}
           >
             3

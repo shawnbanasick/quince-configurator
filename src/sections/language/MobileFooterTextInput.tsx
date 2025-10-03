@@ -26,10 +26,7 @@ const MobileFooterTextInput = () => {
   const screenOrientationText = useStore(getScreenOrientationText);
   const { t } = useTranslation();
 
-  console.log("langBtnHelp", langBtnHelp);
-
   const handleShowDefaults = (e: any) => {
-    console.log("handleShowDefaults", e.target.id);
     showSectionDefaults(e.target.id);
   };
 
@@ -38,7 +35,6 @@ const MobileFooterTextInput = () => {
   };
 
   const handleTextChange = (e: any) => {
-    console.log("handleTextChange", e.target.value);
     setText(e.target.name, e.target.value);
   };
 
@@ -57,7 +53,6 @@ const MobileFooterTextInput = () => {
       <div className="flex flex-row justify-between mb-4">
         <h2>1. Multiple Screens</h2>
         <div className="flex flex-row gap-4">
-          {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="multipleScreens"
             className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"
@@ -65,7 +60,6 @@ const MobileFooterTextInput = () => {
           >
             {t("useDefaults")}
           </button>
-          {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="multipleClear"
             className="bg-slate-300 p-2 rounded-md w-[130px] hover:bg-slate-400 hover:font-semibold"

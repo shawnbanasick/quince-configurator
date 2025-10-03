@@ -12,14 +12,9 @@ import thin5 from "../../assets/images/thin-disagreement-5.png";
 import thin6 from "../../assets/images/thin-finished-6.png";
 import thin7 from "../../assets/images/thin-nav-disabled-7.png";
 
-const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
 const getThinningPreventNavModalHead = (state) => state.thinningPreventNavModalHead;
 const getThinningPreventNavModalText = (state) => state.thinningPreventNavModalText;
-// const getThinningConfirmModalHead = (state) => state.thinningConfirmModalHead;
-// const getThinningConfirmModalText = (state) => state.thinningConfirmModalText;
-// const getAgreeMostText = (state) => state.agreeMostText;
-// const getAgreeLeastText = (state) => state.agreeLeastText;
 const getInitialInstructionPart1 = (state) => state.initialInstructionPart1;
 const getInitialInstructionPart2 = (state) => state.initialInstructionPart2;
 const getInitialInstructionPart3 = (state) => state.initialInstructionPart3;
@@ -34,14 +29,9 @@ const getThinningHelpModalHead = (state) => state.thinningHelpModalHead;
 const getThinningHelpModalText = (state) => state.thinningHelpModalText;
 
 const RefineEvaluationsTextInput = () => {
-  let displayMode = useStore(getDisplayMode);
   const setText = useStore(getSetText);
   const thinningPreventNavModalHead = useStore(getThinningPreventNavModalHead);
   const thinningPreventNavModalText = useStore(getThinningPreventNavModalText);
-  // const thinningConfirmModalHead = useStore(getThinningConfirmModalHead);
-  // const thinningConfirmModalText = useStore(getThinningConfirmModalText);
-  // const agreeMostText = useStore(getAgreeMostText);
-  // const agreeLeastText = useStore(getAgreeLeastText);
   const initialInstructionPart1 = useStore(getInitialInstructionPart1);
   const initialInstructionPart2 = useStore(getInitialInstructionPart2);
   const initialInstructionPart3 = useStore(getInitialInstructionPart3);
@@ -96,7 +86,6 @@ const RefineEvaluationsTextInput = () => {
   };
 
   const handleTextChange = (e) => {
-    console.log("handleTextChange", e.target.value);
     setText(e.target.name, e.target.value);
   };
 
@@ -104,18 +93,11 @@ const RefineEvaluationsTextInput = () => {
     clearSection(e.target.id);
   };
 
-  if (displayMode === "beginner") {
-    displayMode = true;
-  } else {
-    displayMode = false;
-  }
-
   return (
     <div className="outline outline-2 outline-slate-500 p-2 w-[100%] rounded-sm bg-gray-100">
       <div className="flex flex-row justify-between mb-4">
         <h2>{`8. ${t("refineEvaluationsScreen")}`} </h2>
         <div className="flex flex-row gap-4">
-          {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="refineDef"
             className="bg-slate-300 p-2 rounded-md w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
@@ -123,7 +105,6 @@ const RefineEvaluationsTextInput = () => {
           >
             {t("useDefaults")}
           </button>
-          {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="refineClear"
             className="bg-slate-300 p-2 rounded-md w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
@@ -136,7 +117,6 @@ const RefineEvaluationsTextInput = () => {
             className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage1"
             name="mobilePresortImage1"
-            // marginRight="35px"
             onClick={handleRefImage1}
           >
             1
@@ -144,7 +124,6 @@ const RefineEvaluationsTextInput = () => {
           <button
             className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage2"
-            // marginRight="35px"
             onClick={handleRefImage2}
           >
             2
@@ -152,7 +131,6 @@ const RefineEvaluationsTextInput = () => {
           <button
             className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage3"
-            // marginRight="35px"
             onClick={handleRefImage3}
           >
             3
@@ -160,7 +138,6 @@ const RefineEvaluationsTextInput = () => {
           <button
             className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage4"
-            // marginRight="35px"
             onClick={handleRefImage4}
           >
             4
@@ -168,7 +145,6 @@ const RefineEvaluationsTextInput = () => {
           <button
             className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage5"
-            // marginRight="35px"
             onClick={handleRefImage5}
           >
             5
@@ -176,7 +152,6 @@ const RefineEvaluationsTextInput = () => {
           <button
             className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage6"
-            // marginRight="35px"
             onClick={handleRefImage6}
           >
             6
@@ -184,7 +159,6 @@ const RefineEvaluationsTextInput = () => {
           <button
             className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage6"
-            // marginRight="35px"
             onClick={handleRefImage7}
           >
             7

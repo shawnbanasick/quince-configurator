@@ -39,7 +39,6 @@ const ConsentPageTextInput = () => {
   };
 
   const handleShowDefaults = (e: any) => {
-    console.log("handleShowDefaults", e.target.id);
     showSectionDefaults(e.target.id);
   };
 
@@ -48,7 +47,6 @@ const ConsentPageTextInput = () => {
   };
 
   const handleTextChange = (e: any) => {
-    console.log("handleTextChange", e.target.value);
     setText(e.target.name, e.target.value);
   };
 
@@ -59,14 +57,10 @@ const ConsentPageTextInput = () => {
   }
 
   return (
-    // <SectionContainer>
-
     <div className="outline outline-2 outline-slate-500 p-2 w-[100%] rounded-sm bg-gray-100">
-      {/* <HeaderButtonBar> */}
       <div className="flex flex-row justify-between align-middle mb-4">
         <h2>2. {t("consentScreen")}</h2>
         <div className="flex flex-row gap-4">
-          {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="consentDef"
             className="bg-slate-300 p-2 rounded-md w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
@@ -74,7 +68,6 @@ const ConsentPageTextInput = () => {
           >
             {t("useDefaults")}
           </button>
-          {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="consentClear"
             className="bg-slate-300 p-2 rounded-md w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
@@ -82,14 +75,12 @@ const ConsentPageTextInput = () => {
           >
             {t("clearSection")}
           </button>
-          {/* <RefImageButton */}
           <div className="flex items-center p-2 justify-center  h-[50px] ">
             <p>{t("images")}:</p>
           </div>
           <button
             className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="consentImage"
-            // marginRight="35px"
             onClick={handleRefImage}
           >
             1
@@ -97,7 +88,6 @@ const ConsentPageTextInput = () => {
           <button
             className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="consentImage"
-            // marginRight="35px"
             onClick={handleRefImage2}
           >
             2
@@ -123,7 +113,6 @@ const ConsentPageTextInput = () => {
           name="consentText"
           height={150}
           value={langConsentText}
-          // onChange={handleTextChange}
           highlight={true}
           placeholder=""
           disabled={false}
@@ -181,81 +170,3 @@ const ConsentPageTextInput = () => {
 };
 
 export { ConsentPageTextInput };
-
-// const SectionContainer = styled.div`
-//   * {
-//     // outline: 1px solid red;
-//   }
-// `;
-
-// const HeaderButtonBar = styled.div`
-//   display: flex;
-//   flex-direction: row;
-//   align-items: baseline;
-//   justify-content: space-between;
-//   width: 100%;
-// `;
-
-// const DefaultsButton = styled.button`
-//   box-sizing: border-box;
-//   align-self: flex-end;
-//   margin-bottom: 10px;
-//   color: var(--font-color);
-//   transition: 0.3s ease all;
-//   user-select: none;
-
-//   &:hover {
-//     opacity: 1;
-//     box-shadow: inset 0 0 0 1px #666, 0 0 1px transparent;
-//   }
-
-//   &:active {
-//     transform: translateY(1px);
-//     filter: brightness(80%);
-//   }
-// `;
-
-// const ClearAllButton = styled.button`
-//   box-sizing: border-box;
-//   align-self: flex-end;
-//   margin-bottom: 10px;
-//   margin-left: 10px;
-//   color: var(--font-color);
-//   transition: 0.3s ease all;
-//   user-select: none;
-
-//   &:hover {
-//     opacity: 1;
-//     box-shadow: inset 0 0 0 1px #666, 0 0 1px transparent;
-//   }
-
-//   &:active {
-//     transform: translateY(1px);
-//     filter: brightness(80%);
-//   }
-// `;
-
-// const RefImageButton = styled.button`
-//   box-sizing: border-box;
-//   align-self: flex-end;
-//   margin-bottom: 10px;
-//   margin-left: 10px;
-//   margin-right: ${(props) => props.marginRight};
-//   justify-self: flex-end;
-//   color: var(--font-color);
-//   user-select: none;
-
-//   &:hover {
-//     opacity: 1;
-//     box-shadow: inset 0 0 0 1px #666, 0 0 1px transparent;
-//   }
-
-//   &:active {
-//     transform: translateY(1px);
-//     filter: brightness(80%);
-//   }
-// `;
-
-// const SectionTitle = styled.h3`
-//   margin-top: 20px;
-// `;

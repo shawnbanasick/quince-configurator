@@ -43,8 +43,6 @@ const Results: React.FC = () => {
   const isMapXmlLoaded = useStore(getIsMapXmlLoaded);
   const isLanguageXmlLoaded = useStore(getIsLanguageXmlLoaded);
 
-  console.log(isConfigXmlLoaded);
-
   const [selectedOutputOption, setSelectedOutputOption] = useState("kadeZip");
   const [selectedPartId, setSelectedPartId] = useState("randomId");
 

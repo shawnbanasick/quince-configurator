@@ -9,11 +9,9 @@ import sort1 from "../../assets/images/sort-1.png";
 import sort2 from "../../assets/images/sort-2.png";
 import sort3 from "../../assets/images/sort-3.png";
 
-const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
 
 const SortTextInput: React.FC = () => {
-  let displayMode = useStore(getDisplayMode);
   const setText = useStore(getSetText);
   const { t } = useTranslation();
 
@@ -24,10 +22,6 @@ const SortTextInput: React.FC = () => {
   const condOfInst = useStore((state) => state.condOfInst);
   const sortOverloadedColumnModalHead = useStore((state) => state.sortOverloadedColumnModalHead);
   const sortOverloadedColumnModalText = useStore((state) => state.sortOverloadedColumnModalText);
-  // const sortingCompleteModalHead = useStore((state) => state.sortingCompleteModalHead);
-  // const sortingCompleteModalText = useStore((state) => state.sortingCompleteModalText);
-  // const sortPreventNavModalHead = useStore((state) => state.sortPreventNavModalHead);
-  // const sortPreventNavModalText = useStore((state) => state.sortPreventNavModalText);
 
   const handleRefImage1 = () => {
     window.open(sort1, "Mobile Presort Main Image", "width=800, height=600");
@@ -49,7 +43,6 @@ const SortTextInput: React.FC = () => {
   };
 
   const handleTextChange = (e) => {
-    console.log("handleTextChange", e.target.value);
     setText(e.target.name, e.target.value);
   };
 
@@ -57,17 +50,11 @@ const SortTextInput: React.FC = () => {
     clearSection(e.target.id);
   };
 
-  if (displayMode === "beginner") {
-    displayMode = true;
-  } else {
-    displayMode = false;
-  }
   return (
     <div className="outline outline-2 outline-slate-500 p-2 w-[100%] rounded-sm bg-gray-100">
       <div className="flex flex-row justify-between mb-4">
         <h2>{`10. ${t("sortScreen")}`} </h2>
         <div className="flex flex-row gap-4">
-          {/* <DefaultsButton id="footerDef" onClick={handleShowDefaults}> */}
           <button
             id="sortDef"
             className="bg-slate-300 p-2 rounded-md w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
@@ -75,7 +62,6 @@ const SortTextInput: React.FC = () => {
           >
             {t("useDefaults")}
           </button>
-          {/* <ClearAllButton id="footerClear" onClick={handleClearAll}> */}
           <button
             id="sortClear"
             className="bg-slate-300 p-2 rounded-md w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
@@ -88,7 +74,6 @@ const SortTextInput: React.FC = () => {
             className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage1"
             name="mobilePresortImage1"
-            // marginRight="35px"
             onClick={handleRefImage1}
           >
             1
@@ -96,7 +81,6 @@ const SortTextInput: React.FC = () => {
           <button
             className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage2"
-            // marginRight="35px"
             onClick={handleRefImage2}
           >
             2
@@ -104,7 +88,6 @@ const SortTextInput: React.FC = () => {
           <button
             className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage3"
-            // marginRight="35px"
             onClick={handleRefImage3}
           >
             3
@@ -171,54 +154,6 @@ const SortTextInput: React.FC = () => {
           disabled={false}
           tabIndex="0"
         />
-        {/* <UserTextInput
-          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
-          classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`10-6. ${t("sortingCompleteModalHead")}`}
-          name="sortingCompleteModalHead"
-          value={sortingCompleteModalHead}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-        />
-        <UserTextAreaInput
-          classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
-          classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`10-7. ${t("sortingCompleteModalText")}`}
-          name="sortingCompleteModalText"
-          height={150}
-          value={sortingCompleteModalText}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-          tabIndex="0"
-        /> */}
-        {/* <UserTextInput
-          classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
-          classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`10-8. ${t("sortPreventNavModalHead")}`}
-          name="sortPreventNavModalHead"
-          value={sortPreventNavModalHead}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-        />
-        <UserTextAreaInput
-          classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
-          classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`10-9. ${t("sortPreventNavModalText")}`}
-          name="sortPreventNavModalText"
-          height={150}
-          value={sortPreventNavModalText}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-          tabIndex="0"
-        /> */}
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
