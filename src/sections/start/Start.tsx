@@ -125,7 +125,7 @@ const Start = () => {
         {/* Japanese Card */}
         <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-shadow duration-300">
           <div className="flex flex-col items-center text-center">
-            <h3 className="text-lg font-semibold text-gray-900 mb-3">
+            <h3 className="text-lg font-semibold text-gray-900 mb-5">
               {ReactHTMLParser(t("demo3"))}
             </h3>
             <a
@@ -160,7 +160,7 @@ const Start = () => {
             className="text-blue-600 underline underline-offset-2 decoration-4 decoration-blue-300 hover:decoration-blue-400"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://github.com/shawnbanasick/quince/releases/download/v1.0.0/quince-v100.zip"
+            href="https://github.com/shawnbanasick/quince/releases/download/v1.0.2/quince-v102.zip"
           >
             (link)
           </a>{" "}
