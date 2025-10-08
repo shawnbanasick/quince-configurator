@@ -23,8 +23,6 @@ const ExportToZipButton = (props) => {
   let shouldIncludeTimestamp = true;
 
   const handleOnClick = () => {
-    console.log("clicked");
-
     if (!currentStatements) {
       alert("Please load your statements.xml file first");
       return;
@@ -53,11 +51,7 @@ const ExportToZipButton = (props) => {
     });
     // write sorts.txt
 
-    console.log(JSON.stringify(props, null, 2));
-
     let sortsTxt = createSortsText(props.userData, props.participantIdent);
-
-    console.log(JSON.stringify(sortsTxt, null, 2));
 
     let sortsBlob = new Blob([sortsTxt], {
       type: "text/plain;charset=utf-8",

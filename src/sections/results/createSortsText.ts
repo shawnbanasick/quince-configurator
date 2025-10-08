@@ -35,8 +35,6 @@ const createSortsText = (data: SortItem[] = [], participantIdent: string = ""): 
     });
   }
 
-  console.log(participantIdent);
-
   let previousId = "";
   let counter = 1;
 
