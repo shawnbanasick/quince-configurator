@@ -145,7 +145,11 @@ const Start = () => {
           </div>
         </div>
       </div>
-
+      <div className="mt-10 w-9/12 align-self-center font-semibold text-3xl mb-2">Citation</div>
+      <div className="w-7/12 text-2xl -indent-6 pl-6">
+        Shawn Banasick, and Stephen Jeffares. “Quince V1.0.3”. Zenodo, October 25, 2025.
+        https://doi.org/10.5281/zenodo.17438715.
+      </div>
       {/* HOW DOES IT WORK? */}
       <div className="flex flex-col justify-center items-center">
         <div className="mt-12 w-9/12 align-self-center font-semibold text-3xl">
