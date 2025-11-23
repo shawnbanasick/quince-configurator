@@ -17,7 +17,7 @@ const SurveyInformationElement = (props) => {
   return (
     <div className="w-10/12 p-[20px] max-w[1300px] bg-[whitesmoke] outline outline-1 outline-gray-300 outline-none mt-0">
       <div
-        className={`flex w-12/12 max-w-[1300px] p-2 items-center justify-center h-[30px] rounded-md border border-1 border-gray-300 outline-none mt-2`}
+        className={`flex w-12/12 max-w-[1300px] p-2 items-center justify-center min-h-[30px] rounded-md border border-1 border-gray-300 outline-none mt-2`}
         style={{ backgroundColor: color }}
       >
         <div className={`flex items-center bg-[${color}`}>{infoText}</div>

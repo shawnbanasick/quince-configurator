@@ -169,7 +169,7 @@ const Start = () => {
             className="text-blue-600 underline underline-offset-2 decoration-4 decoration-blue-300 hover:decoration-blue-400"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://github.com/shawnbanasick/quince/releases/download/v1.0.2/quince-v102.zip"
+            href="https://github.com/shawnbanasick/quince/releases/download/v1.0.4/quince-v104.zip"
           >
             (link)
           </a>{" "}

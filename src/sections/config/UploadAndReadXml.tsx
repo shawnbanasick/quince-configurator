@@ -2,6 +2,7 @@ import React from "react";
 import XMLParser from "react-xml-parser";
 import { useStore } from "../../globalState/useStore";
 import { useTranslation } from "react-i18next";
+import { decodeHTML } from "../utils/decodeHTML";
 
 interface QuestObjType {
   surveyQuestionType?: string;
@@ -236,17 +237,17 @@ const UploadAndParseXML: React.FC = () => {
 
             // transformations
             if (questType === "likert") {
-              questObj.note = noteObj?.value || "";
-              questObj.options = mainNameObj?.attributes?.scale;
+              questObj.note = decodeHTML(noteObj?.value, true) || "";
+              questObj.options = decodeHTML(mainNameObj?.attributes?.scale, true);
             }
 
             if (questType !== "information") {
-              questObj.label = labelObj?.value;
+              questObj.label = decodeHTML(labelObj?.value, true);
             }
 
             if (questType === "information") {
-              questObj.note = noteObj?.value;
-              questObj.bg = inputObjArray[1]?.attributes?.bg;
+              questObj.note = decodeHTML(noteObj?.value, true);
+              questObj.bg = decodeHTML(inputObjArray[1]?.attributes?.bg, true);
             }
 
             if (questType === "text") {
@@ -258,16 +259,16 @@ const UploadAndParseXML: React.FC = () => {
                 questObj.limitLength = mainNameObj?.attributes?.limitLength;
               }
               questObj.restricted = mainNameObj?.attributes?.restricted;
-              questObj.note = noteObj.value;
+              questObj.note = decodeHTML(noteObj.value, true);
             }
 
             if (questType === "textarea") {
-              questObj.label = labelObj?.value || "";
-              questObj.note = noteObj?.value || "";
+              questObj.label = decodeHTML(labelObj?.value, true) || "";
+              questObj.note = decodeHTML(noteObj?.value, true) || "";
             }
             if (questType === "radio") {
-              questObj[inputObjArray[2].name] = inputObjArray[2]?.value;
-              questObj.options = mainNameObj?.value || "";
+              questObj[inputObjArray[2].name] = decodeHTML(inputObjArray[2]?.value, true);
+              questObj.options = decodeHTML(mainNameObj?.value, true) || "";
             }
             if (
               questType === "select" ||
@@ -276,12 +277,12 @@ const UploadAndParseXML: React.FC = () => {
               questType === "rating5" ||
               questType === "rating10"
             ) {
-              questObj.options = mainNameObj?.value || "";
-              questObj.note = noteObj?.value || "";
-              questObj.label = labelObj.value || "";
+              questObj.options = decodeHTML(mainNameObj?.value, true) || "";
+              questObj.note = decodeHTML(noteObj?.value, true) || "";
+              questObj.label = decodeHTML(labelObj.value, true) || "";
             }
             if (questType === "rating2" || questType === "rating5" || questType === "rating10") {
-              questObj.scale = inputObjArray[0].attributes?.scale;
+              questObj.scale = decodeHTML(inputObjArray[0].attributes?.scale, true);
             }
 
             if (questType === "likert") {
