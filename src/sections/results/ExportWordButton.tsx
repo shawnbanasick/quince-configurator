@@ -70,7 +70,7 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
   const statementNumArray = createStatementNumArray(numStatements);
   const respondentArray = createRespondentArray(data);
   const dateTime = getCurrentDateTime();
-  let version = "1.0.0";
+  let version = "1.0.4";
 
   // set name for ZIP file
   if (shouldIncludeTimestamp === true) {

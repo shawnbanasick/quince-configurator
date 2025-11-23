@@ -1,5 +1,6 @@
 import { Paragraph, TextRun } from "docx";
 import { stripHtml } from "../stripHtml";
+import { stripTags } from "../../utils/stripTags";
 
 const processInformationSummary = (item: any, index: number, text: string) => {
   return [
@@ -18,7 +19,7 @@ const processInformationSummary = (item: any, index: number, text: string) => {
     new Paragraph({
       children: [
         new TextRun({
-          text: `${stripHtml(item.note)}`,
+          text: `${stripHtml(stripTags(item.note))}`,
           bold: true,
         }),
       ],

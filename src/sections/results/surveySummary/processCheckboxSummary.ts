@@ -1,5 +1,6 @@
 import { Paragraph, TextRun } from "docx";
 import { stripHtml } from "../stripHtml";
+import { stripTags } from "../../utils/stripTags";
 
 // Type definitions for better type safety
 interface SurveyItem {
@@ -41,7 +42,7 @@ const roundToDecimals = (num: number, decimals: number): number => {
  */
 const safeStripHtml = (text: string | undefined, fallback = "n/a"): string => {
   if (!text) return fallback;
-  const stripped = stripHtml(text);
+  const stripped = stripHtml(stripTags(text));
   return stripped || fallback;
 };
 

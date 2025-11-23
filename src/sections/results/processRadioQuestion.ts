@@ -1,15 +1,22 @@
 import { Paragraph, TextRun } from "docx";
 import { stripHtml } from "./stripHtml";
+import { stripTags } from "../utils/stripTags";
 
 const processRadioQuestion = (entry, question, index, indentValue) => {
   let addIndentValue = +indentValue + 200;
-  let options = stripHtml(question.options);
-  options = options.split(",");
+  let options = question.options;
+  options = options.split(";;;");
+
+  let cleanOptions = options.map((element) => {
+    return stripHtml(element);
+  });
+
+  let cleanedNote = stripTags(question.note);
 
   let response1 = stripHtml(entry);
   let response2 = response1.split(":");
   let response3 = +response2[1].trim();
-  let respondentResponse = options[response3 - 1];
+  let respondentResponse = cleanOptions[response3 - 1];
 
   let response = [
     new Paragraph({
@@ -19,7 +26,7 @@ const processRadioQuestion = (entry, question, index, indentValue) => {
         //   bold: true,
         // }),
         new TextRun({
-          text: `(Item ${index + 1})  ${stripHtml(question.label)}`,
+          text: `(Item ${index + 1})  ${stripHtml(stripTags(question.label))}`,
           bold: true,
         }),
       ],
@@ -44,7 +51,7 @@ const processRadioQuestion = (entry, question, index, indentValue) => {
     new Paragraph({
       children: [
         new TextRun({
-          text: `Note: ${stripHtml(question.note)}`,
+          text: `Note: ${stripHtml(cleanedNote)}`,
           bold: false,
         }),
       ],
@@ -55,7 +62,7 @@ const processRadioQuestion = (entry, question, index, indentValue) => {
     new Paragraph({
       children: [
         new TextRun({
-          text: `Options: ${stripHtml(question.options)}`,
+          text: `Options: ${stripHtml(stripTags(question.options))}`,
           bold: false,
         }),
       ],

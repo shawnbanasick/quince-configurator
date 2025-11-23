@@ -1,19 +1,27 @@
 import { Paragraph, TextRun } from "docx";
 import { stripHtml } from "./stripHtml";
+import { stripTags } from "../utils/stripTags";
 
 const processSelectQuestion = (entry, question, index, indentValue) => {
   let addIndentValue = +indentValue + 200;
-  let options = stripHtml(question.options);
-  options = options.split(",");
 
+  let options = question.options;
+  options = options.split(";;;");
+  // let options = stripHtml(question.options);
+
+  let cleanOptions = options.map((element) => {
+    return stripHtml(stripTags(element));
+  });
+
+  // "entry" is the numerical list of responses like "1,4,5"
   let respondentResponse2: any = [];
-  let response1 = stripHtml(entry);
+  let response1 = stripHtml(stripTags(entry));
   let response3 = response1.split(":");
   let response2 = response3[1].split(",");
 
   response2.forEach((value) => {
     let value2 = +value.trim();
-    let value3 = options[value2 - 1];
+    let value3 = cleanOptions[value2 - 1];
     respondentResponse2.push(value3);
   });
 
@@ -33,7 +41,7 @@ const processSelectQuestion = (entry, question, index, indentValue) => {
         //   bold: true,
         // }),
         new TextRun({
-          text: `(Item ${index + 1})  ${stripHtml(question.label)}`,
+          text: `(Item ${index + 1})  ${stripHtml(stripTags(question.label))}`,
           bold: true,
         }),
       ],
@@ -58,7 +66,7 @@ const processSelectQuestion = (entry, question, index, indentValue) => {
     new Paragraph({
       children: [
         new TextRun({
-          text: question.note ? `Note: ${stripHtml(question.note)}` : `Note: n/a`,
+          text: question.note ? `Note: ${stripHtml(stripTags(question.note))}` : `Note: n/a`,
           bold: false,
         }),
       ],
@@ -69,7 +77,7 @@ const processSelectQuestion = (entry, question, index, indentValue) => {
     new Paragraph({
       children: [
         new TextRun({
-          text: `Options: ${stripHtml(question?.options)}`,
+          text: `Options: ${stripHtml(stripTags(question?.options))}`,
           bold: false,
         }),
       ],
@@ -80,7 +88,7 @@ const processSelectQuestion = (entry, question, index, indentValue) => {
     new Paragraph({
       children: [
         new TextRun({
-          text: indicator ? `Response: ${stripHtml(entry)} - ` : `Response: - `,
+          text: indicator ? `Response: ${stripHtml(stripTags(entry))} - ` : `Response: - `,
           bold: false,
         }),
         new TextRun({

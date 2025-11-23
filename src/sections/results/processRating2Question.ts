@@ -1,9 +1,10 @@
 import { Paragraph, TextRun } from "docx";
 import { stripHtml } from "./stripHtml";
+import { stripTags } from "../utils/stripTags";
 
 const processRating2Question = (entry, question, index, indentValue) => {
   let addIndentValue = +indentValue + 200;
-  let options = stripHtml(question.options);
+  let options = stripHtml(stripTags(question.options));
   options = options.split(",");
   options = options.filter(Boolean);
 
@@ -13,26 +14,11 @@ const processRating2Question = (entry, question, index, indentValue) => {
   let entry4 = entry.split(":");
   let entry5 = entry4[1].split(",");
 
-  //   let entry3 = entry4[1].split(",");
-
-  //   let respondentResponse2: any = [];
-  //   let response1 = stripHtml(entry);
-  //   let response3 = response1.split(":");
-  //   let response2 = response3[1].split(",");
-
-  //   response2.forEach((value) => {
-  //     let value2 = +value.trim();
-  //     let value3 = options[value2 - 1];
-  //     respondentResponse2.push(value3);
-  //   });
-
-  //   let respondentResponse = respondentResponse2.join(", ");
-
   let response = [
     new Paragraph({
       children: [
         new TextRun({
-          text: `(Item ${index + 1})  ${stripHtml(question.label)}`,
+          text: `(Item ${index + 1})  ${stripHtml(stripTags(question.label))}`,
           bold: true,
         }),
       ],
@@ -57,7 +43,7 @@ const processRating2Question = (entry, question, index, indentValue) => {
     new Paragraph({
       children: [
         new TextRun({
-          text: question.note ? `Note: ${stripHtml(question.note)}` : `Note: n/a`,
+          text: question.note ? `Note: ${stripHtml(stripTags(question.note))}` : `Note: n/a`,
           bold: false,
         }),
       ],

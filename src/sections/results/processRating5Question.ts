@@ -1,9 +1,10 @@
 import { Paragraph, TextRun } from "docx";
 import { stripHtml } from "./stripHtml";
+import { stripTags } from "../utils/stripTags";
 
 const processRating5Question = (entry, question, index, indentValue) => {
   let addIndentValue = +indentValue + 200;
-  let options = stripHtml(question.options);
+  let options = stripHtml(stripTags(question.options));
   options = options.split(",");
   options = options.filter(Boolean);
 
@@ -14,7 +15,7 @@ const processRating5Question = (entry, question, index, indentValue) => {
     new Paragraph({
       children: [
         new TextRun({
-          text: `(Item ${index + 1})  ${stripHtml(question.label)}`,
+          text: `(Item ${index + 1})  ${stripHtml(stripTags(question.label))}`,
           bold: true,
         }),
       ],
@@ -39,7 +40,7 @@ const processRating5Question = (entry, question, index, indentValue) => {
     new Paragraph({
       children: [
         new TextRun({
-          text: question.note ? `Note: ${stripHtml(question.note)}` : `Note: n/a`,
+          text: question.note ? `Note: ${stripHtml(stripTags(question.note))}` : `Note: n/a`,
           bold: false,
         }),
       ],

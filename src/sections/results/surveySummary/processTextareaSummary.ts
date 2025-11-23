@@ -1,5 +1,6 @@
 import { Paragraph, TextRun } from "docx";
 import { stripHtml } from "../stripHtml";
+import { stripTags } from "../../utils/stripTags";
 
 const processTextareaSummary = (
   filteredData: any,
@@ -24,7 +25,7 @@ const processTextareaSummary = (
     new Paragraph({
       children: [
         new TextRun({
-          text: item.label ? `${stripHtml(item.label)}` : `n/a`,
+          text: item.label ? `${stripHtml(stripTags(item.label))}` : `n/a`,
           bold: true,
         }),
       ],
@@ -32,7 +33,7 @@ const processTextareaSummary = (
     new Paragraph({
       children: [
         new TextRun({
-          text: item.note ? `${stripHtml(item.note)}` : `n/a`,
+          text: item.note ? `${stripHtml(stripTags(item.note))}` : `n/a`,
           bold: true,
         }),
       ],

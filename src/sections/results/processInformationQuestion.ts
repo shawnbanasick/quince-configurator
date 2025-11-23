@@ -1,8 +1,11 @@
 import { Paragraph, TextRun } from "docx";
 import { stripHtml } from "./stripHtml";
+import { stripTags } from "../utils/stripTags";
 
 const processInformationQuestion = (question, index, indentValue) => {
   let addIndentValue = +indentValue + 200;
+
+  let cleanedNote = stripTags(question.note);
 
   let response = [
     new Paragraph({
@@ -12,7 +15,7 @@ const processInformationQuestion = (question, index, indentValue) => {
         //   bold: true,
         // }),
         new TextRun({
-          text: `(Item ${index + 1})  ${stripHtml(question.note)}`,
+          text: `(Item ${index + 1})  ${stripHtml(cleanedNote)}`,
           bold: true,
         }),
       ],
