@@ -147,11 +147,11 @@ const Start = () => {
       </div>
       <div className="mt-10 w-9/12 align-self-center font-semibold text-3xl mb-2">Citations</div>
       <div className="w-7/12 text-2xl -indent-6 pl-6">
-        Shawn Banasick, and Stephen Jeffares. “Quince V1.0.3”. Zenodo, October 25, 2025.
+        Shawn Banasick, and Stephen Jeffares. “Quince V1.0.5”. Zenodo, October 25, 2025.
         https://doi.org/10.5281/zenodo.17438715.
       </div>
       <div className="mt-8 w-7/12 text-2xl -indent-6 pl-6">
-        Shawn Banasick. “Quince Configurator V1.0.2”. Zenodo, October 25, 2025.
+        Shawn Banasick. “Quince Configurator V1.0.5”. Zenodo, October 25, 2025.
         https://doi.org/10.5281/zenodo.17438863.
       </div>
 
@@ -169,7 +169,7 @@ const Start = () => {
             className="text-blue-600 underline underline-offset-2 decoration-4 decoration-blue-300 hover:decoration-blue-400"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://github.com/shawnbanasick/quince/releases/download/v1.0.4/quince-v104.zip"
+            href="https://github.com/shawnbanasick/quince/releases/download/v1.0.5/quince-v105.zip"
           >
             (link)
           </a>{" "}
