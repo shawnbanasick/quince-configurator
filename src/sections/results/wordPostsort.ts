@@ -1,5 +1,7 @@
 import { Paragraph, TextRun } from "docx";
 import { cloneDeep } from "es-toolkit";
+import { stripHtml } from "./stripHtml";
+import { stripTags } from "../utils/stripTags";
 
 type RecordMap = Record<string, any>;
 
@@ -34,7 +36,7 @@ const wordPostsort = (data: RecordMap, currentStatements): Paragraph[] => {
 
     let sortedPosCommentsPrepArray: any[] = [];
     posComments.forEach((item) => {
-      let copy = item;
+      let copy = stripHtml(stripTags(item));
       let id = copy.slice(6, 9);
       id = id.replace(":", "");
       id = id.replace("(", "");
@@ -44,7 +46,7 @@ const wordPostsort = (data: RecordMap, currentStatements): Paragraph[] => {
 
     let sortedNegCommentsPrepArray: any[] = [];
     negComments.forEach((item) => {
-      let copy = item;
+      let copy = stripHtml(stripTags(item));
       let id = copy.slice(6, 9);
       id = id.replace("N", "-");
       id = id.replace(":", "");
@@ -107,7 +109,7 @@ const wordPostsort = (data: RecordMap, currentStatements): Paragraph[] => {
         new Paragraph({
           children: [
             new TextRun({
-              text: entry[1],
+              text: stripHtml(stripTags(entry[1])),
             }),
           ],
           indent: {
@@ -171,7 +173,7 @@ const wordPostsort = (data: RecordMap, currentStatements): Paragraph[] => {
         new Paragraph({
           children: [
             new TextRun({
-              text: entry[1],
+              text: stripHtml(stripTags(entry[1])),
             }),
           ],
           indent: {
