@@ -198,8 +198,7 @@ const processCheckboxSummary = (
   partNames: string[],
   item: SurveyItem,
   index: number,
-  text: string,
-  responseDelimiter: string = "," // Allow customization of delimiter
+  text: string
 ): Paragraph[] => {
   // Validate inputs
   if (!filteredData?.length || !item?.options) {
