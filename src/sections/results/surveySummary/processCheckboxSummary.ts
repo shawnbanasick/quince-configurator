@@ -50,25 +50,28 @@ const safeStripHtml = (text: string | undefined, fallback = "n/a"): string => {
  * Extracts response values for a specific item from filtered data
  * Handles multiple responses separated by semicolons
  */
-const extractResponseValues = (
-  filteredData: DataEntry[],
-  itemIndex: number,
-  delimiter: string = ";"
-): string[] => {
+let otherValuesArray: any = [];
+const extractResponseValues = (filteredData: DataEntry[], itemIndex: number): string[] => {
   const key = `itemNum${itemIndex + 1}`;
   const allResponses: string[] = [];
 
-  filteredData.forEach((entry) => {
-    const value = entry[key]?.trim();
+  filteredData.forEach((entry, index) => {
+    let num = "";
+    let value = entry[key]?.trim();
 
     if (!value) {
       allResponses.push("no response");
     } else {
       // Split by delimiter and clean up each response
-      const responses = value
-        .split(delimiter)
-        .map((response) => response.trim())
-        .filter((response) => response.length > 0);
+
+      if (value.includes("-")) {
+        let dashIndex = value.indexOf("-");
+        num = value.slice(0, dashIndex);
+        let otherValue = value.slice(dashIndex + 1);
+        value = num;
+        otherValuesArray.push([index, otherValue]);
+      }
+      const responses: any[] = value.split(",");
 
       if (responses.length === 0) {
         allResponses.push("no response");
@@ -130,7 +133,7 @@ const createHeaderParagraphs = (item: SurveyItem, index: number, text: string): 
     new Paragraph({
       children: [
         new TextRun({
-          text: safeStripHtml(item.label),
+          text: safeStripHtml(stripTags(item.label)),
           bold: true,
         }),
       ],
@@ -138,7 +141,7 @@ const createHeaderParagraphs = (item: SurveyItem, index: number, text: string): 
     new Paragraph({
       children: [
         new TextRun({
-          text: safeStripHtml(item.note),
+          text: safeStripHtml(stripTags(item.note)),
           bold: true,
         }),
       ],
@@ -213,7 +216,7 @@ const processCheckboxSummary = (
   const totalResponses = partNames.length;
 
   // Extract and count responses (now handles multiple responses per entry)
-  const responseValues = extractResponseValues(filteredData, index, responseDelimiter);
+  const responseValues = extractResponseValues(filteredData, index);
   const responseCounts = countOccurrences(responseValues);
 
   // Calculate total response count (may be higher than participant count due to multiple responses)

@@ -4,21 +4,47 @@ import { stripTags } from "../utils/stripTags";
 
 const processCheckboxQuestion = (entry, question, index, indentValue) => {
   let addIndentValue = +indentValue + 200;
-  let options = stripHtml(question.options);
+  let options = stripHtml(stripTags(question.options));
   options = options.split(",");
 
   let respondentResponse2: any = [];
-  let response1 = stripHtml(entry);
+  let response1 = stripHtml(stripTags(entry));
   let response3 = response1.split(":");
-  let response2 = response3[1].split(",");
+  let response2;
+  let response4;
+  let response5;
+  let response6: any = [];
+  if (response3[1].includes("-")) {
+    let dashIndex = response3[1].indexOf("-");
+    response2 = response3[1].slice(0, dashIndex);
 
-  response2.forEach((value) => {
-    let value2 = +value.trim();
-    let value3 = options[value2 - 1];
-    respondentResponse2.push(value3);
+    response4 = response3[1].slice(dashIndex + 1);
+    response5 = response2.split(",");
+    response5 = response5.map((str) => str.trim());
+    if (response5.length > 1) {
+      response6 = response5.map((item) => {
+        return parseInt(item);
+      });
+    } else {
+      response6.push(response5[0]);
+    }
+  } else {
+    response6.push(response3[1].trim());
+  }
+
+  let value1;
+  response6.forEach((value) => {
+    value1 = options[value - 1];
+    respondentResponse2.push(value1);
   });
 
   let respondentResponse = respondentResponse2.join(", ");
+
+  if (response3[1].includes("-")) {
+    respondentResponse = respondentResponse + " - " + response4;
+  } else {
+    respondentResponse = respondentResponse;
+  }
 
   let response = [
     new Paragraph({
@@ -71,11 +97,11 @@ const processCheckboxQuestion = (entry, question, index, indentValue) => {
     new Paragraph({
       children: [
         new TextRun({
-          text: `Response: ${stripHtml(entry)} - `,
+          text: `Response: ${stripHtml(stripTags(entry))} - `,
           bold: false,
         }),
         new TextRun({
-          text: entry ? `${respondentResponse}` : `no response`,
+          text: entry ? `${stripHtml(stripTags(respondentResponse))}` : `no response`,
           bold: true,
         }),
       ],

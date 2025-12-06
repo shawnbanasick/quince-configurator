@@ -25,8 +25,19 @@ const SurveyRadioElement = (props) => {
     displayNoteText = false;
   }
 
+  let displayOtherInput = props.opts.other;
+  if (displayOtherInput === "true" || displayOtherInput === true) {
+    displayOtherInput = true;
+  } else {
+    displayOtherInput = false;
+  }
+
+  const optionsLength = optsArray.length - 1;
+
   // PERSISTENT STATE
   let [selected, setSelected] = useState("");
+  let [otherDisabled, setOtherDisabled] = useState(true);
+  let [otherString, setOtherString] = useState("no input");
 
   // LOCAL STATE
   const [formatOptions, setFormatOptions] = useState({
@@ -56,10 +67,40 @@ const SurveyRadioElement = (props) => {
   };
 
   const handleChange = (e) => {
-    const resultsSurvey = JSON.parse(localStorage.getItem("resultsSurvey"));
-    resultsSurvey[`itemNum${props.opts.itemNum}`] = +e.target.value + 1;
-    localStorage.setItem("resultsSurvey", JSON.stringify(resultsSurvey));
+    // const resultsSurvey = JSON.parse(localStorage.getItem("resultsSurvey"));
+
+    // if (+e.target.value === +optionsLength && displayOtherInput === true) {
+    //   if (otherString === "") {
+    //     resultsSurvey[`itemNum${props.opts.itemNum}`] = `${+e.target.value + 1}-no input`;
+    //   } else {
+    //     resultsSurvey[`itemNum${props.opts.itemNum}`] = `${+e.target.value + 1}-${otherString}`;
+    //   }
+    // } else {
+    //   resultsSurvey[`itemNum${props.opts.itemNum}`] = +e.target.value + 1;
+    // }
+
+    if (+e.target.value === +optionsLength) {
+      setOtherDisabled(false);
+    } else {
+      setOtherDisabled(true);
+    }
+
+    // localStorage.setItem("resultsSurvey", JSON.stringify(resultsSurvey));
   }; // end handle change
+
+  const handleInputChange = (event) => {
+    // console.log(event.target.value);
+    // const resultsSurvey = JSON.parse(localStorage.getItem("resultsSurvey"));
+    // if (event.target.value === "") {
+    //   resultsSurvey[`itemNum${props.opts.itemNum}`] = `${+optionsLength + 1}-no input`;
+    // } else {
+    //   resultsSurvey[`itemNum${props.opts.itemNum}`] = `${
+    //     +optionsLength + 1
+    //   }-${event.target.value.trim()}`;
+    // }
+    setOtherString(event.target.value.trim());
+    // localStorage.setItem("resultsSurvey", JSON.stringify(resultsSurvey));
+  };
 
   let setYellow = false;
   if (selected.length === 0) {
@@ -88,17 +129,19 @@ const SurveyRadioElement = (props) => {
   const RadioItems = () => {
     const radioList = optsArray.map((item, index) => (
       <div key={uuid()}>
-        <RadioInput
-          value={index}
-          checked={selected}
-          label={item}
-          setter={setSelected}
-        />
+        <RadioInput value={index} checked={selected} label={item} setter={setSelected} />
       </div>
     ));
     return (
       <div className="flex flex-col gap-3 p-2 bg-white  min-w-[100px] outline outline-1 outline-slate-300">
-        {radioList}
+        <div onChange={(e) => handleChange(e)}>{radioList}</div>
+        {displayOtherInput && (
+          <input
+            className="border border-1 border-gray-300 p-[5px] w-full rounded-md bg-white active:border-gray-400"
+            disabled={otherDisabled}
+            // onChange={(event) => handleInputChange(event)}
+          />
+        )}
       </div>
     );
   };
@@ -116,7 +159,7 @@ const SurveyRadioElement = (props) => {
           <div className="content-center min-h-[35px]">{noteText}</div>
         </div>
         {/* <RadioContainer onChange={(e) => handleChange(e)}> */}
-        <div onChange={(e) => handleChange(e)}>
+        <div>
           <RadioItems />
         </div>
       </div>

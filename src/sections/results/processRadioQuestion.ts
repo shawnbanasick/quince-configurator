@@ -8,15 +8,26 @@ const processRadioQuestion = (entry, question, index, indentValue) => {
   options = options.split(";;;");
 
   let cleanOptions = options.map((element) => {
-    return stripHtml(element);
+    return stripHtml(stripTags(element));
   });
 
   let cleanedNote = stripTags(question.note);
 
-  let response1 = stripHtml(entry);
+  let response1 = stripHtml(stripTags(entry));
   let response2 = response1.split(":");
-  let response3 = +response2[1].trim();
-  let respondentResponse = cleanOptions[response3 - 1];
+  let response3;
+  let respondentResponse;
+  let response3b = "";
+  if (response2[1].includes("-")) {
+    let tempArray = response2[1].split("-");
+    // mutate array
+    response3 = +tempArray.shift().trim();
+    response3b = tempArray.join("-").trim();
+    respondentResponse = `${cleanOptions[response3 - 1]} - ${response3b}`;
+  } else {
+    response3 = +response2[1].trim();
+    respondentResponse = cleanOptions[response3 - 1];
+  }
 
   let response = [
     new Paragraph({
@@ -51,7 +62,7 @@ const processRadioQuestion = (entry, question, index, indentValue) => {
     new Paragraph({
       children: [
         new TextRun({
-          text: `Note: ${stripHtml(cleanedNote)}`,
+          text: `Note: ${stripHtml(stripTags(cleanedNote))}`,
           bold: false,
         }),
       ],
@@ -73,11 +84,11 @@ const processRadioQuestion = (entry, question, index, indentValue) => {
     new Paragraph({
       children: [
         new TextRun({
-          text: `Response: ${stripHtml(entry)} - `,
+          text: `Response: ${stripHtml(stripTags(entry))} - `,
           bold: false,
         }),
         new TextRun({
-          text: `${respondentResponse}`,
+          text: `${stripHtml(stripTags(respondentResponse))}`,
           bold: true,
         }),
       ],

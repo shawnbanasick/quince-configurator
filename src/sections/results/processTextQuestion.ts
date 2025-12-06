@@ -40,7 +40,7 @@ const processTextQuestion = (entry, question, index, indentValue) => {
     new Paragraph({
       children: [
         new TextRun({
-          text: question.note ? `Note: ${stripHtml(cleanedNote)}` : `Note: n/a`,
+          text: question.note ? `Note: ${stripHtml(stripTags(cleanedNote))}` : `Note: n/a`,
           bold: false,
         }),
       ],
@@ -55,7 +55,7 @@ const processTextQuestion = (entry, question, index, indentValue) => {
           bold: true,
         }),
         new TextRun({
-          text: `${stripHtml(entry)}`,
+          text: `${stripHtml(stripTags(entry))}`,
           bold: false,
         }),
       ],

@@ -7,8 +7,10 @@ import { decodeHTML } from "../utils/decodeHTML";
 interface QuestObjType {
   surveyQuestionType?: string;
   required?: string;
+  other?: string;
   label?: string;
   note?: string;
+  itemNum?: string;
   bg?: string;
   limited?: string;
   limitLength?: string;
@@ -225,6 +227,8 @@ const UploadAndParseXML: React.FC = () => {
             let inputObjArray = xmlObjectArray[index].children;
             let questObj: QuestObjType = {};
 
+            questObj.itemNum = index + 1;
+
             // for all questions
             let mainNameObj = inputObjArray.find((item) => item.name === "input");
             let questType = mainNameObj?.attributes?.type;
@@ -270,6 +274,14 @@ const UploadAndParseXML: React.FC = () => {
               questObj[inputObjArray[2].name] = decodeHTML(inputObjArray[2]?.value, true);
               questObj.options = decodeHTML(mainNameObj?.value, true) || "";
             }
+            if (questType === "checkbox" || questType === "radio") {
+              let otherValue = mainNameObj?.attributes?.other;
+              if (otherValue === "true" || otherValue === true) {
+                questObj.other = "true";
+              } else {
+                questObj.other = "false";
+              }
+            }
             if (
               questType === "select" ||
               questType === "checkbox" ||
@@ -284,7 +296,6 @@ const UploadAndParseXML: React.FC = () => {
             if (questType === "rating2" || questType === "rating5" || questType === "rating10") {
               questObj.scale = decodeHTML(inputObjArray[0].attributes?.scale, true);
             }
-
             if (questType === "likert") {
               questObj.surveyQuestionType = "radio";
               questType = "radio";

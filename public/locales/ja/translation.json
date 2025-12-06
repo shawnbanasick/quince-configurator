@@ -174,6 +174,7 @@
   "errorItemNotAdded": "エラー：アイテムが追加されていない",
   "surveyAnswerRequired": "回答が必要",
   "surveyAnswerLenIsLimited": "回答の長さが制限されている",
+  "surveyShowOther": "「その他」の入力",
   "surveyAnswerRestricted": "回答は数字のみに制限されている",
   "surveyInfoBarColor": "情報アイテムの背景色",
   "surveyAnswerMaximumLength": "回答の最大長",

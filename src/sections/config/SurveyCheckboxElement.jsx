@@ -8,6 +8,7 @@ import { decodeHTML } from "../utils/decodeHTML";
 const SurveyCheckboxElement = (props) => {
   // HELPER FUNCTIONS
   let localStore = {};
+
   const getOptionsArray = (options) => {
     let array = options.split(";;;");
     array = array.filter(function (e) {
@@ -20,6 +21,7 @@ const SurveyCheckboxElement = (props) => {
   // PROPS
   const checkRequiredQuestionsComplete = props.check;
   const optsArray = getOptionsArray(props.opts.options);
+  const optionsLength = optsArray.length;
   const nameValue = `question${props.opts.itemNum}`;
   let questionId = props.opts.id;
   const labelText = ReactHtmlParser(decodeHTML(props.opts.label)) || "";
@@ -29,10 +31,15 @@ const SurveyCheckboxElement = (props) => {
     displayNoteText = false;
   }
 
+  let displayOtherInput = props.opts.other;
+  if (displayOtherInput === "true" || displayOtherInput === true) {
+    displayOtherInput = true;
+  } else {
+    displayOtherInput = false;
+  }
+
   // PERSISTENT STATE
-  let [checkedState, setCheckedState] = useState(
-    new Array(optsArray.length).fill(false)
-  );
+  let [checkedState, setCheckedState] = useState(new Array(optsArray.length).fill(false));
 
   // LOCAL STATE
   const [formatOptions, setFormatOptions] = useState({
@@ -40,29 +47,51 @@ const SurveyCheckboxElement = (props) => {
     border: "none",
   });
 
+  let [otherString, setOtherString] = useState("no input");
+  let [otherDisabled, setOtherDisabled] = useState(true);
+  let [selectedArray, setSelectedArray] = useState([]);
+
   // HANDLE CHANGE
   const handleChange = (position) => {
     const resultsSurvey = JSON.parse(localStorage.getItem("resultsSurvey"));
     position = parseInt(position, 10);
+
+    if (+position === +optionsLength - 1) {
+      setOtherDisabled(false);
+    } else {
+      setOtherDisabled(true);
+    }
+
+    // checked state = array of true, false values
+    // flip the true/false value for index position
     const updatedCheckedState = checkedState.map((item, index) =>
       index === position ? !item : item
     );
+
     setCheckedState(updatedCheckedState);
     // prep the selected answers for storage
-    let selected = updatedCheckedState.reduce(
-      (text = "", currentState, index) => {
-        if (currentState === true) {
-          return text + (index + 1).toString() + ",";
-        }
-        return text;
-      },
-      ""
-    );
+    let selected = updatedCheckedState.reduce((text = "", currentState, index) => {
+      if (currentState === true) {
+        return text + (index + 1).toString() + ",";
+      }
+      return text;
+    }, "");
+
     if (selected.charAt(selected.length - 1) === ",") {
       selected = selected.substr(0, selected.length - 1);
     }
-    // store the selected answers in the results object
-    resultsSurvey[`itemNum${props.opts.itemNum}`] = selected;
+
+    let selectedArray = selected.split(",");
+
+    if (+selectedArray[selectedArray.length - 1] === +optionsLength && displayOtherInput === true) {
+      if (otherString !== "") {
+        resultsSurvey[`itemNum${props.opts.itemNum}`] = `${selected}-${otherString}`;
+      } else {
+        resultsSurvey[`itemNum${props.opts.itemNum}`] = `${selected}-no input`;
+      }
+    } else {
+      resultsSurvey[`itemNum${props.opts.itemNum}`] = selected;
+    }
 
     if (selected === "") {
       if (props.opts.required === true || props.opts.required === "true") {
@@ -73,6 +102,24 @@ const SurveyCheckboxElement = (props) => {
     }
     localStorage.setItem("resultsSurvey", JSON.stringify(resultsSurvey));
   }; // end handleChange
+
+  const handleInputChange = (event) => {
+    const resultsSurvey = JSON.parse(localStorage.getItem("resultsSurvey"));
+    let inputString = "no input";
+
+    if (event.target.value !== "") {
+      inputString = event.target.value.trim();
+      const newResult = `${selectedArray}-${inputString}`;
+      resultsSurvey[`itemNum${props.opts.itemNum}`] = newResult;
+    } else {
+      const newResult = `${selectedArray}-no input`;
+      resultsSurvey[`itemNum${props.opts.itemNum}`] = newResult;
+    }
+
+    setOtherString(() => event.target.value.trim());
+
+    localStorage.setItem("resultsSurvey", JSON.stringify(resultsSurvey));
+  };
 
   // ****** CHECK IF ALL PARTS ANSWERED on render *******
   let setYellow = false;
@@ -131,6 +178,13 @@ const SurveyCheckboxElement = (props) => {
               </div>
             );
           })}
+          {displayOtherInput && (
+            <input
+              className="border border-1 border-gray-300 p-[5px] w-full rounded-md active:border-gray-400 "
+              disabled={otherDisabled}
+              onChange={(event) => handleInputChange(event)}
+            />
+          )}
         </div>
       </div>
     );

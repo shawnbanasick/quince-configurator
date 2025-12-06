@@ -175,6 +175,7 @@
   "itemDeleted": "Item Deleted",
   "errorItemNotAdded": "Error: Item Not Added",
   "surveyAnswerRequired": "Answer Required Before Navigation Allowed",
+  "surveyShowOther": "Show 'Other' Input",
   "surveyAnswerLenIsLimited": "Answer Length is Limited",
   "surveyAnswerRestricted": "Answer Restricted to Numbers Only",
   "surveyInfoBarColor": "Information Item Background Color",

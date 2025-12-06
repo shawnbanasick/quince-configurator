@@ -41,6 +41,8 @@ const getSurveyQuestionLabel = (state) => state.surveyQuestionLabel;
 const getSetSurveyQuestionLabel = (state) => state.setSurveyQuestionLabel;
 const getSurveyQuestionNote = (state) => state.surveyQuestionNote;
 const getSetSurveyQuestionNote = (state) => state.setSurveyQuestionNote;
+const getSurveyShowOther = (state) => state.surveyShowOther;
+const getSetSurveyShowOther = (state) => state.setSurveyShowOther;
 const getSurveyAnswerLenIsLimited = (state) => state.surveyAnswerLenIsLimited;
 const getSetSurveyAnswerLenIsLimited = (state) => state.setSurveyAnswerLenIsLimited;
 const getSurveyAnswerLenMax = (state) => state.surveyAnswerLenMax;
@@ -74,6 +76,8 @@ const SurveyQuestionInput: React.FC = () => {
   const setSurveyQuestionScale = useStore(getSetSurveyQuestionScale);
   const surveyQuestionOptions = useStore(getSurveyQuestionOptions);
   const setSurveyQuestionOptions = useStore(getSetSurveyQuestionOptions);
+  const surveyShowOther = useStore(getSurveyShowOther);
+  const setSurveyShowOther = useStore(getSetSurveyShowOther);
   const surveyAnswerLenIsLimited = useStore(getSurveyAnswerLenIsLimited);
   const setSurveyAnswerLenIsLimited = useStore(getSetSurveyAnswerLenIsLimited);
   const surveyAnswerRestricted = useStore(getSurveyAnswerRestricted);
@@ -112,7 +116,21 @@ const SurveyQuestionInput: React.FC = () => {
     }
   };
 
+  const handleSurveyShowOther = (inputValue: any) => {
+    if (displayBoolean.other === false || displayBoolean.other === "false") {
+      return;
+    }
+    if (inputValue.target.value === "true" || inputValue.target.value === true) {
+      setSurveyShowOther(true);
+    } else {
+      setSurveyShowOther(false);
+    }
+  };
+
   const handleSurveyAnswerLenIsLimitedChange = (inputValue: any) => {
+    if (displayBoolean.limited === false || displayBoolean.limited === "false") {
+      return;
+    }
     if (inputValue.target.value === "true" || inputValue.target.value === true) {
       setSurveyAnswerLenIsLimited(true);
     } else {
@@ -121,6 +139,9 @@ const SurveyQuestionInput: React.FC = () => {
   };
 
   const handleSurveyAnswerRestrictedChange = (inputValue: any) => {
+    if (displayBoolean.restricted === false || displayBoolean.restricted === "false") {
+      return;
+    }
     if (inputValue.target.value === "true" || inputValue.target.value === true) {
       setSurveyAnswerRestricted(true);
     } else {
@@ -269,10 +290,68 @@ const SurveyQuestionInput: React.FC = () => {
             value={surveyQuestionScale}
             onChange={handleSurveyQuestionScaleChange}
           />
+
           <div className="flex flex-row h-[60px] content-center items-center gap-5 mt-3">
             <span
+              className={`content-center ${displayBoolean.other ? "" : "text-slate-400"}`}
+            >{`7. ${t("surveyShowOther")}:`}</span>
+            <div className="">
+              <label
+                className={clsx(
+                  "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
+                  {
+                    "bg-opacity-50 text-slate-200 outline-1 outline-slate-100":
+                      !displayBoolean.other,
+                    "bg-opacity-100": surveyShowOther,
+                    "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
+                      !surveyShowOther,
+                  }
+                )}
+                htmlFor="surveyShowOtherTrue"
+              >
+                <input
+                  type="radio"
+                  className="hidden"
+                  name="surveyShowOther"
+                  id="surveyShowOtherTrue" // htlmlFor targets this id.
+                  value="true"
+                  checked={surveyShowOther}
+                  onChange={handleSurveyShowOther}
+                />
+                {t("true")}
+              </label>
+            </div>
+            <div className="">
+              <label
+                className={clsx(
+                  "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
+                  {
+                    "bg-opacity-50 text-slate-200 outline-1 outline-slate-100":
+                      !displayBoolean.other,
+                    "bg-opacity-100": !surveyShowOther,
+                    "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
+                      surveyShowOther,
+                  }
+                )}
+                htmlFor="surveyShowOtherFalse"
+              >
+                <input
+                  type="radio"
+                  className="hidden"
+                  name="surveyShowOther"
+                  id="surveyShowOtherFalse" // htlmlFor targets this id.
+                  value="false"
+                  checked={!surveyShowOther}
+                  onChange={handleSurveyShowOther}
+                />
+                {t("false")}
+              </label>
+            </div>
+          </div>
+          <div className="flex flex-row h-[60px] content-center items-center gap-5">
+            <span
               className={`content-center ${displayBoolean.limited ? "" : "text-slate-400"}`}
-            >{`7. ${t("surveyAnswerLenIsLimited")}:`}</span>
+            >{`8. ${t("surveyAnswerLenIsLimited")}:`}</span>
             <div className="">
               <label
                 className={clsx(
@@ -326,6 +405,7 @@ const SurveyQuestionInput: React.FC = () => {
               </label>
             </div>
           </div>
+
           <UserNumInput
             classNameNum={`mt-1 block min-w-[30px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50`}
             classNameLabel={`min-w-[130px] content-center pt-1 mr-1 disabled:opacity-50 select-none ${
@@ -334,7 +414,7 @@ const SurveyQuestionInput: React.FC = () => {
             upperLimit={999}
             lowerLimit={0}
             step={1}
-            label={`8. ${t("surveyAnswerMaximumLength")}:`}
+            label={`9. ${t("surveyAnswerMaximumLength")}:`}
             highlight={true}
             placeholder=""
             disabled={!displayBoolean.maxLen}
@@ -346,7 +426,7 @@ const SurveyQuestionInput: React.FC = () => {
           <div className="flex flex-row h-[60px] content-center items-center gap-5 mt-3">
             <span
               className={`content-center ${displayBoolean.restricted ? "" : "text-slate-400"}`}
-            >{`9. ${t("surveyAnswerRestricted")}:`}</span>
+            >{`10. ${t("surveyAnswerRestricted")}:`}</span>
             <div className="">
               <label
                 className={clsx(
@@ -403,7 +483,7 @@ const SurveyQuestionInput: React.FC = () => {
           <div className={`flex flex-row h-[40px] content-center items-center gap-5 mt-1`}>
             <span
               className={`content-center ${displayBoolean.bg ? "" : "text-slate-400"}`}
-            >{`10. ${t("surveyInfoBarColor")}:`}</span>
+            >{`11. ${t("surveyInfoBarColor")}:`}</span>
             <div
               className="w-10 h-5 rounded-md outline outline-1 outline-zinc-600"
               style={{ backgroundColor: configSurveyInfoBarColor }}

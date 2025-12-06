@@ -25,12 +25,14 @@ const stripTags = (inputText) => {
 
   //-- get rid of html-encoded characters:
   returnText = returnText.replace(/&nbsp;/gi, " ");
-  returnText = returnText.replace(/&amp;/gi, "&");
   returnText = returnText.replace(/&quot;/gi, '"');
   returnText = returnText.replace(/&lt;/gi, "<");
   returnText = returnText.replace(/&gt;/gi, ">");
+  returnText = returnText.replace(/&#x27;/gi, "'");
+  returnText = returnText.replace(/&#x2f;/gi, "/");
 
-  //-- return
+  returnText = returnText.replace(/&amp;/gi, "&");
+
   return returnText;
 };
 

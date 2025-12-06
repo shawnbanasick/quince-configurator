@@ -49,12 +49,40 @@ const safeStripHtml = (text: string | undefined, fallback = "n/a"): string => {
 /**
  * Extracts response values for a specific item from filtered data
  */
+let otherValuesArray: any = [];
+
 const extractResponseValues = (filteredData: DataEntry[], itemIndex: number): string[] => {
   const key = `itemNum${itemIndex + 1}`;
-  return filteredData.map((entry) => {
-    const value = entry[key]?.trim();
-    return value || "no response"; // Only return "no response" if truly empty
+  const allResponses: string[] = [];
+
+  filteredData.map((entry, index) => {
+    let num = "";
+    let value = entry[key]?.trim();
+
+    if (!value) {
+      allResponses.push("no response");
+    } else {
+      // Split by delimiter and clean up each response
+
+      if (value.includes("-")) {
+        let dashIndex = value.indexOf("-");
+        num = value.slice(0, dashIndex);
+        let otherValue = value.slice(dashIndex + 1);
+        value = num;
+        otherValuesArray.push([index, otherValue]);
+      }
+      const responses: any[] = value.split(",");
+
+      if (responses.length === 0) {
+        allResponses.push("no response");
+      } else {
+        allResponses.push(...responses);
+      }
+    }
+    // Only return "no response" if truly empty
   });
+
+  return allResponses;
 };
 
 /**

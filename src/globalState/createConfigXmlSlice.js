@@ -75,16 +75,17 @@ const createConfigXmlSlice = (set, get) => ({
 
   // *** ALL OTHERS
   detailsArray: [
-    `<b>1. Answer Required (not shown in image): </b>true`,
-    `<b>2. Label: </b>Age*`,
-    `<b>3. Note: </b>Please enter your year of birth (YYYY, eg. 1980).`,
-    `<b>4. Options: </b> N/A`,
-    `<b>5. Scale: </b> N/A`,
-    `<b>6. Placeholder: </b> (** no input = no placeholder text **)`,
-    `<b>7. Limit Answer Length: </b>true`,
-    `<b>8. Answer Maximum Length: </b>4`,
-    `<b>9. Answer Restricted to Numbers "0-9": </b>true`,
-    `<b>10. Information Bar Background Color: </b>N/A`,
+    `<b>1. Type: </b>Text`,
+    `<b>2. Answer Required (not shown in image): </b>true`,
+    `<b>3. Label: </b>Age*`,
+    `<b>4. Note: </b>Please enter your year of birth (YYYY, eg. 1980).`,
+    `<b>5. Options: </b> N/A`,
+    `<b>6. Scale: </b> N/A`,
+    `<b>7. Other Input: </b>N/A`,
+    `<b>8. Limit Answer Length: </b>true`,
+    `<b>9. Answer Maximum Length: </b>4`,
+    `<b>10. Answer Restricted to Numbers "0-9": </b>true`,
+    `<b>11. Information Bar Background Color: </b>N/A`,
   ],
   showSurveyinformationImage: false,
   showSurveytextImage: true,
@@ -98,6 +99,7 @@ const createConfigXmlSlice = (set, get) => ({
   showSurveyrating10Image: false,
   surveyQuestionType: "text",
   surveyAnswerRequired: false,
+  surveyShowOther: false,
   surveyQuestionLabel: "",
   surveyQuestionNote: "",
   surveyAnswerLenIsLimited: false,
@@ -115,6 +117,9 @@ const createConfigXmlSlice = (set, get) => ({
   isEditingSurveyQuestionIndex: -1,
   triggerSurveyQuestionDeleteModal: false,
 
+  setSurveyShowOther: (bool) => {
+    set(() => ({ surveyShowOther: bool }));
+  },
   setMinCardHeightSort: (height) => {
     set(() => ({ minCardHeightSort: height }));
   },

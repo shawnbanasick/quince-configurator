@@ -15,6 +15,9 @@ const stripHtml = (text) => {
   text = text.replaceAll("{{{strong}}}", "");
   text = text.replaceAll("{{{/strong}}}", "");
   text = text.replaceAll(";;;", ", ");
+  text = text.replaceAll("&apos;", "'");
+  text = text.replaceAll("&lt;", "<");
+  text = text.replaceAll("&rt;", ">");
   return text.trim();
 };
 
