@@ -255,7 +255,7 @@ const createHeaderParagraphs = (item: SurveyItem, index: number, text: string): 
     new Paragraph({
       children: [
         new TextRun({
-          text: `Item ${index + 1}. ${text}`,
+          text: `Item ${index + 1}. ${safeStripHtml(text)}`,
           bold: false,
           size: 28,
         }),
@@ -296,7 +296,7 @@ const createQuestionParagraphs = (questionStats: ResponseStats[]): Paragraph[] =
       new Paragraph({
         children: [
           new TextRun({
-            text: `${index + 1}. ${stats.question}`,
+            text: `${index + 1}. ${safeStripHtml(stats.question)}`,
             bold: false,
           }),
         ],

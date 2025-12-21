@@ -55,7 +55,7 @@ const processTextAreaQuestion = (entry, question, index, indentValue) => {
           bold: true,
         }),
         new TextRun({
-          text: `${stripHtml(entry)}`,
+          text: `${stripHtml(stripTags(entry))}`,
           bold: false,
         }),
       ],

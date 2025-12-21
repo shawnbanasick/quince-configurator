@@ -54,7 +54,7 @@ const processTextareaSummary = (
             bold: false,
           }),
           new TextRun({
-            text: `  ${value}`,
+            text: `  ${stripHtml(stripTags(value))}`,
             bold: false,
           }),
         ],
