@@ -15,6 +15,14 @@
   "webHost": "Web Host",
   "results": "Results",
 
+  "*** ERROR WRAPPER ***": "*** ERROR WRAPPER ***",
+  "SomethingWentWrong": "Something went wrong",
+  "ClickToSendErrorReportEmailToDeveloper": "Click to Send Error Report Email to Developer",
+  "PleaseProvideAnEmailAddress": "Please provide an email address so I can update you",
+  "PleaseDescribeTheEventsPriorToTheError": "Please describe the events prior to the error",
+  "ForFasterDiagnosisOfTheError": "For faster diagnosis of the error, please attach these files from your project to this email",
+  "QSortResultsCsvFileFromBaserow": "Q sort results CSV file from Baserow (if appropriate)",
+
   "*** WELCOME ***": "*** WELCOME PAGE ***",
   "hello": "Hello",
   "selectLanguage": "Select Language",

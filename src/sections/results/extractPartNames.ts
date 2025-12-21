@@ -15,8 +15,11 @@ const extractPartNames = (data) => {
   let counterPartId = 2;
   let counterUrlUser = 2;
 
+  console.log(JSON.stringify(data, null, 2));
+
   data.forEach((item) => {
     let randomIdPrep = item["r2"];
+    console.log(randomIdPrep);
     let randomId = randomIdPrep.slice(11).trim();
     let partIdPrep = item["r3"];
     let partId = partIdPrep.slice(9).trim();

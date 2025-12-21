@@ -15,6 +15,14 @@
   "webHost": "ウェブホスト",
   "results": "結果",
 
+  "*** ERROR WRAPPER ***": "*** エラーラッパー ***",
+  "SomethingWentWrong": "問題が発生しました",
+  "ClickToSendErrorReportEmailToDeveloper": "クリックして開発者にエラーレポートメールを送信",
+  "PleaseProvideAnEmailAddress": "更新情報をお送りできるよう、メールアドレスをご入力ください",
+  "PleaseDescribeTheEventsPriorToTheError": "エラー発生前の状況をご説明ください",
+  "ForFasterDiagnosisOfTheError": "エラーの迅速な診断のため、プロジェクトから以下のファイルをこのメールに添付してください",
+  "QSortResultsCsvFileFromBaserow": "BaserowからのQソート結果CSVファイル(該当する場合)",
+
   "*** WELCOME ***": "*** WELCOME PAGE ***",
   "hello": "こんにちは",
   "selectLanguage": "言語を選択",
