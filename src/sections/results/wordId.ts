@@ -10,7 +10,8 @@ const wordId = (
   childArray5,
   displayPartId,
   numStatements,
-  showSurvey
+  showSurvey,
+  showPostsort
 ) => {
   const workingData = cloneDeep(data);
   let projectNameTitleString2 = workingData[0]["r1"].slice(15);
@@ -178,7 +179,9 @@ const wordId = (
     childArray.push(...childArray2[index]);
     childArray.push(...childArray3[index]);
     childArray.push(...childArray3b[index]);
-    childArray.push(...childArray4[index]);
+    if (showPostsort === true || showPostsort === "true") {
+      childArray.push(...childArray4[index]);
+    }
     if (showSurvey === true || showSurvey === "true") {
       childArray.push(...childArray5[index]);
     }

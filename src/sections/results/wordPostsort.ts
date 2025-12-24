@@ -13,7 +13,6 @@ const wordPostsort = (data: RecordMap, currentStatements): Paragraph[] => {
   const indentValue = 300;
   const items = Array.isArray(workingData) ? workingData : [workingData];
   const array = currentStatements.split("\n");
-  // const currentStatements = useStore.getState().currentStatements;
 
   const itemParagraphs: any = [];
   items.forEach((item: RecordMap) => {

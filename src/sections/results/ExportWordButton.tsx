@@ -30,6 +30,7 @@ interface GlobalState {
   mapInputQsortPattern: number[];
   surveyQuestionsArray: any[];
   showSurvey: boolean;
+  showPostsort: boolean;
 }
 interface ExportWordButtonProps {
   userData?: any; // Replace `any` with a concrete type
@@ -41,12 +42,14 @@ const getCurrentStatements = (state: GlobalState) => state.currentStatements;
 const getMapInputQsortPattern = (state: GlobalState) => state.mapInputQsortPattern;
 const getSurveyQuestionsArray = (state: GlobalState) => state.surveyQuestionsArray;
 const getShowSurvey = (state: GlobalState) => state.showSurvey;
+const getShowPostsort = (state: GlobalState) => state.showPostsort;
 
 const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
   const currentStatements = useStore(getCurrentStatements);
   const mapInputQsortPattern = useStore(getMapInputQsortPattern);
   const surveyQuestionsArray = useStore(getSurveyQuestionsArray);
   const showSurvey = useStore(getShowSurvey);
+  const showPostsort = useStore(getShowPostsort);
   const { t } = useTranslation();
 
   let shouldIncludeTimestamp = true;
@@ -81,8 +84,15 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
 
   const handleOnClick = () => {
     let displayPartId = props.participantIdent;
-    let childArray5 = wordSurvey(data, surveyQuestionsArray);
-    let childArray4 = wordPostsort(data, currentStatements);
+    let childArray4: any[] = [];
+    let childArray5: any[] = [];
+    if (showSurvey) {
+      childArray5 = wordSurvey(data, surveyQuestionsArray);
+    }
+    if (showPostsort) {
+      childArray4 = wordPostsort(data, currentStatements);
+    }
+
     let childArray3b = wordSorts(
       data,
       props.partNames,
@@ -93,9 +103,8 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
     );
     let childArray3 = wordPresort(data);
     let childArray2 = wordTime(data);
-
-    let childArray1;
-    childArray1 = wordId(
+    console.log(childArray4, childArray5);
+    let childArray1 = wordId(
       data,
       childArray2,
       childArray3,
@@ -104,7 +113,8 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
       childArray5,
       displayPartId,
       numStatements,
-      showSurvey
+      showSurvey,
+      showPostsort
     );
 
     let statementsArray = wordPartStatements(data, newHeaderArray, currentStatements, [

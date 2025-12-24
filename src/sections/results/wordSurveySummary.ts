@@ -69,88 +69,90 @@ const wordSurveySummary = (
   type RecordMap = Record<string, string>;
   // let newArray: Record<string, string>[] = [];
 
-  surveyQuestionsArray.forEach((item, index) => {
-    if (item.surveyQuestionType === "information") {
-      let text = "Information";
-      try {
-        paragraphs.push(...processInformationSummary(item, index, text));
-      } catch (error) {
-        console.error("Error processing Information item:", error);
+  if (showSurvey === true || showSurvey === "true") {
+    surveyQuestionsArray.forEach((item, index) => {
+      if (item.surveyQuestionType === "information") {
+        let text = "Information";
+        try {
+          paragraphs.push(...processInformationSummary(item, index, text));
+        } catch (error) {
+          console.error("Error processing Information item:", error);
+        }
       }
-    }
 
-    if (item.surveyQuestionType === "text") {
-      let text = "Short Text Question";
-      try {
-        paragraphs.push(...processTextSummary(filteredData, partNames, item, index, text));
-      } catch (error) {
-        console.error("Error processing Short Text item:", error);
+      if (item.surveyQuestionType === "text") {
+        let text = "Short Text Question";
+        try {
+          paragraphs.push(...processTextSummary(filteredData, partNames, item, index, text));
+        } catch (error) {
+          console.error("Error processing Short Text item:", error);
+        }
       }
-    }
 
-    if (item.surveyQuestionType === "textarea") {
-      let text = "Long Text Question";
-      try {
-        paragraphs.push(...processTextareaSummary(filteredData, partNames, item, index, text));
-      } catch (error) {
-        console.error("Error processing Long Text item:", error);
+      if (item.surveyQuestionType === "textarea") {
+        let text = "Long Text Question";
+        try {
+          paragraphs.push(...processTextareaSummary(filteredData, partNames, item, index, text));
+        } catch (error) {
+          console.error("Error processing Long Text item:", error);
+        }
       }
-    }
 
-    if (item.surveyQuestionType === "radio") {
-      let text = "Radio Button Input";
-      try {
-        paragraphs.push(...processRadioSummary(filteredData, partNames, item, index, text));
-      } catch (error) {
-        console.error("Error processing Radio Button item:", error);
+      if (item.surveyQuestionType === "radio") {
+        let text = "Radio Button Input";
+        try {
+          paragraphs.push(...processRadioSummary(filteredData, partNames, item, index, text));
+        } catch (error) {
+          console.error("Error processing Radio Button item:", error);
+        }
       }
-    }
 
-    if (item.surveyQuestionType === "select") {
-      let text = "Selection Input (multiple responses possible)";
-      try {
-        paragraphs.push(...processSelectSummary(filteredData, partNames, item, index, text));
-      } catch (error) {
-        console.error("Error processing Selection item:", error);
+      if (item.surveyQuestionType === "select") {
+        let text = "Selection Input (multiple responses possible)";
+        try {
+          paragraphs.push(...processSelectSummary(filteredData, partNames, item, index, text));
+        } catch (error) {
+          console.error("Error processing Selection item:", error);
+        }
       }
-    }
 
-    if (item.surveyQuestionType === "checkbox") {
-      let text = "Checkbox Input (multiple responses possible)";
-      try {
-        paragraphs.push(...processCheckboxSummary(filteredData, partNames, item, index, text));
-      } catch (error) {
-        console.error("Error processing Checkbox item:", error);
+      if (item.surveyQuestionType === "checkbox") {
+        let text = "Checkbox Input (multiple responses possible)";
+        try {
+          paragraphs.push(...processCheckboxSummary(filteredData, partNames, item, index, text));
+        } catch (error) {
+          console.error("Error processing Checkbox item:", error);
+        }
       }
-    }
 
-    if (item.surveyQuestionType === "rating2") {
-      let text = "Rating 2 Input";
-      try {
-        paragraphs.push(...processRating2Summary(filteredData, partNames, item, index, text));
-      } catch (error) {
-        console.error("Error processing Rating 2 item:", error);
+      if (item.surveyQuestionType === "rating2") {
+        let text = "Rating 2 Input";
+        try {
+          paragraphs.push(...processRating2Summary(filteredData, partNames, item, index, text));
+        } catch (error) {
+          console.error("Error processing Rating 2 item:", error);
+        }
       }
-    }
 
-    if (item.surveyQuestionType === "rating5") {
-      let text = "Rating 5 Input";
-      try {
-        paragraphs.push(...processRating5Summary(filteredData, partNames, item, index, text));
-      } catch (error) {
-        console.error("Error processing Rating 5 item:", error);
+      if (item.surveyQuestionType === "rating5") {
+        let text = "Rating 5 Input";
+        try {
+          paragraphs.push(...processRating5Summary(filteredData, partNames, item, index, text));
+        } catch (error) {
+          console.error("Error processing Rating 5 item:", error);
+        }
       }
-    }
 
-    if (item.surveyQuestionType === "rating10") {
-      let text = "Rating 10 Input";
-      try {
-        paragraphs.push(...processRating10Summary(filteredData, partNames, item, index, text));
-      } catch (error) {
-        console.error("Error processing Rating 10 item:", error);
+      if (item.surveyQuestionType === "rating10") {
+        let text = "Rating 10 Input";
+        try {
+          paragraphs.push(...processRating10Summary(filteredData, partNames, item, index, text));
+        } catch (error) {
+          console.error("Error processing Rating 10 item:", error);
+        }
       }
-    }
-  });
+    });
+  }
 
   return paragraphs;
 };
