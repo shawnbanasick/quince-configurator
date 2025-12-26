@@ -10,6 +10,7 @@ interface ParticipantData {
 interface SortValueItem {
   value: number;
   statement: string;
+  stateNum: number;
 }
 
 interface WordPartStatementsParams {
@@ -53,6 +54,7 @@ const createSortValueItems = (sortValues: number[], statements: string[]): SortV
   return sortValues.map((value, index) => ({
     value,
     statement: statements[index] || `Statement ${index + 1} (missing)`,
+    stateNum: index + 1,
   }));
 };
 
@@ -93,7 +95,8 @@ const createParticipantParagraphs = (
           bold: true,
         }),
       ],
-      spacing: { before: 400 },
+      heading: HeadingLevel.HEADING_2,
+      spacing: { before: 400, after: 100 },
     })
   );
 
@@ -124,11 +127,15 @@ const createParticipantParagraphs = (
           new Paragraph({
             children: [
               new TextRun({
+                text: `(s${item.stateNum}) `,
+                bold: false,
+              }),
+              new TextRun({
                 text: item.statement,
                 bold: false,
               }),
             ],
-            indent: { start: 400 },
+            indent: { left: 600, hanging: 200 },
           })
         );
       });
@@ -216,6 +223,8 @@ const wordPartStatements = (
       try {
         // Parse sort data
         const sortValues = parseSortData(participant.r20);
+
+        console.log(sortValues);
 
         // Create sort value items
         const sortValueItems = createSortValueItems(sortValues, statementsArray);
