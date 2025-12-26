@@ -1,13 +1,14 @@
-import { Paragraph, TextRun } from "docx";
+import { Paragraph, TextRun, UnderlineType } from "docx";
 import { stripHtml } from "./stripHtml";
 import { stripTags } from "../utils/stripTags";
+import { safeSplit } from "./safeSplit";
 
 const processSelectQuestion = (entry, question, index, indentValue) => {
   let addIndentValue = +indentValue + 200;
 
   let options = question.options;
   options = options.split(";;;");
-  // let options = stripHtml(question.options);
+  let entry2 = safeSplit(entry, ":", { maxParts: 2 });
 
   let cleanOptions = options.map((element) => {
     return stripHtml(stripTags(element));
@@ -36,13 +37,18 @@ const processSelectQuestion = (entry, question, index, indentValue) => {
   let response = [
     new Paragraph({
       children: [
-        // new TextRun({
-        //   text: statementNumber2,
-        //   bold: true,
-        // }),
         new TextRun({
-          text: `(Item ${index + 1})  ${stripHtml(stripTags(question.label))}`,
+          text: `Item ${index + 1} - `,
           bold: true,
+        }),
+        new TextRun({
+          text: `Selection Dropdown: `,
+          bold: false,
+        }),
+        new TextRun({
+          text: `${stripHtml(stripTags(question.label))}`,
+          bold: false,
+          underline: { type: UnderlineType.SINGLE },
         }),
       ],
       indent: {
@@ -50,17 +56,6 @@ const processSelectQuestion = (entry, question, index, indentValue) => {
       },
       spacing: {
         before: 100,
-      },
-    }),
-    new Paragraph({
-      children: [
-        new TextRun({
-          text: `Type: Selection Input`,
-          bold: false,
-        }),
-      ],
-      indent: {
-        start: addIndentValue,
       },
     }),
     new Paragraph({
@@ -88,12 +83,12 @@ const processSelectQuestion = (entry, question, index, indentValue) => {
     new Paragraph({
       children: [
         new TextRun({
-          text: indicator ? `Response: ${stripHtml(stripTags(entry))} - ` : `Response: - `,
+          text: indicator ? `Response: ${stripHtml(stripTags(entry2[1]))} - ` : `Response: - `,
           bold: false,
         }),
         new TextRun({
           text: indicator ? `${respondentResponse}` : `no response`,
-          bold: true,
+          bold: false,
         }),
       ],
       indent: {
