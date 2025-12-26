@@ -1,5 +1,5 @@
 import zip from "lodash/zip";
-import { Paragraph, UnderlineType, TextRun } from "docx";
+import { Paragraph, UnderlineType, TextRun, HeadingLevel } from "docx";
 
 const compareSecondColumn = (a, b) => {
   if (a[1] === b[1]) {
@@ -131,8 +131,9 @@ const wordSorts = (
       ],
       spacing: {
         after: 100,
-        before: 500,
+        before: 100,
       },
+      heading: HeadingLevel.HEADING_4,
       indent: {
         start: indentValue,
       },

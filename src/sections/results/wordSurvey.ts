@@ -1,4 +1,4 @@
-import { Paragraph, TextRun } from "docx";
+import { Paragraph, TextRun, HeadingLevel } from "docx";
 import { cloneDeep } from "es-toolkit";
 import { processInformationQuestion } from "./processInformationQuestion";
 import { processTextQuestion } from "./processTextQuestion";
@@ -34,8 +34,9 @@ const wordSurvey = (data: RecordMap, surveyQuestionsArray): Paragraph[] => {
         indent: {
           start: 200,
         },
+        heading: HeadingLevel.HEADING_4,
         spacing: {
-          before: 150,
+          before: 300,
         },
       })
     );

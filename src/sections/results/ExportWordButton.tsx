@@ -64,8 +64,8 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
     return;
   }
 
-  const projectName2 = data[0]["r1"].split("-");
-  const projectName = projectName2[0].slice(15).trim();
+  const projectName2: string[] = data?.[0]?.r1?.split("-") ?? [];
+  const projectName: string = (projectName2?.[0] ?? "").slice(15).trim();
 
   const newHeaderArray = calcNewHeaderArray(mapInputQsortPattern);
   const statementsArray = formatRawStatements(currentStatements);
@@ -103,7 +103,6 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
     );
     let childArray3 = wordPresort(data);
     let childArray2 = wordTime(data);
-    console.log(childArray4, childArray5);
     let childArray1 = wordId(
       data,
       childArray2,

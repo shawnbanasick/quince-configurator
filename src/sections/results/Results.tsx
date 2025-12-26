@@ -21,6 +21,7 @@ interface State {
   isStatementsXmlLoaded: boolean;
   isMapXmlLoaded: boolean;
   isLanguageXmlLoaded: boolean;
+  setResultsImportErrorArray: (array: number[]) => void;
 }
 
 interface Option {
@@ -34,6 +35,7 @@ const getIsConfigXmlLoaded = (state: State) => state.isConfigXmlLoaded;
 const getIsStatementsXmlLoaded = (state: State) => state.isStatementsXmlLoaded;
 const getIsMapXmlLoaded = (state: State) => state.isMapXmlLoaded;
 const getIsLanguageXmlLoaded = (state: State) => state.isLanguageXmlLoaded;
+// const getSetResultsImportErrorArray = (state: State) => state.setResultsImportErrorArray;
 
 const Results: React.FC = () => {
   const { t } = useTranslation();
@@ -44,6 +46,7 @@ const Results: React.FC = () => {
   const isLanguageXmlLoaded = useStore(getIsLanguageXmlLoaded);
   const [selectedOutputOption, setSelectedOutputOption] = useState("kadeZip");
   const [selectedPartId, setSelectedPartId] = useState("randomId");
+  // const setResultsImportErrorArray = useStore(getSetResultsImportErrorArray);
 
   // get count of uploaded files to visual for user
   const loadedSettingsFilesArray = [
@@ -58,17 +61,20 @@ const Results: React.FC = () => {
   const getParticipantNames = (): string[] | undefined => {
     if (!data) return undefined;
     const nameArrays = extractPartNames(data);
-    const [randomIdArray, partIdArray, urlUsercodeArray] = nameArrays;
+    const [randomIdArray, partIdArray, urlUsercodeArray, resultsImportErrorArray] = nameArrays;
+
+    // setResultsImportErrorArray([...resultsImportErrorArray])
+    console.log(resultsImportErrorArray);
 
     switch (selectedPartId) {
       case "randomId":
-        return randomIdArray;
+        return randomIdArray as string[];
       case "partId":
-        return partIdArray;
+        return partIdArray as string[];
       case "urlUsercode":
-        return urlUsercodeArray;
+        return urlUsercodeArray as string[];
       default:
-        return randomIdArray;
+        return randomIdArray as string[];
     }
   };
 

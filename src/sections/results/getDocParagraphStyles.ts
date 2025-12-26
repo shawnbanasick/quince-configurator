@@ -2,6 +2,27 @@ const getDocParagraphStyles = () => {
   const styles = {
     paragraphStyles: [
       {
+        id: "Heading3", // Use the exact ID of the built-in style
+        name: "My Custom Heading 3", // Custom name (optional)
+        basedOn: "Normal",
+        next: "Normal",
+        quickFormat: true,
+        run: {
+          // Customize text properties
+          font: "Times New Roman",
+          size: 20, // Size in half-points (28pt)
+          bold: true,
+          color: "2E74B5", // Hex color (Red)
+        },
+        paragraph: {
+          // Customize paragraph properties (spacing, alignment, etc.)
+          // spacing: {
+          //     before: 200, // Space before the paragraph (in TWIPs)
+          //     after: 200,  // Space after the paragraph (in TWIPs)
+          // },
+        },
+      },
+      {
         id: "myCustomStyle",
         name: "My custom red style",
         basedOn: "Normal",

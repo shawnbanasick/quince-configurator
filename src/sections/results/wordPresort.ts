@@ -1,11 +1,11 @@
-import { Paragraph, TextRun } from "docx";
+import { Paragraph, TextRun, HeadingLevel } from "docx";
 import { cloneDeep } from "es-toolkit";
 
 type RecordMap = Record<string, any>;
 
 const wordPresort = (data: RecordMap): Paragraph[] => {
   const workingData = cloneDeep(data);
-  const indentValue = 300;
+  const indentValue = 400;
   const items = Array.isArray(workingData) ? workingData : [workingData];
 
   const itemParagraphs: any = [];
@@ -19,6 +19,7 @@ const wordPresort = (data: RecordMap): Paragraph[] => {
             bold: true,
           }),
         ],
+        heading: HeadingLevel.HEADING_4,
         indent: {
           start: 200,
         },

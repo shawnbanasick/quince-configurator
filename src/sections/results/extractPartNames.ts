@@ -6,6 +6,7 @@ const extractPartNames = (data) => {
   const partIdNameArray: string[] = [];
   const randomIdNameArray: string[] = [];
   const urlUsercodeNameArray: string[] = [];
+  const resultsImportErrorArray: number[] = [];
 
   let previousRandomId = "";
   let previousPartId = "";
@@ -15,11 +16,12 @@ const extractPartNames = (data) => {
   let counterPartId = 2;
   let counterUrlUser = 2;
 
-  console.log(JSON.stringify(data, null, 2));
-
-  data.forEach((item) => {
+  data.forEach((item, index) => {
     let randomIdPrep = item["r2"];
-    console.log(randomIdPrep);
+    if (randomIdPrep === undefined || randomIdPrep === null) {
+      resultsImportErrorArray.push(index + 1);
+      return;
+    }
     let randomId = randomIdPrep.slice(11).trim();
     let partIdPrep = item["r3"];
     let partId = partIdPrep.slice(9).trim();
@@ -55,7 +57,7 @@ const extractPartNames = (data) => {
     previousPartId = partIdPrep;
     previousUrlUsercode = urlUsercodePrep;
   });
-  return [randomIdNameArray, partIdNameArray, urlUsercodeNameArray];
+  return [randomIdNameArray, partIdNameArray, urlUsercodeNameArray, resultsImportErrorArray];
 };
 
 export { extractPartNames };

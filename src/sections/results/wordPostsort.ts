@@ -1,4 +1,4 @@
-import { Paragraph, TextRun } from "docx";
+import { Paragraph, TextRun, HeadingLevel } from "docx";
 import { cloneDeep } from "es-toolkit";
 import { stripHtml } from "./stripHtml";
 import { stripTags } from "../utils/stripTags";
@@ -10,7 +10,7 @@ type RecordMap = Record<string, any>;
 const wordPostsort = (data: RecordMap, currentStatements): Paragraph[] => {
   const workingData = cloneDeep(data);
 
-  const indentValue = 300;
+  const indentValue = 400;
   const items = Array.isArray(workingData) ? workingData : [workingData];
   const array = currentStatements.split("\n");
 
@@ -62,11 +62,12 @@ const wordPostsort = (data: RecordMap, currentStatements): Paragraph[] => {
             bold: true,
           }),
         ],
+        heading: HeadingLevel.HEADING_4,
         indent: {
           start: 200,
         },
         spacing: {
-          before: 100,
+          before: 50,
         },
       })
     );
@@ -95,14 +96,14 @@ const wordPostsort = (data: RecordMap, currentStatements): Paragraph[] => {
             }),
             new TextRun({
               text: statement,
-              bold: true,
+              bold: false,
             }),
           ],
           indent: {
             start: indentValue,
           },
           spacing: {
-            before: 100,
+            before: 50,
           },
         }),
         new Paragraph({
@@ -129,6 +130,7 @@ const wordPostsort = (data: RecordMap, currentStatements): Paragraph[] => {
         indent: {
           start: 200,
         },
+        heading: HeadingLevel.HEADING_4,
         spacing: {
           before: 100,
         },
@@ -159,14 +161,14 @@ const wordPostsort = (data: RecordMap, currentStatements): Paragraph[] => {
             }),
             new TextRun({
               text: statement,
-              bold: true,
+              bold: false,
             }),
           ],
           indent: {
             start: indentValue,
           },
           spacing: {
-            before: 100,
+            before: 50,
           },
         }),
         new Paragraph({

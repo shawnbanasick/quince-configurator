@@ -9,7 +9,13 @@ const createResultsSlice = (set) => ({
   isLanguageXmlLoaded: false,
 
   hasResultsFileBeenLoaded: false,
+  resultsImportErrorArray: [],
 
+  setResultsImportErrorArray: (array) => {
+    set(() => {
+      resultsImportErrorArray: array;
+    });
+  },
   setHasResultsFileBeenLoaded: (Boolean) => {
     set(() => ({ hasResultsFileBeenLoaded: Boolean }));
   },
