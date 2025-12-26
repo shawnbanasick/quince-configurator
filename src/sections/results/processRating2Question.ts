@@ -1,4 +1,4 @@
-import { Paragraph, TextRun } from "docx";
+import { Paragraph, TextRun, UnderlineType } from "docx";
 import { stripHtml } from "./stripHtml";
 import { stripTags } from "../utils/stripTags";
 
@@ -10,7 +10,6 @@ const processRating2Question = (entry, question, index, indentValue) => {
 
   let scale2 = stripHtml(question.scale);
   const scale3 = scale2.split(",").map((str) => str.trim());
-
   let entry4 = entry.split(":");
   let entry5 = entry4[1].split(",");
 
@@ -18,8 +17,17 @@ const processRating2Question = (entry, question, index, indentValue) => {
     new Paragraph({
       children: [
         new TextRun({
-          text: `(Item ${index + 1})  ${stripHtml(stripTags(question.label))}`,
+          text: `Item ${index + 1} - `,
           bold: true,
+        }),
+        new TextRun({
+          text: `Rating (2 Options): `,
+          bold: false,
+        }),
+        new TextRun({
+          text: `${stripHtml(stripTags(question.label))}`,
+          bold: false,
+          underline: { type: UnderlineType.SINGLE },
         }),
       ],
       indent: {
@@ -27,17 +35,6 @@ const processRating2Question = (entry, question, index, indentValue) => {
       },
       spacing: {
         before: 100,
-      },
-    }),
-    new Paragraph({
-      children: [
-        new TextRun({
-          text: `Type: Rating 2 Choice Input`,
-          bold: false,
-        }),
-      ],
-      indent: {
-        start: addIndentValue,
       },
     }),
     new Paragraph({
@@ -88,7 +85,7 @@ const processRating2Question = (entry, question, index, indentValue) => {
           }),
           new TextRun({
             text: text === "no response" ? `no response` : `${scale3[newIndex]}`,
-            bold: true,
+            bold: false,
           }),
         ],
         indent: {

@@ -1,11 +1,14 @@
-import { Paragraph, TextRun } from "docx";
+import { Paragraph, TextRun, UnderlineType } from "docx";
 import { stripHtml } from "./stripHtml";
 import { stripTags } from "../utils/stripTags";
+import { safeSplit } from "./safeSplit";
 
 const processCheckboxQuestion = (entry, question, index, indentValue) => {
   let addIndentValue = +indentValue + 200;
   let options = stripHtml(stripTags(question.options));
   options = options.split(",");
+
+  let entry2 = safeSplit(entry, ":", { maxParts: 2 });
 
   let respondentResponse2: any = [];
   let response1 = stripHtml(stripTags(entry));
@@ -50,8 +53,17 @@ const processCheckboxQuestion = (entry, question, index, indentValue) => {
     new Paragraph({
       children: [
         new TextRun({
-          text: `(Item ${index + 1})  ${stripHtml(stripTags(question.label))}`,
+          text: `Item ${index + 1} - `,
           bold: true,
+        }),
+        new TextRun({
+          text: `Checkbox: `,
+          bold: false,
+        }),
+        new TextRun({
+          text: `${stripHtml(stripTags(question.label))}`,
+          bold: false,
+          underline: { type: UnderlineType.SINGLE },
         }),
       ],
       indent: {
@@ -59,17 +71,6 @@ const processCheckboxQuestion = (entry, question, index, indentValue) => {
       },
       spacing: {
         before: 100,
-      },
-    }),
-    new Paragraph({
-      children: [
-        new TextRun({
-          text: `Type: Checkbox Input`,
-          bold: false,
-        }),
-      ],
-      indent: {
-        start: addIndentValue,
       },
     }),
     new Paragraph({
@@ -97,12 +98,12 @@ const processCheckboxQuestion = (entry, question, index, indentValue) => {
     new Paragraph({
       children: [
         new TextRun({
-          text: `Response: ${stripHtml(stripTags(entry))} - `,
+          text: `Response: ${stripHtml(stripTags(entry2[1]))} - `,
           bold: false,
         }),
         new TextRun({
           text: entry ? `${stripHtml(stripTags(respondentResponse))}` : `no response`,
-          bold: true,
+          bold: false,
         }),
       ],
       indent: {

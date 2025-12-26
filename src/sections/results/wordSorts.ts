@@ -125,12 +125,12 @@ const wordSorts = (
     let p1 = new Paragraph({
       children: [
         new TextRun({
-          text: `Q Sort`,
+          text: `Q Sort Grid`,
           bold: true,
         }),
       ],
       spacing: {
-        after: 100,
+        after: 50,
         before: 100,
       },
       heading: HeadingLevel.HEADING_4,
@@ -169,7 +169,7 @@ const wordSorts = (
             start: indentValue + 200,
           },
           spacing: {
-            after: 400,
+            after: 100,
           },
         });
       } else {

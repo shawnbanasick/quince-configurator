@@ -11,8 +11,6 @@ const safeShiftToNumber = (array: unknown[]): number | null => {
 
   // Safely shift the first element
   const firstElement = array.pop();
-  console.log("kkk", firstElement);
-  // Validate the element exists
   if (firstElement === null || firstElement === undefined) {
     return null;
   }

@@ -16,7 +16,7 @@ const wordSurvey = (data: RecordMap, surveyQuestionsArray): Paragraph[] => {
   const workingData = cloneDeep(data);
   let survey = [...surveyQuestionsArray];
 
-  const indentValue = 300;
+  const indentValue = 400;
   const items = Array.isArray(workingData) ? workingData : [workingData];
 
   const itemParagraphs: any = [];
@@ -36,7 +36,7 @@ const wordSurvey = (data: RecordMap, surveyQuestionsArray): Paragraph[] => {
         },
         heading: HeadingLevel.HEADING_4,
         spacing: {
-          before: 300,
+          before: 100,
         },
       })
     );

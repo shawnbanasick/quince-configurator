@@ -4,7 +4,7 @@ import { stripTags } from "../utils/stripTags";
 import { safeSplit } from "./safeSplit";
 
 const processTextQuestion = (entry, question, index, indentValue) => {
-  let addIndentValue = +indentValue + 200;
+  let addIndentValue = +indentValue + 100;
 
   let cleanedNote = stripTags(question.note);
   let entry2 = safeSplit(entry, ":", { maxParts: 2 });
@@ -12,10 +12,6 @@ const processTextQuestion = (entry, question, index, indentValue) => {
   let response = [
     new Paragraph({
       children: [
-        // new TextRun({
-        //   text: statementNumber2,
-        //   bold: true,
-        // }),
         new TextRun({
           text: `Item ${index + 1} - `,
           bold: true,
@@ -52,7 +48,7 @@ const processTextQuestion = (entry, question, index, indentValue) => {
       children: [
         new TextRun({
           text: `Response: `,
-          bold: true,
+          bold: false,
         }),
         new TextRun({
           text: `${stripHtml(stripTags(entry2[1]))}`,

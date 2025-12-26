@@ -47,7 +47,7 @@ const processTextAreaQuestion = (entry, question, index, indentValue) => {
       children: [
         new TextRun({
           text: `Response: `,
-          bold: true,
+          bold: false,
         }),
         new TextRun({
           text: `${stripHtml(stripTags(entry2[1]))}`,

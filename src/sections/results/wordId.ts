@@ -172,7 +172,7 @@ export function wordId(
         before: 200,
       }),
       paragraph({
-        text: `Identity`,
+        text: `Session Metadata`,
         bold: true,
         startIndent: INDENT_START1,
         heading: HeadingLevel.HEADING_4,
