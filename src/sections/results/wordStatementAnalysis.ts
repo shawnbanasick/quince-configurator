@@ -1,6 +1,6 @@
 import { HeadingLevel, Paragraph, TextRun } from "docx";
 import { cloneDeep } from "es-toolkit";
-
+import { extractStatementAnalysisData } from "./extractStatementAnalysisData";
 // Type definitions for better type safety
 interface ParticipantData {
   r20: string;
@@ -57,6 +57,16 @@ const createSortValueItems = (sortValues: number[], statements: string[]): SortV
     stateNum: index + 1,
   }));
 };
+
+//   const rows = matrix.length;
+//   const cols = matrix[0].length;
+
+//   return Array.from({ length: cols }, (_, colIndex) =>
+//     Array.from({ length: rows }, (_, rowIndex) =>
+//       matrix[rowIndex][colIndex]
+//     )
+//   );
+// };
 
 /**
  * Groups sort value items by their sort value
@@ -196,7 +206,7 @@ const validateInputs = (params: WordPartStatementsParams): void => {
  * @param participantIds - Array of participant identifiers
  * @returns Array of Paragraph objects for Word document
  */
-const wordPartStatements = (
+const wordStatementAnalysis = (
   data: ParticipantData[],
   sortHeaders: number[],
   statements: string,
@@ -218,14 +228,23 @@ const wordPartStatements = (
     // Initialize result with header
     const allParagraphs: Paragraph[] = [createHeaderParagraph()];
 
+    // console.log(JSON.stringify(workingData, null, 2));
+
+    const statementSortValues = extractStatementAnalysisData([...workingData]);
+    console.log(statementSortValues);
+
     // Process each participant
     workingData.forEach((participant, index) => {
       try {
-        // Parse sort data
-        const sortValues = parseSortData(participant.r20);
+        // Parse sort data - returns arrays of sort values by participant
+        const sortValues: number[] = parseSortData(participant.r20);
 
-        // Create sort value items
+        // const invertedArray: any[] = invertArray(sortValues);
+
+        // Returns array of objects with properties "stateNum, Statement, and sort value"
         const sortValueItems = createSortValueItems(sortValues, statementsArray);
+
+        // console.log(sortValueItems);
 
         // Create paragraphs for this participant
         const participantParagraphs = createParticipantParagraphs(
@@ -279,4 +298,4 @@ const wordPartStatements = (
   }
 };
 
-export { wordPartStatements, type ParticipantData, type SortValueItem };
+export { wordStatementAnalysis, type ParticipantData, type SortValueItem };

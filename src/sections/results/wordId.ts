@@ -83,11 +83,11 @@ function safeArray<T>(arr: T[] | undefined, idx: number): T[] {
 
 export function wordId(
   data: Row[],
-  childArray2: Paragraph[],
-  childArray3: Paragraph[],
-  childArray3b: Paragraph[],
-  childArray4: Paragraph[],
-  childArray5: Paragraph[],
+  timeText: Paragraph[],
+  presortText: Paragraph[],
+  sortsText: Paragraph[],
+  postsortText: Paragraph[],
+  surveyText: Paragraph[],
   displayPartId: string, // "randomId" | "partId" | "urlUsercode"
   numStatements: number,
   showSurvey: unknown,
@@ -196,15 +196,15 @@ export function wordId(
     );
 
     // 4️⃣ Append optional child arrays safely
-    childArray.push(...safeArray(childArray2, index));
-    childArray.push(...safeArray(childArray3, index));
-    childArray.push(...safeArray(childArray3b, index));
+    childArray.push(...safeArray(timeText, index));
+    childArray.push(...safeArray(presortText, index));
+    childArray.push(...safeArray(sortsText, index));
 
     if (isTrue(showPostsort)) {
-      childArray.push(...safeArray(childArray4, index));
+      childArray.push(...safeArray(postsortText, index));
     }
     if (isTrue(showSurvey)) {
-      childArray.push(...safeArray(childArray5, index));
+      childArray.push(...safeArray(surveyText, index));
     }
   });
 
