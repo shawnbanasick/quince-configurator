@@ -5,7 +5,7 @@ interface DataObject {
 
 interface ExtractR20Options {
   filterInvalid?: boolean;
-  defaultValue?: number | null;
+  defaultValue?: number;
 }
 
 /**
@@ -18,8 +18,8 @@ interface ExtractR20Options {
 const extractStatementAnalysisData = (
   data: DataObject[],
   options: ExtractR20Options = {}
-): (number | null)[][] => {
-  const { defaultValue = null } = options;
+): number[][] => {
+  const { defaultValue = 0 } = options; // Added default value of 0
   // filterInvalid = false,
 
   // Validate input
@@ -29,7 +29,7 @@ const extractStatementAnalysisData = (
   }
 
   // Extract and parse r20 values from all objects
-  const allValues: (number | null)[][] = [];
+  const allValues: number[][] = [];
   let maxLength = 0;
 
   data.forEach((obj, index) => {
@@ -57,22 +57,25 @@ const extractStatementAnalysisData = (
     }
 
     // Split by pipe and convert to numbers
-    const values = dataString.split("|").map((value) => {
-      const trimmed = value.trim();
+    const values: number[] = dataString
+      .split("|")
+      .map((value) => {
+        const trimmed = value.trim();
 
-      if (trimmed.length === 0) {
-        return defaultValue;
-      }
+        if (trimmed.length === 0) {
+          return defaultValue;
+        }
 
-      const num = Number(trimmed);
+        const num = Number(trimmed);
 
-      if (isNaN(num) || !isFinite(num)) {
-        console.warn(`Invalid number "${trimmed}" at index ${index}`);
-        return defaultValue;
-      }
+        if (isNaN(num) || !isFinite(num)) {
+          console.warn(`Invalid number "${trimmed}" at index ${index}`);
+          return defaultValue;
+        }
 
-      return num;
-    });
+        return num;
+      })
+      .filter((val): val is number => typeof val === "number"); // Type guard to ensure only numbers
 
     // Track maximum length
     maxLength = Math.max(maxLength, values.length);
@@ -86,13 +89,13 @@ const extractStatementAnalysisData = (
   }
 
   // Transpose: convert rows to columns
-  const result: (number | null)[][] = [];
+  const result: number[][] = [];
 
   for (let position = 0; position < maxLength; position++) {
-    const column: (number | null)[] = [];
+    const column: number[] = [];
 
     allValues.forEach((values) => {
-      const value = position < values.length ? values[position] : defaultValue;
+      const value: number = position < values.length ? values[position] : defaultValue;
       column.push(value);
     });
 
@@ -103,11 +106,12 @@ const extractStatementAnalysisData = (
 
     result.push(column);
   }
-
+  console.log(result);
   return result;
 };
 
 export { extractStatementAnalysisData };
+export type { DataObject, ExtractR20Options };
 
 /*
 // Usage examples:
@@ -127,7 +131,7 @@ const sampleData: DataObject[] = [
 ];
 
 // Extract r20 data organized by position
-const result = extractR20ToArrays(sampleData);
+const result = extractStatementAnalysisData(sampleData);
 
 console.log(result);
 // Output: [
@@ -144,7 +148,7 @@ console.log("Position 0 across all records:", result[0]);
 
 // Access all positions for analysis
 result.forEach((positionValues, index) => {
-  const avg = positionValues.reduce((sum, val) => sum! + val!, 0)! / positionValues.length;
+  const avg = positionValues.reduce((sum, val) => sum + val, 0) / positionValues.length;
   console.log(`Position ${index}: avg = ${avg.toFixed(2)}`);
 });
 */

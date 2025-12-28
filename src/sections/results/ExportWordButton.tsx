@@ -32,6 +32,8 @@ interface GlobalState {
   surveyQuestionsArray: any[];
   showSurvey: boolean;
   showPostsort: boolean;
+  qSortHeaderNumbers: number[];
+  qSortPatternObject: {};
 }
 interface ExportWordButtonProps {
   userData?: any; // Replace `any` with a concrete type
@@ -44,6 +46,7 @@ const getMapInputQsortPattern = (state: GlobalState) => state.mapInputQsortPatte
 const getSurveyQuestionsArray = (state: GlobalState) => state.surveyQuestionsArray;
 const getShowSurvey = (state: GlobalState) => state.showSurvey;
 const getShowPostsort = (state: GlobalState) => state.showPostsort;
+const getQSortPatternObject = (state: GlobalState) => state.qSortPatternObject;
 
 const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
   const currentStatements = useStore(getCurrentStatements);
@@ -51,6 +54,8 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
   const surveyQuestionsArray = useStore(getSurveyQuestionsArray);
   const showSurvey = useStore(getShowSurvey);
   const showPostsort = useStore(getShowPostsort);
+  const qSortPatternObject = useStore(getQSortPatternObject);
+  const qSortHeaderNumbers = Object.keys(qSortPatternObject);
   const { t } = useTranslation();
 
   let shouldIncludeTimestamp = true;
@@ -121,9 +126,13 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
       ...(props.partNames ?? []),
     ]);
 
-    let statementsAnalysisArray = wordStatementAnalysis(data, newHeaderArray, currentStatements, [
-      ...(props.partNames ?? []),
-    ]);
+    let statementsAnalysisArray = wordStatementAnalysis(
+      data,
+      // newHeaderArray,
+      currentStatements,
+      qSortHeaderNumbers
+      // [...(props.partNames ?? [])]
+    );
 
     let summaryArray = wordSurveySummary(
       data,
