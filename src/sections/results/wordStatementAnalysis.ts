@@ -30,7 +30,7 @@ const createHeaderParagraph = (): Paragraph => {
   return new Paragraph({
     children: [
       new TextRun({
-        text: "Statement Analysis",
+        text: "Statement Statistics",
         bold: true,
         size: 40,
       }),

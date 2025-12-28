@@ -130,7 +130,7 @@ export function wordId(
       after: 400,
     }),
     new Paragraph({
-      children: [new TextRun({ text: "Individual Participant Data", bold: true, size: 40 })],
+      children: [new TextRun({ text: "Q Sort Data", bold: true, size: 40 })],
       heading: HeadingLevel.HEADING_1,
       thematicBreak: true,
     }),
@@ -175,7 +175,7 @@ export function wordId(
         text: `Session Metadata`,
         bold: true,
         startIndent: INDENT_START1,
-        heading: HeadingLevel.HEADING_4,
+        // heading: HeadingLevel.HEADING_4,
         before: 100,
       }),
       paragraph({

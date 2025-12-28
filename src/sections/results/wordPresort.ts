@@ -19,7 +19,7 @@ const wordPresort = (data: RecordMap): Paragraph[] => {
             bold: true,
           }),
         ],
-        heading: HeadingLevel.HEADING_4,
+        // heading: HeadingLevel.HEADING_4,
         indent: {
           start: 200,
         },

@@ -133,7 +133,7 @@ const wordSorts = (
         after: 50,
         before: 100,
       },
-      heading: HeadingLevel.HEADING_4,
+      // heading: HeadingLevel.HEADING_4,
       indent: {
         start: indentValue,
       },

@@ -1,4 +1,4 @@
-import { Paragraph, TextRun } from "docx";
+import { Paragraph, TextRun, HeadingLevel } from "docx";
 import { stripHtml } from "../stripHtml";
 import { stripTags } from "../../utils/stripTags";
 
@@ -129,6 +129,7 @@ const createHeaderParagraphs = (item: SurveyItem, index: number, text: string): 
         }),
       ],
       spacing: { before: 300 },
+      heading: HeadingLevel.HEADING_2,
     }),
     new Paragraph({
       children: [

@@ -1,4 +1,4 @@
-import { Paragraph, TextRun } from "docx";
+import { Paragraph, TextRun, HeadingLevel } from "docx";
 import { stripHtml } from "../stripHtml";
 import { stripTags } from "../../utils/stripTags";
 
@@ -18,6 +18,7 @@ const processTextSummary = (
           size: 28,
         }),
       ],
+      heading: HeadingLevel.HEADING_2,
       spacing: {
         before: 300,
       },

@@ -62,7 +62,7 @@ const wordPostsort = (data: RecordMap, currentStatements): Paragraph[] => {
             bold: true,
           }),
         ],
-        heading: HeadingLevel.HEADING_4,
+        // heading: HeadingLevel.HEADING_4,
         indent: {
           start: 200,
         },
@@ -130,7 +130,7 @@ const wordPostsort = (data: RecordMap, currentStatements): Paragraph[] => {
         indent: {
           start: 200,
         },
-        heading: HeadingLevel.HEADING_4,
+        // heading: HeadingLevel.HEADING_4,
         spacing: {
           before: 100,
         },

@@ -75,7 +75,7 @@ const wordTime = (data: RecordMap | RecordMap[]): Paragraph[][] => {
       new Paragraph({
         children: [new TextRun({ text: "Time On Page", bold: true, size: 20 })],
         indent: { start: indentValue1 },
-        heading: HeadingLevel.HEADING_4,
+        // heading: HeadingLevel.HEADING_4,
         spacing: { before: 100 },
       })
     );

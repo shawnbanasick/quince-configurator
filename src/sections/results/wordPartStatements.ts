@@ -152,7 +152,7 @@ const createHeaderParagraph = (): Paragraph => {
   return new Paragraph({
     children: [
       new TextRun({
-        text: "Participant Statement Q Sort Values",
+        text: "Statement Q Sort Values",
         bold: true,
         size: 40,
       }),
