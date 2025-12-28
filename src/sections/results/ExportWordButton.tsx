@@ -24,6 +24,8 @@ import { formatRawStatements } from "./formatRawStatements";
 import { getCurrentDateTime } from "./getCurrentDateTime";
 import { getCurrentDate } from "./getCurrentDate";
 import { getCurrentTime } from "./getCurrentTime";
+import { Paragraph, TextRun, ImageRun, AlignmentType } from "docx";
+import { logoBase64 } from "./logoBase64";
 
 interface GlobalState {
   currentStatements: string[];
@@ -141,6 +143,46 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
       showSurvey
     );
 
+    let closingMessage = [
+      new Paragraph({
+        children: [
+          new TextRun({
+            text: `*** End Report ***`,
+            bold: false,
+            size: 28,
+          }),
+        ],
+        spacing: {
+          before: 300,
+        },
+      }),
+    ];
+
+    let openingImage = [
+      new Paragraph({
+        children: [
+          new ImageRun({
+            // Convert Base64 to Buffer
+            data: logoBase64(),
+            transformation: {
+              width: 30,
+              height: 43,
+            },
+            type: "png",
+          }),
+          new TextRun({
+            text: ` Quince - Q Sort Results`,
+            bold: true,
+            size: 72,
+          }),
+        ],
+        alignment: AlignmentType.CENTER,
+        spacing: {
+          after: 300,
+        },
+      }),
+    ];
+
     const doc = new Document({
       compatibility: {
         growAutofit: false,
@@ -154,10 +196,12 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
           headers: getSection1Headers(projectName),
           footers: getSection1Footers(dateTime, version),
           children: [
+            ...openingImage,
             ...childArray1,
             ...statementsArray,
             ...statementsAnalysisArray,
             ...summaryArray,
+            ...closingMessage,
           ],
         },
       ],
