@@ -1,4 +1,4 @@
-import { Paragraph, TextRun, HeadingLevel } from "docx";
+import { Paragraph, TextRun } from "docx";
 import { cloneDeep } from "es-toolkit";
 
 type RecordMap = Record<string, any>;
@@ -8,7 +8,7 @@ interface TimeEntry {
   page: string;
 }
 
-const parseTimeEntry = (entry: string): TimeEntry | null => {
+const parseTimeEntry = (entry: string, langObj: any): TimeEntry | null => {
   try {
     // Remove parentheses and validate format
     const cleaned = entry.replace(/^\(|\)$/g, "").trim();
@@ -32,7 +32,30 @@ const parseTimeEntry = (entry: string): TimeEntry | null => {
     if (namePart.length < 4) {
       return null;
     }
-    const name = namePart.slice(0, -5);
+    let name = namePart.slice(0, -5);
+
+    if (name === "Consent") {
+      name = langObj.consentPage;
+    }
+    if (name === "Welcome") {
+      name = langObj.welcomePage;
+    }
+    if (name === "Presort") {
+      name = langObj.presortPage;
+    }
+    if (name === "Refine") {
+      name = langObj.refinePage;
+    }
+    if (name === "Sort") {
+      name = langObj.sortPage;
+    }
+    if (name === "Postsort") {
+      name = langObj.postsortPage;
+    }
+    if (name === "Survey") {
+      name = langObj.surveyPage;
+    }
+
 
     // Build page reference
     const pageParts = parts
@@ -48,7 +71,7 @@ const parseTimeEntry = (entry: string): TimeEntry | null => {
   }
 };
 
-const wordTime = (data: RecordMap | RecordMap[]): Paragraph[][] => {
+const wordTime = (data: RecordMap | RecordMap[], langObj: any): Paragraph[][] => {
   // Input validation
   if (!data || (typeof data !== "object" && !Array.isArray(data))) {
     console.warn("Invalid input data provided to wordTime");
@@ -73,7 +96,7 @@ const wordTime = (data: RecordMap | RecordMap[]): Paragraph[][] => {
 
     paragraphs.push(
       new Paragraph({
-        children: [new TextRun({ text: "Time On Page", bold: true, size: 20 })],
+        children: [new TextRun({ text: langObj.timeOnPage, bold: true, size: 20 })],
         indent: { start: indentValue1 },
         // heading: HeadingLevel.HEADING_4,
         spacing: { before: 100 },
@@ -87,7 +110,7 @@ const wordTime = (data: RecordMap | RecordMap[]): Paragraph[][] => {
 
     // Process each entry
     timeEntries.forEach((entry: string) => {
-      const parsed = parseTimeEntry(entry);
+      const parsed = parseTimeEntry(entry, langObj);
 
       if (!parsed) {
         console.warn(`Failed to parse time entry: ${entry}`);
@@ -98,7 +121,7 @@ const wordTime = (data: RecordMap | RecordMap[]): Paragraph[][] => {
         new Paragraph({
           children: [
             new TextRun({
-              text: `${parsed.name} Page: ${parsed.page}`,
+              text: `${parsed.name}: ${parsed.page}`,
             }),
           ],
           indent: {
@@ -116,65 +139,3 @@ const wordTime = (data: RecordMap | RecordMap[]): Paragraph[][] => {
 
 export { wordTime };
 export type { RecordMap, TimeEntry };
-
-/*
-import { Paragraph, TextRun } from "docx";
-import { cloneDeep } from "es-toolkit";
-
-type RecordMap = Record<string, any>;
-
-const wordTime = (data: RecordMap): Paragraph[] => {
-  const workingData = cloneDeep(data);
-  const indentValue = 200;
-  const items = Array.isArray(workingData) ? workingData : [workingData];
-
-  const itemParagraphs: any = [];
-  items.forEach((item: RecordMap) => {
-    const paragraphs: Paragraph[] = [];
-    // Filter for values starting with "(timeOn"
-    const timeEntries = Object.values(item).filter(
-      (value: any) => typeof value === "string" && value.trim().startsWith("(timeOn")
-    );
-
-    // Clean and map to Paragraphs
-    timeEntries.forEach((entry: string) => {
-      const cleaned = entry.replace("(", "").replace(")", "");
-      const cleaned2 = cleaned.slice(6); // remove timeOn
-      const cleaned3 = cleaned2.split(":");
-      const cleaned4 = cleaned3[0].slice(0, -4);
-
-      if (cleaned3.length > 2) {
-        paragraphs.push(
-          new Paragraph({
-            children: [
-              new TextRun({
-                text: `${cleaned4} Page: ${cleaned3[1].trim()}:${cleaned3[2].trim()}:${cleaned3[3].trim()}`,
-              }),
-            ],
-            indent: {
-              start: indentValue,
-            },
-          })
-        );
-      } else {
-        paragraphs.push(
-          new Paragraph({
-            children: [
-              new TextRun({
-                text: `${cleaned4} Page: ${cleaned3[1].trim()}`,
-              }),
-            ],
-            indent: {
-              start: indentValue,
-            },
-          })
-        );
-      }
-    });
-    itemParagraphs.push(paragraphs);
-  });
-  return itemParagraphs;
-};
-
-export { wordTime };
-*/

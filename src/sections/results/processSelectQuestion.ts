@@ -3,12 +3,16 @@ import { stripHtml } from "./stripHtml";
 import { stripTags } from "../utils/stripTags";
 import { safeSplit } from "./safeSplit";
 
-const processSelectQuestion = (entry, question, index, indentValue) => {
+const processSelectQuestion = (entry, question, index, indentValue, surveyLangObj) => {
   let addIndentValue = +indentValue + 200;
 
   let options = question.options;
   options = options.split(";;;");
   let entry2 = safeSplit(entry, ":", { maxParts: 2 });
+
+  if (entry2?.[1]?.trim() === "no response") {
+    entry2[1] = surveyLangObj.noResponse;
+  }
 
   let cleanOptions = options.map((element) => {
     return stripHtml(stripTags(element));
@@ -28,7 +32,7 @@ const processSelectQuestion = (entry, question, index, indentValue) => {
 
   let entry1 = entry.split(":");
   let indicator = true;
-  if (entry1[1].trim() === "no response") {
+  if (entry1[1].trim() === surveyLangObj.noResponse) {
     indicator = false;
   }
 
@@ -38,11 +42,11 @@ const processSelectQuestion = (entry, question, index, indentValue) => {
     new Paragraph({
       children: [
         new TextRun({
-          text: `Item ${index + 1} - `,
+          text: `${surveyLangObj.item} ${index + 1} - `,
           bold: true,
         }),
         new TextRun({
-          text: `Selection Dropdown: `,
+          text: `${surveyLangObj.select}: `,
           bold: false,
         }),
         new TextRun({
@@ -83,11 +87,11 @@ const processSelectQuestion = (entry, question, index, indentValue) => {
     new Paragraph({
       children: [
         new TextRun({
-          text: indicator ? `Response: ${stripHtml(stripTags(entry2[1]))} - ` : `Response: - `,
+          text: indicator ? `${surveyLangObj.response}: ${stripHtml(stripTags(entry2[1]))} - ` : `${surveyLangObj.response}: - `,
           bold: false,
         }),
         new TextRun({
-          text: indicator ? `${respondentResponse}` : `no response`,
+          text: indicator ? `${respondentResponse}` : surveyLangObj.noResponse,
           bold: false,
         }),
       ],

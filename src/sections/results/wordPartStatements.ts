@@ -81,7 +81,8 @@ const createParticipantParagraphs = (
   participantIndex: number,
   participantId: string,
   sortValueItems: SortValueItem[],
-  sortHeaders: number[]
+  sortHeaders: number[],
+  partStatementsLangObj: any,
 ): Paragraph[] => {
   const paragraphs: Paragraph[] = [];
   const groupedItems = groupBySortValue(sortValueItems);
@@ -91,7 +92,7 @@ const createParticipantParagraphs = (
     new Paragraph({
       children: [
         new TextRun({
-          text: `Participant ${participantIndex + 1}. ${participantId}`,
+          text: `${partStatementsLangObj.participant} ${participantIndex + 1}. ${participantId}`,
           bold: true,
         }),
       ],
@@ -112,7 +113,7 @@ const createParticipantParagraphs = (
         new Paragraph({
           children: [
             new TextRun({
-              text: `Sort Value ${sortValue}`,
+              text: `${partStatementsLangObj.sortValue} ${sortValue}`,
               bold: false,
               underline: {},
             }),
@@ -148,11 +149,11 @@ const createParticipantParagraphs = (
 /**
  * Creates document header paragraph
  */
-const createHeaderParagraph = (): Paragraph => {
+const createHeaderParagraph = (partStatementsLangObj: any): Paragraph => {
   return new Paragraph({
     children: [
       new TextRun({
-        text: "Statement Q Sort Values",
+        text: partStatementsLangObj.statementQsortValues,
         bold: true,
         size: 40,
       }),
@@ -200,7 +201,8 @@ const wordPartStatements = (
   data: ParticipantData[],
   sortHeaders: number[],
   statements: string,
-  participantIds: string[]
+  participantIds: string[],
+  partStatementsLangObj: any,
 ): Paragraph[] => {
   try {
     // Validate inputs
@@ -216,7 +218,7 @@ const wordPartStatements = (
     const workingData = cloneDeep(data);
 
     // Initialize result with header
-    const allParagraphs: Paragraph[] = [createHeaderParagraph()];
+    const allParagraphs: Paragraph[] = [createHeaderParagraph(partStatementsLangObj)];
 
     // Process each participant
     workingData.forEach((participant, index) => {
@@ -232,7 +234,8 @@ const wordPartStatements = (
           index,
           participantIds[index],
           sortValueItems,
-          sortHeaders
+          sortHeaders,
+          partStatementsLangObj,
         );
 
         // Add to result

@@ -115,12 +115,12 @@ const calculateOptionStats = (
 /**
  * Creates header paragraphs for the summary
  */
-const createHeaderParagraphs = (item: SurveyItem, index: number, text: string): Paragraph[] => {
+const createHeaderParagraphs = (item: SurveyItem, index: number, text: string, itemText: string): Paragraph[] => {
   return [
     new Paragraph({
       children: [
         new TextRun({
-          text: `Item ${index + 1}. ${text}`,
+          text: `${itemText} ${index + 1}. ${text}`,
           bold: false,
           size: 28,
         }),
@@ -197,6 +197,7 @@ const processSelectSummary = (
   item: SurveyItem,
   index: number,
   text: string,
+  itemText: string,
   responseDelimiter: string = "," // Allow customization of delimiter
 ): Paragraph[] => {
   // Validate inputs
@@ -236,7 +237,7 @@ const processSelectSummary = (
   });
 
   // Generate paragraphs
-  const headerParagraphs = createHeaderParagraphs(item, index, text);
+  const headerParagraphs = createHeaderParagraphs(item, index, text, itemText);
   const optionParagraphs = createOptionParagraphs(optionStats, totalResponseCount);
 
   return [...headerParagraphs, ...optionParagraphs];

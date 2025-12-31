@@ -1,5 +1,5 @@
 import zip from "lodash/zip";
-import { Paragraph, UnderlineType, TextRun, HeadingLevel } from "docx";
+import { Paragraph, UnderlineType, TextRun } from "docx";
 
 const compareSecondColumn = (a, b) => {
   if (a[1] === b[1]) {
@@ -25,7 +25,8 @@ const wordSorts = (
   statementNumArray,
   respondentArray2,
   newHeaderArray,
-  mapInputQsortPattern
+  mapInputQsortPattern,
+  qSortLangObj
 ) => {
   let indentValue = 200;
 
@@ -125,7 +126,7 @@ const wordSorts = (
     let p1 = new Paragraph({
       children: [
         new TextRun({
-          text: `Q Sort Grid`,
+          text: qSortLangObj.qSortGrid,
           bold: true,
         }),
       ],

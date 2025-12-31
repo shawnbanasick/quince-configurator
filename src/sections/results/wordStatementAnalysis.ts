@@ -2,7 +2,6 @@ import { HeadingLevel, Paragraph, TextRun } from "docx";
 import { cloneDeep } from "es-toolkit";
 import { extractStatementAnalysisData } from "./extractStatementAnalysisData";
 import { calcStatementAnalysisStats } from "./calcStatementAnalysisStats";
-// import { calcTopStatementStats } from "./calcTopStatementStats";
 
 // Type definitions for better type safety
 interface ParticipantData {
@@ -16,21 +15,21 @@ interface SortValueItem {
   stateNum: number;
 }
 
-interface WordPartStatementsParams {
-  data: ParticipantData[];
-  sortHeaders: number[];
-  statements: string;
-  participantIds: string[];
-}
+// interface WordPartStatementsParams {
+//   data: ParticipantData[];
+//   sortHeaders: number[];
+//   statements: string;
+//   participantIds: string[];
+// }
 
 /**
  * Creates document header paragraph
  */
-const createHeaderParagraph = (): Paragraph => {
+const createHeaderParagraph = (statementAnalysisLangObj: any): Paragraph => {
   return new Paragraph({
     children: [
       new TextRun({
-        text: "Statement Statistics",
+        text: statementAnalysisLangObj.statementStatistics,
         bold: true,
         size: 40,
       }),
@@ -43,27 +42,27 @@ const createHeaderParagraph = (): Paragraph => {
 
 /**
  * Validates input parameters
- */
 
 const validateInputs = (params: WordPartStatementsParams): void => {
   const { data, sortHeaders, statements, participantIds } = params;
-
+  
   if (!Array.isArray(data) || data.length === 0) {
     throw new Error("Data must be a non-empty array");
   }
-
+  
   if (!Array.isArray(sortHeaders) || sortHeaders.length === 0) {
     throw new Error("Sort headers must be a non-empty array");
   }
-
+  
   if (typeof statements !== "string" || !statements.trim()) {
     throw new Error("Statements must be a non-empty string");
   }
-
+  
   if (!Array.isArray(participantIds) || participantIds.length !== data.length) {
     throw new Error("Participant IDs array length must match data array length");
   }
 };
+*/
 
 /**
  * Generates Word document paragraphs for participant Q-sort statements
@@ -76,10 +75,9 @@ const validateInputs = (params: WordPartStatementsParams): void => {
  */
 const wordStatementAnalysis = (
   data: ParticipantData[],
-  //   sortHeaders: number[],
   statements: string,
-  //   participantIds: string[],
-  qSortHeaderNumbers: string[]
+  qSortHeaderNumbers: string[],
+  statementAnalysisLangObj: any
 ): Paragraph[] => {
   try {
     // Validate inputs
@@ -104,7 +102,7 @@ const wordStatementAnalysis = (
     }
 
     // Initialize result with header
-    const allParagraphs: Paragraph[] = [createHeaderParagraph()];
+    const allParagraphs: Paragraph[] = [createHeaderParagraph(statementAnalysisLangObj)];
     const statementSortValues: number[][] = extractStatementAnalysisData([...workingData]);
     const stats = calcStatementAnalysisStats(statementSortValues, max, min);
 
@@ -126,7 +124,7 @@ const wordStatementAnalysis = (
         new Paragraph({
           children: [
             new TextRun({
-              text: `Q Sort Value - Highest to Lowest (Average)`,
+              text: `${statementAnalysisLangObj.qSortValue} - ${statementAnalysisLangObj.highestToLowestAverage}`,
               bold: true,
             }),
           ],
@@ -158,7 +156,7 @@ const wordStatementAnalysis = (
         new Paragraph({
           children: [
             new TextRun({
-              text: `Q Sort Value Stability (Standard Deviation, Average)`,
+              text: `${statementAnalysisLangObj.qSortValueStability}`,
               bold: true,
             }),
           ],
@@ -193,13 +191,12 @@ const wordStatementAnalysis = (
         new Paragraph({
           children: [
             new TextRun({
-              text: `Statements with a High Count of Q Sort Max Value "${max}" (Count, Percent)`,
+              text: `${statementAnalysisLangObj.statementsWithAHighCountOfMax} "${max}" (${statementAnalysisLangObj.countPercent})`,
               bold: true,
             }),
           ],
           spacing: { before: 400 },
           heading: HeadingLevel.HEADING_2,
-          //   indent: { left: 200 },
         })
       );
 
@@ -212,22 +209,26 @@ const wordStatementAnalysis = (
         if (i > 9 && previousValueMax !== testValueMax) {
           break;
         }
-        allParagraphs.push(
-          new Paragraph({
-            children: [
-              new TextRun({
-                text: `${i + 1}. s${String(objectMax.order).padStart(2, "0")} (${
-                  objectMax.maxCount
-                }, ${(objectMax.maxCount / objectMax.count).toFixed(2)}): ${
-                  statementsArray[objectMax.order - 1]
-                }`,
-                bold: false,
-              }),
-            ],
-            spacing: { before: 0 },
-            indent: { left: 2000, hanging: 1800 },
-          })
-        );
+
+        // skip cases when count is ZERO
+        if (objectMax.maxCount > 0) {
+          allParagraphs.push(
+            new Paragraph({
+              children: [
+                new TextRun({
+                  text: `${i + 1}. s${String(objectMax.order).padStart(2, "0")} (${
+                    objectMax.maxCount
+                  }, ${(objectMax.maxCount / objectMax.count).toFixed(2)}): ${
+                    statementsArray[objectMax.order - 1]
+                  }`,
+                  bold: false,
+                }),
+              ],
+              spacing: { before: 0 },
+              indent: { left: 2000, hanging: 1800 },
+            })
+          );
+        }
         previousValueMax = testValueMax;
       }
 
@@ -236,13 +237,12 @@ const wordStatementAnalysis = (
         new Paragraph({
           children: [
             new TextRun({
-              text: `Statements with a High Count of Q Sort Min Value "${min}" (Count, Percent)`,
+              text: `${statementAnalysisLangObj.statementsWithAHighCountOfMin} "${min}" (${statementAnalysisLangObj.countPercent})`,
               bold: true,
             }),
           ],
           spacing: { before: 400 },
           heading: HeadingLevel.HEADING_2,
-          //   indent: { left: 200 },
         })
       );
 
@@ -255,22 +255,25 @@ const wordStatementAnalysis = (
         if (i > 9 && previousValueMin !== testValueMin) {
           break;
         }
-        allParagraphs.push(
-          new Paragraph({
-            children: [
-              new TextRun({
-                text: `${i + 1}. s${String(objectMin.order).padStart(2, "0")} (${
-                  objectMin.minCount
-                }, ${(objectMin.minCount / objectMin.count).toFixed(2)}): ${
-                  statementsArray[objectMin.order - 1]
-                }`,
-                bold: false,
-              }),
-            ],
-            spacing: { before: 0 },
-            indent: { left: 2000, hanging: 1800 },
-          })
-        );
+        // skip cases when count is ZERO
+        if (objectMin.minCount > 0) {
+          allParagraphs.push(
+            new Paragraph({
+              children: [
+                new TextRun({
+                  text: `${i + 1}. s${String(objectMin.order).padStart(2, "0")} (${
+                    objectMin.minCount
+                  }, ${(objectMin.minCount / objectMin.count).toFixed(2)}): ${
+                    statementsArray[objectMin.order - 1]
+                  }`,
+                  bold: false,
+                }),
+              ],
+              spacing: { before: 0 },
+              indent: { left: 2000, hanging: 1800 },
+            })
+          );
+        }
         previousValueMin = testValueMin;
       }
 
@@ -280,7 +283,7 @@ const wordStatementAnalysis = (
           new Paragraph({
             children: [
               new TextRun({
-                text: `Statements with a High Count of Q Sort Value "0" (Count, Percent)`,
+                text: `${statementAnalysisLangObj.statementsWithAHighCountOfZero} (${statementAnalysisLangObj.countPercent})`,
                 bold: true,
               }),
             ],
@@ -298,22 +301,25 @@ const wordStatementAnalysis = (
           if (i > 9 && previousValue !== testValue) {
             break;
           }
-          allParagraphs.push(
-            new Paragraph({
-              children: [
-                new TextRun({
-                  text: `${i + 1}. s${String(object.order).padStart(2, "0")} (${
-                    object.zeroCount
-                  }, ${(object.zeroCount / object.count).toFixed(2)}): ${
-                    statementsArray[object.order - 1]
-                  }`,
-                  bold: false,
-                }),
-              ],
-              spacing: { before: 0 },
-              indent: { left: 2000, hanging: 1800 },
-            })
-          );
+          // skip cases when count is ZERO
+          if (object.zeroCount > 0) {
+            allParagraphs.push(
+              new Paragraph({
+                children: [
+                  new TextRun({
+                    text: `${i + 1}. s${String(object.order).padStart(2, "0")} (${
+                      object.zeroCount
+                    }, ${(object.zeroCount / object.count).toFixed(2)}): ${
+                      statementsArray[object.order - 1]
+                    }`,
+                    bold: false,
+                  }),
+                ],
+                spacing: { before: 0 },
+                indent: { left: 2000, hanging: 1800 },
+              })
+            );
+          }
           previousValue = testValue;
         }
       }

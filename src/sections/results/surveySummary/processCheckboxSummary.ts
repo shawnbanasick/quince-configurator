@@ -118,12 +118,12 @@ const calculateOptionStats = (
 /**
  * Creates header paragraphs for the summary
  */
-const createHeaderParagraphs = (item: SurveyItem, index: number, text: string): Paragraph[] => {
+const createHeaderParagraphs = (item: SurveyItem, index: number, text: string, itemText: string): Paragraph[] => {
   return [
     new Paragraph({
       children: [
         new TextRun({
-          text: `Item ${index + 1}. ${text}`,
+          text: `${itemText} ${index + 1}. ${text}`,
           bold: false,
           size: 28,
         }),
@@ -199,7 +199,8 @@ const processCheckboxSummary = (
   partNames: string[],
   item: SurveyItem,
   index: number,
-  text: string
+  text: string,
+  itemText: string
 ): Paragraph[] => {
   // Validate inputs
   if (!filteredData?.length || !item?.options) {
@@ -238,7 +239,7 @@ const processCheckboxSummary = (
   });
 
   // Generate paragraphs
-  const headerParagraphs = createHeaderParagraphs(item, index, text);
+  const headerParagraphs = createHeaderParagraphs(item, index, text, itemText);
   const optionParagraphs = createOptionParagraphs(optionStats, totalResponseCount);
 
   return [...headerParagraphs, ...optionParagraphs];

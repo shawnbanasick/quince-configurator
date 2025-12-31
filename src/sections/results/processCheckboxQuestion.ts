@@ -3,12 +3,16 @@ import { stripHtml } from "./stripHtml";
 import { stripTags } from "../utils/stripTags";
 import { safeSplit } from "./safeSplit";
 
-const processCheckboxQuestion = (entry, question, index, indentValue) => {
+const processCheckboxQuestion = (entry, question, index, indentValue, surveyLangObj) => {
   let addIndentValue = +indentValue + 200;
   let options = stripHtml(stripTags(question.options));
   options = options.split(",");
 
   let entry2 = safeSplit(entry, ":", { maxParts: 2 });
+
+  if (entry2?.[1]?.trim() === "no response") {
+    entry2[1] = surveyLangObj.noResponse;
+  }
 
   let respondentResponse2: any = [];
   let response1 = stripHtml(stripTags(entry));
@@ -53,11 +57,11 @@ const processCheckboxQuestion = (entry, question, index, indentValue) => {
     new Paragraph({
       children: [
         new TextRun({
-          text: `Item ${index + 1} - `,
+          text: `${surveyLangObj.item} ${index + 1} - `,
           bold: true,
         }),
         new TextRun({
-          text: `Checkbox: `,
+          text: `${surveyLangObj.checkbox}: `,
           bold: false,
         }),
         new TextRun({
@@ -98,11 +102,11 @@ const processCheckboxQuestion = (entry, question, index, indentValue) => {
     new Paragraph({
       children: [
         new TextRun({
-          text: `Response: ${stripHtml(stripTags(entry2[1]))} - `,
+          text: `${surveyLangObj.response}: ${stripHtml(stripTags(entry2[1]))} - `,
           bold: false,
         }),
         new TextRun({
-          text: entry ? `${stripHtml(stripTags(respondentResponse))}` : `no response`,
+          text: entry ? `${stripHtml(stripTags(respondentResponse))}` : surveyLangObj.noResponse,
           bold: false,
         }),
       ],

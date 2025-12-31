@@ -1,4 +1,4 @@
-import { Paragraph, TextRun, HeadingLevel } from "docx";
+import { Paragraph, TextRun } from "docx";
 import { cloneDeep } from "es-toolkit";
 import { stripHtml } from "./stripHtml";
 import { stripTags } from "../utils/stripTags";
@@ -7,7 +7,7 @@ type RecordMap = Record<string, any>;
 
 // const getCurrentStatements = (state: GlobalState) => state.currentStatements;
 
-const wordPostsort = (data: RecordMap, currentStatements): Paragraph[] => {
+const wordPostsort = (data: RecordMap, currentStatements, postsortLangObj): Paragraph[] => {
   const workingData = cloneDeep(data);
 
   const indentValue = 400;
@@ -58,7 +58,7 @@ const wordPostsort = (data: RecordMap, currentStatements): Paragraph[] => {
       new Paragraph({
         children: [
           new TextRun({
-            text: "Positive Post-Sort Comments",
+            text: postsortLangObj.positivePostsortComments,
             bold: true,
           }),
         ],
@@ -91,7 +91,7 @@ const wordPostsort = (data: RecordMap, currentStatements): Paragraph[] => {
         new Paragraph({
           children: [
             new TextRun({
-              text: `(Col. +${entry[0]})  `,
+              text: `(${postsortLangObj.columnAbr} +${entry[0]})  `,
               bold: true,
             }),
             new TextRun({
@@ -123,7 +123,7 @@ const wordPostsort = (data: RecordMap, currentStatements): Paragraph[] => {
       new Paragraph({
         children: [
           new TextRun({
-            text: "Negative Post-Sort Comments",
+            text: postsortLangObj.negativePostsortComments,
             bold: true,
           }),
         ],
@@ -156,7 +156,7 @@ const wordPostsort = (data: RecordMap, currentStatements): Paragraph[] => {
         new Paragraph({
           children: [
             new TextRun({
-              text: `(Col. ${entry[0]})  `,
+              text: `(${postsortLangObj.columnAbr} ${entry[0]})  `,
               bold: true,
             }),
             new TextRun({

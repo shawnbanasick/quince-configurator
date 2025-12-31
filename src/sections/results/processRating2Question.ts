@@ -2,7 +2,7 @@ import { Paragraph, TextRun, UnderlineType } from "docx";
 import { stripHtml } from "./stripHtml";
 import { stripTags } from "../utils/stripTags";
 
-const processRating2Question = (entry, question, index, indentValue) => {
+const processRating2Question = (entry, question, index, indentValue, surveyLangObj) => {
   let addIndentValue = +indentValue + 200;
   let options = stripHtml(stripTags(question.options));
   options = options.split(",");
@@ -10,18 +10,26 @@ const processRating2Question = (entry, question, index, indentValue) => {
 
   let scale2 = stripHtml(question.scale);
   const scale3 = scale2.split(",").map((str) => str.trim());
-  let entry4 = entry.split(":");
-  let entry5 = entry4[1].split(",");
+  scale3.push(surveyLangObj.noResponse);
+
+  // deal with no response case and nr case
+  let entry4 = entry.split(":").map((str) => str.trim());
+  let entry5;
+  if (entry4[1] === "no response" || entry4[1] === "No Response") {
+    entry5 = Array.from({ length: options.length }, () => "nr");
+  } else {
+    entry5 = entry4[1].split(",").map((str) => str.trim());
+  }
 
   let response = [
     new Paragraph({
       children: [
         new TextRun({
-          text: `Item ${index + 1} - `,
+          text: `${surveyLangObj.item} ${index + 1} - `,
           bold: true,
         }),
         new TextRun({
-          text: `Rating (2 Options): `,
+          text: `${surveyLangObj.rating2}: `,
           bold: false,
         }),
         new TextRun({
@@ -65,26 +73,30 @@ const processRating2Question = (entry, question, index, indentValue) => {
     let text;
     let newIndex;
     if (entry5[0].trim() === "no response") {
-      text = "no response";
+      text = surveyLangObj.noResponse;
     } else {
-      let newIndex2 = entry5[index];
+      let newIndex2 = entry5[index];  // 1,2,nr
       let newIndex3 = newIndex2.trim();
-      newIndex = +newIndex3 - 1;
+      if (newIndex3 === "nr") {
+        newIndex = 2;
+      } else {
+        newIndex = +newIndex3 - 1; // adjust to array position
+      }
     }
 
     response.push(
       new Paragraph({
         children: [
           new TextRun({
-            text: `Question: ${item.trim()}  - `,
+            text: `${surveyLangObj.question}: ${item.trim()}  - `,
             bold: false,
           }),
           new TextRun({
-            text: `Response: `,
+            text: `${surveyLangObj.response}: `,
             bold: false,
           }),
           new TextRun({
-            text: text === "no response" ? `no response` : `${scale3[newIndex]}`,
+            text: `${scale3[newIndex]}`,
             bold: false,
           }),
         ],

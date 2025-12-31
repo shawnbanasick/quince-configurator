@@ -2,12 +2,12 @@ import { Paragraph, TextRun, HeadingLevel } from "docx";
 import { stripHtml } from "../stripHtml";
 import { stripTags } from "../../utils/stripTags";
 
-const processInformationSummary = (item: any, index: number, text: string) => {
+const processInformationSummary = (item: any, index: number, text: string, itemText: string) => {
   return [
     new Paragraph({
       children: [
         new TextRun({
-          text: `Item ${index + 1}.  ${text}`,
+          text: `${itemText} ${index + 1}.  ${text}`,
           bold: false,
           size: 28,
         }),

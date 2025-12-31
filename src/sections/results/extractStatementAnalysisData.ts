@@ -106,49 +106,9 @@ const extractStatementAnalysisData = (
 
     result.push(column);
   }
-  console.log(result);
   return result;
 };
 
 export { extractStatementAnalysisData };
 export type { DataObject, ExtractR20Options };
 
-/*
-// Usage examples:
-const sampleData: DataObject[] = [
-  {
-    id: "727",
-    r20: "sort: 0|-2|-1|-3|-1|1|3|-3|3|2|-4|3|0|1|1|-1|0|-2|2|0|4|2|-2|2|1|0|-2|-1|-1|1|4|-4|-3",
-  },
-  {
-    id: "728",
-    r20: "sort: 1|-1|0|-2|0|2|4|-2|4|3|-3|4|1|2|2|0|1|-1|3|1|5|3|-1|3|2|1|-1|0|0|2|5|-3|-2",
-  },
-  {
-    id: "729",
-    r20: "sort: -1|-3|-2|-4|-2|0|2|-4|2|1|-5|2|-1|0|0|-2|-1|-3|1|-1|3|1|-3|1|0|-1|-3|-2|-2|0|3|-5|-4",
-  },
-];
-
-// Extract r20 data organized by position
-const result = extractStatementAnalysisData(sampleData);
-
-console.log(result);
-// Output: [
-//   [0, 1, -1],      // Position 0 values from all objects
-//   [-2, -1, -3],    // Position 1 values from all objects
-//   [-1, 0, -2],     // Position 2 values from all objects
-//   [-3, -2, -4],    // Position 3 values from all objects
-//   // ... etc
-// ]
-
-// Access specific position across all records
-console.log("Position 0 across all records:", result[0]);
-// [0, 1, -1]
-
-// Access all positions for analysis
-result.forEach((positionValues, index) => {
-  const avg = positionValues.reduce((sum, val) => sum + val, 0) / positionValues.length;
-  console.log(`Position ${index}: avg = ${avg.toFixed(2)}`);
-});
-*/

@@ -1,9 +1,9 @@
-import { Paragraph, TextRun, HeadingLevel } from "docx";
+import { Paragraph, TextRun } from "docx";
 import { cloneDeep } from "es-toolkit";
 
 type RecordMap = Record<string, any>;
 
-const wordPresort = (data: RecordMap): Paragraph[] => {
+const wordPresort = (data: RecordMap, presortLangObj: any): Paragraph[] => {
   const workingData = cloneDeep(data);
   const indentValue = 400;
   const items = Array.isArray(workingData) ? workingData : [workingData];
@@ -15,7 +15,7 @@ const wordPresort = (data: RecordMap): Paragraph[] => {
       new Paragraph({
         children: [
           new TextRun({
-            text: "Pre-Sort Values",
+            text: presortLangObj.presortValues,
             bold: true,
           }),
         ],
@@ -40,22 +40,22 @@ const wordPresort = (data: RecordMap): Paragraph[] => {
     // Clean and map to Paragraphs
     timeEntries.forEach((entry: string) => {
       if (entry.startsWith("(numPos)")) {
-        entry = `Number of statements viewed positively: ${entry.slice(9).trim()}`;
+        entry = `${presortLangObj.numberOfStatementsViewedPositively}: ${entry.slice(9).trim()}`;
       }
       if (entry.startsWith("(numNeu)")) {
-        entry = `Number of statements viewed as neutral: ${entry.slice(9).trim()}`;
+        entry = `${presortLangObj.numberOfStatementsViewedNeutral}: ${entry.slice(9).trim()}`;
       }
       if (entry.startsWith("(numNeg)")) {
-        entry = `Number of statements viewed negatively: ${entry.slice(9).trim()}`;
+        entry = `${presortLangObj.numberOfStatementsViewedNegatively}: ${entry.slice(9).trim()}`;
       }
       if (entry.startsWith("(pos)")) {
-        entry = `Statements viewed positively: ${entry.slice(6).trim()}`;
+        entry = `${presortLangObj.statementsViewedPositively}: ${entry.slice(6).trim()}`;
       }
       if (entry.startsWith("(neu)")) {
-        entry = `Statements viewed as neutral: ${entry.slice(6).trim()}`;
+        entry = `${presortLangObj.statementsViewedNeutral}: ${entry.slice(6).trim()}`;
       }
       if (entry.startsWith("(neg)")) {
-        entry = `Statements viewed negatively: ${entry.slice(6).trim()}`;
+        entry = `${presortLangObj.statementsViewedNegatively}: ${entry.slice(6).trim()}`;
       }
       paragraphs.push(
         new Paragraph({

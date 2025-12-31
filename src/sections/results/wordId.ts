@@ -2,6 +2,7 @@
 import { HeadingLevel, Paragraph, TextRun } from "docx";
 import { cloneDeep } from "es-toolkit";
 
+
 /* ------------------------------------------------------------------ */
 /* 1. Types & constants                                               */
 /* ------------------------------------------------------------------ */
@@ -53,20 +54,30 @@ function paragraph(opts: {
   text: string;
   bold?: boolean;
   size?: number;
-  heading?: HeadingLevel;
+  // heading?: HeadingLevel;
+  heading?: (typeof HeadingLevel)[keyof typeof HeadingLevel];
   thematicBreak?: boolean;
   before?: number;
   after?: number;
   startIndent?: number;
 }): Paragraph {
-  const { text, bold = false, size = 20, ...rest } = opts;
+  const {
+    text,
+    bold = false,
+    size = 20,
+    heading,
+    thematicBreak,
+    before,
+    after,
+    startIndent,
+  } = opts;
 
   return new Paragraph({
     children: [new TextRun({ text, bold, size })],
-    indent: { start: opts.startIndent },
-    heading: opts.heading,
-    spacing: { before: opts.before, after: opts.after },
-    ...rest,
+    ...(startIndent !== undefined && { indent: { start: startIndent } }),
+    ...(heading !== undefined && { heading }),
+    ...(thematicBreak !== undefined && { thematicBreak }),
+    ...(before !== undefined || after !== undefined ? { spacing: { before, after } } : {}),
   });
 }
 
@@ -74,7 +85,16 @@ function paragraph(opts: {
  * Safely returns an array at a given index or an empty array.
  */
 function safeArray<T>(arr: T[] | undefined, idx: number): T[] {
-  return arr && Array.isArray(arr[idx]) ? arr[idx] : [];
+  if (!arr || !Array.isArray(arr)) {
+    return [];
+  }
+
+  if (idx < 0 || idx >= arr.length) {
+    return [];
+  }
+
+  const element = arr[idx];
+  return Array.isArray(element) ? element : [];
 }
 
 /* ------------------------------------------------------------------ */
@@ -91,7 +111,8 @@ export function wordId(
   displayPartId: string, // "randomId" | "partId" | "urlUsercode"
   numStatements: number,
   showSurvey: unknown,
-  showPostsort: unknown
+  showPostsort: unknown,
+  idLangObj: Record<string, string>,
 ): Paragraph[] {
   /* ---- validation ------------------------------------------------- */
   if (!Array.isArray(data) || data.length === 0) {
@@ -118,23 +139,24 @@ export function wordId(
       after: 20,
     }),
     paragraph({
-      text: `Project Creation Date: ${projectDate[0]} at ${projectDate[1]}`,
+      text: `${idLangObj.projectCreationDate}: ${projectDate[0]} @ ${projectDate[1]}`,
       bold: true,
       size: 24,
       after: 20,
     }),
     paragraph({
-      text: `${numStatements} Statements / ${workingData.length} Participants`,
+      text: `${numStatements} ${idLangObj.statements} / ${workingData.length} ${idLangObj.participants}`,
       bold: true,
       size: 24,
       after: 400,
     }),
     new Paragraph({
-      children: [new TextRun({ text: "Q Sort Data", bold: true, size: 40 })],
+      children: [new TextRun({ text: idLangObj.qSortData, bold: true, size: 40 })],
       heading: HeadingLevel.HEADING_1,
       thematicBreak: true,
     }),
   ];
+
 
   /* ---- per‑row processing ---------------------------------------- */
   let previousId = "";
@@ -162,35 +184,53 @@ export function wordId(
         ? safeSlice(item.r4, "r4")
         : "";
 
+    // localize text
+    let participantId = safeSlice(item.r3, "r3")?.trim();
+    let urlUsercode = safeSlice(item.r4, "r4")?.trim();
+    let desktopOrMobile = safeSlice(item.r6, "r6")?.trim();
+
+    if (participantId === "no part ID") {
+      participantId = idLangObj.noPartId;
+    }
+    if (urlUsercode === "no usercode set") {
+      urlUsercode = idLangObj.noUrlUsercode;
+    }
+    if (desktopOrMobile === "desktop") {
+      desktopOrMobile = idLangObj.desktop;
+    }
+    if (desktopOrMobile === "mobile") {
+      desktopOrMobile = idLangObj.mobile;
+    }
+
+
     // 3️⃣ Append participant block
     childArray.push(
       paragraph({
-        text: `Participant: ${index + 1} - ${identCode}`,
+        text: `${idLangObj.participant}: ${index + 1} - ${identCode}`,
         bold: true,
         heading: HeadingLevel.HEADING_2,
         size: 34,
         before: 200,
       }),
       paragraph({
-        text: `Session Metadata`,
+        text: `${idLangObj.sessionMetadata}`,
         bold: true,
         startIndent: INDENT_START1,
-        // heading: HeadingLevel.HEADING_4,
         before: 100,
       }),
       paragraph({
-        text: `Project Name: ${safeSlice(item.r1, "r1")}`,
+        text: `${idLangObj.projectName}: ${safeSlice(item.r1, "r1")}`,
         startIndent: INDENT_START2,
       }),
-      paragraph({ text: `random ID: ${id}`, startIndent: INDENT_START2 }),
+      paragraph({ text: `${idLangObj.randomId}: ${id}`, startIndent: INDENT_START2 }),
       paragraph({
-        text: `participant ID: ${safeSlice(item.r3, "r3")}`,
+        text: `${idLangObj.participantId}: ${participantId}`,
         startIndent: INDENT_START2,
       }),
-      paragraph({ text: `URL user code: ${safeSlice(item.r4, "r4")}`, startIndent: INDENT_START2 }),
-      paragraph({ text: `Date and time: ${safeSlice(item.r5, "r5")}`, startIndent: INDENT_START2 }),
+      paragraph({ text: `${idLangObj.urlUsercode}: ${urlUsercode}`, startIndent: INDENT_START2 }),
+      paragraph({ text: `${idLangObj.dateAndTime}: ${safeSlice(item.r5, "r5")}`, startIndent: INDENT_START2 }),
       paragraph({
-        text: `Desktop or Mobile: ${safeSlice(item.r6, "r6")}`,
+        text: `${idLangObj.desktopOrMobile}: ${desktopOrMobile}`,
         startIndent: INDENT_START2,
       })
     );

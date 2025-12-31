@@ -61,10 +61,10 @@ const Results: React.FC = () => {
   const getParticipantNames = (): string[] | undefined => {
     if (!data) return undefined;
     const nameArrays = extractPartNames(data);
-    const [randomIdArray, partIdArray, urlUsercodeArray, resultsImportErrorArray] = nameArrays;
+    
+    // const [randomIdArray, partIdArray, urlUsercodeArray, resultsImportErrorArray] = nameArrays;
+    const [randomIdArray, partIdArray, urlUsercodeArray] = nameArrays;
 
-    // setResultsImportErrorArray([...resultsImportErrorArray])
-    console.log(resultsImportErrorArray);
 
     switch (selectedPartId) {
       case "randomId":

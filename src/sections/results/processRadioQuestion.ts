@@ -4,7 +4,7 @@ import { stripTags } from "../utils/stripTags";
 import { safeSplit } from "./safeSplit";
 import { safeShiftToNumber } from "./safeShiftToNumber";
 
-const processRadioQuestion = (entry, question, index, indentValue) => {
+const processRadioQuestion = (entry, question, index, indentValue, surveyLangObj) => {
   let addIndentValue = +indentValue + 200;
   let options = question.options;
   options = options.split(";;;");
@@ -29,7 +29,7 @@ const processRadioQuestion = (entry, question, index, indentValue) => {
       let responseText = cleanOptions[responseNumber - 1];
       respondentResponse = `${responseNumber} - ${responseText}: ${tempArray[1]}`;
     } else {
-      respondentResponse = "no response";
+      respondentResponse = surveyLangObj.noResponse;
     }
   } else {
     // normal response
@@ -40,11 +40,11 @@ const processRadioQuestion = (entry, question, index, indentValue) => {
     new Paragraph({
       children: [
         new TextRun({
-          text: `Item ${index + 1} - `,
+          text: `${surveyLangObj.item} ${index + 1} - `,
           bold: true,
         }),
         new TextRun({
-          text: `Radio Buttons: `,
+          text: `${surveyLangObj.radio}: `,
           bold: false,
         }),
         new TextRun({
@@ -85,7 +85,7 @@ const processRadioQuestion = (entry, question, index, indentValue) => {
     new Paragraph({
       children: [
         new TextRun({
-          text: `Response: ${cleanOptionNumber} - `,
+          text: `${surveyLangObj.response}: ${cleanOptionNumber} - `,
           bold: false,
         }),
         new TextRun({

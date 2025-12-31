@@ -3,21 +3,25 @@ import { stripHtml } from "./stripHtml";
 import { stripTags } from "../utils/stripTags";
 import { safeSplit } from "./safeSplit";
 
-const processTextQuestion = (entry, question, index, indentValue) => {
+const processTextQuestion = (entry, question, index, indentValue, surveyLangObj) => {
   let addIndentValue = +indentValue + 100;
 
   let cleanedNote = stripTags(question.note);
   let entry2 = safeSplit(entry, ":", { maxParts: 2 });
 
+  if (entry2?.[1]?.trim() === "no response") {
+    entry2[1] = surveyLangObj.noResponse;
+  }
+
   let response = [
     new Paragraph({
       children: [
         new TextRun({
-          text: `Item ${index + 1} - `,
+          text: `${surveyLangObj.item} ${index + 1} - `,
           bold: true,
         }),
         new TextRun({
-          text: `Short Text: `,
+          text: `${surveyLangObj.shortText}: `,
           bold: false,
         }),
         new TextRun({
@@ -47,7 +51,7 @@ const processTextQuestion = (entry, question, index, indentValue) => {
     new Paragraph({
       children: [
         new TextRun({
-          text: `Response: `,
+          text: `${surveyLangObj.response}: `,
           bold: false,
         }),
         new TextRun({

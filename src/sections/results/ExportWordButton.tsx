@@ -83,6 +83,101 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
   const dateTime = getCurrentDateTime();
   let version = "1.0.6";
 
+  //**
+  //  LANGUAGE OBJECTS
+  //** 
+  const idLangObj = {
+    "projectCreationDate": t("projectCreationDate"),
+    "qSortData": t("qSortData"),
+    "sessionMetadata": t("sessionMetadata"),
+    "projectName": t("projectName"),
+    "randomId": t("randomId"),
+    "urlUsercode": t("urlUsercode"),
+    "dateAndTime": t("dateAndTime"),
+    "desktopOrMobile": t("desktopOrMobile"),
+    "statements": t("statements"),
+    "participants": t("participants"),
+    "participant": t("participant"),
+    "participantId": t("participantId"),
+    "noPartId": t("noPartId"),
+    "noUrlUsercode": t("noUrlUsercode"),
+    "desktop": t("desktop"),
+    "mobile": t("mobile"),
+  };
+  const timeLangObj = {
+    "timeOnPage": t("timeOnPage"),
+    "consentPage": t("consentPage"),
+    "welcomePage": t("welcomePage"),
+    "presortPage": t("presortPage"),
+    "refinePage": t("refinePage"),
+    "sortPage": t("sortPage"),
+    "postsortPage": t("postsortPage"),
+    "surveyPage": t("surveyPage"),
+  };
+  const presortLangObj = {
+    "presortValues": t("presortValues"),
+    "numberOfStatementsViewedPositively": t("numberOfStatementsViewedPositively"),
+    "numberOfStatementsViewedNegatively": t("numberOfStatementsViewedNegatively"),
+    "numberOfStatementsViewedNeutral": t("numberOfStatementsViewedNeutral"),
+    "statementsViewedPositively": t("statementsViewedPositively"),
+    "statementsViewedNegatively": t("statementsViewedNegatively"),
+    "statementsViewedNeutral": t("statementsViewedNeutral"),
+  };
+  const qSortLangObj = {
+    "qSortGrid": t("qSortGrid"),
+  };
+  const postsortLangObj = {
+    "positivePostsortComments": t("positivePostsortComments"),
+    "negativePostsortComments": t("negativePostsortComments"),
+    "columnAbr": t("columnAbr"),
+  };
+  const surveyLangObj = {
+    "questionnaireResults": t("questionnaireResults"),
+    "item": t("item"),
+    "response": t("response"),
+    "noResponse": t("noResponse"),
+    "question": t("question"),
+    "information": t("information"),
+    "shortText": t("shortText"),
+    "longText": t("longText"),
+    "radio": t("radio"),
+    "select": t("select"),
+    "checkbox": t("checkbox"),
+    "rating2": t("rating2"),
+    "rating5": t("rating5"),
+    "rating10": t("rating10"),
+  };
+  const surveySummaryLangObj = {
+    "questionnaireSummaryResults": t("questionnaireSummaryResults"),
+    "multipleResponsesPossible": t("multipleResponsesPossible"),
+    "item": t("item"),
+    "information": t("information"),
+    "shortText": t("shortText"),
+    "longText": t("longText"),
+    "radio": t("radio"),
+    "select": t("select"),
+    "checkbox": t("checkbox"),
+    "rating2": t("rating2"),
+    "rating5": t("rating5"),
+    "rating10": t("rating10"),
+  };
+  const partStatementsLangObj = {
+    "participant": t("participant"),
+    "partStatements": t("partStatements"),
+    "sortValue": t("sortValue"),
+    "statementQsortValues": t("statementQsortValues"),
+  };
+  const statementAnalysisLangObj = {
+    "statementStatistics": t("statementStatistics"),
+    "qSortValue": t("qSortValue"),
+    "highestToLowestAverage": t("highestToLowestAverage"),
+    "qSortValueStability": t("qSortValueStability"),
+    "statementsWithAHighCountOfMax": t("statementsWithAHighCountOfMax"),
+    "statementsWithAHighCountOfMin": t("statementsWithAHighCountOfMin"),
+    "statementsWithAHighCountOfZero": t("statementsWithAHighCountOfZero"),
+    "countPercent": t("countPercent"),
+  };
+
   // set name for ZIP file
   if (shouldIncludeTimestamp === true) {
     nameFile = `Quince_Results_${projectName}_${timeStamp}`;
@@ -95,10 +190,10 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
     let postsortText: any[] = [];
     let surveyText: any[] = [];
     if (showSurvey) {
-      surveyText = wordSurvey(data, surveyQuestionsArray);
+      surveyText = wordSurvey(data, surveyQuestionsArray, surveyLangObj);
     }
     if (showPostsort) {
-      postsortText = wordPostsort(data, currentStatements);
+      postsortText = wordPostsort(data, currentStatements, postsortLangObj);
     }
 
     let sortsText = wordSorts(
@@ -107,10 +202,11 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
       statementNumArray,
       respondentArray,
       newHeaderArray,
-      mapInputQsortPattern
+      mapInputQsortPattern,
+      qSortLangObj
     );
-    let presortText = wordPresort(data);
-    let timeText: any[] = wordTime(data);
+    let presortText = wordPresort(data, presortLangObj);
+    let timeText: any[] = wordTime(data, timeLangObj);
     let childArray1 = wordId(
       data,
       timeText,
@@ -121,33 +217,34 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
       displayPartId,
       numStatements,
       showSurvey,
-      showPostsort
+      showPostsort,
+      idLangObj,
     );
 
     let statementsArray = wordPartStatements(data, newHeaderArray, currentStatements, [
       ...(props.partNames ?? []),
-    ]);
+    ], partStatementsLangObj);
 
     let statementsAnalysisArray = wordStatementAnalysis(
       data,
-      // newHeaderArray,
       currentStatements,
-      qSortHeaderNumbers
-      // [...(props.partNames ?? [])]
+      qSortHeaderNumbers,
+      statementAnalysisLangObj,
     );
 
     let summaryArray = wordSurveySummary(
       data,
       surveyQuestionsArray,
       [...(props.partNames ?? [])],
-      showSurvey
+      showSurvey,
+      surveySummaryLangObj,
     );
 
     let closingMessage = [
       new Paragraph({
         children: [
           new TextRun({
-            text: `*** End Report ***`,
+            text: `*** ${t("endOfReport")} ***`,
             bold: false,
             size: 28,
           }),
@@ -171,7 +268,7 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
             type: "png",
           }),
           new TextRun({
-            text: ` Quince - Q Sort Results`,
+            text: ` Quince - ${t("qSortResults")}`,
             bold: true,
             size: 72,
           }),

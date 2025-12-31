@@ -305,12 +305,12 @@ const createQuestionStats = (
 /**
  * Creates header paragraphs for the summary
  */
-const createHeaderParagraphs = (item: SurveyItem, index: number, text: string): Paragraph[] => {
+const createHeaderParagraphs = (item: SurveyItem, index: number, text: string, itemText: string): Paragraph[] => {
   return [
     new Paragraph({
       children: [
         new TextRun({
-          text: `Item ${index + 1}. ${safeStripHtml(text)}`,
+          text: `${itemText} ${index + 1}. ${safeStripHtml(text)}`,
           bold: false,
           size: 28,
         }),
@@ -458,6 +458,7 @@ const processRating10Summary = (
   item: SurveyItem,
   index: number,
   text: string,
+  itemText: string,
   responseDelimiter: string = ","
 ): Paragraph[] => {
   try {
@@ -503,7 +504,7 @@ const processRating10Summary = (
     });
 
     // Generate document paragraphs
-    const headerParagraphs = createHeaderParagraphs(item, index, text);
+    const headerParagraphs = createHeaderParagraphs(item, index, text, itemText);
     const questionParagraphs = createQuestionParagraphs(questionStats);
 
     return [...headerParagraphs, ...questionParagraphs];
