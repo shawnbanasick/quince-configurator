@@ -8,15 +8,27 @@ import qrCodeEnglish from "../../assets/images/qr-code-english.png";
 import qrCodeJapanese from "../../assets/images/qr-code-japanese.png";
 import { useTranslation } from "react-i18next";
 import ReactHTMLParser from "html-react-parser";
+import { useStore } from "../../GlobalState/useStore";
+
+interface GlobalState {
+  version: string;
+}
+
+const getVersion = (state: GlobalState) => state.version;
 
 const Start = () => {
   const { t } = useTranslation();
+  const version = useStore(getVersion);
+  const frontPageVersion = version.replace("Quince ", "");
 
   return (
     <div className="flex flex-col items-center justify-center  w-[100%] bg-[#f5f5f5]  text-gray-900">
       <HeroImage className="w-[70vw]" />
+      <div className="mt-8 w-9/12 align-self-center items-center justify-center text-center font-semibold text-3xl">
+        {"Version: " + frontPageVersion}
+      </div>
       {/* WHAT IS IT? */}
-      <div className="mt-8 w-9/12 align-self-center font-semibold text-3xl">
+      <div className="mt-8 w-9/12 align-self-center items-center justify-center font-semibold text-3xl">
         {ReactHTMLParser(t("what0"))}
       </div>
       <div className="mt-2 w-9/12 align-self-center text-base">{ReactHTMLParser(t("what1"))} </div>
@@ -147,12 +159,26 @@ const Start = () => {
       </div>
       <div className="mt-10 w-9/12 align-self-center font-semibold text-3xl mb-2">Citations</div>
       <div className="w-7/12 text-2xl -indent-6 pl-6">
-        Shawn Banasick, and Stephen Jeffares. “Quince V1.0.5”. Zenodo, October 25, 2025.
-        https://doi.org/10.5281/zenodo.17438715.
+        {`Shawn Banasick, and Stephen Jeffares. “Quince V${frontPageVersion}”. Zenodo, October 25, 2025. `}
+        <a
+          className="text-blue-600 underline underline-offset-2 decoration-4 decoration-blue-300 hover:decoration-blue-400"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://doi.org/10.5281/zenodo.17438715"
+        >
+          https://doi.org/10.5281/zenodo.17438715.
+        </a>
       </div>
       <div className="mt-8 w-7/12 text-2xl -indent-6 pl-6">
-        Shawn Banasick. “Quince Configurator V1.0.5”. Zenodo, October 25, 2025.
-        https://doi.org/10.5281/zenodo.17438863.
+        {`Shawn Banasick. “Quince Configurator V${frontPageVersion}”. Zenodo, October 25, 2025. `}
+        <a
+          className="text-blue-600 underline underline-offset-2 decoration-4 decoration-blue-300 hover:decoration-blue-400"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://doi.org/10.5281/zenodo.17438863"
+        >
+          https://doi.org/10.5281/zenodo.17438863.
+        </a>
       </div>
 
       {/* HOW DOES IT WORK? */}

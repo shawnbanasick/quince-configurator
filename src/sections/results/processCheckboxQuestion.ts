@@ -14,14 +14,17 @@ const processCheckboxQuestion = (entry, question, index, indentValue, surveyLang
     entry2[1] = surveyLangObj.noResponse;
   }
 
-  let respondentResponse2: any = [];
+  let respondentResponse2Array: any = [];
   let response1 = stripHtml(stripTags(entry));
   let response3 = response1.split(":");
   let response2;
   let response4;
   let response5;
   let response6: any = [];
+
+  let addOtherText = false;
   if (response3[1].includes("-")) {
+    addOtherText = true;
     let dashIndex = response3[1].indexOf("-");
     response2 = response3[1].slice(0, dashIndex);
 
@@ -31,21 +34,22 @@ const processCheckboxQuestion = (entry, question, index, indentValue, surveyLang
     if (response5.length > 1) {
       response6 = response5.map((item) => {
         return parseInt(item);
-      });
+      });  // [3,4]
     } else {
       response6.push(response5[0]);
     }
   } else {
-    response6.push(response3[1].trim());
+    response6.push(parseInt(response3[1].trim()));
   }
 
   let value1;
+  // convert numbers to options strings
   response6.forEach((value) => {
     value1 = options[value - 1];
-    respondentResponse2.push(value1);
+    respondentResponse2Array.push(value1);
   });
 
-  let respondentResponse = respondentResponse2.join(", ");
+  let respondentResponse = respondentResponse2Array.join(", ");  // [active learning, other]
 
   if (response3[1].includes("-")) {
     respondentResponse = respondentResponse + " - " + response4;
@@ -102,7 +106,7 @@ const processCheckboxQuestion = (entry, question, index, indentValue, surveyLang
     new Paragraph({
       children: [
         new TextRun({
-          text: `${surveyLangObj.response}: ${stripHtml(stripTags(entry2[1]))} - `,
+          text: addOtherText ? `${surveyLangObj.response}: ` : `${surveyLangObj.response}: ${stripHtml(stripTags(entry2[1]))} - `,
           bold: false,
         }),
         new TextRun({

@@ -17,9 +17,8 @@ import { setLanguageSection_EN } from "./setLanguageSection_EN.js";
 import { Results } from "../sections/results/Results.js";
 import Button from "../sections/utils/Button";
 import { useStore } from "../globalState/useStore.js";
-import UkFlag from "../assets/images/UkFlag.svg?react";
-import JapanFlag from "../assets/images/JapanFlag.svg?react";
 import { ErrorBoundary, FallbackProps } from "react-error-boundary";
+import getLangAbbreviation from "./getLangAbbreviation.js";
 
 // const languages = ["en", "ru", "tm", "ja", "ko", "zh", "es", "fr", "de"];
 const languages = ["en", "ja"];
@@ -52,7 +51,7 @@ export const MainPage = () => {
     }
   };
 
-  const flagArray = [<UkFlag className="w-[25px]" />, <JapanFlag className="w-[25px]" />];
+  // const flagArray = [<UkFlag className="w-[25px]" />, <JapanFlag className="w-[25px]" />];
 
   if (currentLanguage === "ja") {
     setLanguageSection_JA(currentLanguage);
@@ -136,7 +135,7 @@ export const MainPage = () => {
                 <div id="selectLanguageDiv" className="">
                   <div>{t("selectLanguage")}</div>
                   <div className="flex flex-row space-x-2">
-                    {languages.map((lng, index) => {
+                    {languages.map((lng) => {
                       return (
                         <button
                           onClick={() => onChangeLanguage(lng)}
@@ -150,8 +149,7 @@ export const MainPage = () => {
                           )}
                         >
                           <div className="flex flex-row gap-2 justify-center">
-                            {lng.toUpperCase()}
-                            {flagArray[index]}
+                            {getLangAbbreviation(lng)}
                           </div>
                         </button>
                       );

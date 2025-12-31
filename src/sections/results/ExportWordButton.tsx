@@ -36,6 +36,7 @@ interface GlobalState {
   showPostsort: boolean;
   qSortHeaderNumbers: number[];
   qSortPatternObject: {};
+  version: string;
 }
 interface ExportWordButtonProps {
   userData?: any; // Replace `any` with a concrete type
@@ -49,6 +50,7 @@ const getSurveyQuestionsArray = (state: GlobalState) => state.surveyQuestionsArr
 const getShowSurvey = (state: GlobalState) => state.showSurvey;
 const getShowPostsort = (state: GlobalState) => state.showPostsort;
 const getQSortPatternObject = (state: GlobalState) => state.qSortPatternObject;
+const getVersion = (state: GlobalState) => state.version;
 
 const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
   const currentStatements = useStore(getCurrentStatements);
@@ -58,6 +60,7 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
   const showPostsort = useStore(getShowPostsort);
   const qSortPatternObject = useStore(getQSortPatternObject);
   const qSortHeaderNumbers = Object.keys(qSortPatternObject);
+  const version = useStore(getVersion);
   const { t } = useTranslation();
 
   let shouldIncludeTimestamp = true;
@@ -81,7 +84,7 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
   const statementNumArray = createStatementNumArray(numStatements);
   const respondentArray = createRespondentArray(data);
   const dateTime = getCurrentDateTime();
-  let version = "1.0.6";
+
 
   //**
   //  LANGUAGE OBJECTS
