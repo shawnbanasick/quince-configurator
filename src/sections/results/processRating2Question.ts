@@ -70,10 +70,11 @@ const processRating2Question = (entry, question, index, indentValue, surveyLangO
   ];
 
   options.forEach((item, index) => {
-    let text;
+    // let text;
     let newIndex;
     if (entry5[0].trim() === "no response") {
-      text = surveyLangObj.noResponse;
+      // text = surveyLangObj.noResponse;
+      console.log("check no response");
     } else {
       let newIndex2 = entry5[index];  // 1,2,nr
       let newIndex3 = newIndex2.trim();
