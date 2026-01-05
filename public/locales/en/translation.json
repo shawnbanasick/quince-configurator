@@ -357,11 +357,11 @@
   "languageIntroText18": "Combined example - a Welcome Page",
   "languageIntroText18b": "See the default text below for more HTML examples",
   "customizations": "<b>Customizations: </b>",
-  "languageIntroText19": "<mark>Highlighted options</mark> must be customized for your project. By default only the sections of the user interface with these highlighted options are shown. However, <b>any</b> part of the user interface language change be changed. Click on the '<b>All Settings</b>' button above to see all of the options.",
+  "languageIntroText19": "<mark>Highlighted options</mark> must be customized for your project. By default, only the sections of the user interface with these highlighted options are shown. However, <mark><b>all text</b></mark> in the user interface can be customized. Click the <mark>'<b>All Settings</b>'</mark> button above to see all available input options below.",
   "saveData": "Save Data",
   "languageIntroText20": "When you have finished adding your language data, click the orange '<b>Download language.xml File</b>' button below, save the file to the settings folder, and replace the default file.",
-  "uploadLanguageXml": "Upload an existing language XML file to customize your text configuration",
-  "downloadLanguageXml": "Clicking the button will automatically save the file to your browser's download folder. After saving the file you <b>must copy and paste the file into the 'settings' folder</b> of the Quince Template files and <b>replace</b> the default 'language.xml' file.",
+  "uploadLanguageXml": "Upload an existing language.xml file to make changes and customize your project's user interface",
+  "downloadLanguageXml": "Clicking the button will automatically save the file to your browser's download folder. After saving the file you <b>must copy and paste the file into your project's 'settings' folder</b> of the Quince Template files and <b>replace</b> the default 'language.xml' file.",
   "useDefaults": "Use Defaults",
   "clearSection": "Clear Section",
   "images": "Images",
@@ -710,7 +710,6 @@
   "desktop": "Desktop",
   "mobile": "Mobile",
   
-
   "*** EXPORT RESULTS. ***": "*** EXPORT RESULTS ***",
   "exportStep1": "Log into your Baserow account. Then, navigate to the table you want to export by clicking on the database names on the left side of the page. Hover your mouse over the table name and click on the three vertical dots that are displayed.",
   "exportStep2": "Next, click on 'Export Table'.",

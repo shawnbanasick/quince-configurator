@@ -1,4 +1,4 @@
-import { useStore } from "../globalState/useStore.js";
+import { useStore } from "../GlobalState/useStore.js";
 
 const setLanguageSection_EN = (language) => {
   if (!language) {
@@ -37,8 +37,7 @@ const setLanguageSection_EN = (language) => {
     accessCodeWarning: `Access code invalid`,
     loginSubmitButtonText: `Submit`,
     landingHead: `University Research Project`,
-    welcomeText: `<h2>Quince Demo Project - iPad Use in the Classroom.</h2><br/><br/><p>Thank you for helping with this research project</p><br/><br/><br/>
-    <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
+    welcomeText: `<h2>Quince Demo Project - iPad Use in the Classroom.</h2><br/><br/><p>Thank you for helping with this research project</p><br/><br/><br/> <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
     landingHelpModalHead: `Welcome!`,
     landingHelpModalText: `Thank you for participating in this University Research Project. Please click the "<b>Continue</b>" button at the bottom right side of the screen to go to the next step.`,
     btnNextLanding: `Continue`,
@@ -173,10 +172,8 @@ const setLanguageSection_EN = (language) => {
     copiedText: "Copied!",
     downloadResultsButtonText: "Download Results",
     copyFailMessage: "Error: Please try again.",
-    defaultEmailClientFail:
-      "Your default email client should have automatically opened with the results in the email body. If it didn't, please use the buttons below to copy and paste your information into an email.",
-    emailBodyMessage:
-      "You don't have to add anything to this email. Please just click the SEND button.",
+    defaultEmailClientFail:"Your default email client should have automatically opened with the results in the email body. If it didn't, please use the buttons below to copy and paste your information into an email.",
+    emailBodyMessage:"You don't have to add anything to this email. Please just click the SEND button.",
     linkingFallbackMessage: "Please click the button to begin the next Q sort",
     linkingBtnText: "Begin Next Q sort",
     localHeader: "Offline Q-sort Control Panel",
@@ -186,14 +183,12 @@ const setLanguageSection_EN = (language) => {
     localDeleteButtonText: "Delete",
     localDownloadButtonText: "Save Q-sort Data to Disk",
     storedQsortsHeaderText: "Stored Q-sorts",
-    localDeleteModalText:
-      "This will delete the participant Q-sort data that is currently stored in the browser. You would usually only do this when you are starting a new project.<br/><br/><b>CAUTION - Deleted data cannot be recovered.</b> <br/><br/> <center></center>",
+    localDeleteModalText:"This will delete the participant Q-sort data that is currently stored in the browser. You would usually only do this when you are starting a new project.<br/><br/><b>CAUTION - Deleted data cannot be recovered.</b> <br/><br/> <center></center>",
     localDeleteModalHead: "Delete Data Stored in Browser?",
     localParticipantsText: "Participants",
     localSaveDataButton: "Save Participant Data to Browser Memory",
     localSubmitSuccessModalHeader: "Success",
-    localSubmitSuccessModalText:
-      "Participant Q sort data have been successfully saved to browser memory",
+    localSubmitSuccessModalText:"Participant Q sort data have been successfully saved to browser memory",
     localSaveBeforeDeleteModalHeader: "Delete Disabled",
     localSaveBeforeDeleteModalText: "Save Q sort Data to Disk before deleting.",
     returnToLocalPanelButtonText: "Return to Control Panel",
