@@ -1,32 +1,21 @@
 import encodeHTML from "../utils/encodeHTML.ts";
 import { useStore } from "../../globalState/useStore";
 
-// fix: logo,
-
 const generateConfigXml = () => {
   const initialScreen = useStore.getState().initialScreen;
   let studyTitle = useStore.getState().studyTitle;
   const version = useStore.getState().version;
-  // const setupTarget = useStore.getState().setupTarget;
   const imageFormat = useStore.getState().imageFormat;
   const emailAddress = useStore.getState().emailAddress;
-  // const emailSubjectLine = useStore.getState().emailSubjectLine;
   const linkToSecondProject = useStore.getState().linkToSecondProject;
   const secondProjectUrl = useStore.getState().secondProjectUrl;
-  // const useImages = useStore.getState().useImages;
-  // const numImages = useStore.getState().numImages;
-  // const imageFileType = useStore.getState().imageFileType;
   const shuffleCards = useStore.getState().shuffleCards;
   const headerBarColor = useStore.getState().headerBarColor;
   const showConsentPage = useStore.getState().showConsentPage;
   const showConsentPageHelpModal = useStore.getState().showConsentPageHelpModal;
   const accessCode = useStore.getState().accessCode;
-  // const greenCardColor = useStore.getState().greenCardColor;
-  // const yellowCardColor = useStore.getState().yellowCardColor;
-  // const pinkCardColor = useStore.getState().pinkCardColor;
   const defaultFontColor = useStore.getState().defaultFontColor;
   const condOfInstFontSize = useStore.getState().condOfInstFontSize;
-  // const allowUnforcedSorts = useStore.getState().allowUnforcedSorts;
   const warnOverloadedColumn = useStore.getState().warnOverloadedColumn;
   const minCardHeightSort = useStore.getState().minCardHeightSort;
   const defaultFontSizeSort = useStore.getState().defaultFontSizeSort;
@@ -42,22 +31,8 @@ const generateConfigXml = () => {
   const defaultFontSizePresort = useStore.getState().defaultFontSizePresort;
   const baserowToken = useStore.getState().baserowToken;
   const baserowDatabaseIdNumber = useStore.getState().baserowDatabaseIdNumber;
-  //   const defaultFontSize = useStore.getState().defaultFontSize;
-  //   const presortMinCardHeight = useStore.getState().presortMinCardHeight;
 
-  //   let defaultLogo = appState.configLogoHtml;
-  //   defaultLogo = defaultLogo.replace(/\s/g, "");
-
-  //   if (
-  //     defaultLogo === null ||
-  //     defaultLogo === undefined ||
-  //     defaultLogo.length === 0
-  //   ) {
-  //     defaultLogo = "EQ_default.svg";
-  //     appState.configLogoHtml = "EQ_default.svg";
-  //   }
-
-  // SAVE FOR LATER RESTORATION
+    // SAVE FOR LATER RESTORATION
   //  <item id="allowUnforcedSorts">${allowUnforcedSorts}</item>
   //  <item id="warnOverloadedColumn">${warnOverloadedColumn}</item>
 
@@ -186,6 +161,8 @@ const generateConfigXml = () => {
   if (showSurvey === true || showSurvey === "true") {
     const open = `   <item id="survey">\n`;
     const close = `   </item>\n\n`;
+
+    console.log(JSON.stringify(surveyQuestionsArray, null, 2));
 
     for (let i = 0; i < surveyQuestionsArray.length; i += 1) {
       let item;

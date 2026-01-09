@@ -192,7 +192,15 @@ const setLanguageSection_ES = (language) => {
     localSaveBeforeDeleteModalHeader: "Eliminación Deshabilitada",
     localSaveBeforeDeleteModalText: "Guarde los Datos de Clasificación Q en el Disco antes de eliminar.",
     returnToLocalPanelButtonText: "Volver al Panel de Control",
-});
+    emailSubjectText: `Resultados de Quince Q-sort`,
+    submitFailMessage:
+      "No se puede conectar a la base de datos.<br/><br/>Haga clic en el botón para abrir su cliente de correo electrónico predeterminado y enviar un correo con los datos al equipo de investigación.",
+    checkInternetMessage:
+      "*** Error - Fallo en la transmisión ***<br/><br/>Por favor, verifique su conexión a internet y haga clic nuevamente en el botón 'Enviar datos'.",
+   press1: "(presionar 1)",
+   press2: "(presionar 2)",
+   press3: "(presionar 3)",
+    });
   return;
 };
 

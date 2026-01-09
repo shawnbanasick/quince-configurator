@@ -191,8 +191,16 @@ const setLanguageSection_PT = (language) => {
     localSubmitSuccessModalText: "Os dados da ordenação Q do participante foram salvos com sucesso na memória do navegador",
     localSaveBeforeDeleteModalHeader: "Exclusão Desabilitada",
     localSaveBeforeDeleteModalText: "Salve os Dados da Ordenação Q em Disco antes de excluir.",
-    returnToLocalPanelButtonText: "Retornar ao Painel de Controle"
-  });
+    returnToLocalPanelButtonText: "Retornar ao Painel de Controle",
+    emailSubjectText: `Resultados do Quince Q-sort`,
+    submitFailMessage:
+      "Não foi possível conectar ao banco de dados.<br/><br/>Clique no botão para abrir seu cliente de e-mail padrão e enviar um e-mail contendo os dados para a equipe de pesquisa.",
+    checkInternetMessage:
+      "*** Erro - Falha na transmissão ***<br/><br/>Por favor, verifique sua conexão com a internet e clique novamente no botão 'Enviar dados'.",
+    press1: "(pressionar 1)",
+    press2: "(pressionar 2)",
+    press3: "(pressionar 3)",
+    });
   return;
 };
 

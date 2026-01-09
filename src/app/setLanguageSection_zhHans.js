@@ -192,7 +192,15 @@ const setLanguageSection_zhHans = (language) => {
     localSaveBeforeDeleteModalHeader: "删除禁用",
     localSaveBeforeDeleteModalText: "在删除之前，请将Q排序数据保存到磁盘。",
     returnToLocalPanelButtonText: "返回控制面板",
-  });
+    emailSubjectText: `Quince Q-sort 结果`,
+    submitFailMessage:
+      "无法连接到数据库。<br/><br/>请点击按钮打开您的默认邮件客户端，并向研究团队发送包含数据的电子邮件。",
+    checkInternetMessage:
+      "*** 错误 - 传输失败 ***<br/><br/>请检查您的网络连接，然后再次点击'提交数据'按钮。",
+    press1: "按 1",
+    press2: "按 2",
+    press3: "按 3", 
+    });
   return;
 };
 

@@ -192,6 +192,14 @@ const setLanguageSection_EN = (language) => {
     localSaveBeforeDeleteModalHeader: "Delete Disabled",
     localSaveBeforeDeleteModalText: "Save Q sort Data to Disk before deleting.",
     returnToLocalPanelButtonText: "Return to Control Panel",
+    emailSubjectText: `Quince Q-sort results`,
+    submitFailMessage:
+      "Unable to connect to the database.<br/><br/>Click the button to open your default email client and send an email containing the data to the research team.",
+    checkInternetMessage:
+      "*** Error - Transmission Failure ***<br/><br/>Please check your internet connection and click the 'Submit Data' button again.",
+    press1: "(press 1)",
+    press2: "(press 2)",
+    press3: "(press 3)",
   });
   return;
 };

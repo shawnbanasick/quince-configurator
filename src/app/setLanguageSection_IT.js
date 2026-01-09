@@ -192,7 +192,15 @@ const setLanguageSection_IT = (language) => {
     localSaveBeforeDeleteModalHeader: "Eliminazione Disabilitata",
     localSaveBeforeDeleteModalText: "Salva i Dati Q sort su Disco prima di eliminarli.",
     returnToLocalPanelButtonText: "Torna al Pannello di Controllo",
-  });
+    emailSubjectText: `Risultati di Quince Q-sort`,
+    submitFailMessage:
+      "Impossibile connettersi al database.<br/><br/>Fare clic sul pulsante per aprire il client di posta elettronica predefinito e inviare un'email contenente i dati al team di ricerca.",
+    checkInternetMessage:
+      "*** Errore - Trasmissione fallita ***<br/><br/>Si prega di controllare la connessione internet e fare clic nuovamente sul pulsante 'Invia dati'.",
+    press1: "(premere 1)",
+    press2: "(premere 2)",
+    press3: "(premere 3)",
+    });
   return;
 };
 

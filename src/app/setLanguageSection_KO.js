@@ -192,8 +192,16 @@ localSubmitSuccessModalText:"참여자 Q 분류 데이터가 브라우저 메모
 localSaveBeforeDeleteModalHeader: "삭제 비활성화",
 localSaveBeforeDeleteModalText: "삭제하기 전에 Q 분류 데이터를 디스크에 저장하세요.",
 returnToLocalPanelButtonText: "제어판으로 돌아가기",
-  });
-  return;
+emailSubjectText: `Quince Q-sort 결과`,
+submitFailMessage:
+  "데이터베이스에 연결할 수 없습니다.<br/><br/>버튼을 클릭하여 기본 이메일 클라이언트를 열고 연구팀에 데이터가 포함된 이메일을 보내주세요.",
+checkInternetMessage:
+  "*** 오류 - 전송 실패 ***<br/><br/>인터넷 연결을 확인하시고 '데이터 제출' 버튼을 다시 클릭해주세요.",
+press1: "(1번 누르기)",
+press2: "(2번 누르기)",
+press3: "(3번 누르기)",
+});
+return;
 };
 
 export { setLanguageSection_KO };

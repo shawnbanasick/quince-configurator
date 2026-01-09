@@ -205,6 +205,9 @@ const setLanguageSection_JA = (language) => {
     emailSubjectText: `QuinceのQソート結果`,
     emailBodyMessage:
       "このメールに何も追加する必要はありません。「送信」ボタンをクリックしてください。",
+   press1: "1を押す",
+   press2: "2を押す",
+   press3: "3を押す",
   });
   return;
 };

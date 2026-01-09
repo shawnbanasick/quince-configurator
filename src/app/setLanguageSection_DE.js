@@ -191,7 +191,15 @@ const setLanguageSection_DE = (language) => {
   localSubmitSuccessModalText: "Die Q-Sort-Daten der Teilnehmer wurden erfolgreich im Browser-Speicher gesichert",
   localSaveBeforeDeleteModalHeader: "Löschen deaktiviert",
   localSaveBeforeDeleteModalText: "Speichern Sie Q-Sort-Daten auf der Festplatte, bevor Sie löschen.",
-  returnToLocalPanelButtonText: "Zum Kontrollfeld zurückkehren"
+  returnToLocalPanelButtonText: "Zum Kontrollfeld zurückkehren",
+  emailSubjectText: `Quince Q-sort Ergebnisse`,
+submitFailMessage:
+  "Verbindung zur Datenbank nicht möglich.<br/><br/>Klicken Sie auf die Schaltfläche, um Ihr Standard-E-Mail-Programm zu öffnen und eine E-Mail mit den Daten an das Forschungsteam zu senden.",
+checkInternetMessage:
+  "*** Fehler - Übertragung fehlgeschlagen ***<br/><br/>Bitte überprüfen Sie Ihre Internetverbindung und klicken Sie erneut auf die Schaltfläche 'Daten übermitteln'.",
+press1: "(1 drücken)",
+press2: "(2 drücken)",
+press3: "(3 drücken)",
 });
   return;
 };

@@ -192,6 +192,14 @@ const setLanguageSection_FR = (language) => {
     localSaveBeforeDeleteModalHeader: "Suppression désactivée",
     localSaveBeforeDeleteModalText: "Enregistrez les données du tri Q sur le disque avant de les supprimer.",
     returnToLocalPanelButtonText: "Retourner au panneau de contrôle",
+    emailSubjectText: `Résultats de Quince Q-sort`,
+    submitFailMessage:
+      "Impossible de se connecter à la base de données.<br/><br/>Cliquez sur le bouton pour ouvrir votre client de messagerie par défaut et envoyer un e-mail contenant les données à l'équipe de recherche.",
+    checkInternetMessage:
+      "*** Erreur - Échec de transmission ***<br/><br/>Veuillez vérifier votre connexion internet et cliquer à nouveau sur le bouton 'Soumettre les données'.",
+      press1: "(appuyer 1)",
+      press2: "(appuyer 2)",
+      press3: "(appuyer 3)",
     });
   return;
 };

@@ -196,7 +196,15 @@ const setLanguageSection_zhHant = (language) => {
     localSaveBeforeDeleteModalHeader: "刪除已停用",
     localSaveBeforeDeleteModalText: "刪除前請先將Q排序資料儲存至磁碟。",
     returnToLocalPanelButtonText: "返回控制面板",
-  });
+    emailSubjectText: `Quince Q-sort 結果`,
+    submitFailMessage:
+      "無法連接到資料庫。<br/><br/>請點擊按鈕開啟您的預設郵件客戶端，並向研究團隊發送包含資料的電子郵件。",
+    checkInternetMessage:
+      "*** 錯誤 - 傳輸失敗 ***<br/><br/>請檢查您的網路連線，然後再次點擊「提交資料」按鈕。",
+    press1: "按 1",
+    press2: "按 2",
+    press3: "按 3",    
+    });
   return;
 };
 

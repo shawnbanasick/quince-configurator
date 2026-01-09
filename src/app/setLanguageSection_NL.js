@@ -191,7 +191,15 @@ const setLanguageSection_NL = (language) => {
       localSubmitSuccessModalText: "Q-sorteringsgegevens van deelnemer zijn succesvol opgeslagen in browsergeheugen",
       localSaveBeforeDeleteModalHeader: "Verwijderen uitgeschakeld",
       localSaveBeforeDeleteModalText: "Sla Q-sorteringsgegevens op naar schijf voordat u ze verwijdert.",
-      returnToLocalPanelButtonText: "Keer terug naar configuratiescherm"
+      returnToLocalPanelButtonText: "Keer terug naar configuratiescherm",
+      emailSubjectText: `Quince Q-sort resultaten`,
+      submitFailMessage:
+        "Kan geen verbinding maken met de database.<br/><br/>Klik op de knop om uw standaard e-mailprogramma te openen en een e-mail met de gegevens naar het onderzoeksteam te sturen.",
+      checkInternetMessage:
+        "*** Fout - Verzending mislukt ***<br/><br/>Controleer uw internetverbinding en klik opnieuw op de knop 'Gegevens verzenden'.",
+      press1: "(druk 1)",
+      press2: "(druk 2)",
+      press3: "(druk 3)",
     });
   return;
 };
