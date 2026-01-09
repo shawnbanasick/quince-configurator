@@ -429,9 +429,9 @@ const Map: React.FC = () => {
     }
 
     if (numMissingHeaders > 0)
-      return { status: "error", message: `Missing ${numMissingHeaders} labels` };
-    if (numMissingHeaders === 0) return { status: "success", message: "Labels match perfectly" };
-    return { status: "error", message: `Excess labels: ${Math.abs(numMissingHeaders)}` };
+      return { status: "error", message: `${t("missingLabels")}: ${numMissingHeaders}` };
+    if (numMissingHeaders === 0) return { status: "success", message: t("labelsMatch") };
+    return { status: "error", message: `${t("excessLabels")}: ${Math.abs(numMissingHeaders)}` };
   };
 
   const headerStatus = getHeaderStatus();
