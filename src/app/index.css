@@ -76,3 +76,24 @@ h6 {
 .react-tabs__tab:focus:after {
   content: none;
 }
+
+.react-tabs__tab {
+  text-align: center;
+ font-size: 14px;
+ padding: 4;
+
+  /* Add any other styling like padding, margin, etc. */
+}
+
+/* Optional: To make tabs fill the container width proportionately */
+.react-tabs__tab-list {
+  
+  /* display: flex; */
+  /* justify-content: space-evenly; /* Distributes space evenly */
+  /*dth: 100%; */
+}
+
+/* Optional: Styles for the selected tab if needed */
+.react-tabs__tab--selected {
+  /* Add specific styles for the active tab */
+}

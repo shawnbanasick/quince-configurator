@@ -368,7 +368,7 @@ const Map: React.FC = () => {
           {component || (
             <button
               onClick={onClick}
-              className={`flex flex-row gap-3 min-w-[500px] items-center font-semibold justify-center cursor-pointer bg-orange-300 hover:opacity-50 border border-gray-600 rounded-md p-2`}
+              className={`flex flex-row gap-3 w-[400px] items-center font-semibold justify-center cursor-pointer bg-orange-300 hover:opacity-50 border border-gray-600 rounded-md p-2`}
             >
               {children}
             </button>

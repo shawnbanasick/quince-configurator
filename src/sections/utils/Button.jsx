@@ -2,11 +2,7 @@ import React from "react";
 
 const Button = ({ label, onClick, styleClass, id }) => {
   return (
-    <button
-      onClick={onClick}
-      id={id}
-      className={`px-4 py-2 rounded-lg text-white  ml-4 ${styleClass}`}
-    >
+    <button onClick={onClick} id={id} className={`px-4 py-2 rounded-lg  ml-4 ${styleClass}`}>
       {label}
     </button>
   );

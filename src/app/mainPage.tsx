@@ -96,7 +96,7 @@ export const MainPage = () => {
     setLanguageSection_NL(currentLanguage);
     setLanguageDefaults("nl");
   }
-if (currentLanguage === "de") {
+  if (currentLanguage === "de") {
     setLanguageSection_DE(currentLanguage);
     setLanguageDefaults("de");
   }
@@ -202,7 +202,7 @@ if (currentLanguage === "de") {
                   <div className="flex flex-row justify-self-center">
                     <Button
                       id="beginner"
-                      styleClass={`bg-blue-500 hover:bg-blue-700 ${
+                      styleClass={`bg-blue-500 text-white hover:bg-blue-700 ${
                         showDescriptionBeginner ? "bg-opacity-100" : "bg-opacity-50"
                       }`}
                       label={t("novice")}
@@ -211,7 +211,7 @@ if (currentLanguage === "de") {
                     <Button
                       id="pro"
                       label={t("expert")}
-                      styleClass={`bg-[#3b82f6]  hover:bg-blue-700 ${
+                      styleClass={`bg-[#3b82f6] text-white hover:bg-blue-700 ${
                         showDescriptionPro ? "bg-opacity-100" : "bg-opacity-50"
                       }`}
                       onClick={setMode}

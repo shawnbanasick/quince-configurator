@@ -21,7 +21,7 @@ const DownloadConfigXml: React.FC = () => {
   return (
     <div className="flex items-center justify-center mt-2">
       <button
-        className="flex flex-row gap-3 min-w-[500px] items-center justify-center cursor-pointer bg-orange-300 hover:opacity-50 border border-gray-600 rounded-md p-2"
+        className="flex flex-row gap-3 w-[400px] items-center justify-center cursor-pointer bg-orange-300 hover:opacity-50 border border-gray-600 rounded-md p-2"
         id="downloadXml"
         onClick={handleFileDownload}
       >

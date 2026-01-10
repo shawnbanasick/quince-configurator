@@ -54,16 +54,16 @@ const Statements: React.FC = () => {
     component?: React.ReactNode;
     variant?: "primary" | "secondary";
   }> = ({ children, description, onClick, component }) => (
-    <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-all duration-300">
-      <div className="flex flex-col items-center justify-center text-center">
+  <div className="flex justify-center items-center bg-white rounded-2xl shadow-lg border border-gray-200 p-4 hover:shadow-xl transition-all duration-300">
+      <div className="flex flex-col w-[100%] items-center justify-center text-center space-y-4">
         <div>
-          <div className="text-sm text-gray-600 mb-4 min-h-[60px]">{description}</div>
+          <div className="text-sm w-[400px] min-h-[60px] text-gray-600 mb-4">{description}</div>
         </div>
         <div className="flex justify-center items-center w-[100%]">
           {component || (
             <button
               onClick={onClick}
-              className="flex flex-row gap-3 min-w-[500px] items-center justify-center cursor-pointer bg-orange-300 hover:opacity-50 border border-gray-600 rounded-md p-2"
+              className="flex flex-row gap-3 w-[400px] items-center justify-center cursor-pointer bg-orange-300 hover:opacity-50 border border-gray-600 rounded-md p-2"
             >
               {children}
             </button>
@@ -165,7 +165,7 @@ const Statements: React.FC = () => {
         ) : null}
 
         {/* Action Buttons Section */}
-        <div className="flex flex-row gap-8 mb-12">
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
           <ActionButton
             icon={
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">

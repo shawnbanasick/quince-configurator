@@ -94,7 +94,7 @@ const UploadAndReadXmlMap: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center">
       <label
-        className="flex flex-row gap-3 min-w-[500px] items-center font-semibold justify-center cursor-pointer bg-orange-300 hover:opacity-50 border border-gray-600 rounded-md p-2"
+        className="flex flex-row gap-3 w-[400px] items-center font-semibold justify-center cursor-pointer bg-orange-300 hover:opacity-50 border border-gray-600 rounded-md p-2 mt-5"
         htmlFor="uploadXml"
       >
         <svg className="max-w-[30px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">

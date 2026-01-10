@@ -64,7 +64,7 @@ const UploadAndReadLanguageXml = () => {
         ref={fileInputRef}
       />
       <button
-        className="flex flex-row gap-2 justify-center items-center w-[100%] px-6 p-2 bg-orange-300 text-black font-semibold rounded-md hover:bg-orange-500 focus:outline-none focus:ring-2 border border-gray-900 focus:ring-orange-400 focus:ring-opacity-75 text-center min-h-[40px] select-none"
+        className="flex flex-row gap-3 w-[400px] items-center font-semibold justify-center cursor-pointer bg-orange-300 hover:opacity-50 border border-gray-600 rounded-md p-2 mt-5"
         onClick={handleFileUpload}
       >
         <svg className="max-w-[30px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">

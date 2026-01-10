@@ -53,31 +53,6 @@ const LanguageHeader: React.FC = () => {
 
   return (
     <>
-      <div
-        id="displayModeDiv"
-        className="flex flex-col items-center justify-self-end font-semibold w-[35%]"
-      >
-        <div className="text-right">{t("settingsViewOptions")}</div>
-        <div className="flex flex-row justify-end">
-          <Button
-            id="essentialOptions"
-            styleClass={`w-[200px] bg-blue-500 hover:bg-blue-700 ${
-              languageDisplayEssential ? "bg-opacity-100" : "bg-opacity-50"
-            }`}
-            label={t("essentialOptions")}
-            onClick={setMode}
-          />
-          <Button
-            id="allOptions"
-            label={t("allOptions")}
-            styleClass={`bg-[#3b82f6] w-[200px] hover:bg-blue-700 ${
-              languageDisplayAll ? "bg-opacity-100" : "bg-opacity-50"
-            }`}
-            onClick={setMode}
-          />
-        </div>
-      </div>
-
       <div className="py-8 bg-[#f5f5f5]">
         <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-4 bg-[#f5f5f5]">
           {/* Header Section */}
@@ -107,13 +82,13 @@ const LanguageHeader: React.FC = () => {
 
           {/* Introduction Section - Beginner Mode */}
           {
-            <div className="flex items-center justify-center mb-8">
+            <div className="flex items-center justify-center mb-1">
               <LanguageIntroText />
             </div>
           }
 
           {/* Action Buttons Section */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12 w-[86%] justify-self-center">
+          <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-[1200px] mx-auto">
             <ActionButton
               icon={
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -127,7 +102,7 @@ const LanguageHeader: React.FC = () => {
               }
               description={ReactHTMLParser(t("uploadLanguageXml"))}
             >
-              <div>
+              <div className="mt-7">
                 <UploadAndReadLanguageXml />
               </div>
             </ActionButton>
@@ -150,6 +125,30 @@ const LanguageHeader: React.FC = () => {
               </div>
             </ActionButton>
           </div>
+        </div>
+      </div>
+      <div
+        id="displayModeDiv"
+        className="flex flex-col items-center justify-self-center mb-20 font-semibold w-50%]"
+      >
+        <div className="text-right text-4xl">{t("settingsViewOptions")}</div>
+        <div className="flex flex-row justify-end mt-4">
+          <Button
+            id="essentialOptions"
+            styleClass={`w-[200px] bg-orange-300 hover:opacity-50 ${
+              languageDisplayEssential ? "bg-opacity-100" : "bg-opacity-50"
+            }`}
+            label={t("essentialOptions")}
+            onClick={setMode}
+          />
+          <Button
+            id="allOptions"
+            label={t("allOptions")}
+            styleClass={`w-[200px] bg-orange-300 hover:opacity-50 ${
+              languageDisplayAll ? "bg-opacity-100" : "bg-opacity-50"
+            }`}
+            onClick={setMode}
+          />
         </div>
       </div>
     </>
