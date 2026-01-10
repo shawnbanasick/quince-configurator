@@ -164,9 +164,9 @@ const Start = () => {
           className="text-blue-600 underline underline-offset-2 decoration-4 decoration-blue-300 hover:decoration-blue-400"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://doi.org/10.5281/zenodo.17438715"
+          href="https://doi.org/10.5281/zenodo.17438714"
         >
-          https://doi.org/10.5281/zenodo.17438715.
+          https://doi.org/10.5281/zenodo.17438714
         </a>
       </div>
       <div className="mt-8 w-7/12 text-2xl -indent-6 pl-6">
@@ -175,9 +175,9 @@ const Start = () => {
           className="text-blue-600 underline underline-offset-2 decoration-4 decoration-blue-300 hover:decoration-blue-400"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://doi.org/10.5281/zenodo.17438863"
+          href="https://doi.org/10.5281/zenodo.17438862"
         >
-          https://doi.org/10.5281/zenodo.17438863.
+          https://doi.org/10.5281/zenodo.17438862
         </a>
       </div>
 
