@@ -325,8 +325,8 @@
 
   "*** LANGUAGE PAGE ***": "***  언어 페이지  ***",
   "languagePageTitle": "사용자 인터페이스 언어",
-  "settingsViewOptions": "언어 설정",
-  "essentialOptions": "필수 설정",
+  "settingsViewOptions": "언어 설정 표시",
+  "essentialOptions": "필수 설정만",
   "allOptions": "모든 설정",
   "loadLanguage": "language.xml 파일 불러오기",
   "downloadXmlLanguageFile": "language.xml 파일 다운로드",
@@ -710,7 +710,6 @@
   "desktop": "데스크톱",
   "mobile": "모바일",
 
-  
   "*** EXPORT RESULTS. ***": "*** 결과 내보내기 ***",
   "exportStep1": "Baserow 계정에 로그인하세요. 그런 다음, 페이지 왼쪽의 데이터베이스 이름을 클릭하여 내보내려는 테이블로 이동하세요. 테이블 이름 위에 마우스를 올리고 표시되는 세 개의 세로 점을 클릭하세요.",
   "exportStep2": "다음으로, 'Export Table'을 클릭하세요.",

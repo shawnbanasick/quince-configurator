@@ -129,7 +129,7 @@ const LanguageHeader: React.FC = () => {
       </div>
       <div
         id="displayModeDiv"
-        className="flex flex-col items-center justify-self-center mb-20 font-semibold w-50%]"
+        className="flex flex-col items-center justify-self-center mb-20 font-semibold w-50% mt-12"
       >
         <div className="text-right text-4xl">{t("settingsViewOptions")}</div>
         <div className="flex flex-row justify-end mt-4">

@@ -325,8 +325,8 @@
 
   "*** LANGUAGE PAGE ***": "***  LANGUAGE PAGE  ***",
   "languagePageTitle": "Taal gebruikersinterface",
-  "settingsViewOptions": "Taalinstellingen",
-  "essentialOptions": "Vereiste instellingen",
+  "settingsViewOptions": "Taalinstellingen weergave",
+  "essentialOptions": "Alleen vereiste instellingen",
   "allOptions": "Alle instellingen",
   "loadLanguage": "Laad language.xml bestand",
   "downloadXmlLanguageFile": "Download language.xml bestand",

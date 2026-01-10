@@ -325,8 +325,8 @@
 
   "*** LANGUAGE PAGE ***": "***  LANGUAGE PAGE  ***",
   "languagePageTitle": "ユーザーインターフェース言語設定",
-  "settingsViewOptions": "言語設定",
-  "essentialOptions": "必須設定",
+  "settingsViewOptions": "言語設定の表示",
+  "essentialOptions": "必須設定のみ",
   "allOptions": "全設定",
   "loadLanguage": "language.xmlを読み込みます。",
   "downloadXmlLanguageFile": "language.xml ファイルをダウンロードしてください。",

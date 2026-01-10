@@ -325,8 +325,8 @@
 
   "*** LANGUAGE PAGE ***": "***  語言頁面  ***",
   "languagePageTitle": "使用者介面語言",
-  "settingsViewOptions": "語言設定",
-  "essentialOptions": "必要設定",
+  "settingsViewOptions": "語言設定顯示",
+  "essentialOptions": "僅必需設定",
   "allOptions": "所有設定",
   "loadLanguage": "載入language.xml檔案",
   "downloadXmlLanguageFile": "下載language.xml檔案",
@@ -697,7 +697,7 @@
   "statementsWithAHighCountOfZero": "Q分類值「0」出現次數高的陳述句",
   "countPercent": "次數、百分比",
   "consentPage": "同意頁面",
-  "welcomePage": "歡迎頁面", 
+  "welcomePage": "歡迎頁面",
   "presortPage": "預分類頁面",
   "refinePage": "精煉頁面",
   "sortPage": "分類頁面",
@@ -709,7 +709,6 @@
   "noUrlUsercode": "未設定URL使用者代碼",
   "desktop": "桌上型電腦",
   "mobile": "行動裝置",
-  
 
   "*** EXPORT RESULTS. ***": "*** 匯出結果 ***",
   "exportStep1": "登入您的Baserow帳戶。然後，透過點擊頁面左側的資料庫名稱導航到您要匯出的表格。將滑鼠懸停在表格名稱上，然後點擊顯示的三個垂直點。",
@@ -746,5 +745,3 @@
 
   "checkInternetMessage": "檢查網路訊息"
 }
-
-

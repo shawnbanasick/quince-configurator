@@ -325,8 +325,8 @@
 
   "*** LANGUAGE PAGE ***": "***  PÁGINA DE IDIOMA  ***",
   "languagePageTitle": "Idioma de la Interfaz de Usuario",
-  "settingsViewOptions": "Configuración de Idioma",
-  "essentialOptions": "Configuración Requerida",
+  "settingsViewOptions": "Mostrar configuración de idioma",
+  "essentialOptions": "Solo ajustes esenciales",
   "allOptions": "Toda la Configuración",
   "loadLanguage": "Cargar archivo language.xml",
   "downloadXmlLanguageFile": "Descargar archivo language.xml",
@@ -498,7 +498,7 @@
   "mobileThinConditionsOfInstruction": "Instrucciones para Mover Declaraciones",
   "mobileThinSelectedText": "Texto de Indicador de Seleccionado",
   "mobileThinSubmitButtonText": "Texto de Botón de Enviar",
-"mobileThinHelpModalHead": "Título de Modal de Ayuda",
+  "mobileThinHelpModalHead": "Título de Modal de Ayuda",
   "mobileThinHelpModalText": "Texto de Modal de Ayuda",
   "mobileThinPreventNavModalHead": "Título de Modal de Prevenir Navegación",
   "mobileThinPreventNavModalText": "Texto de Modal de Prevenir Navegación",
@@ -697,8 +697,8 @@
   "statementsWithAHighCountOfZero": "Declaraciones con un alto conteo del valor de clasificación Q '0'",
   "countPercent": "conteo, porcentaje",
   "consentPage": "Página de consentimiento",
-  "welcomePage": "Página de bienvenida",  
-"presortPage": "Página de preclasificación",
+  "welcomePage": "Página de bienvenida",
+  "presortPage": "Página de preclasificación",
   "refinePage": "Página de refinamiento",
   "sortPage": "Página de clasificación",
   "postsortPage": "Página posterior a la clasificación",
@@ -709,7 +709,6 @@
   "noUrlUsercode": "No se estableció código de usuario URL",
   "desktop": "Escritorio",
   "mobile": "Móvil",
-  
 
   "*** EXPORT RESULTS. ***": "*** EXPORTAR RESULTADOS ***",
   "exportStep1": "Inicie sesión en su cuenta de Baserow. Luego, navegue a la tabla que desea exportar haciendo clic en los nombres de las bases de datos en el lado izquierdo de la página. Pase el cursor sobre el nombre de la tabla y haga clic en los tres puntos verticales que se muestran.",

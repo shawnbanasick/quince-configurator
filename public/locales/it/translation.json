@@ -325,8 +325,8 @@
 
   "*** LANGUAGE PAGE ***": "***  PAGINA LINGUA  ***",
   "languagePageTitle": "Lingua dell'interfaccia utente",
-  "settingsViewOptions": "Impostazioni lingua",
-  "essentialOptions": "Impostazioni richieste",
+  "settingsViewOptions": "Visualizzazione impostazioni lingua",
+  "essentialOptions": "Solo impostazioni richieste",
   "allOptions": "Tutte le impostazioni",
   "loadLanguage": "Carica file language.xml",
   "downloadXmlLanguageFile": "Scarica file language.xml",
@@ -709,7 +709,6 @@
   "noUrlUsercode": "Nessun codice utente URL impostato",
   "desktop": "Desktop",
   "mobile": "Mobile",
-  
 
   "*** EXPORT RESULTS. ***": "*** ESPORTA RISULTATI ***",
   "exportStep1": "Accedi al tuo account Baserow. Quindi, naviga verso la tabella che desideri esportare cliccando sui nomi dei database sul lato sinistro della pagina. Passa il mouse sopra il nome della tabella e clicca sui tre puntini verticali che vengono visualizzati.",
@@ -746,6 +745,3 @@
 
   "checkInternetMessage": "Messaggio verifica connessione Internet"
 }
-
-
-    

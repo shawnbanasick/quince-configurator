@@ -97,7 +97,7 @@
   "emailAddress": "Ausweich-E-Mail-Adresse",
   "emailSubjectLine": "Text der Ausweich-E-Mail-Betreffzeile",
   "enterEmailAddress": "E-Mail-Adresse eingeben",
-  "enterBaserowToken": "Baserow-Token eingeben",      
+  "enterBaserowToken": "Baserow-Token eingeben",
   "enterBaserowDatabaseIdNumber": "Baserow-Datenbank-ID-Nummer eingeben",
   "enterEmailSubjectLineText": "E-Mail-Betrefftext eingeben",
 
@@ -325,8 +325,8 @@
 
   "*** LANGUAGE PAGE ***": "***  LANGUAGE PAGE  ***",
   "languagePageTitle": "Sprache der Benutzeroberfläche",
-  "settingsViewOptions": "Spracheinstellungen",
-  "essentialOptions": "Erforderliche Einstellungen",
+  "settingsViewOptions": "Spracheinstellungen Anzeige",
+  "essentialOptions": "Nur erforderliche Einstellungen",
   "allOptions": "Alle Einstellungen",
   "loadLanguage": "language.xml-Datei laden",
   "downloadXmlLanguageFile": "language.xml-Datei herunterladen",
@@ -709,7 +709,7 @@
   "noUrlUsercode": "Kein URL-Benutzercode gesetzt",
   "desktop": "Desktop",
   "mobile": "Mobil",
-  
+
   "*** EXPORT RESULTS. ***": "*** ERGEBNISSE EXPORTIEREN ***",
   "exportStep1": "Melden Sie sich bei Ihrem Baserow-Konto an. Navigieren Sie dann zu der Tabelle, die Sie exportieren möchten, indem Sie auf die Datenbanknamen auf der linken Seite der Seite klicken. Bewegen Sie die Maus über den Tabellennamen und klicken Sie auf die drei vertikalen Punkte, die angezeigt werden.",
   "exportStep2": "Klicken Sie anschließend auf 'Tabelle exportieren'.",

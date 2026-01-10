@@ -325,8 +325,8 @@
 
   "*** LANGUAGE PAGE ***": "***  PAGE DE LANGUE  ***",
   "languagePageTitle": "Langue de l'interface utilisateur",
-  "settingsViewOptions": "Paramètres de langue",
-  "essentialOptions": "Paramètres requis",
+  "settingsViewOptions": "Affichage des paramètres de langue",
+  "essentialOptions": "Paramètres requis uniquement",
   "allOptions": "Tous les paramètres",
   "loadLanguage": "Charger le fichier language.xml",
   "downloadXmlLanguageFile": "Télécharger le fichier language.xml",
@@ -709,7 +709,6 @@
   "noUrlUsercode": "Aucun code utilisateur URL défini",
   "desktop": "Ordinateur",
   "mobile": "Mobile",
-  
 
   "*** EXPORT RESULTS. ***": "*** EXPORTATION DES RÉSULTATS ***",
   "exportStep1": "Connectez-vous à votre compte Baserow. Ensuite, accédez à la table que vous souhaitez exporter en cliquant sur les noms de base de données sur le côté gauche de la page. Passez votre souris sur le nom de la table et cliquez sur les trois points verticaux qui s'affichent.",
