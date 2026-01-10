@@ -1,29 +1,29 @@
 const getLangAbbreviation = (lang) => {
     switch (lang) {
         case "en":
-            return "en";
+            return "English";
         case "ja":
-            return "ja";
+            return "日本語";
         case "ko":
-            return "ko";
+            return "한국어";
         case "zh-Hans":
-            return "zh-Hans";
+            return "简体中文";
         case "zh-Hant":
-            return "zh-Hant";
+            return "繁體中文";
         case "it":
-            return "it";
+            return "italiano";
         case "es":
-            return "es";
+            return "español";
         case "fr":
-            return "fr";
+            return "français";
         case "de":
-            return "de";
+            return "deutsch";
         case "nl":
-            return "nl";
+            return "Nederlands";
         case "pt":
-            return "pt";
+            return "português";
         default:
-            return "en-US";
+            return "Language Error";
     }
 }
 

@@ -1,17 +1,5 @@
-import { useStore } from "../GlobalState/useStore.js";
-
-const setLanguageSection_ES = (language) => {
-  if (!language) {
-    console.error("Language is not defined");
-    return;
-  }
-
-  if (typeof language !== "string") {
-    console.error("Language must be a string");
-    return;
-  }
-
-  useStore.setState({
+const showSectionDefaults_ES = () => {
+  const obj = {
     btnHelp: "Ayuda",
     fontSizeText: `Tamaño de Texto`,
     cardHeightText: `Altura de Tarjeta`,
@@ -91,7 +79,6 @@ const setLanguageSection_ES = (language) => {
     moveTopMobileHead: `Confirmar Movimiento`,
     moveAllTopMobileText: `¿Mover todas las declaraciones seleccionadas a la parte superior de la lista?`,
     moveTopMobileButtonOK: `Sí`,
-    mobileModalButtonCancel: `Cancelar`,
     mobileThinConditionsOfInstruction: `Refine Sus Evaluaciones`,
     mobileThinSubmitButtonText: `Enviar`,
     mobileThinSelectedText: `Seleccionado`,
@@ -122,7 +109,8 @@ const setLanguageSection_ES = (language) => {
     sortOverloadedColumnModalHead: `Navegación Deshabilitada`,
     sortOverloadedColumnModalText: `Una de las columnas tiene demasiadas tarjetas (estará delineada en naranja y tendrá un borde punteado). Por favor ajuste la colocación de las tarjetas para que todas las columnas tengan el número correcto.`,
     mobileSortSwapModalHead: `¿Intercambiar Clasificaciones de Declaraciones?`,
-    mobileSortSwapModalSuccessMessage: "Las posiciones de las declaraciones se intercambiaron exitosamente.",
+    mobileSortSwapModalSuccessMessage:
+      "Las posiciones de las declaraciones se intercambiaron exitosamente.",
     mobileSortSwapModalText: `Haga clic en "Confirmar" para intercambiar.`,
     mobileSortSwapModalConfirmButton: `Intercambiar`,
     mobileSortConditionsOfInstruction: `Clasifique las Declaraciones Según Su Experiencia de Usar los iPads en la Clase`,
@@ -172,9 +160,12 @@ const setLanguageSection_ES = (language) => {
     copiedText: "¡Copiado!",
     downloadResultsButtonText: "Descargar Resultados",
     copyFailMessage: "Error: Por favor intente de nuevo.",
-    defaultEmailClientFail:"Su cliente de correo electrónico predeterminado debería haberse abierto automáticamente con los resultados en el cuerpo del correo. Si no fue así, por favor use los botones a continuación para copiar y pegar su información en un correo electrónico.",
-    emailBodyMessage:"No tiene que agregar nada a este correo electrónico. Por favor solo haga clic en el botón ENVIAR.",
-    linkingFallbackMessage: "Por favor haga clic en el botón para comenzar la siguiente clasificación Q",
+    defaultEmailClientFail:
+      "Su cliente de correo electrónico predeterminado debería haberse abierto automáticamente con los resultados en el cuerpo del correo. Si no fue así, por favor use los botones a continuación para copiar y pegar su información en un correo electrónico.",
+    emailBodyMessage:
+      "No tiene que agregar nada a este correo electrónico. Por favor solo haga clic en el botón ENVIAR.",
+    linkingFallbackMessage:
+      "Por favor haga clic en el botón para comenzar la siguiente clasificación Q",
     linkingBtnText: "Comenzar Siguiente Clasificación Q",
     localHeader: "Panel de Control de Clasificación Q Fuera de Línea",
     partIdText: "Nombre del Participante",
@@ -183,25 +174,28 @@ const setLanguageSection_ES = (language) => {
     localDeleteButtonText: "Eliminar",
     localDownloadButtonText: "Guardar Datos de Clasificación Q en el Disco",
     storedQsortsHeaderText: "Clasificaciones Q Almacenadas",
-    localDeleteModalText:"Esto eliminará los datos de clasificación Q del participante que están almacenados actualmente en el navegador. Normalmente solo haría esto cuando esté comenzando un nuevo proyecto.<br/><br/><b>PRECAUCIÓN - Los datos eliminados no se pueden recuperar.</b> <br /><br /> <center></center>",
+    localDeleteModalText:
+      "Esto eliminará los datos de clasificación Q del participante que están almacenados actualmente en el navegador. Normalmente solo haría esto cuando esté comenzando un nuevo proyecto.<br/><br/><b>PRECAUCIÓN - Los datos eliminados no se pueden recuperar.</b> <br /><br /> <center></center>",
     localDeleteModalHead: "¿Eliminar Datos Almacenados en el Navegador?",
     localParticipantsText: "Participantes",
     localSaveDataButton: "Guardar Datos del Participante en la Memoria del Navegador",
     localSubmitSuccessModalHeader: "Éxito",
-    localSubmitSuccessModalText:"Los datos de clasificación Q del participante se han guardado exitosamente en la memoria del navegador",
+    localSubmitSuccessModalText:
+      "Los datos de clasificación Q del participante se han guardado exitosamente en la memoria del navegador",
     localSaveBeforeDeleteModalHeader: "Eliminación Deshabilitada",
-    localSaveBeforeDeleteModalText: "Guarde los Datos de Clasificación Q en el Disco antes de eliminar.",
+    localSaveBeforeDeleteModalText:
+      "Guarde los Datos de Clasificación Q en el Disco antes de eliminar.",
     returnToLocalPanelButtonText: "Volver al Panel de Control",
     emailSubjectText: `Resultados de Quince Q-sort`,
     submitFailMessage:
       "No se puede conectar a la base de datos.<br/><br/>Haga clic en el botón para abrir su cliente de correo electrónico predeterminado y enviar un correo con los datos al equipo de investigación.",
     checkInternetMessage:
       "*** Error - Fallo en la transmisión ***<br/><br/>Por favor, verifique su conexión a internet y haga clic nuevamente en el botón 'Enviar datos'.",
-   press1: "(presionar 1)",
-   press2: "(presionar 2)",
-   press3: "(presionar 3)",
-    });
-  return;
+    press1: "(presionar 1)",
+    press2: "(presionar 2)",
+    press3: "(presionar 3)",
+  };
+  return obj;
 };
 
-export { setLanguageSection_ES };
+export default showSectionDefaults_ES;

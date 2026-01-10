@@ -14,7 +14,6 @@ const showSectionDefaults = () => {
     mobileTextSize: `Text`,
     mobileViewSize: `View`,
     mobileModalButtonCancel: `Cancel`,
-    mobileExpandViewMessage: `Tap the View "+" button below to expand the view area and hide this message.`,
 
     /*
      ******** CONSENT PAGE  ****************** */

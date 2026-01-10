@@ -1,17 +1,5 @@
-import { useStore } from "../GlobalState/useStore.js";
-
-const setLanguageSection_zhHans = (language) => {
-  if (!language) {
-    console.error("Language is not defined");
-    return;
-  }
-
-  if (typeof language !== "string") {
-    console.error("Language must be a string");
-    return;
-  }
-
-  useStore.setState({
+const showSectionDefaults_zhHans = () => {
+  const obj = {
     btnHelp: "帮助",
     fontSizeText: `文字大小`,
     cardHeightText: `卡片高度`,
@@ -172,8 +160,9 @@ const setLanguageSection_zhHans = (language) => {
     copiedText: "已复制!",
     downloadResultsButtonText: "下载结果",
     copyFailMessage: "错误: 请再试一次。",
-    defaultEmailClientFail:"您的默认电子邮件客户端应该已经自动打开，结果将显示在电子邮件正文中。如果未打开，请使用下方按钮复制和粘贴您的信息到电子邮件中。",
-    emailBodyMessage:"您不需要向此电子邮件添加任何内容。只需点击发送按钮。",
+    defaultEmailClientFail:
+      "您的默认电子邮件客户端应该已经自动打开，结果将显示在电子邮件正文中。如果未打开，请使用下方按钮复制和粘贴您的信息到电子邮件中。",
+    emailBodyMessage: "您不需要向此电子邮件添加任何内容。只需点击发送按钮。",
     linkingFallbackMessage: "请点击按钮开始下一个Q排序",
     linkingBtnText: "开始下一个Q排序",
     localHeader: "离线Q排序控制面板",
@@ -183,12 +172,13 @@ const setLanguageSection_zhHans = (language) => {
     localDeleteButtonText: "删除",
     localDownloadButtonText: "将Q排序数据保存到磁盘",
     storedQsortsHeaderText: "存储的Q排序",
-    localDeleteModalText:"这将删除浏览器中当前存储的参与者Q排序数据。您通常只会在开始新项目时这样做。<br/><br/><b>注意 - 删除的数据无法恢复。</b> <br/><br/> <center></center>",
+    localDeleteModalText:
+      "这将删除浏览器中当前存储的参与者Q排序数据。您通常只会在开始新项目时这样做。<br/><br/><b>注意 - 删除的数据无法恢复。</b> <br/><br/> <center></center>",
     localDeleteModalHead: "删除浏览器中存储的数据?",
     localParticipantsText: "参与者",
     localSaveDataButton: "将参与者数据保存到浏览器内存",
     localSubmitSuccessModalHeader: "成功",
-    localSubmitSuccessModalText:"参与者Q排序数据已成功保存到浏览器内存",
+    localSubmitSuccessModalText: "参与者Q排序数据已成功保存到浏览器内存",
     localSaveBeforeDeleteModalHeader: "删除禁用",
     localSaveBeforeDeleteModalText: "在删除之前，请将Q排序数据保存到磁盘。",
     returnToLocalPanelButtonText: "返回控制面板",
@@ -199,9 +189,9 @@ const setLanguageSection_zhHans = (language) => {
       "*** 错误 - 传输失败 ***<br/><br/>请检查您的网络连接，然后再次点击'提交数据'按钮。",
     press1: "按 1",
     press2: "按 2",
-    press3: "按 3", 
-    });
-  return;
+    press3: "按 3",
+  };
+  return obj;
 };
 
-export { setLanguageSection_zhHans };
+export default showSectionDefaults_zhHans;

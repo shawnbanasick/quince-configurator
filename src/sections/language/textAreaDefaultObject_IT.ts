@@ -1,17 +1,5 @@
-import { useStore } from "../GlobalState/useStore.js";
-
-const setLanguageSection_IT = (language) => {
-  if (!language) {
-    console.error("Language is not defined");
-    return;
-  }
-
-  if (typeof language !== "string") {
-    console.error("Language must be a string");
-    return;
-  }
-
-  useStore.setState({
+const showSectionDefaults_IT = () => {
+  const obj = {
     btnHelp: "Aiuto",
     fontSizeText: `Dimensione Testo`,
     cardHeightText: `Altezza Scheda`,
@@ -91,7 +79,6 @@ const setLanguageSection_IT = (language) => {
     moveTopMobileHead: `Conferma Spostamento`,
     moveAllTopMobileText: `Spostare tutte le affermazioni selezionate in cima all'elenco?`,
     moveTopMobileButtonOK: `Sì`,
-    mobileModalButtonCancel: `Annulla`,
     mobileThinConditionsOfInstruction: `Perfeziona le Tue Valutazioni`,
     mobileThinSubmitButtonText: `Invia`,
     mobileThinSelectedText: `Selezionato`,
@@ -122,7 +109,8 @@ const setLanguageSection_IT = (language) => {
     sortOverloadedColumnModalHead: `Navigazione Disabilitata`,
     sortOverloadedColumnModalText: `Una delle colonne ha troppe schede (sarà evidenziata in arancione e avrà un bordo tratteggiato). Regola il posizionamento delle schede in modo che tutte le colonne abbiano il numero corretto.`,
     mobileSortSwapModalHead: `Scambiare le Classifiche delle Affermazioni?`,
-    mobileSortSwapModalSuccessMessage: "Le posizioni delle affermazioni sono state scambiate con successo.",
+    mobileSortSwapModalSuccessMessage:
+      "Le posizioni delle affermazioni sono state scambiate con successo.",
     mobileSortSwapModalText: `Fai clic su "Conferma" per scambiare.`,
     mobileSortSwapModalConfirmButton: `Scambia`,
     mobileSortConditionsOfInstruction: `Classifica le Affermazioni in Base alla Tua Esperienza di Utilizzo degli iPad in Classe`,
@@ -172,8 +160,10 @@ const setLanguageSection_IT = (language) => {
     copiedText: "Copiato!",
     downloadResultsButtonText: "Scarica Risultati",
     copyFailMessage: "Errore: Riprova.",
-    defaultEmailClientFail:"Il tuo client email predefinito dovrebbe essersi aperto automaticamente con i risultati nel corpo dell'email. Se non è successo, utilizza i pulsanti qui sotto per copiare e incollare le tue informazioni in un'email.",
-    emailBodyMessage:"Non devi aggiungere nulla a questa email. Fai semplicemente clic sul pulsante INVIA.",
+    defaultEmailClientFail:
+      "Il tuo client email predefinito dovrebbe essersi aperto automaticamente con i risultati nel corpo dell'email. Se non è successo, utilizza i pulsanti qui sotto per copiare e incollare le tue informazioni in un'email.",
+    emailBodyMessage:
+      "Non devi aggiungere nulla a questa email. Fai semplicemente clic sul pulsante INVIA.",
     linkingFallbackMessage: "Fai clic sul pulsante per iniziare il prossimo Q sort",
     linkingBtnText: "Inizia Prossimo Q sort",
     localHeader: "Pannello di Controllo Q-sort Offline",
@@ -183,12 +173,14 @@ const setLanguageSection_IT = (language) => {
     localDeleteButtonText: "Elimina",
     localDownloadButtonText: "Salva Dati Q-sort su Disco",
     storedQsortsHeaderText: "Q-sort Archiviati",
-    localDeleteModalText:"Questo eliminerà i dati del Q-sort del partecipante attualmente archiviati nel browser. Di solito lo faresti solo quando inizi un nuovo progetto.<br/><br/><b>ATTENZIONE - I dati eliminati non possono essere recuperati.</b> <br/><br/> <center></center>",
+    localDeleteModalText:
+      "Questo eliminerà i dati del Q-sort del partecipante attualmente archiviati nel browser. Di solito lo faresti solo quando inizi un nuovo progetto.<br/><br/><b>ATTENZIONE - I dati eliminati non possono essere recuperati.</b> <br/><br/> <center></center>",
     localDeleteModalHead: "Eliminare i Dati Archiviati nel Browser?",
     localParticipantsText: "Partecipanti",
     localSaveDataButton: "Salva Dati Partecipante nella Memoria del Browser",
     localSubmitSuccessModalHeader: "Successo",
-    localSubmitSuccessModalText:"I dati del Q sort del partecipante sono stati salvati con successo nella memoria del browser",
+    localSubmitSuccessModalText:
+      "I dati del Q sort del partecipante sono stati salvati con successo nella memoria del browser",
     localSaveBeforeDeleteModalHeader: "Eliminazione Disabilitata",
     localSaveBeforeDeleteModalText: "Salva i Dati Q sort su Disco prima di eliminarli.",
     returnToLocalPanelButtonText: "Torna al Pannello di Controllo",
@@ -200,8 +192,8 @@ const setLanguageSection_IT = (language) => {
     press1: "(premere 1)",
     press2: "(premere 2)",
     press3: "(premere 3)",
-    });
-  return;
+  };
+  return obj;
 };
 
-export { setLanguageSection_IT };
+export default showSectionDefaults_IT;

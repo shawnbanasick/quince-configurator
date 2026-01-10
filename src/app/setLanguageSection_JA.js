@@ -1,4 +1,4 @@
-import { useStore } from "../globalState/useStore.js";
+import { useStore } from "../GlobalState/useStore.js";
 
 const setLanguageSection_JA = (language) => {
   if (!language) {
@@ -38,13 +38,12 @@ const setLanguageSection_JA = (language) => {
     accessCodeWarning: `アクセスコードが無効です`,
     loginSubmitButtonText: `送信`,
     landingHead: `大学研究プロジェクト`,
-    welcomeText: `<h2>Quince Sort デモプロジェクト - 教室でのiPad活用</h2><br/><br/><p>この研究プロジェクトにご協力いただきありがとうございます</p><br/><br/><br/>
-    <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
+    welcomeText: `<h2>Quince Sort デモプロジェクト - 教室でのiPad活用</h2><br/><br/><p>この研究プロジェクトにご協力いただきありがとうございます</p><br/>`,
     landingHelpModalHead: `ようこそ！`,
     landingHelpModalText: `この大学研究プロジェクトにご参加いただき、ありがとうございます。画面右下の「<b>次へ</b>」ボタンをクリックして次のステップに進んでください。`,
     btnNextLanding: `次へ`,
     btnHelpLanding: `ヘルプ`,
-    mobileWelcomeText: `<h2>Quince Sortデモプロジェクト - 教室でのiPad活用</h2><br/><br/><p>本研究プロジェクトへのご協力に感謝いたします！</p><br/><br/><br/> <center><iframe width="560" height="315" src="https://www.youtube.com/embed/lMy4ARVEcCI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
+    mobileWelcomeText: `<h2>Quince Sortデモプロジェクト - 教室でのiPad活用</h2><br/><br/><p>本研究プロジェクトへのご協力に感謝いたします！</p><br/>`,
     logInFirst: `まずログイン手続きを完了してください。`,
     titleBarText: `事前分類`,
     presortAgreement: `同意 (3)`,
@@ -53,7 +52,7 @@ const setLanguageSection_JA = (language) => {
     presortDisagreement: `反対 (1)`,
     presortImageSortInstructions: `画像を拡大するには、マウス ポインターを画像の上に置き、ダブルクリックしてください。<br/><br/> 画像を比較するには、キーボードの<u>Shift</u>キーを押したまま、マウスで2つの画像をクリックしてください。`,
     presortModalHead: `ステップ1/4`,
-    presortModalText: `以下の文を注意深く読み、3つの山に分けます：同意しない文の山、同意する文の山、残りの文の山。後で変更可能です。<br/><br/>この指示をもう一度読みたい場合は、画面左下のヘルプボタンをクリックしてください。<br/><br/><center><iframe width="560" height="315" src="https://www.youtube.com/embed/vtnLuKzpcKQ?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
+    presortModalText: `以下の文を注意深く読み、3つの山に分けます：同意しない文の山、同意する文の山、残りの文の山。後で変更可能です。<br/><br/>この指示をもう一度読みたい場合は、画面左下のヘルプボタンをクリックしてください。<br/>`,
     presortPreventNavModalHead: `ナビゲーション無効`,
     presortPreventNavModalText: `次のステップに進む前に、事前ソートを完了してください。`,
     presortFinishedModalHead: `事前ソート完了`,
@@ -114,7 +113,7 @@ const setLanguageSection_JA = (language) => {
     mobileThinScrollBottomModalHead: `確認無効`,
     mobileThinScrollBottomModalText: `選択を確認する前に、画面下までスクロールしてすべての文を確認してください。`,
     sortHelpModalHead: `ステップ 3/5`,
-    sortHelpModalText: `このステップでは、ご自身の視点とページ上部の研究者の指示に基づいて、ステートメントカードを適切な列にドラッグアンドドロップしてください。<br/><br/><center><iframe width="560" height=「315」 src="https://www.youtube.com/embed/iRxC9Vv3dLo?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
+    sortHelpModalText: `このステップでは、ご自身の視点とページ上部の研究者の指示に基づいて、ステートメントカードを適切な列にドラッグアンドドロップしてください。<br/>`,
     sortAgreement: `同意`,
     sortDisagreement: `不同意`,
     condOfInst: `この学期にiPadを使用した経験に基づいてカードを並べ替えてください`,
@@ -141,7 +140,7 @@ const setLanguageSection_JA = (language) => {
     postsortAgreement: `同意に配置`,
     postsortDisagreement: `反対に配置`,
     postsortModalHead: `ステップ 4/5`,
-    postsortModalText: `ページの最下部にあるボタンを使用して、フォントサイズやカードの高さを変更できます。<br/><br/><center><iframe width="560" height="315" src="https://www.youtube.com/embed/EFNlSiaEVVg?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></h3></center>`,
+    postsortModalText: `ページの最下部にあるボタンを使用して、フォントサイズやカードの高さを変更できます。<br/>`,
     postsortPreventNavModalHead: `ナビゲーションを無効にしました`,
     postsortPreventNavModalText: `次のステップに進む前に、すべてのカードにコメントを追加してください`,
     postsortBackButtonText: `戻る`,
@@ -153,7 +152,7 @@ const setLanguageSection_JA = (language) => {
     mobilePostsortHelpModalText: `これらの投稿のランキングについてコメントしてください。`,
     surveyHeader: `投稿後のアンケート`,
     surveyModalHead: `ステップ 5/5`,
-    surveyModalText: `最後に、ご自身の背景に関する以下の質問にお答えください。タイトルに「*」が付いた質問は必須です。<br/><br/><center><iframe width="560" height=「315」 src="https://www.youtube.com/embed/68MHzgLn1zg?rel=0" title="YouTube動画プレイヤー" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>`,
+    surveyModalText: `最後に、ご自身の背景に関する以下の質問にお答えください。タイトルに「*」が付いた質問は必須です。<br/>`,
     surveyPreventNavModalHead: `ナビゲーションが無効です`,
     surveyPreventNavModalText: `次のステップに進む前に、黄色で囲まれた必須の質問に回答してください。`,
     mobileSurveyHelpModalHead: `5段階中5段階目<br/> ランキング後のアンケート`,

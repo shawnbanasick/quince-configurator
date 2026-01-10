@@ -2,6 +2,15 @@
 // import appState from "../../GlobalState/appState";
 import defObject from "./textareaDefaultObject";
 import defObject_JA from "./textAreaDefaultObject_JA";
+import defObject_DE from "./textAreaDefaultObject_DE";
+import defObject_ES from "./textAreaDefaultObject_ES";
+import defObject_FR from "./textAreaDefaultObject_FR";
+import defObject_IT from "./textAreaDefaultObject_IT";
+import defObject_KO from "./textAreaDefaultObject_KO";
+import defObject_NL from "./textAreaDefaultObject_NL";
+import defObject_PT from "./textAreaDefaultObject_PT";
+import defObject_zhHans from "./textAreaDefaultObject_zhHans";
+import defObject_zhHant from "./textAreaDefaultObject_zhHant";
 import { useStore } from "../../GlobalState/useStore";
 
 const showSectionDefaults = (section) => {
@@ -10,8 +19,36 @@ const showSectionDefaults = (section) => {
   let defObj;
   if (currentLang === "ja") {
     defObj = defObject_JA();
-  } else {
+  }
+  if (currentLang === "en") {
     defObj = defObject();
+  }
+  if (currentLang === "de") {
+    defObj = defObject_DE();
+  }
+  if (currentLang === "es") {
+    defObj = defObject_ES();
+  }
+  if (currentLang === "fr") {
+    defObj = defObject_FR();
+  }
+  if (currentLang === "it") {
+    defObj = defObject_IT();
+  }
+  if (currentLang === "ko") {
+    defObj = defObject_KO();
+  }
+  if (currentLang === "nl") {
+    defObj = defObject_NL();
+  }
+  if (currentLang === "pt") {
+    defObj = defObject_PT();
+  }
+  if (currentLang === "zh-Hans") {
+    defObj = defObject_zhHans();
+  }
+  if (currentLang === "zh-Hant") {
+    defObj = defObject_zhHant();
   }
 
   let selectorArray: string[] = [];

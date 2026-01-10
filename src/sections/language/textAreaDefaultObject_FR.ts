@@ -1,17 +1,5 @@
-import { useStore } from "../GlobalState/useStore.js";
-
-const setLanguageSection_FR = (language) => {
-  if (!language) {
-    console.error("Language is not defined");
-    return;
-  }
-
-  if (typeof language !== "string") {
-    console.error("Language must be a string");
-    return;
-  }
-
-  useStore.setState({
+const showSectionDefaults_FR = () => {
+  const obj = {
     btnHelp: "Aide",
     fontSizeText: `Taille du texte`,
     cardHeightText: `Hauteur de la carte`,
@@ -91,7 +79,6 @@ const setLanguageSection_FR = (language) => {
     moveTopMobileHead: `Confirmer le déplacement`,
     moveAllTopMobileText: `Déplacer tous les énoncés sélectionnés en haut de la liste ?`,
     moveTopMobileButtonOK: `Oui`,
-    mobileModalButtonCancel: `Annuler`,
     mobileThinConditionsOfInstruction: `Affinez vos évaluations`,
     mobileThinSubmitButtonText: `Soumettre`,
     mobileThinSelectedText: `Sélectionné`,
@@ -172,8 +159,10 @@ const setLanguageSection_FR = (language) => {
     copiedText: "Copié !",
     downloadResultsButtonText: "Télécharger les résultats",
     copyFailMessage: "Erreur : Veuillez réessayer.",
-    defaultEmailClientFail:"Votre client de messagerie par défaut aurait dû s'ouvrir automatiquement avec les résultats dans le corps de l'e-mail. Si ce n'est pas le cas, veuillez utiliser les boutons ci-dessous pour copier et coller vos informations dans un e-mail.",
-    emailBodyMessage:"Vous n'avez rien à ajouter à cet e-mail. Veuillez simplement cliquer sur le bouton ENVOYER.",
+    defaultEmailClientFail:
+      "Votre client de messagerie par défaut aurait dû s'ouvrir automatiquement avec les résultats dans le corps de l'e-mail. Si ce n'est pas le cas, veuillez utiliser les boutons ci-dessous pour copier et coller vos informations dans un e-mail.",
+    emailBodyMessage:
+      "Vous n'avez rien à ajouter à cet e-mail. Veuillez simplement cliquer sur le bouton ENVOYER.",
     linkingFallbackMessage: "Veuillez cliquer sur le bouton pour commencer le prochain tri Q",
     linkingBtnText: "Commencer le prochain tri Q",
     localHeader: "Panneau de contrôle du tri Q hors ligne",
@@ -183,25 +172,28 @@ const setLanguageSection_FR = (language) => {
     localDeleteButtonText: "Supprimer",
     localDownloadButtonText: "Enregistrer les données du tri Q sur le disque",
     storedQsortsHeaderText: "Tris Q enregistrés",
-    localDeleteModalText:"Cela supprimera les données du tri Q du participant actuellement stockées dans le navigateur. Vous ne feriez généralement cela que lorsque vous démarrez un nouveau projet.<br/><br/><b>ATTENTION - Les données supprimées ne peuvent pas être récupérées.</b> <br/><br/> <center></center>",
+    localDeleteModalText:
+      "Cela supprimera les données du tri Q du participant actuellement stockées dans le navigateur. Vous ne feriez généralement cela que lorsque vous démarrez un nouveau projet.<br/><br/><b>ATTENTION - Les données supprimées ne peuvent pas être récupérées.</b> <br/><br/> <center></center>",
     localDeleteModalHead: "Supprimer les données stockées dans le navigateur ?",
     localParticipantsText: "Participants",
     localSaveDataButton: "Enregistrer les données du participant dans la mémoire du navigateur",
     localSubmitSuccessModalHeader: "Succès",
-    localSubmitSuccessModalText:"Les données du tri Q du participant ont été enregistrées avec succès dans la mémoire du navigateur",
+    localSubmitSuccessModalText:
+      "Les données du tri Q du participant ont été enregistrées avec succès dans la mémoire du navigateur",
     localSaveBeforeDeleteModalHeader: "Suppression désactivée",
-    localSaveBeforeDeleteModalText: "Enregistrez les données du tri Q sur le disque avant de les supprimer.",
+    localSaveBeforeDeleteModalText:
+      "Enregistrez les données du tri Q sur le disque avant de les supprimer.",
     returnToLocalPanelButtonText: "Retourner au panneau de contrôle",
     emailSubjectText: `Résultats de Quince Q-sort`,
     submitFailMessage:
       "Impossible de se connecter à la base de données.<br/><br/>Cliquez sur le bouton pour ouvrir votre client de messagerie par défaut et envoyer un e-mail contenant les données à l'équipe de recherche.",
     checkInternetMessage:
       "*** Erreur - Échec de transmission ***<br/><br/>Veuillez vérifier votre connexion internet et cliquer à nouveau sur le bouton 'Soumettre les données'.",
-      press1: "(appuyer 1)",
-      press2: "(appuyer 2)",
-      press3: "(appuyer 3)",
-    });
-  return;
+    press1: "(appuyer 1)",
+    press2: "(appuyer 2)",
+    press3: "(appuyer 3)",
+  };
+  return obj;
 };
 
-export { setLanguageSection_FR };
+export default showSectionDefaults_FR;

@@ -175,7 +175,7 @@ if (currentLanguage === "de") {
               <div className="flex flex-row justify-between pl-6 pr-6 w-[100%]">
                 <div id="selectLanguageDiv" className="">
                   <div>{t("selectLanguage")}</div>
-                  <div className="flex flex-row space-x-2">
+                  <div className="flex flex-wrap space-x-1 space-y-1 overflow-x-auto ">
                     {languages.map((lng) => {
                       return (
                         <button
