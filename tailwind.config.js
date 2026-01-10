@@ -19,7 +19,7 @@ export default {
       },
     },
     fontFamily: {
-      title: ["Inter", "sans-serif"],
+      title: ["Inter", "Noto Sans CJK SC", "Microsoft YaHei", "sans-serif"],
     },
   },
   plugins: [
