@@ -159,7 +159,7 @@ const Start = () => {
       </div>
       <div className="mt-10 w-9/12 align-self-center font-semibold text-3xl mb-2">Citations</div>
       <div className="w-7/12 text-2xl -indent-6 pl-6">
-        {`Shawn Banasick, and Stephen Jeffares. “Quince V${frontPageVersion}”. Zenodo, October 25, 2025. `}
+        {`Shawn Banasick and Stephen Jeffares. “Quince V${frontPageVersion}”. Zenodo, October 25, 2025. `}
         <a
           className="text-blue-600 underline underline-offset-2 decoration-4 decoration-blue-300 hover:decoration-blue-400"
           target="_blank"
