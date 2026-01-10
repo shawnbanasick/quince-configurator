@@ -95,7 +95,6 @@ const showSectionDefaults_zhHant = () => {
     moveTopMobileHead: "確認移動",
     moveAllTopMobileText: "將所有選定的陳述句移到清單頂部？",
     moveTopMobileButtonOK: "是",
-    mobileModalButtonCancel: "取消",
     mobileThinConditionsOfInstruction: "精煉您的評估",
     mobileThinSubmitButtonText: "提交",
     mobileThinSelectedText: "已選取",

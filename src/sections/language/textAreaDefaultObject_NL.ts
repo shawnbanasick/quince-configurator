@@ -106,7 +106,6 @@ const showSectionDefaults_NL = () => {
     moveAllTopMobileText:
       "Alle geselecteerde uitspraken naar de bovenkant van de lijst verplaatsen?",
     moveTopMobileButtonOK: "Ja",
-    mobileModalButtonCancel: "Annuleren",
     mobileThinConditionsOfInstruction: "Verfijn uw evaluaties",
     mobileThinSubmitButtonText: "Verzenden",
     mobileThinSelectedText: "Geselecteerd",

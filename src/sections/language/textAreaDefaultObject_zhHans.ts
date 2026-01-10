@@ -79,7 +79,6 @@ const showSectionDefaults_zhHans = () => {
     moveTopMobileHead: `确认移动`,
     moveAllTopMobileText: `将所有选定的陈述移到列表顶部?`,
     moveTopMobileButtonOK: `是`,
-    mobileModalButtonCancel: `取消`,
     mobileThinConditionsOfInstruction: `细化您的评估`,
     mobileThinSubmitButtonText: `提交`,
     mobileThinSelectedText: `已选择`,

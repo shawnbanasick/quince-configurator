@@ -106,7 +106,6 @@ const showSectionDefaults_PT = () => {
     moveTopMobileHead: "Confirmar Movimento",
     moveAllTopMobileText: "Mover todas as afirmações selecionadas para o topo da lista?",
     moveTopMobileButtonOK: "Sim",
-    mobileModalButtonCancel: "Cancelar",
     mobileThinConditionsOfInstruction: "Refine Suas Avaliações",
     mobileThinSubmitButtonText: "Enviar",
     mobileThinSelectedText: "Selecionado",
