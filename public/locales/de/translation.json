@@ -709,6 +709,7 @@
   "noUrlUsercode": "Kein URL-Benutzercode gesetzt",
   "desktop": "Desktop",
   "mobile": "Mobil",
+  "navigationInstructions": "Um einfach durch den Bericht zu navigieren, öffnen Sie das 'Navigation'-Fenster von Microsoft Word, indem Sie unter Windows 'Strg + f' drücken und dann auf die Registerkarte 'Überschriften' klicken. Unter Apple macOS klicken Sie auf die Registerkarte 'Ansicht' im oberen Menüband, aktivieren Sie das Kontrollkästchen neben 'Navigationsbereich' und klicken Sie dann auf das Listensymbol im Bereich.",
 
   "*** EXPORT RESULTS. ***": "*** ERGEBNISSE EXPORTIEREN ***",
   "exportStep1": "Melden Sie sich bei Ihrem Baserow-Konto an. Navigieren Sie dann zu der Tabelle, die Sie exportieren möchten, indem Sie auf die Datenbanknamen auf der linken Seite der Seite klicken. Bewegen Sie die Maus über den Tabellennamen und klicken Sie auf die drei vertikalen Punkte, die angezeigt werden.",

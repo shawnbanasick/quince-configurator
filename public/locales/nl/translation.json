@@ -709,6 +709,7 @@
   "noUrlUsercode": "Geen URL gebruikerscode ingesteld",
   "desktop": "Desktop",
   "mobile": "Mobiel",
+  "navigationInstructions": "Om gemakkelijk door het rapport te navigeren, opent u het \"Navigatie\"-paneel van Microsoft Word door op \"Ctrl + f\" te drukken in Windows en vervolgens op het tabblad \"Koppen\" te klikken. Op Apple macOS klikt u op het tabblad \"Weergave\" in het bovenste lint-menu, klikt u op het vakje naast \"Navigatievenster\" en klikt u vervolgens op het lijstpictogram in het paneel.",
 
   "*** EXPORT RESULTS. ***": "*** EXPORT RESULTS ***",
   "exportStep1": "Log in op uw Baserow account. Navigeer vervolgens naar de tabel die u wilt exporteren door op de databasenamen aan de linkerkant van de pagina te klikken. Beweeg uw muis over de tabelnaam en klik op de drie verticale puntjes die worden weergegeven.",

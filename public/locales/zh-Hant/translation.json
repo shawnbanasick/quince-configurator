@@ -709,6 +709,7 @@
   "noUrlUsercode": "未設定URL使用者代碼",
   "desktop": "桌上型電腦",
   "mobile": "行動裝置",
+  "navigationInstructions": "要輕鬆瀏覽報告,請在Windows上按'Ctrl + f'打開Microsoft Word的'導航'窗格,然後點擊'標題'選項卡。在Apple macOS上,點擊功能區頂部菜單中的'視圖'選項卡,勾選'導航窗格'旁邊的複選框,然後點擊窗格中的列表圖標。",
 
   "*** EXPORT RESULTS. ***": "*** 匯出結果 ***",
   "exportStep1": "登入您的Baserow帳戶。然後，透過點擊頁面左側的資料庫名稱導航到您要匯出的表格。將滑鼠懸停在表格名稱上，然後點擊顯示的三個垂直點。",

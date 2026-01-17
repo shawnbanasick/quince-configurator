@@ -709,6 +709,7 @@
   "noUrlUsercode": "URL 사용자 코드 설정 안 됨",
   "desktop": "데스크톱",
   "mobile": "모바일",
+  "navigationInstructions": "보고서를 쉽게 탐색하려면 Windows에서 'Ctrl + f'를 눌러 Microsoft Word의 '탐색' 창을 열고 '제목' 탭을 클릭하세요. Apple macOS에서는 리본 상단 메뉴에서 '보기' 탭을 클릭한 다음 '탐색 창' 옆의 확인란을 클릭하고 패널에서 목록 아이콘을 클릭하세요.",
 
   "*** EXPORT RESULTS. ***": "*** 결과 내보내기 ***",
   "exportStep1": "Baserow 계정에 로그인하세요. 그런 다음, 페이지 왼쪽의 데이터베이스 이름을 클릭하여 내보내려는 테이블로 이동하세요. 테이블 이름 위에 마우스를 올리고 표시되는 세 개의 세로 점을 클릭하세요.",

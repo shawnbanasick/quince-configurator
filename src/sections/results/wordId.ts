@@ -2,7 +2,6 @@
 import { HeadingLevel, Paragraph, TextRun } from "docx";
 import { cloneDeep } from "es-toolkit";
 
-
 /* ------------------------------------------------------------------ */
 /* 1. Types & constants                                               */
 /* ------------------------------------------------------------------ */
@@ -121,7 +120,7 @@ export function wordId(
 
   // Ensure every row contains the keys we need – if not, we skip that row.
   const workingData: Row[] = cloneDeep(
-    data.filter((row) => REQUIRED_KEYS.every((k) => typeof row[k] === "string"))
+    data.filter((row) => REQUIRED_KEYS.every((k) => typeof row[k] === "string")),
   );
 
   /* ---- header ----------------------------------------------------- */
@@ -148,15 +147,25 @@ export function wordId(
       text: `${numStatements} ${idLangObj.statements} / ${workingData.length} ${idLangObj.participants}`,
       bold: true,
       size: 24,
-      after: 400,
+      after: 300,
     }),
+
+    new Paragraph({
+      children: [
+        new TextRun({ text: "\u26a0\ufe0f ", size: 40 }),
+        new TextRun({ text: idLangObj.navigationInstructions, size: 24 }),
+      ],
+      spacing: {
+        after: 400,
+      },
+    }),
+
     new Paragraph({
       children: [new TextRun({ text: idLangObj.qSortData, bold: true, size: 40 })],
       heading: HeadingLevel.HEADING_1,
       thematicBreak: true,
     }),
   ];
-
 
   /* ---- per‑row processing ---------------------------------------- */
   let previousId = "";
@@ -179,10 +188,10 @@ export function wordId(
       displayPartId === "randomId"
         ? safeSlice(item.r2, "r2")
         : displayPartId === "partId"
-        ? safeSlice(item.r3, "r3")
-        : displayPartId === "urlUsercode"
-        ? safeSlice(item.r4, "r4")
-        : "";
+          ? safeSlice(item.r3, "r3")
+          : displayPartId === "urlUsercode"
+            ? safeSlice(item.r4, "r4")
+            : "";
 
     // localize text
     let participantId = safeSlice(item.r3, "r3")?.trim();
@@ -201,7 +210,6 @@ export function wordId(
     if (desktopOrMobile === "mobile") {
       desktopOrMobile = idLangObj.mobile;
     }
-
 
     // 3️⃣ Append participant block
     childArray.push(
@@ -228,11 +236,14 @@ export function wordId(
         startIndent: INDENT_START2,
       }),
       paragraph({ text: `${idLangObj.urlUsercode}: ${urlUsercode}`, startIndent: INDENT_START2 }),
-      paragraph({ text: `${idLangObj.dateAndTime}: ${safeSlice(item.r5, "r5")}`, startIndent: INDENT_START2 }),
+      paragraph({
+        text: `${idLangObj.dateAndTime}: ${safeSlice(item.r5, "r5")}`,
+        startIndent: INDENT_START2,
+      }),
       paragraph({
         text: `${idLangObj.desktopOrMobile}: ${desktopOrMobile}`,
         startIndent: INDENT_START2,
-      })
+      }),
     );
 
     // 4️⃣ Append optional child arrays safely

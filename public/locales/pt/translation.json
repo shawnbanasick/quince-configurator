@@ -709,6 +709,7 @@
   "noUrlUsercode": "Nenhum Código de Usuário de URL definido",
   "desktop": "Computador",
   "mobile": "Celular",
+  "navigationInstructions": "Para navegar facilmente pelo relatório, abra o painel \"Navegação\" do Microsoft Word pressionando \"Ctrl + f\" no Windows e depois clicando na guia \"Títulos\". No Apple macOS, clique na guia \"Exibir\" no menu superior da faixa de opções, clique na caixa ao lado de \"Painel de Navegação\" e depois clique no ícone de lista no painel.",
 
   "*** EXPORT RESULTS. ***": "*** EXPORTAR RESULTADOS ***",
   "exportStep1": "Faça login na sua conta Baserow. Em seguida, navegue até a tabela que deseja exportar clicando nos nomes dos bancos de dados no lado esquerdo da página. Passe o mouse sobre o nome da tabela e clique nos três pontos verticais que são exibidos.",

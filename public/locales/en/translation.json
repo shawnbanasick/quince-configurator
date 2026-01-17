@@ -709,6 +709,7 @@
   "noUrlUsercode": "No URL User Code set",
   "desktop": "Desktop",
   "mobile": "Mobile",
+  "navigationInstructions": "To navigate easily through the report, open Microsoft Word’s “Navigation” panel by pressing “Ctrl + f” on Windows, and then clicking on the “Headings” tab.  On Apple macOS, click the “View” tab in the Ribbon top menu, click the box next to “Navigation Pane”, and then click the list icon in the panel.",
 
   "*** EXPORT RESULTS. ***": "*** EXPORT RESULTS ***",
   "exportStep1": "Log into your Baserow account. Then, navigate to the table you want to export by clicking on the database names on the left side of the page. Hover your mouse over the table name and click on the three vertical dots that are displayed.",
@@ -742,6 +743,5 @@
   "netlifyStep13": "In the 'Deploys' box, click on the 'browse to upload' link and select your project's {{{b}}}FOLDER{{{/b}}}. In a few minutes your project will be updated on the web.",
   "netlifySetupComplete": "Web Hosting Setup Complete!",
   "netlifySetupCompleteMessage": "Congratulations! You have successfully setup your project on the web. Your website is now ready for use.",
-
   "checkInternetMessage": "Check Internet Message"
 }
