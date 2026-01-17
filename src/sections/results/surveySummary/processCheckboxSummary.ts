@@ -50,7 +50,8 @@ const safeStripHtml = (text: string | undefined, fallback = "n/a"): string => {
  * Extracts response values for a specific item from filtered data
  * Handles multiple responses separated by semicolons
  */
-let otherValuesArray: any = [];
+let otherValuesObject: any = {};
+let otherValuesObjectKeys: any = [];
 const extractResponseValues = (filteredData: DataEntry[], itemIndex: number): string[] => {
   const key = `itemNum${itemIndex + 1}`;
   const allResponses: string[] = [];
@@ -69,7 +70,7 @@ const extractResponseValues = (filteredData: DataEntry[], itemIndex: number): st
         num = value.slice(0, dashIndex);
         let otherValue = value.slice(dashIndex + 1);
         value = num;
-        otherValuesArray.push([index, otherValue]);
+        otherValuesObject[`p${index + 1}`] = otherValue;
       }
       const responses: any[] = value.split(",");
 
@@ -80,7 +81,9 @@ const extractResponseValues = (filteredData: DataEntry[], itemIndex: number): st
       }
     }
   });
-
+  otherValuesObjectKeys = Object.keys(otherValuesObject);
+  console.log("otherValuesObject", otherValuesObject);
+  console.log("otherValuesObjectKeys", otherValuesObjectKeys);
   return allResponses;
 };
 
@@ -90,7 +93,7 @@ const extractResponseValues = (filteredData: DataEntry[], itemIndex: number): st
 const calculateOptionStats = (
   answerOptions: string[],
   responseCounts: Map<string, number>,
-  totalResponses: number
+  totalResponses: number,
 ): OptionStats[] => {
   const allOptions = [...answerOptions, "no response"];
 
@@ -118,7 +121,12 @@ const calculateOptionStats = (
 /**
  * Creates header paragraphs for the summary
  */
-const createHeaderParagraphs = (item: SurveyItem, index: number, text: string, itemText: string): Paragraph[] => {
+const createHeaderParagraphs = (
+  item: SurveyItem,
+  index: number,
+  text: string,
+  itemText: string,
+): Paragraph[] => {
   return [
     new Paragraph({
       children: [
@@ -159,7 +167,7 @@ const createHeaderParagraphs = (item: SurveyItem, index: number, text: string, i
  */
 const createOptionParagraphs = (
   optionStats: OptionStats[],
-  totalResponseCount?: number
+  totalResponseCount?: number,
 ): Paragraph[] => {
   return optionStats.map((stat, index) => {
     let countText = `${stat.percentage.toFixed(1)}% (${stat.count})`;
@@ -189,6 +197,34 @@ const createOptionParagraphs = (
     });
   });
 };
+/**
+ * Creates other values paragraphs
+ */
+const createOtherValuesParagraphs = (
+  optionParagraphs: Paragraph[],
+  otherValuesObject: any,
+  otherValuesObjectKeys: any,
+): Paragraph[] => {
+  if (otherValuesObjectKeys.length === 0) {
+    return optionParagraphs;
+  }
+
+  let otherValuesParagraphs = otherValuesObjectKeys.map((key: string) => {
+    return new Paragraph({
+      children: [
+        new TextRun({
+          text: `${key}: ${otherValuesObject[key]}`,
+          bold: false,
+        }),
+      ],
+      indent: { start: 600 },
+    });
+  });
+
+  optionParagraphs.splice(optionParagraphs.length - 1, 0, ...otherValuesParagraphs);
+
+  return optionParagraphs;
+};
 
 /**
  * Processes radio button survey data and generates summary paragraphs
@@ -200,7 +236,7 @@ const processCheckboxSummary = (
   item: SurveyItem,
   index: number,
   text: string,
-  itemText: string
+  itemText: string,
 ): Paragraph[] => {
   // Validate inputs
   if (!filteredData?.length || !item?.options) {
@@ -227,7 +263,7 @@ const processCheckboxSummary = (
   const optionStats = calculateOptionStats(
     answerOptions,
     responseCounts,
-    totalResponses // Still use participant count for percentage calculation
+    totalResponses, // Still use participant count for percentage calculation
   );
 
   // Log for debugging (consider using proper logging in production)
@@ -240,7 +276,15 @@ const processCheckboxSummary = (
 
   // Generate paragraphs
   const headerParagraphs = createHeaderParagraphs(item, index, text, itemText);
-  const optionParagraphs = createOptionParagraphs(optionStats, totalResponseCount);
+  let optionParagraphs = createOptionParagraphs(optionStats, totalResponseCount);
+
+  if (otherValuesObjectKeys.length > 0) {
+    optionParagraphs = createOtherValuesParagraphs(
+      optionParagraphs,
+      otherValuesObject,
+      otherValuesObjectKeys,
+    );
+  }
 
   return [...headerParagraphs, ...optionParagraphs];
 };
