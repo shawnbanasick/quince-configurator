@@ -58,6 +58,8 @@ const getSetSurveyQuestionsArray = (state) => state.setSurveyQuestionsArray;
 const getSetIsConfigXmlLoaded = (state) => state.setIsConfigXmlLoaded;
 const getSetBaserowToken = (state) => state.setBaserowToken;
 const getSetBaserowDatabaseIdNumber = (state) => state.setBaserowDatabaseIdNumber;
+const getSetRequireMinCommentLength = (state) => state.setRequireMinCommentLength;
+const getSetMinCommentLength = (state) => state.setMinCommentLength;
 
 const UploadAndParseXML: React.FC = () => {
   const setStudyTitle = useStore(getSetStudyTitle);
@@ -97,6 +99,8 @@ const UploadAndParseXML: React.FC = () => {
   const setIsConfigXmlLoaded = useStore(getSetIsConfigXmlLoaded);
   const setBaserowToken = useStore(getSetBaserowToken);
   const setBaserowDatabaseIdNumber = useStore(getSetBaserowDatabaseIdNumber);
+  const setRequireMinCommentLength = useStore(getSetRequireMinCommentLength);
+  const setMinCommentLength = useStore(getSetMinCommentLength);
 
   const { t } = useTranslation();
 
@@ -210,6 +214,14 @@ const UploadAndParseXML: React.FC = () => {
           if (item?.attributes?.id === "postsortCommentsRequired") {
             setPostsortCommentsRequired(item?.value === "true");
           }
+
+          if (item?.attributes?.id === "requireMinCommentLength") {
+            setRequireMinCommentLength(item?.value === "true");
+          }
+          if (item?.attributes?.id === "minWordCountValuePostsort") {
+            setMinCommentLength(parseInt(item?.value));
+          }
+
           if (item?.attributes?.id === "defaultFontSizePostsort") {
             setDefaultFontSizePostsort(parseInt(item?.value));
           }

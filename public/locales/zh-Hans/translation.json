@@ -166,6 +166,8 @@
   "postsortCommentsRequired": "后分类评论必填",
   "defaultFontSizePostsort": "后分类默认字体大小",
   "minCardHeightPostsort": "最小默认陈述句卡片高度",
+  "requireMinCommentLength": "要求最小评论长度",
+  "minimumCommentLength": "最小评论长度(字数)",
 
   "*** CONFIG 11 - SURVEY OPTIONS ***": "*** 配置问卷调查选项 ***",
   "surveyOptions": "问卷调查选项",

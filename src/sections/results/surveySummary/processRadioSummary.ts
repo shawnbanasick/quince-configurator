@@ -49,8 +49,8 @@ const safeStripHtml = (text: string | undefined, fallback = "n/a"): string => {
 /**
  * Extracts response values for a specific item from filtered data
  */
-let otherValuesArray: any = [];
-
+let otherValuesObject: any = {};
+let otherValuesObjectKeys: any = [];
 const extractResponseValues = (filteredData: DataEntry[], itemIndex: number): string[] => {
   const key = `itemNum${itemIndex + 1}`;
   const allResponses: string[] = [];
@@ -69,7 +69,7 @@ const extractResponseValues = (filteredData: DataEntry[], itemIndex: number): st
         num = value.slice(0, dashIndex);
         let otherValue = value.slice(dashIndex + 1);
         value = num;
-        otherValuesArray.push([index, otherValue]);
+        otherValuesObject[`p${index + 1}`] = otherValue;
       }
       const responses: any[] = value.split(",");
 
@@ -79,9 +79,10 @@ const extractResponseValues = (filteredData: DataEntry[], itemIndex: number): st
         allResponses.push(...responses);
       }
     }
-    // Only return "no response" if truly empty
   });
-
+  otherValuesObjectKeys = Object.keys(otherValuesObject);
+  console.log("otherValuesObject", otherValuesObject);
+  console.log("otherValuesObjectKeys", otherValuesObjectKeys);
   return allResponses;
 };
 
@@ -91,7 +92,7 @@ const extractResponseValues = (filteredData: DataEntry[], itemIndex: number): st
 const calculateOptionStats = (
   answerOptions: string[],
   responseCounts: Map<string, number>,
-  totalResponses: number
+  totalResponses: number,
 ): OptionStats[] => {
   const allOptions = [...answerOptions, "no response"];
 
@@ -119,7 +120,12 @@ const calculateOptionStats = (
 /**
  * Creates header paragraphs for the summary
  */
-const createHeaderParagraphs = (item: SurveyItem, index: number, text: string, itemText: string): Paragraph[] => {
+const createHeaderParagraphs = (
+  item: SurveyItem,
+  index: number,
+  text: string,
+  itemText: string,
+): Paragraph[] => {
   return [
     new Paragraph({
       children: [
@@ -172,8 +178,36 @@ const createOptionParagraphs = (optionStats: OptionStats[]): Paragraph[] => {
           }),
         ],
         indent: { start: 200 },
-      })
+      }),
   );
+};
+/**
+ * Creates other values paragraphs
+ */
+const createOtherValuesParagraphs = (
+  optionParagraphs: Paragraph[],
+  otherValuesObject: any,
+  otherValuesObjectKeys: any,
+): Paragraph[] => {
+  if (otherValuesObjectKeys.length === 0) {
+    return optionParagraphs;
+  }
+
+  let otherValuesParagraphs = otherValuesObjectKeys.map((key: string) => {
+    return new Paragraph({
+      children: [
+        new TextRun({
+          text: `${key}: ${otherValuesObject[key]}`,
+          bold: false,
+        }),
+      ],
+      indent: { start: 600 },
+    });
+  });
+
+  optionParagraphs.splice(optionParagraphs.length - 1, 0, ...otherValuesParagraphs);
+
+  return optionParagraphs;
 };
 
 /**
@@ -185,7 +219,7 @@ const processRadioSummary = (
   item: SurveyItem,
   index: number,
   text: string,
-  itemText: string
+  itemText: string,
 ): Paragraph[] => {
   // Validate inputs
   if (!filteredData?.length || !item?.options) {
@@ -217,7 +251,15 @@ const processRadioSummary = (
 
   // Generate paragraphs
   const headerParagraphs = createHeaderParagraphs(item, index, text, itemText);
-  const optionParagraphs = createOptionParagraphs(optionStats);
+  let optionParagraphs = createOptionParagraphs(optionStats);
+
+  if (otherValuesObjectKeys.length > 0) {
+    optionParagraphs = createOtherValuesParagraphs(
+      optionParagraphs,
+      otherValuesObject,
+      otherValuesObjectKeys,
+    );
+  }
 
   return [...headerParagraphs, ...optionParagraphs];
 };

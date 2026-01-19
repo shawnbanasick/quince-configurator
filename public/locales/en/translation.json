@@ -166,6 +166,8 @@
   "postsortCommentsRequired": "Post-Sort Comments Required",
   "defaultFontSizePostsort": "Post-Sort Default Font Size",
   "minCardHeightPostsort": "Minimum Default Statement Card Height",
+  "requireMinCommentLength": "Require Minimum Comment Length",
+  "minimumCommentLength": "Minimum Comment Length (words)",
 
   "*** CONFIG 11 - SURVEY OPTIONS ***": "*** CONFIG SURVEY OPTIONS ***",
   "surveyOptions": "Questionnaire Options",

@@ -1,7 +1,7 @@
 import { version } from "react";
 
 const createConfigXmlSlice = (set, get) => ({
-  version: "Quince 1.0.6",
+  version: "1.0.6",
   devMode: false,
   useMobileMode: true,
   traceSorts: true,
@@ -69,6 +69,8 @@ const createConfigXmlSlice = (set, get) => ({
   postsortCommentsRequired: false,
   defaultFontSizePostsort: 16,
   minCardHeightPostsort: 120,
+  requireMinCommentLength: false,
+  minCommentLength: 20,
 
   // SURVEY
   showSurvey: false,
@@ -117,6 +119,12 @@ const createConfigXmlSlice = (set, get) => ({
   isEditingSurveyQuestionIndex: -1,
   triggerSurveyQuestionDeleteModal: false,
 
+  setRequireMinCommentLength: (bool) => {
+    set(() => ({ requireMinCommentLength: bool }));
+  },
+  setMinCommentLength: (length) => {
+    set(() => ({ minCommentLength: length }));
+  },
   setSurveyShowOther: (bool) => {
     set(() => ({ surveyShowOther: bool }));
   },

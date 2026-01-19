@@ -19,6 +19,10 @@ const getDefaultFontSizePostsort = (state) => state.defaultFontSizePostsort;
 const getSetDefaultFontSizePostsort = (state) => state.setDefaultFontSizePostsort;
 const getMinCardHeightPostsort = (state) => state.minCardHeightPostsort;
 const getSetMinCardHeightPostsort = (state) => state.setMinCardHeightPostsort;
+const getRequireMinCommentLength = (state) => state.requireMinCommentLength;
+const getSetRequireMinCommentLength = (state) => state.setRequireMinCommentLength;
+const getMinCommentLength = (state) => state.minCommentLength;
+const getSetMinCommentLength = (state) => state.setMinCommentLength;
 
 const Config10PostsortOptions: React.FC = () => {
   const { t } = useTranslation();
@@ -36,6 +40,10 @@ const Config10PostsortOptions: React.FC = () => {
   const setDefaultFontSizePostsort = useStore(getSetDefaultFontSizePostsort);
   const minCardHeightPostsort = useStore(getMinCardHeightPostsort);
   const setMinCardHeightPostsort = useStore(getSetMinCardHeightPostsort);
+  const requireMinCommentLength = useStore(getRequireMinCommentLength);
+  const setRequireMinCommentLength = useStore(getSetRequireMinCommentLength);
+  const minCommentLength = useStore(getMinCommentLength);
+  const setMinCommentLength = useStore(getSetMinCommentLength);
 
   const handleShowPostsortChange = (input: React.ChangeEvent<HTMLInputElement>) => {
     if (input.target.value === "true") {
@@ -43,6 +51,18 @@ const Config10PostsortOptions: React.FC = () => {
     } else {
       setShowPostsort(false);
     }
+  };
+
+  const handleRequireMinCommentLengthChange = (input: React.ChangeEvent<HTMLInputElement>) => {
+    if (input.target.value === "true") {
+      setRequireMinCommentLength(true);
+    } else {
+      setRequireMinCommentLength(false);
+    }
+  };
+
+  const handleMinCommentLengthChange = (inputValue: any) => {
+    setMinCommentLength(inputValue);
   };
 
   const handleShowSecondPosColumnChange = (input: React.ChangeEvent<HTMLInputElement>) => {
@@ -109,7 +129,7 @@ const Config10PostsortOptions: React.FC = () => {
                 "bg-opacity-100": showPostsort,
                 "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                   !showPostsort,
-              }
+              },
             )}
             htmlFor="showPostsortTrue"
           >
@@ -132,7 +152,7 @@ const Config10PostsortOptions: React.FC = () => {
                 "bg-opacity-100": !showPostsort,
                 "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                   showPostsort,
-              }
+              },
             )}
             htmlFor="showPostsortFalse"
           >
@@ -154,7 +174,7 @@ const Config10PostsortOptions: React.FC = () => {
           className={clsx(
             `transition-all duration-300 ease-in-out transform ${
               showPostsort ? "opacity-100 scale-100" : "opacity-0 scale-100"
-            }`
+            }`,
           )}
         >
           <div className="flex flex-row h-[60px] content-center gap-5 mt-3">
@@ -167,7 +187,7 @@ const Config10PostsortOptions: React.FC = () => {
                     "bg-opacity-100": showSecondPosColumn,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                       !showSecondPosColumn,
-                  }
+                  },
                 )}
                 htmlFor="showSecondPosColumnTrue"
               >
@@ -191,7 +211,7 @@ const Config10PostsortOptions: React.FC = () => {
                     "bg-opacity-100": !showSecondPosColumn,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                       showSecondPosColumn,
-                  }
+                  },
                 )}
                 htmlFor="showSecondPosColumnFalse"
               >
@@ -220,7 +240,7 @@ const Config10PostsortOptions: React.FC = () => {
                     "bg-opacity-100": showSecondNegColumn,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                       !showSecondNegColumn,
-                  }
+                  },
                 )}
                 htmlFor="showSecondNegColumnTrue"
               >
@@ -243,7 +263,7 @@ const Config10PostsortOptions: React.FC = () => {
                     "bg-opacity-100": !showSecondNegColumn,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                       showSecondNegColumn,
-                  }
+                  },
                 )}
                 htmlFor="showSecondNegColumnFalse"
               >
@@ -271,7 +291,7 @@ const Config10PostsortOptions: React.FC = () => {
                     "bg-opacity-100": showBackButton,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                       !showBackButton,
-                  }
+                  },
                 )}
                 htmlFor="showBackButtonTrue"
               >
@@ -294,7 +314,7 @@ const Config10PostsortOptions: React.FC = () => {
                     "bg-opacity-100": !showBackButton,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                       showBackButton,
-                  }
+                  },
                 )}
                 htmlFor="showBackButtonFalse"
               >
@@ -324,7 +344,7 @@ const Config10PostsortOptions: React.FC = () => {
                     "bg-opacity-100": postsortCommentsRequired,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                       !postsortCommentsRequired,
-                  }
+                  },
                 )}
                 htmlFor="postsortCommentsRequiredTrue"
               >
@@ -347,7 +367,7 @@ const Config10PostsortOptions: React.FC = () => {
                     "bg-opacity-100": !postsortCommentsRequired,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                       postsortCommentsRequired,
-                  }
+                  },
                 )}
                 htmlFor="postsortCommentsRequiredFalse"
               >
@@ -364,11 +384,78 @@ const Config10PostsortOptions: React.FC = () => {
               </label>
             </div>
           </div>
+
+          <div className="flex flex-row h-[60px] content-center gap-5 mt-3">
+            <span className="content-center">{`10f. ${t("requireMinCommentLength")}:`}</span>
+            <div className="content-center">
+              <label
+                className={clsx(
+                  "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
+                  {
+                    "bg-opacity-100": requireMinCommentLength,
+                    "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
+                      !requireMinCommentLength,
+                  },
+                )}
+                htmlFor="requireMinCommentLengthTrue"
+              >
+                <input
+                  type="radio"
+                  className="hidden"
+                  name="requireMinCommentLength"
+                  id="requireMinCommentLengthTrue" // htlmlFor targets this id.
+                  value="true"
+                  onChange={handleRequireMinCommentLengthChange}
+                />
+                {t("true")}
+              </label>
+            </div>
+            <div className="content-center">
+              <label
+                className={clsx(
+                  "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
+                  {
+                    "bg-opacity-100": !requireMinCommentLength,
+                    "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
+                      requireMinCommentLength,
+                  },
+                )}
+                htmlFor="requireMinCommentLengthFalse"
+              >
+                <input
+                  type="radio"
+                  className="hidden"
+                  name="requireMinCommentLength"
+                  id="requireMinCommentLengthFalse" // htlmlFor targets this id.
+                  value="false"
+                  checked={!requireMinCommentLength}
+                  onChange={handleRequireMinCommentLengthChange}
+                />
+                {t("false")}
+              </label>
+            </div>
+          </div>
+
           <UserNumInput
-            classNameNum={`mt-2 block min-w-[80px] px-3 py-2 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 outline outline-1 outline-zinc-600 ml-4`}
-            classNameLabel={`flex flex-row content-center min-w-[170px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+            classNameNum={`mt-2 block min-w-[80px] px-3 py-2 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 outline outline-1 outline-zinc-600 ml-4 mb-4 mt-4`}
+            classNameLabel={`flex flex-row content-center min-w-[170px] content-center pt-1 mr-1 disabled:opacity-50 select-none mb-4 mt-2`}
             highlight={false}
-            label={`10f. ${t("defaultFontSizePostsort")}:`}
+            label={`10g. ${t("minimumCommentLength")}:`}
+            placeholder=""
+            upperLimit={999}
+            lowerLimit={2}
+            step={1}
+            disabled={!requireMinCommentLength}
+            name="minCommentLength"
+            value={minCommentLength}
+            onChange={handleMinCommentLengthChange}
+          />
+
+          <UserNumInput
+            classNameNum={`mt-2 block min-w-[80px] px-3 py-2 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 outline outline-1 outline-zinc-600 ml-4 mb-4`}
+            classNameLabel={`flex flex-row content-center min-w-[170px] content-center pt-1 mr-1 disabled:opacity-50 select-none mb-4`}
+            highlight={false}
+            label={`10h. ${t("defaultFontSizePostsort")}:`}
             placeholder=""
             upperLimit={199}
             lowerLimit={6}
@@ -380,10 +467,10 @@ const Config10PostsortOptions: React.FC = () => {
           />
 
           <UserNumInput
-            classNameNum={`mt-2 block min-w-[80px] px-3 py-2 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 outline outline-1 outline-zinc-600 ml-4`}
-            classNameLabel={`flex flex-row content-center min-w-[170px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+            classNameNum={`mt-2 block min-w-[80px] px-3 py-2 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 outline outline-1 outline-zinc-600 ml-4 mb-4`}
+            classNameLabel={`flex flex-row content-center min-w-[170px] content-center pt-1 mr-1 disabled:opacity-50 select-none mb-4`}
             highlight={true}
-            label={`10g. ${t("minCardHeightPostsort")}:`}
+            label={`10i. ${t("minCardHeightPostsort")}:`}
             placeholder=""
             upperLimit={199}
             lowerLimit={6}

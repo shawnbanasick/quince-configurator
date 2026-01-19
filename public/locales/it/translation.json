@@ -166,6 +166,8 @@
   "postsortCommentsRequired": "Commenti Post-Ordinamento Obbligatori",
   "defaultFontSizePostsort": "Dimensione Carattere Predefinita Post-Ordinamento",
   "minCardHeightPostsort": "Altezza Minima Predefinita Scheda Affermazione",
+  "requireMinCommentLength": "Richiedi lunghezza minima del commento",
+  "minimumCommentLength": "Lunghezza minima del commento (parole)",
 
   "*** CONFIG 11 - SURVEY OPTIONS ***": "*** OPZIONI QUESTIONARIO ***",
   "surveyOptions": "Opzioni Questionario",

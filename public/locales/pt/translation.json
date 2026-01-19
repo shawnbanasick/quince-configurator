@@ -166,6 +166,8 @@
   "postsortCommentsRequired": "Comentários Pós-Ordenação Obrigatórios",
   "defaultFontSizePostsort": "Tamanho de Fonte Padrão Pós-Ordenação",
   "minCardHeightPostsort": "Altura Mínima Padrão do Cartão de Afirmação",
+  "requireMinCommentLength": "Exigir comprimento mínimo de comentário",
+  "minimumCommentLength": "Comprimento mínimo de comentário (palavras)",
 
   "*** CONFIG 11 - SURVEY OPTIONS ***": "*** OPÇÕES DE QUESTIONÁRIO ***",
   "surveyOptions": "Opções de Questionário",

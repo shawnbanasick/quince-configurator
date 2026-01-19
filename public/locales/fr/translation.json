@@ -166,6 +166,8 @@
   "postsortCommentsRequired": "Commentaires de Post-Tri Requis",
   "defaultFontSizePostsort": "Taille de Police par Défaut de Post-Tri",
   "minCardHeightPostsort": "Hauteur Minimale par Défaut de la Carte d'Énoncé",
+  "requireMinCommentLength": "Exiger une longueur minimale de commentaire",
+  "minimumCommentLength": "Longueur minimale de commentaire (mots)",
 
   "*** CONFIG 11 - SURVEY OPTIONS ***": "*** OPTIONS DE QUESTIONNAIRE ***",
   "surveyOptions": "Options de Questionnaire",

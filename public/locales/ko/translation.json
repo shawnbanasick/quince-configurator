@@ -166,6 +166,8 @@
   "postsortCommentsRequired": "사후 분류 의견 필수",
   "defaultFontSizePostsort": "사후 분류 기본 글꼴 크기",
   "minCardHeightPostsort": "최소 기본 진술문 카드 높이",
+  "requireMinCommentLength": "최소 댓글 길이 요구",
+  "minimumCommentLength": "최소 댓글 길이 (단어)",
 
   "*** CONFIG 11 - SURVEY OPTIONS ***": "*** 구성 설문지 옵션 ***",
   "surveyOptions": "설문지 옵션",

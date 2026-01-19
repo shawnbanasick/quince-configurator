@@ -31,8 +31,10 @@ const generateConfigXml = () => {
   const defaultFontSizePresort = useStore.getState().defaultFontSizePresort;
   const baserowToken = useStore.getState().baserowToken;
   const baserowDatabaseIdNumber = useStore.getState().baserowDatabaseIdNumber;
+  const requireMinCommentLength = useStore.getState().requireMinCommentLength;
+  const minCommentLength = useStore.getState().minCommentLength;
 
-    // SAVE FOR LATER RESTORATION
+  // SAVE FOR LATER RESTORATION
   //  <item id="allowUnforcedSorts">${allowUnforcedSorts}</item>
   //  <item id="warnOverloadedColumn">${warnOverloadedColumn}</item>
 
@@ -150,8 +152,10 @@ const generateConfigXml = () => {
    <item order="10-c" id="showSecondNegColumn">${showSecondNegColumn}</item>
    <item order="10-d" id="showBackButton">${showBackButton}</item>
    <item order="10-e" id="postsortCommentsRequired">${postsortCommentsRequired}</item>
-   <item order="10-f" id="defaultFontSizePostsort">${defaultFontSizePostsort}</item>
-   <item order="10-g" id="minCardHeightPostsort">${minCardHeightPostsort}</item>
+   <item order="10-f" id="requireMinCommentLength">${requireMinCommentLength}</item>
+   <item order="10-g" id="minWordCountValuePostsort">${minCommentLength}</item>
+   <item order="10-h" id="defaultFontSizePostsort">${defaultFontSizePostsort}</item>
+   <item order="10-i" id="minCardHeightPostsort">${minCardHeightPostsort}</item>
 
    <!-- 11. SURVEY - Survey Questions -->
    <item order="11-a" id="showSurvey">${showSurvey}</item>\n\n`;
@@ -233,7 +237,7 @@ const generateConfigXml = () => {
       // for SELECT items
       if (itemObject.surveyQuestionType === "select") {
         const input = `        <input type="select" required="${itemObject.required}">${encodeHTML(
-          itemObject.options
+          itemObject.options,
         )}</input>\n`;
         label = `        <label>${encodeHTML(encodeHTML(itemObject.label))}</label>\n`;
         const note = `        <note>${encodeHTML(itemObject.note)}</note>\n`;
@@ -284,7 +288,7 @@ const generateConfigXml = () => {
         const input = `        <input type="rating10" required="${
           itemObject.required
         }" scale="1;;;2;;;3;;;4;;;5;;;6;;;7;;;8;;;9;;;10">${encodeHTML(
-          itemObject.options
+          itemObject.options,
         )}</input>\n`;
         label = `        <label>${encodeHTML(itemObject.label)}</label>\n`;
         const note = `        <note>${encodeHTML(itemObject.note)}</note>\n`;

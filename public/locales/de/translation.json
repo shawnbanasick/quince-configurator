@@ -166,6 +166,8 @@
   "postsortCommentsRequired": "Nachsortierungs-Kommentare erforderlich",
   "defaultFontSizePostsort": "Standard-Schriftgröße Nachsortierung",
   "minCardHeightPostsort": "Minimale Standard-Aussagenkartenhöhe",
+  "requireMinCommentLength": "Mindestlänge für Kommentare erforderlich",
+  "minimumCommentLength": "Mindestlänge für Kommentare (Wörter)",
 
   "*** CONFIG 11 - SURVEY OPTIONS ***": "*** CONFIG SURVEY OPTIONS ***",
   "surveyOptions": "Fragebogen-Optionen",
