@@ -77,7 +77,7 @@ const Start = () => {
               className="text-blue-600 underline underline-offset-2 decoration-4 decoration-blue-300 hover:decoration-blue-400"
               target="_blank"
               rel="noopener noreferrer"
-              href="https://drive.google.com/file/d/1gIzl2Ca3XjK_yISLsXHxWtw8dDH9nTNC/view?usp=sharing"
+              href="https://drive.google.com/file/d/1C3ppvAEKJmaQH6jqbI0qMtM_W5FO7C2g/view?usp=sharing"
             >
               {ReactHTMLParser(t("features7"))}
             </a>

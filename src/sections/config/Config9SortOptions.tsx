@@ -85,10 +85,7 @@ const Config9SortOptions: React.FC = () => {
         onChange={handleCondOfInstFontSizeChange}
       />
 
-      <div className="opacity-100 mt-3 mb-1 text-black">
-        <div className="content-center mt-3">{`(${t("unforcedSortsNotPossible")})`}</div>
-      </div>
-      <div className="flex flex-row h-[60px] content-center gap-5  opacity-30">
+      <div className="flex flex-row h-[60px] content-center gap-5 mt-2">
         <span className="content-center">{`9b. ${t("allowUnforcedSorts")}:`}</span>
         <div className="content-center">
           <label
@@ -98,7 +95,7 @@ const Config9SortOptions: React.FC = () => {
                 "bg-opacity-100": allowUnforcedSorts,
                 "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                   !allowUnforcedSorts,
-              }
+              },
             )}
             htmlFor="allowUnforcedSortsTrue"
           >
@@ -109,7 +106,7 @@ const Config9SortOptions: React.FC = () => {
               id="allowUnforcedSortsTrue" // htlmlFor targets this id.
               value="true"
               onChange={handleAllowUnforcedSortsChange}
-              disabled={true}
+              disabled={false}
             />
             {t("true")}
           </label>
@@ -122,7 +119,7 @@ const Config9SortOptions: React.FC = () => {
                 "bg-opacity-100": !allowUnforcedSorts,
                 "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                   allowUnforcedSorts,
-              }
+              },
             )}
             htmlFor="allowUnforcedSortsFalse"
           >
@@ -140,7 +137,7 @@ const Config9SortOptions: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex flex-row h-[60px] content-center gap-5 mt-3">
+      <div className="flex flex-row h-[60px] content-center gap-5 ">
         <span className="content-center">{`9c. ${t("warnOverloadedColumns")}:`}</span>
         <div className="content-center">
           <label
@@ -150,7 +147,7 @@ const Config9SortOptions: React.FC = () => {
                 "bg-opacity-100": warnOverloadedColumn,
                 "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                   !warnOverloadedColumn,
-              }
+              },
             )}
             htmlFor="warnOverloadedColumnTrue"
           >
@@ -174,7 +171,7 @@ const Config9SortOptions: React.FC = () => {
                 "bg-opacity-100": !warnOverloadedColumn,
                 "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                   warnOverloadedColumn,
-              }
+              },
             )}
             htmlFor="warnOverloadedColumnFalse"
           >

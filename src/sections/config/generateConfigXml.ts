@@ -33,6 +33,7 @@ const generateConfigXml = () => {
   const baserowDatabaseIdNumber = useStore.getState().baserowDatabaseIdNumber;
   const requireMinCommentLength = useStore.getState().requireMinCommentLength;
   const minCommentLength = useStore.getState().minCommentLength;
+  const allowUnforcedSorts = useStore.getState().allowUnforcedSorts;
 
   // SAVE FOR LATER RESTORATION
   //  <item id="allowUnforcedSorts">${allowUnforcedSorts}</item>
@@ -141,7 +142,7 @@ const generateConfigXml = () => {
 
    <!-- 9. SORT OPTIONS -->
    <item order="9-a" id="condOfInstFontSize">${condOfInstFontSize}</item>
-   <item order="9-b" id="allowUnforcedSorts">false</item>
+   <item order="9-b" id="allowUnforcedSorts">${allowUnforcedSorts}</item>
    <item order="9-c" id="warnOverloadedColumn">${warnOverloadedColumn}</item>
    <item order="9-d" id="defaultFontSizeSort">${defaultFontSizeSort}</item>
    <item order="9-e" id="minCardHeightSort">${minCardHeightSort}</item>
