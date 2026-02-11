@@ -12,6 +12,20 @@ const getSetMapColorPalette = (state) => state.setMapColorPalette;
 const getSetQSortPatternObject = (state) => state.setQSortPatternObject;
 const getSetIsMapXmlLoaded = (state) => state.setIsMapXmlLoaded;
 const getSetQsortHeaderNumbers = (state) => state.setQsortHeaderNumbers;
+const getSetMobileHeadersDefaultLabels = (state) => state.setMobileHeadersDefaultLabels;
+const getSetColTextLabelsArray = (state) => state.setcolTextLabelsArray;
+
+const getSetUseColLabelEmojiPresort = (state) => state.setUseColLabelEmojiPresort;
+const getSetPresortEmojiPositiveIndex = (state) => state.setPresortEmojiPositiveIndex;
+const getSetPresortEmojiNegativeIndex = (state) => state.setPresortEmojiNegativeIndex;
+const getSetPresortEmojiNeutralIndex = (state) => state.setPresortEmojiNeutralIndex;
+
+const getSetUseColLabelNums = (state) => state.setUseColLabelNums;
+const getSetUseColLabelText = (state) => state.setUseColLabelText;
+const getSetUseColLabelEmoji = (state) => state.setUseColLabelEmoji;
+const getSetUseColLabelEmojiPostsort = (state) => state.setUseColLabelEmojiPostsort;
+const getSetUseColLabelTextPostsort = (state) => state.setUseColLabelTextPostsort;
+const getSetUseColLabelNumsPostsort = (state) => state.setUseColLabelNumsPostsort;
 
 const UploadAndReadXmlMap: React.FC = () => {
   const { t } = useTranslation();
@@ -21,6 +35,21 @@ const UploadAndReadXmlMap: React.FC = () => {
   const setQSortPatternObject = useStore(getSetQSortPatternObject);
   const setIsMapXmlLoaded = useStore(getSetIsMapXmlLoaded);
   const setQsortHeaderNumbers = useStore(getSetQsortHeaderNumbers);
+
+  const setUseColLabelEmojiPresort = useStore(getSetUseColLabelEmojiPresort);
+  const setPresortEmojiPositiveIndex = useStore(getSetPresortEmojiPositiveIndex);
+  const setPresortEmojiNegativeIndex = useStore(getSetPresortEmojiNegativeIndex);
+  const setPresortEmojiNeutralIndex = useStore(getSetPresortEmojiNeutralIndex);
+
+  const setMobileHeadersDefaultLabels = useStore(getSetMobileHeadersDefaultLabels);
+  const setColTextLabelsArray = useStore(getSetColTextLabelsArray);
+
+  const setUseColLabelNums = useStore(getSetUseColLabelNums);
+  const setUseColLabelText = useStore(getSetUseColLabelText);
+  const setUseColLabelEmoji = useStore(getSetUseColLabelEmoji);
+  const setUseColLabelEmojiPostsort = useStore(getSetUseColLabelEmojiPostsort);
+  const setUseColLabelTextPostsort = useStore(getSetUseColLabelTextPostsort);
+  const setUseColLabelNumsPostsort = useStore(getSetUseColLabelNumsPostsort);
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const file = event.target.files?.[0];
@@ -40,6 +69,8 @@ const UploadAndReadXmlMap: React.FC = () => {
           countArray = xmlObjectArray[2]?.value.split(",");
           colorsArray = xmlObjectArray[3]?.value.split(",");
         }
+
+        console.log(JSON.stringify(xmlObjectArray, null, 2), "xmlObjectArray");
 
         setQsortHeaderNumbers(countArray);
 
@@ -66,6 +97,8 @@ const UploadAndReadXmlMap: React.FC = () => {
         // clear column count numbers
         setClearAllColNumbers();
 
+        console.log(nameArray);
+
         // set colors and column count numbers
         nameArray.forEach((item, index) => {
           // set count numbers
@@ -80,6 +113,91 @@ const UploadAndReadXmlMap: React.FC = () => {
           localStorage.setItem(designation3, colorsArray[index]);
           setIsMapXmlLoaded(true);
         });
+
+        // set useColLabelEmojiPresort
+        let useColLabelEmojiPresortObj = xmlObjectArray.find(
+          (item) => item.attributes.id === "useColLabelEmojiPresort",
+        );
+        let useColLabelEmojiPresort = useColLabelEmojiPresortObj.value;
+        setUseColLabelEmojiPresort(useColLabelEmojiPresort.toLowerCase() === "true");
+
+        // set presortEmojiPositiveIndex
+        let presortEmojiPositiveIndexObj = xmlObjectArray.find(
+          (item) => item.attributes.id === "presortEmojiPositiveIndex",
+        );
+        let presortEmojiPositiveIndex = presortEmojiPositiveIndexObj.value;
+        setPresortEmojiPositiveIndex(+presortEmojiPositiveIndex);
+
+        // set presortEmojiNegativeIndex
+        let presortEmojiNegativeIndexObj = xmlObjectArray.find(
+          (item) => item.attributes.id === "presortEmojiNegativeIndex",
+        );
+        let presortEmojiNegativeIndex = presortEmojiNegativeIndexObj.value;
+        setPresortEmojiNegativeIndex(+presortEmojiNegativeIndex);
+
+        // set presortEmojiNeutralIndex
+        let presortEmojiNeutralIndexObj = xmlObjectArray.find(
+          (item) => item.attributes.id === "presortEmojiNeutralIndex",
+        );
+        let presortEmojiNeutralIndex = presortEmojiNeutralIndexObj.value;
+        setPresortEmojiNeutralIndex(+presortEmojiNeutralIndex);
+
+        // set mobileHeadersDefaultLabels
+        let mobileHeadersDefaultLabelsObj = xmlObjectArray.find(
+          (item) => item.attributes.id === "mobileHeadersDefaultLabels",
+        );
+        let mobileHeadersDefaultLabels = mobileHeadersDefaultLabelsObj.value;
+        setMobileHeadersDefaultLabels(mobileHeadersDefaultLabels);
+
+        // set colTextLabelsArray
+        let colTextLabelsArrayObj = xmlObjectArray.find(
+          (item) => item.attributes.id === "colTextLabelsArray",
+        );
+        let colTextLabelsArray = colTextLabelsArrayObj.value;
+        setColTextLabelsArray(colTextLabelsArray);
+
+        // set useColLabelNums
+        let useColLabelNumsObj = xmlObjectArray.find(
+          (item) => item.attributes.id === "useColLabelNums",
+        );
+        let useColLabelNums = useColLabelNumsObj.value;
+        setUseColLabelNums(useColLabelNums.toLowerCase() === "true");
+
+        // set useColLabelText
+        let useColLabelTextObj = xmlObjectArray.find(
+          (item) => item.attributes.id === "useColLabelText",
+        );
+        let useColLabelText = useColLabelTextObj.value;
+        setUseColLabelText(useColLabelText.toLowerCase() === "true");
+
+        // set useColLabelEmoji
+        let useColLabelEmojiObj = xmlObjectArray.find(
+          (item) => item.attributes.id === "useColLabelEmoji",
+        );
+        let useColLabelEmoji = useColLabelEmojiObj.value;
+        setUseColLabelEmoji(useColLabelEmoji.toLowerCase() === "true");
+
+        // set useColLabelEmojiPostsort
+        let useColLabelEmojiPostsortObj = xmlObjectArray.find(
+          (item) => item.attributes.id === "useColLabelEmojiPostsort",
+        );
+        let useColLabelEmojiPostsort = useColLabelEmojiPostsortObj.value;
+        setUseColLabelEmojiPostsort(useColLabelEmojiPostsort.toLowerCase() === "true");
+
+        // set useColLabelTextPostsort
+        let useColLabelTextPostsortObj = xmlObjectArray.find(
+          (item) => item.attributes.id === "useColLabelTextPostsort",
+        );
+        let useColLabelTextPostsort = useColLabelTextPostsortObj.value;
+        setUseColLabelTextPostsort(useColLabelTextPostsort.toLowerCase() === "true");
+
+        // set useColLabelNumsPostsort
+        let useColLabelNumsPostsortObj = xmlObjectArray.find(
+          (item) => item.attributes.id === "useColLabelNumsPostsort",
+        );
+        let useColLabelNumsPostsort = useColLabelNumsPostsortObj.value;
+        setUseColLabelNumsPostsort(useColLabelNumsPostsort.toLowerCase() === "true");
+
         return;
       };
 

@@ -44,8 +44,11 @@ const createMapXmlSlice = (set) => ({
   colCol13: "#e0e0e0",
   qSortPattern: [],
   mapInputQsortPattern: [],
-  colTextLabelsArray: "",
+  colTextLabelsArray:
+    "Very Strongly Agree, Strongly Agree, Agree, Agree Somewhat, Neutral, Disagree Somewhat, Disagree, Strongly Disagree, Very Strongly Disagree",
   numMapTotalColumns: 0,
+
+  selectedMobileHeadersDefaultLabels: "",
   mobileHeadersDefaultLabels: "",
   mobileHeadersDefault5: "Strongly Agree, Agree, Neutral, Disagree, Strongly Disagree",
   mobileHeadersDefault7:
@@ -68,12 +71,25 @@ const createMapXmlSlice = (set) => ({
   useColLabelNumsPostsort: true,
   useColLabelTextPostsort: false,
   useColLabelEmojiPostsort: false,
+  presortEmojiPositiveIndex: 0,
+  presortEmojiNegativeIndex: 0,
+  presortEmojiNeutralIndex: 0,
 
   /*
    ******** GENERIC STATE CHANGE  ****************** */
   setText: (stateDesig, text) => set(() => ({ [stateDesig]: text })),
   setColor: (stateDesig, color) => set(() => ({ [stateDesig]: color })),
   setNumber: (stateDesig, number) => set(() => ({ [stateDesig]: number })),
+
+  setPresortEmojiPositiveIndex: (index) => {
+    set(() => ({ presortEmojiPositiveIndex: index }));
+  },
+  setPresortEmojiNegativeIndex: (index) => {
+    set(() => ({ presortEmojiNegativeIndex: index }));
+  },
+  setPresortEmojiNeutralIndex: (index) => {
+    set(() => ({ presortEmojiNeutralIndex: index }));
+  },
 
   setQsortHeaderNumbers: (array) => {
     set(() => ({ qSortHeaderNumbers: array }));
@@ -89,6 +105,9 @@ const createMapXmlSlice = (set) => ({
   //   set(() => ({ colTextLabelsArray: array }));
   // },
 
+  setSelectedMobileHeadersDefaultLabels: (text) => {
+    set(() => ({ selectedMobileHeadersDefaultLabels: text }));
+  },
   setUseColLabelEmojiPresort: (Boolean) => {
     set(() => ({ useColLabelEmojiPresort: Boolean }));
   },

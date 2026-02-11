@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useStore } from "../../globalState/useStore.js";
 import { useTranslation } from "react-i18next";
 import { Radio } from "../utils/RadioButtons";
@@ -31,6 +31,7 @@ import { Emoji5 } from "./emoji/Emoji5";
 import { ToggleSwitch } from "./ToggleSwitch";
 import ReactHTMLParser from "html-react-parser";
 import { v4 as uuid } from "uuid";
+import EmojiSelectorPresort from "./EmojiSelectorPresort.tsx";
 
 // Type definitions
 interface State {
@@ -43,7 +44,6 @@ interface State {
   setcolTextLabelsArray: (value: string) => void;
   numMapTotalColumns: number;
   mobileHeadersDefaultLabels: string;
-  setMobileHeadersDefaultLabels: (value: string) => void;
   mobileHeadersDefault5: string;
   mobileHeadersDefault7: string;
   mobileHeadersDefault9: string;
@@ -80,11 +80,16 @@ interface State {
   emojiArray: any[];
   setEmojiArray: (value: any[]) => void;
   setEmojiArrayType: (value: string) => void;
+  presortEmojiPositiveIndex: number;
+  presortEmojiNegativeIndex: number;
+  presortEmojiNeutralIndex: number;
+  setMobileHeadersDefaultLabels: (value: string) => void;
+  setPresortEmojiPositiveIndex: (value: number) => void;
+  setPresortEmojiNegativeIndex: (value: number) => void;
+  setPresortEmojiNeutralIndex: (value: number) => void;
+  setSelectedMobileHeadersDefaultLabels: (value: string) => void;
+  selectedMobileHeadersDefaultLabels: string;
 }
-
-// interface EmojiProps {
-//   size: number;
-// }
 
 const getDisplayMode = (state: State) => state.displayMode;
 const getMapColorPalette = (state: State) => state.mapColorPalette;
@@ -121,6 +126,13 @@ const getUseColLabelTextPostsort = (state: State) => state.useColLabelTextPostso
 const getSetUseColLabelTextPostsort = (state: State) => state.setUseColLabelTextPostsort;
 const getUseColLabelEmojiPostsort = (state: State) => state.useColLabelEmojiPostsort;
 const getSetUseColLabelEmojiPostsort = (state: State) => state.setUseColLabelEmojiPostsort;
+
+const getPresortEmojiPositiveIndex = (state: State) => state.presortEmojiPositiveIndex;
+const getPresortEmojiNegativeIndex = (state: State) => state.presortEmojiNegativeIndex;
+const getPresortEmojiNeutralIndex = (state: State) => state.presortEmojiNeutralIndex;
+const getSetPresortEmojiPositiveIndex = (state: State) => state.setPresortEmojiPositiveIndex;
+const getSetPresortEmojiNegativeIndex = (state: State) => state.setPresortEmojiNegativeIndex;
+const getSetPresortEmojiNeutralIndex = (state: State) => state.setPresortEmojiNeutralIndex;
 
 const Map: React.FC = () => {
   const { t } = useTranslation();
@@ -159,16 +171,24 @@ const Map: React.FC = () => {
   const emojiArray = useStore(getEmojiArray);
   const setEmojiArray = useStore(getSetEmojiArray);
   const setEmojiArrayType = useStore(getSetEmojiArrayType);
+  const presortEmojiPositiveIndex = useStore(getPresortEmojiPositiveIndex);
+  const presortEmojiNegativeIndex = useStore(getPresortEmojiNegativeIndex);
+  const presortEmojiNeutralIndex = useStore(getPresortEmojiNeutralIndex);
+  const setPresortEmojiPositiveIndex = useStore(getSetPresortEmojiPositiveIndex);
+  const setPresortEmojiNegativeIndex = useStore(getSetPresortEmojiNegativeIndex);
+  const setPresortEmojiNeutralIndex = useStore(getSetPresortEmojiNeutralIndex);
 
   const isBeginnerMode = displayMode === "beginner";
 
-  // mangage disable column label switches
-  const [isSwitchDisabled, setIsSwitchDisabled] = useState(true);
   const [isSortEmojiSwitchDisabled, setIsSortEmojiSwitchDisabled] = useState(false);
-  let sortEmojiSwitchDisabled = true;
-  if (isSortEmojiSwitchDisabled === false && isSwitchDisabled === false) {
-    sortEmojiSwitchDisabled = false;
-  }
+  // mangage disable column label switches
+  // const [isSwitchDisabled, setIsSwitchDisabled] = useState(true);
+  // let sortEmojiSwitchDisabled = true;
+  // if (isSortEmojiSwitchDisabled === false && isSwitchDisabled === false) {
+  //   sortEmojiSwitchDisabled = false;
+  // }
+
+  const [presortEmojiSelectorArray, setPresortEmojiSelectorArray] = useState<any[]>([]);
 
   // Color palette handlers
   const colorPaletteActions = {
@@ -193,112 +213,165 @@ const Map: React.FC = () => {
     }
   };
 
-  const emoji5Array: any[] = [
-    <EmojiN5 size={50} />,
-    <EmojiN4 size={50} />,
-    <EmojiN3 size={50} />,
-    <EmojiN2 size={50} />,
-    <EmojiN1 size={50} />,
-    <Emoji0 size={50} />,
-    <Emoji1 size={50} />,
-    <Emoji2 size={50} />,
-    <Emoji3 size={50} />,
-    <Emoji4 size={50} />,
-    <Emoji5 size={50} />,
-  ];
-
-  const emoji4Array: any[] = [
-    <EmojiN5 size={50} />,
-    <EmojiN3 size={50} />,
-    <EmojiN2 size={50} />,
-    <EmojiN1 size={50} />,
-    <Emoji0 size={50} />,
-    <Emoji1 size={50} />,
-    <Emoji2 size={50} />,
-    <Emoji3 size={50} />,
-    <Emoji5 size={50} />,
-  ];
-
-  const emoji3Array: any[] = [
-    <EmojiN3 size={50} />,
-    <EmojiN2 size={50} />,
-    <EmojiN1 size={50} />,
-    <Emoji0 size={50} />,
-    <Emoji1 size={50} />,
-    <Emoji2 size={50} />,
-    <Emoji3 size={50} />,
-  ];
-
-  const emoji2Array: any[] = [
-    <EmojiN2 size={50} />,
-    <EmojiN1 size={50} />,
-    <Emoji0 size={50} />,
-    <Emoji1 size={50} />,
-    <Emoji2 size={50} />,
-  ];
-
-  const handleMobileLabelsChange = (value: string): void => {
-    if (value === "labels5") {
-      // setColNums("-2, -1, 0, +1, +2");
-      setEmojiArray([...emoji2Array]);
-      setIsSortEmojiSwitchDisabled(false);
-      setEmojiArrayType("emoji2Array");
-    }
-    if (value === "labels7") {
-      // setColNums("-3, -2, -1, 0, +1, +2, +3");
-      setIsSortEmojiSwitchDisabled(false);
-      setEmojiArray([...emoji3Array]);
-      setEmojiArrayType("emoji3Array");
-    }
-    if (value === "labels9") {
-      // setColNums("-4, -3, -2, -1, 0, +1, +2, +3, +4");
-      setIsSortEmojiSwitchDisabled(false);
-      setEmojiArray([...emoji4Array]);
-      setEmojiArrayType("emoji4Array");
-    }
-    if (value === "labels11") {
-      // setColNums("-5, -4, -3, -2, -1, 0, +1, +2, +3, +4, +5");
-      setIsSortEmojiSwitchDisabled(false);
-      setEmojiArray([...emoji5Array]);
-      setEmojiArrayType("emoji5Array");
-    }
-    if (value === "labels13") {
-      // setColNums("-6, -5, -4, -3, -2, -1, 0, +1, +2, +3, +4, +5, +6");
-      setEmojiArray([]);
-      setIsSortEmojiSwitchDisabled(true);
-      setUseColLabelEmoji(false);
-      setUseColLabelEmojiPresort(false);
-      setUseColLabelEmojiPostsort(false);
-      setEmojiArrayType("");
-    }
-
-    if (value === "otherDesigns") {
-      setEmojiArray([]);
-      setIsSortEmojiSwitchDisabled(true);
-      setUseColLabelEmoji(false);
-      setUseColLabelEmojiPresort(false);
-      setUseColLabelEmojiPostsort(false);
-      setEmojiArrayType("");
-      setcolTextLabelsArray("");
-    }
-
-    setMobileHeadersDefaultLabels(value);
-
-    const labelMappings = {
-      labels5: mobileHeadersDefault5,
-      labels7: mobileHeadersDefault7,
-      labels9: mobileHeadersDefault9,
-      labels11: mobileHeadersDefault11,
-      labels13: mobileHeadersDefault13,
-    };
-
-    const labelText = labelMappings[value as keyof typeof labelMappings];
-    if (labelText) {
-      setcolTextLabelsArray(labelText);
-    }
-
-    setIsSwitchDisabled(false);
+  const getEmoji5Array = (size: number) => {
+    return [
+      <EmojiN5 size={size} />,
+      <EmojiN4 size={size} />,
+      <EmojiN3 size={size} />,
+      <EmojiN2 size={size} />,
+      <EmojiN1 size={size} />,
+      <Emoji0 size={size} />,
+      <Emoji1 size={size} />,
+      <Emoji2 size={size} />,
+      <Emoji3 size={size} />,
+      <Emoji4 size={size} />,
+      <Emoji5 size={size} />,
+    ];
   };
+
+  const getEmoji4Array = (size: number) => {
+    return [
+      <EmojiN5 size={size} />,
+      <EmojiN3 size={size} />,
+      <EmojiN2 size={size} />,
+      <EmojiN1 size={size} />,
+      <Emoji0 size={size} />,
+      <Emoji1 size={size} />,
+      <Emoji2 size={size} />,
+      <Emoji3 size={size} />,
+      <Emoji5 size={size} />,
+    ];
+  };
+
+  const getEmoji3Array = (size: number) => {
+    return [
+      <EmojiN3 size={size} />,
+      <EmojiN2 size={size} />,
+      <EmojiN1 size={size} />,
+      <Emoji0 size={size} />,
+      <Emoji1 size={size} />,
+      <Emoji2 size={size} />,
+      <Emoji3 size={size} />,
+    ];
+  };
+
+  const getEmoji2Array = (size: number) => {
+    return [
+      <EmojiN2 size={size} />,
+      <EmojiN1 size={size} />,
+      <Emoji0 size={size} />,
+      <Emoji1 size={size} />,
+      <Emoji2 size={size} />,
+    ];
+  };
+
+  useEffect(() => {
+    setIsSortEmojiSwitchDisabled(false);
+    setEmojiArray([...getEmoji4Array(50)]);
+    setEmojiArrayType("emoji4Array");
+    setPresortEmojiSelectorArray([...getEmoji4Array(20)]);
+    setMobileHeadersDefaultLabels("labels9");
+  }, []);
+
+  const handleMobileLabelsChange = useCallback(
+    (value: string): void => {
+      if (value === "labels5") {
+        // setColNums("-2, -1, 0, +1, +2");
+        setIsSortEmojiSwitchDisabled(false);
+        setEmojiArray([...getEmoji2Array(50)]);
+        setEmojiArrayType("emoji2Array");
+        setPresortEmojiSelectorArray([...getEmoji2Array(20)]);
+        setPresortEmojiPositiveIndex(4);
+        setPresortEmojiNeutralIndex(2);
+        setPresortEmojiNegativeIndex(0);
+      }
+      if (value === "labels7") {
+        // setColNums("-3, -2, -1, 0, +1, +2, +3");
+        setIsSortEmojiSwitchDisabled(false);
+        setEmojiArray([...getEmoji3Array(50)]);
+        setEmojiArrayType("emoji3Array");
+        setPresortEmojiSelectorArray([...getEmoji3Array(20)]);
+        setPresortEmojiPositiveIndex(6);
+        setPresortEmojiNeutralIndex(3);
+        setPresortEmojiNegativeIndex(0);
+      }
+      if (value === "labels9") {
+        // setColNums("-4, -3, -2, -1, 0, +1, +2, +3, +4");
+        setIsSortEmojiSwitchDisabled(false);
+        setEmojiArray([...getEmoji4Array(50)]);
+        setEmojiArrayType("emoji4Array");
+        setPresortEmojiSelectorArray([...getEmoji4Array(20)]);
+        setPresortEmojiPositiveIndex(8);
+        setPresortEmojiNeutralIndex(4);
+        setPresortEmojiNegativeIndex(0);
+      }
+      if (value === "labels11") {
+        // setColNums("-5, -4, -3, -2, -1, 0, +1, +2, +3, +4, +5");
+        setIsSortEmojiSwitchDisabled(false);
+        setEmojiArray([...getEmoji5Array(50)]);
+        setEmojiArrayType("emoji5Array");
+        setPresortEmojiSelectorArray([...getEmoji5Array(20)]);
+        setPresortEmojiPositiveIndex(10);
+        setPresortEmojiNeutralIndex(5);
+        setPresortEmojiNegativeIndex(0);
+      }
+      if (value === "labels13") {
+        // setColNums("-6, -5, -4, -3, -2, -1, 0, +1, +2, +3, +4, +5, +6");
+        setEmojiArray([]);
+        setPresortEmojiSelectorArray([]);
+        setIsSortEmojiSwitchDisabled(true);
+        setUseColLabelEmoji(false);
+        setUseColLabelEmojiPresort(false);
+        setUseColLabelEmojiPostsort(false);
+        setEmojiArrayType("");
+      }
+
+      if (value === "otherDesigns") {
+        setEmojiArray([]);
+        setPresortEmojiSelectorArray([]);
+        setIsSortEmojiSwitchDisabled(true);
+        setUseColLabelEmoji(false);
+        setUseColLabelEmojiPresort(false);
+        setUseColLabelEmojiPostsort(false);
+        setEmojiArrayType("");
+        setcolTextLabelsArray("");
+      }
+
+      setMobileHeadersDefaultLabels(value);
+
+      const labelMappings = {
+        labels5: mobileHeadersDefault5,
+        labels7: mobileHeadersDefault7,
+        labels9: mobileHeadersDefault9,
+        labels11: mobileHeadersDefault11,
+        labels13: mobileHeadersDefault13,
+      };
+
+      const labelText = labelMappings[value as keyof typeof labelMappings];
+      if (labelText) {
+        setcolTextLabelsArray(labelText);
+      }
+
+      // setIsSwitchDisabled(false);
+    },
+    [
+      setEmojiArray,
+      setEmojiArrayType,
+      setPresortEmojiSelectorArray,
+      setIsSortEmojiSwitchDisabled,
+      setUseColLabelEmoji,
+      setUseColLabelEmojiPresort,
+      setUseColLabelEmojiPostsort,
+      setMobileHeadersDefaultLabels,
+      setcolTextLabelsArray,
+      // setIsSwitchDisabled,
+      mobileHeadersDefault5,
+      mobileHeadersDefault7,
+      mobileHeadersDefault9,
+      mobileHeadersDefault11,
+      mobileHeadersDefault13,
+    ],
+  );
 
   const handleMapColColorsChange = (value: string): void => {
     setMapColColorsStyle(value);
@@ -593,7 +666,7 @@ const Map: React.FC = () => {
         </div>
 
         {/* Column Labels Configuration */}
-        <div className="bg-white rounded-2xl shadow-xl border border-gray-100">
+        <div className="bg-white rounded-2xl shadow-xl">
           <div className="rounded-tr-2xl rounded-tl-2xl bg-gradient-to-r h-[130px] from-blue-500 to-blue-600 text-white p-8">
             <div className="flex items-center justify-between ">
               <div className="text-2xl font-semibold">{t("columnLabelsBoxTitle")}</div>
@@ -639,16 +712,23 @@ const Map: React.FC = () => {
               <div className="text-lg font-semibold text-gray-900 mt-4 mb-1">
                 {t("presortColumnLabels")}
               </div>
-              <div className="space-y-3 mb-8 ml-4">
+              <div className="space-y-3 mb-1 ml-4">
                 <ToggleSwitch
                   label={t("usePresortEmoji")}
                   labelPosition="left"
-                  disabled={sortEmojiSwitchDisabled}
+                  // disabled={sortEmojiSwitchDisabled}
                   checked={useColLabelEmojiPresort}
                   onChange={() => setUseColLabelEmojiPresort(!useColLabelEmojiPresort)}
                   variant="green"
                 />
               </div>
+              <EmojiSelectorPresort
+                emojiArray={presortEmojiSelectorArray}
+                disabled={!useColLabelEmojiPresort}
+                presortEmojiPositiveIndex={presortEmojiPositiveIndex}
+                presortEmojiNegativeIndex={presortEmojiNegativeIndex}
+                presortEmojiNeutralIndex={presortEmojiNeutralIndex}
+              />
               <div className="text-lg font-semibold text-gray-900 mb-1">
                 {t("sortColumnLabels")}
               </div>
@@ -659,7 +739,7 @@ const Map: React.FC = () => {
                     labelPosition="left"
                     checked={useColLabelNums}
                     onChange={() => setUseColLabelNums(!useColLabelNums)}
-                    disabled={isSwitchDisabled}
+                    // disabled={isSwitchDisabled}
                     variant="green"
                   />
                 </div>
@@ -668,8 +748,14 @@ const Map: React.FC = () => {
                     label={t("useSortText")}
                     labelPosition="left"
                     checked={useColLabelText}
-                    onChange={() => setUseColLabelText(!useColLabelText)}
-                    disabled={isSwitchDisabled}
+                    onChange={() => {
+                      setUseColLabelText(!useColLabelText);
+                      // setcolTextLabelsArray(colTextLabelsArray);
+                      console.log("useColLabelText", useColLabelText);
+
+                      console.log("mobileHeadersDefaultLabels", mobileHeadersDefaultLabels);
+                    }}
+                    // disabled={isSwitchDisabled}
                     variant="green"
                   />
                 </div>
@@ -694,7 +780,7 @@ const Map: React.FC = () => {
                     <ToggleSwitch
                       label={t("useSortEmoji")}
                       labelPosition="left"
-                      disabled={sortEmojiSwitchDisabled}
+                      // disabled={sortEmojiSwitchDisabled}
                       checked={useColLabelEmoji}
                       onChange={() => setUseColLabelEmoji(!useColLabelEmoji)}
                       variant="green"
@@ -712,7 +798,7 @@ const Map: React.FC = () => {
                   labelPosition="left"
                   checked={useColLabelNumsPostsort}
                   onChange={() => setUseColLabelNumsPostsort(!useColLabelNumsPostsort)}
-                  disabled={isSwitchDisabled}
+                  // disabled={isSwitchDisabled}
                   variant="green"
                 />
               </div>
@@ -722,7 +808,7 @@ const Map: React.FC = () => {
                   labelPosition="left"
                   checked={useColLabelTextPostsort}
                   onChange={() => setUseColLabelTextPostsort(!useColLabelTextPostsort)}
-                  disabled={isSwitchDisabled}
+                  // disabled={isSwitchDisabled}
                   variant="green"
                 />
               </div>
@@ -731,7 +817,7 @@ const Map: React.FC = () => {
                   <ToggleSwitch
                     label={t("usePostsortEmoji")}
                     labelPosition="left"
-                    disabled={sortEmojiSwitchDisabled}
+                    // disabled={sortEmojiSwitchDisabled}
                     checked={useColLabelEmojiPostsort}
                     onChange={() => setUseColLabelEmojiPostsort(!useColLabelEmojiPostsort)}
                     variant="green"

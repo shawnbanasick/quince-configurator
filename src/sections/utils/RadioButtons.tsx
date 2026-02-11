@@ -36,7 +36,7 @@ export const Radio: React.FC<RadioProps> = ({
                 !isChecked,
               "bg-opacity-50 text-slate-300 outline-slate-200": disabled,
               "outline-gray-300 text-gray-300": !isChecked && disabled,
-            }
+            },
           )}
           htmlFor={value}
         >

@@ -175,10 +175,19 @@ const generateMapXml = () => {
   const useColLabelEmojiPostsortValue = useStore.getState().useColLabelEmojiPostsort;
   const useColLabelTextPostsortValue = useStore.getState().useColLabelTextPostsort;
   const useColLabelNumsPostsortValue = useStore.getState().useColLabelNumsPostsort;
+  const presortEmojiPositiveIndexValue = useStore.getState().presortEmojiPositiveIndex;
+  const presortEmojiNeutralIndexValue = useStore.getState().presortEmojiNeutralIndex;
+  const presortEmojiNegativeIndexValue = useStore.getState().presortEmojiNegativeIndex;
+
+  const mobileHeadersDefaultLabelsValue = useStore.getState().mobileHeadersDefaultLabels;
 
   const colTextLabelsArray = `     <item id="colTextLabelsArray">${colTextLabelsArrayValue}</item>\n`;
   const emojiArrayType = `     <item id="emojiArrayType">${emojiArrayTypeValue}</item>\n`;
+  const mobileHeadersDefaultLabels = `     <item id="mobileHeadersDefaultLabels">${mobileHeadersDefaultLabelsValue}</item>\n`;
   const useColLabelEmojiPresort = `     <item id="useColLabelEmojiPresort">${useColLabelEmojiPresortValue}</item>\n`;
+  const presortEmojiPositiveIndex = `     <item id="presortEmojiPositiveIndex">${presortEmojiPositiveIndexValue}</item>\n`;
+  const presortEmojiNeutralIndex = `     <item id="presortEmojiNeutralIndex">${presortEmojiNeutralIndexValue}</item>\n`;
+  const presortEmojiNegativeIndex = `     <item id="presortEmojiNegativeIndex">${presortEmojiNegativeIndexValue}</item>\n`;
   const useColLabelNums = `     <item id="useColLabelNums">${useColLabelNumsValue}</item>\n`;
   const useColLabelText = `     <item id="useColLabelText">${useColLabelTextValue}</item>\n`;
   const useColLabelEmoji = `     <item id="useColLabelEmoji">${useColLabelEmojiValue}</item>\n`;
@@ -198,13 +207,17 @@ const generateMapXml = () => {
     header2,
     colTextLabelsArray,
     emojiArrayType,
+    mobileHeadersDefaultLabels,
     useColLabelEmojiPresort,
+    presortEmojiPositiveIndex,
+    presortEmojiNeutralIndex,
+    presortEmojiNegativeIndex,
     useColLabelNums,
     useColLabelText,
     useColLabelEmoji,
     useColLabelEmojiPostsort,
     useColLabelTextPostsort,
-    useColLabelNumsPostsort
+    useColLabelNumsPostsort,
   );
 
   // end file
