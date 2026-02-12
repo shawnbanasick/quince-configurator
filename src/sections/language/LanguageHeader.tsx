@@ -37,10 +37,11 @@ const LanguageHeader: React.FC = () => {
   };
 
   const ActionButton: React.FC<{
+    id: string;
     children: React.ReactNode;
     icon: React.ReactNode;
     description: React.ReactNode;
-  }> = ({ children, description }) => (
+  }> = ({ id, children, description }) => (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-all duration-300">
       <div className="flex flex-col w-[100%] items-center text-center space-y-4">
         <div className="w-[80%]">
@@ -90,6 +91,7 @@ const LanguageHeader: React.FC = () => {
           {/* Action Buttons Section */}
           <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-[1200px] mx-auto">
             <ActionButton
+              id="uploadLanguageXmlButton"
               icon={
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
@@ -102,12 +104,13 @@ const LanguageHeader: React.FC = () => {
               }
               description={ReactHTMLParser(t("uploadLanguageXml"))}
             >
-              <div className="mt-7">
+              <div className="mt-0">
                 <UploadAndReadLanguageXml />
               </div>
             </ActionButton>
 
             <ActionButton
+              id="downloadLanguageXmlButton"
               icon={
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path

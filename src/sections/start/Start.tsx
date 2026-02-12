@@ -9,6 +9,7 @@ import qrCodeJapanese from "../../assets/images/qr-code-japanese.png";
 import { useTranslation } from "react-i18next";
 import ReactHTMLParser from "html-react-parser";
 import { useStore } from "../../GlobalState/useStore";
+import { VersionHistory } from "./VersionHistory";
 
 interface GlobalState {
   version: string;
@@ -27,6 +28,8 @@ const Start = () => {
       <div className="mt-8 w-9/12 align-self-center items-center justify-center text-center font-semibold text-3xl">
         {"Version: " + frontPageVersion}
       </div>
+      <VersionHistory />
+
       {/* WHAT IS IT? */}
       <div className="mt-8 w-9/12 align-self-center items-center justify-center font-semibold text-3xl">
         {ReactHTMLParser(t("what0"))}
