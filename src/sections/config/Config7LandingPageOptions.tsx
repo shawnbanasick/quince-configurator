@@ -10,7 +10,7 @@ const getSetInitialScreen = (state) => state.setInitialScreen;
 const getAccessCode = (state) => state.accessCode;
 const getSetAccessCode = (state) => state.setAccessCode;
 
-const Config6LandingPageOptions: React.FC = () => {
+const Config7LandingPageOptions: React.FC = () => {
   const initialScreen = useStore(getInitialScreen);
   const setInitialScreen = useStore(getSetInitialScreen);
   const accessCode = useStore(getAccessCode);
@@ -33,7 +33,7 @@ const Config6LandingPageOptions: React.FC = () => {
   return (
     <div className="flex flex-col  pt-6 pb-2 hover:bg-gray-100 hover:outline outline-2 outline-zinc-600 p-2 hover:rounded-md">
       <div className="flex flex-row content-center gap-5 mt-3">
-        <span className="text-lg font-title font-semibold">6. {t("projectAccessOptions")}</span>{" "}
+        <span className="text-lg font-title font-semibold">7. {t("projectAccessOptions")}</span>{" "}
         {/* <img
           src={Image}
           className=" w-[25px] h-[25px] justify-self-center"
@@ -44,7 +44,7 @@ const Config6LandingPageOptions: React.FC = () => {
 
       <div className="flex flex-row h-[70px] content-center gap-5 mt-1">
         <span className={`content-center`}>
-          <mark>{`6a. ${t("accessMode")}:`}</mark>
+          <mark>{`7a. ${t("accessMode")}:`}</mark>
         </span>
         <Radio
           name="accessMode"
@@ -87,7 +87,7 @@ const Config6LandingPageOptions: React.FC = () => {
           accessCodeInputDisabled ? "text-slate-400" : ""
         } select-none`}
         highlight={true}
-        label={`6b. ${t("accessCode")}:`}
+        label={`7b. ${t("accessCode")}:`}
         placeholder={t("inputAccessCode")}
         disabled={accessCodeInputDisabled}
         name="accessCodeInput"
@@ -98,4 +98,4 @@ const Config6LandingPageOptions: React.FC = () => {
   );
 };
 
-export { Config6LandingPageOptions };
+export { Config7LandingPageOptions };

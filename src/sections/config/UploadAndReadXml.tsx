@@ -60,6 +60,7 @@ const getSetBaserowToken = (state) => state.setBaserowToken;
 const getSetBaserowDatabaseIdNumber = (state) => state.setBaserowDatabaseIdNumber;
 const getSetRequireMinCommentLength = (state) => state.setRequireMinCommentLength;
 const getSetMinCommentLength = (state) => state.setMinCommentLength;
+const getSetPreventMobileAccess = (state) => state.setPreventMobileAccess;
 
 const UploadAndParseXML: React.FC = () => {
   const setStudyTitle = useStore(getSetStudyTitle);
@@ -101,6 +102,7 @@ const UploadAndParseXML: React.FC = () => {
   const setBaserowDatabaseIdNumber = useStore(getSetBaserowDatabaseIdNumber);
   const setRequireMinCommentLength = useStore(getSetRequireMinCommentLength);
   const setMinCommentLength = useStore(getSetMinCommentLength);
+  const setPreventMobileAccess = useStore(getSetPreventMobileAccess);
 
   const { t } = useTranslation();
 
@@ -135,6 +137,9 @@ const UploadAndParseXML: React.FC = () => {
           }
           if (item?.attributes?.id === "baserowDatabaseIdNumber") {
             setBaserowDatabaseIdNumber(item?.value);
+          }
+          if (item?.attributes?.id === "preventMobileAccess") {
+            setPreventMobileAccess(item?.value === "true");
           }
           if (item?.attributes?.id === "linkToSecondProject") {
             setLinkToSecondProject(item?.value === "true");

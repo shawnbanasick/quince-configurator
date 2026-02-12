@@ -34,6 +34,7 @@ const generateConfigXml = () => {
   const requireMinCommentLength = useStore.getState().requireMinCommentLength;
   const minCommentLength = useStore.getState().minCommentLength;
   const allowUnforcedSorts = useStore.getState().allowUnforcedSorts;
+  const preventMobileAccess = useStore.getState().preventMobileAccess;
 
   // SAVE FOR LATER RESTORATION
   //  <item id="allowUnforcedSorts">${allowUnforcedSorts}</item>
@@ -105,61 +106,63 @@ const generateConfigXml = () => {
    <!-- 1. STUDY TITLE -->
    <item order="1-a" id="studyTitle">${studyTitle}</item> 
 
-
    <!-- 2. DATABASE SETUP -->
    <!-- "setupTarget" options: baserow or local -->
    <item order="2-a" id="baserowToken">${baserowToken}</item>
    <item order="2-b" id="baserowDatabaseIdNumber">${baserowDatabaseIdNumber}</item>
    <item order="2-c" id="emailAddress">${emailAddress}</item>
 
-   <!-- 3. SECOND PROJECT LINKING -->
-   <item order="3-a" id="linkToSecondProject">${linkToSecondProject}</item> 
-   <item order="3-b" id="secondProjectUrl">${secondProjectUrl}</item> 
+   <!-- 3. PREVENT MOBILE ACCESS -->
+   <item order="3-a" id="preventMobileAccess">${preventMobileAccess}</item>
 
-   <!-- 4. STATEMENT OR IMAGE SORT  (imageFormat: 169 or 43)-->
-   <item order="4-a" id="useImages">false</item>
-   <item order="4-b" id="numImages">30</item>
-   <item order="4-c" id="imageFileType">jpg</item>
-   <item order="4-d" id="imageFormat">postSortImageModal169</item>
+   <!-- 4. SECOND PROJECT LINKING -->
+   <item order="4-a" id="linkToSecondProject">${linkToSecondProject}</item> 
+   <item order="4-b" id="secondProjectUrl">${secondProjectUrl}</item> 
 
-   <!-- 5. CONSENT PAGE OPTIONS -->
-   <item order="5-a" id="showConsentPage">${showConsentPage}</item>
-   <item order="5-b" id="showConsentPageHelpModal">${showConsentPageHelpModal}</item>
+   <!-- 5. STATEMENT OR IMAGE SORT  (imageFormat: 169 or 43)-->
+   <item order="5-a" id="useImages">false</item>
+   <item order="5-b" id="numImages">30</item>
+   <item order="5-c" id="imageFileType">jpg</item>
+   <item order="5-d" id="imageFormat">postSortImageModal169</item>
+
+   <!-- 6. CONSENT PAGE OPTIONS -->
+   <item order="6-a" id="showConsentPage">${showConsentPage}</item>
+   <item order="6-b" id="showConsentPageHelpModal">${showConsentPageHelpModal}</item>
    
-   <!-- 6. PROJECT ACCESS OPTIONS -->
+   <!-- 7. PROJECT ACCESS OPTIONS -->
    <!-- options: anonymous, partId-access, partId, access -->
-   <item order="6-a" id="initialScreen">${initialScreen}</item>
-   <item order="6-b" id="accessCode">${accessCode}</item>
+   <item order="7-a" id="initialScreen">${initialScreen}</item>
+   <item order="7-b" id="accessCode">${accessCode}</item>
    
-   <!-- 7. COLOR SETTINGS  -->
+   <!-- 8. COLOR SETTINGS  -->
    <!-- defaults = #2a2a2a (font), #ccffcc (right), #e0e0e0 (center), #ffe0f0 (left) -->
-   <item order="7-a" id="headerBarColor">${headerBarColor}</item>
-   <item order="7-b" id="defaultFontColor">${defaultFontColor}</item>
+   <item order="8-a" id="headerBarColor">${headerBarColor}</item>
+   <item order="8-b" id="defaultFontColor">${defaultFontColor}</item>
    
-   <!-- 8. PRESORT OPTIONS -->
-   <item order="8-a" id="shuffleCards">${shuffleCards}</item>
-   <item order="8-b" id="defaultFontSizePresort">${defaultFontSizePresort}</item>
+   <!-- 9. PRESORT OPTIONS -->
+   <item order="9-a" id="shuffleCards">${shuffleCards}</item>
+   <item order="9-b" id="defaultFontSizePresort">${defaultFontSizePresort}</item>
 
-   <!-- 9. SORT OPTIONS -->
-   <item order="9-a" id="condOfInstFontSize">${condOfInstFontSize}</item>
-   <item order="9-b" id="allowUnforcedSorts">${allowUnforcedSorts}</item>
-   <item order="9-c" id="warnOverloadedColumn">${warnOverloadedColumn}</item>
-   <item order="9-d" id="defaultFontSizeSort">${defaultFontSizeSort}</item>
-   <item order="9-e" id="minCardHeightSort">${minCardHeightSort}</item>
+   <!-- 10. SORT OPTIONS -->
+   <item order="10-a" id="condOfInstFontSize">${condOfInstFontSize}</item>
+   <item order="10-b" id="allowUnforcedSorts">${allowUnforcedSorts}</item>
+   <item order="10-c" id="warnOverloadedColumn">${warnOverloadedColumn}</item>
+   <item order="10-d" id="defaultFontSizeSort">${defaultFontSizeSort}</item>
+   <item order="10-e" id="minCardHeightSort">${minCardHeightSort}</item>
 
-   <!-- 10. POSTSORT OPTIONS -->
-   <item order="10-a" id="showPostsort">${showPostsort}</item>
-   <item order="10-b" id="showSecondPosColumn">${showSecondPosColumn}</item>
-   <item order="10-c" id="showSecondNegColumn">${showSecondNegColumn}</item>
-   <item order="10-d" id="showBackButton">${showBackButton}</item>
-   <item order="10-e" id="postsortCommentsRequired">${postsortCommentsRequired}</item>
+   <!-- 11. POSTSORT OPTIONS -->
+   <item order="11-a" id="showPostsort">${showPostsort}</item>
+   <item order="11-b" id="showSecondPosColumn">${showSecondPosColumn}</item>
+   <item order="11-c" id="showSecondNegColumn">${showSecondNegColumn}</item>
+   <item order="11-d" id="showBackButton">${showBackButton}</item>
+   <item order="11-e" id="postsortCommentsRequired">${postsortCommentsRequired}</item>
    <item order="10-f" id="requireMinCommentLength">${requireMinCommentLength}</item>
    <item order="10-g" id="minWordCountValuePostsort">${minCommentLength}</item>
    <item order="10-h" id="defaultFontSizePostsort">${defaultFontSizePostsort}</item>
    <item order="10-i" id="minCardHeightPostsort">${minCardHeightPostsort}</item>
 
-   <!-- 11. SURVEY - Survey Questions -->
-   <item order="11-a" id="showSurvey">${showSurvey}</item>\n\n`;
+   <!-- 12. SURVEY - Survey Questions -->
+   <item order="12-a" id="showSurvey">${showSurvey}</item>\n\n`;
 
   let data = data1.concat(data2);
 

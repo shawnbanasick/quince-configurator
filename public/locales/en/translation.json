@@ -101,11 +101,15 @@
   "enterBaserowDatabaseIdNumber": "Input Baserow Database ID Number",
   "enterEmailSubjectLineText": "Input Email Subject Text",
 
+  "*** CONFIG 3 - DESKTOP ONLY  ***": "*** DESKTOP ONLY ***",
+  "restrictedToDesktop": "Mobile Access",
+  "desktopOnly": "Prevent Mobile Access",
+
   "*** CONFIG 3 - LINK TO SECOND PROJECT ***": "*** CONFIG LINK TO SECOND PROJECT ***",
   "projectLinking": "Link to a Second Q Sort",
   "linkToSecondProject": "Link to Second Q Sort",
   "secondProjectUrlAddress": "Second Project URL Address",
-  "enterSecondProjectUrlAddress": "Input Second Project Email Address",
+  "enterSecondProjectUrlAddress": "Input Second Project URL Address",
 
   "*** CONFIG 4 - SORT IMAGES ***": "*** CONFIG SORT IMAGES ***",
   "sortImages": "Sort Images / Pictures Instead of Text Statements",
@@ -402,6 +406,11 @@
   "mobileViewAreaSizeButtonText": "Mobile View Area Size Button Text",
   "mobileModalButtonCancel": "Mobile Modal Cancel Button",
   "expandViewMessage": "Expand View Area Message",
+
+  "*** LANGUAGE 2. Prevent Mobile Access ***": "***  LANGUAGE PAGE  ***",
+  "preventMobileAccess": "Prevent Mobile Access",
+  "preventMobileTitle": "Prevent Mobile Title",
+  "preventMobileMessage": "Prevent Mobile Message",
 
   "*** LANGUAGE 2. Consent Screen ***": "***  LANGUAGE PAGE  ***",
   "consentScreen": "Consent Screen",

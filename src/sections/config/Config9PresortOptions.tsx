@@ -19,7 +19,7 @@ const getSetShuffleCards = (state) => state.setShuffleCards;
 const getDefaultFontSizePresort = (state) => state.defaultFontSizePresort;
 const getSetDefaultFontSizePresort = (state) => state.setDefaultFontSizePresort;
 
-const Config8PresortOptions: React.FC = () => {
+const Config9PresortOptions: React.FC = () => {
   const { t } = useTranslation();
   const shuffleCards = useStore(getShuffleCards);
   const setShuffleCards = useStore(getSetShuffleCards);
@@ -54,7 +54,7 @@ const Config8PresortOptions: React.FC = () => {
   return (
     <div className="flex flex-col  pt-6 pb-2 hover:bg-gray-100 hover:outline outline-2 outline-zinc-600 p-2 hover:rounded-md">
       <div className="flex flex-row content-center gap-5 mt-3">
-        <span className="text-lg font-title font-semibold">8. {t("presortPageOptions")}</span>{" "}
+        <span className="text-lg font-title font-semibold">9. {t("presortPageOptions")}</span>{" "}
         {/* <img
           src={Image}
           className=" w-[25px] h-[25px] justify-self-center"
@@ -70,7 +70,7 @@ const Config8PresortOptions: React.FC = () => {
       </button> */}
 
       <div className="flex flex-row h-[60px] content-center gap-5 mt-3">
-        <span className="content-center">{`8a. ${t("shuffleCards")}:`}</span>
+        <span className="content-center">{`9a. ${t("shuffleCards")}:`}</span>
         <div className="content-center">
           <label
             className={clsx(
@@ -79,7 +79,7 @@ const Config8PresortOptions: React.FC = () => {
                 "bg-opacity-100": shuffleCards,
                 "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                   !shuffleCards,
-              }
+              },
             )}
             htmlFor="shuffleCardsTrue"
           >
@@ -102,7 +102,7 @@ const Config8PresortOptions: React.FC = () => {
                 "bg-opacity-100": !shuffleCards,
                 "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                   shuffleCards,
-              }
+              },
             )}
             htmlFor="shuffleCardsFalse"
           >
@@ -155,7 +155,7 @@ const Config8PresortOptions: React.FC = () => {
         classNameNum={`mt-2 block min-w-[80px] px-3 py-2 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 outline outline-1 outline-zinc-600 ml-4`}
         classNameLabel={`flex flex-row content-center min-w-[170px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
         highlight={true}
-        label={`8b. ${t("defaultFontSizePresort")}:`}
+        label={`9b. ${t("defaultFontSizePresort")}:`}
         placeholder={t("defaultFontSizePresortPlaceholder")}
         upperLimit={199}
         lowerLimit={6}
@@ -169,4 +169,4 @@ const Config8PresortOptions: React.FC = () => {
   );
 };
 
-export { Config8PresortOptions };
+export { Config9PresortOptions };

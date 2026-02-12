@@ -17,7 +17,7 @@ const getSetMinCardHeightSort = (state) => state.setMinCardHeightSort;
 const getSetDefaultFontSizeSort = (state) => state.setDefaultFontSizeSort;
 // const getSetDefaultFontSizeSort = (state) => state.setDefaultFontSizeSort;
 
-const Config9SortOptions: React.FC = () => {
+const Config10SortOptions: React.FC = () => {
   const { t } = useTranslation();
   const allowUnforcedSorts = useStore(getAllowUnforcedSorts);
   const setAllowUnforcedSorts = useStore(getSetAllowUnforcedSorts);
@@ -61,7 +61,7 @@ const Config9SortOptions: React.FC = () => {
   return (
     <div className="flex flex-col  pt-6 pb-2 hover:bg-gray-100 hover:outline outline-2 outline-zinc-600 p-2 hover:rounded-md">
       <div className="flex flex-row content-center gap-5 mt-3">
-        <span className="text-lg font-title font-semibold">9. {t("sortPageOptions")}</span>{" "}
+        <span className="text-lg font-title font-semibold">10. {t("sortPageOptions")}</span>{" "}
         {/* <img
           src={Image}
           className=" w-[25px] h-[25px] justify-self-center"
@@ -74,7 +74,7 @@ const Config9SortOptions: React.FC = () => {
         classNameNum={`mt-2 block min-w-[80px] px-3 py-2 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 outline outline-1 outline-zinc-600 ml-4`}
         classNameLabel={`flex flex-row content-center min-w-[170px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
         highlight={true}
-        label={`9a. ${t("condOfInstFontSize")}:`}
+        label={`10a. ${t("condOfInstFontSize")}:`}
         placeholder=""
         upperLimit={199}
         lowerLimit={6}
@@ -86,7 +86,7 @@ const Config9SortOptions: React.FC = () => {
       />
 
       <div className="flex flex-row h-[60px] content-center gap-5 mt-2">
-        <span className="content-center">{`9b. ${t("allowUnforcedSorts")}:`}</span>
+        <span className="content-center">{`10b. ${t("allowUnforcedSorts")}:`}</span>
         <div className="content-center">
           <label
             className={clsx(
@@ -138,7 +138,7 @@ const Config9SortOptions: React.FC = () => {
       </div>
 
       <div className="flex flex-row h-[60px] content-center gap-5 ">
-        <span className="content-center">{`9c. ${t("warnOverloadedColumns")}:`}</span>
+        <span className="content-center">{`10c. ${t("warnOverloadedColumns")}:`}</span>
         <div className="content-center">
           <label
             className={clsx(
@@ -193,7 +193,7 @@ const Config9SortOptions: React.FC = () => {
         classNameNum={`mt-4 block min-w-[80px] px-3 py-2 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 outline outline-1 outline-zinc-600 ml-4`}
         classNameLabel={`flex flex-row content-center min-w-[170px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
         highlight={true}
-        label={`9d. ${t("defaultFontSizeSort")}:`}
+        label={`10d. ${t("defaultFontSizeSort")}:`}
         placeholder=""
         upperLimit={199}
         lowerLimit={6}
@@ -208,7 +208,7 @@ const Config9SortOptions: React.FC = () => {
         classNameNum={`mt-6 mb-2 block min-w-[80px] px-3 py-2 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 outline outline-1 outline-zinc-600 ml-4`}
         classNameLabel={`flex flex-row content-center min-w-[170px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
         highlight={true}
-        label={`9e. ${t("minCardHeightSort")}:`}
+        label={`10e. ${t("minCardHeightSort")}:`}
         placeholder=""
         upperLimit={199}
         lowerLimit={6}
@@ -222,4 +222,4 @@ const Config9SortOptions: React.FC = () => {
   );
 };
 
-export { Config9SortOptions };
+export { Config10SortOptions };

@@ -16,7 +16,7 @@ import { useTranslation } from "react-i18next";
 // const getImageFormat = (state) => state.imageFormat;
 // const getSetImageFormat = (state) => state.setImageFormat;
 
-const Config4SortImages: React.FC = () => {
+const Config5SortImages: React.FC = () => {
   // const useImages = useStore(getUseImages);
   // const numImages = useStore(getNumImages);
   // const imageFileType = useStore(getImageFileType);
@@ -52,8 +52,8 @@ const Config4SortImages: React.FC = () => {
   return (
     <div className="flex flex-col  pt-6 pb-2 hover:bg-gray-100 hover:outline outline-2 outline-zinc-600 p-2 hover:rounded-md">
       <div className="flex flex-row content-center gap-5 mt-3">
-        <span className="text-lg font-title font-semibold">{`4. ${t(
-          "statementSortVsImageSort"
+        <span className="text-lg font-title font-semibold">{`5. ${t(
+          "statementSortVsImageSort",
         )}`}</span>{" "}
         {/* <img
           src={Image}
@@ -187,4 +187,4 @@ const Config4SortImages: React.FC = () => {
   );
 };
 
-export { Config4SortImages };
+export { Config5SortImages };

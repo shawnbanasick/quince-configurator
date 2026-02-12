@@ -11,7 +11,7 @@ const getSetShowConsentPage = (state) => state.setShowConsentPage;
 const getShowConsentPageHelpModal = (state) => state.showConsentPageHelpModal;
 const getSetShowConsentPageHelpModal = (state) => state.setShowConsentPageHelpModal;
 
-const Config5ConsentPageOptions: React.FC = () => {
+const Config6ConsentPageOptions: React.FC = () => {
   const showConsentPageHelpModal = useStore(getShowConsentPageHelpModal);
   const setShowConsentPageHelpModal = useStore(getSetShowConsentPageHelpModal);
 
@@ -34,7 +34,7 @@ const Config5ConsentPageOptions: React.FC = () => {
   return (
     <div className="flex flex-col  pt-6 pb-2 hover:bg-gray-100 hover:outline outline-2 outline-zinc-600 p-2 hover:rounded-md">
       <div className="flex flex-row content-center gap-5 mt-3">
-        <span className="text-lg font-title font-semibold">5. {t("consentPageOptions")}</span>{" "}
+        <span className="text-lg font-title font-semibold">6. {t("consentPageOptions")}</span>{" "}
         {/* <img
           src={Image}
           className=" w-[25px] h-[25px] justify-self-center"
@@ -44,7 +44,7 @@ const Config5ConsentPageOptions: React.FC = () => {
       </div>
       <div className="flex flex-row h-[60px] content-center gap-5 mt-3">
         <span className="content-center">
-          <mark>{`5a. ${t("showConsentPage")}:`}</mark>
+          <mark>{`6a. ${t("showConsentPage")}:`}</mark>
         </span>
         <div className="content-center">
           <label
@@ -54,7 +54,7 @@ const Config5ConsentPageOptions: React.FC = () => {
                 "bg-opacity-100": showConsentPage,
                 "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                   !showConsentPage,
-              }
+              },
             )}
             htmlFor="showConsentPageTrue"
           >
@@ -77,7 +77,7 @@ const Config5ConsentPageOptions: React.FC = () => {
                 "bg-opacity-100": !showConsentPage,
                 "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                   showConsentPage,
-              }
+              },
             )}
             htmlFor="showConsentPageFalse"
           >
@@ -96,7 +96,7 @@ const Config5ConsentPageOptions: React.FC = () => {
       </div>
 
       <div className="flex flex-row h-[60px] content-center gap-5 mt-3">
-        <span className="content-center">{`5b. ${t("showConsentPageHelpModal")}:`}</span>
+        <span className="content-center">{`6b. ${t("showConsentPageHelpModal")}:`}</span>
         <div className="content-center">
           <label
             className={clsx(
@@ -105,7 +105,7 @@ const Config5ConsentPageOptions: React.FC = () => {
                 "bg-opacity-100": showConsentPageHelpModal,
                 "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                   !showConsentPageHelpModal,
-              }
+              },
             )}
             htmlFor="showConsentPageHelpModalTrue"
           >
@@ -128,7 +128,7 @@ const Config5ConsentPageOptions: React.FC = () => {
                 "bg-opacity-100": !showConsentPageHelpModal,
                 "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                   showConsentPageHelpModal,
-              }
+              },
             )}
             htmlFor="showConsentPageHelpModalFalse"
           >
@@ -149,4 +149,4 @@ const Config5ConsentPageOptions: React.FC = () => {
   );
 };
 
-export { Config5ConsentPageOptions };
+export { Config6ConsentPageOptions };

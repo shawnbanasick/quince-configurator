@@ -4,26 +4,26 @@ import { useTranslation } from "react-i18next";
 // import Image from "../../assets/images/infoIcon.svg";
 import clsx from "clsx";
 
-const getShowSurvey = (state) => state.showSurvey;
-const getSetShowSurvey = (state) => state.setShowSurvey;
+const getPreventMobileAccess = (state) => state.preventMobileAccess;
+const getSetPreventMobileAccess = (state) => state.setPreventMobileAccess;
 
-const Config11SurveyOptions: React.FC = () => {
+const Config3DesktopOnly: React.FC = () => {
   const { t } = useTranslation();
-  const showSurvey = useStore(getShowSurvey);
-  const setShowSurvey = useStore(getSetShowSurvey);
+  const preventMobileAccess = useStore(getPreventMobileAccess);
+  const setPreventMobileAccess = useStore(getSetPreventMobileAccess);
 
-  const handleShowSurveyChange = (input: React.ChangeEvent<HTMLInputElement>) => {
+  const handlePreventMobileAccessChange = (input: React.ChangeEvent<HTMLInputElement>) => {
     if (input.target.value === "true") {
-      setShowSurvey(true);
+      setPreventMobileAccess(true);
     } else {
-      setShowSurvey(false);
+      setPreventMobileAccess(false);
     }
   };
 
   return (
     <div className="flex flex-col  pt-6 pb-2 hover:bg-gray-100 hover:outline outline-2 outline-zinc-600 p-2 hover:rounded-md">
       <div className="flex flex-row content-center gap-5 mt-3">
-        <span className="text-lg font-title font-semibold">11. {t("surveyOptions")}</span>{" "}
+        <span className="text-lg font-title font-semibold">3. {t("restrictedToDesktop")}</span>{" "}
         {/* <img
           src={Image}
           className=" w-[25px] h-[25px] justify-self-center"
@@ -34,27 +34,27 @@ const Config11SurveyOptions: React.FC = () => {
 
       <div className="flex flex-row h-[60px] content-center gap-5 mt-3">
         <span className="content-center">
-          <mark>{`11a. ${t("includeSurvey")}:`}</mark>
+          <mark>{`3a. ${t("desktopOnly")}:`}</mark>
         </span>
         <div className="content-center">
           <label
             className={clsx(
               "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
               {
-                "bg-opacity-100": showSurvey,
+                "bg-opacity-100": preventMobileAccess,
                 "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
-                  !showSurvey,
-              }
+                  !preventMobileAccess,
+              },
             )}
-            htmlFor="showSurveyTrue"
+            htmlFor="preventMobileAccessTrue"
           >
             <input
               type="radio"
               className="hidden"
-              name="showSurvey"
-              id="showSurveyTrue" // htlmlFor targets this id.
+              name="preventMobileAccess"
+              id="preventMobileAccessTrue" // htlmlFor targets this id.
               value="true"
-              onChange={handleShowSurveyChange}
+              onChange={handlePreventMobileAccessChange}
             />
             {t("true")}
           </label>
@@ -64,21 +64,21 @@ const Config11SurveyOptions: React.FC = () => {
             className={clsx(
               "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
               {
-                "bg-opacity-100": !showSurvey,
+                "bg-opacity-100": !preventMobileAccess,
                 "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
-                  showSurvey,
-              }
+                  preventMobileAccess,
+              },
             )}
-            htmlFor="showSurveyFalse"
+            htmlFor="preventMobileAccessFalse"
           >
             <input
               type="radio"
               className="hidden"
-              name="showSurvey"
-              id="showSurveyFalse" // htlmlFor targets this id.
+              name="preventMobileAccess"
+              id="preventMobileAccessFalse" // htlmlFor targets this id.
               value="false"
-              checked={!showSurvey}
-              onChange={handleShowSurveyChange}
+              checked={!preventMobileAccess}
+              onChange={handlePreventMobileAccessChange}
             />
             {t("false")}
           </label>
@@ -88,4 +88,4 @@ const Config11SurveyOptions: React.FC = () => {
   );
 };
 
-export { Config11SurveyOptions };
+export { Config3DesktopOnly };

@@ -21,6 +21,9 @@ const createConfigXmlSlice = (set, get) => ({
   emailAddress: "",
   emailSubjectLine: "Quince Sort Results",
 
+  // PREVENT MOBILE ACCESS
+  preventMobileAccess: false,
+
   // SECOND PROJECT LINKING
   linkToSecondProject: false,
   secondProjectUrl: "",
@@ -119,6 +122,9 @@ const createConfigXmlSlice = (set, get) => ({
   isEditingSurveyQuestionIndex: -1,
   triggerSurveyQuestionDeleteModal: false,
 
+  setPreventMobileAccess: (bool) => {
+    set(() => ({ preventMobileAccess: bool }));
+  },
   setRequireMinCommentLength: (bool) => {
     set(() => ({ requireMinCommentLength: bool }));
   },

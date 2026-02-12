@@ -10,7 +10,7 @@ const getSetHeaderBarColor = (state) => state.setHeaderBarColor;
 const getDefaultFontColor = (state) => state.defaultFontColor;
 const getSetDefaultFontColor = (state) => state.setDefaultFontColor;
 
-const Config7ColorSelection: React.FC = () => {
+const Config8ColorSelection: React.FC = () => {
   const headerBarColor = useStore(getHeaderBarColor);
   const setHeaderBarColor = useStore(getSetHeaderBarColor);
 
@@ -26,7 +26,7 @@ const Config7ColorSelection: React.FC = () => {
   return (
     <div className="flex flex-col  pt-6 pb-2 hover:bg-gray-100 hover:outline outline-2 outline-zinc-600 p-2 hover:rounded-md">
       <div className="flex flex-row content-center gap-5 mt-3">
-        <span className="text-lg font-title font-semibold">7. {t("colorSettings")}</span>{" "}
+        <span className="text-lg font-title font-semibold">8. {t("colorSettings")}</span>{" "}
         {/* <img
           src={Image}
           className=" w-[25px] h-[25px] justify-self-center"
@@ -43,7 +43,7 @@ const Config7ColorSelection: React.FC = () => {
       </button>
 
       <div className={`flex flex-row h-[40px] content-center items-center gap-5 mt-1`}>
-        <span className={`content-center`}>{`7a. ${t("headerBarColor")}:`}</span>
+        <span className={`content-center`}>{`8a. ${t("headerBarColor")}:`}</span>
         <div
           className="w-10 h-5 rounded-md outline outline-1 outline-zinc-600"
           style={{ backgroundColor: headerBarColor }}
@@ -53,7 +53,7 @@ const Config7ColorSelection: React.FC = () => {
         <span>{headerBarColor}</span>
       </div>
       <div className={`flex flex-row h-[40px] content-center items-center gap-5 mt-1`}>
-        <span className={`content-center`}>{`7b. ${t("defaultFontColor")}:`}</span>
+        <span className={`content-center`}>{`8b. ${t("defaultFontColor")}:`}</span>
         <div
           className="w-10 h-5 rounded-md outline outline-1 outline-zinc-600"
           style={{ backgroundColor: defaultFontColor }}
@@ -66,4 +66,4 @@ const Config7ColorSelection: React.FC = () => {
   );
 };
 
-export { Config7ColorSelection };
+export { Config8ColorSelection };

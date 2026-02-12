@@ -10,7 +10,7 @@ const getSetLinkToSecondProject = (state) => state.setLinkToSecondProject;
 const getSecondProjectUrl = (state) => state.secondProjectUrl;
 const getSetSecondProjectUrl = (state) => state.setSecondProjectUrl;
 
-const Config3LinkProject: React.FC = () => {
+const Config4LinkProject: React.FC = () => {
   const linkToSecondProject = useStore(getLinkToSecondProject);
   const setLinkToSecondProject = useStore(getSetLinkToSecondProject);
   const secondProjectUrl = useStore(getSecondProjectUrl);
@@ -32,7 +32,7 @@ const Config3LinkProject: React.FC = () => {
   return (
     <div className="flex flex-col  pt-6 pb-2 hover:bg-gray-100 hover:outline outline-2 outline-zinc-600 p-2 hover:rounded-md">
       <div className="flex flex-row content-center gap-5 mt-3">
-        <span className="text-lg font-title font-semibold">{`3. ${t("projectLinking")}`}</span>
+        <span className="text-lg font-title font-semibold">{`4. ${t("projectLinking")}`}</span>
         {/* <img
           src={Image}
           className=" w-[25px] h-[25px] justify-self-center"
@@ -41,7 +41,7 @@ const Config3LinkProject: React.FC = () => {
         /> */}
       </div>
       <div className="flex flex-row h-[60px] content-center items-center gap-5 mt-3">
-        <span className="content-center">{`3a. ${t("linkToSecondProject")}:`}</span>
+        <span className="content-center">{`4a. ${t("linkToSecondProject")}:`}</span>
         <div className="">
           <label
             className={clsx(
@@ -50,7 +50,7 @@ const Config3LinkProject: React.FC = () => {
                 "bg-opacity-100": linkToSecondProject,
                 "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                   !linkToSecondProject,
-              }
+              },
             )}
             htmlFor="linkToSecondProjectTrue"
           >
@@ -74,7 +74,7 @@ const Config3LinkProject: React.FC = () => {
                 "bg-opacity-100": !linkToSecondProject,
                 "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                   linkToSecondProject,
-              }
+              },
             )}
             htmlFor="linkToSecondProjectFalse"
           >
@@ -98,7 +98,7 @@ const Config3LinkProject: React.FC = () => {
           linkToSecondProject ? "" : "text-slate-400"
         } select-none`}
         highlight={false}
-        label={`3b. ${t("secondProjectUrlAddress")}:`}
+        label={`4b. ${t("secondProjectUrlAddress")}:`}
         placeholder={t("enterSecondProjectUrlAddress")}
         disabled={!linkToSecondProject}
         name="linkToSecondProjectEmailInput"
@@ -109,4 +109,4 @@ const Config3LinkProject: React.FC = () => {
   );
 };
 
-export { Config3LinkProject };
+export { Config4LinkProject };

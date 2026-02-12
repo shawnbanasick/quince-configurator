@@ -24,7 +24,7 @@ const getSetRequireMinCommentLength = (state) => state.setRequireMinCommentLengt
 const getMinCommentLength = (state) => state.minCommentLength;
 const getSetMinCommentLength = (state) => state.setMinCommentLength;
 
-const Config10PostsortOptions: React.FC = () => {
+const Config11PostsortOptions: React.FC = () => {
   const { t } = useTranslation();
   const showPostsort = useStore(getShowPostsort);
   const setShowPostsort = useStore(getSetShowPostsort);
@@ -108,7 +108,7 @@ const Config10PostsortOptions: React.FC = () => {
   return (
     <div className="flex flex-col  pt-6 pb-2 hover:bg-gray-100 hover:outline outline-2 outline-zinc-600 p-2 hover:rounded-md">
       <div className="flex flex-row content-center gap-5 mt-3">
-        <span className="text-lg font-title font-semibold">10. {t("postsortOptions")}</span>{" "}
+        <span className="text-lg font-title font-semibold">11. {t("postsortOptions")}</span>{" "}
         {/* <img
           src={Image}
           className=" w-[25px] h-[25px] justify-self-center"
@@ -119,7 +119,7 @@ const Config10PostsortOptions: React.FC = () => {
 
       <div className="flex flex-row h-[60px] content-center gap-5 mt-3">
         <span className="content-center">
-          <mark>{`10a. ${t("showPostsort")}:`}</mark>
+          <mark>{`11a. ${t("showPostsort")}:`}</mark>
         </span>
         <div className="content-center">
           <label
@@ -178,7 +178,7 @@ const Config10PostsortOptions: React.FC = () => {
           )}
         >
           <div className="flex flex-row h-[60px] content-center gap-5 mt-3">
-            <span className="content-center">{`10b. ${t("showSecondPosColumn")}:`}</span>
+            <span className="content-center">{`11b. ${t("showSecondPosColumn")}:`}</span>
             <div className="content-center">
               <label
                 className={clsx(
@@ -231,7 +231,7 @@ const Config10PostsortOptions: React.FC = () => {
           </div>
 
           <div className="flex flex-row h-[60px] content-center gap-5 mt-3">
-            <span className="content-center">{`10c. ${t("showSecondNegColumn")}:`}</span>
+            <span className="content-center">{`11c. ${t("showSecondNegColumn")}:`}</span>
             <div className="content-center">
               <label
                 className={clsx(
@@ -282,7 +282,7 @@ const Config10PostsortOptions: React.FC = () => {
           </div>
 
           <div className="flex flex-row h-[60px] content-center gap-5 mt-3">
-            <span className="content-center">{`10d. ${t("showBackButton")}:`}</span>
+            <span className="content-center">{`11d. ${t("showBackButton")}:`}</span>
             <div className="content-center">
               <label
                 className={clsx(
@@ -334,7 +334,7 @@ const Config10PostsortOptions: React.FC = () => {
 
           <div className="flex flex-row h-[60px] content-center gap-5 mt-3">
             <span className="content-center">
-              <mark>{`10e. ${t("postsortCommentsRequired")}:`}</mark>
+              <mark>{`11e. ${t("postsortCommentsRequired")}:`}</mark>
             </span>
             <div className="content-center">
               <label
@@ -386,7 +386,7 @@ const Config10PostsortOptions: React.FC = () => {
           </div>
 
           <div className="flex flex-row h-[60px] content-center gap-5 mt-3">
-            <span className="content-center">{`10f. ${t("requireMinCommentLength")}:`}</span>
+            <span className="content-center">{`11f. ${t("requireMinCommentLength")}:`}</span>
             <div className="content-center">
               <label
                 className={clsx(
@@ -440,7 +440,7 @@ const Config10PostsortOptions: React.FC = () => {
             classNameNum={`mt-2 block min-w-[80px] px-3 py-2 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 outline outline-1 outline-zinc-600 ml-4 mb-4 mt-4`}
             classNameLabel={`flex flex-row content-center min-w-[170px] content-center pt-1 mr-1 disabled:opacity-50 select-none mb-4 mt-2`}
             highlight={false}
-            label={`10g. ${t("minimumCommentLength")}:`}
+            label={`11g. ${t("minimumCommentLength")}:`}
             placeholder=""
             upperLimit={999}
             lowerLimit={2}
@@ -455,7 +455,7 @@ const Config10PostsortOptions: React.FC = () => {
             classNameNum={`mt-2 block min-w-[80px] px-3 py-2 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 outline outline-1 outline-zinc-600 ml-4 mb-4`}
             classNameLabel={`flex flex-row content-center min-w-[170px] content-center pt-1 mr-1 disabled:opacity-50 select-none mb-4`}
             highlight={false}
-            label={`10h. ${t("defaultFontSizePostsort")}:`}
+            label={`11h. ${t("defaultFontSizePostsort")}:`}
             placeholder=""
             upperLimit={199}
             lowerLimit={6}
@@ -470,7 +470,7 @@ const Config10PostsortOptions: React.FC = () => {
             classNameNum={`mt-2 block min-w-[80px] px-3 py-2 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 outline outline-1 outline-zinc-600 ml-4 mb-4`}
             classNameLabel={`flex flex-row content-center min-w-[170px] content-center pt-1 mr-1 disabled:opacity-50 select-none mb-4`}
             highlight={true}
-            label={`10i. ${t("minCardHeightPostsort")}:`}
+            label={`11i. ${t("minCardHeightPostsort")}:`}
             placeholder=""
             upperLimit={199}
             lowerLimit={6}
@@ -486,4 +486,4 @@ const Config10PostsortOptions: React.FC = () => {
   );
 };
 
-export { Config10PostsortOptions };
+export { Config11PostsortOptions };
