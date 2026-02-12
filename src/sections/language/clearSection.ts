@@ -30,6 +30,13 @@ const showSectionDefaults = (section) => {
   }
 
   // section 2
+  if (section === "mobilePreventClear") {
+    selectorArray = ["preventMobileTitle", "preventMobileMessage"];
+
+    clearSection(selectorArray);
+  }
+
+  // section 2
   if (section === "consentClear") {
     selectorArray = [
       "consentTitleBarText",

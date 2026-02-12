@@ -96,7 +96,7 @@ const RefineEvaluationsTextInput = () => {
   return (
     <div className="outline outline-2 outline-slate-500 p-2 w-[100%] rounded-sm bg-gray-100">
       <div className="flex flex-row justify-between mb-4">
-        <h2>{`8. ${t("refineEvaluationsScreen")}`} </h2>
+        <h2>{`9. ${t("refineEvaluationsScreen")}`} </h2>
         <div className="flex flex-row gap-4">
           <button
             id="refineDef"
@@ -169,7 +169,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`8-1. ${t("thinningHelpModalHead")}`}
+          label={`9-1. ${t("thinningHelpModalHead")}`}
           name="thinningHelpModalHead"
           value={thinningHelpModalHead}
           onChange={handleTextChange}
@@ -180,7 +180,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[80px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label={`8-2. ${t("thinningHelpModalText")}`}
+          label={`9-2. ${t("thinningHelpModalText")}`}
           name="thinningHelpModalText"
           height={150}
           value={thinningHelpModalText}
@@ -193,7 +193,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`8-3. ${t("thinPageTitle")}`}
+          label={`9-3. ${t("thinPageTitle")}`}
           name="thinPageTitle"
           value={thinPageTitle}
           onChange={handleTextChange}
@@ -204,7 +204,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`8-4. ${t("thinPageSubmitButton")}`}
+          label={`9-4. ${t("thinPageSubmitButton")}`}
           name="thinPageSubmitButton"
           value={thinPageSubmitButtonText}
           onChange={handleTextChange}
@@ -215,7 +215,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`8-5. ${t("numStatementsToSelect")}`}
+          label={`9-5. ${t("numStatementsToSelect")}`}
           name="thinPageNumStatesToSelect"
           value={numStatementsToSelect}
           onChange={handleTextChange}
@@ -226,7 +226,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`8-6. ${t("currentlySelectedNumber")}`}
+          label={`9-6. ${t("currentlySelectedNumber")}`}
           name="currentlySelectedNumber"
           value={currentlySelectedNumber}
           onChange={handleTextChange}
@@ -237,7 +237,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[80px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label={`8-7. ${t("initialInstructionPart1")}`}
+          label={`9-7. ${t("initialInstructionPart1")}`}
           name="initialInstructionPart1"
           height={150}
           value={initialInstructionPart1}
@@ -265,7 +265,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[80px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label={`8-8. ${t("initialInstructionPart2")}`}
+          label={`9-8. ${t("initialInstructionPart2")}`}
           name="initialInstructionPart2"
           height={150}
           value={initialInstructionPart2}
@@ -279,7 +279,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[60px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label={`8-9. ${t("initialInstructionPart3")}`}
+          label={`9-9. ${t("initialInstructionPart3")}`}
           name="initialInstructionPart3"
           height={150}
           value={initialInstructionPart3}
@@ -293,7 +293,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[80px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label={`8-10. ${t("initialInstructionPartNeg1")}`}
+          label={`9-10. ${t("initialInstructionPartNeg1")}`}
           name="initialInstructionPartNeg1"
           height={150}
           value={initialInstructionPartNeg1}
@@ -307,7 +307,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[80px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label={`8-11. ${t("initialInstructionPartNeg2")}`}
+          label={`9-11. ${t("initialInstructionPartNeg2")}`}
           name="initialInstructionPartNeg2"
           height={150}
           value={initialInstructionPartNeg2}
@@ -321,7 +321,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[80px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label={`8-12. ${t("finalInstructions")}`}
+          label={`9-12. ${t("finalInstructions")}`}
           name="finalInstructions"
           height={150}
           value={finalInstructions}
@@ -334,7 +334,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`8-13. ${t("thinningPreventNavModalHead")}`}
+          label={`9-13. ${t("thinningPreventNavModalHead")}`}
           name="thinningPreventNavModalHead"
           value={thinningPreventNavModalHead}
           onChange={handleTextChange}
@@ -345,7 +345,7 @@ const RefineEvaluationsTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] min-h-[80px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label={`8-14. ${t("thinningPreventNavModalText")}`}
+          label={`9-14. ${t("thinningPreventNavModalText")}`}
           name="thinningPreventNavModalText"
           height={150}
           value={thinningPreventNavModalText}

@@ -79,6 +79,12 @@ const showSectionDefaults = (section) => {
     setDefaults(selectorArray);
   }
 
+  if (section === "mobilePreventDef") {
+    selectorArray = ["preventMobileTitle", "preventMobileMessage"];
+
+    setDefaults(selectorArray);
+  }
+
   // section 2
   if (section === "consentDef") {
     selectorArray = [

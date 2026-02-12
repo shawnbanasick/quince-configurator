@@ -10,22 +10,14 @@ import { useStore } from "../../globalState/useStore";
 
 const getDisplayMode = (state) => state.displayMode;
 const getSetText = (state) => state.setText;
-const getLangConsentTitleBarText = (state) => state.consentTitleBarText;
-const getLangConsentText = (state) => state.consentText;
-const getLangConsentHelpModalHead = (state) => state.consentHelpModalHead;
-const getLangConsentHelpModalText = (state) => state.consentHelpModalText;
-const getLangBtnNextConsent = (state) => state.btnNextConsent;
-const getLangBtnHelpConsent = (state) => state.btnHelpConsent;
+const getLangPreventMobileTitle = (state) => state.preventMobileTitle;
+const getLangPreventMobileMessage = (state) => state.preventMobileMessage;
 
 const PreventMobileAccess = () => {
   let displayMode = useStore(getDisplayMode);
   const setText = useStore(getSetText);
-  const langConsentTitleBarText = useStore(getLangConsentTitleBarText);
-  const langConsentText = useStore(getLangConsentText);
-  const langConsentHelpModalHead = useStore(getLangConsentHelpModalHead);
-  const langConsentHelpModalText = useStore(getLangConsentHelpModalText);
-  const langBtnNextConsent = useStore(getLangBtnNextConsent);
-  const langBtnHelpConsent = useStore(getLangBtnHelpConsent);
+  const langPreventMobileTitle = useStore(getLangPreventMobileTitle);
+  const langPreventMobileMessage = useStore(getLangPreventMobileMessage);
   const { t } = useTranslation();
 
   const handleRefImage = () => {
@@ -62,14 +54,14 @@ const PreventMobileAccess = () => {
         <h2>2. {t("preventMobileAccess")}</h2>
         <div className="flex flex-row gap-4">
           <button
-            id="consentDef"
+            id="mobilePreventDef"
             className="bg-slate-300 p-2 rounded-md w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleShowDefaults}
           >
             {t("useDefaults")}
           </button>
           <button
-            id="consentClear"
+            id="mobilePreventClear"
             className="bg-slate-300 p-2 rounded-md w-[200px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             onClick={handleClearAll}
           >
@@ -99,8 +91,8 @@ const PreventMobileAccess = () => {
           classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label={`2-1. ${t("preventMobileTitle")}`}
-          name="consentTitleBarText"
-          value={langConsentTitleBarText}
+          name="preventMobileTitle"
+          value={langPreventMobileTitle}
           onChange={handleTextChange}
           highlight={true}
           placeholder=""
@@ -112,7 +104,7 @@ const PreventMobileAccess = () => {
           label={`2-2. ${t("preventMobileMessage")}`}
           name="consentText"
           height={150}
-          value={langConsentText}
+          value={langPreventMobileMessage}
           highlight={true}
           placeholder=""
           disabled={false}

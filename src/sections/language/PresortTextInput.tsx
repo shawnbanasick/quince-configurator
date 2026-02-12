@@ -82,7 +82,7 @@ const PresortTextInput = () => {
   return (
     <div className="outline outline-2 outline-slate-500 p-2 w-[100%] rounded-sm bg-gray-100">
       <div className="flex flex-row justify-between mb-4">
-        <h2>{`6. ${t("presortScreen")}`} </h2>
+        <h2>{`7. ${t("presortScreen")}`} </h2>
         <div className="flex flex-row gap-4">
           <button
             id="presortDef"
@@ -133,7 +133,7 @@ const PresortTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[400px] h-[40px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`min-w-[180px] content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`6-1. ${t("logInFirst")}`}
+          label={`7-1. ${t("logInFirst")}`}
           name="logInFirst"
           height={150}
           value={logInFirst}
@@ -147,7 +147,7 @@ const PresortTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`6-2. ${t("titleBarText")}`}
+          label={`7-2. ${t("titleBarText")}`}
           name="titleBarText"
           value={titleBarText}
           onChange={handleTextChange}
@@ -158,7 +158,7 @@ const PresortTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`6-3. ${t("presortAgreement")}`}
+          label={`7-3. ${t("presortAgreement")}`}
           name="presortAgreement"
           value={presortAgreement}
           onChange={handleTextChange}
@@ -169,7 +169,7 @@ const PresortTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`6-3b. ${t("press3")}`}
+          label={`7-3b. ${t("press3")}`}
           name="press3"
           value={press3}
           onChange={handleTextChange}
@@ -180,7 +180,7 @@ const PresortTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`6-4. ${t("presortNeutral")}`}
+          label={`7-4. ${t("presortNeutral")}`}
           name="presortNeutral"
           value={presortNeutral}
           onChange={handleTextChange}
@@ -191,7 +191,7 @@ const PresortTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`6-4b. ${t("press2")}`}
+          label={`7-4b. ${t("press2")}`}
           name="press2"
           value={press2}
           onChange={handleTextChange}
@@ -203,7 +203,7 @@ const PresortTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`6-5. ${t("presortDisagreement")}`}
+          label={`7-5. ${t("presortDisagreement")}`}
           name="presortDisagreement"
           value={presortDisagreement}
           onChange={handleTextChange}
@@ -214,7 +214,7 @@ const PresortTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`6-5b. ${t("press1")}`}
+          label={`7-5b. ${t("press1")}`}
           name="press1"
           value={press1}
           onChange={handleTextChange}
@@ -225,7 +225,7 @@ const PresortTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`6-6. ${t("presortStatements")}`}
+          label={`7-6. ${t("presortStatements")}`}
           name="presortStatements"
           value={presortStatements}
           onChange={handleTextChange}
@@ -237,7 +237,7 @@ const PresortTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[90px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label={`6-7. ${t("presortOnPageInstructions")}`}
+          label={`7-7. ${t("presortOnPageInstructions")}`}
           name="presortOnPageInstructions"
           height={150}
           value={presortOnPageInstructions}
@@ -264,7 +264,7 @@ const PresortTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`6-8. ${t("presortModalHead")}`}
+          label={`7-8. ${t("presortModalHead")}`}
           name="presortModalHead"
           value={presortModalHead}
           onChange={handleTextChange}
@@ -275,7 +275,7 @@ const PresortTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[180px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label={`6-9. ${t("presortModalText")}`}
+          label={`7-9. ${t("presortModalText")}`}
           name="presortModalText"
           height={150}
           value={presortModalText}
@@ -288,7 +288,7 @@ const PresortTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`6-10. ${t("presortPreventNavModalHead")}`}
+          label={`7-10. ${t("presortPreventNavModalHead")}`}
           name="presortPreventNavModalHead"
           value={presortPreventNavModalHead}
           onChange={handleTextChange}
@@ -299,7 +299,7 @@ const PresortTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[60px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label={`6-11. ${t("presortPreventNavModalText")}`}
+          label={`7-11. ${t("presortPreventNavModalText")}`}
           name="presortPreventNavModalText"
           height={150}
           value={presortPreventNavModalText}
@@ -312,7 +312,7 @@ const PresortTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`6-12. ${t("presortFinishedModalHead")}`}
+          label={`7-12. ${t("presortFinishedModalHead")}`}
           name="presortFinishedModalHead"
           value={presortFinishedModalHead}
           onChange={handleTextChange}
@@ -323,7 +323,7 @@ const PresortTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[80px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label={`6-13. ${t("presortFinishedModalText")}`}
+          label={`7-13. ${t("presortFinishedModalText")}`}
           name="presortFinishedModalText"
           height={150}
           value={presortFinishedModalText}

@@ -20,21 +20,21 @@ const MobileSortTextInput: React.FC = () => {
 
   const mobileSortSwapModalHead = useStore((state) => state.mobileSortSwapModalHead);
   const mobileSortSwapModalConfirmButton = useStore(
-    (state) => state.mobileSortSwapModalConfirmButton
+    (state) => state.mobileSortSwapModalConfirmButton,
   );
   const mobileSortConditionsOfInstruction = useStore(
-    (state) => state.mobileSortConditionsOfInstruction
+    (state) => state.mobileSortConditionsOfInstruction,
   );
   const mobileSortHelpModalHead = useStore((state) => state.mobileSortHelpModalHead);
   const mobileSortHelpModalText = useStore((state) => state.mobileSortHelpModalText);
   const mobileSortScrollBottomModalHead = useStore(
-    (state) => state.mobileSortScrollBottomModalHead
+    (state) => state.mobileSortScrollBottomModalHead,
   );
   const mobileSortScrollBottomModalText = useStore(
-    (state) => state.mobileSortScrollBottomModalText
+    (state) => state.mobileSortScrollBottomModalText,
   );
   const mobileSortSwapModalSuccessMessage = useStore(
-    (state) => state.mobileSortSwapModalSuccessMessage
+    (state) => state.mobileSortSwapModalSuccessMessage,
   );
 
   const handleRefImage1 = () => {
@@ -78,7 +78,7 @@ const MobileSortTextInput: React.FC = () => {
   return (
     <div className="outline outline-2 outline-slate-500 p-2 w-[100%] rounded-sm">
       <div className="flex flex-row justify-between mb-4">
-        <h2>{`11. ${t("mobileSortScreen")}`} </h2>
+        <h2>{`12. ${t("mobileSortScreen")}`} </h2>
         <div className="flex flex-row gap-4">
           <button
             id="mobileSortDef"
@@ -130,7 +130,7 @@ const MobileSortTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`11-1. ${t("mobileSortHelpModalHead")}`}
+          label={`12-1. ${t("mobileSortHelpModalHead")}`}
           name="mobileSortHelpModalHead"
           value={mobileSortHelpModalHead}
           onChange={handleTextChange}
@@ -141,7 +141,7 @@ const MobileSortTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`11-2. ${t("mobileSortHelpModalText")}`}
+          label={`12-2. ${t("mobileSortHelpModalText")}`}
           name="mobileSortHelpModalText"
           height={150}
           value={mobileSortHelpModalText}
@@ -155,7 +155,7 @@ const MobileSortTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[60px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`11-3. ${t("mobileSortConditionsOfInstruction")}`}
+          label={`12-3. ${t("mobileSortConditionsOfInstruction")}`}
           name="mobileSortConditionsOfInstruction"
           height={150}
           value={mobileSortConditionsOfInstruction}
@@ -168,7 +168,7 @@ const MobileSortTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`11-4. ${t("mobileSortScrollBottomModalHead")}`}
+          label={`12-4. ${t("mobileSortScrollBottomModalHead")}`}
           name="mobileSortScrollBottomModalHead"
           value={mobileSortScrollBottomModalHead}
           onChange={handleTextChange}
@@ -179,7 +179,7 @@ const MobileSortTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[80px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`11-5. ${t("mobileSortScrollBottomModalText")}`}
+          label={`12-5. ${t("mobileSortScrollBottomModalText")}`}
           name="mobileSortScrollBottomModalText"
           height={150}
           value={mobileSortScrollBottomModalText}
@@ -193,7 +193,7 @@ const MobileSortTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`11-6. ${t("mobileSortSwapModalHead")}`}
+          label={`12-6. ${t("mobileSortSwapModalHead")}`}
           name="mobileSortSwapModalHead"
           value={mobileSortSwapModalHead}
           onChange={handleTextChange}
@@ -205,7 +205,7 @@ const MobileSortTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`11-7. ${t("mobileSortSwapModalConfirmButton")}`}
+          label={`12-7. ${t("mobileSortSwapModalConfirmButton")}`}
           name="mobileSortSwapModalConfirmButton"
           value={mobileSortSwapModalConfirmButton}
           onChange={handleTextChange}
@@ -216,7 +216,7 @@ const MobileSortTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`11-8. ${t("mobileSortSwapModalSuccessMessage")}`}
+          label={`12-8. ${t("mobileSortSwapModalSuccessMessage")}`}
           name="mobileSortSwapModalSuccessMessage"
           value={mobileSortSwapModalSuccessMessage}
           onChange={handleTextChange}

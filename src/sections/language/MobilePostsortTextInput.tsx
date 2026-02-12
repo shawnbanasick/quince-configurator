@@ -18,10 +18,10 @@ const MobilePostsortTextInput: React.FC = () => {
   const { t } = useTranslation();
 
   const mobilePostsortPreventNavModalHead = useStore(
-    (state) => state.mobilePostsortPreventNavModalHead
+    (state) => state.mobilePostsortPreventNavModalHead,
   );
   const mobilePostsortPreventNavModalText = useStore(
-    (state) => state.mobilePostsortPreventNavModalText
+    (state) => state.mobilePostsortPreventNavModalText,
   );
   const mobilePostsortSortbarText = useStore((state) => state.mobilePostsortSortbarText);
   const mobilePostsortHelpModalHead = useStore((state) => state.mobilePostsortHelpModalHead);
@@ -64,7 +64,7 @@ const MobilePostsortTextInput: React.FC = () => {
   return (
     <div className="outline outline-2 outline-slate-500 p-2 w-[100%] rounded-sm">
       <div className="flex flex-row justify-between mb-4">
-        <h2>{`13. ${t("mobilePostsortCommentsScreen")}`} </h2>
+        <h2>{`14. ${t("mobilePostsortCommentsScreen")}`} </h2>
         <div className="flex flex-row gap-4">
           <button
             id="mobilePostsortDef"
@@ -110,7 +110,7 @@ const MobilePostsortTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`13-1. ${t("mobilePostsortHelpModalHead")}`}
+          label={`14-1. ${t("mobilePostsortHelpModalHead")}`}
           name="mobilePostsortHelpModalHead"
           value={mobilePostsortHelpModalHead}
           onChange={handleTextChange}
@@ -121,7 +121,7 @@ const MobilePostsortTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`13-2. ${t("mobilePostsortHelpModalText")}`}
+          label={`14-2. ${t("mobilePostsortHelpModalText")}`}
           name="mobilePostsortHelpModalText"
           height={150}
           value={mobilePostsortHelpModalText}
@@ -134,7 +134,7 @@ const MobilePostsortTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`13-3. ${t("mobilePostsortSortbarText")}`}
+          label={`14-3. ${t("mobilePostsortSortbarText")}`}
           name="mobilePostsortSortbarText"
           value={mobilePostsortSortbarText}
           onChange={handleTextChange}
@@ -145,7 +145,7 @@ const MobilePostsortTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`13-4. ${t("mobilePostsortPlaceholder")}`}
+          label={`14-4. ${t("mobilePostsortPlaceholder")}`}
           name="mobilePostsortPlaceholder"
           value={mobilePostsortPlaceholder}
           onChange={handleTextChange}
@@ -157,7 +157,7 @@ const MobilePostsortTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`13-5. ${t("mobilePostsortPreventNavModalHead")}`}
+          label={`14-5. ${t("mobilePostsortPreventNavModalHead")}`}
           name="mobilePostsortPreventNavModalHead"
           value={mobilePostsortPreventNavModalHead}
           onChange={handleTextChange}
@@ -168,7 +168,7 @@ const MobilePostsortTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`13-6. ${t("mobilePostsortPreventNavModalText")}`}
+          label={`14-6. ${t("mobilePostsortPreventNavModalText")}`}
           name="mobilePostsortPreventNavModalText"
           height={150}
           value={mobilePostsortPreventNavModalText}

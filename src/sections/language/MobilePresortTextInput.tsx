@@ -99,7 +99,7 @@ const MobilePresortTextInput = () => {
   return (
     <div className="outline outline-2 outline-slate-500 p-2 w-[100%] rounded-sm ">
       <div className="flex flex-row justify-between mb-4">
-        <h2>{`7. ${t("mobilePresortScreen")}`} </h2>
+        <h2>{`8. ${t("mobilePresortScreen")}`} </h2>
         <div className="flex flex-row gap-4">
           <button
             id="mobilePresortDef"
@@ -165,7 +165,7 @@ const MobilePresortTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`7-1. ${t("mobilePresortHelpModalHead")}`}
+          label={`8-1. ${t("mobilePresortHelpModalHead")}`}
           name="mobilePresortHelpModalHead"
           value={mobilePresortHelpModalHead}
           onChange={handleTextChange}
@@ -177,7 +177,7 @@ const MobilePresortTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label={`7-2. ${t("mobilePresortHelpModalText")}`}
+          label={`8-2. ${t("mobilePresortHelpModalText")}`}
           name="mobilePresortHelpModalText"
           height={150}
           value={mobilePresortHelpModalText}
@@ -191,7 +191,7 @@ const MobilePresortTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`7-3. ${t("mobilePresortConditionsOfInstruction")}`}
+          label={`8-3. ${t("mobilePresortConditionsOfInstruction")}`}
           name="mobilePresortConditionsOfInstruction"
           value={mobilePresortConditionsOfInstruction}
           onChange={handleTextChange}
@@ -202,7 +202,7 @@ const MobilePresortTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`7-4. ${t("mobilePresortCompletedLabel")}`}
+          label={`8-4. ${t("mobilePresortCompletedLabel")}`}
           name="mobilePresortCompletedLabel"
           value={mobilePresortCompletedLabel}
           onChange={handleTextChange}
@@ -213,7 +213,7 @@ const MobilePresortTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`7-5. ${t("mobilePresortAssignLeft")}`}
+          label={`8-5. ${t("mobilePresortAssignLeft")}`}
           name="mobilePresortAssignLeft"
           value={mobilePresortAssignLeft}
           onChange={handleTextChange}
@@ -224,7 +224,7 @@ const MobilePresortTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`7-6. ${t("mobilePresortAssignRight")}`}
+          label={`8-6. ${t("mobilePresortAssignRight")}`}
           name="mobilePresortAssignRight"
           value={mobilePresortAssignRight}
           onChange={handleTextChange}
@@ -235,7 +235,7 @@ const MobilePresortTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`7-7. ${t("mobilePresortRedoModalHead")}`}
+          label={`8-7. ${t("mobilePresortRedoModalHead")}`}
           name="mobilePresortRedoModalHead"
           value={mobilePresortRedoModalHead}
           onChange={handleTextChange}
@@ -247,7 +247,7 @@ const MobilePresortTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`7-8. ${t("mobilePresortRedoModalConfirmButton")}`}
+          label={`8-8. ${t("mobilePresortRedoModalConfirmButton")}`}
           name="mobilePresortRedoModalConfirmButton"
           value={mobilePresortRedoModalConfirmButton}
           onChange={handleTextChange}
@@ -259,7 +259,7 @@ const MobilePresortTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[80px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label={`7-9. ${t("mobilePresortEvaluationsComplete")}`}
+          label={`8-9. ${t("mobilePresortEvaluationsComplete")}`}
           name="mobilePresortEvaluationsComplete"
           height={150}
           value={mobilePresortEvaluationsComplete}
@@ -273,7 +273,7 @@ const MobilePresortTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`7-10. ${t("mobilePresortFinishedModalHead")}`}
+          label={`8-10. ${t("mobilePresortFinishedModalHead")}`}
           name="mobilePresortFinishedModalHead"
           value={mobilePresortFinishedModalHead}
           onChange={handleTextChange}
@@ -285,7 +285,7 @@ const MobilePresortTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[120px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label={`7-11. ${t("mobilePresortFinishedModalText")}`}
+          label={`8-11. ${t("mobilePresortFinishedModalText")}`}
           name="mobilePresortFinishedModalText"
           height={150}
           value={mobilePresortFinishedModalText}
@@ -298,7 +298,7 @@ const MobilePresortTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`7-12. ${t("mobilePresortPreventNavModalHead")}`}
+          label={`8-12. ${t("mobilePresortPreventNavModalHead")}`}
           name="mobilePresortPreventNavModalHead"
           value={mobilePresortPreventNavModalHead}
           onChange={handleTextChange}
@@ -310,7 +310,7 @@ const MobilePresortTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[60px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center has-[:focus]:font-bold`}
-          label={`7-13. ${t("mobilePresortPreventNavModalText")}`}
+          label={`8-13. ${t("mobilePresortPreventNavModalText")}`}
           name="mobilePresortPreventNavModalText"
           height={150}
           value={mobilePresortPreventNavModalText}
@@ -323,7 +323,7 @@ const MobilePresortTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[60px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center has-[:focus]:font-bold`}
-          label={`7-14. ${t("mobilePresortProcessCompleteMessage")}`}
+          label={`8-14. ${t("mobilePresortProcessCompleteMessage")}`}
           name="mobilePresortProcessCompleteMessage"
           height={150}
           value={mobilePresortProcessCompleteMessage}

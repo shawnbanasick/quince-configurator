@@ -34,7 +34,7 @@ const ProjectLinkingTextInput: React.FC = () => {
   return (
     <div className="outline outline-2 outline-slate-500 p-2 w-[100%] rounded-sm">
       <div className="flex flex-row justify-between mb-4">
-        <h2>19. {t("projectLinkingScreen")}</h2>
+        <h2>20. {t("projectLinkingScreen")}</h2>
         <div className="flex flex-row gap-4">
           <button
             id="linkingDef"
@@ -65,7 +65,7 @@ const ProjectLinkingTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`19-1. ${t("linkingFallbackMessage")}`}
+          label={`20-1. ${t("linkingFallbackMessage")}`}
           name="linkingFallbackMessage"
           value={linkingFallbackMessage}
           onChange={handleTextChange}
@@ -76,7 +76,7 @@ const ProjectLinkingTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`19-2. ${t("linkingBtnText")}`}
+          label={`20-2. ${t("linkingBtnText")}`}
           name="linkingBtnText"
           value={linkingBtnText}
           onChange={handleTextChange}

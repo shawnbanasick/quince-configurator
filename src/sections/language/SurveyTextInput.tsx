@@ -48,7 +48,7 @@ const SurveyTextInput: React.FC = () => {
   return (
     <div className="outline outline-2 outline-slate-500 p-2 w-[100%] rounded-sm bg-gray-100">
       <div className="flex flex-row justify-between mb-4">
-        <h2>14. {t("questionnaireScreen")}</h2>
+        <h2>15. {t("questionnaireScreen")}</h2>
         <div className="flex flex-row gap-4">
           <button
             id="surveyDef"
@@ -95,7 +95,7 @@ const SurveyTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`14-1. ${t("surveyModalHead")}`}
+          label={`15-1. ${t("surveyModalHead")}`}
           name="surveyModalHead"
           value={surveyModalHead}
           onChange={handleTextChange}
@@ -106,7 +106,7 @@ const SurveyTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`14-2. ${t("surveyModalText")}`}
+          label={`15-2. ${t("surveyModalText")}`}
           name="surveyModalText"
           height={150}
           value={surveyModalText}
@@ -120,7 +120,7 @@ const SurveyTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`14-3. ${t("surveyHeader")}`}
+          label={`15-3. ${t("surveyHeader")}`}
           name="surveyHeader"
           value={surveyHeader}
           onChange={handleTextChange}
@@ -132,7 +132,7 @@ const SurveyTextInput: React.FC = () => {
         <UserTextInput
           classNameText="flex-1 mt-1 block min-w-[400px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`14-4. ${t("surveyPreventNavModalHead")}`}
+          label={`15-4. ${t("surveyPreventNavModalHead")}`}
           name="surveyPreventNavModalHead"
           value={surveyPreventNavModalHead}
           onChange={handleTextChange}
@@ -143,7 +143,7 @@ const SurveyTextInput: React.FC = () => {
         <UserTextAreaInput
           classNameText="flex-1 mt-1 block min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal text-left align-top"
           classNameLabel="w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none"
-          label={`14-5. ${t("surveyPreventNavModalText")}`}
+          label={`15-5. ${t("surveyPreventNavModalText")}`}
           name="surveyPreventNavModalText"
           height={150}
           value={surveyPreventNavModalText}
