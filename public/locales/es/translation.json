@@ -36,7 +36,25 @@
   "configPara1b": "Las opciones <mark>resaltadas</mark> deben personalizarse para su proyecto",
   "configPara2": "Si tiene un archivo config.xml de otro proyecto Quince hecho con esta versión del Configurator, puede cargar sus datos para editarlos haciendo clic en el botón naranja - <b>'Cargar Datos de config.xml'</b> - a continuación. Si no tiene un archivo de un proyecto anterior, puede cargar el archivo config.xml predeterminado de la carpeta de configuración, o puede crear un nuevo archivo ingresando todos los datos usted mismo.",
   "configPara3": "Después de haber agregado sus datos, haga clic en el botón naranja '<b>Guardar Archivo config.xml</b>' a continuación para guardar la información en la carpeta 'settings' de la plantilla Quince (reemplazando el archivo predeterminado).",
-
+  "versionHistory": "Historial de versiones",
+  "version108a": "Se agregó la opción 'prevenir acceso móvil'",
+  "version108b": "Se agregó la capacidad de elegir emoji de preclasificación",
+  "version108c": "Se corrigió la visualización de emojis en la pantalla de preclasificación",
+  "version108d": "Se corrigió la importación XML en la sección de cuadrícula Q Sort",
+  "version108e": "Se mejoró la UI/UX en la sección de idioma",
+  "version107a": "Se agregó la opción de requerir un conteo mínimo de palabras en la sección de comentarios posterior a la clasificación",
+  "version107b": "Se agregó la opción 'otro' para preguntas de encuesta con casillas de verificación y botones de opción",
+  "version107c": "Se agregaron traducciones adicionales - de, es, fr, it, ko, nl, pt, zh-Hans, zh-Hant",
+  "version106a": "Se corrigió el diseño de las cuadrículas de declaraciones",
+  "version106b": "Se corrigió la salida de la encuesta",
+  "version106c": "Se agregaron las traducciones de idioma faltantes",
+  "version102a": "Se agregaron imágenes de idioma",
+  "version102b": "Se agregaron pantallas móviles",
+  "version102c": "Se corrigieron los valores predeterminados de idioma",
+  "version031a": "Se agregaron pantallas móviles",
+  "version031b": "Se corrigió la integración con Baserow",
+  "version031c": "Se mejoró la UI/UX móvil",
+  "version001a": "Comienza el desarrollo",
   "what0": "¿Qué es esto?",
   "what1": "Quince es un software para ordenamiento Q digital. Es la combinación de dos proyectos previos de ordenamiento Q - EQ Web Sort (Shawn Banasick) y POETQ (Stephen Jeffares). El software consiste en dos partes - un archivo ZIP que contiene los archivos de la <b>Plantilla Quince</b>, y el <b>Configurator</b> (esta página web) que usará para modificar los archivos de 'settings' de la plantilla para satisfacer las necesidades de su proyecto de ordenamiento Q. Casi todos los aspectos del ordenamiento Q pueden personalizarse en Quince. No se requieren habilidades de programación informática para crear un proyecto Quince. Todo puede hacerse apuntando/haciendo clic o arrastrando/soltando.",
   "what2": "Quince es software de código abierto.",
@@ -100,6 +118,10 @@
   "enterBaserowToken": "Ingrese el Token de Baserow",
   "enterBaserowDatabaseIdNumber": "Ingrese el Número de ID de Base de Datos de Baserow",
   "enterEmailSubjectLineText": "Ingrese el Texto del Asunto del Correo Electrónico",
+
+  "*** CONFIG 3 - DESKTOP ONLY  ***": "*** DESKTOP ONLY ***",
+  "restrictedToDesktop": "Acceso móvil",
+  "desktopOnly": "Prevenir acceso móvil",
 
   "*** CONFIG 3 - LINK TO SECOND PROJECT ***": "*** ENLACE A UN SEGUNDO PROYECTO ***",
   "projectLinking": "Enlazar a un Segundo Ordenamiento Q",
@@ -275,12 +297,13 @@
 
   "loadMap": "Cargar datos map.xml",
   "saveMap": "Guardar archivo map.xml",
+  "qSortGridSettings": "Configuración de la cuadrícula Q Sort",
   "steps3MobileHeaders": "-2 a +2",
   "steps4MobileHeaders": "-3 a +3",
   "steps5MobileHeaders": "-4 a +4",
   "steps6MobileHeaders": "-5 a +5",
   "steps7MobileHeaders": "-6 a +6",
-
+  "defaultOptions": "Opciones por defecto",
   "missingLabels": "Etiquetas Faltantes",
   "excessLabels": "Etiquetas Excedentes",
   "labelsMatch": "¡Las Etiquetas Coinciden!",
@@ -402,6 +425,11 @@
   "mobileViewAreaSizeButtonText": "Texto del Botón de Tamaño del Área de Visualización Móvil",
   "mobileModalButtonCancel": "Botón de Cancelar Modal Móvil",
   "expandViewMessage": "Mensaje de Expandir Área de Vista",
+
+  "*** LANGUAGE 2. Prevent Mobile Access ***": "***  LANGUAGE PAGE  ***",
+  "preventMobileAccess": "Prevenir acceso móvil",
+  "preventMobileTitle": "Título de acceso móvil restringido",
+  "preventMobileMessage": "Mensaje de acceso móvil restringido",
 
   "*** LANGUAGE 2. Consent Screen ***": "***  PÁGINA DE IDIOMA  ***",
   "consentScreen": "Pantalla de Consentimiento",
@@ -745,6 +773,5 @@
   "netlifyStep13": "En el cuadro 'Deploys', haga clic en el enlace 'browse to upload' y seleccione la {{{b}}}CARPETA{{{/b}}} de su proyecto. En unos minutos su proyecto estará actualizado en la web.",
   "netlifySetupComplete": "¡Configuración de alojamiento web completa!",
   "netlifySetupCompleteMessage": "¡Felicitaciones! Ha configurado exitosamente su proyecto en la web. Su sitio web ahora está listo para usar.",
-
   "checkInternetMessage": "Mensaje de verificación de Internet"
 }

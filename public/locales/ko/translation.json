@@ -36,7 +36,25 @@
   "configPara1b": "<mark>강조 표시된</mark> 옵션은 프로젝트에 맞게 사용자 정의해야 합니다",
   "configPara2": "이 버전의 Configurator로 만든 다른 Quince 프로젝트의 config.xml 파일이 있는 경우, 아래의 주황색 - <b>'config.xml 데이터 로드'</b> - 버튼을 클릭하여 편집할 데이터를 로드할 수 있습니다. 이전 프로젝트의 파일이 없는 경우, settings 폴더의 기본 config.xml 파일을 로드하거나 모든 데이터를 직접 입력하여 새 파일을 만들 수 있습니다.",
   "configPara3": "데이터를 추가한 후 아래의 주황색 '<b>config.xml 파일 저장</b>' 버튼을 클릭하여 정보를 Quince 템플릿 'settings' 폴더에 저장하세요 (기본 파일을 대체함).",
-
+  "versionHistory": "버전 기록",
+  "version108a": "'모바일 접근 방지' 옵션 추가",
+  "version108b": "사전 정렬 이모지 선택 기능 추가",
+  "version108c": "사전 정렬 화면의 이모지 표시 수정",
+  "version108d": "Q 정렬 그리드 섹션의 XML 가져오기 수정",
+  "version108e": "언어 섹션의 UI/UX 개선",
+  "version107a": "정렬 후 댓글 섹션에 최소 단어 수 요구 옵션 추가",
+  "version107b": "체크박스 및 라디오 버튼 설문 질문에 '기타' 옵션 추가",
+  "version107c": "추가 번역 추가 - de, es, fr, it, ko, nl, pt, zh-Hans, zh-Hant",
+  "version106a": "진술 그리드 레이아웃 수정",
+  "version106b": "설문 출력 수정",
+  "version106c": "누락된 언어 번역 추가",
+  "version102a": "언어 이미지 추가",
+  "version102b": "모바일 화면 추가",
+  "version102c": "언어 기본값 수정",
+  "version031a": "모바일 화면 추가",
+  "version031b": "Baserow 통합 수정",
+  "version031c": "모바일 UI/UX 개선",
+  "version001a": "개발 시작",
   "what0": "이것은 무엇인가요?",
   "what1": "Quince는 디지털 Q 분류를 위한 소프트웨어입니다. 이것은 두 개의 이전 Q 분류 프로젝트 - EQ Web Sort (Shawn Banasick)와 POETQ (Stephen Jeffares)의 결합입니다. 소프트웨어는 두 부분으로 구성됩니다 - <b>Quince Template</b> 파일을 포함하는 ZIP 파일과, Q 분류 프로젝트의 요구 사항에 맞게 템플릿의 'settings' 파일을 수정하는 데 사용할 <b>Configurator</b> (이 웹 페이지)입니다. Quince에서는 Q 분류의 거의 모든 측면을 사용자 정의할 수 있습니다. Quince 프로젝트를 만드는 데 컴퓨터 프로그래밍 기술이 필요하지 않습니다. 모든 것을 포인팅/클릭 또는 드래그/드롭으로 할 수 있습니다.",
   "what2": "Quince는 오픈 소스 소프트웨어입니다.",
@@ -100,6 +118,10 @@
   "enterBaserowToken": "Baserow 토큰 입력",
   "enterBaserowDatabaseIdNumber": "Baserow 데이터베이스 ID 번호 입력",
   "enterEmailSubjectLineText": "이메일 제목 텍스트 입력",
+
+  "*** CONFIG 3 - DESKTOP ONLY  ***": "*** DESKTOP ONLY ***",
+  "restrictedToDesktop": "모바일 접근",
+  "desktopOnly": "모바일 접근 방지",
 
   "*** CONFIG 3 - LINK TO SECOND PROJECT ***": "*** 구성 두 번째 프로젝트로 링크 ***",
   "projectLinking": "두 번째 Q 분류로 링크",
@@ -275,12 +297,13 @@
 
   "loadMap": "map.xml 데이터 불러오기",
   "saveMap": "map.xml 파일 저장",
+  "qSortGridSettings": "Q 분류 그리드 설정",
   "steps3MobileHeaders": "-2 ~ +2",
   "steps4MobileHeaders": "-3 ~ +3",
   "steps5MobileHeaders": "-4 ~ +4",
   "steps6MobileHeaders": "-5 ~ +5",
   "steps7MobileHeaders": "-6 ~ +6",
-
+  "defaultOptions": "기본 옵션",
   "missingLabels": "누락된 레이블",
   "excessLabels": "초과 레이블",
   "labelsMatch": "레이블 일치!",
@@ -402,6 +425,11 @@
   "mobileViewAreaSizeButtonText": "모바일 보기 영역 크기 버튼 텍스트",
   "mobileModalButtonCancel": "취소",
   "expandViewMessage": "보기 영역 확장",
+
+  "*** LANGUAGE 2. Prevent Mobile Access ***": "***  LANGUAGE PAGE  ***",
+  "preventMobileAccess": "모바일 접근 방지",
+  "preventMobileTitle": "모바일 접근 제한 제목",
+  "preventMobileMessage": "모바일 접근 제한 메시지",
 
   "*** LANGUAGE 2. Consent Screen ***": "***  언어 페이지  ***",
   "consentScreen": "동의 화면",
@@ -745,6 +773,5 @@
   "netlifyStep13": "'Deploys' 상자에서 'browse to upload' 링크를 클릭하고 프로젝트의 {{{b}}}폴더{{{/b}}}를 선택하세요. 몇 분 안에 프로젝트가 웹에서 업데이트됩니다.",
   "netlifySetupComplete": "웹 호스팅 설정 완료!",
   "netlifySetupCompleteMessage": "축하합니다! 웹에서 프로젝트 설정을 성공적으로 완료했습니다. 이제 웹사이트를 사용할 준비가 되었습니다.",
-
   "checkInternetMessage": "인터넷 연결 확인 메시지"
 }

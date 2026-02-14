@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 interface Change {
   type: "feature" | "fix" | "improvement" | "breaking";
@@ -11,69 +12,6 @@ interface Version {
   date: string;
   changes: Change[];
 }
-
-const versionHistory: Version[] = [
-  {
-    version: "1.0.8",
-    date: "2026-02-12",
-    changes: [
-      { type: "feature", description: "Added 'prevent mobile access' option" },
-      { type: "feature", description: "Added ability to choose presort emoji" },
-      { type: "fix", description: "Fixed emoji display on pre-sorting screen" },
-      { type: "improvement", description: "Improved UI/UX in language section" },
-    ],
-  },
-  {
-    version: "1.0.7",
-    date: "2026-01-23",
-    changes: [
-      {
-        type: "feature",
-        description: "Added option to require minimum word counts in post-sorting comments section",
-      },
-      {
-        type: "feature",
-        description: "Added 'other' option for checkbox and radio button survey questions",
-      },
-      {
-        type: "feature",
-        description: "Added additional translations - de, es, fr, it, ko, nl, pt, zh-Hans, zh-Hant",
-      },
-    ],
-  },
-  {
-    version: "1.0.6",
-    date: "2026-01-10",
-    changes: [
-      { type: "fix", description: "Fixed statement grids layout" },
-      { type: "fix", description: "Fixed survey output" },
-      { type: "fix", description: "Added missing language translations" },
-    ],
-  },
-  {
-    version: "1.0.2",
-    date: "2025-010-25",
-    changes: [
-      { type: "feature", description: "Added language images" },
-      { type: "feature", description: "Added mobile screens" },
-      { type: "fix", description: "Fixed language defaults" },
-    ],
-  },
-  {
-    version: "0.3.1",
-    date: "2025-3-28",
-    changes: [
-      { type: "feature", description: "Added mobile screens" },
-      { type: "fix", description: "Fixed Baserow integration" },
-      { type: "improvement", description: "Improved mobile UI/UX" },
-    ],
-  },
-  {
-    version: "0.0.1",
-    date: "2024-11-8",
-    changes: [{ type: "feature", description: "Development begins" }],
-  },
-];
 
 // { type: "breaking", description: "Changed API endpoint structure for user data" },
 
@@ -110,6 +48,71 @@ const getChangeTypeLabel = (type: Change["type"]) => {
 const VersionHistory: React.FC = () => {
   const [isHistoryOpen, setIsHistoryOpen] = useState(false);
   const [expandedVersions, setExpandedVersions] = useState<Set<string>>(new Set());
+  const { t } = useTranslation();
+
+  const versionHistory: Version[] = [
+    {
+      version: "1.0.8",
+      date: "2026-02-12",
+      changes: [
+        { type: "feature", description: t("version108a") },
+        { type: "feature", description: t("version108b") },
+        { type: "fix", description: t("version108c") },
+        { type: "fix", description: t("version108d") },
+        { type: "improvement", description: t("version108e") },
+      ],
+    },
+    {
+      version: "1.0.7",
+      date: "2026-01-23",
+      changes: [
+        {
+          type: "feature",
+          description: t("version107a"),
+        },
+        {
+          type: "feature",
+          description: t("version107b"),
+        },
+        {
+          type: "feature",
+          description: t("version107c"),
+        },
+      ],
+    },
+    {
+      version: "1.0.6",
+      date: "2026-01-10",
+      changes: [
+        { type: "fix", description: t("version106a") },
+        { type: "fix", description: t("version106b") },
+        { type: "fix", description: t("version106c") },
+      ],
+    },
+    {
+      version: "1.0.2",
+      date: "2025-010-25",
+      changes: [
+        { type: "feature", description: t("version102a") },
+        { type: "feature", description: t("version102b") },
+        { type: "fix", description: t("version102c") },
+      ],
+    },
+    {
+      version: "0.3.1",
+      date: "2025-3-28",
+      changes: [
+        { type: "feature", description: t("version031a") },
+        { type: "fix", description: t("version031b") },
+        { type: "improvement", description: t("version031c") },
+      ],
+    },
+    {
+      version: "0.0.1",
+      date: "2024-11-8",
+      changes: [{ type: "feature", description: t("version001a") }],
+    },
+  ];
 
   const toggleVersion = (version: string) => {
     setExpandedVersions((prev) => {

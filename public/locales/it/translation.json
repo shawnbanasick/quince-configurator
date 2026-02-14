@@ -36,7 +36,25 @@
   "configPara1b": "Le opzioni <mark>evidenziate</mark> devono essere personalizzate per il proprio progetto",
   "configPara2": "Se si dispone di un file config.xml da un altro progetto Quince realizzato con questa versione del Configurator, è possibile caricare i suoi dati per la modifica cliccando il pulsante arancione - <b>'Carica Dati config.xml'</b> - qui sotto. Se non si dispone di un file da un progetto precedente, è possibile caricare il file config.xml predefinito dalla cartella settings, oppure è possibile creare un nuovo file inserendo tutti i dati manualmente.",
   "configPara3": "Dopo aver aggiunto i dati, cliccare il pulsante arancione '<b>Salva File config.xml</b>' qui sotto per salvare le informazioni nella cartella 'settings' del template Quince (sostituendo il file predefinito).",
-
+  "versionHistory": "Cronologia versioni",
+  "version108a": "Aggiunta opzione 'impedisci accesso mobile'",
+  "version108b": "Aggiunta possibilità di scegliere emoji di pre-ordinamento",
+  "version108c": "Corretta visualizzazione emoji sulla schermata di pre-ordinamento",
+  "version108d": "Corretto importazione XML nella sezione griglia Q Sort",
+  "version108e": "Migliorata UI/UX nella sezione lingua",
+  "version107a": "Aggiunta opzione per richiedere un conteggio minimo di parole nella sezione commenti post-ordinamento",
+  "version107b": "Aggiunta opzione 'altro' per domande del sondaggio con caselle di controllo e pulsanti radio",
+  "version107c": "Aggiunte traduzioni aggiuntive - de, es, fr, it, ko, nl, pt, zh-Hans, zh-Hant",
+  "version106a": "Corretto layout delle griglie delle dichiarazioni",
+  "version106b": "Corretto output del sondaggio",
+  "version106c": "Aggiunte traduzioni di lingua mancanti",
+  "version102a": "Aggiunte immagini di lingua",
+  "version102b": "Aggiunte schermate mobile",
+  "version102c": "Corretti valori predefiniti di lingua",
+  "version031a": "Aggiunte schermate mobile",
+  "version031b": "Corretta integrazione Baserow",
+  "version031c": "Migliorata UI/UX mobile",
+  "version001a": "Inizio sviluppo",
   "what0": "Che cos'è?",
   "what1": "Quince è un software per il Q sorting digitale. È la combinazione di due progetti precedenti di Q sorting - EQ Web Sort (Shawn Banasick) e POETQ (Stephen Jeffares). Il software è composto da due parti - un file ZIP che contiene i file del <b>Template Quince</b>, e il <b>Configurator</b> (questa pagina web) che verrà utilizzato per modificare i file 'settings' del template per soddisfare le esigenze del proprio progetto Q sort. Quasi tutti gli aspetti del Q sort possono essere personalizzati in Quince. Non sono richieste competenze di programmazione informatica per creare un progetto Quince. Tutto può essere fatto puntando/cliccando o trascinando/rilasciando.",
   "what2": "Quince è un software open source.",
@@ -100,6 +118,10 @@
   "enterBaserowToken": "Inserisci Token Baserow",
   "enterBaserowDatabaseIdNumber": "Inserisci Numero ID Database Baserow",
   "enterEmailSubjectLineText": "Inserisci Testo Oggetto Email",
+
+  "*** CONFIG 3 - DESKTOP ONLY  ***": "*** DESKTOP ONLY ***",
+  "restrictedToDesktop": "Accesso mobile",
+  "desktopOnly": "Impedisci accesso mobile",
 
   "*** CONFIG 3 - LINK TO SECOND PROJECT ***": "*** COLLEGAMENTO A SECONDO PROGETTO ***",
   "projectLinking": "Collega a un Secondo Q Sort",
@@ -275,12 +297,13 @@
 
   "loadMap": "Carica dati map.xml",
   "saveMap": "Salva file map.xml",
+  "qSortGridSettings": "Impostazioni griglia Q Sort",
   "steps3MobileHeaders": "-2 a +2",
   "steps4MobileHeaders": "-3 a +3",
   "steps5MobileHeaders": "-4 a +4",
   "steps6MobileHeaders": "-5 a +5",
   "steps7MobileHeaders": "-6 a +6",
-
+  "defaultOptions": "Opzioni predefinite",
   "missingLabels": "Etichette mancanti",
   "excessLabels": "Etichette in eccesso",
   "labelsMatch": "Le etichette corrispondono!",
@@ -402,6 +425,11 @@
   "mobileViewAreaSizeButtonText": "Testo pulsante dimensione area visualizzazione mobile",
   "mobileModalButtonCancel": "Pulsante Annulla Modale Mobile",
   "expandViewMessage": "Messaggio Espandi Area di Visualizzazione",
+
+  "*** LANGUAGE 2. Prevent Mobile Access ***": "***  PAGINA LINGUA  ***",
+  "preventMobileAccess": "Impedisci accesso mobile",
+  "preventMobileTitle": "Titolo accesso mobile limitato",
+  "preventMobileMessage": "Messaggio accesso mobile limitato",
 
   "*** LANGUAGE 2. Consent Screen ***": "***  PAGINA LINGUA  ***",
   "consentScreen": "Schermata di Consenso",
@@ -745,6 +773,5 @@
   "netlifyStep13": "Nella casella 'Deploys', clicca sul link 'browse to upload' e seleziona la {{{b}}}CARTELLA{{{/b}}} del tuo progetto. In pochi minuti il tuo progetto sarà aggiornato sul web.",
   "netlifySetupComplete": "Configurazione hosting web completata!",
   "netlifySetupCompleteMessage": "Congratulazioni! Hai configurato con successo il tuo progetto sul web. Il tuo sito web è ora pronto per l'uso.",
-
   "checkInternetMessage": "Messaggio verifica connessione Internet"
 }

@@ -36,7 +36,25 @@
   "configPara1b": "<mark>高亮显示</mark>的选项必须根据您的项目进行自定义",
   "configPara2": "如果您有来自此版本配置器制作的另一个Quince项目的config.xml文件,可以通过点击下方橙色的<b>'加载config.xml数据'</b>按钮来加载其数据进行编辑。如果您没有以前项目的文件,可以从settings文件夹加载默认的config.xml文件,或者您可以通过自己输入所有数据来创建新文件。",
   "configPara3": "添加数据后,点击下方橙色的'<b>保存config.xml文件</b>'按钮,将信息保存到Quince模板的'settings'文件夹(替换默认文件)。",
-
+  "versionHistory": "版本历史",
+  "version108a": "添加了'阻止移动访问'选项",
+  "version108b": "添加了选择预排序表情符号的功能",
+  "version108c": "修复了预排序屏幕上的表情符号显示",
+  "version108d": "修复了Q分类网格部分的XML导入",
+  "version108e": "改进了语言部分的UI/UX",
+  "version107a": "添加了在排序后评论部分要求最少字数的选项",
+  "version107b": "为复选框和单选按钮调查问题添加了'其他'选项",
+  "version107c": "添加了额外的翻译 - de, es, fr, it, ko, nl, pt, zh-Hans, zh-Hant",
+  "version106a": "修复了陈述网格布局",
+  "version106b": "修复了调查输出",
+  "version106c": "添加了缺失的语言翻译",
+  "version102a": "添加了语言图像",
+  "version102b": "添加了移动屏幕",
+  "version102c": "修复了语言默认值",
+  "version031a": "添加了移动屏幕",
+  "version031b": "修复了Baserow集成",
+  "version031c": "改进了移动UI/UX",
+  "version001a": "开发开始",
   "what0": "这是什么?",
   "what1": "Quince是数字Q分类软件。它是两个先前Q分类项目的结合——EQ Web Sort(Shawn Banasick)和POETQ(Stephen Jeffares)。该软件由两部分组成——一个包含<b>Quince模板</b>文件的ZIP文件,以及您将用来修改模板'settings'文件以满足Q分类项目需求的<b>配置器</b>(本网页)。Quince中几乎所有Q分类的方面都可以自定义。创建Quince项目不需要计算机编程技能。所有操作都可以通过点击或拖放完成。",
   "what2": "Quince是开源软件。",
@@ -101,7 +119,11 @@
   "enterBaserowDatabaseIdNumber": "输入Baserow数据库ID号",
   "enterEmailSubjectLineText": "输入电子邮件主题文本",
 
-  "*** CONFIG 3 - LINK TO SECOND PROJECT ***": "*** 配置链接到第二个项目 ***",
+  "*** CONFIG 3 - DESKTOP ONLY  ***": "*** DESKTOP ONLY ***",
+  "restrictedToDesktop": "移动访问",
+  "desktopOnly": "阻止移动访问",
+
+  "*** CONFIG 4 - LINK TO SECOND PROJECT ***": "*** 配置链接到第二个项目 ***",
   "projectLinking": "链接到第二个Q分类",
   "linkToSecondProject": "链接到第二个Q分类",
   "secondProjectUrlAddress": "第二个项目URL地址",
@@ -275,12 +297,13 @@
 
   "loadMap": "加载 map.xml 数据",
   "saveMap": "保存 map.xml 文件",
+  "qSortGridSettings": "Q 分类网格设置",
   "steps3MobileHeaders": "-2 到 +2",
   "steps4MobileHeaders": "-3 到 +3",
   "steps5MobileHeaders": "-4 到 +4",
   "steps6MobileHeaders": "-5 到 +5",
   "steps7MobileHeaders": "-6 到 +6",
-
+  "defaultOptions": "默认选项",
   "missingLabels": "缺少标签",
   "excessLabels": "标签过多",
   "labelsMatch": "标签匹配！",
@@ -402,6 +425,11 @@
   "mobileViewAreaSizeButtonText": "移动视图区域大小按钮文本",
   "mobileModalButtonCancel": "移动模态取消按钮",
   "expandViewMessage": "展开视图区域消息",
+
+  "*** LANGUAGE 2. Prevent Mobile Access ***": "***  LANGUAGE PAGE  ***",
+  "preventMobileAccess": "阻止移动访问",
+  "preventMobileTitle": "移动访问限制标题",
+  "preventMobileMessage": "移动访问限制消息",
 
   "*** LANGUAGE 2. Consent Screen ***": "***  语言页面  ***",
   "consentScreen": "同意屏幕",
@@ -745,6 +773,5 @@
   "netlifyStep13": "在'部署'框中,点击'浏览上传'链接并选择您的项目{{{b}}}文件夹{{{/b}}}。几分钟后,您的项目将在网络上更新。",
   "netlifySetupComplete": "网站托管设置完成!",
   "netlifySetupCompleteMessage": "恭喜!您已成功在网络上设置您的项目。您的网站现在已准备好使用。",
-
   "checkInternetMessage": "检查网络连接提示"
 }

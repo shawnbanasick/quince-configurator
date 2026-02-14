@@ -36,7 +36,25 @@
   "configPara1b": "As opções <mark>destacadas</mark> devem ser personalizadas para o seu projeto",
   "configPara2": "Se tiver um ficheiro config.xml de outro projeto Quince feito com esta versão do Configurador, pode carregar os seus dados para edição clicando no botão laranja - <b>'Carregar Dados config.xml'</b> - abaixo. Se não tiver um ficheiro de um projeto anterior, pode carregar o ficheiro config.xml padrão da pasta de configurações, ou pode criar um novo ficheiro introduzindo todos os dados você mesmo.",
   "configPara3": "Depois de ter adicionado os seus dados, clique no botão laranja '<b>Guardar Ficheiro config.xml</b>' abaixo para guardar a informação na pasta 'settings' do modelo Quince (substituindo o ficheiro padrão).",
-
+  "versionHistory": "Histórico de versões",
+  "version108a": "Adicionada opção 'prevenir acesso móvel'",
+  "version108b": "Adicionada capacidade de escolher emoji de pré-classificação",
+  "version108c": "Corrigida exibição de emoji na tela de pré-classificação",
+  "version108d": "Corrigida importação XML na seção de grade Q Sort",
+  "version108e": "Melhorada UI/UX na seção de idioma",
+  "version107a": "Adicionada opção para exigir contagem mínima de palavras na seção de comentários pós-classificação",
+  "version107b": "Adicionada opção 'outro' para perguntas de pesquisa com caixas de seleção e botões de opção",
+  "version107c": "Adicionadas traduções adicionais - de, es, fr, it, ko, nl, pt, zh-Hans, zh-Hant",
+  "version106a": "Corrigido layout das grades de declarações",
+  "version106b": "Corrigida saída da pesquisa",
+  "version106c": "Adicionadas traduções de idioma ausentes",
+  "version102a": "Adicionadas imagens de idioma",
+  "version102b": "Adicionadas telas móveis",
+  "version102c": "Corrigidos padrões de idioma",
+  "version031a": "Adicionadas telas móveis",
+  "version031b": "Corrigida integração Baserow",
+  "version031c": "Melhorada UI/UX móvel",
+  "version001a": "Desenvolvimento começa",
   "what0": "O que é isto?",
   "what1": "Quince é um software para ordenação Q digital. É a combinação de dois projetos anteriores de ordenação Q - EQ Web Sort (Shawn Banasick) e POETQ (Stephen Jeffares). O software consiste em duas partes - um ficheiro ZIP que contém os ficheiros do <b>Modelo Quince</b>, e o <b>Configurador</b> (esta página web) que irá usar para modificar os ficheiros 'settings' do modelo para atender às necessidades do seu projeto de ordenação Q. Quase todos os aspetos da ordenação Q podem ser personalizados no Quince. Não são necessárias competências de programação informática para criar um projeto Quince. Tudo pode ser feito apontando/clicando ou arrastando/largando.",
   "what2": "Quince é software de código aberto.",
@@ -100,6 +118,10 @@
   "enterBaserowToken": "Introduzir Token Baserow",
   "enterBaserowDatabaseIdNumber": "Introduzir Número de ID da Base de Dados Baserow",
   "enterEmailSubjectLineText": "Introduzir Texto do Assunto do Email",
+
+  "*** CONFIG 3 - DESKTOP ONLY  ***": "*** DESKTOP ONLY ***",
+  "restrictedToDesktop": "Acesso móvel",
+  "desktopOnly": "Prevenir acesso móvel",
 
   "*** CONFIG 3 - LINK TO SECOND PROJECT ***": "*** LIGAÇÃO A SEGUNDO PROJETO ***",
   "projectLinking": "Ligação a uma Segunda Ordenação Q",
@@ -275,12 +297,13 @@
 
   "loadMap": "Carregar Dados do map.xml",
   "saveMap": "Salvar Arquivo map.xml",
+  "qSortGridSettings": "Configurações da Grade de Ordenamento Q",
   "steps3MobileHeaders": "-2 a +2",
   "steps4MobileHeaders": "-3 a +3",
   "steps5MobileHeaders": "-4 a +4",
   "steps6MobileHeaders": "-5 a +5",
   "steps7MobileHeaders": "-6 a +6",
-
+  "defaultOptions": "Opções Padrão",
   "missingLabels": "Rótulos Faltando",
   "excessLabels": "Rótulos Excedentes",
   "labelsMatch": "Rótulos Correspondem!",
@@ -402,6 +425,11 @@
   "mobileViewAreaSizeButtonText": "Texto do Botão de Tamanho de Área de Visualização Móvel",
   "mobileModalButtonCancel": "Botão Cancelar do Modal Mobile",
   "expandViewMessage": "Mensagem da Área de Visualização Expandida",
+
+  "*** LANGUAGE 2. Prevent Mobile Access ***": "***  LANGUAGE PAGE  ***",
+  "preventMobileAccess": "Prevenir acesso móvel",
+  "preventMobileTitle": "Título de acesso móvel restrito",
+  "preventMobileMessage": "Mensagem de acesso móvel restrito",
 
   "*** LANGUAGE 2. Consent Screen ***": "***  PÁGINA DE IDIOMA  ***",
   "consentScreen": "Tela de Consentimento",
@@ -745,6 +773,5 @@
   "netlifyStep13": "Na caixa 'Deploys', clique no link 'browse to upload' e selecione a {{{b}}}PASTA{{{/b}}} do seu projeto. Em alguns minutos seu projeto será atualizado na web.",
   "netlifySetupComplete": "Configuração de Hospedagem Web Concluída!",
   "netlifySetupCompleteMessage": "Parabéns! Você configurou com sucesso seu projeto na web. Seu site está pronto para uso.",
-
   "checkInternetMessage": "Verificar Mensagem de Internet"
 }

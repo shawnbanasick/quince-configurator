@@ -36,7 +36,25 @@
   "configPara1b": "<mark>Gemarkeerde</mark> opties moeten worden aangepast voor uw project",
   "configPara2": "Als u een config.xml bestand heeft van een ander Quince project gemaakt met deze versie van de Configurator, kunt u de gegevens ervan laden voor bewerking door op de oranje - <b>'Laad config.xml Gegevens'</b> - knop hieronder te klikken. Als u geen bestand van een eerder project heeft, kunt u het standaard config.xml bestand uit de instellingenmap laden, of u kunt een nieuw bestand maken door alle gegevens zelf in te voeren.",
   "configPara3": "Nadat u uw gegevens heeft toegevoegd, klikt u op de oranje '<b>Bewaar config.xml Bestand</b>' knop hieronder om de informatie op te slaan in de Quince sjabloon 'instellingen' map (ter vervanging van het standaardbestand).",
-
+  "versionHistory": "Versiegeschiedenis",
+  "version108a": "Optie 'mobiele toegang voorkomen' toegevoegd",
+  "version108b": "Mogelijkheid toegevoegd om voorsortering emoji te kiezen",
+  "version108c": "Emoji-weergave op voorsorteeringsscherm gecorrigeerd",
+  "version108d": "XML-import in Q Sort raster sectie gecorrigeerd",
+  "version108e": "UI/UX in taalsectie verbeterd",
+  "version107a": "Optie toegevoegd om minimale woordaantallen te vereisen in commentaarsectie na sortering",
+  "version107b": "Optie 'anders' toegevoegd voor enquêtevragen met selectievakjes en keuzerondjes",
+  "version107c": "Aanvullende vertalingen toegevoegd - de, es, fr, it, ko, nl, pt, zh-Hans, zh-Hant",
+  "version106a": "Lay-out van verklaringsrasters gecorrigeerd",
+  "version106b": "Enquête-uitvoer gecorrigeerd",
+  "version106c": "Ontbrekende taalvertalingen toegevoegd",
+  "version102a": "Taalafbeeldingen toegevoegd",
+  "version102b": "Mobiele schermen toegevoegd",
+  "version102c": "Taalstandaarden gecorrigeerd",
+  "version031a": "Mobiele schermen toegevoegd",
+  "version031b": "Baserow-integratie gecorrigeerd",
+  "version031c": "Mobiele UI/UX verbeterd",
+  "version001a": "Ontwikkeling begint",
   "what0": "Wat is dit?",
   "what1": "Quince is software voor digitaal Q-sorteren. Het is de combinatie van twee eerdere Q-sorteerprojecten - EQ Web Sort (Shawn Banasick) en POETQ (Stephen Jeffares). De software bestaat uit twee delen - een ZIP-bestand dat de <b>Quince Sjabloon</b> bestanden bevat, en de <b>Configurator</b> (deze webpagina) die u zult gebruiken om de 'instellingen' bestanden van de sjabloon aan te passen aan de behoeften van uw Q-sorteerproject. Bijna alle aspecten van de Q-sortering kunnen worden aangepast in Quince. Er zijn geen computerprogrammeervaardigheden vereist om een Quince project te maken. Alles kan worden gedaan door te wijzen/klikken of te slepen/neerzetten.",
   "what2": "Quince is open source software.",
@@ -100,6 +118,10 @@
   "enterBaserowToken": "Voer Baserow Token In",
   "enterBaserowDatabaseIdNumber": "Voer Baserow Database ID-nummer In",
   "enterEmailSubjectLineText": "Voer E-mail Onderwerptekst In",
+
+  "*** CONFIG 3 - DESKTOP ONLY  ***": "*** DESKTOP ONLY ***",
+  "restrictedToDesktop": "Mobiele toegang",
+  "desktopOnly": "Mobiele toegang voorkomen",
 
   "*** CONFIG 3 - LINK TO SECOND PROJECT ***": "*** CONFIG LINK TO SECOND PROJECT ***",
   "projectLinking": "Link naar een Tweede Q-sortering",
@@ -275,12 +297,13 @@
 
   "loadMap": "Laad map.xml gegevens",
   "saveMap": "Bewaar map.xml bestand",
+  "qSortGridSettings": "Q-sort rasterinstellingen",
   "steps3MobileHeaders": "-2 tot +2",
   "steps4MobileHeaders": "-3 tot +3",
   "steps5MobileHeaders": "-4 tot +4",
   "steps6MobileHeaders": "-5 tot +5",
   "steps7MobileHeaders": "-6 tot +6",
-
+  "defaultOptions": "Standaardopties",
   "missingLabels": "Ontbrekende labels",
   "excessLabels": "Extra labels",
   "labelsMatch": "Labels komen overeen!",
@@ -402,6 +425,11 @@
   "mobileViewAreaSizeButtonText": "Mobiele weergavegebied grootte knoptekst",
   "mobileModalButtonCancel": "Annuleren",
   "expandViewMessage": "Weergavegebied uitvouwen",
+
+  "*** LANGUAGE 2. Prevent Mobile Access ***": "***  LANGUAGE PAGE  ***",
+  "preventMobileAccess": "Mobiele toegang voorkomen",
+  "preventMobileTitle": "Titel beperkte mobiele toegang",
+  "preventMobileMessage": "Bericht beperkte mobiele toegang",
 
   "*** LANGUAGE 2. Consent Screen ***": "***  LANGUAGE PAGE  ***",
   "consentScreen": "Toestemmingsscherm",
@@ -745,6 +773,5 @@
   "netlifyStep13": "Klik in het vak 'Deploys' op de link 'browse to upload' en selecteer de {{{b}}}MAP{{{/b}}} van uw project. Binnen enkele minuten zal uw project op het web worden bijgewerkt.",
   "netlifySetupComplete": "Webhosting instellingen voltooid!",
   "netlifySetupCompleteMessage": "Gefeliciteerd! U heeft uw project succesvol op het web ingesteld. Uw website is nu klaar voor gebruik.",
-
   "checkInternetMessage": "Controleer internet bericht"
 }

@@ -36,7 +36,25 @@
   "configPara1b": "<mark>強調標示</mark>的選項必須為您的專案自訂",
   "configPara2": "如果您有來自此版本配置器製作的另一個Quince專案的config.xml檔案，可以點擊下方橘色的<b>「載入config.xml資料」</b>按鈕來載入其資料進行編輯。如果您沒有先前專案的檔案，可以從設定資料夾載入預設的config.xml檔案，或者您可以自己輸入所有資料來建立新檔案。",
   "configPara3": "在您新增資料後，點擊下方橘色的「<b>儲存config.xml檔案</b>」按鈕，將資訊儲存到Quince範本的「設定」資料夾（替換預設檔案）。",
-
+  "versionHistory": "版本歷史",
+  "version108a": "新增了「阻止行動存取」選項",
+  "version108b": "新增了選擇預排序表情符號的功能",
+  "version108c": "修復了預排序畫面上的表情符號顯示",
+  "version108d": "修復了Q分類網格部分的XML匯入",
+  "version108e": "改進了語言部分的UI/UX",
+  "version107a": "新增了在排序後評論部分要求最少字數的選項",
+  "version107b": "為核取方塊和選項按鈕調查問題新增了「其他」選項",
+  "version107c": "新增了額外的翻譯 - de, es, fr, it, ko, nl, pt, zh-Hans, zh-Hant",
+  "version106a": "修復了陳述網格配置",
+  "version106b": "修復了調查輸出",
+  "version106c": "新增了缺失的語言翻譯",
+  "version102a": "新增了語言圖像",
+  "version102b": "新增了行動畫面",
+  "version102c": "修復了語言預設值",
+  "version031a": "新增了行動畫面",
+  "version031b": "修復了Baserow整合",
+  "version031c": "改進了行動UI/UX",
+  "version001a": "開發開始",
   "what0": "這是什麼？",
   "what1": "Quince是數位Q分類軟體。它結合了兩個先前的Q分類專案——EQ Web Sort（Shawn Banasick）和POETQ（Stephen Jeffares）。該軟體由兩部分組成——一個包含<b>Quince範本</b>檔案的ZIP檔案，以及您將用來修改範本「設定」檔案以符合Q分類專案需求的<b>配置器</b>（此網頁）。Quince中幾乎所有Q分類的各個方面都可以自訂。建立Quince專案不需要電腦程式設計技能。所有操作都可以透過點擊或拖放完成。",
   "what2": "Quince是開源軟體。",
@@ -100,6 +118,10 @@
   "enterBaserowToken": "輸入Baserow Token",
   "enterBaserowDatabaseIdNumber": "輸入Baserow資料庫ID號碼",
   "enterEmailSubjectLineText": "輸入電子郵件主旨文字",
+
+  "*** CONFIG 3 - DESKTOP ONLY  ***": "*** DESKTOP ONLY ***",
+  "restrictedToDesktop": "行動存取",
+  "desktopOnly": "阻止行動存取",
 
   "*** CONFIG 3 - LINK TO SECOND PROJECT ***": "*** 配置連結至第二個專案 ***",
   "projectLinking": "連結至第二個Q分類",
@@ -275,12 +297,13 @@
 
   "loadMap": "載入map.xml資料",
   "saveMap": "儲存map.xml檔案",
+  "qSortGridSettings": "Q分類網格設定",
   "steps3MobileHeaders": "-2到+2",
   "steps4MobileHeaders": "-3到+3",
   "steps5MobileHeaders": "-4到+4",
   "steps6MobileHeaders": "-5到+5",
   "steps7MobileHeaders": "-6到+6",
-
+  "defaultOptions": "預設選項",
   "missingLabels": "缺少標籤",
   "excessLabels": "多餘標籤",
   "labelsMatch": "標籤匹配！",
@@ -402,6 +425,11 @@
   "mobileViewAreaSizeButtonText": "行動裝置檢視區域大小按鈕文字",
   "mobileModalButtonCancel": "行動裝置模態取消按鈕",
   "expandViewMessage": "展開檢視區域訊息",
+
+  "*** LANGUAGE 2. Prevent Mobile Access ***": "***  LANGUAGE PAGE  ***",
+  "preventMobileAccess": "阻止行動存取",
+  "preventMobileTitle": "行動存取限制標題",
+  "preventMobileMessage": "行動存取限制訊息",
 
   "*** LANGUAGE 2. Consent Screen ***": "***  語言頁面  ***",
   "consentScreen": "同意螢幕",
@@ -745,6 +773,5 @@
   "netlifyStep13": "在「部署」框中，點擊「瀏覽以上傳」連結並選擇您專案的{{{b}}}資料夾{{{/b}}}。幾分鐘後，您的專案將在網路上更新。",
   "netlifySetupComplete": "網路主機設定完成！",
   "netlifySetupCompleteMessage": "恭喜！您已成功在網路上設定您的專案。您的網站現在已準備好使用。",
-
   "checkInternetMessage": "檢查網路訊息"
 }
