@@ -42,7 +42,10 @@ const LanguageHeader: React.FC = () => {
     icon: React.ReactNode;
     description: React.ReactNode;
   }> = ({ id, children, description }) => (
-    <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-all duration-300">
+    <div
+      id={id}
+      className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-all duration-300"
+    >
       <div className="flex flex-col w-[100%] items-center text-center space-y-4">
         <div className="w-[80%]">
           <div className="text-sm text-gray-600 mb-4 min-h-[90px]">{description}</div>
