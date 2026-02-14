@@ -1,7 +1,7 @@
 import { version } from "react";
 
 const createConfigXmlSlice = (set, get) => ({
-  version: "1.0.7",
+  version: "1.0.8",
   devMode: false,
   useMobileMode: true,
   traceSorts: true,
