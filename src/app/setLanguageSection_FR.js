@@ -21,6 +21,8 @@ const setLanguageSection_FR = (language) => {
     mobileTextSize: `Texte`,
     mobileViewSize: `Vue`,
     mobileModalButtonCancel: `Annuler`,
+    preventMobileTitle: "Titre d'accès mobile restreint",
+    preventMobileMessage: "Message d'accès mobile restreint",
     expandViewMessage: `Appuyez sur le bouton "+" Vue ci-dessous pour agrandir la zone d'affichage et masquer ce message.`,
     consentTitleBarText: `Consentement de recherche`,
     consentText: `Vous êtes invité à participer à une étude de recherche menée par [Nom du chercheur principal] à [Institution ou organisme]. Avant de décider de participer, il est important que vous compreniez pourquoi la recherche est menée et ce qu'elle impliquera. Veuillez prendre le temps de lire attentivement les informations suivantes. N'hésitez pas à contacter l'équipe de recherche pour toute question.<br /><br /><b>Objectif de l'étude</b><br />L'objectif de cette étude est de [décrire brièvement l'objectif, par exemple, comprendre les effets d'une nouvelle méthode d'enseignement sur la performance des étudiants]. Cette recherche nous aidera à mieux comprendre [mentionner les implications plus larges ou les objectifs de l'étude]. <br /><br /><b>Procédures de l'étude</b><br />Si vous acceptez de participer, il vous sera demandé de [décrire les procédures impliquées, y compris ce que les participants devront faire, combien de temps cela prendra et à quelle fréquence]. Par exemple, il vous sera demandé d'évaluer une série d'énoncés, de les trier, puis de réfléchir sur le tri effectué. De plus, un court questionnaire est prévu à la fin. L'étude durera environ [durée, par exemple, 45 minutes]. <br /><br /><b>Avantages</b><br />Bien qu'il n'y ait peut-être pas d'avantages directs pour vous en participant, les informations recueillies lors de cette étude peuvent aider à [décrire les avantages potentiels, par exemple, améliorer les méthodes d'enseignement, contribuer aux connaissances scientifiques, etc.]. Vous pouvez également acquérir des perspectives personnelles sur [décrire tout avantage personnel, le cas échéant].<br /><br /><b>Confidentialité</b><br />Toutes les informations collectées dans cette étude seront gardées strictement confidentielles. Les données seront stockées de manière sécurisée et seule l'équipe de recherche y aura accès. Votre identité ne sera pas divulguée dans les rapports ou publications résultant de cette étude. [Décrire comment les données seront anonymisées, cryptées ou stockées en toute sécurité].<br /><br /><b>Participation volontaire</b><br />Votre participation à cette étude est entièrement volontaire. Vous êtes libre de refuser de participer ou de vous retirer à tout moment, sans pénalité ni perte d'avantages auxquels vous avez droit par ailleurs. Si vous décidez de vous retirer, fermez la page web et toutes les données collectées jusqu'à ce moment seront supprimées.<br /><br /><b>Consentement</b><br />En cliquant sur le bouton "Accepter" en bas de cette page, vous indiquez que vous avez lu et compris les informations fournies et que vous acceptez de participer à cette étude. Si vous avez des questions sur cette étude, veuillez contacter [Nom et coordonnées du chercheur principal].`,
@@ -172,8 +174,10 @@ const setLanguageSection_FR = (language) => {
     copiedText: "Copié !",
     downloadResultsButtonText: "Télécharger les résultats",
     copyFailMessage: "Erreur : Veuillez réessayer.",
-    defaultEmailClientFail:"Votre client de messagerie par défaut aurait dû s'ouvrir automatiquement avec les résultats dans le corps de l'e-mail. Si ce n'est pas le cas, veuillez utiliser les boutons ci-dessous pour copier et coller vos informations dans un e-mail.",
-    emailBodyMessage:"Vous n'avez rien à ajouter à cet e-mail. Veuillez simplement cliquer sur le bouton ENVOYER.",
+    defaultEmailClientFail:
+      "Votre client de messagerie par défaut aurait dû s'ouvrir automatiquement avec les résultats dans le corps de l'e-mail. Si ce n'est pas le cas, veuillez utiliser les boutons ci-dessous pour copier et coller vos informations dans un e-mail.",
+    emailBodyMessage:
+      "Vous n'avez rien à ajouter à cet e-mail. Veuillez simplement cliquer sur le bouton ENVOYER.",
     linkingFallbackMessage: "Veuillez cliquer sur le bouton pour commencer le prochain tri Q",
     linkingBtnText: "Commencer le prochain tri Q",
     localHeader: "Panneau de contrôle du tri Q hors ligne",
@@ -183,24 +187,27 @@ const setLanguageSection_FR = (language) => {
     localDeleteButtonText: "Supprimer",
     localDownloadButtonText: "Enregistrer les données du tri Q sur le disque",
     storedQsortsHeaderText: "Tris Q enregistrés",
-    localDeleteModalText:"Cela supprimera les données du tri Q du participant actuellement stockées dans le navigateur. Vous ne feriez généralement cela que lorsque vous démarrez un nouveau projet.<br/><br/><b>ATTENTION - Les données supprimées ne peuvent pas être récupérées.</b> <br/><br/> <center></center>",
+    localDeleteModalText:
+      "Cela supprimera les données du tri Q du participant actuellement stockées dans le navigateur. Vous ne feriez généralement cela que lorsque vous démarrez un nouveau projet.<br/><br/><b>ATTENTION - Les données supprimées ne peuvent pas être récupérées.</b> <br/><br/> <center></center>",
     localDeleteModalHead: "Supprimer les données stockées dans le navigateur ?",
     localParticipantsText: "Participants",
     localSaveDataButton: "Enregistrer les données du participant dans la mémoire du navigateur",
     localSubmitSuccessModalHeader: "Succès",
-    localSubmitSuccessModalText:"Les données du tri Q du participant ont été enregistrées avec succès dans la mémoire du navigateur",
+    localSubmitSuccessModalText:
+      "Les données du tri Q du participant ont été enregistrées avec succès dans la mémoire du navigateur",
     localSaveBeforeDeleteModalHeader: "Suppression désactivée",
-    localSaveBeforeDeleteModalText: "Enregistrez les données du tri Q sur le disque avant de les supprimer.",
+    localSaveBeforeDeleteModalText:
+      "Enregistrez les données du tri Q sur le disque avant de les supprimer.",
     returnToLocalPanelButtonText: "Retourner au panneau de contrôle",
     emailSubjectText: `Résultats de Quince Q-sort`,
     submitFailMessage:
       "Impossible de se connecter à la base de données.<br/><br/>Cliquez sur le bouton pour ouvrir votre client de messagerie par défaut et envoyer un e-mail contenant les données à l'équipe de recherche.",
     checkInternetMessage:
       "*** Erreur - Échec de transmission ***<br/><br/>Veuillez vérifier votre connexion internet et cliquer à nouveau sur le bouton 'Soumettre les données'.",
-      press1: "(appuyer 1)",
-      press2: "(appuyer 2)",
-      press3: "(appuyer 3)",
-    });
+    press1: "(appuyer 1)",
+    press2: "(appuyer 2)",
+    press3: "(appuyer 3)",
+  });
   return;
 };
 

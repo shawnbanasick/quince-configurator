@@ -21,6 +21,8 @@ const setLanguageSection_IT = (language) => {
     mobileTextSize: `Testo`,
     mobileViewSize: `Visualizza`,
     mobileModalButtonCancel: `Annulla`,
+    preventMobileTitle: "Titolo accesso mobile limitato",
+    preventMobileMessage: "Messaggio accesso mobile limitato",
     expandViewMessage: `Tocca il pulsante "+" di Visualizza qui sotto per espandere l'area di visualizzazione e nascondere questo messaggio.`,
     consentTitleBarText: `Consenso alla Ricerca`,
     consentText: `Sei invitato a partecipare a uno studio di ricerca condotto da [Nome del Ricercatore Principale] presso [Istituzione o Organizzazione]. Prima di decidere se partecipare, è importante che tu comprenda perché la ricerca viene condotta e cosa comporterà. Si prega di prendersi il tempo necessario per leggere attentamente le seguenti informazioni. Non esitare a contattare il team di ricerca per qualsiasi domanda tu possa avere.<br /><br /><b>Scopo dello Studio</b><br />Lo scopo di questo studio è [descrivere brevemente lo scopo, ad es., comprendere gli effetti di un nuovo metodo di insegnamento sulle prestazioni degli studenti]. Questa ricerca ci aiuterà a ottenere informazioni su [menzionare eventuali implicazioni più ampie o obiettivi dello studio]. <br /><br /><b>Procedure dello Studio</b><br />Se accetti di partecipare, ti verrà chiesto di [descrivere le procedure coinvolte, incluso cosa faranno i partecipanti, quanto tempo ci vorrà e con quale frequenza si verificherà]. Ad esempio, ti verrà chiesto di completare la valutazione di una serie di affermazioni, ordinarle e poi riflettere sull'ordinamento. Inoltre, alla fine c'è un breve questionario. Lo studio richiederà circa [durata, ad es., 45 minuti]. <br /><br /><b>Benefici</b><br />Sebbene potrebbero non esserci benefici diretti per te nella partecipazione, le informazioni raccolte da questo studio potrebbero aiutare a [descrivere potenziali benefici, ad es., migliorare i metodi educativi, contribuire alla conoscenza scientifica, ecc.]. Potresti anche ottenere intuizioni personali su [descrivere eventuali benefici personali, se applicabile].<br /><br /><b>Riservatezza</b><br />Tutte le informazioni raccolte in questo studio saranno mantenute strettamente riservate. I dati saranno archiviati in modo sicuro e solo il team di ricerca vi avrà accesso. La tua identità non sarà divulgata in alcun rapporto o pubblicazione risultante da questo studio. [Descrivere come i dati saranno anonimizzati, crittografati o archiviati in modo sicuro].<br /><br /><b>Partecipazione Volontaria</b><br />La tua partecipazione a questo studio è del tutto volontaria. Sei libero di rifiutare di partecipare o di ritirarti in qualsiasi momento, senza penalità o perdita di benefici a cui hai altrimenti diritto. Se decidi di ritirarti, chiudi la pagina web e tutti i dati raccolti fino a quel momento saranno eliminati.<br /><br /><b>Consenso</b><br />Facendo clic sul pulsante "Accetto" nella parte inferiore di questa pagina, stai indicando di aver letto e compreso le informazioni fornite e di accettare di partecipare a questo studio. Se hai domande su questo studio, contatta [Nome e Informazioni di Contatto del Ricercatore Principale].`,
@@ -122,7 +124,8 @@ const setLanguageSection_IT = (language) => {
     sortOverloadedColumnModalHead: `Navigazione Disabilitata`,
     sortOverloadedColumnModalText: `Una delle colonne ha troppe schede (sarà evidenziata in arancione e avrà un bordo tratteggiato). Regola il posizionamento delle schede in modo che tutte le colonne abbiano il numero corretto.`,
     mobileSortSwapModalHead: `Scambiare le Classifiche delle Affermazioni?`,
-    mobileSortSwapModalSuccessMessage: "Le posizioni delle affermazioni sono state scambiate con successo.",
+    mobileSortSwapModalSuccessMessage:
+      "Le posizioni delle affermazioni sono state scambiate con successo.",
     mobileSortSwapModalText: `Fai clic su "Conferma" per scambiare.`,
     mobileSortSwapModalConfirmButton: `Scambia`,
     mobileSortConditionsOfInstruction: `Classifica le Affermazioni in Base alla Tua Esperienza di Utilizzo degli iPad in Classe`,
@@ -172,8 +175,10 @@ const setLanguageSection_IT = (language) => {
     copiedText: "Copiato!",
     downloadResultsButtonText: "Scarica Risultati",
     copyFailMessage: "Errore: Riprova.",
-    defaultEmailClientFail:"Il tuo client email predefinito dovrebbe essersi aperto automaticamente con i risultati nel corpo dell'email. Se non è successo, utilizza i pulsanti qui sotto per copiare e incollare le tue informazioni in un'email.",
-    emailBodyMessage:"Non devi aggiungere nulla a questa email. Fai semplicemente clic sul pulsante INVIA.",
+    defaultEmailClientFail:
+      "Il tuo client email predefinito dovrebbe essersi aperto automaticamente con i risultati nel corpo dell'email. Se non è successo, utilizza i pulsanti qui sotto per copiare e incollare le tue informazioni in un'email.",
+    emailBodyMessage:
+      "Non devi aggiungere nulla a questa email. Fai semplicemente clic sul pulsante INVIA.",
     linkingFallbackMessage: "Fai clic sul pulsante per iniziare il prossimo Q sort",
     linkingBtnText: "Inizia Prossimo Q sort",
     localHeader: "Pannello di Controllo Q-sort Offline",
@@ -183,12 +188,14 @@ const setLanguageSection_IT = (language) => {
     localDeleteButtonText: "Elimina",
     localDownloadButtonText: "Salva Dati Q-sort su Disco",
     storedQsortsHeaderText: "Q-sort Archiviati",
-    localDeleteModalText:"Questo eliminerà i dati del Q-sort del partecipante attualmente archiviati nel browser. Di solito lo faresti solo quando inizi un nuovo progetto.<br/><br/><b>ATTENZIONE - I dati eliminati non possono essere recuperati.</b> <br/><br/> <center></center>",
+    localDeleteModalText:
+      "Questo eliminerà i dati del Q-sort del partecipante attualmente archiviati nel browser. Di solito lo faresti solo quando inizi un nuovo progetto.<br/><br/><b>ATTENZIONE - I dati eliminati non possono essere recuperati.</b> <br/><br/> <center></center>",
     localDeleteModalHead: "Eliminare i Dati Archiviati nel Browser?",
     localParticipantsText: "Partecipanti",
     localSaveDataButton: "Salva Dati Partecipante nella Memoria del Browser",
     localSubmitSuccessModalHeader: "Successo",
-    localSubmitSuccessModalText:"I dati del Q sort del partecipante sono stati salvati con successo nella memoria del browser",
+    localSubmitSuccessModalText:
+      "I dati del Q sort del partecipante sono stati salvati con successo nella memoria del browser",
     localSaveBeforeDeleteModalHeader: "Eliminazione Disabilitata",
     localSaveBeforeDeleteModalText: "Salva i Dati Q sort su Disco prima di eliminarli.",
     returnToLocalPanelButtonText: "Torna al Pannello di Controllo",
@@ -200,7 +207,7 @@ const setLanguageSection_IT = (language) => {
     press1: "(premere 1)",
     press2: "(premere 2)",
     press3: "(premere 3)",
-    });
+  });
   return;
 };
 

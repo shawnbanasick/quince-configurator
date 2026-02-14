@@ -21,6 +21,8 @@ const setLanguageSection_zhHans = (language) => {
     mobileTextSize: `文字`,
     mobileViewSize: `视图`,
     mobileModalButtonCancel: `取消`,
+    preventMobileTitle: "移动访问限制标题",
+    preventMobileMessage: "移动访问限制消息",
     expandViewMessage: `点击下方的视图"+"按钮以展开视图区域并隐藏此消息。`,
     consentTitleBarText: `研究知情同意`,
     consentText: `您被邀请参与由[机构或组织]的[主要研究者姓名]进行的研究。在您决定是否参与之前,了解本研究的目的和内容非常重要。请仔细阅读以下信息。如有任何疑问,请随时联系研究团队。<br /><br /><b>研究目的</b><br />本研究的目的是[简要描述目的,例如:了解新教学方法对学生表现的影响]。这项研究将帮助我们深入了解[提及研究的任何更广泛的意义或目标]。<br /><br /><b>研究程序</b><br />如果您同意参与,您将被要求[描述所涉及的程序,包括参与者将做什么、需要多长时间以及发生的频率]。例如,您将被要求对一系列陈述进行评估、分类,然后对分类进行反思。此外,最后还有一份简短的问卷。本研究大约需要[时长,例如:45分钟]。<br /><br /><b>益处</b><br />虽然您参与本研究可能不会获得直接益处,但从本研究中收集的信息可能有助于[描述潜在益处,例如:改进教学方法、为科学知识做出贡献等]。您也可能获得关于[描述任何个人益处,如适用]的个人见解。<br /><br /><b>保密性</b><br />本研究中收集的所有信息将严格保密。数据将被安全存储,只有研究团队能够访问。您的身份不会在本研究产生的任何报告或出版物中披露。[描述数据将如何匿名化、加密或安全存储]。<br /><br /><b>自愿参与</b><br />您对本研究的参与完全自愿。您可以自由拒绝参与,或随时退出,不会受到任何惩罚或失去您原本有权享有的任何利益。如果您决定退出,请关闭网页,届时收集的所有数据都将被删除。<br /><br /><b>同意</b><br />点击本页底部的"同意"按钮,即表示您已阅读并理解所提供的信息,并同意参与本研究。如果您对本研究有任何疑问,请联系[主要研究者姓名和联系信息]。`,
@@ -172,8 +174,9 @@ const setLanguageSection_zhHans = (language) => {
     copiedText: "已复制!",
     downloadResultsButtonText: "下载结果",
     copyFailMessage: "错误: 请再试一次。",
-    defaultEmailClientFail:"您的默认电子邮件客户端应该已经自动打开，结果将显示在电子邮件正文中。如果未打开，请使用下方按钮复制和粘贴您的信息到电子邮件中。",
-    emailBodyMessage:"您不需要向此电子邮件添加任何内容。只需点击发送按钮。",
+    defaultEmailClientFail:
+      "您的默认电子邮件客户端应该已经自动打开，结果将显示在电子邮件正文中。如果未打开，请使用下方按钮复制和粘贴您的信息到电子邮件中。",
+    emailBodyMessage: "您不需要向此电子邮件添加任何内容。只需点击发送按钮。",
     linkingFallbackMessage: "请点击按钮开始下一个Q排序",
     linkingBtnText: "开始下一个Q排序",
     localHeader: "离线Q排序控制面板",
@@ -183,12 +186,13 @@ const setLanguageSection_zhHans = (language) => {
     localDeleteButtonText: "删除",
     localDownloadButtonText: "将Q排序数据保存到磁盘",
     storedQsortsHeaderText: "存储的Q排序",
-    localDeleteModalText:"这将删除浏览器中当前存储的参与者Q排序数据。您通常只会在开始新项目时这样做。<br/><br/><b>注意 - 删除的数据无法恢复。</b> <br/><br/> <center></center>",
+    localDeleteModalText:
+      "这将删除浏览器中当前存储的参与者Q排序数据。您通常只会在开始新项目时这样做。<br/><br/><b>注意 - 删除的数据无法恢复。</b> <br/><br/> <center></center>",
     localDeleteModalHead: "删除浏览器中存储的数据?",
     localParticipantsText: "参与者",
     localSaveDataButton: "将参与者数据保存到浏览器内存",
     localSubmitSuccessModalHeader: "成功",
-    localSubmitSuccessModalText:"参与者Q排序数据已成功保存到浏览器内存",
+    localSubmitSuccessModalText: "参与者Q排序数据已成功保存到浏览器内存",
     localSaveBeforeDeleteModalHeader: "删除禁用",
     localSaveBeforeDeleteModalText: "在删除之前，请将Q排序数据保存到磁盘。",
     returnToLocalPanelButtonText: "返回控制面板",
@@ -199,8 +203,8 @@ const setLanguageSection_zhHans = (language) => {
       "*** 错误 - 传输失败 ***<br/><br/>请检查您的网络连接，然后再次点击'提交数据'按钮。",
     press1: "按 1",
     press2: "按 2",
-    press3: "按 3", 
-    });
+    press3: "按 3",
+  });
   return;
 };
 

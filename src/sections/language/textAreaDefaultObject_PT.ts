@@ -10,6 +10,8 @@ const showSectionDefaults_PT = () => {
     mobileTextSize: "Texto",
     mobileViewSize: "Visualização",
     mobileModalButtonCancel: "Cancelar",
+    preventMobileTitle: "Título de acesso móvel restrito",
+    preventMobileMessage: "Mensagem de acesso móvel restrito",
     expandViewMessage:
       'Toque no botão "+" de Visualização abaixo para expandir a área de visualização e ocultar esta mensagem.',
     consentTitleBarText: "Consentimento de Pesquisa",

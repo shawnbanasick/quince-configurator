@@ -10,6 +10,8 @@ const showSectionDefaults_NL = () => {
     mobileTextSize: "Tekst",
     mobileViewSize: "Weergave",
     mobileModalButtonCancel: "Annuleren",
+    preventMobileTitle: "Titel beperkte mobiele toegang",
+    preventMobileMessage: "Bericht beperkte mobiele toegang",
     expandViewMessage:
       'Tik op de "+ " knop bij Weergave hieronder om het weergavegebied uit te breiden en dit bericht te verbergen.',
     consentTitleBarText: "Toestemming voor onderzoek",

@@ -20,7 +20,9 @@ const setLanguageSection_JA = (language) => {
     screenOrientationText: `縦向きでご使用ください！`,
     mobileTextSize: `テキスト`,
     mobileViewSize: `表示`,
-    mobileModalButtonCancel: `Cancel`,
+    mobileModalButtonCancel: `キャンセル`,
+    preventMobileTitle: "モバイルアクセス制限タイトル",
+    preventMobileMessage: "モバイルアクセス制限メッセージ",
     expandViewMessage:
       "下の「+」ボタンをタップすると表示領域が拡大され、このメッセージは非表示になります。",
     consentTitleBarText: `研究同意`,
@@ -204,9 +206,9 @@ const setLanguageSection_JA = (language) => {
     emailSubjectText: `QuinceのQソート結果`,
     emailBodyMessage:
       "このメールに何も追加する必要はありません。「送信」ボタンをクリックしてください。",
-   press1: "1を押す",
-   press2: "2を押す",
-   press3: "3を押す",
+    press1: "1を押す",
+    press2: "2を押す",
+    press3: "3を押す",
   });
   return;
 };

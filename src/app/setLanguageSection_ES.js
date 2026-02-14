@@ -21,6 +21,8 @@ const setLanguageSection_ES = (language) => {
     mobileTextSize: `Texto`,
     mobileViewSize: `Vista`,
     mobileModalButtonCancel: `Cancelar`,
+    preventMobileTitle: "Título de acceso móvil restringido",
+    preventMobileMessage: "Mensaje de acceso móvil restringido",
     expandViewMessage: `Toque el botón "+" de Vista abajo para expandir el área de visualización y ocultar este mensaje.`,
     consentTitleBarText: `Consentimiento de Investigación`,
     consentText: `Está invitado a participar en un estudio de investigación realizado por [Principal Investigator's Name] en [Institution or Organization]. Antes de que decida participar, es importante que comprenda por qué se realiza la investigación y qué implicará. Por favor tómese el tiempo de leer la siguiente información cuidadosamente. No dude en contactar al equipo de investigación con cualquier pregunta que pueda tener.<br /><br /><b>Propósito del Estudio</b><br />El propósito de este estudio es [briefly describe the purpose, e.g., understand the effects of a new teaching method on student performance]. Esta investigación nos ayudará a obtener conocimientos sobre [mention any broader implications or goals of the study]. <br /><br /><b>Procedimientos del Estudio</b><br />Si acepta participar, se le pedirá que [describe the procedures involved, including what participants will do, how long it will take, and how frequently it will occur]. Por ejemplo, se le pedirá que complete la evaluación de una serie de declaraciones, las ordene y luego reflexione sobre la clasificación. Además, hay un breve cuestionario al final. El estudio tomará aproximadamente [duration, e.g., 45 minutes]. <br /><br /><b>Beneficios</b><br />Si bien es posible que no haya beneficios directos para usted por participar, la información recopilada de este estudio puede ayudar a [describe potential benefits, e.g., improve educational methods, contribute to scientific knowledge, etc.]. También puede obtener conocimientos personales sobre [describe any personal benefits, if applicable].<br /><br /><b>Confidencialidad</b><br />Toda la información recopilada en este estudio se mantendrá estrictamente confidencial. Los datos se almacenarán de forma segura y solo el equipo de investigación tendrá acceso a ellos. Su identidad no se divulgará en ningún informe o publicación resultante de este estudio. [Describe how data will be anonymized, encrypted, or stored securely].<br /><br /><b>Participación Voluntaria</b><br />Su participación en este estudio es completamente voluntaria. Usted es libre de negarse a participar o de retirarse en cualquier momento, sin penalización ni pérdida de beneficios a los que de otro modo tiene derecho. Si decide retirarse, cierre la página web y cualquier dato recopilado hasta ese momento será eliminado.<br /><br /><b>Consentimiento</b><br />Al hacer clic en el botón "Aceptar" en la parte inferior de esta página, está indicando que ha leído y comprendido la información proporcionada, y que acepta participar en este estudio. Si tiene alguna pregunta sobre este estudio, por favor contacte a [Principal Investigator's Name and Contact Information].`,
@@ -122,7 +124,8 @@ const setLanguageSection_ES = (language) => {
     sortOverloadedColumnModalHead: `Navegación Deshabilitada`,
     sortOverloadedColumnModalText: `Una de las columnas tiene demasiadas tarjetas (estará delineada en naranja y tendrá un borde punteado). Por favor ajuste la colocación de las tarjetas para que todas las columnas tengan el número correcto.`,
     mobileSortSwapModalHead: `¿Intercambiar Clasificaciones de Declaraciones?`,
-    mobileSortSwapModalSuccessMessage: "Las posiciones de las declaraciones se intercambiaron exitosamente.",
+    mobileSortSwapModalSuccessMessage:
+      "Las posiciones de las declaraciones se intercambiaron exitosamente.",
     mobileSortSwapModalText: `Haga clic en "Confirmar" para intercambiar.`,
     mobileSortSwapModalConfirmButton: `Intercambiar`,
     mobileSortConditionsOfInstruction: `Clasifique las Declaraciones Según Su Experiencia de Usar los iPads en la Clase`,
@@ -172,9 +175,12 @@ const setLanguageSection_ES = (language) => {
     copiedText: "¡Copiado!",
     downloadResultsButtonText: "Descargar Resultados",
     copyFailMessage: "Error: Por favor intente de nuevo.",
-    defaultEmailClientFail:"Su cliente de correo electrónico predeterminado debería haberse abierto automáticamente con los resultados en el cuerpo del correo. Si no fue así, por favor use los botones a continuación para copiar y pegar su información en un correo electrónico.",
-    emailBodyMessage:"No tiene que agregar nada a este correo electrónico. Por favor solo haga clic en el botón ENVIAR.",
-    linkingFallbackMessage: "Por favor haga clic en el botón para comenzar la siguiente clasificación Q",
+    defaultEmailClientFail:
+      "Su cliente de correo electrónico predeterminado debería haberse abierto automáticamente con los resultados en el cuerpo del correo. Si no fue así, por favor use los botones a continuación para copiar y pegar su información en un correo electrónico.",
+    emailBodyMessage:
+      "No tiene que agregar nada a este correo electrónico. Por favor solo haga clic en el botón ENVIAR.",
+    linkingFallbackMessage:
+      "Por favor haga clic en el botón para comenzar la siguiente clasificación Q",
     linkingBtnText: "Comenzar Siguiente Clasificación Q",
     localHeader: "Panel de Control de Clasificación Q Fuera de Línea",
     partIdText: "Nombre del Participante",
@@ -183,24 +189,27 @@ const setLanguageSection_ES = (language) => {
     localDeleteButtonText: "Eliminar",
     localDownloadButtonText: "Guardar Datos de Clasificación Q en el Disco",
     storedQsortsHeaderText: "Clasificaciones Q Almacenadas",
-    localDeleteModalText:"Esto eliminará los datos de clasificación Q del participante que están almacenados actualmente en el navegador. Normalmente solo haría esto cuando esté comenzando un nuevo proyecto.<br/><br/><b>PRECAUCIÓN - Los datos eliminados no se pueden recuperar.</b> <br /><br /> <center></center>",
+    localDeleteModalText:
+      "Esto eliminará los datos de clasificación Q del participante que están almacenados actualmente en el navegador. Normalmente solo haría esto cuando esté comenzando un nuevo proyecto.<br/><br/><b>PRECAUCIÓN - Los datos eliminados no se pueden recuperar.</b> <br /><br /> <center></center>",
     localDeleteModalHead: "¿Eliminar Datos Almacenados en el Navegador?",
     localParticipantsText: "Participantes",
     localSaveDataButton: "Guardar Datos del Participante en la Memoria del Navegador",
     localSubmitSuccessModalHeader: "Éxito",
-    localSubmitSuccessModalText:"Los datos de clasificación Q del participante se han guardado exitosamente en la memoria del navegador",
+    localSubmitSuccessModalText:
+      "Los datos de clasificación Q del participante se han guardado exitosamente en la memoria del navegador",
     localSaveBeforeDeleteModalHeader: "Eliminación Deshabilitada",
-    localSaveBeforeDeleteModalText: "Guarde los Datos de Clasificación Q en el Disco antes de eliminar.",
+    localSaveBeforeDeleteModalText:
+      "Guarde los Datos de Clasificación Q en el Disco antes de eliminar.",
     returnToLocalPanelButtonText: "Volver al Panel de Control",
     emailSubjectText: `Resultados de Quince Q-sort`,
     submitFailMessage:
       "No se puede conectar a la base de datos.<br/><br/>Haga clic en el botón para abrir su cliente de correo electrónico predeterminado y enviar un correo con los datos al equipo de investigación.",
     checkInternetMessage:
       "*** Error - Fallo en la transmisión ***<br/><br/>Por favor, verifique su conexión a internet y haga clic nuevamente en el botón 'Enviar datos'.",
-   press1: "(presionar 1)",
-   press2: "(presionar 2)",
-   press3: "(presionar 3)",
-    });
+    press1: "(presionar 1)",
+    press2: "(presionar 2)",
+    press3: "(presionar 3)",
+  });
   return;
 };
 

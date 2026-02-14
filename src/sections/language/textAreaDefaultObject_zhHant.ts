@@ -9,6 +9,8 @@ const showSectionDefaults_zhHant = () => {
     mobileTextSize: "文字",
     mobileViewSize: "檢視",
     mobileModalButtonCancel: "取消",
+    preventMobileTitle: "行動存取限制標題",
+    preventMobileMessage: "行動存取限制訊息",
     expandViewMessage: "點擊下方的檢視「+」按鈕以展開檢視區域並隱藏此訊息。",
     consentTitleBarText: "研究同意書",
     consentText:

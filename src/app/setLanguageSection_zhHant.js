@@ -21,14 +21,19 @@ const setLanguageSection_zhHant = (language) => {
     mobileTextSize: "文字",
     mobileViewSize: "檢視",
     mobileModalButtonCancel: "取消",
+    preventMobileTitle: "行動存取限制標題",
+    preventMobileMessage: "行動存取限制訊息",
     expandViewMessage: "點擊下方的檢視「+」按鈕以展開檢視區域並隱藏此訊息。",
     consentTitleBarText: "研究同意書",
-    consentText: "您被邀請參與由[主要研究員姓名]在[機構或組織]進行的研究。在您決定參與之前，了解研究進行的原因和內容非常重要。請仔細閱讀以下資訊。如有任何疑問，請隨時聯絡研究團隊。<br /><br /><b>研究目的</b><br />本研究的目的是[簡要描述目的，例如：了解新教學方法對學生表現的影響]。這項研究將幫助我們深入了解[提及研究的任何更廣泛的影響或目標]。<br /><br /><b>研究程序</b><br />如果您同意參與，您將被要求[描述所涉及的程序，包括參與者將做什麼、需要多長時間以及多久進行一次]。例如，您將被要求完成一系列陳述句的評估、對其進行分類，然後對分類進行反思。此外，最後還有一份簡短的問卷調查。研究將花費大約[時長，例如：45分鐘]。<br /><br /><b>好處</b><br />雖然參與可能不會給您帶來直接的好處，但從這項研究中收集的資訊可能有助於[描述潛在好處，例如：改進教學方法、為科學知識做出貢獻等]。您也可能獲得關於[描述任何個人好處，如適用]的個人見解。<br /><br /><b>保密性</b><br />本研究中收集的所有資訊將嚴格保密。資料將安全儲存，只有研究團隊可以存取。您的身份不會在本研究產生的任何報告或出版物中披露。[描述資料將如何匿名化、加密或安全儲存]。<br /><br /><b>自願參與</b><br />您參與本研究完全是自願的。您可以自由拒絕參與，或隨時退出，不會受到處罰或失去您原本有權獲得的利益。如果您決定退出，請關閉網頁，到那時為止收集的任何資料都將被刪除。<br /><br /><b>同意</b><br />點擊本頁面底部的「同意」按鈕，即表示您已閱讀並理解所提供的資訊，並且同意參與本研究。如果您對本研究有任何疑問，請聯絡[主要研究員姓名和聯絡資訊]。",
+    consentText:
+      "您被邀請參與由[主要研究員姓名]在[機構或組織]進行的研究。在您決定參與之前，了解研究進行的原因和內容非常重要。請仔細閱讀以下資訊。如有任何疑問，請隨時聯絡研究團隊。<br /><br /><b>研究目的</b><br />本研究的目的是[簡要描述目的，例如：了解新教學方法對學生表現的影響]。這項研究將幫助我們深入了解[提及研究的任何更廣泛的影響或目標]。<br /><br /><b>研究程序</b><br />如果您同意參與，您將被要求[描述所涉及的程序，包括參與者將做什麼、需要多長時間以及多久進行一次]。例如，您將被要求完成一系列陳述句的評估、對其進行分類，然後對分類進行反思。此外，最後還有一份簡短的問卷調查。研究將花費大約[時長，例如：45分鐘]。<br /><br /><b>好處</b><br />雖然參與可能不會給您帶來直接的好處，但從這項研究中收集的資訊可能有助於[描述潛在好處，例如：改進教學方法、為科學知識做出貢獻等]。您也可能獲得關於[描述任何個人好處，如適用]的個人見解。<br /><br /><b>保密性</b><br />本研究中收集的所有資訊將嚴格保密。資料將安全儲存，只有研究團隊可以存取。您的身份不會在本研究產生的任何報告或出版物中披露。[描述資料將如何匿名化、加密或安全儲存]。<br /><br /><b>自願參與</b><br />您參與本研究完全是自願的。您可以自由拒絕參與，或隨時退出，不會受到處罰或失去您原本有權獲得的利益。如果您決定退出，請關閉網頁，到那時為止收集的任何資料都將被刪除。<br /><br /><b>同意</b><br />點擊本頁面底部的「同意」按鈕，即表示您已閱讀並理解所提供的資訊，並且同意參與本研究。如果您對本研究有任何疑問，請聯絡[主要研究員姓名和聯絡資訊]。",
     consentHelpModalHead: "聯絡資訊",
-    consentHelpModalText: "感謝您參與這項大學研究專案。您可以透過電話（1-555-867-5309）或電子郵件researchTeam@myMail.com聯絡研究團隊",
+    consentHelpModalText:
+      "感謝您參與這項大學研究專案。您可以透過電話（1-555-867-5309）或電子郵件researchTeam@myMail.com聯絡研究團隊",
     btnHelpConsent: "聯絡資訊",
     btnNextConsent: "同意並繼續",
-    loginWelcomeText: "<center></center><h3>歡迎！</h3></center><br/> 感謝您參與這項Q方法論研究專案。<br/>請使用下方的表格<b>登入</b>以開始流程。",
+    loginWelcomeText:
+      "<center></center><h3>歡迎！</h3></center><br/> 感謝您參與這項Q方法論研究專案。<br/>請使用下方的表格<b>登入</b>以開始流程。",
     loginHeaderText: "登入",
     loginPartIdText: "請輸入您的姓名或參與者ID",
     accessCodeText: "存取代碼",
@@ -37,12 +42,15 @@ const setLanguageSection_zhHant = (language) => {
     accessCodeWarning: "存取代碼無效",
     loginSubmitButtonText: "提交",
     landingHead: "大學研究專案",
-    welcomeText: "<h2>Quince示範專案 - 課堂中的iPad使用。</h2><br/><br/><p>感謝您協助這項研究專案</p><br/>",
+    welcomeText:
+      "<h2>Quince示範專案 - 課堂中的iPad使用。</h2><br/><br/><p>感謝您協助這項研究專案</p><br/>",
     landingHelpModalHead: "歡迎！",
-    landingHelpModalText: "感謝您參與這項大學研究專案。請點擊螢幕右下方的「<b>繼續</b>」按鈕以進入下一步。",
+    landingHelpModalText:
+      "感謝您參與這項大學研究專案。請點擊螢幕右下方的「<b>繼續</b>」按鈕以進入下一步。",
     btnNextLanding: "繼續",
     btnHelpLanding: "說明",
-    mobileWelcomeText: "<h2>Quince示範專案 - 課堂中的iPad使用。</h2><br/><br/><p>感謝您協助這項研究專案！</p><br/>",
+    mobileWelcomeText:
+      "<h2>Quince示範專案 - 課堂中的iPad使用。</h2><br/><br/><p>感謝您協助這項研究專案！</p><br/>",
     logInFirst: "請先完成登入流程。",
     titleBarText: "初步分類",
     presortAgreement: "同意 (3)",
@@ -50,13 +58,16 @@ const setLanguageSection_zhHant = (language) => {
     presortDisagreement: "不同意 (1)",
     presortStatements: "陳述句",
     presortModalHead: "第1步，共4步",
-    presortModalText: "仔細閱讀以下陳述句，並將它們分成三堆：您傾向於不同意的陳述句堆、您傾向於同意的卡片堆，以及其餘的卡片堆。稍後可以進行更改。<br/><br/>如果您想第二次閱讀此指示，請點擊左下角的說明按鈕。<br/>",
+    presortModalText:
+      "仔細閱讀以下陳述句，並將它們分成三堆：您傾向於不同意的陳述句堆、您傾向於同意的卡片堆，以及其餘的卡片堆。稍後可以進行更改。<br/><br/>如果您想第二次閱讀此指示，請點擊左下角的說明按鈕。<br/>",
     presortPreventNavModalHead: "導航已停用",
     presortPreventNavModalText: "請在進入下一步之前完成初步分類。",
     presortFinishedModalHead: "初步分類完成",
     presortFinishedModalText: "您已完成此步驟。請點擊頁面右下方的「繼續」按鈕以進入下一步。",
-    presortOnPageInstructions: "<div style=\"font-size: 24px\">點擊並拖動卡片或按「1」、「2」或「3」鍵來分類陳述句。</div>",
-    presortImageSortInstructions: "要放大圖片，將滑鼠指標懸停在其上並雙擊。<br/><br/>要比較圖片，<u>按住</u>鍵盤上的<b><i>Shift</i></b>鍵，然後用滑鼠雙擊兩張圖片。",
+    presortOnPageInstructions:
+      '<div style="font-size: 24px">點擊並拖動卡片或按「1」、「2」或「3」鍵來分類陳述句。</div>',
+    presortImageSortInstructions:
+      "要放大圖片，將滑鼠指標懸停在其上並雙擊。<br/><br/>要比較圖片，<u>按住</u>鍵盤上的<b><i>Shift</i></b>鍵，然後用滑鼠雙擊兩張圖片。",
     mobilePresortConditionsOfInstruction: "根據您在課堂上使用iPad的經驗評估陳述句",
     mobilePresortCompletedLabel: "已完成的評估",
     mobilePresortAssignLeft: "與我的觀點不同",
@@ -64,12 +75,16 @@ const setLanguageSection_zhHant = (language) => {
     mobilePresortRedoModalHead: "重新評估陳述句",
     mobilePresortRedoModalText: "點擊適當的圖示",
     mobilePresortRedoModalConfirmButton: "確認",
-    mobilePresortEvaluationsComplete: "<div><b>所有陳述句已評估。</b> <br /><br />請檢視陳述句以確認您的評估。<br /><br /><div>",
+    mobilePresortEvaluationsComplete:
+      "<div><b>所有陳述句已評估。</b> <br /><br />請檢視陳述句以確認您的評估。<br /><br /><div>",
     mobilePresortHelpModalHead: "階段1，共5階段<br />陳述句評估",
-    mobilePresortHelpModalText: "點擊適當的按鈕為每個陳述句指定一個值。<br /><br />如果您認為該陳述句<b>與您的觀點相似</b>，請點擊綠色「+」按鈕。<br /><br />如果您認為該陳述句<b>與您的觀點不同</b>，請點擊紅色「-」按鈕。<br /><br />如果您不確定，請點擊「?」按鈕。<br /><br />本問卷調查有<b>33個陳述句</b>。<br /><br />如果您想<b>更改</b>您的評估，請點擊陳述句旁邊的<b>重做圖示</b>。",
+    mobilePresortHelpModalText:
+      "點擊適當的按鈕為每個陳述句指定一個值。<br /><br />如果您認為該陳述句<b>與您的觀點相似</b>，請點擊綠色「+」按鈕。<br /><br />如果您認為該陳述句<b>與您的觀點不同</b>，請點擊紅色「-」按鈕。<br /><br />如果您不確定，請點擊「?」按鈕。<br /><br />本問卷調查有<b>33個陳述句</b>。<br /><br />如果您想<b>更改</b>您的評估，請點擊陳述句旁邊的<b>重做圖示</b>。",
     mobilePresortFinishedModalHead: "階段1，共5階段<br />陳述句評估",
-    mobilePresortFinishedModalText: "評估過程已完成。<br/><br/>請<b>檢視陳述句</b>以確認您的評估。<br /><br />如果您想進行更改，請點擊陳述句左側的「重做」圖示。<br /><br />當您對所有評估滿意時，點擊右下方的<b>導航按鈕</b>。",
-    mobilePresortProcessCompleteMessage: "評估過程已完成。<br/><br/>請點擊右下方的導航按鈕以進入下一階段。",
+    mobilePresortFinishedModalText:
+      "評估過程已完成。<br/><br/>請<b>檢視陳述句</b>以確認您的評估。<br /><br />如果您想進行更改，請點擊陳述句左側的「重做」圖示。<br /><br />當您對所有評估滿意時，點擊右下方的<b>導航按鈕</b>。",
+    mobilePresortProcessCompleteMessage:
+      "評估過程已完成。<br/><br/>請點擊右下方的導航按鈕以進入下一階段。",
     mobilePresortPreventNavModalHead: "導航已停用",
     mobilePresortPreventNavModalText: "請在進入下一階段之前完成評估。",
     thinPageTitle: "精煉您的評估",
@@ -79,13 +94,16 @@ const setLanguageSection_zhHant = (language) => {
     thinningPreventNavModalHead: "導航已停用",
     thinningPreventNavModalText: "請在進入下一步之前完成精煉過程。",
     thinningHelpModalHead: "精煉您的評估",
-    thinningHelpModalText: "請再次查看您在上一階段評估的陳述句。選擇那些您認為最能表達您觀點的陳述句。",
+    thinningHelpModalText:
+      "請再次查看您在上一階段評估的陳述句。選擇那些您認為最能表達您觀點的陳述句。",
     thinningConfirmModalHead: "未完成選擇",
     thinningConfirmModalText: "請選擇所需數量的陳述句。",
-    initialInstructionPart1: "以下是您在上一步中評分為正向的陳述句。現在，選擇您<b>最同意</b>的陳述句數量。<br /><br />",
+    initialInstructionPart1:
+      "以下是您在上一步中評分為正向的陳述句。現在，選擇您<b>最同意</b>的陳述句數量。<br /><br />",
     initialInstructionPart2: "接下來，繼續選擇最接近您觀點的陳述句",
     initialInstructionPart3: "點擊橘色「提交」按鈕後，螢幕上將出現另一組陳述句。",
-    initialInstructionPartNeg1: "以下是您在上一步中評分為正向的陳述句。現在，選擇<mark><b>與您的觀點最不同</b></mark>的陳述句。",
+    initialInstructionPartNeg1:
+      "以下是您在上一步中評分為正向的陳述句。現在，選擇<mark><b>與您的觀點最不同</b></mark>的陳述句。",
     initialInstructionPartNeg2: "接下來，繼續選擇與您的觀點<mark>最不同</mark>的陳述句。",
     finalInstructions: "精煉過程完成。點擊右下方的導航按鈕以進入下一階段。",
     moveTopMobileHead: "確認移動",
@@ -96,7 +114,8 @@ const setLanguageSection_zhHant = (language) => {
     mobileThinSubmitButtonText: "提交",
     mobileThinSelectedText: "已選取",
     mobileThinHelpModalHead: "第2步，共5步<br/>精煉過程",
-    mobileThinHelpModalText: "在此階段，您將被要求<b>檢視</b>您評估的陳述句，並選擇那些與您的觀點最相似或最不同的陳述句。<br/><br/>您可能需要<b>向下滾動</b>以查看所有陳述句。<br/><br/>要<b>選擇陳述句</b>，請點擊陳述句容器。陳述句的顏色將變為黃色。<br/><br/>當您選擇了<b>正確數量</b>的陳述句時，「提交」按鈕將變為<b>藍色</b>。<br/><br/>為了更容易比較陳述句，您可以透過點擊陳述句右側或左側的上下箭頭來<b>重新排序</b>它們。<br/><br/>您也可以透過<b>長按</b>（約1秒）陳述句右側的箭頭，將一組選定的陳述句<b>移動</b>到清單頂部。",
+    mobileThinHelpModalText:
+      "在此階段，您將被要求<b>檢視</b>您評估的陳述句，並選擇那些與您的觀點最相似或最不同的陳述句。<br/><br/>您可能需要<b>向下滾動</b>以查看所有陳述句。<br/><br/>要<b>選擇陳述句</b>，請點擊陳述句容器。陳述句的顏色將變為黃色。<br/><br/>當您選擇了<b>正確數量</b>的陳述句時，「提交」按鈕將變為<b>藍色</b>。<br/><br/>為了更容易比較陳述句，您可以透過點擊陳述句右側或左側的上下箭頭來<b>重新排序</b>它們。<br/><br/>您也可以透過<b>長按</b>（約1秒）陳述句右側的箭頭，將一組選定的陳述句<b>移動</b>到清單頂部。",
     mobileThinPreventNavModalHead: `導航已停用`,
     mobileThinPreventNavModalText: `請先完成精煉流程再導航至下一頁。`,
     mobileThinProcessCompleteMessage: `精煉流程已完成。<br/><br/>請點擊右下方的導航按鈕以進入下一階段。`,
@@ -174,8 +193,7 @@ const setLanguageSection_zhHant = (language) => {
     copyFailMessage: "錯誤：請再試一次。",
     defaultEmailClientFail:
       "您的預設電子郵件客戶端應該會自動開啟，結果會顯示在郵件本文中。如果沒有，請使用下方的按鈕將您的資訊複製並貼上到電子郵件中。",
-    emailBodyMessage:
-      "您不需要在此電子郵件中新增任何內容。請直接點擊傳送按鈕。",
+    emailBodyMessage: "您不需要在此電子郵件中新增任何內容。請直接點擊傳送按鈕。",
     linkingFallbackMessage: "請點擊按鈕以開始下一個Q排序",
     linkingBtnText: "開始下一個Q排序",
     localHeader: "離線Q排序控制面板",
@@ -191,8 +209,7 @@ const setLanguageSection_zhHant = (language) => {
     localParticipantsText: "參與者",
     localSaveDataButton: "將參與者資料儲存至瀏覽器記憶體",
     localSubmitSuccessModalHeader: "成功",
-    localSubmitSuccessModalText:
-      "參與者Q排序資料已成功儲存至瀏覽器記憶體",
+    localSubmitSuccessModalText: "參與者Q排序資料已成功儲存至瀏覽器記憶體",
     localSaveBeforeDeleteModalHeader: "刪除已停用",
     localSaveBeforeDeleteModalText: "刪除前請先將Q排序資料儲存至磁碟。",
     returnToLocalPanelButtonText: "返回控制面板",
@@ -203,8 +220,8 @@ const setLanguageSection_zhHant = (language) => {
       "*** 錯誤 - 傳輸失敗 ***<br/><br/>請檢查您的網路連線，然後再次點擊「提交資料」按鈕。",
     press1: "按 1",
     press2: "按 2",
-    press3: "按 3",    
-    });
+    press3: "按 3",
+  });
   return;
 };
 

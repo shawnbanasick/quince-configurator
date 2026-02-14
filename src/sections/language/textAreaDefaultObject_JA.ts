@@ -24,6 +24,9 @@ const showSectionDefaults_JA = () => {
     btnNextConsent: `同意する`,
     btnHelpConsent: `連絡先情報`,
 
+    preventMobileTitle: "モバイルアクセス制限タイトル",
+    preventMobileMessage: "モバイルアクセス制限メッセージ",
+
     /*
      ******* ACCESS PAGE  ****************** */
     loginWelcomeText: `<center><h3>ようこそ！</h3></center><br/> このQメソドロジー研究プロジェクトへのご参加ありがとうございます。<br/>以下のフォームを使用して<b>サインイン</b>してください。`,
