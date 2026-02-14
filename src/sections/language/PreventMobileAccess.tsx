@@ -2,8 +2,7 @@ import { UserTextInput } from "../utils/UserTextInput";
 import { UserTextAreaInput } from "../utils/UserTextAreaInput";
 import showSectionDefaults from "./showSectionDefaults";
 import clearSection from "./clearSection";
-import consent1 from "../../assets/images/consent-1.png";
-import consent2 from "../../assets/images/consent-2.png";
+import mobiileAccessScreenshot from "../../assets/images/mobileAccessScreen.jpg";
 import { useTranslation } from "react-i18next";
 
 import { useStore } from "../../globalState/useStore";
@@ -21,12 +20,7 @@ const PreventMobileAccess = () => {
   const { t } = useTranslation();
 
   const handleRefImage = () => {
-    window.open(consent1, "Consent Image 1", "width=800, height=600");
-    return false;
-  };
-
-  const handleRefImage2 = () => {
-    window.open(consent2, "Consent Image 2", "width=800, height=300");
+    window.open(mobiileAccessScreenshot, "Consent Image 1", "width=800, height=600");
     return false;
   };
 
@@ -76,13 +70,6 @@ const PreventMobileAccess = () => {
             onClick={handleRefImage}
           >
             1
-          </button>
-          <button
-            className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
-            id="consentImage"
-            onClick={handleRefImage2}
-          >
-            2
           </button>
         </div>
       </div>

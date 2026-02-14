@@ -269,8 +269,11 @@ const Map: React.FC = () => {
     setIsSortEmojiSwitchDisabled(false);
     setEmojiArray([...getEmoji4Array(50)]);
     setEmojiArrayType("emoji4Array");
-    setPresortEmojiSelectorArray([...getEmoji4Array(20)]);
+    setPresortEmojiSelectorArray([...getEmoji5Array(20)]);
     setMobileHeadersDefaultLabels("labels9");
+    setPresortEmojiPositiveIndex(8);
+    setPresortEmojiNeutralIndex(4);
+    setPresortEmojiNegativeIndex(0);
   }, []);
 
   const handleMobileLabelsChange = useCallback(
@@ -280,7 +283,7 @@ const Map: React.FC = () => {
         setIsSortEmojiSwitchDisabled(false);
         setEmojiArray([...getEmoji2Array(50)]);
         setEmojiArrayType("emoji2Array");
-        setPresortEmojiSelectorArray([...getEmoji2Array(20)]);
+        setPresortEmojiSelectorArray([...getEmoji5Array(20)]);
         setPresortEmojiPositiveIndex(4);
         setPresortEmojiNeutralIndex(2);
         setPresortEmojiNegativeIndex(0);
@@ -290,7 +293,7 @@ const Map: React.FC = () => {
         setIsSortEmojiSwitchDisabled(false);
         setEmojiArray([...getEmoji3Array(50)]);
         setEmojiArrayType("emoji3Array");
-        setPresortEmojiSelectorArray([...getEmoji3Array(20)]);
+        setPresortEmojiSelectorArray([...getEmoji5Array(20)]);
         setPresortEmojiPositiveIndex(6);
         setPresortEmojiNeutralIndex(3);
         setPresortEmojiNegativeIndex(0);
@@ -300,7 +303,7 @@ const Map: React.FC = () => {
         setIsSortEmojiSwitchDisabled(false);
         setEmojiArray([...getEmoji4Array(50)]);
         setEmojiArrayType("emoji4Array");
-        setPresortEmojiSelectorArray([...getEmoji4Array(20)]);
+        setPresortEmojiSelectorArray([...getEmoji5Array(20)]);
         setPresortEmojiPositiveIndex(8);
         setPresortEmojiNeutralIndex(4);
         setPresortEmojiNegativeIndex(0);
