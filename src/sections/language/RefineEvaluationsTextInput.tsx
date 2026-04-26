@@ -13,8 +13,10 @@ import thin6 from "../../assets/images/thin-finished-6.png";
 import thin7 from "../../assets/images/thin-nav-disabled-7.png";
 
 const getSetText = (state) => state.setText;
-const getThinningPreventNavModalHead = (state) => state.thinningPreventNavModalHead;
-const getThinningPreventNavModalText = (state) => state.thinningPreventNavModalText;
+const getThinningPreventNavModalHead = (state) =>
+  state.thinningPreventNavModalHead;
+const getThinningPreventNavModalText = (state) =>
+  state.thinningPreventNavModalText;
 const getInitialInstructionPart1 = (state) => state.initialInstructionPart1;
 const getInitialInstructionPart2 = (state) => state.initialInstructionPart2;
 const getInitialInstructionPart3 = (state) => state.initialInstructionPart3;
@@ -22,9 +24,12 @@ const getFinalInstructions = (state) => state.finalInstructions;
 const getThinningPageTitle = (state) => state.thinPageTitle;
 const getRefinePageSubmitButton = (state) => state.thinPageSubmitButton;
 const getThinningPageNumStatesToSelect = (state) => state.numStatementsToSelect;
-const getThinningPageCurrentNumStatesSelected = (state) => state.currentlySelectedNumber;
-const getInitialInstructionNegPart1 = (state) => state.initialInstructionPartNeg1;
-const getInitialInstructionNegPart2 = (state) => state.initialInstructionPartNeg2;
+const getThinningPageCurrentNumStatesSelected = (state) =>
+  state.currentlySelectedNumber;
+const getInitialInstructionNegPart1 = (state) =>
+  state.initialInstructionPartNeg1;
+const getInitialInstructionNegPart2 = (state) =>
+  state.initialInstructionPartNeg2;
 const getThinningHelpModalHead = (state) => state.thinningHelpModalHead;
 const getThinningHelpModalText = (state) => state.thinningHelpModalText;
 
@@ -39,7 +44,9 @@ const RefineEvaluationsTextInput = () => {
   const thinPageTitle = useStore(getThinningPageTitle);
   const thinPageSubmitButtonText = useStore(getRefinePageSubmitButton);
   const numStatementsToSelect = useStore(getThinningPageNumStatesToSelect);
-  const currentlySelectedNumber = useStore(getThinningPageCurrentNumStatesSelected);
+  const currentlySelectedNumber = useStore(
+    getThinningPageCurrentNumStatesSelected,
+  );
   const initialInstructionPartNeg1 = useStore(getInitialInstructionNegPart1);
   const initialInstructionPartNeg2 = useStore(getInitialInstructionNegPart2);
   const thinningHelpModalHead = useStore(getThinningHelpModalHead);
@@ -57,27 +64,47 @@ const RefineEvaluationsTextInput = () => {
   };
 
   const handleRefImage3 = () => {
-    window.open(thin3, "Mobile Presort Re-Evaluate Modal", "width=800, height=600");
+    window.open(
+      thin3,
+      "Mobile Presort Re-Evaluate Modal",
+      "width=800, height=600",
+    );
     return false;
   };
 
   const handleRefImage4 = () => {
-    window.open(thin4, "Mobile Presort Re-Evaluate Modal", "width=800, height=600");
+    window.open(
+      thin4,
+      "Mobile Presort Re-Evaluate Modal",
+      "width=800, height=600",
+    );
     return false;
   };
 
   const handleRefImage5 = () => {
-    window.open(thin5, "Mobile Presort Re-Evaluate Modal", "width=800, height=600");
+    window.open(
+      thin5,
+      "Mobile Presort Re-Evaluate Modal",
+      "width=800, height=600",
+    );
     return false;
   };
 
   const handleRefImage6 = () => {
-    window.open(thin6, "Mobile Presort Re-Evaluate Modal", "width=800, height=600");
+    window.open(
+      thin6,
+      "Mobile Presort Re-Evaluate Modal",
+      "width=800, height=600",
+    );
     return false;
   };
 
   const handleRefImage7 = () => {
-    window.open(thin7, "Mobile Presort Re-Evaluate Modal", "width=800, height=600");
+    window.open(
+      thin7,
+      "Mobile Presort Re-Evaluate Modal",
+      "width=800, height=600",
+    );
     return false;
   };
 
@@ -112,7 +139,9 @@ const RefineEvaluationsTextInput = () => {
           >
             {t("clearSection")}
           </button>
-          <div className="flex items-center p-2 justify-center h-[50px] ">{t("images")}</div>
+          <div className="flex items-center p-2 justify-center h-[50px] ">
+            {t("images")}
+          </div>
           <button
             className="bg-slate-300 p-2 rounded-md w-[30px] h-[50px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage1"
@@ -216,7 +245,7 @@ const RefineEvaluationsTextInput = () => {
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
           label={`9-5. ${t("numStatementsToSelect")}`}
-          name="thinPageNumStatesToSelect"
+          name="numStatementsToSelect"
           value={numStatementsToSelect}
           onChange={handleTextChange}
           highlight={false}
