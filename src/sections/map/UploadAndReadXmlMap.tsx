@@ -12,20 +12,28 @@ const getSetMapColorPalette = (state) => state.setMapColorPalette;
 const getSetQSortPatternObject = (state) => state.setQSortPatternObject;
 const getSetIsMapXmlLoaded = (state) => state.setIsMapXmlLoaded;
 const getSetQsortHeaderNumbers = (state) => state.setQsortHeaderNumbers;
-const getSetMobileHeadersDefaultLabels = (state) => state.setMobileHeadersDefaultLabels;
+const getSetMobileHeadersDefaultLabels = (state) =>
+  state.setMobileHeadersDefaultLabels;
 const getSetColTextLabelsArray = (state) => state.setcolTextLabelsArray;
 
-const getSetUseColLabelEmojiPresort = (state) => state.setUseColLabelEmojiPresort;
-const getSetPresortEmojiPositiveIndex = (state) => state.setPresortEmojiPositiveIndex;
-const getSetPresortEmojiNegativeIndex = (state) => state.setPresortEmojiNegativeIndex;
-const getSetPresortEmojiNeutralIndex = (state) => state.setPresortEmojiNeutralIndex;
+const getSetUseColLabelEmojiPresort = (state) =>
+  state.setUseColLabelEmojiPresort;
+const getSetPresortEmojiPositiveIndex = (state) =>
+  state.setPresortEmojiPositiveIndex;
+const getSetPresortEmojiNegativeIndex = (state) =>
+  state.setPresortEmojiNegativeIndex;
+const getSetPresortEmojiNeutralIndex = (state) =>
+  state.setPresortEmojiNeutralIndex;
 
 const getSetUseColLabelNums = (state) => state.setUseColLabelNums;
 const getSetUseColLabelText = (state) => state.setUseColLabelText;
 const getSetUseColLabelEmoji = (state) => state.setUseColLabelEmoji;
-const getSetUseColLabelEmojiPostsort = (state) => state.setUseColLabelEmojiPostsort;
-const getSetUseColLabelTextPostsort = (state) => state.setUseColLabelTextPostsort;
-const getSetUseColLabelNumsPostsort = (state) => state.setUseColLabelNumsPostsort;
+const getSetUseColLabelEmojiPostsort = (state) =>
+  state.setUseColLabelEmojiPostsort;
+const getSetUseColLabelTextPostsort = (state) =>
+  state.setUseColLabelTextPostsort;
+const getSetUseColLabelNumsPostsort = (state) =>
+  state.setUseColLabelNumsPostsort;
 
 const UploadAndReadXmlMap: React.FC = () => {
   const { t } = useTranslation();
@@ -37,11 +45,17 @@ const UploadAndReadXmlMap: React.FC = () => {
   const setQsortHeaderNumbers = useStore(getSetQsortHeaderNumbers);
 
   const setUseColLabelEmojiPresort = useStore(getSetUseColLabelEmojiPresort);
-  const setPresortEmojiPositiveIndex = useStore(getSetPresortEmojiPositiveIndex);
-  const setPresortEmojiNegativeIndex = useStore(getSetPresortEmojiNegativeIndex);
+  const setPresortEmojiPositiveIndex = useStore(
+    getSetPresortEmojiPositiveIndex,
+  );
+  const setPresortEmojiNegativeIndex = useStore(
+    getSetPresortEmojiNegativeIndex,
+  );
   const setPresortEmojiNeutralIndex = useStore(getSetPresortEmojiNeutralIndex);
 
-  const setMobileHeadersDefaultLabels = useStore(getSetMobileHeadersDefaultLabels);
+  const setMobileHeadersDefaultLabels = useStore(
+    getSetMobileHeadersDefaultLabels,
+  );
   const setColTextLabelsArray = useStore(getSetColTextLabelsArray);
 
   const setUseColLabelNums = useStore(getSetUseColLabelNums);
@@ -51,7 +65,9 @@ const UploadAndReadXmlMap: React.FC = () => {
   const setUseColLabelTextPostsort = useStore(getSetUseColLabelTextPostsort);
   const setUseColLabelNumsPostsort = useStore(getSetUseColLabelNumsPostsort);
 
-  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>): void => {
+  const handleFileUpload = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ): void => {
     const file = event.target.files?.[0];
     if (file) {
       const reader = new FileReader();
@@ -70,7 +86,7 @@ const UploadAndReadXmlMap: React.FC = () => {
           colorsArray = xmlObjectArray[3]?.value.split(",");
         }
 
-        console.log(JSON.stringify(xmlObjectArray, null, 2), "xmlObjectArray");
+        // console.log(JSON.stringify(xmlObjectArray, null, 2), "xmlObjectArray");
 
         setQsortHeaderNumbers(countArray);
 
@@ -88,7 +104,10 @@ const UploadAndReadXmlMap: React.FC = () => {
           }
           qSortPatternObject[item] = `${countArray[index]}`;
         });
-        localStorage.setItem("qSortPatternObject", JSON.stringify(qSortPatternObject));
+        localStorage.setItem(
+          "qSortPatternObject",
+          JSON.stringify(qSortPatternObject),
+        );
 
         setQSortPatternObject(qSortPatternObject);
 
@@ -119,7 +138,9 @@ const UploadAndReadXmlMap: React.FC = () => {
           (item) => item.attributes.id === "useColLabelEmojiPresort",
         );
         let useColLabelEmojiPresort = useColLabelEmojiPresortObj.value;
-        setUseColLabelEmojiPresort(useColLabelEmojiPresort.toLowerCase() === "true");
+        setUseColLabelEmojiPresort(
+          useColLabelEmojiPresort.toLowerCase() === "true",
+        );
 
         // set presortEmojiPositiveIndex
         let presortEmojiPositiveIndexObj = xmlObjectArray.find(
@@ -182,21 +203,27 @@ const UploadAndReadXmlMap: React.FC = () => {
           (item) => item.attributes.id === "useColLabelEmojiPostsort",
         );
         let useColLabelEmojiPostsort = useColLabelEmojiPostsortObj.value;
-        setUseColLabelEmojiPostsort(useColLabelEmojiPostsort.toLowerCase() === "true");
+        setUseColLabelEmojiPostsort(
+          useColLabelEmojiPostsort.toLowerCase() === "true",
+        );
 
         // set useColLabelTextPostsort
         let useColLabelTextPostsortObj = xmlObjectArray.find(
           (item) => item.attributes.id === "useColLabelTextPostsort",
         );
         let useColLabelTextPostsort = useColLabelTextPostsortObj.value;
-        setUseColLabelTextPostsort(useColLabelTextPostsort.toLowerCase() === "true");
+        setUseColLabelTextPostsort(
+          useColLabelTextPostsort.toLowerCase() === "true",
+        );
 
         // set useColLabelNumsPostsort
         let useColLabelNumsPostsortObj = xmlObjectArray.find(
           (item) => item.attributes.id === "useColLabelNumsPostsort",
         );
         let useColLabelNumsPostsort = useColLabelNumsPostsortObj.value;
-        setUseColLabelNumsPostsort(useColLabelNumsPostsort.toLowerCase() === "true");
+        setUseColLabelNumsPostsort(
+          useColLabelNumsPostsort.toLowerCase() === "true",
+        );
 
         return;
       };
@@ -215,7 +242,12 @@ const UploadAndReadXmlMap: React.FC = () => {
         className="flex flex-row gap-3 w-[400px] items-center font-semibold justify-center cursor-pointer bg-orange-300 hover:opacity-50 border border-gray-600 rounded-md p-2 mt-5"
         htmlFor="uploadXml"
       >
-        <svg className="max-w-[30px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg
+          className="max-w-[30px]"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
           <path
             strokeLinecap="round"
             strokeLinejoin="round"

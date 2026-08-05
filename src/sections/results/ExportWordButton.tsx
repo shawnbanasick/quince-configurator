@@ -45,8 +45,10 @@ interface ExportWordButtonProps {
 }
 
 const getCurrentStatements = (state: GlobalState) => state.currentStatements;
-const getMapInputQsortPattern = (state: GlobalState) => state.mapInputQsortPattern;
-const getSurveyQuestionsArray = (state: GlobalState) => state.surveyQuestionsArray;
+const getMapInputQsortPattern = (state: GlobalState) =>
+  state.mapInputQsortPattern;
+const getSurveyQuestionsArray = (state: GlobalState) =>
+  state.surveyQuestionsArray;
 const getShowSurvey = (state: GlobalState) => state.showSurvey;
 const getShowPostsort = (state: GlobalState) => state.showPostsort;
 const getQSortPatternObject = (state: GlobalState) => state.qSortPatternObject;
@@ -210,6 +212,7 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
     );
     let presortText = wordPresort(data, presortLangObj);
     let timeText: any[] = wordTime(data, timeLangObj);
+    // calc
     let childArray1 = wordId(
       data,
       timeText,
@@ -327,6 +330,7 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
 
   return (
     <button
+      id="export-word-button"
       onClick={handleOnClick}
       className="min-w-[180px] bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded"
     >

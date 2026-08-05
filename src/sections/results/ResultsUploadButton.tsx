@@ -2,11 +2,13 @@ import React, { useRef, ChangeEvent } from "react";
 import Papa from "papaparse";
 import { useStore } from "../../GlobalState/useStore";
 import { useTranslation } from "react-i18next";
+import { parseQSortRecord } from "./parseQsortRecords";
 
 type CsvRow = Record<string, string>;
 const getSetCleanedResults = (state) => state.setCleanedResults;
 const getSetRawData = (state) => state.setRawData;
-const getSetHasResultsFileBeenLoaded = (state) => state.setHasResultsFileBeenLoaded;
+const getSetHasResultsFileBeenLoaded = (state) =>
+  state.setHasResultsFileBeenLoaded;
 const getHasResultsFileBeenLoaded = (state) => state.hasResultsFileBeenLoaded;
 
 const ResultsUploadButton: React.FC = () => {
@@ -40,6 +42,14 @@ const ResultsUploadButton: React.FC = () => {
             }
             return cleanedRow;
           });
+
+          console.log("Raw Data:", JSON.stringify(cleanedData[0])); // Log the first cleaned row for debugging
+
+          console.log(
+            "Cleaned Data:",
+            JSON.stringify(parseQSortRecord(cleanedData[0])),
+          ); // Log the first cleaned row for debugging
+
           setRawData(cleanedData);
           setCleanedResults(cleanedData);
           setHasResultsFileBeenLoaded(true);
@@ -57,12 +67,18 @@ const ResultsUploadButton: React.FC = () => {
   return (
     <div className="p-2">
       <button
+        id="results-upload-button"
         onClick={handleButtonClick}
         className={`flex flex-row items-center justify-center min-w-[300px] gap-3 cursor-pointer ${
           hasResultsFileBeenLoaded ? "bg-green-600 text-white" : "bg-orange-300"
         }  hover:opacity-50 border border-gray-900 rounded-md p-3`}
       >
-        <svg className="max-w-[30px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg
+          className="max-w-[30px]"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -70,7 +86,9 @@ const ResultsUploadButton: React.FC = () => {
             d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
           />
         </svg>
-        {hasResultsFileBeenLoaded ? t("resultsFileLoaded") : t("loadResultsButtonText")}
+        {hasResultsFileBeenLoaded
+          ? t("resultsFileLoaded")
+          : t("loadResultsButtonText")}
       </button>
       <input
         type="file"
