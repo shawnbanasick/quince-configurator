@@ -3,43 +3,58 @@ import { stripHtml } from "./stripHtml";
 import { stripTags } from "../utils/stripTags";
 import { safeSplit } from "./safeSplit";
 
-const processCheckboxQuestion = (entry, question, index, indentValue, surveyLangObj) => {
+const processCheckboxQuestion = (
+  entry,
+  question,
+  index,
+  indentValue,
+  surveyLangObj,
+) => {
   let addIndentValue = +indentValue + 200;
   let options = stripHtml(stripTags(question.options));
   options = options.split(",");
 
-  let entry2 = safeSplit(entry, ":", { maxParts: 2 });
+  let response1 = stripHtml(stripTags(String(entry ?? "")));
 
-  if (entry2?.[1]?.trim() === "no response") {
-    entry2[1] = surveyLangObj.noResponse;
+  // Legacy format: "itemNum7:1,2,3-Other typed text" or "itemNum2:no response"
+  // New format: entry is already the clean value itself - a comma list like
+  // "1,2,1,1" (joined from the itemNums array) or the string "no response".
+  const isLegacyPrefixed = /^itemNum\d+\s*:/.test(response1);
+
+  let tail: string;
+  if (isLegacyPrefixed) {
+    let response3 = response1.split(":");
+    tail = response3[1] ?? "";
+  } else {
+    tail = response1;
   }
 
+  // Mirrors the old entry2[1] "no response" translation, used for the label
+  // shown before the dash in the non-"other" case.
+  let displayTail =
+    tail.trim() === "no response" ? surveyLangObj.noResponse : tail;
+
   let respondentResponse2Array: any = [];
-  let response1 = stripHtml(stripTags(entry));
-  let response3 = response1.split(":");
-  let response2;
   let response4;
-  let response5;
   let response6: any = [];
 
   let addOtherText = false;
-  if (response3[1].includes("-")) {
+  if (tail.includes("-")) {
     addOtherText = true;
-    let dashIndex = response3[1].indexOf("-");
-    response2 = response3[1].slice(0, dashIndex);
+    let dashIndex = tail.indexOf("-");
+    let response2 = tail.slice(0, dashIndex);
 
-    response4 = response3[1].slice(dashIndex + 1);
-    response5 = response2.split(",");
-    response5 = response5.map((str) => str.trim());
+    response4 = tail.slice(dashIndex + 1);
+    let response5 = response2.split(",").map((str) => str.trim());
     if (response5.length > 1) {
       response6 = response5.map((item) => {
         return parseInt(item);
-      });  // [3,4]
+      }); // [3,4]
     } else {
       response6.push(response5[0]);
     }
   } else {
-    response6.push(parseInt(response3[1].trim()));
+    response6.push(parseInt(tail.trim()));
   }
 
   let value1;
@@ -49,9 +64,9 @@ const processCheckboxQuestion = (entry, question, index, indentValue, surveyLang
     respondentResponse2Array.push(value1);
   });
 
-  let respondentResponse = respondentResponse2Array.join(", ");  // [active learning, other]
+  let respondentResponse = respondentResponse2Array.join(", "); // [active learning, other]
 
-  if (response3[1].includes("-")) {
+  if (tail.includes("-")) {
     respondentResponse = respondentResponse + " - " + response4;
   } else {
     respondentResponse = respondentResponse;
@@ -84,7 +99,9 @@ const processCheckboxQuestion = (entry, question, index, indentValue, surveyLang
     new Paragraph({
       children: [
         new TextRun({
-          text: question.note ? `Note: ${stripHtml(stripTags(question.note))}` : `Note: n/a`,
+          text: question.note
+            ? `Note: ${stripHtml(stripTags(question.note))}`
+            : `Note: n/a`,
           bold: false,
         }),
       ],
@@ -106,11 +123,15 @@ const processCheckboxQuestion = (entry, question, index, indentValue, surveyLang
     new Paragraph({
       children: [
         new TextRun({
-          text: addOtherText ? `${surveyLangObj.response}: ` : `${surveyLangObj.response}: ${stripHtml(stripTags(entry2[1]))} - `,
+          text: addOtherText
+            ? `${surveyLangObj.response}: `
+            : `${surveyLangObj.response}: ${stripHtml(stripTags(displayTail))} - `,
           bold: false,
         }),
         new TextRun({
-          text: entry ? `${stripHtml(stripTags(respondentResponse))}` : surveyLangObj.noResponse,
+          text: entry
+            ? `${stripHtml(stripTags(respondentResponse))}`
+            : surveyLangObj.noResponse,
           bold: false,
         }),
       ],

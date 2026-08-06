@@ -3,13 +3,34 @@ import { stripHtml } from "./stripHtml";
 import { stripTags } from "../utils/stripTags";
 import { safeSplit } from "./safeSplit";
 
-const processTextAreaQuestion = (entry, question, index, indentValue, surveyLangObj) => {
+// New itemNums format passes a clean value directly (e.g. "no response").
+// Legacy format passed a raw string like "itemNum2: some response text" that
+// needed the "itemNumX:" prefix split off first. Detect which shape we got
+// so both keep working.
+const extractResponseText = (entry: any): string => {
+  if (typeof entry === "string" && /^itemNum\d+\s*:/.test(entry)) {
+    const split = safeSplit(entry, ":", { maxParts: 2 });
+    return split?.[1]?.trim() ?? "";
+  }
+  if (typeof entry === "string") {
+    return entry.trim();
+  }
+  return entry === undefined || entry === null ? "" : String(entry);
+};
+
+const processTextAreaQuestion = (
+  entry,
+  question,
+  index,
+  indentValue,
+  surveyLangObj,
+) => {
   let addIndentValue = +indentValue + 200;
   let cleanedNote = stripTags(question.note);
-  let entry2 = safeSplit(entry, ":", { maxParts: 2 });
+  let responseText = extractResponseText(entry);
 
-  if (entry2?.[1]?.trim() === "no response") {
-    entry2[1] = surveyLangObj.noResponse;
+  if (responseText === "no response") {
+    responseText = surveyLangObj.noResponse;
   }
 
   let response = [
@@ -54,7 +75,7 @@ const processTextAreaQuestion = (entry, question, index, indentValue, surveyLang
           bold: false,
         }),
         new TextRun({
-          text: `${stripHtml(stripTags(entry2[1]))}`,
+          text: `${stripHtml(stripTags(responseText))}`,
           bold: false,
         }),
       ],

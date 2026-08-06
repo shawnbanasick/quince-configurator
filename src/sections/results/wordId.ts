@@ -108,10 +108,10 @@ export function wordId(
   presortText: Paragraph[],
   sortsText: Paragraph[],
   postsortText: Paragraph[],
-  // surveyText: Paragraph[],
+  surveyText: Paragraph[],
   displayPartId: string, // "randomId" | "partId" | "urlUsercode"
   numStatements: number,
-  // showSurvey: unknown,
+  showSurvey: unknown,
   showPostsort: unknown,
   idLangObj: Record<string, string>,
 ): Paragraph[] {
@@ -278,9 +278,9 @@ export function wordId(
     if (isTrue(showPostsort)) {
       childArray.push(...safeArray(postsortText, index));
     }
-    // if (isTrue(showSurvey)) {
-    //   childArray.push(...safeArray(surveyText, index));
-    // }
+    if (isTrue(showSurvey)) {
+      childArray.push(...safeArray(surveyText, index));
+    }
   });
 
   return childArray;

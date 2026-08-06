@@ -2,18 +2,37 @@ import { Paragraph, TextRun, UnderlineType } from "docx";
 import { stripHtml } from "./stripHtml";
 import { stripTags } from "../utils/stripTags";
 
-const processRating5Question = (entry, question, index, indentValue, surveyLangObj) => {
+const processRating5Question = (
+  entry,
+  question,
+  index,
+  indentValue,
+  surveyLangObj,
+) => {
   let addIndentValue = +indentValue + 200;
   let options = stripHtml(stripTags(question.options));
   options = options.split(",").map((str) => str.trim());
   options = options.filter(Boolean);
 
-  let entry4 = entry.split(":").map((str) => str.trim());
-  let entry5;
-  if (entry4[1] === "no response") {
-   entry5 = Array.from({ length: options.length }, () => "nr");
+  // Legacy format: "itemNumX:1,2,nr" or "itemNumX:no response"
+  // New format: entry is already the clean value - a comma list like
+  // "1,2,1,1" (joined from the itemNums array) or the string "no response".
+  let response1 = String(entry ?? "").trim();
+  const isLegacyPrefixed = /^itemNum\d+\s*:/.test(response1);
+
+  let tail: string;
+  if (isLegacyPrefixed) {
+    let entry4 = response1.split(":").map((str) => str.trim());
+    tail = entry4[1] ?? "";
   } else {
-    entry5 = entry4[1].split(",").map((str) => str.trim());
+    tail = response1;
+  }
+
+  let entry5;
+  if (tail === "no response") {
+    entry5 = Array.from({ length: options.length }, () => "nr");
+  } else {
+    entry5 = tail.split(",").map((str) => str.trim());
   }
 
   let response = [
@@ -43,7 +62,9 @@ const processRating5Question = (entry, question, index, indentValue, surveyLangO
     new Paragraph({
       children: [
         new TextRun({
-          text: question.note ? `Note: ${stripHtml(stripTags(question.note))}` : `Note: n/a`,
+          text: question.note
+            ? `Note: ${stripHtml(stripTags(question.note))}`
+            : `Note: n/a`,
           bold: false,
         }),
       ],
@@ -54,7 +75,6 @@ const processRating5Question = (entry, question, index, indentValue, surveyLangO
   ];
 
   options.forEach((item, index) => {
-   
     let newText = entry5?.[index].trim();
     if (newText === "nr") {
       newText = surveyLangObj.noResponse;
@@ -79,7 +99,7 @@ const processRating5Question = (entry, question, index, indentValue, surveyLangO
         indent: {
           start: addIndentValue,
         },
-      })
+      }),
     );
   });
 

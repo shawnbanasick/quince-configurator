@@ -7,7 +7,7 @@ import { wordTime } from "./wordTime";
 import { wordPresort } from "./wordPresort";
 import { wordSorts } from "./wordSorts";
 import { wordPostsort } from "./wordPostsort";
-// import { wordSurvey } from "./wordSurvey";
+import { wordSurvey } from "./wordSurvey";
 // import { wordPartStatements } from "./wordPartStatements";
 // import { wordStatementAnalysis } from "./wordStatementAnalysis";
 // import { wordSurveySummary } from "./wordSurveySummary";
@@ -193,10 +193,10 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
   const handleOnClick = () => {
     let displayPartId: string = props.participantIdent ?? "";
     let postsortText: any[] = [];
-    // let surveyText: any[] = [];
-    // if (showSurvey) {
-    //   surveyText = wordSurvey(data, surveyQuestionsArray, surveyLangObj);
-    // }
+    let surveyText: any[] = [];
+    if (showSurvey) {
+      surveyText = wordSurvey(data, surveyQuestionsArray, surveyLangObj);
+    }
     if (showPostsort) {
       postsortText = wordPostsort(data, currentStatements, postsortLangObj);
     }
@@ -222,10 +222,10 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
       presortText,
       sortsText,
       postsortText,
-      // surveyText,
+      surveyText,
       displayPartId,
       numStatements,
-      // showSurvey,
+      showSurvey,
       showPostsort,
       idLangObj,
     );

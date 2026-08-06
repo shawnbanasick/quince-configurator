@@ -2,7 +2,13 @@ import { Paragraph, TextRun, UnderlineType } from "docx";
 import { stripHtml } from "./stripHtml";
 import { stripTags } from "../utils/stripTags";
 
-const processRating2Question = (entry, question, index, indentValue, surveyLangObj) => {
+const processRating2Question = (
+  entry,
+  question,
+  index,
+  indentValue,
+  surveyLangObj,
+) => {
   let addIndentValue = +indentValue + 200;
   let options = stripHtml(stripTags(question.options));
   options = options.split(",");
@@ -12,13 +18,26 @@ const processRating2Question = (entry, question, index, indentValue, surveyLangO
   const scale3 = scale2.split(",").map((str) => str.trim());
   scale3.push(surveyLangObj.noResponse);
 
+  // Legacy format: "itemNumX:1,2,nr" or "itemNumX:no response"
+  // New format: entry is already the clean value - a comma list like
+  // "1,2,1,1" (joined from the itemNums array) or the string "no response".
+  let response1 = String(entry ?? "").trim();
+  const isLegacyPrefixed = /^itemNum\d+\s*:/.test(response1);
+
+  let tail: string;
+  if (isLegacyPrefixed) {
+    let entry4 = response1.split(":").map((str) => str.trim());
+    tail = entry4[1] ?? "";
+  } else {
+    tail = response1;
+  }
+
   // deal with no response case and nr case
-  let entry4 = entry.split(":").map((str) => str.trim());
   let entry5;
-  if (entry4[1] === "no response" || entry4[1] === "No Response") {
+  if (tail === "no response" || tail === "No Response") {
     entry5 = Array.from({ length: options.length }, () => "nr");
   } else {
-    entry5 = entry4[1].split(",").map((str) => str.trim());
+    entry5 = tail.split(",").map((str) => str.trim());
   }
 
   let response = [
@@ -48,7 +67,9 @@ const processRating2Question = (entry, question, index, indentValue, surveyLangO
     new Paragraph({
       children: [
         new TextRun({
-          text: question.note ? `Note: ${stripHtml(stripTags(question.note))}` : `Note: n/a`,
+          text: question.note
+            ? `Note: ${stripHtml(stripTags(question.note))}`
+            : `Note: n/a`,
           bold: false,
         }),
       ],
@@ -76,7 +97,7 @@ const processRating2Question = (entry, question, index, indentValue, surveyLangO
       // text = surveyLangObj.noResponse;
       console.log("check no response");
     } else {
-      let newIndex2 = entry5[index];  // 1,2,nr
+      let newIndex2 = entry5[index]; // 1,2,nr
       let newIndex3 = newIndex2.trim();
       if (newIndex3 === "nr") {
         newIndex = 2;
@@ -104,7 +125,7 @@ const processRating2Question = (entry, question, index, indentValue, surveyLangO
         indent: {
           start: addIndentValue,
         },
-      })
+      }),
     );
   });
 
