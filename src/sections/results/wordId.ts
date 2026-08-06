@@ -42,9 +42,9 @@ type Row = Record<string, string>; // each row is an object with string keys/val
 /**
  * Normalises a boolean flag that might be passed as string or value.
  */
-// function isTrue(value: unknown): boolean {
-//   return value === true || value === "true";
-// }
+function isTrue(value: unknown): boolean {
+  return value === true || value === "true";
+}
 
 /**
  * Builds a paragraph with optional spacing / indent
@@ -107,12 +107,12 @@ export function wordId(
   timeText: Paragraph[],
   presortText: Paragraph[],
   sortsText: Paragraph[],
-  // postsortText: Paragraph[],
+  postsortText: Paragraph[],
   // surveyText: Paragraph[],
   displayPartId: string, // "randomId" | "partId" | "urlUsercode"
   numStatements: number,
   // showSurvey: unknown,
-  // showPostsort: unknown,
+  showPostsort: unknown,
   idLangObj: Record<string, string>,
 ): Paragraph[] {
   /* ---- validation ------------------------------------------------- */
@@ -275,9 +275,9 @@ export function wordId(
     // add sorts to document
     childArray.push(...safeArray(sortsText, index));
 
-    // if (isTrue(showPostsort)) {
-    //   childArray.push(...safeArray(postsortText, index));
-    // }
+    if (isTrue(showPostsort)) {
+      childArray.push(...safeArray(postsortText, index));
+    }
     // if (isTrue(showSurvey)) {
     //   childArray.push(...safeArray(surveyText, index));
     // }
