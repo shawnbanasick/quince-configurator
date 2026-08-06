@@ -8,7 +8,7 @@ import { wordPresort } from "./wordPresort";
 import { wordSorts } from "./wordSorts";
 import { wordPostsort } from "./wordPostsort";
 import { wordSurvey } from "./wordSurvey";
-// import { wordPartStatements } from "./wordPartStatements";
+import { wordPartStatements } from "./wordPartStatements";
 // import { wordStatementAnalysis } from "./wordStatementAnalysis";
 // import { wordSurveySummary } from "./wordSurveySummary";
 import { useStore } from "../../GlobalState/useStore";
@@ -230,13 +230,13 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
       idLangObj,
     );
 
-    // let statementsArray = wordPartStatements(
-    //   data,
-    //   newHeaderArray,
-    //   currentStatements,
-    //   [...(props.partNames ?? [])],
-    //   partStatementsLangObj,
-    // );
+    let statementsArray = wordPartStatements(
+      data,
+      newHeaderArray,
+      currentStatements,
+      [...(props.partNames ?? [])],
+      partStatementsLangObj,
+    );
 
     // let statementsAnalysisArray = wordStatementAnalysis(
     //   data,
@@ -308,7 +308,7 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
           children: [
             ...openingImage,
             ...wordIdText,
-            // ...statementsArray,
+            ...statementsArray,
             // ...statementsAnalysisArray,
             // ...summaryArray,
             // ...closingMessage,

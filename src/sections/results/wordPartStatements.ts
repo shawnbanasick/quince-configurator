@@ -3,7 +3,8 @@ import { cloneDeep } from "es-toolkit";
 
 // Type definitions for better type safety
 interface ParticipantData {
-  r20: string;
+  r20?: string;
+  sort?: number[];
   [key: string]: any;
 }
 
@@ -21,11 +22,55 @@ interface WordPartStatementsParams {
 }
 
 /**
- * Parses sort data from participant record
+ * Resolves a display ID for a participant.
+ *
+ * Prefers the externally-provided ID (e.g. from props.partNames) when
+ * available, since that's still the source of truth when it lines up.
+ * Falls back to identity fields carried directly on the new data format
+ * (randomId, partId, id), and finally to a numbered placeholder, so a
+ * length mismatch between `data` and `participantIds` no longer crashes
+ * the export - it just degrades gracefully for the unmatched entries.
  */
-const parseSortData = (r20Value: string): number[] => {
+const resolveParticipantId = (
+  participant: ParticipantData,
+  index: number,
+  providedId?: string,
+): string => {
+  if (providedId) return providedId;
+
+  return (
+    participant.randomId ??
+    participant.partId ??
+    participant.id ??
+    `Participant ${index + 1}`
+  );
+};
+
+/**
+ * Parses sort data from a participant record.
+ *
+ * New format: participant.sort is already an array of numbers, one entry
+ * per statement, in statement order (e.g. [-2,-2,0,-2,1,3,4,...]).
+ *
+ * Legacy format: participant.r20 is a string like "prefix:2|-1|3|..." that
+ * needs the prefix stripped and the pipe-separated values parsed.
+ */
+const parseSortData = (participant: ParticipantData): number[] => {
+  if (Array.isArray(participant.sort)) {
+    return participant.sort.map((value) => {
+      const num = Number(value);
+      if (Number.isNaN(num)) {
+        throw new Error(`Invalid sort value: ${value}`);
+      }
+      return num;
+    });
+  }
+
+  const r20Value = participant.r20;
   if (!r20Value || typeof r20Value !== "string") {
-    throw new Error("Invalid r20 value provided");
+    throw new Error(
+      "Invalid sort data provided - expected a 'sort' array or 'r20' string",
+    );
   }
 
   const parts = r20Value.split(":");
@@ -46,9 +91,14 @@ const parseSortData = (r20Value: string): number[] => {
 /**
  * Creates sort value items by combining values with statements
  */
-const createSortValueItems = (sortValues: number[], statements: string[]): SortValueItem[] => {
+const createSortValueItems = (
+  sortValues: number[],
+  statements: string[],
+): SortValueItem[] => {
   if (sortValues.length !== statements.length) {
-    console.warn(`Mismatch: ${sortValues.length} sort values vs ${statements.length} statements`);
+    console.warn(
+      `Mismatch: ${sortValues.length} sort values vs ${statements.length} statements`,
+    );
   }
 
   return sortValues.map((value, index) => ({
@@ -61,7 +111,9 @@ const createSortValueItems = (sortValues: number[], statements: string[]): SortV
 /**
  * Groups sort value items by their sort value
  */
-const groupBySortValue = (items: SortValueItem[]): Map<number, SortValueItem[]> => {
+const groupBySortValue = (
+  items: SortValueItem[],
+): Map<number, SortValueItem[]> => {
   const grouped = new Map<number, SortValueItem[]>();
 
   items.forEach((item) => {
@@ -98,7 +150,7 @@ const createParticipantParagraphs = (
       ],
       heading: HeadingLevel.HEADING_2,
       spacing: { before: 400, after: 100 },
-    })
+    }),
   );
 
   // Process each sort value in descending order (as in original code with reverse)
@@ -119,7 +171,7 @@ const createParticipantParagraphs = (
             }),
           ],
           indent: { start: 200 },
-        })
+        }),
       );
 
       // Add statements for this sort value
@@ -137,7 +189,7 @@ const createParticipantParagraphs = (
               }),
             ],
             indent: { left: 600, hanging: 200 },
-          })
+          }),
         );
       });
     }
@@ -183,15 +235,26 @@ const validateInputs = (params: WordPartStatementsParams): void => {
     throw new Error("Statements must be a non-empty string");
   }
 
-  if (!Array.isArray(participantIds) || participantIds.length !== data.length) {
-    throw new Error("Participant IDs array length must match data array length");
+  if (!Array.isArray(participantIds)) {
+    throw new Error("Participant IDs must be an array");
+  }
+
+  if (participantIds.length !== data.length) {
+    // Don't hard-fail: the new data format carries its own identity fields
+    // (randomId, partId, id) per participant, so resolveParticipantId() can
+    // fill the gap for any entries the provided participantIds array is
+    // missing or has extra of.
+    console.warn(
+      `Participant IDs array length (${participantIds.length}) does not match data array length (${data.length}). Falling back to participant identity fields where needed.`,
+    );
   }
 };
 
 /**
  * Generates Word document paragraphs for participant Q-sort statements
  *
- * @param data - Array of participant data containing r20 sort values
+ * @param data - Array of participant data containing sort values (new "sort"
+ *   array format, or legacy "r20" string format)
  * @param sortHeaders - Array of possible sort values to display
  * @param statements - Newline-separated string of statements
  * @param participantIds - Array of participant identifiers
@@ -218,21 +281,34 @@ const wordPartStatements = (
     const workingData = cloneDeep(data);
 
     // Initialize result with header
-    const allParagraphs: Paragraph[] = [createHeaderParagraph(partStatementsLangObj)];
+    const allParagraphs: Paragraph[] = [
+      createHeaderParagraph(partStatementsLangObj),
+    ];
 
     // Process each participant
     workingData.forEach((participant, index) => {
       try {
-        // Parse sort data
-        const sortValues = parseSortData(participant.r20);
+        // Parse sort data (handles both new "sort" array and legacy "r20" string)
+        const sortValues = parseSortData(participant);
 
         // Create sort value items
-        const sortValueItems = createSortValueItems(sortValues, statementsArray);
+        const sortValueItems = createSortValueItems(
+          sortValues,
+          statementsArray,
+        );
+
+        // Resolve this participant's display ID, falling back to identity
+        // fields on the record itself if participantIds doesn't cover this index
+        const resolvedId = resolveParticipantId(
+          participant,
+          index,
+          participantIds[index],
+        );
 
         // Create paragraphs for this participant
         const participantParagraphs = createParticipantParagraphs(
           index,
-          participantIds[index],
+          resolvedId,
           sortValueItems,
           sortHeaders,
           partStatementsLangObj,
@@ -256,7 +332,7 @@ const wordPartStatements = (
               }),
             ],
             spacing: { before: 400 },
-          })
+          }),
         );
       }
     });
