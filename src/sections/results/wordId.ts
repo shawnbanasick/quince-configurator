@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { HeadingLevel, Paragraph, TextRun } from "docx";
-import { cloneDeep } from "es-toolkit";
+// import { cloneDeep } from "es-toolkit";
 
 /* ------------------------------------------------------------------ */
 /* 1. Types & constants                                               */
@@ -9,31 +9,31 @@ import { cloneDeep } from "es-toolkit";
 type Row = Record<string, string>; // each row is an object with string keys/values
 
 /** Keys that the function expects in every row */
-const REQUIRED_KEYS = [
-  "r1", // project name
-  "r2", // random id
-  "r3", // participant id
-  "r4", // url user code
-  "r5", // date/time
-  "r6", // device type
-] as const;
+// const REQUIRED_KEYS = [
+//   "r1", // project name
+//   "r2", // random id
+//   "r3", // participant id
+//   "r4", // url user code
+//   "r5", // date/time
+//   "r6", // device type
+// ] as const;
 
 /** Slices used to extract the meaningful part of each field */
-const SLICE_MAP = {
-  r1: { start: 15 }, // Project name
-  r2: { start: 11 }, // Random id (from index 11 onward)
-  r3: { start: 9 },
-  r4: { start: 14 },
-  r5: { start: 11 },
-  r6: { start: 17 },
-} as const;
+// const SLICE_MAP = {
+//   r1: { start: 15 }, // Project name
+//   r2: { start: 11 }, // Random id (from index 11 onward)
+//   r3: { start: 9 },
+//   r4: { start: 14 },
+//   r5: { start: 11 },
+//   r6: { start: 17 },
+// } as const;
 
 /** Simple helper to guard string slicing */
-function safeSlice(str: string | undefined, key: keyof typeof SLICE_MAP) {
-  if (!str) return "";
-  const { start } = SLICE_MAP[key];
-  return str.slice(start);
-}
+// function safeSlice(str: string | undefined, key: keyof typeof SLICE_MAP) {
+//   if (!str) return "";
+//   const { start } = SLICE_MAP[key];
+//   return str.slice(start);
+// }
 
 /* ------------------------------------------------------------------ */
 /* 2. Helpers                                                        */
@@ -42,9 +42,9 @@ function safeSlice(str: string | undefined, key: keyof typeof SLICE_MAP) {
 /**
  * Normalises a boolean flag that might be passed as string or value.
  */
-function isTrue(value: unknown): boolean {
-  return value === true || value === "true";
-}
+// function isTrue(value: unknown): boolean {
+//   return value === true || value === "true";
+// }
 
 /**
  * Builds a paragraph with optional spacing / indent
@@ -76,7 +76,9 @@ function paragraph(opts: {
     ...(startIndent !== undefined && { indent: { start: startIndent } }),
     ...(heading !== undefined && { heading }),
     ...(thematicBreak !== undefined && { thematicBreak }),
-    ...(before !== undefined || after !== undefined ? { spacing: { before, after } } : {}),
+    ...(before !== undefined || after !== undefined
+      ? { spacing: { before, after } }
+      : {}),
   });
 }
 
@@ -103,14 +105,14 @@ function safeArray<T>(arr: T[] | undefined, idx: number): T[] {
 export function wordId(
   data: Row[],
   timeText: Paragraph[],
-  presortText: Paragraph[],
-  sortsText: Paragraph[],
-  postsortText: Paragraph[],
-  surveyText: Paragraph[],
+  // presortText: Paragraph[],
+  // sortsText: Paragraph[],
+  // postsortText: Paragraph[],
+  // surveyText: Paragraph[],
   displayPartId: string, // "randomId" | "partId" | "urlUsercode"
   numStatements: number,
-  showSurvey: unknown,
-  showPostsort: unknown,
+  // showSurvey: unknown,
+  // showPostsort: unknown,
   idLangObj: Record<string, string>,
 ): Paragraph[] {
   /* ---- validation ------------------------------------------------- */
@@ -119,16 +121,24 @@ export function wordId(
   }
 
   // Ensure every row contains the keys we need – if not, we skip that row.
-  const workingData: Row[] = cloneDeep(
-    data.filter((row) => REQUIRED_KEYS.every((k) => typeof row[k] === "string")),
-  );
+  // const workingData: Row[] = cloneDeep(
+  //   data.filter((row) =>
+  //     REQUIRED_KEYS.every((k) => typeof row[k] === "string"),
+  //   ),
+  // );
 
   /* ---- header ----------------------------------------------------- */
-  const firstRow = workingData[0];
-  const projectNameTitleString2 = safeSlice(firstRow.r1, "r1");
-  const [projectDatePart, ...restParts] = projectNameTitleString2.split(" - ");
-  const projectDate = restParts.pop()?.split("@") ?? ["", ""];
-  const projectNameTitleString = restParts.length > 0 ? restParts.join(" - ") : projectDatePart;
+  // const firstRow = workingData[0];
+  // project name
+  // const projectNameTitleString2 = data[0].projectName || "Unknown Project";
+
+  // project date
+  // const [projectDatePart, ...restParts] = projectNameTitleString2.split(" - ");
+  // const projectDate = restParts.pop()?.split("@") ?? ["", ""];
+  const projectDate = data[0].dateTime;
+  // const projectNameTitleString =
+  //   restParts.length > 0 ? restParts.join(" - ") : projectDatePart;
+  const projectNameTitleString = data[0].projectName || "Unknown Project";
 
   const childArray: Paragraph[] = [
     paragraph({
@@ -138,13 +148,13 @@ export function wordId(
       after: 20,
     }),
     paragraph({
-      text: `${idLangObj.projectCreationDate}: ${projectDate[0]} @ ${projectDate[1]}`,
+      text: `${idLangObj.projectCreationDate}: ${projectDate}`,
       bold: true,
       size: 24,
       after: 20,
     }),
     paragraph({
-      text: `${numStatements} ${idLangObj.statements} / ${workingData.length} ${idLangObj.participants}`,
+      text: `${numStatements} ${idLangObj.statements} / ${data.length} ${idLangObj.participants}`,
       bold: true,
       size: 24,
       after: 300,
@@ -161,7 +171,9 @@ export function wordId(
     }),
 
     new Paragraph({
-      children: [new TextRun({ text: idLangObj.qSortData, bold: true, size: 40 })],
+      children: [
+        new TextRun({ text: idLangObj.qSortData, bold: true, size: 40 }),
+      ],
       heading: HeadingLevel.HEADING_1,
       thematicBreak: true,
     }),
@@ -173,9 +185,9 @@ export function wordId(
   const INDENT_START1 = 200;
   const INDENT_START2 = 400;
 
-  workingData.forEach((item, index) => {
+  data.forEach((item, index) => {
     // 1️⃣ Create a unique id if needed
-    let id = safeSlice(item.r2, "r2");
+    let id = data[index].randomId || `participant_${index + 1}`;
     if (id === previousId) {
       id = `${id}_${counter++}`;
     } else {
@@ -184,24 +196,27 @@ export function wordId(
     }
 
     // 2️⃣ Resolve display identifier
-    const identCode =
+    let identCode =
       displayPartId === "randomId"
-        ? safeSlice(item.r2, "r2")
+        ? item.randomId?.trim()
         : displayPartId === "partId"
-          ? safeSlice(item.r3, "r3")
+          ? item.partId?.trim()
           : displayPartId === "urlUsercode"
-            ? safeSlice(item.r4, "r4")
+            ? item.urlUsercode?.trim()
             : "";
+    if (identCode === undefined || identCode === "") {
+      identCode = `${idLangObj.participant} ${index + 1}`;
+    }
 
     // localize text
-    let participantId = safeSlice(item.r3, "r3")?.trim();
-    let urlUsercode = safeSlice(item.r4, "r4")?.trim();
-    let desktopOrMobile = safeSlice(item.r6, "r6")?.trim();
+    let participantId = item.partId?.trim() || "none";
+    let urlUsercode = item.urlUsercode?.trim() || "none";
+    let desktopOrMobile = item.device?.trim() || "";
 
-    if (participantId === "no part ID") {
+    if (participantId === "no part ID" || participantId === undefined) {
       participantId = idLangObj.noPartId;
     }
-    if (urlUsercode === "no usercode set") {
+    if (urlUsercode === "no usercode set" || urlUsercode === undefined) {
       urlUsercode = idLangObj.noUrlUsercode;
     }
     if (desktopOrMobile === "desktop") {
@@ -227,17 +242,23 @@ export function wordId(
         before: 100,
       }),
       paragraph({
-        text: `${idLangObj.projectName}: ${safeSlice(item.r1, "r1")}`,
+        text: `${idLangObj.projectName}: ${item.projectName || "Unknown Project"}`,
         startIndent: INDENT_START2,
       }),
-      paragraph({ text: `${idLangObj.randomId}: ${id}`, startIndent: INDENT_START2 }),
+      paragraph({
+        text: `${idLangObj.randomId}: ${id}`,
+        startIndent: INDENT_START2,
+      }),
       paragraph({
         text: `${idLangObj.participantId}: ${participantId}`,
         startIndent: INDENT_START2,
       }),
-      paragraph({ text: `${idLangObj.urlUsercode}: ${urlUsercode}`, startIndent: INDENT_START2 }),
       paragraph({
-        text: `${idLangObj.dateAndTime}: ${safeSlice(item.r5, "r5")}`,
+        text: `${idLangObj.urlUsercode}: ${urlUsercode}`,
+        startIndent: INDENT_START2,
+      }),
+      paragraph({
+        text: `${idLangObj.dateAndTime}: ${item.dateTime}`,
         startIndent: INDENT_START2,
       }),
       paragraph({
@@ -248,15 +269,15 @@ export function wordId(
 
     // 4️⃣ Append optional child arrays safely
     childArray.push(...safeArray(timeText, index));
-    childArray.push(...safeArray(presortText, index));
-    childArray.push(...safeArray(sortsText, index));
+    // childArray.push(...safeArray(presortText, index));
+    // childArray.push(...safeArray(sortsText, index));
 
-    if (isTrue(showPostsort)) {
-      childArray.push(...safeArray(postsortText, index));
-    }
-    if (isTrue(showSurvey)) {
-      childArray.push(...safeArray(surveyText, index));
-    }
+    // if (isTrue(showPostsort)) {
+    //   childArray.push(...safeArray(postsortText, index));
+    // }
+    // if (isTrue(showSurvey)) {
+    //   childArray.push(...safeArray(surveyText, index));
+    // }
   });
 
   return childArray;

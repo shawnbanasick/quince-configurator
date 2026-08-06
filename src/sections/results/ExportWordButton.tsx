@@ -1,16 +1,16 @@
 // import { Paragraph, TextRun, HeadingLevel } from "docx";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { Document, Packer } from "docx";
 import { wordId } from "./wordId";
 import { wordTime } from "./wordTime";
-import { Document, Packer } from "docx";
 import { wordPresort } from "./wordPresort";
-import { wordPostsort } from "./wordPostsort";
-import { wordSurvey } from "./wordSurvey";
-import { wordSorts } from "./wordSorts";
-import { wordPartStatements } from "./wordPartStatements";
-import { wordStatementAnalysis } from "./wordStatementAnalysis";
-import { wordSurveySummary } from "./wordSurveySummary";
+// import { wordPostsort } from "./wordPostsort";
+// import { wordSurvey } from "./wordSurvey";
+// import { wordSorts } from "./wordSorts";
+// import { wordPartStatements } from "./wordPartStatements";
+// import { wordStatementAnalysis } from "./wordStatementAnalysis";
+// import { wordSurveySummary } from "./wordSurveySummary";
 import { useStore } from "../../GlobalState/useStore";
 import { getDocParagraphStyles } from "./getDocParagraphStyles";
 import { getDocNumberingStyles } from "./getDocNumberingStyles";
@@ -192,63 +192,63 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
 
   const handleOnClick = () => {
     let displayPartId: string = props.participantIdent ?? "";
-    let postsortText: any[] = [];
-    let surveyText: any[] = [];
-    if (showSurvey) {
-      surveyText = wordSurvey(data, surveyQuestionsArray, surveyLangObj);
-    }
-    if (showPostsort) {
-      postsortText = wordPostsort(data, currentStatements, postsortLangObj);
-    }
+    // let postsortText: any[] = [];
+    // let surveyText: any[] = [];
+    // if (showSurvey) {
+    //   surveyText = wordSurvey(data, surveyQuestionsArray, surveyLangObj);
+    // }
+    // if (showPostsort) {
+    //   postsortText = wordPostsort(data, currentStatements, postsortLangObj);
+    // }
 
-    let sortsText = wordSorts(
-      data,
-      props.partNames,
-      statementNumArray,
-      respondentArray,
-      newHeaderArray,
-      mapInputQsortPattern,
-      qSortLangObj,
-    );
-    let presortText = wordPresort(data, presortLangObj);
+    // let sortsText = wordSorts(
+    //   data,
+    //   props.partNames,
+    //   statementNumArray,
+    //   respondentArray,
+    //   newHeaderArray,
+    //   mapInputQsortPattern,
+    //   qSortLangObj,
+    // );
+    // let presortText = wordPresort(data, presortLangObj);
     let timeText: any[] = wordTime(data, timeLangObj);
     // calc
-    let childArray1 = wordId(
+    let wordIdText = wordId(
       data,
       timeText,
-      presortText,
-      sortsText,
-      postsortText,
-      surveyText,
+      // presortText,
+      // sortsText,
+      // postsortText,
+      // surveyText,
       displayPartId,
       numStatements,
-      showSurvey,
-      showPostsort,
+      // showSurvey,
+      // showPostsort,
       idLangObj,
     );
 
-    let statementsArray = wordPartStatements(
-      data,
-      newHeaderArray,
-      currentStatements,
-      [...(props.partNames ?? [])],
-      partStatementsLangObj,
-    );
+    // let statementsArray = wordPartStatements(
+    //   data,
+    //   newHeaderArray,
+    //   currentStatements,
+    //   [...(props.partNames ?? [])],
+    //   partStatementsLangObj,
+    // );
 
-    let statementsAnalysisArray = wordStatementAnalysis(
-      data,
-      currentStatements,
-      qSortHeaderNumbers,
-      statementAnalysisLangObj,
-    );
+    // let statementsAnalysisArray = wordStatementAnalysis(
+    //   data,
+    //   currentStatements,
+    //   qSortHeaderNumbers,
+    //   statementAnalysisLangObj,
+    // );
 
-    let summaryArray = wordSurveySummary(
-      data,
-      surveyQuestionsArray,
-      [...(props.partNames ?? [])],
-      showSurvey,
-      surveySummaryLangObj,
-    );
+    // let summaryArray = wordSurveySummary(
+    //   data,
+    //   surveyQuestionsArray,
+    //   [...(props.partNames ?? [])],
+    //   showSurvey,
+    //   surveySummaryLangObj,
+    // );
 
     let closingMessage = [
       new Paragraph({
@@ -304,11 +304,11 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
           footers: getSection1Footers(dateTime, version),
           children: [
             ...openingImage,
-            ...childArray1,
-            ...statementsArray,
-            ...statementsAnalysisArray,
-            ...summaryArray,
-            ...closingMessage,
+            ...wordIdText,
+            // ...statementsArray,
+            // ...statementsAnalysisArray,
+            // ...summaryArray,
+            // ...closingMessage,
           ],
         },
       ],

@@ -43,15 +43,15 @@ const ResultsUploadButton: React.FC = () => {
             return cleanedRow;
           });
 
+          const formattedData = cleanedData.map((row) => parseQSortRecord(row));
+
           console.log("Raw Data:", JSON.stringify(cleanedData[0])); // Log the first cleaned row for debugging
 
-          console.log(
-            "Cleaned Data:",
-            JSON.stringify(parseQSortRecord(cleanedData[0])),
-          ); // Log the first cleaned row for debugging
+          console.log("Cleaned Data:", JSON.stringify(formattedData[0])); // Log the first formatted row for debugging
 
           setRawData(cleanedData);
-          setCleanedResults(cleanedData);
+          setCleanedResults(formattedData);
+
           setHasResultsFileBeenLoaded(true);
         },
       });
