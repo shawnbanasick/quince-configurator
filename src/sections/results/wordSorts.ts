@@ -1,5 +1,6 @@
 import zip from "lodash/zip";
 import { Paragraph, UnderlineType, TextRun } from "docx";
+import { cloneDeep } from "es-toolkit";
 
 const compareSecondColumn = (a, b) => {
   if (a[1] === b[1]) {
@@ -26,8 +27,12 @@ const wordSorts = (
   respondentArray2,
   newHeaderArray,
   mapInputQsortPattern,
-  qSortLangObj
+  qSortLangObj,
 ) => {
+  console.log(newHeaderArray, "newHeaderArray");
+
+  const workingData = cloneDeep(data);
+
   let indentValue = 200;
 
   let newString = "";
@@ -44,7 +49,7 @@ const wordSorts = (
   let unforcedParticipantNamesArray: string[] = [];
   let displayStringsArray: any[] = [];
 
-  for (let m = 0; m < data.length; m++) {
+  for (let m = 0; m < workingData.length; m++) {
     const generatedString: any[] = [];
     let respondentArray = respondentArray2[m];
     let nameString = partNames[m];

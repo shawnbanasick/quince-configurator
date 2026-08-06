@@ -5,9 +5,9 @@ import { Document, Packer } from "docx";
 import { wordId } from "./wordId";
 import { wordTime } from "./wordTime";
 import { wordPresort } from "./wordPresort";
+import { wordSorts } from "./wordSorts";
 // import { wordPostsort } from "./wordPostsort";
 // import { wordSurvey } from "./wordSurvey";
-// import { wordSorts } from "./wordSorts";
 // import { wordPartStatements } from "./wordPartStatements";
 // import { wordStatementAnalysis } from "./wordStatementAnalysis";
 // import { wordSurveySummary } from "./wordSurveySummary";
@@ -201,23 +201,26 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
     //   postsortText = wordPostsort(data, currentStatements, postsortLangObj);
     // }
 
-    // let sortsText = wordSorts(
-    //   data,
-    //   props.partNames,
-    //   statementNumArray,
-    //   respondentArray,
-    //   newHeaderArray,
-    //   mapInputQsortPattern,
-    //   qSortLangObj,
-    // );
+    // generate sorts
+    let sortsText = wordSorts(
+      data,
+      props.partNames,
+      statementNumArray,
+      respondentArray,
+      newHeaderArray,
+      mapInputQsortPattern,
+      qSortLangObj,
+    );
+    // generate presorts
     let presortText = wordPresort(data, presortLangObj);
+    // generate time on page
     let timeText: any[] = wordTime(data, timeLangObj);
     // calc
     let wordIdText = wordId(
       data,
       timeText,
       presortText,
-      // sortsText,
+      sortsText,
       // postsortText,
       // surveyText,
       displayPartId,

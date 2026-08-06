@@ -106,7 +106,7 @@ export function wordId(
   data: Row[],
   timeText: Paragraph[],
   presortText: Paragraph[],
-  // sortsText: Paragraph[],
+  sortsText: Paragraph[],
   // postsortText: Paragraph[],
   // surveyText: Paragraph[],
   displayPartId: string, // "randomId" | "partId" | "urlUsercode"
@@ -186,7 +186,7 @@ export function wordId(
   const INDENT_START2 = 400;
 
   data.forEach((item, index) => {
-    // 1️⃣ Create a unique id if needed
+    // Create a unique id if needed
     let id = data[index].randomId || `participant_${index + 1}`;
     if (id === previousId) {
       id = `${id}_${counter++}`;
@@ -195,7 +195,7 @@ export function wordId(
       previousId = id;
     }
 
-    // 2️⃣ Resolve display identifier
+    // Resolve display identifier
     let identCode =
       displayPartId === "randomId"
         ? item.randomId?.trim()
@@ -226,7 +226,7 @@ export function wordId(
       desktopOrMobile = idLangObj.mobile;
     }
 
-    // 3️⃣ Append participant block
+    // Append participant block
     childArray.push(
       paragraph({
         text: `${idLangObj.participant}: ${index + 1} - ${identCode}`,
@@ -267,10 +267,13 @@ export function wordId(
       }),
     );
 
-    // 4️⃣ Append optional child arrays safely
+    // Append optional child arrays safely
+    // add time to document
     childArray.push(...safeArray(timeText, index));
+    // add presort to document
     childArray.push(...safeArray(presortText, index));
-    // childArray.push(...safeArray(sortsText, index));
+    // add sorts to document
+    childArray.push(...safeArray(sortsText, index));
 
     // if (isTrue(showPostsort)) {
     //   childArray.push(...safeArray(postsortText, index));
