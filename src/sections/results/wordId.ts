@@ -105,7 +105,7 @@ function safeArray<T>(arr: T[] | undefined, idx: number): T[] {
 export function wordId(
   data: Row[],
   timeText: Paragraph[],
-  // presortText: Paragraph[],
+  presortText: Paragraph[],
   // sortsText: Paragraph[],
   // postsortText: Paragraph[],
   // surveyText: Paragraph[],
@@ -269,7 +269,7 @@ export function wordId(
 
     // 4️⃣ Append optional child arrays safely
     childArray.push(...safeArray(timeText, index));
-    // childArray.push(...safeArray(presortText, index));
+    childArray.push(...safeArray(presortText, index));
     // childArray.push(...safeArray(sortsText, index));
 
     // if (isTrue(showPostsort)) {

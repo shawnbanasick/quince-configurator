@@ -210,13 +210,13 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
     //   mapInputQsortPattern,
     //   qSortLangObj,
     // );
-    // let presortText = wordPresort(data, presortLangObj);
+    let presortText = wordPresort(data, presortLangObj);
     let timeText: any[] = wordTime(data, timeLangObj);
     // calc
     let wordIdText = wordId(
       data,
       timeText,
-      // presortText,
+      presortText,
       // sortsText,
       // postsortText,
       // surveyText,

@@ -26,50 +26,94 @@ const wordPresort = (data: RecordMap, presortLangObj: any): Paragraph[] => {
         spacing: {
           before: 100,
         },
-      })
-    );
-    // Filter for values starting with "(timeOn"
-    const timeEntries = Object.values(item).filter(
-      (value: any) =>
-        (typeof value === "string" && value.trim().startsWith("(num")) ||
-        value.trim().startsWith("(pos") ||
-        value.trim().startsWith("(neu") ||
-        value.trim().startsWith("(neg")
+      }),
     );
 
-    // Clean and map to Paragraphs
-    timeEntries.forEach((entry: string) => {
-      if (entry.startsWith("(numPos)")) {
-        entry = `${presortLangObj.numberOfStatementsViewedPositively}: ${entry.slice(9).trim()}`;
-      }
-      if (entry.startsWith("(numNeu)")) {
-        entry = `${presortLangObj.numberOfStatementsViewedNeutral}: ${entry.slice(9).trim()}`;
-      }
-      if (entry.startsWith("(numNeg)")) {
-        entry = `${presortLangObj.numberOfStatementsViewedNegatively}: ${entry.slice(9).trim()}`;
-      }
-      if (entry.startsWith("(pos)")) {
-        entry = `${presortLangObj.statementsViewedPositively}: ${entry.slice(6).trim()}`;
-      }
-      if (entry.startsWith("(neu)")) {
-        entry = `${presortLangObj.statementsViewedNeutral}: ${entry.slice(6).trim()}`;
-      }
-      if (entry.startsWith("(neg)")) {
-        entry = `${presortLangObj.statementsViewedNegatively}: ${entry.slice(6).trim()}`;
-      }
-      paragraphs.push(
-        new Paragraph({
-          children: [
-            new TextRun({
-              text: entry,
-            }),
-          ],
-          indent: {
-            start: indentValue,
-          },
-        })
-      );
-    });
+    paragraphs.push(
+      new Paragraph({
+        children: [
+          new TextRun({
+            text: `${presortLangObj.numberOfStatementsViewedPositively}: ${item.counts?.pos ?? 0}`,
+          }),
+        ],
+        indent: {
+          start: indentValue,
+        },
+      }),
+    );
+
+    paragraphs.push(
+      new Paragraph({
+        children: [
+          new TextRun({
+            text: `${presortLangObj.numberOfStatementsViewedNeutral}: ${item.counts?.neu ?? 0}`,
+          }),
+        ],
+        indent: {
+          start: indentValue,
+        },
+      }),
+    );
+
+    paragraphs.push(
+      new Paragraph({
+        children: [
+          new TextRun({
+            text: `${presortLangObj.numberOfStatementsViewedNegatively}: ${item.counts?.neg ?? 0}`,
+          }),
+        ],
+        indent: {
+          start: indentValue,
+        },
+      }),
+    );
+
+    let posItems = item.items?.pos ?? [];
+    posItems = posItems.filter((num: number) => !isNaN(num)); // Filter out NaN values
+    let neuItems = item.items?.neu ?? [];
+    neuItems = neuItems.filter((num: number) => !isNaN(num)); // Filter out NaN values
+    let negItems = item.items?.neg ?? [];
+    negItems = negItems.filter((num: number) => !isNaN(num)); // Filter out NaN values
+
+    paragraphs.push(
+      new Paragraph({
+        children: [
+          new TextRun({
+            text: `${presortLangObj.statementsViewedPositively}: ${posItems.join(", ") ?? 0}`,
+          }),
+        ],
+        indent: {
+          start: indentValue,
+        },
+      }),
+    );
+
+    paragraphs.push(
+      new Paragraph({
+        children: [
+          new TextRun({
+            text: `${presortLangObj.statementsViewedNeutral}: ${neuItems.join(", ") ?? 0}`,
+          }),
+        ],
+        indent: {
+          start: indentValue,
+        },
+      }),
+    );
+
+    paragraphs.push(
+      new Paragraph({
+        children: [
+          new TextRun({
+            text: `${presortLangObj.statementsViewedNegatively}: ${negItems.join(", ") ?? 0}`,
+          }),
+        ],
+        indent: {
+          start: indentValue,
+        },
+      }),
+    );
+
     itemParagraphs.push(paragraphs);
   });
   return itemParagraphs;
