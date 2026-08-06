@@ -9,7 +9,7 @@ import { wordSorts } from "./wordSorts";
 import { wordPostsort } from "./wordPostsort";
 import { wordSurvey } from "./wordSurvey";
 import { wordPartStatements } from "./wordPartStatements";
-// import { wordStatementAnalysis } from "./wordStatementAnalysis";
+import { wordStatementAnalysis } from "./wordStatementAnalysis";
 // import { wordSurveySummary } from "./wordSurveySummary";
 import { useStore } from "../../GlobalState/useStore";
 import { getDocParagraphStyles } from "./getDocParagraphStyles";
@@ -238,12 +238,12 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
       partStatementsLangObj,
     );
 
-    // let statementsAnalysisArray = wordStatementAnalysis(
-    //   data,
-    //   currentStatements,
-    //   qSortHeaderNumbers,
-    //   statementAnalysisLangObj,
-    // );
+    let statementsAnalysisArray = wordStatementAnalysis(
+      data,
+      currentStatements,
+      qSortHeaderNumbers,
+      statementAnalysisLangObj,
+    );
 
     // let summaryArray = wordSurveySummary(
     //   data,
@@ -309,7 +309,7 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
             ...openingImage,
             ...wordIdText,
             ...statementsArray,
-            // ...statementsAnalysisArray,
+            ...statementsAnalysisArray,
             // ...summaryArray,
             // ...closingMessage,
           ],
