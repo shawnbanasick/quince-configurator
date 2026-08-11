@@ -29,8 +29,6 @@ const wordSorts = (
   mapInputQsortPattern,
   qSortLangObj,
 ) => {
-  console.log(newHeaderArray, "newHeaderArray");
-
   const workingData = cloneDeep(data);
 
   let indentValue = 200;

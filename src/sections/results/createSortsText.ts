@@ -2,7 +2,10 @@ type SortItem = {
   [key: string]: string;
 };
 
-const createSortsText = (data: SortItem[] = [], participantIdent: string = ""): string => {
+const createSortsText = (
+  data: SortItem[] = [],
+  participantIdent: string = "",
+): string => {
   let returnText = "";
   let value = data[0]["r20"];
   let valueText = value.slice(0, 5);
@@ -11,8 +14,6 @@ const createSortsText = (data: SortItem[] = [], participantIdent: string = ""): 
   if (valueText === "sort:") {
     // Default sort location at r18
     sortsArray = data.map((item) => {
-      console.log("main");
-
       let fullString = item["r20"];
       let string = fullString.slice(5);
       string = string.trimStart();
@@ -22,7 +23,6 @@ const createSortsText = (data: SortItem[] = [], participantIdent: string = ""): 
   } else {
     // when sort isn't at default location "r18", search for it
     sortsArray = data.map((item) => {
-      console.log("alternative");
       let foundArray: string[] = [];
 
       for (const [_, val] of Object.entries(item)) {

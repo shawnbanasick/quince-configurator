@@ -67,39 +67,15 @@ const SurveyRadioElement = (props) => {
   };
 
   const handleChange = (e) => {
-    // const resultsSurvey = JSON.parse(localStorage.getItem("resultsSurvey"));
-
-    // if (+e.target.value === +optionsLength && displayOtherInput === true) {
-    //   if (otherString === "") {
-    //     resultsSurvey[`itemNum${props.opts.itemNum}`] = `${+e.target.value + 1}-no input`;
-    //   } else {
-    //     resultsSurvey[`itemNum${props.opts.itemNum}`] = `${+e.target.value + 1}-${otherString}`;
-    //   }
-    // } else {
-    //   resultsSurvey[`itemNum${props.opts.itemNum}`] = +e.target.value + 1;
-    // }
-
     if (+e.target.value === +optionsLength) {
       setOtherDisabled(false);
     } else {
       setOtherDisabled(true);
     }
-
-    // localStorage.setItem("resultsSurvey", JSON.stringify(resultsSurvey));
   }; // end handle change
 
   const handleInputChange = (event) => {
-    // console.log(event.target.value);
-    // const resultsSurvey = JSON.parse(localStorage.getItem("resultsSurvey"));
-    // if (event.target.value === "") {
-    //   resultsSurvey[`itemNum${props.opts.itemNum}`] = `${+optionsLength + 1}-no input`;
-    // } else {
-    //   resultsSurvey[`itemNum${props.opts.itemNum}`] = `${
-    //     +optionsLength + 1
-    //   }-${event.target.value.trim()}`;
-    // }
     setOtherString(event.target.value.trim());
-    // localStorage.setItem("resultsSurvey", JSON.stringify(resultsSurvey));
   };
 
   let setYellow = false;
@@ -129,7 +105,12 @@ const SurveyRadioElement = (props) => {
   const RadioItems = () => {
     const radioList = optsArray.map((item, index) => (
       <div key={uuid()}>
-        <RadioInput value={index} checked={selected} label={item} setter={setSelected} />
+        <RadioInput
+          value={index}
+          checked={selected}
+          label={item}
+          setter={setSelected}
+        />
       </div>
     ));
     return (

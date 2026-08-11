@@ -126,6 +126,7 @@ export function parseQSortRecord(raw: RawQSortRecord): QSortRecord {
         case "neu":
         case "neg":
           result.items[label as "pos" | "neu" | "neg"] = value
+            .replace(/s/gi, "")
             .split(",")
             .map((s) => s.trim())
             .filter(Boolean)
@@ -152,7 +153,8 @@ export function parseQSortRecord(raw: RawQSortRecord): QSortRecord {
       continue;
     }
 
-    if (/^column(N)?4:/.test(str)) {
+    // if (/^column(N)?4:/.test(str)) {
+    if (/^column(N)?\d+:/.test(str)) {
       const outerLabel = str.slice(0, str.indexOf(":"));
       const rest = str.slice(str.indexOf(":") + 1).trim();
       const sub = parseLabeled(rest);

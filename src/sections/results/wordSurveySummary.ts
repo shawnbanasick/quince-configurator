@@ -12,38 +12,61 @@ import { processRating10Summary } from "./surveySummary/processRating10Summary";
 
 type RecordMap = Record<string, any>;
 
+/**
+ * Builds a clean { itemNum1: value, itemNum2: value, ... } map for a single
+ * participant, with values normalized to strings so downstream summary
+ * processors keep working exactly as before.
+ *
+ * New format: item.itemNums is already this shape, but with typed values
+ * (numbers, arrays for checkbox/select answers) instead of strings.
+ *
+ * Legacy format: participant properties were flat strings like
+ * "itemNum4: some text", filtered by prefix and split on ":".
+ */
+function extractItemNums(item: RecordMap): Record<string, string> {
+  if (
+    item.itemNums &&
+    typeof item.itemNums === "object" &&
+    !Array.isArray(item.itemNums)
+  ) {
+    const normalized: Record<string, string> = {};
+    Object.entries(item.itemNums).forEach(([key, value]: [string, any]) => {
+      normalized[key] = Array.isArray(value) ? value.join(",") : String(value);
+    });
+    return normalized;
+  }
+
+  const legacyEntries = Object.fromEntries(
+    Object.entries(item).filter(
+      ([_, value]) => typeof value === "string" && value.startsWith("itemNum"),
+    ),
+  );
+
+  const tempObj: Record<string, string> = {};
+  Object.keys(legacyEntries).forEach((key) => {
+    let temp1 = legacyEntries[key].split(":");
+    let newKey = temp1[0];
+    let newValue = temp1[1];
+    tempObj[newKey] = newValue;
+  });
+  return tempObj;
+}
+
 const wordSurveySummary = (
   data: RecordMap,
   surveyQuestionsArray,
   partNames,
   showSurvey,
-  surveySummaryLangObj
+  surveySummaryLangObj,
 ): Paragraph[] => {
   const workingData = cloneDeep(data);
-
-  function filterByItemNum1(obj: RecordMap): Record<string, string> {
-    return Object.fromEntries(
-      Object.entries(obj).filter(
-        ([_, value]) => typeof value === "string" && value.startsWith("itemNum")
-      )
-    );
-  }
 
   let itemText = surveySummaryLangObj.item;
 
   // filter data
   const filteredData: any[] = [];
   workingData.forEach((item) => {
-    let surveyItems = filterByItemNum1(item);
-    let keys = Object.keys(surveyItems);
-    let tempObj = {};
-    keys.forEach((key) => {
-      let temp1 = surveyItems[key].split(":");
-      let newKey = temp1[0];
-      let newValue = temp1[1];
-      tempObj[newKey] = newValue;
-    });
-    filteredData.push(tempObj);
+    filteredData.push(extractItemNums(item));
   });
 
   // for each participant
@@ -62,7 +85,7 @@ const wordSurveySummary = (
         pageBreakBefore: true,
         heading: HeadingLevel.HEADING_1,
         thematicBreak: true,
-      })
+      }),
     );
   }
 
@@ -74,7 +97,9 @@ const wordSurveySummary = (
       if (item.surveyQuestionType === "information") {
         let text = surveySummaryLangObj.information;
         try {
-          paragraphs.push(...processInformationSummary(item, index, text, itemText));
+          paragraphs.push(
+            ...processInformationSummary(item, index, text, itemText),
+          );
         } catch (error) {
           console.error("Error processing Information item:", error);
         }
@@ -83,7 +108,16 @@ const wordSurveySummary = (
       if (item.surveyQuestionType === "text") {
         let text = surveySummaryLangObj.shortText;
         try {
-          paragraphs.push(...processTextSummary(filteredData, partNames, item, index, text, itemText));
+          paragraphs.push(
+            ...processTextSummary(
+              filteredData,
+              partNames,
+              item,
+              index,
+              text,
+              itemText,
+            ),
+          );
         } catch (error) {
           console.error("Error processing Short Text item:", error);
         }
@@ -92,7 +126,16 @@ const wordSurveySummary = (
       if (item.surveyQuestionType === "textarea") {
         let text = surveySummaryLangObj.longText;
         try {
-          paragraphs.push(...processTextareaSummary(filteredData, partNames, item, index, text, itemText));
+          paragraphs.push(
+            ...processTextareaSummary(
+              filteredData,
+              partNames,
+              item,
+              index,
+              text,
+              itemText,
+            ),
+          );
         } catch (error) {
           console.error("Error processing Long Text item:", error);
         }
@@ -101,7 +144,16 @@ const wordSurveySummary = (
       if (item.surveyQuestionType === "radio") {
         let text = surveySummaryLangObj.radio;
         try {
-          paragraphs.push(...processRadioSummary(filteredData, partNames, item, index, text, itemText));
+          paragraphs.push(
+            ...processRadioSummary(
+              filteredData,
+              partNames,
+              item,
+              index,
+              text,
+              itemText,
+            ),
+          );
         } catch (error) {
           console.error("Error processing Radio Button item:", error);
         }
@@ -110,7 +162,16 @@ const wordSurveySummary = (
       if (item.surveyQuestionType === "select") {
         let text = `${surveySummaryLangObj.select} (${surveySummaryLangObj.multipleResponsesPossible})`;
         try {
-          paragraphs.push(...processSelectSummary(filteredData, partNames, item, index, text, itemText));
+          paragraphs.push(
+            ...processSelectSummary(
+              filteredData,
+              partNames,
+              item,
+              index,
+              text,
+              itemText,
+            ),
+          );
         } catch (error) {
           console.error("Error processing Selection item:", error);
         }
@@ -119,7 +180,16 @@ const wordSurveySummary = (
       if (item.surveyQuestionType === "checkbox") {
         let text = `${surveySummaryLangObj.checkbox} (${surveySummaryLangObj.multipleResponsesPossible})`;
         try {
-          paragraphs.push(...processCheckboxSummary(filteredData, partNames, item, index, text, itemText));
+          paragraphs.push(
+            ...processCheckboxSummary(
+              filteredData,
+              partNames,
+              item,
+              index,
+              text,
+              itemText,
+            ),
+          );
         } catch (error) {
           console.error("Error processing Checkbox item:", error);
         }
@@ -128,7 +198,16 @@ const wordSurveySummary = (
       if (item.surveyQuestionType === "rating2") {
         let text = surveySummaryLangObj.rating2;
         try {
-          paragraphs.push(...processRating2Summary(filteredData, partNames, item, index, text, itemText));
+          paragraphs.push(
+            ...processRating2Summary(
+              filteredData,
+              partNames,
+              item,
+              index,
+              text,
+              itemText,
+            ),
+          );
         } catch (error) {
           console.error("Error processing Rating 2 item:", error);
         }
@@ -137,7 +216,16 @@ const wordSurveySummary = (
       if (item.surveyQuestionType === "rating5") {
         let text = surveySummaryLangObj.rating5;
         try {
-          paragraphs.push(...processRating5Summary(filteredData, partNames, item, index, text, itemText));
+          paragraphs.push(
+            ...processRating5Summary(
+              filteredData,
+              partNames,
+              item,
+              index,
+              text,
+              itemText,
+            ),
+          );
         } catch (error) {
           console.error("Error processing Rating 5 item:", error);
         }
@@ -146,7 +234,16 @@ const wordSurveySummary = (
       if (item.surveyQuestionType === "rating10") {
         let text = surveySummaryLangObj.rating10;
         try {
-          paragraphs.push(...processRating10Summary(filteredData, partNames, item, index, text, itemText));
+          paragraphs.push(
+            ...processRating10Summary(
+              filteredData,
+              partNames,
+              item,
+              index,
+              text,
+              itemText,
+            ),
+          );
         } catch (error) {
           console.error("Error processing Rating 10 item:", error);
         }

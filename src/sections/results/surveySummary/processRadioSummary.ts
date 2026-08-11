@@ -51,7 +51,10 @@ const safeStripHtml = (text: string | undefined, fallback = "n/a"): string => {
  */
 let otherValuesObject: any = {};
 let otherValuesObjectKeys: any = [];
-const extractResponseValues = (filteredData: DataEntry[], itemIndex: number): string[] => {
+const extractResponseValues = (
+  filteredData: DataEntry[],
+  itemIndex: number,
+): string[] => {
   const key = `itemNum${itemIndex + 1}`;
   const allResponses: string[] = [];
 
@@ -81,8 +84,6 @@ const extractResponseValues = (filteredData: DataEntry[], itemIndex: number): st
     }
   });
   otherValuesObjectKeys = Object.keys(otherValuesObject);
-  console.log("otherValuesObject", otherValuesObject);
-  console.log("otherValuesObjectKeys", otherValuesObjectKeys);
   return allResponses;
 };
 
@@ -107,7 +108,10 @@ const calculateOptionStats = (
       count = responseCounts.get("no response") || 0;
     }
 
-    const percentage = totalResponses > 0 ? roundToDecimals((count / totalResponses) * 100, 1) : 0;
+    const percentage =
+      totalResponses > 0
+        ? roundToDecimals((count / totalResponses) * 100, 1)
+        : 0;
 
     return {
       option,
@@ -205,7 +209,11 @@ const createOtherValuesParagraphs = (
     });
   });
 
-  optionParagraphs.splice(optionParagraphs.length - 1, 0, ...otherValuesParagraphs);
+  optionParagraphs.splice(
+    optionParagraphs.length - 1,
+    0,
+    ...otherValuesParagraphs,
+  );
 
   return optionParagraphs;
 };
@@ -227,7 +235,9 @@ const processRadioSummary = (
   }
 
   // Parse answer options
-  const answerOptions = item.options.split(";;;").filter((option) => option.trim());
+  const answerOptions = item.options
+    .split(";;;")
+    .filter((option) => option.trim());
 
   if (answerOptions.length === 0) {
     throw new Error("No valid answer options found");
@@ -240,7 +250,11 @@ const processRadioSummary = (
   const responseCounts = countOccurrences(responseValues);
 
   // Calculate statistics
-  const optionStats = calculateOptionStats(answerOptions, responseCounts, totalResponses);
+  const optionStats = calculateOptionStats(
+    answerOptions,
+    responseCounts,
+    totalResponses,
+  );
 
   // Log for debugging (consider using proper logging in production)
   console.log(`Item ${index + 1} statistics:`, {

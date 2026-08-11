@@ -170,8 +170,6 @@ const generateConfigXml = () => {
     const open = `   <item id="survey">\n`;
     const close = `   </item>\n\n`;
 
-    console.log(JSON.stringify(surveyQuestionsArray, null, 2));
-
     for (let i = 0; i < surveyQuestionsArray.length; i += 1) {
       let item;
       let label = "";
@@ -183,7 +181,10 @@ const generateConfigXml = () => {
         let restrictedString;
         let limitedString;
         let limitLengthNum;
-        if (itemObject.restricted === true || itemObject.restricted === "true") {
+        if (
+          itemObject.restricted === true ||
+          itemObject.restricted === "true"
+        ) {
           restrictedString = `restricted="true"`;
         } else {
           restrictedString = `restricted="false"`;
@@ -191,7 +192,11 @@ const generateConfigXml = () => {
         if (itemObject.limited === true || itemObject.limited === "true") {
           limitedString = `true`;
           limitLengthNum = +itemObject.limitLength;
-          if (limitLengthNum === undefined || limitLengthNum === null || isNaN(limitLengthNum))
+          if (
+            limitLengthNum === undefined ||
+            limitLengthNum === null ||
+            isNaN(limitLengthNum)
+          )
             limitLengthNum = itemObject.limitLength;
         } else {
           limitedString = `false`;
@@ -225,7 +230,14 @@ const generateConfigXml = () => {
         label = `        <label>${encodeHTML(itemObject.label)}</label>\n`;
         const note = `        <note>${encodeHTML(itemObject.note)}</note>\n`;
         const placeholder = `        <placeholder>input comment here</placeholder>\n`;
-        item = accumulatorString.concat(open, input, label, note, placeholder, close);
+        item = accumulatorString.concat(
+          open,
+          input,
+          label,
+          note,
+          placeholder,
+          close,
+        );
       }
 
       // for RADIO items

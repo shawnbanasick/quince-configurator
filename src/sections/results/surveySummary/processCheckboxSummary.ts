@@ -52,7 +52,10 @@ const safeStripHtml = (text: string | undefined, fallback = "n/a"): string => {
  */
 let otherValuesObject: any = {};
 let otherValuesObjectKeys: any = [];
-const extractResponseValues = (filteredData: DataEntry[], itemIndex: number): string[] => {
+const extractResponseValues = (
+  filteredData: DataEntry[],
+  itemIndex: number,
+): string[] => {
   const key = `itemNum${itemIndex + 1}`;
   const allResponses: string[] = [];
 
@@ -82,8 +85,6 @@ const extractResponseValues = (filteredData: DataEntry[], itemIndex: number): st
     }
   });
   otherValuesObjectKeys = Object.keys(otherValuesObject);
-  console.log("otherValuesObject", otherValuesObject);
-  console.log("otherValuesObjectKeys", otherValuesObjectKeys);
   return allResponses;
 };
 
@@ -108,7 +109,10 @@ const calculateOptionStats = (
       count = responseCounts.get("no response") || 0;
     }
 
-    const percentage = totalResponses > 0 ? roundToDecimals((count / totalResponses) * 100, 1) : 0;
+    const percentage =
+      totalResponses > 0
+        ? roundToDecimals((count / totalResponses) * 100, 1)
+        : 0;
 
     return {
       option,
@@ -178,7 +182,9 @@ const createOptionParagraphs = (
       totalResponseCount > optionStats.reduce((sum, s) => sum + s.count, 0)
     ) {
       const responsePercentage =
-        totalResponseCount > 0 ? ((stat.count / totalResponseCount) * 100).toFixed(1) : "0.0";
+        totalResponseCount > 0
+          ? ((stat.count / totalResponseCount) * 100).toFixed(1)
+          : "0.0";
       countText += ` [${responsePercentage}% of responses]`;
     }
 
@@ -221,7 +227,11 @@ const createOtherValuesParagraphs = (
     });
   });
 
-  optionParagraphs.splice(optionParagraphs.length - 1, 0, ...otherValuesParagraphs);
+  optionParagraphs.splice(
+    optionParagraphs.length - 1,
+    0,
+    ...otherValuesParagraphs,
+  );
 
   return optionParagraphs;
 };
@@ -244,7 +254,9 @@ const processCheckboxSummary = (
   }
 
   // Parse answer options
-  const answerOptions = item.options.split(";;;").filter((option) => option.trim());
+  const answerOptions = item.options
+    .split(";;;")
+    .filter((option) => option.trim());
 
   if (answerOptions.length === 0) {
     throw new Error("No valid answer options found");
@@ -276,7 +288,10 @@ const processCheckboxSummary = (
 
   // Generate paragraphs
   const headerParagraphs = createHeaderParagraphs(item, index, text, itemText);
-  let optionParagraphs = createOptionParagraphs(optionStats, totalResponseCount);
+  let optionParagraphs = createOptionParagraphs(
+    optionStats,
+    totalResponseCount,
+  );
 
   if (otherValuesObjectKeys.length > 0) {
     optionParagraphs = createOtherValuesParagraphs(

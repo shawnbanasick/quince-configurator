@@ -10,7 +10,7 @@ import { wordPostsort } from "./wordPostsort";
 import { wordSurvey } from "./wordSurvey";
 import { wordPartStatements } from "./wordPartStatements";
 import { wordStatementAnalysis } from "./wordStatementAnalysis";
-// import { wordSurveySummary } from "./wordSurveySummary";
+import { wordSurveySummary } from "./wordSurveySummary";
 import { useStore } from "../../GlobalState/useStore";
 import { getDocParagraphStyles } from "./getDocParagraphStyles";
 import { getDocNumberingStyles } from "./getDocNumberingStyles";
@@ -77,9 +77,8 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
     return;
   }
 
-  const projectName2: string[] = data?.[0]?.r1?.split("-") ?? [];
-  const projectName: string = (projectName2?.[0] ?? "").slice(15).trim();
-
+  const projectName2: string[] = data?.[0]?.projectName?.split("-") ?? [];
+  const projectName: string = (projectName2?.[0] ?? "").trim();
   const newHeaderArray = calcNewHeaderArray(mapInputQsortPattern);
   const statementsArray = formatRawStatements(currentStatements);
   const numStatements = statementsArray.length;
@@ -197,6 +196,7 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
     if (showSurvey) {
       surveyText = wordSurvey(data, surveyQuestionsArray, surveyLangObj);
     }
+
     if (showPostsort) {
       postsortText = wordPostsort(data, currentStatements, postsortLangObj);
     }
@@ -245,13 +245,13 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
       statementAnalysisLangObj,
     );
 
-    // let summaryArray = wordSurveySummary(
-    //   data,
-    //   surveyQuestionsArray,
-    //   [...(props.partNames ?? [])],
-    //   showSurvey,
-    //   surveySummaryLangObj,
-    // );
+    let summaryArray = wordSurveySummary(
+      data,
+      surveyQuestionsArray,
+      [...(props.partNames ?? [])],
+      showSurvey,
+      surveySummaryLangObj,
+    );
 
     let closingMessage = [
       new Paragraph({
@@ -310,8 +310,8 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
             ...wordIdText,
             ...statementsArray,
             ...statementsAnalysisArray,
-            // ...summaryArray,
-            // ...closingMessage,
+            ...summaryArray,
+            ...closingMessage,
           ],
         },
       ],

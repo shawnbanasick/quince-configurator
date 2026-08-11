@@ -99,40 +99,59 @@ const getSetMapColColorsStyle = (state: State) => state.setMapColColorsStyle;
 const getcolTextLabelsArray = (state: State) => state.colTextLabelsArray;
 const getSetcolTextLabelsArray = (state: State) => state.setcolTextLabelsArray;
 const getNumMapTotalColumns = (state: State) => state.numMapTotalColumns;
-const getMobileHeadersDefaultLabels = (state: State) => state.mobileHeadersDefaultLabels;
-const getSetMobileHeadersDefaultLabels = (state: State) => state.setMobileHeadersDefaultLabels;
+const getMobileHeadersDefaultLabels = (state: State) =>
+  state.mobileHeadersDefaultLabels;
+const getSetMobileHeadersDefaultLabels = (state: State) =>
+  state.setMobileHeadersDefaultLabels;
 const getMobileHeadersDefault5 = (state: State) => state.mobileHeadersDefault5;
 const getMobileHeadersDefault7 = (state: State) => state.mobileHeadersDefault7;
 const getMobileHeadersDefault9 = (state: State) => state.mobileHeadersDefault9;
-const getMobileHeadersDefault11 = (state: State) => state.mobileHeadersDefault11;
-const getMobileHeadersDefault13 = (state: State) => state.mobileHeadersDefault13;
+const getMobileHeadersDefault11 = (state: State) =>
+  state.mobileHeadersDefault11;
+const getMobileHeadersDefault13 = (state: State) =>
+  state.mobileHeadersDefault13;
 const getNumStatements = (state: State) => state.numStatements;
-const getAllStatementsAllocated = (state: State) => state.allStatementsAllocated;
+const getAllStatementsAllocated = (state: State) =>
+  state.allStatementsAllocated;
 const getSetEmojiArray = (state: State) => state.setEmojiArray;
 const getEmojiArray = (state: State) => state.emojiArray;
 const getSetEmojiArrayType = (state: State) => state.setEmojiArrayType;
 
-const getUseColLabelEmojiPresort = (state: State) => state.useColLabelEmojiPresort;
-const getSetUseColLabelEmojiPresort = (state: State) => state.setUseColLabelEmojiPresort;
+const getUseColLabelEmojiPresort = (state: State) =>
+  state.useColLabelEmojiPresort;
+const getSetUseColLabelEmojiPresort = (state: State) =>
+  state.setUseColLabelEmojiPresort;
 const getUseColLabelNums = (state: State) => state.useColLabelNums;
 const getSetUseColLabelNums = (state: State) => state.setUseColLabelNums;
 const getUseColLabelText = (state: State) => state.useColLabelText;
 const getSetUseColLabelText = (state: State) => state.setUseColLabelText;
 const getUseColLabelEmoji = (state: State) => state.useColLabelEmoji;
 const getSetUseColLabelEmoji = (state: State) => state.setUseColLabelEmoji;
-const getUseColLabelNumsPostsort = (state: State) => state.useColLabelNumsPostsort;
-const getSetUseColLabelNumsPostsort = (state: State) => state.setUseColLabelNumsPostsort;
-const getUseColLabelTextPostsort = (state: State) => state.useColLabelTextPostsort;
-const getSetUseColLabelTextPostsort = (state: State) => state.setUseColLabelTextPostsort;
-const getUseColLabelEmojiPostsort = (state: State) => state.useColLabelEmojiPostsort;
-const getSetUseColLabelEmojiPostsort = (state: State) => state.setUseColLabelEmojiPostsort;
+const getUseColLabelNumsPostsort = (state: State) =>
+  state.useColLabelNumsPostsort;
+const getSetUseColLabelNumsPostsort = (state: State) =>
+  state.setUseColLabelNumsPostsort;
+const getUseColLabelTextPostsort = (state: State) =>
+  state.useColLabelTextPostsort;
+const getSetUseColLabelTextPostsort = (state: State) =>
+  state.setUseColLabelTextPostsort;
+const getUseColLabelEmojiPostsort = (state: State) =>
+  state.useColLabelEmojiPostsort;
+const getSetUseColLabelEmojiPostsort = (state: State) =>
+  state.setUseColLabelEmojiPostsort;
 
-const getPresortEmojiPositiveIndex = (state: State) => state.presortEmojiPositiveIndex;
-const getPresortEmojiNegativeIndex = (state: State) => state.presortEmojiNegativeIndex;
-const getPresortEmojiNeutralIndex = (state: State) => state.presortEmojiNeutralIndex;
-const getSetPresortEmojiPositiveIndex = (state: State) => state.setPresortEmojiPositiveIndex;
-const getSetPresortEmojiNegativeIndex = (state: State) => state.setPresortEmojiNegativeIndex;
-const getSetPresortEmojiNeutralIndex = (state: State) => state.setPresortEmojiNeutralIndex;
+const getPresortEmojiPositiveIndex = (state: State) =>
+  state.presortEmojiPositiveIndex;
+const getPresortEmojiNegativeIndex = (state: State) =>
+  state.presortEmojiNegativeIndex;
+const getPresortEmojiNeutralIndex = (state: State) =>
+  state.presortEmojiNeutralIndex;
+const getSetPresortEmojiPositiveIndex = (state: State) =>
+  state.setPresortEmojiPositiveIndex;
+const getSetPresortEmojiNegativeIndex = (state: State) =>
+  state.setPresortEmojiNegativeIndex;
+const getSetPresortEmojiNeutralIndex = (state: State) =>
+  state.setPresortEmojiNeutralIndex;
 
 const Map: React.FC = () => {
   const { t } = useTranslation();
@@ -160,7 +179,9 @@ const Map: React.FC = () => {
   const setcolTextLabelsArray = useStore(getSetcolTextLabelsArray);
   const numMapTotalColumns = useStore(getNumMapTotalColumns);
   const mobileHeadersDefaultLabels = useStore(getMobileHeadersDefaultLabels);
-  const setMobileHeadersDefaultLabels = useStore(getSetMobileHeadersDefaultLabels);
+  const setMobileHeadersDefaultLabels = useStore(
+    getSetMobileHeadersDefaultLabels,
+  );
   const mobileHeadersDefault5 = useStore(getMobileHeadersDefault5);
   const mobileHeadersDefault7 = useStore(getMobileHeadersDefault7);
   const mobileHeadersDefault9 = useStore(getMobileHeadersDefault9);
@@ -174,13 +195,18 @@ const Map: React.FC = () => {
   const presortEmojiPositiveIndex = useStore(getPresortEmojiPositiveIndex);
   const presortEmojiNegativeIndex = useStore(getPresortEmojiNegativeIndex);
   const presortEmojiNeutralIndex = useStore(getPresortEmojiNeutralIndex);
-  const setPresortEmojiPositiveIndex = useStore(getSetPresortEmojiPositiveIndex);
-  const setPresortEmojiNegativeIndex = useStore(getSetPresortEmojiNegativeIndex);
+  const setPresortEmojiPositiveIndex = useStore(
+    getSetPresortEmojiPositiveIndex,
+  );
+  const setPresortEmojiNegativeIndex = useStore(
+    getSetPresortEmojiNegativeIndex,
+  );
   const setPresortEmojiNeutralIndex = useStore(getSetPresortEmojiNeutralIndex);
 
   const isBeginnerMode = displayMode === "beginner";
 
-  const [isSortEmojiSwitchDisabled, setIsSortEmojiSwitchDisabled] = useState(false);
+  const [isSortEmojiSwitchDisabled, setIsSortEmojiSwitchDisabled] =
+    useState(false);
   // mangage disable column label switches
   // const [isSwitchDisabled, setIsSwitchDisabled] = useState(true);
   // let sortEmojiSwitchDisabled = true;
@@ -188,7 +214,9 @@ const Map: React.FC = () => {
   //   sortEmojiSwitchDisabled = false;
   // }
 
-  const [presortEmojiSelectorArray, setPresortEmojiSelectorArray] = useState<any[]>([]);
+  const [presortEmojiSelectorArray, setPresortEmojiSelectorArray] = useState<
+    any[]
+  >([]);
 
   // Color palette handlers
   const colorPaletteActions = {
@@ -207,7 +235,8 @@ const Map: React.FC = () => {
 
   const handleMapColorPaletteChange = (value: string): void => {
     setMapColorPalette(value);
-    const action = colorPaletteActions[value as keyof typeof colorPaletteActions];
+    const action =
+      colorPaletteActions[value as keyof typeof colorPaletteActions];
     if (action) {
       action();
     }
@@ -438,7 +467,9 @@ const Map: React.FC = () => {
       <div className="flex flex-col justify-center items-center text-center space-y-4">
         <div>
           {/* <h3 className="text-lg font-semibold text-gray-900 mb-2">{children}</h3> */}
-          <div className="text-sm text-gray-600 mb-4 min-h-[60px]">{description}</div>
+          <div className="text-sm text-gray-600 mb-4 min-h-[60px]">
+            {description}
+          </div>
         </div>
         <div className="flex justify-center items-center w-full">
           {component || (
@@ -499,15 +530,25 @@ const Map: React.FC = () => {
     );
   };
 
-  const getHeaderStatus = (): { status: "success" | "warning" | "error"; message: string } => {
+  const getHeaderStatus = (): {
+    status: "success" | "warning" | "error";
+    message: string;
+  } => {
     if (numStatements === 0) {
       return { status: "warning", message: t("noStatementsLoaded") };
     }
 
     if (numMissingHeaders > 0)
-      return { status: "error", message: `${t("missingLabels")}: ${numMissingHeaders}` };
-    if (numMissingHeaders === 0) return { status: "success", message: t("labelsMatch") };
-    return { status: "error", message: `${t("excessLabels")}: ${Math.abs(numMissingHeaders)}` };
+      return {
+        status: "error",
+        message: `${t("missingLabels")}: ${numMissingHeaders}`,
+      };
+    if (numMissingHeaders === 0)
+      return { status: "success", message: t("labelsMatch") };
+    return {
+      status: "error",
+      message: `${t("excessLabels")}: ${Math.abs(numMissingHeaders)}`,
+    };
   };
 
   const headerStatus = getHeaderStatus();
@@ -564,7 +605,9 @@ const Map: React.FC = () => {
               </svg>
             </div>
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">{t("mapPageTitle")}</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            {t("mapPageTitle")}
+          </h1>
           <div className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             {t("mapPageTitleDescription")}
           </div>
@@ -614,7 +657,10 @@ const Map: React.FC = () => {
 
         {/* Action Buttons Section */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <ActionButton description={t("uploadMapDescription")} component={<UploadAndReadXmlMap />}>
+          <ActionButton
+            description={t("uploadMapDescription")}
+            component={<UploadAndReadXmlMap />}
+          >
             Upload Map File
           </ActionButton>
 
@@ -623,7 +669,12 @@ const Map: React.FC = () => {
             onClick={handleDownloadMap}
             variant="secondary"
           >
-            <svg className="max-w-[30px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg
+              className="max-w-[30px]"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -638,7 +689,9 @@ const Map: React.FC = () => {
         {/* Map Input Section */}
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden mb-8">
           <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-8">
-            <div className="text-2xl font-semibold mb-2">{t("columnsLayout")}</div>
+            <div className="text-2xl font-semibold mb-2">
+              {t("columnsLayout")}
+            </div>
             <div className="text-purple-100">{t("columnsLayoutSubTitle")}</div>
           </div>
           <div className="pl-11 mt-4">{t("mapInputElementTitle")}</div>
@@ -672,8 +725,12 @@ const Map: React.FC = () => {
         <div className="bg-white rounded-2xl shadow-xl">
           <div className="rounded-tr-2xl rounded-tl-2xl bg-gradient-to-r h-[130px] from-blue-500 to-blue-600 text-white p-8">
             <div className="flex items-center justify-between ">
-              <div className="text-2xl font-semibold">{t("columnLabelsBoxTitle")}</div>
-              <StatusBadge status={headerStatus.status}>{headerStatus.message}</StatusBadge>
+              <div className="text-2xl font-semibold">
+                {t("columnLabelsBoxTitle")}
+              </div>
+              <StatusBadge status={headerStatus.status}>
+                {headerStatus.message}
+              </StatusBadge>
             </div>
             <div className="mb-8">{t("columnLabelsboxSubTitle")}</div>
           </div>
@@ -721,7 +778,9 @@ const Map: React.FC = () => {
                   labelPosition="left"
                   // disabled={sortEmojiSwitchDisabled}
                   checked={useColLabelEmojiPresort}
-                  onChange={() => setUseColLabelEmojiPresort(!useColLabelEmojiPresort)}
+                  onChange={() =>
+                    setUseColLabelEmojiPresort(!useColLabelEmojiPresort)
+                  }
                   variant="green"
                 />
               </div>
@@ -753,10 +812,6 @@ const Map: React.FC = () => {
                     checked={useColLabelText}
                     onChange={() => {
                       setUseColLabelText(!useColLabelText);
-                      // setcolTextLabelsArray(colTextLabelsArray);
-                      console.log("useColLabelText", useColLabelText);
-
-                      console.log("mobileHeadersDefaultLabels", mobileHeadersDefaultLabels);
                     }}
                     // disabled={isSwitchDisabled}
                     variant="green"
@@ -775,7 +830,8 @@ const Map: React.FC = () => {
                   tabIndex="0"
                 />
                 <div className="text-sm ml-6 text-gray-500 ">
-                  {t("sortTextInputSubTitle")} {t("totalNeeded")}: {numMapTotalColumns}
+                  {t("sortTextInputSubTitle")} {t("totalNeeded")}:{" "}
+                  {numMapTotalColumns}
                 </div>
 
                 <div>
@@ -800,7 +856,9 @@ const Map: React.FC = () => {
                   label={t("usePostsortNumbers")}
                   labelPosition="left"
                   checked={useColLabelNumsPostsort}
-                  onChange={() => setUseColLabelNumsPostsort(!useColLabelNumsPostsort)}
+                  onChange={() =>
+                    setUseColLabelNumsPostsort(!useColLabelNumsPostsort)
+                  }
                   // disabled={isSwitchDisabled}
                   variant="green"
                 />
@@ -810,7 +868,9 @@ const Map: React.FC = () => {
                   label={t("usePostsortText")}
                   labelPosition="left"
                   checked={useColLabelTextPostsort}
-                  onChange={() => setUseColLabelTextPostsort(!useColLabelTextPostsort)}
+                  onChange={() =>
+                    setUseColLabelTextPostsort(!useColLabelTextPostsort)
+                  }
                   // disabled={isSwitchDisabled}
                   variant="green"
                 />
@@ -822,7 +882,9 @@ const Map: React.FC = () => {
                     labelPosition="left"
                     // disabled={sortEmojiSwitchDisabled}
                     checked={useColLabelEmojiPostsort}
-                    onChange={() => setUseColLabelEmojiPostsort(!useColLabelEmojiPostsort)}
+                    onChange={() =>
+                      setUseColLabelEmojiPostsort(!useColLabelEmojiPostsort)
+                    }
                     variant="green"
                   />
                 </div>

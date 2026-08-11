@@ -1,11 +1,7 @@
 interface SplitOptions {
-  /** Maximum number of parts to return (splits from left) */
   maxParts?: number;
-  /** Whether to trim whitespace from each part */
   trim?: boolean;
-  /** Whether to filter out empty strings */
   filterEmpty?: boolean;
-  /** Default value to return if input is invalid */
   defaultValue?: string[];
 }
 
@@ -19,9 +15,14 @@ interface SplitOptions {
 const safeSplit = (
   input: unknown,
   delimiter: string = ":",
-  options: SplitOptions = {}
+  options: SplitOptions = {},
 ): string[] => {
-  const { maxParts, trim = false, filterEmpty = false, defaultValue = [] } = options;
+  const {
+    maxParts,
+    trim = false,
+    filterEmpty = false,
+    defaultValue = [],
+  } = options;
 
   // Input validation
   if (input === null || input === undefined) {
@@ -95,69 +96,6 @@ const safeSplit = (
 
   return parts;
 };
-
-// Example usage:
-/*
-const examples = () => {
-  // Split on colon
-  console.log(safeSplit("a:b:c", ":")); 
-  // ["a", "b", "c"]
-
-  // Split on comma
-  console.log(safeSplit("apple,banana,cherry", ",")); 
-  // ["apple", "banana", "cherry"]
-
-  // Split on pipe with trim
-  console.log(safeSplit(" a | b | c ", "|", { trim: true })); 
-  // ["a", "b", "c"]
-
-  // Split on space
-  console.log(safeSplit("hello world test", " ")); 
-  // ["hello", "world", "test"]
-
-  // Split on multi-character delimiter
-  console.log(safeSplit("one::two::three", "::")); 
-  // ["one", "two", "three"]
-
-  // With maxParts
-  console.log(safeSplit("a-b-c-d-e", "-", { maxParts: 3 })); 
-  // ["a", "b", "c-d-e"]
-
-  // Filter empty parts
-  console.log(safeSplit("a,,b,,,c", ",", { filterEmpty: true })); 
-  // ["a", "b", "c"]
-
-  // Handle invalid input
-  console.log(safeSplit(null, ",", { defaultValue: ["default"] })); 
-  // ["default"]
-
-  // Split on newline
-  console.log(safeSplit("line1\nline2\nline3", "\n")); 
-  // ["line1", "line2", "line3"]
-
-  // Split on tab
-  console.log(safeSplit("col1\tcol2\tcol3", "\t")); 
-  // ["col1", "col2", "col3"]
-
-  // Handle edge cases
-  console.log(safeSplit("", ",")); 
-  // [""]
-  
-  console.log(safeSplit("no-delimiters", ",")); 
-  // ["no-delimiters"]
-
-  // Combined options
-  console.log(safeSplit(" a ; ; b ; c ", ";", { 
-    trim: true, 
-    filterEmpty: true 
-  })); 
-  // ["a", "b", "c"]
-
-  // Split on dot (useful for file extensions)
-  console.log(safeSplit("file.name.txt", ".", { maxParts: 2 })); 
-  // ["file", "name.txt"]
-};
-*/
 
 export { safeSplit };
 export type { SplitOptions };
