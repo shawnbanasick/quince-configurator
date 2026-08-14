@@ -4,7 +4,6 @@ import { useStore } from "../../globalState/useStore";
 const generateConfigXml = () => {
   const initialScreen = useStore.getState().initialScreen;
   let studyTitle = useStore.getState().studyTitle;
-  const version = useStore.getState().version;
   const imageFormat = useStore.getState().imageFormat;
   const emailAddress = useStore.getState().emailAddress;
   const linkToSecondProject = useStore.getState().linkToSecondProject;
@@ -35,6 +34,8 @@ const generateConfigXml = () => {
   const minCommentLength = useStore.getState().minCommentLength;
   const allowUnforcedSorts = useStore.getState().allowUnforcedSorts;
   const preventMobileAccess = useStore.getState().preventMobileAccess;
+  const xmlFileVersion = useStore.getState().xmlFileVersion;
+  const xmlIterationDate = useStore.getState().xmlIterationDate;
 
   // SAVE FOR LATER RESTORATION
   //  <item id="allowUnforcedSorts">${allowUnforcedSorts}</item>
@@ -77,7 +78,7 @@ const generateConfigXml = () => {
 
   const data1 = `<?xml version="1.0" encoding="UTF-8"?>
 
-   <config version="${version}" htmlParse="false">\n`;
+   <config version="${xmlFileVersion}" htmlParse="false">\n`;
 
   const data2 = `
    <!-- HIDDEN OPTIONS - DO NOT DELETE OR CHANGE -->
@@ -99,8 +100,8 @@ const generateConfigXml = () => {
    <item id="sortDirection">positive</item> 
 
    <!-- 0. FILE INFORMATION -->
-   <info order="0-a" id="configFileVersion">1.0.0</info>
-   <info order="0-b" id="iterationDate">2025-08-31</info>
+   <info order="0-a" id="configFileVersion">${xmlFileVersion}</info>
+   <info order="0-b" id="iterationDate">${xmlIterationDate}</info>
    <info order="1--" id="creationDate">${creationDate}</info> 
 
    <!-- 1. STUDY TITLE -->

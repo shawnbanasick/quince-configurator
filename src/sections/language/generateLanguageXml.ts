@@ -7,6 +7,8 @@ const generateLanguageXml = () => {
   if (studyTitle === null || studyTitle === undefined) {
     studyTitle = "my Q study";
   }
+  let xmlFileVersion = useStore.getState().xmlFileVersion;
+  let xmlIterationDate = useStore.getState().xmlIterationDate;
 
   let getCurrentTimestamp = () => {
     const now = new Date();
@@ -23,11 +25,11 @@ const generateLanguageXml = () => {
 
   let data = `<?xml version="1.0" encoding="UTF-8"?>
 
-   <language version="${useStore.getState().version}" htmlParse="true">;
+   <language version="${xmlFileVersion}" htmlParse="true">;
 
         <!-- 0. FILE INFORMATION -->
-        <info order="0-1" id="languageFileVersion">1.0.0</info>
-        <info order="0-2" id="iterationDate">2025-08-31</info>
+        <info order="0-1" id="languageFileVersion">${xmlFileVersion}</info>
+        <info order="0-2" id="iterationDate">${xmlIterationDate}</info>
         <info order="0-3" id="studyTitle">${studyTitle}</info> 
         <info order="0-4" id="creationDate">${creationDate}</info> 
 
@@ -138,15 +140,15 @@ const generateLanguageXml = () => {
         <item order= "7-3" id="presortAgreement">${encodeHTML(
           useStore.getState().presortAgreement,
         )}</item>
-         <item order= "7-3b" id="press1">${encodeHTML(useStore.getState().press1)}</item>
+        <item order= "7-3b" id="press3">${encodeHTML(useStore.getState().press3)}</item>
         <item order= "7-4" id="presortNeutral">${encodeHTML(
           useStore.getState().presortNeutral,
         )}</item>
-         <item order= "7-4b" id="press2">${encodeHTML(useStore.getState().press2)}</item>
+        <item order= "7-4b" id="press2">${encodeHTML(useStore.getState().press2)}</item>
         <item order= "7-5" id="presortDisagreement">${encodeHTML(
           useStore.getState().presortDisagreement,
         )}</item>
-         <item order= "7-5b" id="press3">${encodeHTML(useStore.getState().press3)}</item>
+        <item order= "7-5b" id="press1">${encodeHTML(useStore.getState().press1)}</item>
         <item order= "7-6" id="presortStatements">${encodeHTML(
           useStore.getState().presortStatements,
         )}</item>
@@ -274,64 +276,61 @@ const generateLanguageXml = () => {
         <item order="10-3" id="mobileThinConditionsOfInstruction">${encodeHTML(
           useStore.getState().mobileThinConditionsOfInstruction,
         )}</item>
-          <item order="10-4" id="mobileThinSelectedText">${encodeHTML(
-            useStore.getState().mobileThinSelectedText,
-          )}</item>
+        <item order="10-4" id="mobileThinSelectedText">${encodeHTML(
+          useStore.getState().mobileThinSelectedText,
+        )}</item>
         <item order="10-5" id="mobileThinSubmitButtonText">${encodeHTML(
           useStore.getState().mobileThinSubmitButtonText,
         )}</item>
-        <item order="10-6" id="mobileGuidanceModalLeft1Header">${encodeHTML(
-          useStore.getState().mobileGuidanceModalLeft1Header,
-        )}</item>
-        <item order="10-7" id="mobileGuidanceModalLeft1Text">${encodeHTML(
-          useStore.getState().mobileGuidanceModalLeft1Text,
-        )}</item>
-        <item order="10-8" id="mobileGuidanceModalRight2Header">${encodeHTML(
-          useStore.getState().mobileGuidanceModalRight2Header,
-        )}</item>
-        <item order="10-9" id="mobileGuidanceModalRight2Text">${encodeHTML(
-          useStore.getState().mobileGuidanceModalRight2Text,
-        )}</item>
-        <item order="10-10" id="mobileGuidanceModalLeft2Header">${encodeHTML(
-          useStore.getState().mobileGuidanceModalLeft2Header,
-        )}</item>
-        <item order="10-11" id="mobileGuidanceModalLeft2Text">${encodeHTML(
-          useStore.getState().mobileGuidanceModalLeft2Text,
-        )}</item>
-        <item order="10-12" id="mobileThinScrollBottomModalHead">${encodeHTML(
-          useStore.getState().mobileThinScrollBottomModalHead,
-        )}</item>
-        <item order="10-13" id="mobileThinScrollBottomModalText">${encodeHTML(
-          useStore.getState().mobileThinScrollBottomModalText,
-        )}</item>
-        <item order="10-14" id="moveTopMobileHead">${encodeHTML(
-          useStore.getState().moveTopMobileHead,
-        )}</item>
-        <item order="10-15" id="moveTopMobileText">${encodeHTML(
-          useStore.getState().moveTopMobileText,
-        )}</item>
-        <item order="10-16" id="moveTopMobileButtonOK">${encodeHTML(
-          useStore.getState().moveTopMobileButtonOK,
-        )}</item>
-        <item order="10-17" id="mobileThinPreventNavModalHead">${encodeHTML(
-          useStore.getState().mobileThinPreventNavModalHead,
-        )}</item>
-        <item order="10-18" id="mobileThinPreventNavModalText">${encodeHTML(
-          useStore.getState().mobileThinPreventNavModalText,
-        )}</item>
-        <item order="10-19" id="mobileThinProcessCompleteMessage">${encodeHTML(
-          useStore.getState().mobileThinProcessCompleteMessage,
-        )}</item>
-        <item order="10-20" id="moveAllTopMobileText">${encodeHTML(
-          useStore.getState().moveAllTopMobileText,
-        )}</item>
-        <item order="10-21" id="mobileGuidanceModalRight1Header">${encodeHTML(
+        <item order="10-6" id="mobileGuidanceModalRight1Header">${encodeHTML(
           useStore.getState().mobileGuidanceModalRight1Header,
         )}</item>
-        <item order="10-22" id="mobileGuidanceModalRight1Text">${encodeHTML(
+        <item order="10-7" id="mobileGuidanceModalRight1Text">${encodeHTML(
           useStore.getState().mobileGuidanceModalRight1Text,
         )}</item>
-
+        <item order="10-8" id="mobileGuidanceModalLeft1Header">${encodeHTML(
+          useStore.getState().mobileGuidanceModalLeft1Header,
+        )}</item>
+        <item order="10-9" id="mobileGuidanceModalLeft1Text">${encodeHTML(
+          useStore.getState().mobileGuidanceModalLeft1Text,
+        )}</item>
+        <item order="10-10" id="mobileGuidanceModalRight2Header">${encodeHTML(
+          useStore.getState().mobileGuidanceModalRight2Header,
+        )}</item>
+        <item order="10-11" id="mobileGuidanceModalRight2Text">${encodeHTML(
+          useStore.getState().mobileGuidanceModalRight2Text,
+        )}</item>
+        <item order="10-12" id="mobileGuidanceModalLeft2Header">${encodeHTML(
+          useStore.getState().mobileGuidanceModalLeft2Header,
+        )}</item>
+        <item order="10-13" id="mobileGuidanceModalLeft2Text">${encodeHTML(
+          useStore.getState().mobileGuidanceModalLeft2Text,
+        )}</item>
+        <item order="10-14" id="mobileThinScrollBottomModalHead">${encodeHTML(
+          useStore.getState().mobileThinScrollBottomModalHead,
+        )}</item>
+        <item order="10-15" id="mobileThinScrollBottomModalText">${encodeHTML(
+          useStore.getState().mobileThinScrollBottomModalText,
+        )}</item>
+        <item order="10-16" id="moveTopMobileHead">${encodeHTML(
+          useStore.getState().moveTopMobileHead,
+        )}</item>
+        <item order="10-17" id="moveAllTopMobileText">${encodeHTML(
+          useStore.getState().moveAllTopMobileText,
+        )}</item>
+        <item order="10-18" id="moveTopMobileButtonOK">${encodeHTML(
+          useStore.getState().moveTopMobileButtonOK,
+        )}</item>
+        <item order="10-19" id="mobileThinPreventNavModalHead">${encodeHTML(
+          useStore.getState().mobileThinPreventNavModalHead,
+        )}</item>
+        <item order="10-20" id="mobileThinPreventNavModalText">${encodeHTML(
+          useStore.getState().mobileThinPreventNavModalText,
+        )}</item>
+        <item order="10-21" id="mobileThinProcessCompleteMessage">${encodeHTML(
+          useStore.getState().mobileThinProcessCompleteMessage,
+        )}</item>
+ 
         <!-- 11. SORT -->
         <item order="11-1" id="sortHelpModalHead">${encodeHTML(
           useStore.getState().sortHelpModalHead,
@@ -393,7 +392,7 @@ const generateLanguageXml = () => {
          useStore.getState().postsortInstructions,
        )}</item>
         <item order="13-5" id="placeholder">${encodeHTML(useStore.getState().placeholder)}</item>
-        <item order="13-6" id="placedOn">${encodeHTML(useStore.getState().postsortPlacedOn)}</item>
+        <item order="13-6" id="postsortPlacedOn">${encodeHTML(useStore.getState().postsortPlacedOn)}</item>
         <item order="13-7" id="postsortAgreement">${encodeHTML(
           useStore.getState().postsortAgreement,
         )}</item>

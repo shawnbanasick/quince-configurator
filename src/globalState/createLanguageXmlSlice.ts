@@ -105,7 +105,7 @@ const createLangXmlSlice = (set) => ({
   initialInstructionPart2: `Next, continue to select the statements that are CLOSEST to your perspective`,
   initialInstructionPart3: `Another set of statements will appear on the screen after you click the orange "Submit" button.`,
   initialInstructionPartNeg1: `Below are the statements you rated positively in the previous step. Now, pick statements that <mark><b>DIFFER THE MOST FROM YOUR PERSPECTIVE</b></mark>.`,
-  initialInstructionPartNeg2: `Next, continue to select the statements that are <mark>DIFFER THE MOST</mark> from your perspective.`,
+  initialInstructionPartNeg2: `Next, continue to select the statements that <mark>DIFFER THE MOST</mark> from your perspective.`,
   finalInstructions: `Refinement process complete. Click on the navigation button on the bottom right side to go to the next stage.`,
   thinningPreventNavModalHead: `Navigation Disabled`,
   thinningPreventNavModalText: `Please finish the refining process before going to the next step.`,
@@ -155,7 +155,8 @@ const createLangXmlSlice = (set) => ({
   mobileSortSwapModalHead: `Swap Statement Rankings?`,
   mobileSortSwapModalText: `Click "Confirm" to swap.`,
   mobileSortSwapModalConfirmButton: `Swap`,
-  mobileSortSwapModalSuccessMessage: "The positions of the statements were successfully swapped.",
+  mobileSortSwapModalSuccessMessage:
+    "The positions of the statements were successfully swapped.",
 
   /*
    ******** 12. POSTSORT  ****************** */

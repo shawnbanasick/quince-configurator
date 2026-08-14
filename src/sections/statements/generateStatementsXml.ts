@@ -16,6 +16,8 @@ const generateStatementsXml = (statements, version) => {
   if (studyTitle === null || studyTitle === undefined) {
     studyTitle = "my Q study";
   }
+  const xmlFileVersion = useStore.getState().xmlFileVersion;
+  const xmlIterationDate = useStore.getState().xmlIterationDate;
 
   let getCurrentTimestamp = () => {
     const now = new Date();
@@ -32,11 +34,11 @@ const generateStatementsXml = (statements, version) => {
 
   let data = `<?xml version="1.0" encoding="UTF-8"?>
 
-   <statements version="${version}" htmlParse="false">;
+   <statements version="${xmlFileVersion}" htmlParse="false">;
 
     <!-- 0. FILE INFORMATION -->
-    <info order="0-1" id="statementsFileVersion">1.0.0</info>
-    <info order="0-2" id="iterationDate">2025-08-31</info>
+    <info order="0-1" id="statementsFileVersion">${xmlFileVersion}</info>
+    <info order="0-2" id="iterationDate">${xmlIterationDate}</info>
     <info order="0-3" id="studyTitle">${studyTitle}</info> 
     <info order="0-4" id="creationDate">${creationDate}</info> 
 

@@ -7,6 +7,7 @@ import createMapSlice from "./createMapSlice";
 import createLanguageSlice from "./createLanguageSlice";
 import createResultsSlice from "./createResultsSlice";
 import createLanguageXmlSlice from "./createLanguageXmlSlice";
+import createVersionSlice from "./createVersionSlice";
 
 const useStore = create((set, get) => ({
   ...createStartSlice(set, get),
@@ -17,6 +18,7 @@ const useStore = create((set, get) => ({
   ...createLanguageSlice(set, get),
   ...createLanguageXmlSlice(set, get),
   ...createResultsSlice(set, get),
+  ...createVersionSlice(set, get),
   // Add more slices here
 }));
 

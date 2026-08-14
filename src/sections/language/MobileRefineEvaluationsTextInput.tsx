@@ -12,28 +12,44 @@ import mobileThin5 from "../../assets/images/mobile-thin-5.png";
 import mobileThin6 from "../../assets/images/mobile-thin-6.png";
 import mobileThin7 from "../../assets/images/mobile-thin-7.png";
 import mobileThin8 from "../../assets/images/mobile-thin-8.png";
+import mobileThin9 from "../../assets/images/mobile-thin-9.png";
 
 const getSetText = (state) => state.setText;
 const getMoveTopMobileHead = (state) => state.moveTopMobileHead;
 const getMoveAllTopMobileText = (state) => state.moveAllTopMobileText;
 const getMoveTopMobileButtonOK = (state) => state.moveTopMobileButtonOK;
-const getMobileThinConditionsOfInstruction = (state) => state.mobileThinConditionsOfInstruction;
-const getMobileThinSubmitButtonText = (state) => state.mobileThinSubmitButtonText;
+const getMobileThinConditionsOfInstruction = (state) =>
+  state.mobileThinConditionsOfInstruction;
+const getMobileThinSubmitButtonText = (state) =>
+  state.mobileThinSubmitButtonText;
 const getMobileThinHelpModalHead = (state) => state.mobileThinHelpModalHead;
 const getMobileThinHelpModalText = (state) => state.mobileThinHelpModalText;
-const getMobileThinPreventNavModalHead = (state) => state.mobileThinPreventNavModalHead;
-const getMobileThinPreventNavModalText = (state) => state.mobileThinPreventNavModalText;
-const getMobileThinProcessCompleteMessage = (state) => state.mobileThinProcessCompleteMessage;
-const getMobileGuidanceModalRight1Header = (state) => state.mobileGuidanceModalRight1Header;
-const getMobileGuidanceModalRight1Text = (state) => state.mobileGuidanceModalRight1Text;
-const getMobileGuidanceModalRight2Header = (state) => state.mobileGuidanceModalRight2Header;
-const getMobileGuidanceModalRight2Text = (state) => state.mobileGuidanceModalRight2Text;
-const getMobileGuidanceModalLeft1Header = (state) => state.mobileGuidanceModalLeft1Header;
-const getMobileGuidanceModalLeft1Text = (state) => state.mobileGuidanceModalLeft1Text;
-const getMobileGuidanceModalLeft2Header = (state) => state.mobileGuidanceModalLeft2Header;
-const getMobileGuidanceModalLeft2Text = (state) => state.mobileGuidanceModalLeft2Text;
-const getMobileThinScrollBottomModalHead = (state) => state.mobileThinScrollBottomModalHead;
-const getMobileThinScrollBottomModalText = (state) => state.mobileThinScrollBottomModalText;
+const getMobileThinPreventNavModalHead = (state) =>
+  state.mobileThinPreventNavModalHead;
+const getMobileThinPreventNavModalText = (state) =>
+  state.mobileThinPreventNavModalText;
+const getMobileThinProcessCompleteMessage = (state) =>
+  state.mobileThinProcessCompleteMessage;
+const getMobileGuidanceModalRight1Header = (state) =>
+  state.mobileGuidanceModalRight1Header;
+const getMobileGuidanceModalRight1Text = (state) =>
+  state.mobileGuidanceModalRight1Text;
+const getMobileGuidanceModalRight2Header = (state) =>
+  state.mobileGuidanceModalRight2Header;
+const getMobileGuidanceModalRight2Text = (state) =>
+  state.mobileGuidanceModalRight2Text;
+const getMobileGuidanceModalLeft1Header = (state) =>
+  state.mobileGuidanceModalLeft1Header;
+const getMobileGuidanceModalLeft1Text = (state) =>
+  state.mobileGuidanceModalLeft1Text;
+const getMobileGuidanceModalLeft2Header = (state) =>
+  state.mobileGuidanceModalLeft2Header;
+const getMobileGuidanceModalLeft2Text = (state) =>
+  state.mobileGuidanceModalLeft2Text;
+const getMobileThinScrollBottomModalHead = (state) =>
+  state.mobileThinScrollBottomModalHead;
+const getMobileThinScrollBottomModalText = (state) =>
+  state.mobileThinScrollBottomModalText;
 const getMobileThinSelectedText = (state) => state.mobileThinSelectedText;
 
 const MobileRefineEvaluationsTextInput = () => {
@@ -41,63 +57,132 @@ const MobileRefineEvaluationsTextInput = () => {
   const moveTopMobileHead = useStore(getMoveTopMobileHead);
   const moveAllTopMobileText = useStore(getMoveAllTopMobileText);
   const moveTopMobileButtonOK = useStore(getMoveTopMobileButtonOK);
-  const mobileThinConditionsOfInstruction = useStore(getMobileThinConditionsOfInstruction);
+  const mobileThinConditionsOfInstruction = useStore(
+    getMobileThinConditionsOfInstruction,
+  );
   const mobileThinSubmitButtonText = useStore(getMobileThinSubmitButtonText);
   const mobileThinHelpModalHead = useStore(getMobileThinHelpModalHead);
   const mobileThinHelpModalText = useStore(getMobileThinHelpModalText);
-  const mobileThinPreventNavModalHead = useStore(getMobileThinPreventNavModalHead);
-  const mobileThinPreventNavModalText = useStore(getMobileThinPreventNavModalText);
-  const mobileThinProcessCompleteMessage = useStore(getMobileThinProcessCompleteMessage);
-  const mobileGuidanceModalRight1Header = useStore(getMobileGuidanceModalRight1Header);
-  const mobileGuidanceModalRight1Text = useStore(getMobileGuidanceModalRight1Text);
-  const mobileGuidanceModalRight2Header = useStore(getMobileGuidanceModalRight2Header);
-  const mobileGuidanceModalRight2Text = useStore(getMobileGuidanceModalRight2Text);
-  const mobileGuidanceModalLeft1Header = useStore(getMobileGuidanceModalLeft1Header);
-  const mobileGuidanceModalLeft1Text = useStore(getMobileGuidanceModalLeft1Text);
-  const mobileGuidanceModalLeft2Header = useStore(getMobileGuidanceModalLeft2Header);
-  const mobileGuidanceModalLeft2Text = useStore(getMobileGuidanceModalLeft2Text);
-  const mobileThinScrollBottomModalHead = useStore(getMobileThinScrollBottomModalHead);
-  const mobileThinScrollBottomModalText = useStore(getMobileThinScrollBottomModalText);
+  const mobileThinPreventNavModalHead = useStore(
+    getMobileThinPreventNavModalHead,
+  );
+  const mobileThinPreventNavModalText = useStore(
+    getMobileThinPreventNavModalText,
+  );
+  const mobileThinProcessCompleteMessage = useStore(
+    getMobileThinProcessCompleteMessage,
+  );
+  const mobileGuidanceModalRight1Header = useStore(
+    getMobileGuidanceModalRight1Header,
+  );
+  const mobileGuidanceModalRight1Text = useStore(
+    getMobileGuidanceModalRight1Text,
+  );
+  const mobileGuidanceModalRight2Header = useStore(
+    getMobileGuidanceModalRight2Header,
+  );
+  const mobileGuidanceModalRight2Text = useStore(
+    getMobileGuidanceModalRight2Text,
+  );
+  const mobileGuidanceModalLeft1Header = useStore(
+    getMobileGuidanceModalLeft1Header,
+  );
+  const mobileGuidanceModalLeft1Text = useStore(
+    getMobileGuidanceModalLeft1Text,
+  );
+  const mobileGuidanceModalLeft2Header = useStore(
+    getMobileGuidanceModalLeft2Header,
+  );
+  const mobileGuidanceModalLeft2Text = useStore(
+    getMobileGuidanceModalLeft2Text,
+  );
+  const mobileThinScrollBottomModalHead = useStore(
+    getMobileThinScrollBottomModalHead,
+  );
+  const mobileThinScrollBottomModalText = useStore(
+    getMobileThinScrollBottomModalText,
+  );
   const mobileThinSelectedText = useStore(getMobileThinSelectedText);
   const { t } = useTranslation();
 
   const handleRefImage1 = () => {
-    window.open(mobileThin1, "Mobile Presort Main Image", "width=800, height=600");
+    window.open(
+      mobileThin1,
+      "Mobile Presort Main Image",
+      "width=800, height=600",
+    );
     return false;
   };
 
   const handleRefImage2 = () => {
-    window.open(mobileThin2, "Mobile Presort Main Image", "width=800, height=600");
+    window.open(
+      mobileThin2,
+      "Mobile Presort Main Image",
+      "width=800, height=600",
+    );
     return false;
   };
 
   const handleRefImage3 = () => {
-    window.open(mobileThin3, "Mobile Presort Re-Evaluate Modal", "width=800, height=600");
+    window.open(
+      mobileThin3,
+      "Mobile Presort Re-Evaluate Modal",
+      "width=800, height=600",
+    );
     return false;
   };
 
   const handleRefImage4 = () => {
-    window.open(mobileThin4, "Mobile Presort Re-Evaluate Modal", "width=800, height=600");
+    window.open(
+      mobileThin4,
+      "Mobile Presort Re-Evaluate Modal",
+      "width=800, height=600",
+    );
     return false;
   };
 
   const handleRefImage5 = () => {
-    window.open(mobileThin5, "Mobile Presort Re-Evaluate Modal", "width=800, height=600");
+    window.open(
+      mobileThin5,
+      "Mobile Presort Re-Evaluate Modal",
+      "width=800, height=600",
+    );
     return false;
   };
 
   const handleRefImage6 = () => {
-    window.open(mobileThin6, "Mobile Presort Re-Evaluate Modal", "width=800, height=600");
+    window.open(
+      mobileThin6,
+      "Mobile Presort Re-Evaluate Modal",
+      "width=800, height=600",
+    );
     return false;
   };
 
   const handleRefImage7 = () => {
-    window.open(mobileThin7, "Mobile Presort Re-Evaluate Modal", "width=800, height=600");
+    window.open(
+      mobileThin7,
+      "Mobile Presort Re-Evaluate Modal",
+      "width=800, height=600",
+    );
     return false;
   };
 
   const handleRefImage8 = () => {
-    window.open(mobileThin8, "Mobile Presort Re-Evaluate Modal", "width=800, height=600");
+    window.open(
+      mobileThin8,
+      "Mobile Presort Re-Evaluate Modal",
+      "width=800, height=600",
+    );
+    return false;
+  };
+
+  const handleRefImage9 = () => {
+    window.open(
+      mobileThin9,
+      "Mobile Presort Re-Evaluate Modal",
+      "width=800, height=600",
+    );
     return false;
   };
 
@@ -132,7 +217,9 @@ const MobileRefineEvaluationsTextInput = () => {
           >
             {t("clearSection")}
           </button>
-          <div className="flex items-center h-[50px] p-2 justify-center ">{t("images")}</div>
+          <div className="flex items-center h-[50px] p-2 justify-center ">
+            {t("images")}
+          </div>
           <button
             className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
             id="mobilePresortImage1"
@@ -189,6 +276,13 @@ const MobileRefineEvaluationsTextInput = () => {
             onClick={handleRefImage8}
           >
             8
+          </button>
+          <button
+            className="bg-slate-300 p-2 h-[50px] rounded-md w-[30px] hover:bg-slate-400 hover:font-semibold"
+            id="mobilePresortImage6"
+            onClick={handleRefImage9}
+          >
+            9
           </button>
         </div>
       </div>
@@ -254,36 +348,10 @@ const MobileRefineEvaluationsTextInput = () => {
           placeholder=""
           disabled={false}
         />
-
-        <UserTextInput
-          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
-          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`10-6. ${t("mobileGuidanceModalLeft1Header")}`}
-          name="mobileGuidanceModalLeft1Header"
-          value={mobileGuidanceModalLeft1Header}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-        />
-        <UserTextAreaInput
-          classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
-          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label={`10-7. ${t("mobileGuidanceModalLeft1Text")}`}
-          name="mobileGuidanceModalLeft1Text"
-          height={150}
-          value={mobileGuidanceModalLeft1Text}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-          tabIndex="0"
-        />
-
         <UserTextAreaInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`10-8. ${t("mobileGuidanceModalRight1Header")}`}
+          label={`10-6. ${t("mobileGuidanceModalRight1Header")}`}
           name="mobileGuidanceModalRight1Header"
           height={150}
           value={mobileGuidanceModalRight1Header}
@@ -296,7 +364,7 @@ const MobileRefineEvaluationsTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 h-[130px] py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`10-9. ${t("mobileGuidanceModalRight1Text")}`}
+          label={`10-7. ${t("mobileGuidanceModalRight1Text")}`}
           name="mobileGuidanceModalRight1Text"
           height={250}
           value={mobileGuidanceModalRight1Text}
@@ -310,22 +378,21 @@ const MobileRefineEvaluationsTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`10-10. ${t("mobileGuidanceModalLeft2Header")}`}
-          name="mobileGuidanceModalLeft2Header"
-          value={mobileGuidanceModalLeft2Header}
+          label={`10-8. ${t("mobileGuidanceModalLeft1Header")}`}
+          name="mobileGuidanceModalLeft1Header"
+          value={mobileGuidanceModalLeft1Header}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
           disabled={false}
         />
-
         <UserTextAreaInput
-          classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[90px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
+          classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label={`10-11. ${t("mobileGuidanceModalLeft2Text")}`}
-          name="mobileGuidanceModalLeft2Text"
+          label={`10-9. ${t("mobileGuidanceModalLeft1Text")}`}
+          name="mobileGuidanceModalLeft1Text"
           height={150}
-          value={mobileGuidanceModalLeft2Text}
+          value={mobileGuidanceModalLeft1Text}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
@@ -336,7 +403,7 @@ const MobileRefineEvaluationsTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`10-12. ${t("mobileGuidanceModalRight2Header")}`}
+          label={`10-10. ${t("mobileGuidanceModalRight2Header")}`}
           name="mobileGuidanceModalRight2Header"
           value={mobileGuidanceModalRight2Header}
           onChange={handleTextChange}
@@ -348,10 +415,36 @@ const MobileRefineEvaluationsTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[150px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label={`10-13. ${t("mobileGuidanceModalRight2Text")}`}
+          label={`10-11. ${t("mobileGuidanceModalRight2Text")}`}
           name="mobileGuidanceModalRight2Text"
           height={150}
           value={mobileGuidanceModalRight2Text}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+          tabIndex="0"
+        />
+
+        <UserTextInput
+          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
+          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
+          label={`10-12. ${t("mobileGuidanceModalLeft2Header")}`}
+          name="mobileGuidanceModalLeft2Header"
+          value={mobileGuidanceModalLeft2Header}
+          onChange={handleTextChange}
+          highlight={false}
+          placeholder=""
+          disabled={false}
+        />
+
+        <UserTextAreaInput
+          classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[90px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
+          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
+          label={`10-13. ${t("mobileGuidanceModalLeft2Text")}`}
+          name="mobileGuidanceModalLeft2Text"
+          height={150}
+          value={mobileGuidanceModalLeft2Text}
           onChange={handleTextChange}
           highlight={false}
           placeholder=""
@@ -414,18 +507,7 @@ const MobileRefineEvaluationsTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`10-18. ${t("moveAllTopMobileText")}`}
-          name="moveAllTopMobileText"
-          value={moveAllTopMobileText}
-          onChange={handleTextChange}
-          highlight={false}
-          placeholder=""
-          disabled={false}
-        />
-        <UserTextInput
-          classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
-          classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`10-19. ${t("moveTopMobileButtonOK")}`}
+          label={`10-18. ${t("moveTopMobileButtonOK")}`}
           name="moveTopMobileButtonOK"
           value={moveTopMobileButtonOK}
           onChange={handleTextChange}
@@ -436,7 +518,7 @@ const MobileRefineEvaluationsTextInput = () => {
         <UserTextInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`10-20. ${t("mobileThinPreventNavModalHead")}`}
+          label={`10-19. ${t("mobileThinPreventNavModalHead")}`}
           name="mobileThinPreventNavModalHead"
           value={mobileThinPreventNavModalHead}
           onChange={handleTextChange}
@@ -448,7 +530,7 @@ const MobileRefineEvaluationsTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 ml-2 mt-1  self-start min-w-[400px] h-[60px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none self-center`}
-          label={`10-21. ${t("mobileThinPreventNavModalText")}`}
+          label={`10-20. ${t("mobileThinPreventNavModalText")}`}
           name="mobileThinPreventNavModalText"
           height={150}
           value={mobileThinPreventNavModalText}
@@ -462,7 +544,7 @@ const MobileRefineEvaluationsTextInput = () => {
         <UserTextAreaInput
           classNameText={`flex-1 mt-1 ml-2 block min-w-[200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-blue-500 focus:outline-2 select-none sm:text-sm disabled:opacity-50 font-normal`}
           classNameLabel={`w-auto content-center pt-1 mr-1 disabled:opacity-50 select-none`}
-          label={`10-22. ${t("mobileThinProcessCompleteMessage")}`}
+          label={`10-21. ${t("mobileThinProcessCompleteMessage")}`}
           name="mobileThinProcessCompleteMessage"
           height={150}
           value={mobileThinProcessCompleteMessage}

@@ -54,12 +54,15 @@ const generateMapXml = () => {
   if (studyTitle === null || studyTitle === undefined) {
     studyTitle = "my Q study";
   }
+  let xmlFileVersion = useStore.getState().xmlFileVersion;
+  let xmlIterationDate = useStore.getState().xmlIterationDate;
 
   if (qSortPatternObject === null) {
-    qSortPatternObject = JSON.parse(localStorage.getItem("qSortPatternObject") || '""');
+    qSortPatternObject = JSON.parse(
+      localStorage.getItem("qSortPatternObject") || '""',
+    );
   }
 
-  const releaseVersion = useStore.getState().version;
   const mapColColorsStyle = useStore.getState().mapColColorsStyle;
 
   let getCurrentTimestamp = () => {
@@ -77,28 +80,35 @@ const generateMapXml = () => {
 
   let data = `<?xml version="1.0" encoding="UTF-8"?>
 
-   <map version="${releaseVersion}" htmlParse="false">;
+   <map version="${xmlFileVersion}" htmlParse="false">;
 
     <!-- 0. FILE INFORMATION -->
-      <info order="0-1" id="mapFileVersion">1.0.0</info>
-      <info order="0-2" id="iterationDate">2025-08-31</info>
+      <info order="0-1" id="mapFileVersion">${xmlFileVersion}</info>
+      <info order="0-2" id="iterationDate">${xmlIterationDate}</info>
       <info order="0-3" id="studyTitle">${studyTitle}</info> 
       <info order="0-4" id="creationDate">${creationDate}</info> 
     
      <!-- 1. Q SORT GRID DESIGN AND COLORS -->\n`;
 
   // CALC COL ARRAYS
-  let filteredQSortPatternObject = Object.keys(qSortPatternObject).reduce((property, index) => {
-    if (+qSortPatternObject[index] > 0) property[index] = qSortPatternObject[index];
-    return property;
-  }, {});
+  let filteredQSortPatternObject = Object.keys(qSortPatternObject).reduce(
+    (property, index) => {
+      if (+qSortPatternObject[index] > 0)
+        property[index] = qSortPatternObject[index];
+      return property;
+    },
+    {},
+  );
 
   // replace "M" with "-" in keys
-  filteredQSortPatternObject = Object.keys(filteredQSortPatternObject).reduce((property, index) => {
-    let newKey = index.replace("M", "-");
-    property[newKey] = filteredQSortPatternObject[index];
-    return property;
-  }, {});
+  filteredQSortPatternObject = Object.keys(filteredQSortPatternObject).reduce(
+    (property, index) => {
+      let newKey = index.replace("M", "-");
+      property[newKey] = filteredQSortPatternObject[index];
+      return property;
+    },
+    {},
+  );
 
   let keys = Object.keys(filteredQSortPatternObject).map((x) => +x);
   keys.sort((a, b) => a - b);
@@ -130,7 +140,8 @@ const generateMapXml = () => {
 
       let colorIndex = `colCol${headersLookupArray[i]}`;
 
-      let color = localStorage.getItem(colorIndex) || useStore.getState()[colorIndex];
+      let color =
+        localStorage.getItem(colorIndex) || useStore.getState()[colorIndex];
 
       if (mapColColorsStyle === "headers") {
         columnHeadersColorsArray.push(color);
@@ -168,18 +179,26 @@ const generateMapXml = () => {
 
   const colTextLabelsArrayValue = useStore.getState().colTextLabelsArray;
   const emojiArrayTypeValue = useStore.getState().emojiArrayType;
-  const useColLabelEmojiPresortValue = useStore.getState().useColLabelEmojiPresort;
+  const useColLabelEmojiPresortValue =
+    useStore.getState().useColLabelEmojiPresort;
   const useColLabelNumsValue = useStore.getState().useColLabelNums;
   const useColLabelTextValue = useStore.getState().useColLabelText;
   const useColLabelEmojiValue = useStore.getState().useColLabelEmoji;
-  const useColLabelEmojiPostsortValue = useStore.getState().useColLabelEmojiPostsort;
-  const useColLabelTextPostsortValue = useStore.getState().useColLabelTextPostsort;
-  const useColLabelNumsPostsortValue = useStore.getState().useColLabelNumsPostsort;
-  const presortEmojiPositiveIndexValue = useStore.getState().presortEmojiPositiveIndex;
-  const presortEmojiNeutralIndexValue = useStore.getState().presortEmojiNeutralIndex;
-  const presortEmojiNegativeIndexValue = useStore.getState().presortEmojiNegativeIndex;
+  const useColLabelEmojiPostsortValue =
+    useStore.getState().useColLabelEmojiPostsort;
+  const useColLabelTextPostsortValue =
+    useStore.getState().useColLabelTextPostsort;
+  const useColLabelNumsPostsortValue =
+    useStore.getState().useColLabelNumsPostsort;
+  const presortEmojiPositiveIndexValue =
+    useStore.getState().presortEmojiPositiveIndex;
+  const presortEmojiNeutralIndexValue =
+    useStore.getState().presortEmojiNeutralIndex;
+  const presortEmojiNegativeIndexValue =
+    useStore.getState().presortEmojiNegativeIndex;
 
-  const mobileHeadersDefaultLabelsValue = useStore.getState().mobileHeadersDefaultLabels;
+  const mobileHeadersDefaultLabelsValue =
+    useStore.getState().mobileHeadersDefaultLabels;
 
   const colTextLabelsArray = `     <item id="colTextLabelsArray">${colTextLabelsArrayValue}</item>\n`;
   const emojiArrayType = `     <item id="emojiArrayType">${emojiArrayTypeValue}</item>\n`;

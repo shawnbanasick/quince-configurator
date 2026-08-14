@@ -91,7 +91,7 @@
         <item order="8-8" id="initialInstructionPart2">Next, continue to select the statements that are {{{mark}}}CLOSEST{{{/mark}}} to your perspective.</item>
         <item order="8-9" id="initialInstructionPart3">Another set of statements will appear on the screen after you click the "Submit" button.</item>
         <item order="8-10" id="initialInstructionPartNeg1">Below are the statements you rated positively in the previous step. Now, pick statements that {{{mark}}}{{{b}}}DIFFER THE MOST FROM YOUR PERSPECTIVE{{{/b}}}{{{/mark}}}.</item>
-        <item order="8-11" id="initialInstructionPartNeg2">Next, continue to select the statements that are {{{mark}}}DIFFER THE MOST{{{/mark}}} from your perspective.</item>
+        <item order="8-11" id="initialInstructionPartNeg2">Next, continue to select the statements that {{{mark}}}DIFFER THE MOST{{{/mark}}} from your perspective.</item>
         <item order="8-12" id="finalInstructions">Refinement process complete. Click on the "Continue" button on the bottom right side to go to the next stage.</item>
         <item order="8-13" id="thinningPreventNavModalHead">Navigation Disabled</item>
         <item order="8-14" id="thinningPreventNavModalText">Please finish the refining process before going to the next step.</item>
