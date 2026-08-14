@@ -512,7 +512,10 @@ const generateLanguageXml = () => {
         <item order="19-8" id="downloadResultsButtonText">${encodeHTML(
           useStore.getState().downloadResultsButtonText,
         )}</item>  
-        <item order="19-9" id="emailBodyMessage">${encodeHTML(
+        <item order="19-9" id="emailSubjectText">${encodeHTML(
+          useStore.getState().emailSubjectText,
+        )}</item>
+        <item order="19-10" id="emailBodyMessage">${encodeHTML(
           useStore.getState().emailBodyMessage,
         )}</item>
 
