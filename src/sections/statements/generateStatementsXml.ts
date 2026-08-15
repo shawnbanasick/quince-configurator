@@ -2,7 +2,7 @@
 import encodeHTML from "../utils/encodeHTML";
 import { useStore } from "../../globalState/useStore.js";
 
-const generateStatementsXml = (statements, version) => {
+const generateStatementsXml = (statements) => {
   // let statementsArray = appState.statements;
   //   let statements = localStorage.getItem("currentStatements");
   let arr = statements.split(/\r\n|\r|\n/g);

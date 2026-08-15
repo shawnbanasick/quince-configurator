@@ -34,7 +34,9 @@ const Start = () => {
       <div className="mt-8 w-9/12 align-self-center items-center justify-center font-semibold text-3xl">
         {ReactHTMLParser(t("what0"))}
       </div>
-      <div className="mt-2 w-9/12 align-self-center text-base">{ReactHTMLParser(t("what1"))} </div>
+      <div className="mt-2 w-9/12 align-self-center text-base">
+        {ReactHTMLParser(t("what1"))}{" "}
+      </div>
       <div className="mt-5 w-9/12 align-self-center text-base">
         {ReactHTMLParser(t("what2"))}
         <a
@@ -102,7 +104,7 @@ const Start = () => {
               className="text-blue-600 underline underline-offset-2 decoration-4 decoration-blue-300 hover:decoration-blue-400"
               target="_blank"
               rel="noopener noreferrer"
-              href="http://schmolck.org/qmethod/"
+              href="https://qmethod.org/pqmethod-software/"
             >
               PQMethod
             </a>
@@ -160,7 +162,9 @@ const Start = () => {
           </div>
         </div>
       </div>
-      <div className="mt-10 w-9/12 align-self-center font-semibold text-3xl mb-2">Citations</div>
+      <div className="mt-10 w-9/12 align-self-center font-semibold text-3xl mb-2">
+        Citations
+      </div>
       <div className="w-7/12 text-2xl -indent-6 pl-6">
         {`Shawn Banasick and Stephen Jeffares. “Quince V${frontPageVersion}”. Zenodo, October 25, 2025. `}
         <a
@@ -198,7 +202,7 @@ const Start = () => {
             className="text-blue-600 underline underline-offset-2 decoration-4 decoration-blue-300 hover:decoration-blue-400"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://github.com/shawnbanasick/quince/releases/download/v1.0.8/quince-v108-Template.zip"
+            href="https://github.com/shawnbanasick/quince/releases/download/v1.0.9/quince-v109-Template.zip"
           >
             (link)
           </a>{" "}

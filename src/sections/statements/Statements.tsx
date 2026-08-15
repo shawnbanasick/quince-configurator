@@ -30,7 +30,7 @@ const Statements: React.FC = () => {
 
   const handleDownloadStatements = (): void => {
     try {
-      const xmlContent = generateStatementsXml(currentStatements, version);
+      const xmlContent = generateStatementsXml(currentStatements);
       const blob = new Blob([xmlContent], { type: "application/xml" });
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
@@ -54,10 +54,12 @@ const Statements: React.FC = () => {
     component?: React.ReactNode;
     variant?: "primary" | "secondary";
   }> = ({ children, description, onClick, component }) => (
-  <div className="flex justify-center items-center bg-white rounded-2xl shadow-lg border border-gray-200 p-4 hover:shadow-xl transition-all duration-300">
+    <div className="flex justify-center items-center bg-white rounded-2xl shadow-lg border border-gray-200 p-4 hover:shadow-xl transition-all duration-300">
       <div className="flex flex-col w-[100%] items-center justify-center text-center space-y-4">
         <div>
-          <div className="text-sm w-[400px] min-h-[60px] text-gray-600 mb-4">{description}</div>
+          <div className="text-sm w-[400px] min-h-[60px] text-gray-600 mb-4">
+            {description}
+          </div>
         </div>
         <div className="flex justify-center items-center w-[100%]">
           {component || (
@@ -95,7 +97,9 @@ const Statements: React.FC = () => {
               </svg>
             </div>
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">{t("statementPageTitle")}</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            {t("statementPageTitle")}
+          </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             {t("statementPageTitleDescription")}
           </p>
@@ -118,7 +122,9 @@ const Statements: React.FC = () => {
                     </svg>
                   </div>
                   <div className="text-blue-800">
-                    <div className="mb-2">{ReactHtmlParser(t("statementInfoCard1"))}</div>
+                    <div className="mb-2">
+                      {ReactHtmlParser(t("statementInfoCard1"))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -137,7 +143,9 @@ const Statements: React.FC = () => {
                     </svg>
                   </div>
                   <div className="flex flex-row gap-2 text-blue-800">
-                    <div className="mb-2">{ReactHtmlParser(t("statementInfoCard2"))}</div>
+                    <div className="mb-2">
+                      {ReactHtmlParser(t("statementInfoCard2"))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -156,7 +164,9 @@ const Statements: React.FC = () => {
                     </svg>
                   </div>
                   <div className="text-blue-800">
-                    <div className="mb-2">{ReactHtmlParser(t("statementInfoCard3"))}</div>
+                    <div className="mb-2">
+                      {ReactHtmlParser(t("statementInfoCard3"))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -177,7 +187,9 @@ const Statements: React.FC = () => {
                 />
               </svg>
             }
-            description={ReactHtmlParser(t("uploadStatementsXmlDescriptionText"))}
+            description={ReactHtmlParser(
+              t("uploadStatementsXmlDescriptionText"),
+            )}
             component={<UploadAndReadXmlStatements />}
           >
             Upload Statements
@@ -194,11 +206,18 @@ const Statements: React.FC = () => {
                 />
               </svg>
             }
-            description={ReactHtmlParser(t("downloadStatementsXmlDescriptionText"))}
+            description={ReactHtmlParser(
+              t("downloadStatementsXmlDescriptionText"),
+            )}
             onClick={handleDownloadStatements}
             variant="secondary"
           >
-            <svg className="max-w-[30px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg
+              className="max-w-[30px]"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -213,8 +232,12 @@ const Statements: React.FC = () => {
         {/* Statement Editor Section */}
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
           <div className="bg-gradient-to-r from-green-600 to-blue-600 text-white p-8">
-            <h2 className="text-2xl font-semibold mb-2">{t("statementEditor")}</h2>
-            <div className="text-green-100">{t("createOrEditYourQsortStatements")}</div>
+            <h2 className="text-2xl font-semibold mb-2">
+              {t("statementEditor")}
+            </h2>
+            <div className="text-green-100">
+              {t("createOrEditYourQsortStatements")}
+            </div>
           </div>
           <div className="p-8">
             <div className="max-w-5xl mx-auto">

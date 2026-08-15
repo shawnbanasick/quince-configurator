@@ -89,7 +89,7 @@ const wordSurveySummary = (
     );
   }
 
-  type RecordMap = Record<string, string>;
+  // type RecordMap = Record<string, string>;
   // let newArray: Record<string, string>[] = [];
 
   if (showSurvey === true || showSurvey === "true") {

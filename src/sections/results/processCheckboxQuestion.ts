@@ -1,7 +1,6 @@
 import { Paragraph, TextRun, UnderlineType } from "docx";
 import { stripHtml } from "./stripHtml";
 import { stripTags } from "../utils/stripTags";
-import { safeSplit } from "./safeSplit";
 
 const processCheckboxQuestion = (
   entry,
