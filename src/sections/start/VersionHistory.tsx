@@ -47,10 +47,22 @@ const getChangeTypeLabel = (type: Change["type"]) => {
 
 const VersionHistory: React.FC = () => {
   const [isHistoryOpen, setIsHistoryOpen] = useState(false);
-  const [expandedVersions, setExpandedVersions] = useState<Set<string>>(new Set());
+  const [expandedVersions, setExpandedVersions] = useState<Set<string>>(
+    new Set(),
+  );
   const { t } = useTranslation();
 
   const versionHistory: Version[] = [
+    {
+      version: "1.0.9",
+      date: "2026-08-15",
+      changes: [
+        { type: "fix", description: t("version109a") },
+        { type: "fix", description: t("version109b") },
+        { type: "fix", description: t("version109c") },
+        { type: "improvement", description: t("version109d") },
+      ],
+    },
     {
       version: "1.0.8",
       date: "2026-02-12",
@@ -141,9 +153,13 @@ const VersionHistory: React.FC = () => {
           onClick={() => setIsHistoryOpen(!isHistoryOpen)}
           className="w-full px-5 py-3 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
         >
-          <h2 className="text-xl font-semibold text-gray-900">Version History</h2>
+          <h2 className="text-xl font-semibold text-gray-900">
+            Version History
+          </h2>
           <div className="flex items-center gap-3">
-            <span className="text-sm text-gray-500">{versionHistory.length} versions</span>
+            <span className="text-sm text-gray-500">
+              {versionHistory.length} versions
+            </span>
             {isHistoryOpen ? (
               <ChevronUp className="w-5 h-5 text-gray-400" />
             ) : (
@@ -155,19 +171,23 @@ const VersionHistory: React.FC = () => {
         {isHistoryOpen && (
           <div className="border-t border-gray-200">
             <div className="px-5 py-3 bg-gray-50 flex justify-between items-center border-b border-gray-200">
-              <span className="text-sm font-medium text-gray-700">v0.0.1 - v1.0.8</span>
+              <span className="text-sm font-medium text-gray-700">
+                v0.0.1 - v1.0.9
+              </span>
               <button
                 onClick={toggleAll}
                 className="px-3 py-1 text-xs font-medium text-gray-700 bg-white border border-gray-300 rounded hover:bg-gray-100 transition-colors"
               >
-                {expandedVersions.size === versionHistory.length ? "Collapse All" : "Expand All"}
+                {expandedVersions.size === versionHistory.length
+                  ? "Collapse All"
+                  : "Expand All"}
               </button>
             </div>
 
             <div className="divide-y divide-gray-200">
               {versionHistory.map((version) => {
                 const isExpanded = expandedVersions.has(version.version);
-                const isLatest = version.version === "1.0.8";
+                const isLatest = version.version === "1.0.9";
 
                 return (
                   <div key={version.version}>
@@ -184,11 +204,15 @@ const VersionHistory: React.FC = () => {
                             Latest
                           </span>
                         )}
-                        <span className="text-xs text-gray-500">{version.date}</span>
+                        <span className="text-xs text-gray-500">
+                          {version.date}
+                        </span>
                       </div>
 
                       <div className="flex items-center gap-2">
-                        <span className="text-xs text-gray-500">{version.changes.length}</span>
+                        <span className="text-xs text-gray-500">
+                          {version.changes.length}
+                        </span>
                         {isExpanded ? (
                           <ChevronUp className="w-4 h-4 text-gray-400" />
                         ) : (
