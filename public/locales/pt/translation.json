@@ -37,6 +37,7 @@
   "configPara2": "Se tiver um ficheiro config.xml de outro projeto Quince feito com esta versão do Configurador, pode carregar os seus dados para edição clicando no botão laranja - <b>'Carregar Dados config.xml'</b> - abaixo. Se não tiver um ficheiro de um projeto anterior, pode carregar o ficheiro config.xml padrão da pasta de configurações, ou pode criar um novo ficheiro introduzindo todos os dados você mesmo.",
   "configPara3": "Depois de ter adicionado os seus dados, clique no botão laranja '<b>Guardar Ficheiro config.xml</b>' abaixo para guardar a informação na pasta 'settings' do modelo Quince (substituindo o ficheiro padrão).",
   "versionHistory": "Histórico de versões",
+  "version1011a": "Adicionada escala de classificação de 7 pontos aos tipos de perguntas do questionário",
   "version1010a": "Corrigido registro da ordem de comentários pós-classificação",
   "version1010b": "Corrigido CSS da página de refinamento",
   "version109a": "Corrigidas estatísticas de declarações de saída",

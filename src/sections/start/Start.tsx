@@ -26,7 +26,7 @@ const Start = () => {
     <div className="flex flex-col items-center justify-center  w-[100%] bg-[#f5f5f5]  text-gray-900">
       <HeroImage className="w-[70vw]" />
       <div className="mt-8 w-9/12 align-self-center items-center justify-center text-center font-semibold text-3xl">
-        {"Version: 1.0.10"}
+        {"Version: 1.0.11"}
       </div>
       <VersionHistory />
 

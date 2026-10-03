@@ -37,6 +37,7 @@
   "configPara2": "如果您有来自此版本配置器制作的另一个Quince项目的config.xml文件,可以通过点击下方橙色的<b>'加载config.xml数据'</b>按钮来加载其数据进行编辑。如果您没有以前项目的文件,可以从settings文件夹加载默认的config.xml文件,或者您可以通过自己输入所有数据来创建新文件。",
   "configPara3": "添加数据后,点击下方橙色的'<b>保存config.xml文件</b>'按钮,将信息保存到Quince模板的'settings'文件夹(替换默认文件)。",
   "versionHistory": "版本历史",
+  "version1011a": "为调查问题类型添加了7点评分量表",
   "version1010a": "修复了排序后评论顺序的记录",
   "version1010b": "修复了细化页面的CSS",
   "version109a": "修复了输出陈述统计",

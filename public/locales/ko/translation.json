@@ -37,6 +37,7 @@
   "configPara2": "이 버전의 Configurator로 만든 다른 Quince 프로젝트의 config.xml 파일이 있는 경우, 아래의 주황색 - <b>'config.xml 데이터 로드'</b> - 버튼을 클릭하여 편집할 데이터를 로드할 수 있습니다. 이전 프로젝트의 파일이 없는 경우, settings 폴더의 기본 config.xml 파일을 로드하거나 모든 데이터를 직접 입력하여 새 파일을 만들 수 있습니다.",
   "configPara3": "데이터를 추가한 후 아래의 주황색 '<b>config.xml 파일 저장</b>' 버튼을 클릭하여 정보를 Quince 템플릿 'settings' 폴더에 저장하세요 (기본 파일을 대체함).",
   "versionHistory": "버전 기록",
+  "version1011a": "설문 질문 유형에 7점 척도 추가",
   "version1010a": "정렬 후 댓글 순서 등록 수정",
   "version1010b": "정제 페이지 CSS 수정",
   "version109a": "출력 진술 통계 수정",
