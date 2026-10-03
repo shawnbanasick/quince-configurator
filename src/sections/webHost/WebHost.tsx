@@ -1,4 +1,5 @@
-import { Netlify } from "./Netlify";
+// import { Netlify } from "./Netlify";
+import { Cloudflare } from "./Cloudflare";
 // import { useStore } from "../../globalState/useStore.js";
 // import { useTranslation } from "react-i18next";
 // import { decodeHTML } from "../utils/decodeHTML.js";
@@ -22,7 +23,7 @@ const WebHost = () => {
 
   return (
     <div className="flex flex-col items-center justify-center pb-[100px] bg-[#f5f5f5]">
-      <Netlify />
+      <Cloudflare />
     </div>
   );
 };

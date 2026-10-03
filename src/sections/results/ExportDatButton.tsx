@@ -23,9 +23,12 @@ interface ExportDatButtonProps {
 
 // Selector functions with proper typing
 const getProjectName = (state: StoreState): string => state.studyTitle;
-const getCleanedResults = (state: StoreState): ResultItem[] => state.cleanedResults;
-const getCurrentStatements = (state: StoreState): string => state.currentStatements;
-const getMapInputQsortPattern = (state: StoreState): number[] => state.mapInputQsortPattern;
+const getCleanedResults = (state: StoreState): ResultItem[] =>
+  state.cleanedResults;
+const getCurrentStatements = (state: StoreState): string =>
+  state.currentStatements;
+const getMapInputQsortPattern = (state: StoreState): number[] =>
+  state.mapInputQsortPattern;
 
 const ExportDatButton: React.FC<ExportDatButtonProps> = ({ partNames }) => {
   const { t } = useTranslation();
@@ -64,9 +67,8 @@ const ExportDatButton: React.FC<ExportDatButtonProps> = ({ partNames }) => {
   // Process sorts data
   const processSorts = (): number[][] => {
     return results.map((item: ResultItem) => {
-      const prep1 = item.r20.slice(5).trim();
-      const prep2 = prep1.split("|");
-      return prep2.map((str) => Number(str));
+      const prep1 = item["sort"];
+      return prep1;
     });
   };
 
@@ -89,7 +91,7 @@ const ExportDatButton: React.FC<ExportDatButtonProps> = ({ partNames }) => {
         sorts,
         numStatements,
         mapInputQsortPattern,
-        partNames || []
+        partNames || [],
       );
 
       // Create and download file
@@ -102,7 +104,7 @@ const ExportDatButton: React.FC<ExportDatButtonProps> = ({ partNames }) => {
     } catch (error) {
       console.error("Error exporting DAT file:", error);
       alert(
-        "An error occurred while exporting the DAT file. Please check the console for details."
+        "An error occurred while exporting the DAT file. Please check the console for details.",
       );
     }
   };

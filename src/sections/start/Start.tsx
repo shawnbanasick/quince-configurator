@@ -26,7 +26,7 @@ const Start = () => {
     <div className="flex flex-col items-center justify-center  w-[100%] bg-[#f5f5f5]  text-gray-900">
       <HeroImage className="w-[70vw]" />
       <div className="mt-8 w-9/12 align-self-center items-center justify-center text-center font-semibold text-3xl">
-        {"Version: " + frontPageVersion}
+        {"Version: 1.0.10"}
       </div>
       <VersionHistory />
 
@@ -202,7 +202,7 @@ const Start = () => {
             className="text-blue-600 underline underline-offset-2 decoration-4 decoration-blue-300 hover:decoration-blue-400"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://github.com/shawnbanasick/quince/releases/download/v1.0.9/quince-v109-Template.zip"
+            href="https://github.com/shawnbanasick/quince/releases/download/v.1.0.10/quince-v1010-Template.zip"
           >
             (link)
           </a>{" "}

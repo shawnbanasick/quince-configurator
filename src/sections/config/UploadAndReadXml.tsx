@@ -32,7 +32,8 @@ const getSetNumImages = (state) => state.setNumImages;
 const getSetImageFileType = (state) => state.setImageFileType;
 const getSetImageFormat = (state) => state.setImageFormat;
 const getSetShowConsentPage = (state) => state.setShowConsentPage;
-const getSetShowConsentPageHelpModal = (state) => state.setShowConsentPageHelpModal;
+const getSetShowConsentPageHelpModal = (state) =>
+  state.setShowConsentPageHelpModal;
 const getSetInitialScreen = (state) => state.setInitialScreen;
 const getSetAccessCode = (state) => state.setAccessCode;
 const getSetHeaderBarColor = (state) => state.setHeaderBarColor;
@@ -50,15 +51,19 @@ const getSetShowPostsort = (state) => state.setShowPostsort;
 const getSetShowSecondPosColumn = (state) => state.setShowSecondPosColumn;
 const getSetShowSecondNegColumn = (state) => state.setShowSecondNegColumn;
 const getSetShowBackButton = (state) => state.setShowBackButton;
-const getSetPostsortCommentsRequired = (state) => state.setPostsortCommentsRequired;
-const getSetDefaultFontSizePostsort = (state) => state.setDefaultFontSizePostsort;
+const getSetPostsortCommentsRequired = (state) =>
+  state.setPostsortCommentsRequired;
+const getSetDefaultFontSizePostsort = (state) =>
+  state.setDefaultFontSizePostsort;
 const getSetMinCardHeightPostsort = (state) => state.setMinCardHeightPostsort;
 const getSetShowSurvey = (state) => state.setShowSurvey;
 const getSetSurveyQuestionsArray = (state) => state.setSurveyQuestionsArray;
 const getSetIsConfigXmlLoaded = (state) => state.setIsConfigXmlLoaded;
 const getSetBaserowToken = (state) => state.setBaserowToken;
-const getSetBaserowDatabaseIdNumber = (state) => state.setBaserowDatabaseIdNumber;
-const getSetRequireMinCommentLength = (state) => state.setRequireMinCommentLength;
+const getSetBaserowDatabaseIdNumber = (state) =>
+  state.setBaserowDatabaseIdNumber;
+const getSetRequireMinCommentLength = (state) =>
+  state.setRequireMinCommentLength;
 const getSetMinCommentLength = (state) => state.setMinCommentLength;
 const getSetPreventMobileAccess = (state) => state.setPreventMobileAccess;
 
@@ -108,7 +113,9 @@ const UploadAndParseXML: React.FC = () => {
 
   const surveyQuestArray: QuestObjType[] = [];
 
-  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>): void => {
+  const handleFileUpload = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ): void => {
     const file = event.target.files?.[0];
     if (file) {
       const reader = new FileReader();
@@ -247,7 +254,9 @@ const UploadAndParseXML: React.FC = () => {
             questObj.itemNum = index + 1;
 
             // for all questions
-            let mainNameObj = inputObjArray.find((item) => item.name === "input");
+            let mainNameObj = inputObjArray.find(
+              (item) => item.name === "input",
+            );
             let questType = mainNameObj?.attributes?.type;
             questObj.surveyQuestionType = questType;
             questObj.required = mainNameObj?.attributes?.required;
@@ -259,7 +268,10 @@ const UploadAndParseXML: React.FC = () => {
             // transformations
             if (questType === "likert") {
               questObj.note = decodeHTML(noteObj?.value, true) || "";
-              questObj.options = decodeHTML(mainNameObj?.attributes?.scale, true);
+              questObj.options = decodeHTML(
+                mainNameObj?.attributes?.scale,
+                true,
+              );
             }
 
             if (questType !== "information") {
@@ -274,7 +286,11 @@ const UploadAndParseXML: React.FC = () => {
             if (questType === "text") {
               questObj.limited = mainNameObj?.attributes?.limited;
               let inputLenVal = mainNameObj?.attributes?.limitLength;
-              if (inputLenVal === null || inputLenVal === undefined || isNaN(inputLenVal)) {
+              if (
+                inputLenVal === null ||
+                inputLenVal === undefined ||
+                isNaN(inputLenVal)
+              ) {
                 questObj.limitLength = mainNameObj?.attributes?.limitLength;
               } else {
                 questObj.limitLength = mainNameObj?.attributes?.limitLength;
@@ -288,9 +304,13 @@ const UploadAndParseXML: React.FC = () => {
               questObj.note = decodeHTML(noteObj?.value, true) || "";
             }
             if (questType === "radio") {
-              questObj[inputObjArray[2].name] = decodeHTML(inputObjArray[2]?.value, true);
+              questObj[inputObjArray[2].name] = decodeHTML(
+                inputObjArray[2]?.value,
+                true,
+              );
               questObj.options = decodeHTML(mainNameObj?.value, true) || "";
             }
+
             if (questType === "checkbox" || questType === "radio") {
               let otherValue = mainNameObj?.attributes?.other;
               if (otherValue === "true" || otherValue === true) {
@@ -299,19 +319,29 @@ const UploadAndParseXML: React.FC = () => {
                 questObj.other = "false";
               }
             }
+
             if (
               questType === "select" ||
               questType === "checkbox" ||
               questType === "rating2" ||
               questType === "rating5" ||
+              questType === "rating7" ||
               questType === "rating10"
             ) {
               questObj.options = decodeHTML(mainNameObj?.value, true) || "";
               questObj.note = decodeHTML(noteObj?.value, true) || "";
               questObj.label = decodeHTML(labelObj.value, true) || "";
             }
-            if (questType === "rating2" || questType === "rating5" || questType === "rating10") {
-              questObj.scale = decodeHTML(inputObjArray[0].attributes?.scale, true);
+            if (
+              questType === "rating2" ||
+              questType === "rating5" ||
+              questType === "rating7" ||
+              questType === "rating10"
+            ) {
+              questObj.scale = decodeHTML(
+                inputObjArray[0].attributes?.scale,
+                true,
+              );
             }
             if (questType === "likert") {
               questObj.surveyQuestionType = "radio";
@@ -340,7 +370,12 @@ const UploadAndParseXML: React.FC = () => {
         className="flex flex-row gap-3 w-[400px] items-center justify-center cursor-pointer bg-orange-300 hover:opacity-50 border border-gray-600 rounded-md p-2 pt-2 mt-5"
         htmlFor="uploadXml"
       >
-        <svg className="max-w-[30px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg
+          className="max-w-[30px]"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
           <path
             strokeLinecap="round"
             strokeLinejoin="round"

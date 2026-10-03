@@ -37,6 +37,8 @@
   "configPara2": "If you have a config.xml file from another Quince project made with this version of the Configurator, you can load its data for editing by clicking the orange - <b>'Load config.xml Data'</b> - button below. If you don't have a file from a previous project, you can load the default config.xml file from the settings folder, or you can create a new file by inputting all of the data yourself.",
   "configPara3": "After you have added your data, click the orange '<b>Save config.xml File</b>' button below to save the information to the Quince template 'settings' folder (replacing the default file).",
   "versionHistory": "Version History",
+  "version1010a": "Fixed post-sort comments order registration",
+  "version1010b": "Fixed refining page CSS",
   "version109a": "Fixed output statement statistics",
   "version109b": "Fixed images for language.xml input",
   "version109c": "Fixed results transmission failure modal display",
@@ -777,5 +779,23 @@
   "netlifyStep13": "In the 'Deploys' box, click on the 'browse to upload' link and select your project's {{{b}}}FOLDER{{{/b}}}. In a few minutes your project will be updated on the web.",
   "netlifySetupComplete": "Web Hosting Setup Complete!",
   "netlifySetupCompleteMessage": "Congratulations! You have successfully setup your project on the web. Your website is now ready for use.",
-  "checkInternetMessage": "Check Internet Message"
+  "checkInternetMessage": "Check Internet Message",
+
+  "*** CLOUDFLARE ***": "*** CLOUDFLARE ***",
+  "cloudflareTitleText": "Web Hosting Setup",
+  "cloudflareIntro1": "Follow this visual guide to create a web page for your Quince project",
+  "cloudflareIntroText": "{{{b}}}Quince recommends using 'Cloudflare Pages' to host your project on the web (free tier). {{{/b}}} You don't need any programming skills to use it.{{{br /}}}{{{br /}}}This guide will show you how to {{{b}}}setup{{{/b}}}, {{{b}}}update{{{/b}}} (step 6), or {{{b}}}delete{{{/b}}} (step 10) your Quince project{{{/b}}}.",
+  "cloudflareStep1": "Visit {{{u}}}{{{a href='https://www.cloudflare.com/products/pages/' rel='noopener noreferrer' target='_blank'}}}{{{strong}}}Cloudflare Pages{{{/strong}}}{{{/a}}}{{{/u}}} and create a new account by clicking on the 'Start building for free' button at the bottom of the page.",
+  "cloudflareStep2": "When you log in for the first time, it will ask you to select a method. Choose 'Upload your static files'.",
+  "cloudflareStep3": "Click on the 'folder' link and select your project's {{{b}}}Quince Template FOLDER{{{/b}}} (not the individual files).",
+  "cloudflareStep4": "When your files have loaded, click the 'Worker name' box delete teh auto-generated name and enter your project's name (this will be part of the URL for the project, so don't use capital letters or spaces). (Cloudflare refers to web pages as 'workers'.) Then, click the 'Deploy' button.",
+  "cloudflareStep5": "Your project is now deployed on the web. The URL for your project is on the left side of the screen. You can click on this URL or on the blue button at the top right side of the screen to visit your project on the web.",
+  "cloudflareStep6": "HOW TO UPDATE YOUR PROJECT: If you need to update your project, log in to the Cloudflare dashboard and click on your project's name.",
+  "cloudflareStep7": "Next, click on the 'New deployment' button at the top right side of the screen.",
+  "cloudflareStep8": "Click on the 'Folder' link and select your project's {{{b}}}Quince Template FOLDER{{{/b}}} (not the individual files).",
+  "cloudflareStep9": "After your files upload, click the 'Deploy' button at the bottom left side of the screen.",
+  "cloudflareStep10": "HOW TO DELETE YOUR PROJECT: If you want to delete your project, go to the Cloudflare dashboard and click on 'Compute' on the left side of the screen. Then, click on 'Workers & Pages'.",
+  "cloudflareStep11": "In the section with your projects name, click on the three dots (…) and select 'Delete'.",
+  "cloudflareStep12": "Type your project's name in the box and click the 'Delete' button. Your project will now be deleted from the web.",
+  "cloudflareStep13": "If you want to {{{b}}}UPDATE{{{/b}}} your project after making a change with the Configurator, login to your Cloudflare account and click on your project's name. Then, click on 'Pages' on the left side of the page."
 }

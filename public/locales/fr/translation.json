@@ -37,6 +37,8 @@
   "configPara2": "Si vous possédez un fichier config.xml d'un autre projet Quince créé avec cette version du Configurator, vous pouvez charger ses données pour les modifier en cliquant sur le bouton orange - <b>'Charger les données config.xml'</b> - ci-dessous. Si vous n'avez pas de fichier d'un projet précédent, vous pouvez charger le fichier config.xml par défaut du dossier settings, ou vous pouvez créer un nouveau fichier en saisissant toutes les données vous-même.",
   "configPara3": "Après avoir ajouté vos données, cliquez sur le bouton orange '<b>Enregistrer le fichier config.xml</b>' ci-dessous pour sauvegarder les informations dans le dossier 'settings' du modèle Quince (en remplaçant le fichier par défaut).",
   "versionHistory": "Historique des versions",
+  "version1010a": "Correction de l'enregistrement de l'ordre des commentaires post-tri",
+  "version1010b": "Correction du CSS de la page d'affinage",
   "version109a": "Correction des statistiques des déclarations de sortie",
   "version109b": "Correction des images pour l'entrée language.xml",
   "version109c": "Correction de l'affichage du modal en cas d'échec de transmission des résultats",

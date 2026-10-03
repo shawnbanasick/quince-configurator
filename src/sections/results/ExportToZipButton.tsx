@@ -51,6 +51,9 @@ const ExportToZipButton = (props) => {
     });
     // write sorts.txt
 
+    console.log("props.userData", props.userData);
+    console.log("props.participantIdent", props.participantIdent);
+
     let sortsTxt = createSortsText(props.userData, props.participantIdent);
 
     let sortsBlob = new Blob([sortsTxt], {
