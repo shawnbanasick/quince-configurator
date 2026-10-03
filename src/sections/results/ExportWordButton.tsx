@@ -149,6 +149,7 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
     checkbox: t("checkbox"),
     rating2: t("rating2"),
     rating5: t("rating5"),
+    rating7: t("rating7"),
     rating10: t("rating10"),
   };
   const surveySummaryLangObj = {
@@ -163,6 +164,7 @@ const ExportWordButton: React.FC<ExportWordButtonProps> = (props) => {
     checkbox: t("checkbox"),
     rating2: t("rating2"),
     rating5: t("rating5"),
+    rating7: t("rating7"),
     rating10: t("rating10"),
   };
   const partStatementsLangObj = {

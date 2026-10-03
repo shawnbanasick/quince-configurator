@@ -8,6 +8,7 @@ import { processSelectQuestion } from "./processSelectQuestion";
 import { processCheckboxQuestion } from "./processCheckboxQuestion";
 import { processRating2Question } from "./processRating2Question";
 import { processRating5Question } from "./processRating5Question";
+import { processRating7Question } from "./processRating7Question";
 import { processRating10Question } from "./processRating10Question";
 
 type RecordMap = Record<string, any>;
@@ -109,6 +110,17 @@ const processQuestion = (
       surveyLangObj,
     );
     paragraphs.push(...rating5Paragraph);
+  }
+
+  if (questionType === "rating7") {
+    const rating7Paragraph = processRating7Question(
+      entry,
+      questionInfo,
+      index,
+      indentValue,
+      surveyLangObj,
+    );
+    paragraphs.push(...rating7Paragraph);
   }
 
   if (questionType === "rating10") {

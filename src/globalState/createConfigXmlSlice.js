@@ -101,6 +101,7 @@ const createConfigXmlSlice = (set, get) => ({
   showSurveylikertImage: false,
   showSurveyrating2Image: false,
   showSurveyrating5Image: false,
+  showSurveyrating7Image: false,
   showSurveyrating10Image: false,
   surveyQuestionType: "text",
   surveyAnswerRequired: false,
@@ -232,6 +233,9 @@ const createConfigXmlSlice = (set, get) => ({
   },
   setShowSurveyrating5Image: (bool) => {
     set(() => ({ showSurveyrating5Image: bool }));
+  },
+  setShowSurveyrating7Image: (bool) => {
+    set(() => ({ showSurveyrating7Image: bool }));
   },
   setShowSurveyrating10Image: (bool) => {
     set(() => ({ showSurveyrating10Image: bool }));

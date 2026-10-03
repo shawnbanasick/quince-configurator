@@ -718,6 +718,7 @@
   "checkbox": "チェックボックス",
   "rating2": "評価2段階",
   "rating5": "評価5段階",
+  "rating7": "評価7段階",
   "rating10": "評価10段階",
   "question": "質問",
   "questionnaireSummaryResults": "質問票集計結果",
@@ -779,5 +780,23 @@
   "netlifyStep13": "「Deploys」ボックスで、「browse to upload」リンクをクリックし、プロジェクトの{{{b}}}フォルダー{{{/b}}}を選択してください。数分でプロジェクトがウェブ上で更新されます。",
   "netlifySetupComplete": "ウェブホスティングセットアップ完了！",
   "netlifySetupCompleteMessage": "おめでとうございます！プロジェクトのウェブセットアップが正常に完了しました。ウェブサイトの準備が整いました。",
-  "checkInternetMessage": "「インターネットを確認してください」というメッセージ"
+  "checkInternetMessage": "「インターネットを確認してください」というメッセージ",
+
+  "*** CLOUDFLARE ***": "*** CLOUDFLARE ***",
+  "cloudflareTitleText": "ウェブホスティングの設定",
+  "cloudflareIntro1": "このビジュアルガイドに従って、Quinceプロジェクトのウェブページを作成してください",
+  "cloudflareIntroText": "{{{b}}}Quinceでは、プロジェクトをウェブ上でホストするために「Cloudflare Pages」(無料プラン)の使用をお勧めします。{{{/b}}} 使用するためにプログラミングスキルは必要ありません。{{{br /}}}{{{br /}}}このガイドでは、Quinceプロジェクトの{{{b}}}セットアップ{{{/b}}}、{{{b}}}更新{{{/b}}}(ステップ6)、{{{b}}}削除{{{/b}}}(ステップ10)の方法を説明します{{{/b}}}。",
+  "cloudflareStep1": "{{{u}}}{{{a href='https://www.cloudflare.com/products/pages/' rel='noopener noreferrer' target='_blank'}}}{{{strong}}}Cloudflare Pages{{{/strong}}}{{{/a}}}{{{/u}}}にアクセスし、ページ下部の「Start building for free」ボタンをクリックして新しいアカウントを作成してください。",
+  "cloudflareStep2": "初めてログインすると、方法を選択するよう求められます。「Upload your static files」を選択してください。",
+  "cloudflareStep3": "「folder」リンクをクリックし、プロジェクトの{{{b}}}Quinceテンプレートフォルダ{{{/b}}}を選択してください(個々のファイルではありません)。",
+  "cloudflareStep4": "ファイルの読み込みが完了したら、「Worker name」ボックスをクリックして自動生成された名前を削除し、プロジェクトの名前を入力してください(これはプロジェクトのURLの一部になるため、大文字やスペースは使用しないでください)。(Cloudflareではウェブページを「workers」と呼びます。)その後、「Deploy」ボタンをクリックしてください。",
+  "cloudflareStep5": "これでプロジェクトがウェブ上に公開されました。プロジェクトのURLは画面左側に表示されています。このURL、または画面右上の青いボタンをクリックして、ウェブ上のプロジェクトにアクセスできます。",
+  "cloudflareStep6": "プロジェクトの更新方法: プロジェクトを更新する必要がある場合は、Cloudflareダッシュボードにログインし、プロジェクト名をクリックしてください。",
+  "cloudflareStep7": "次に、画面右上の「New deployment」ボタンをクリックしてください。",
+  "cloudflareStep8": "「Folder」リンクをクリックし、プロジェクトの{{{b}}}Quinceテンプレートフォルダ{{{/b}}}を選択してください(個々のファイルではありません)。",
+  "cloudflareStep9": "ファイルのアップロードが完了したら、画面左下の「Deploy」ボタンをクリックしてください。",
+  "cloudflareStep10": "プロジェクトの削除方法: プロジェクトを削除したい場合は、Cloudflareダッシュボードに移動し、画面左側の「Compute」をクリックしてください。その後、「Workers & Pages」をクリックしてください。",
+  "cloudflareStep11": "プロジェクト名のあるセクションで、3つの点(…)をクリックし、「Delete」を選択してください。",
+  "cloudflareStep12": "ボックスにプロジェクトの名前を入力し、「Delete」ボタンをクリックしてください。これでプロジェクトはウェブから削除されます。",
+  "cloudflareStep13": "Configuratorで変更を加えた後にプロジェクトを{{{b}}}更新{{{/b}}}したい場合は、Cloudflareアカウントにログインし、プロジェクト名をクリックしてください。その後、ページ左側の「Pages」をクリックしてください。"
 }

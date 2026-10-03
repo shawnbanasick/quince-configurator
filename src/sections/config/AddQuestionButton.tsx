@@ -12,6 +12,7 @@ const getShowSurveycheckboxImage = (state) => state.showSurveycheckboxImage;
 const getShowSurveylikertImage = (state) => state.showSurveylikertImage;
 const getShowSurveyrating2Image = (state) => state.showSurveyrating2Image;
 const getShowSurveyrating5Image = (state) => state.showSurveyrating5Image;
+const getShowSurveyrating7Image = (state) => state.showSurveyrating7Image;
 const getShowSurveyrating10Image = (state) => state.showSurveyrating10Image;
 const getSurveyQuestionType = (state) => state.surveyQuestionType;
 const getSurveyAnswerRequired = (state) => state.surveyAnswerRequired;
@@ -24,13 +25,17 @@ const getSurveyQuestionScale = (state) => state.surveyQuestionScale;
 const getSurveyQuestionOptions = (state) => state.surveyQuestionOptions;
 const getSurveyQuestionPlaceholder = (state) => state.surveyQuestionPlaceholder;
 const getConfigSurveyInfoBarColor = (state) => state.configSurveyInfoBarColor;
-const getTriggerOptionsWarningModal = (state) => state.triggerOptionsWarningModal;
+const getTriggerOptionsWarningModal = (state) =>
+  state.triggerOptionsWarningModal;
 const getSurveyQuestionsArray = (state) => state.surveyQuestionsArray;
 const getSetSurveyQuestionsArray = (state) => state.setSurveyQuestionsArray;
 const getIsEditingSurveyQuestion = (state) => state.isEditingSurveyQuestion;
-const getIsEditingSurveyQuestionIndex = (state) => state.isEditingSurveyQuestionIndex;
-const getSetIsEditingSurveyQuestionIndex = (state) => state.setIsEditingSurveyQuestionIndex;
-const getSetIsEditingSurveyQuestion = (state) => state.setIsEditingSurveyQuestion;
+const getIsEditingSurveyQuestionIndex = (state) =>
+  state.isEditingSurveyQuestionIndex;
+const getSetIsEditingSurveyQuestionIndex = (state) =>
+  state.setIsEditingSurveyQuestionIndex;
+const getSetIsEditingSurveyQuestion = (state) =>
+  state.setIsEditingSurveyQuestion;
 const getSurveyShowOther = (state) => state.surveyShowOther;
 
 interface newItemObjType {
@@ -66,6 +71,7 @@ const AddQuestionButton: React.FC = () => {
   const showSurveylikertImage = useStore(getShowSurveylikertImage);
   const showSurveyrating2Image = useStore(getShowSurveyrating2Image);
   const showSurveyrating5Image = useStore(getShowSurveyrating5Image);
+  const showSurveyrating7Image = useStore(getShowSurveyrating7Image);
   const showSurveyrating10Image = useStore(getShowSurveyrating10Image);
   const surveyQuestionType = useStore(getSurveyQuestionType);
   const surveyAnswerRequired = useStore(getSurveyAnswerRequired);
@@ -82,8 +88,12 @@ const AddQuestionButton: React.FC = () => {
   const surveyQuestionsArray = useStore(getSurveyQuestionsArray);
   const setSurveyQuestionsArray = useStore(getSetSurveyQuestionsArray);
   const isEditingSurveyQuestion = useStore(getIsEditingSurveyQuestion);
-  const isEditingSurveyQuestionIndex = useStore(getIsEditingSurveyQuestionIndex);
-  const setIsEditingSurveyQuestionIndex = useStore(getSetIsEditingSurveyQuestionIndex);
+  const isEditingSurveyQuestionIndex = useStore(
+    getIsEditingSurveyQuestionIndex,
+  );
+  const setIsEditingSurveyQuestionIndex = useStore(
+    getSetIsEditingSurveyQuestionIndex,
+  );
   const setIsEditingSurveyQuestion = useStore(getSetIsEditingSurveyQuestion);
   const surveyShowOther = useStore(getSurveyShowOther);
   const { t } = useTranslation();
@@ -110,6 +120,7 @@ const AddQuestionButton: React.FC = () => {
 
   const addSurveyQuestionItem = () => {
     if (
+      showSurveyrating7Image === true ||
       showSurveyrating5Image === true ||
       showSurveyrating10Image === true ||
       showSurveyrating2Image === true ||
@@ -146,17 +157,23 @@ const AddQuestionButton: React.FC = () => {
 
       if (displayBoolean.required === true) {
         newItemObj.required = surveyAnswerRequired;
-        newItemArray.push(`<b>answer required (true/false):</b> ${surveyAnswerRequired}`);
+        newItemArray.push(
+          `<b>answer required (true/false):</b> ${surveyAnswerRequired}`,
+        );
       }
 
       if (displayBoolean.other === true) {
         newItemObj.other = surveyShowOther;
-        newItemArray.push(`<b>show 'other'  required (true/false):</b> ${surveyAnswerRequired}`);
+        newItemArray.push(
+          `<b>show 'other'  required (true/false):</b> ${surveyAnswerRequired}`,
+        );
       }
 
       if (displayBoolean.label === true) {
         newItemObj.label = surveyQuestionLabel;
-        newItemArray.push(`<b>label text:</b> ${decodeHTML(surveyQuestionLabel)}`);
+        newItemArray.push(
+          `<b>label text:</b> ${decodeHTML(surveyQuestionLabel)}`,
+        );
       }
       if (displayBoolean.note === true) {
         newItemObj.note = surveyQuestionNote;
@@ -165,12 +182,15 @@ const AddQuestionButton: React.FC = () => {
       if (displayBoolean.limited === true) {
         newItemObj.limited = surveyAnswerLenIsLimited;
         newItemObj.limitLength = +surveyAnswerLenMax;
-        if (surveyAnswerLenIsLimited === "false" || surveyAnswerLenIsLimited === false) {
+        if (
+          surveyAnswerLenIsLimited === "false" ||
+          surveyAnswerLenIsLimited === false
+        ) {
           newItemArray.push(`<b>length limit:</b> false`);
         } else {
           newItemArray.push(
             `<b>length limit:</b> ${surveyAnswerLenIsLimited}`,
-            `<b>max length:</b> ${surveyAnswerLenMax}`
+            `<b>max length:</b> ${surveyAnswerLenMax}`,
           );
         }
       }
@@ -181,7 +201,7 @@ const AddQuestionButton: React.FC = () => {
       if (displayBoolean.restricted === true) {
         newItemObj.restricted = surveyAnswerRestricted;
         newItemArray.push(
-          `<b>answer restricted to numbers "0-9" (true/false):</b> ${surveyAnswerRestricted}`
+          `<b>answer restricted to numbers "0-9" (true/false):</b> ${surveyAnswerRestricted}`,
         );
       }
       if (displayBoolean.scale === true) {
@@ -191,7 +211,7 @@ const AddQuestionButton: React.FC = () => {
         let testArray = getOptionsArray(currentScale);
         if (testArray.length < 2) {
           console.log(
-            "there is an issue with the 'scale' formatting in the addQuestionButton file"
+            "there is an issue with the 'scale' formatting in the addQuestionButton file",
           );
           triggerOptionsWarningModal(true);
           return null;
@@ -205,7 +225,9 @@ const AddQuestionButton: React.FC = () => {
         let testArray = getOptionsArray(currentOptions);
         if (testArray.length < 2) {
           if (surveyQuestionType !== "information") {
-            console.log("there is an issue with the 'options' addQuestionButton file");
+            console.log(
+              "there is an issue with the 'options' addQuestionButton file",
+            );
             triggerOptionsWarningModal(true);
             return null;
           }

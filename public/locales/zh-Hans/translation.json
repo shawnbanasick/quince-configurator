@@ -718,6 +718,7 @@
   "checkbox": "复选框",
   "rating2": "2级评分",
   "rating5": "5级评分",
+  "rating7": "7级评分",
   "rating10": "10级评分",
   "question": "问题",
   "questionnaireSummaryResults": "问卷汇总结果",
@@ -779,5 +780,23 @@
   "netlifyStep13": "在'部署'框中,点击'浏览上传'链接并选择您的项目{{{b}}}文件夹{{{/b}}}。几分钟后,您的项目将在网络上更新。",
   "netlifySetupComplete": "网站托管设置完成!",
   "netlifySetupCompleteMessage": "恭喜!您已成功在网络上设置您的项目。您的网站现在已准备好使用。",
-  "checkInternetMessage": "检查网络连接提示"
+  "checkInternetMessage": "检查网络连接提示",
+
+  "*** CLOUDFLARE ***": "*** CLOUDFLARE ***",
+  "cloudflareTitleText": "网络托管设置",
+  "cloudflareIntro1": "按照此图文指南为您的Quince项目创建网页",
+  "cloudflareIntroText": "{{{b}}}Quince建议使用'Cloudflare Pages'(免费版)在网络上托管您的项目。{{{/b}}} 使用它不需要任何编程技能。{{{br /}}}{{{br /}}}本指南将向您展示如何{{{b}}}设置{{{/b}}}、{{{b}}}更新{{{/b}}}(步骤6)或{{{b}}}删除{{{/b}}}(步骤10)您的Quince项目{{{/b}}}。",
+  "cloudflareStep1": "访问{{{u}}}{{{a href='https://www.cloudflare.com/products/pages/' rel='noopener noreferrer' target='_blank'}}}{{{strong}}}Cloudflare Pages{{{/strong}}}{{{/a}}}{{{/u}}},点击页面底部的'Start building for free'按钮创建新账户。",
+  "cloudflareStep2": "首次登录时，系统会要求您选择一种方式。选择'Upload your static files'。",
+  "cloudflareStep3": "点击'folder'链接，选择您项目的{{{b}}}Quince模板文件夹{{{/b}}}(不是单个文件)。",
+  "cloudflareStep4": "文件加载完成后，点击'Worker name'框，删除自动生成的名称并输入您的项目名称(这将成为项目URL的一部分，因此请勿使用大写字母或空格)。(Cloudflare将网页称为'workers'。)然后，点击'Deploy'按钮。",
+  "cloudflareStep5": "您的项目现已部署到网络上。项目的URL显示在屏幕左侧。您可以点击此URL或屏幕右上角的蓝色按钮来访问网络上的项目。",
+  "cloudflareStep6": "如何更新您的项目：如果您需要更新项目，请登录Cloudflare仪表板并点击您的项目名称。",
+  "cloudflareStep7": "接下来，点击屏幕右上角的'New deployment'按钮。",
+  "cloudflareStep8": "点击'Folder'链接，选择您项目的{{{b}}}Quince模板文件夹{{{/b}}}(不是单个文件)。",
+  "cloudflareStep9": "文件上传完成后，点击屏幕左下角的'Deploy'按钮。",
+  "cloudflareStep10": "如何删除您的项目：如果您想删除项目，请转到Cloudflare仪表板并点击屏幕左侧的'Compute'。然后，点击'Workers & Pages'。",
+  "cloudflareStep11": "在显示您项目名称的部分，点击三个点(…)并选择'Delete'。",
+  "cloudflareStep12": "在框中输入您的项目名称，然后点击'Delete'按钮。您的项目现在将从网络上删除。",
+  "cloudflareStep13": "如果您想在使用配置器进行更改后{{{b}}}更新{{{/b}}}您的项目，请登录您的Cloudflare账户并点击您的项目名称。然后，点击页面左侧的'Pages'。"
 }

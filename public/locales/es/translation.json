@@ -718,6 +718,7 @@
   "checkbox": "Casilla de verificación",
   "rating2": "Calificación 2",
   "rating5": "Calificación 5",
+  "rating7": "Calificación 7",
   "rating10": "Calificación 10",
   "question": "Pregunta",
   "questionnaireSummaryResults": "Resultados resumidos del cuestionario",
@@ -779,5 +780,23 @@
   "netlifyStep13": "En el cuadro 'Deploys', haga clic en el enlace 'browse to upload' y seleccione la {{{b}}}CARPETA{{{/b}}} de su proyecto. En unos minutos su proyecto estará actualizado en la web.",
   "netlifySetupComplete": "¡Configuración de alojamiento web completa!",
   "netlifySetupCompleteMessage": "¡Felicitaciones! Ha configurado exitosamente su proyecto en la web. Su sitio web ahora está listo para usar.",
-  "checkInternetMessage": "Mensaje de verificación de Internet"
+  "checkInternetMessage": "Mensaje de verificación de Internet",
+
+  "*** CLOUDFLARE ***": "*** CLOUDFLARE ***",
+  "cloudflareTitleText": "Configuración de alojamiento web",
+  "cloudflareIntro1": "Siga esta guía visual para crear una página web para su proyecto Quince",
+  "cloudflareIntroText": "{{{b}}}Quince recomienda usar 'Cloudflare Pages' para alojar su proyecto en la web (nivel gratuito). {{{/b}}} No necesita ningún conocimiento de programación para usarlo.{{{br /}}}{{{br /}}}Esta guía le mostrará cómo {{{b}}}configurar{{{/b}}}, {{{b}}}actualizar{{{/b}}} (paso 6) o {{{b}}}eliminar{{{/b}}} (paso 10) su proyecto Quince{{{/b}}}.",
+  "cloudflareStep1": "Visite {{{u}}}{{{a href='https://www.cloudflare.com/products/pages/' rel='noopener noreferrer' target='_blank'}}}{{{strong}}}Cloudflare Pages{{{/strong}}}{{{/a}}}{{{/u}}} y cree una nueva cuenta haciendo clic en el botón 'Start building for free' en la parte inferior de la página.",
+  "cloudflareStep2": "Cuando inicie sesión por primera vez, se le pedirá que seleccione un método. Elija 'Upload your static files'.",
+  "cloudflareStep3": "Haga clic en el enlace 'folder' y seleccione la {{{b}}}CARPETA de la Plantilla Quince{{{/b}}} de su proyecto (no los archivos individuales).",
+  "cloudflareStep4": "Cuando sus archivos se hayan cargado, haga clic en el cuadro 'Worker name', elimine el nombre generado automáticamente e ingrese el nombre de su proyecto (esto formará parte de la URL del proyecto, así que no use mayúsculas ni espacios). (Cloudflare se refiere a las páginas web como 'workers'.) Luego, haga clic en el botón 'Deploy'.",
+  "cloudflareStep5": "Su proyecto ahora está publicado en la web. La URL de su proyecto se encuentra en el lado izquierdo de la pantalla. Puede hacer clic en esta URL o en el botón azul en la parte superior derecha de la pantalla para visitar su proyecto en la web.",
+  "cloudflareStep6": "CÓMO ACTUALIZAR SU PROYECTO: Si necesita actualizar su proyecto, inicie sesión en el panel de Cloudflare y haga clic en el nombre de su proyecto.",
+  "cloudflareStep7": "A continuación, haga clic en el botón 'New deployment' en la parte superior derecha de la pantalla.",
+  "cloudflareStep8": "Haga clic en el enlace 'Folder' y seleccione la {{{b}}}CARPETA de la Plantilla Quince{{{/b}}} de su proyecto (no los archivos individuales).",
+  "cloudflareStep9": "Después de que sus archivos se carguen, haga clic en el botón 'Deploy' en la parte inferior izquierda de la pantalla.",
+  "cloudflareStep10": "CÓMO ELIMINAR SU PROYECTO: Si desea eliminar su proyecto, vaya al panel de Cloudflare y haga clic en 'Compute' en el lado izquierdo de la pantalla. Luego, haga clic en 'Workers & Pages'.",
+  "cloudflareStep11": "En la sección con el nombre de su proyecto, haga clic en los tres puntos (…) y seleccione 'Delete'.",
+  "cloudflareStep12": "Escriba el nombre de su proyecto en el cuadro y haga clic en el botón 'Delete'. Su proyecto ahora será eliminado de la web.",
+  "cloudflareStep13": "Si desea {{{b}}}ACTUALIZAR{{{/b}}} su proyecto después de realizar un cambio con el Configurador, inicie sesión en su cuenta de Cloudflare y haga clic en el nombre de su proyecto. Luego, haga clic en 'Pages' en el lado izquierdo de la página."
 }

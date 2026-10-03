@@ -718,6 +718,7 @@
   "checkbox": "체크박스",
   "rating2": "평가 2",
   "rating5": "평가 5",
+  "rating7": "평가 7",
   "rating10": "평가 10",
   "question": "질문",
   "questionnaireSummaryResults": "설문 요약 결과",
@@ -779,5 +780,23 @@
   "netlifyStep13": "'Deploys' 상자에서 'browse to upload' 링크를 클릭하고 프로젝트의 {{{b}}}폴더{{{/b}}}를 선택하세요. 몇 분 안에 프로젝트가 웹에서 업데이트됩니다.",
   "netlifySetupComplete": "웹 호스팅 설정 완료!",
   "netlifySetupCompleteMessage": "축하합니다! 웹에서 프로젝트 설정을 성공적으로 완료했습니다. 이제 웹사이트를 사용할 준비가 되었습니다.",
-  "checkInternetMessage": "인터넷 연결 확인 메시지"
+  "checkInternetMessage": "인터넷 연결 확인 메시지",
+
+  "*** CLOUDFLARE ***": "*** CLOUDFLARE ***",
+  "cloudflareTitleText": "웹 호스팅 설정",
+  "cloudflareIntro1": "이 시각적 가이드를 따라 Quince 프로젝트의 웹 페이지를 만들어보세요",
+  "cloudflareIntroText": "{{{b}}}Quince는 프로젝트를 웹에 호스팅하기 위해 'Cloudflare Pages'(무료 등급) 사용을 권장합니다.{{{/b}}} 사용하는 데 프로그래밍 기술이 필요하지 않습니다.{{{br /}}}{{{br /}}}이 가이드는 Quince 프로젝트를 {{{b}}}설정{{{/b}}}, {{{b}}}업데이트{{{/b}}}(6단계), 또는 {{{b}}}삭제{{{/b}}}(10단계)하는 방법을 보여드립니다{{{/b}}}.",
+  "cloudflareStep1": "{{{u}}}{{{a href='https://www.cloudflare.com/products/pages/' rel='noopener noreferrer' target='_blank'}}}{{{strong}}}Cloudflare Pages{{{/strong}}}{{{/a}}}{{{/u}}}에 방문하여 페이지 하단의 'Start building for free' 버튼을 클릭해 새 계정을 만드세요.",
+  "cloudflareStep2": "처음 로그인하면 방법을 선택하라는 메시지가 표시됩니다. 'Upload your static files'를 선택하세요.",
+  "cloudflareStep3": "'folder' 링크를 클릭하고 프로젝트의 {{{b}}}Quince 템플릿 폴더{{{/b}}}를 선택하세요(개별 파일이 아님).",
+  "cloudflareStep4": "파일이 로드되면 'Worker name' 상자를 클릭하여 자동 생성된 이름을 삭제하고 프로젝트 이름을 입력하세요(이는 프로젝트 URL의 일부가 되므로 대문자나 공백을 사용하지 마세요). (Cloudflare는 웹 페이지를 'workers'라고 부릅니다.) 그런 다음 'Deploy' 버튼을 클릭하세요.",
+  "cloudflareStep5": "이제 프로젝트가 웹에 배포되었습니다. 프로젝트의 URL은 화면 왼쪽에 있습니다. 이 URL을 클릭하거나 화면 오른쪽 상단의 파란색 버튼을 클릭하여 웹에서 프로젝트를 방문할 수 있습니다.",
+  "cloudflareStep6": "프로젝트 업데이트 방법: 프로젝트를 업데이트해야 하는 경우 Cloudflare 대시보드에 로그인하고 프로젝트 이름을 클릭하세요.",
+  "cloudflareStep7": "다음으로, 화면 오른쪽 상단의 'New deployment' 버튼을 클릭하세요.",
+  "cloudflareStep8": "'Folder' 링크를 클릭하고 프로젝트의 {{{b}}}Quince 템플릿 폴더{{{/b}}}를 선택하세요(개별 파일이 아님).",
+  "cloudflareStep9": "파일이 업로드된 후, 화면 왼쪽 하단의 'Deploy' 버튼을 클릭하세요.",
+  "cloudflareStep10": "프로젝트 삭제 방법: 프로젝트를 삭제하려면 Cloudflare 대시보드로 이동하여 화면 왼쪽의 'Compute'를 클릭하세요. 그런 다음 'Workers & Pages'를 클릭하세요.",
+  "cloudflareStep11": "프로젝트 이름이 있는 섹션에서 점 세 개(…)를 클릭하고 'Delete'를 선택하세요.",
+  "cloudflareStep12": "상자에 프로젝트 이름을 입력하고 'Delete' 버튼을 클릭하세요. 이제 프로젝트가 웹에서 삭제됩니다.",
+  "cloudflareStep13": "Configurator로 변경한 후 프로젝트를 {{{b}}}업데이트{{{/b}}}하려면 Cloudflare 계정에 로그인하고 프로젝트 이름을 클릭하세요. 그런 다음 페이지 왼쪽의 'Pages'를 클릭하세요."
 }

@@ -300,6 +300,16 @@ const generateConfigXml = () => {
         item = accumulatorString.concat(open, input, label, note, close);
       }
 
+      // for RATING 7 items
+      if (itemObject.surveyQuestionType === "rating7") {
+        const input = `        <input type="rating7" required="${
+          itemObject.required
+        }" scale="1;;;2;;;3;;;4;;;5;;;6;;;7">${encodeHTML(itemObject.options)}</input>\n`;
+        label = `        <label>${encodeHTML(itemObject.label)}</label>\n`;
+        const note = `        <note>${encodeHTML(itemObject.note)}</note>\n`;
+        item = accumulatorString.concat(open, input, label, note, close);
+      }
+
       // for RATING 10 items
       if (itemObject.surveyQuestionType === "rating10") {
         const input = `        <input type="rating10" required="${

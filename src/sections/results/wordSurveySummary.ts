@@ -8,6 +8,7 @@ import { processSelectSummary } from "./surveySummary/processSelectSummary";
 import { processCheckboxSummary } from "./surveySummary/processCheckboxSummary";
 import { processRating2Summary } from "./surveySummary/processRating2Summary";
 import { processRating5Summary } from "./surveySummary/processRating5Summary";
+import { processRating7Summary } from "./surveySummary/processRating7Summary";
 import { processRating10Summary } from "./surveySummary/processRating10Summary";
 
 type RecordMap = Record<string, any>;
@@ -228,6 +229,24 @@ const wordSurveySummary = (
           );
         } catch (error) {
           console.error("Error processing Rating 5 item:", error);
+        }
+      }
+
+      if (item.surveyQuestionType === "rating7") {
+        let text = surveySummaryLangObj.rating7;
+        try {
+          paragraphs.push(
+            ...processRating7Summary(
+              filteredData,
+              partNames,
+              item,
+              index,
+              text,
+              itemText,
+            ),
+          );
+        } catch (error) {
+          console.error("Error processing Rating 7 item:", error);
         }
       }
 

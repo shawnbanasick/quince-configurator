@@ -6,6 +6,7 @@ import SurveyDropdownElement from "./SurveyDropdownElement";
 import SurveyCheckboxElement from "./SurveyCheckboxElement";
 import SurveyRating2Element from "./SurveyRating2Element";
 import SurveyRating5Element from "./SurveyRating5Element";
+import SurveyRating7Element from "./SurveyRating7Element";
 import SurveyRating10Element from "./SurveyRating10Element";
 import SurveyLikertElement from "./SurveyLikertElement";
 import SurveyInformationElement from "./SurveyInformationElement";
@@ -29,23 +30,34 @@ const getSetSurveyQuestionLabel = (state) => state.setSurveyQuestionLabel;
 const getSetSurveyQuestionNote = (state) => state.setSurveyQuestionNote;
 const getSetSurveyQuestionOptions = (state) => state.setSurveyQuestionOptions;
 const getSetSurveyQuestionScale = (state) => state.setSurveyQuestionScale;
-const getSetSurveyQuestionPlaceholder = (state) => state.setSurveyQuestionPlaceholder;
-const getSetSurveyAnswerLenIsLimited = (state) => state.setSurveyAnswerLenIsLimited;
+const getSetSurveyQuestionPlaceholder = (state) =>
+  state.setSurveyQuestionPlaceholder;
+const getSetSurveyAnswerLenIsLimited = (state) =>
+  state.setSurveyAnswerLenIsLimited;
 const getSetSurveyAnswerLenMax = (state) => state.setSurveyAnswerLenMax;
 const getSetSurveyAnswerRestricted = (state) => state.setSurveyAnswerRestricted;
-const getSetConfigSurveyInfoBarColor = (state) => state.setConfigSurveyInfoBarColor;
-const getSetIsEditingSurveyQuestion = (state) => state.setIsEditingSurveyQuestion;
-const getSetIsEditingSurveyQuestionIndex = (state) => state.setIsEditingSurveyQuestionIndex;
-const getSetTriggerSurveyQuestionDeleteModal = (state) => state.setTriggerSurveyQuestionDeleteModal;
+const getSetConfigSurveyInfoBarColor = (state) =>
+  state.setConfigSurveyInfoBarColor;
+const getSetIsEditingSurveyQuestion = (state) =>
+  state.setIsEditingSurveyQuestion;
+const getSetIsEditingSurveyQuestionIndex = (state) =>
+  state.setIsEditingSurveyQuestionIndex;
+const getSetTriggerSurveyQuestionDeleteModal = (state) =>
+  state.setTriggerSurveyQuestionDeleteModal;
 const getSetShowSurveytextImage = (state) => state.setShowSurveytextImage;
-const getSetShowSurveytextareaImage = (state) => state.setShowSurveytextareaImage;
+const getSetShowSurveytextareaImage = (state) =>
+  state.setShowSurveytextareaImage;
 const getSetShowSurveyradioImage = (state) => state.setShowSurveyradioImage;
 const getSetShowSurveyselectImage = (state) => state.setShowSurveyselectImage;
-const getSetShowSurveycheckboxImage = (state) => state.setShowSurveycheckboxImage;
+const getSetShowSurveycheckboxImage = (state) =>
+  state.setShowSurveycheckboxImage;
 const getSetShowSurveyrating2Image = (state) => state.setShowSurveyrating2Image;
 const getSetShowSurveyrating5Image = (state) => state.setShowSurveyrating5Image;
-const getSetShowSurveyrating10Image = (state) => state.setShowSurveyrating10Image;
-const getSetShowSurveyinformationImage = (state) => state.setShowSurveyinformationImage;
+const getSetShowSurveyrating7Image = (state) => state.setShowSurveyrating7Image;
+const getSetShowSurveyrating10Image = (state) =>
+  state.setShowSurveyrating10Image;
+const getSetShowSurveyinformationImage = (state) =>
+  state.setShowSurveyinformationImage;
 const getSetShowSurveylikertImage = (state) => state.setShowSurveylikertImage;
 const getSetDetailsArray = (state) => state.setDetailsArray;
 
@@ -59,14 +71,20 @@ const SurveyPageQuestions = () => {
   const setSurveyQuestionNote = useStore(getSetSurveyQuestionNote);
   const setSurveyQuestionOptions = useStore(getSetSurveyQuestionOptions);
   const setSurveyQuestionScale = useStore(getSetSurveyQuestionScale);
-  const setSurveyQuestionPlaceholder = useStore(getSetSurveyQuestionPlaceholder);
+  const setSurveyQuestionPlaceholder = useStore(
+    getSetSurveyQuestionPlaceholder,
+  );
   const setSurveyAnswerLenIsLimited = useStore(getSetSurveyAnswerLenIsLimited);
   const setSurveyAnswerLenMax = useStore(getSetSurveyAnswerLenMax);
   const setSurveyAnswerRestricted = useStore(getSetSurveyAnswerRestricted);
   const setConfigSurveyInfoBarColor = useStore(getSetConfigSurveyInfoBarColor);
   const setIsEditingSurveyQuestion = useStore(getSetIsEditingSurveyQuestion);
-  const setIsEditingSurveyQuestionIndex = useStore(getSetIsEditingSurveyQuestionIndex);
-  const setTriggerSurveyQuestionDeleteModal = useStore(getSetTriggerSurveyQuestionDeleteModal);
+  const setIsEditingSurveyQuestionIndex = useStore(
+    getSetIsEditingSurveyQuestionIndex,
+  );
+  const setTriggerSurveyQuestionDeleteModal = useStore(
+    getSetTriggerSurveyQuestionDeleteModal,
+  );
   const setShowSurveytextImage = useStore(getSetShowSurveytextImage);
   const setShowSurveytextareaImage = useStore(getSetShowSurveytextareaImage);
   const setShowSurveyradioImage = useStore(getSetShowSurveyradioImage);
@@ -74,8 +92,11 @@ const SurveyPageQuestions = () => {
   const setShowSurveycheckboxImage = useStore(getSetShowSurveycheckboxImage);
   const setShowSurveyrating2Image = useStore(getSetShowSurveyrating2Image);
   const setShowSurveyrating5Image = useStore(getSetShowSurveyrating5Image);
+  const setShowSurveyrating7Image = useStore(getSetShowSurveyrating7Image);
   const setShowSurveyrating10Image = useStore(getSetShowSurveyrating10Image);
-  const setShowSurveyinformationImage = useStore(getSetShowSurveyinformationImage);
+  const setShowSurveyinformationImage = useStore(
+    getSetShowSurveyinformationImage,
+  );
   const setShowSurveylikertImage = useStore(getSetShowSurveylikertImage);
   const setDetailsArray = useStore(getSetDetailsArray);
 
@@ -119,6 +140,9 @@ const SurveyPageQuestions = () => {
     if (category === "rating5") {
       setShowSurveyrating5Image(true);
     }
+    if (category === "rating7") {
+      setShowSurveyrating7Image(true);
+    }
     if (category === "rating10") {
       setShowSurveyrating10Image(true);
     }
@@ -140,6 +164,7 @@ const SurveyPageQuestions = () => {
     setShowSurveycheckboxImage(false);
     setShowSurveyrating2Image(false);
     setShowSurveyrating5Image(false);
+    setShowSurveyrating7Image(false);
     setShowSurveyrating10Image(false);
     setShowSurveyinformationImage(false);
     setShowSurveylikertImage(false);
@@ -152,7 +177,8 @@ const SurveyPageQuestions = () => {
     }
     // if not at end, move up
     const temp = surveyQuestionsArray[clickedItemIndex];
-    surveyQuestionsArray[clickedItemIndex] = surveyQuestionsArray[clickedItemIndex - 1];
+    surveyQuestionsArray[clickedItemIndex] =
+      surveyQuestionsArray[clickedItemIndex - 1];
     surveyQuestionsArray[clickedItemIndex - 1] = temp;
     setSurveyQuestionsArray([...surveyQuestionsArray]);
     return;
@@ -165,7 +191,8 @@ const SurveyPageQuestions = () => {
     }
     // if not at the beginning, move up
     const temp = surveyQuestionsArray[clickedItemIndex];
-    surveyQuestionsArray[clickedItemIndex] = surveyQuestionsArray[clickedItemIndex + 1];
+    surveyQuestionsArray[clickedItemIndex] =
+      surveyQuestionsArray[clickedItemIndex + 1];
     surveyQuestionsArray[clickedItemIndex + 1] = temp;
     setSurveyQuestionsArray([...surveyQuestionsArray]);
     return;
@@ -557,6 +584,45 @@ const SurveyPageQuestions = () => {
             </div>
           );
         }
+        if (object.surveyQuestionType === "rating7") {
+          return (
+            <div key={uuid()} className="flex flex-row rounded-md">
+              <SurveyRating7Element
+                key={uuid()}
+                id={index}
+                check={checkRequiredQuestionsComplete}
+                opts={object}
+              />
+              <div className="flex flex-row mt-5 w-[130px]">
+                <img
+                  className="m-2 w-[26px] h-[30px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleMoveUp}
+                  src={UpArrows}
+                />
+                <img
+                  className="m-2 w-[26px] h-[30px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleDelete}
+                  src={TrashCan}
+                />
+                <img
+                  className="m-2 w-[26px] h-[30px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  onClick={handleEdit}
+                  id={index}
+                  src={EditIcon}
+                />
+                <img
+                  className="m-2 w-[26px] h-[30px] active:bg-orange-300 hover:outline outline-2 outline-slate-300"
+                  id={index}
+                  onClick={handleMoveDown}
+                  src={DownArrows}
+                />
+              </div>
+            </div>
+          );
+        }
+
         if (object.surveyQuestionType === "rating10") {
           return (
             <div key={uuid()} className="flex flex-row rounded-md">
@@ -635,7 +701,7 @@ const SurveyPageQuestions = () => {
   };
 
   return (
-    <div className="h-auto w-full">
+    <div className="h-auto w-full  border-2 border-red-300">
       <DeleteSurveyItemModal handleConfirmDelete={handleConfirmDelete} />
       <hr className="mt-12 h-1 bg-slate-400 rounded-md" />
       <h2 className="mt-12 mb-4">{t("surveyQuestionPreview")}</h2>

@@ -32,7 +32,8 @@ import { useStore } from "../../globalState/useStore";
 const getDetailsArray = (state) => state.detailsArray;
 const getSurveyQuestionType = (state) => state.surveyQuestionType;
 const getConfigSurveyInfoBarColor = (state) => state.configSurveyInfoBarColor;
-const getSetConfigSurveyInfoBarColor = (state) => state.setConfigSurveyInfoBarColor;
+const getSetConfigSurveyInfoBarColor = (state) =>
+  state.setConfigSurveyInfoBarColor;
 const getDisplayOptionsSemiWarn = (state) => state.displayOptionsSemiWarn;
 
 const getSurveyAnswerRequired = (state) => state.surveyAnswerRequired;
@@ -44,7 +45,8 @@ const getSetSurveyQuestionNote = (state) => state.setSurveyQuestionNote;
 const getSurveyShowOther = (state) => state.surveyShowOther;
 const getSetSurveyShowOther = (state) => state.setSurveyShowOther;
 const getSurveyAnswerLenIsLimited = (state) => state.surveyAnswerLenIsLimited;
-const getSetSurveyAnswerLenIsLimited = (state) => state.setSurveyAnswerLenIsLimited;
+const getSetSurveyAnswerLenIsLimited = (state) =>
+  state.setSurveyAnswerLenIsLimited;
 const getSurveyAnswerLenMax = (state) => state.surveyAnswerLenMax;
 const getSetSurveyAnswerLenMax = (state) => state.setSurveyAnswerLenMax;
 const getSurveyAnswerRestricted = (state) => state.surveyAnswerRestricted;
@@ -109,7 +111,10 @@ const SurveyQuestionInput: React.FC = () => {
   };
 
   const handleSurveyAnswerRequiredChange = (inputValue: any) => {
-    if (inputValue.target.value === "true" || inputValue.target.value === true) {
+    if (
+      inputValue.target.value === "true" ||
+      inputValue.target.value === true
+    ) {
       setSurveyAnswerRequired(true);
     } else {
       setSurveyAnswerRequired(false);
@@ -120,7 +125,10 @@ const SurveyQuestionInput: React.FC = () => {
     if (displayBoolean.other === false || displayBoolean.other === "false") {
       return;
     }
-    if (inputValue.target.value === "true" || inputValue.target.value === true) {
+    if (
+      inputValue.target.value === "true" ||
+      inputValue.target.value === true
+    ) {
       setSurveyShowOther(true);
     } else {
       setSurveyShowOther(false);
@@ -128,10 +136,16 @@ const SurveyQuestionInput: React.FC = () => {
   };
 
   const handleSurveyAnswerLenIsLimitedChange = (inputValue: any) => {
-    if (displayBoolean.limited === false || displayBoolean.limited === "false") {
+    if (
+      displayBoolean.limited === false ||
+      displayBoolean.limited === "false"
+    ) {
       return;
     }
-    if (inputValue.target.value === "true" || inputValue.target.value === true) {
+    if (
+      inputValue.target.value === "true" ||
+      inputValue.target.value === true
+    ) {
       setSurveyAnswerLenIsLimited(true);
     } else {
       setSurveyAnswerLenIsLimited(false);
@@ -139,10 +153,16 @@ const SurveyQuestionInput: React.FC = () => {
   };
 
   const handleSurveyAnswerRestrictedChange = (inputValue: any) => {
-    if (displayBoolean.restricted === false || displayBoolean.restricted === "false") {
+    if (
+      displayBoolean.restricted === false ||
+      displayBoolean.restricted === "false"
+    ) {
       return;
     }
-    if (inputValue.target.value === "true" || inputValue.target.value === true) {
+    if (
+      inputValue.target.value === "true" ||
+      inputValue.target.value === true
+    ) {
       setSurveyAnswerRestricted(true);
     } else {
       setSurveyAnswerRestricted(false);
@@ -151,7 +171,9 @@ const SurveyQuestionInput: React.FC = () => {
 
   return (
     <div className=" mt-12">
-      <span className="text-lg font-title font-semibold">{t("surveyQuestionGenerator")}</span>
+      <span className="text-lg font-title font-semibold">
+        {t("surveyQuestionGenerator")}
+      </span>
       <div>
         <div>
           <h3>{t("exampleItem")}:</h3>
@@ -168,13 +190,18 @@ const SurveyQuestionInput: React.FC = () => {
               </ul>
             )}
             {displayOptionsSemiWarn && (
-              <div>Separate scale or options with three semicolons &nbsp;&nbsp;&nbsp; ;;;</div>
+              <div>
+                Separate scale or options with three semicolons
+                &nbsp;&nbsp;&nbsp; ;;;
+              </div>
             )}
           </div>
         </div>
         <div>
           <div className="mt-4">
-            <span className="text-lg font-title font-semibold">{t("newItemSettings")}:</span>
+            <span className="text-lg font-title font-semibold">
+              {t("newItemSettings")}:
+            </span>
           </div>
           <div className="flex flex-row w-12/12 justify-between items-end mt-3">
             <UserDropdown />
@@ -182,7 +209,7 @@ const SurveyQuestionInput: React.FC = () => {
           </div>
           <div className="flex flex-row h-[60px] content-center items-center gap-5 mt-3">
             <span
-              className={`content-center ${displayBoolean.required ? "" : "text-slate-400"}`}
+              className={`content-center ${displayBoolean?.required ? "" : "text-slate-400"}`}
             >{`2. ${t("surveyAnswerRequired")}:`}</span>
             <div className="">
               <label
@@ -190,11 +217,11 @@ const SurveyQuestionInput: React.FC = () => {
                   "bg-blue-500 hover:bg-opacity-50 text-white px-4 py-2 rounded-md select-none",
                   {
                     "bg-opacity-50 text-slate-200 outline-1 outline-slate-100":
-                      !displayBoolean.required,
+                      !displayBoolean?.required,
                     "bg-opacity-100 ": surveyAnswerRequired,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                       !surveyAnswerRequired,
-                  }
+                  },
                 )}
                 htmlFor="surveyAnswerRequiredTrue"
               >
@@ -220,7 +247,7 @@ const SurveyQuestionInput: React.FC = () => {
                     "bg-opacity-100": !surveyAnswerRequired,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                       surveyAnswerRequired,
-                  }
+                  },
                 )}
                 htmlFor="surveyAnswerRequiredFalse"
               >
@@ -305,7 +332,7 @@ const SurveyQuestionInput: React.FC = () => {
                     "bg-opacity-100": surveyShowOther,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                       !surveyShowOther,
-                  }
+                  },
                 )}
                 htmlFor="surveyShowOtherTrue"
               >
@@ -331,7 +358,7 @@ const SurveyQuestionInput: React.FC = () => {
                     "bg-opacity-100": !surveyShowOther,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                       surveyShowOther,
-                  }
+                  },
                 )}
                 htmlFor="surveyShowOtherFalse"
               >
@@ -362,7 +389,7 @@ const SurveyQuestionInput: React.FC = () => {
                     "bg-opacity-100": surveyAnswerLenIsLimited,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                       !surveyAnswerLenIsLimited,
-                  }
+                  },
                 )}
                 htmlFor="surveyAnswerLenIsLimitedTrue"
               >
@@ -388,7 +415,7 @@ const SurveyQuestionInput: React.FC = () => {
                     "bg-opacity-100": !surveyAnswerLenIsLimited,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                       surveyAnswerLenIsLimited,
-                  }
+                  },
                 )}
                 htmlFor="surveyAnswerLenIsLimitedFalse"
               >
@@ -437,7 +464,7 @@ const SurveyQuestionInput: React.FC = () => {
                     "bg-opacity-100": surveyAnswerRestricted,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                       !surveyAnswerRestricted,
-                  }
+                  },
                 )}
                 htmlFor="surveyAnswerRestrictedTrue"
               >
@@ -463,7 +490,7 @@ const SurveyQuestionInput: React.FC = () => {
                     "bg-opacity-100": !surveyAnswerRestricted,
                     "bg-transparent hover:bg-blue-500 hover:opacity-70 hover:text-white  text-zinc-600 outline outline-1 outline-zinc-600":
                       surveyAnswerRestricted,
-                  }
+                  },
                 )}
                 htmlFor="surveyAnswerRestrictedFalse"
               >
@@ -480,7 +507,9 @@ const SurveyQuestionInput: React.FC = () => {
               </label>
             </div>
           </div>
-          <div className={`flex flex-row h-[40px] content-center items-center gap-5 mt-1`}>
+          <div
+            className={`flex flex-row h-[40px] content-center items-center gap-5 mt-1`}
+          >
             <span
               className={`content-center ${displayBoolean.bg ? "" : "text-slate-400"}`}
             >{`11. ${t("surveyInfoBarColor")}:`}</span>

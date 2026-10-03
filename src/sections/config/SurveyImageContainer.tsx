@@ -3,6 +3,7 @@ import TextAreaImage from "../../assets/images/textAreaImage.png";
 import RadioImage from "../../assets/images/radioImage.png";
 import Scale2Image from "../../assets/images/rating2Image.png";
 import Scale5Image from "../../assets/images/rating5Image.png";
+import Scale7Image from "../../assets/images/rating7Image.png";
 import Scale10Image from "../../assets/images/rating10Image.png";
 import CheckboxImage from "../../assets/images/checkboxImage.png";
 import SelectImage from "../../assets/images/selectImage.png";
@@ -17,8 +18,10 @@ const getShowSurveycheckboxImage = (state) => state.showSurveycheckboxImage;
 const getShowSurveylikertImage = (state) => state.showSurveylikertImage;
 const getShowSurveyrating2Image = (state) => state.showSurveyrating2Image;
 const getShowSurveyrating5Image = (state) => state.showSurveyrating5Image;
+const getShowSurveyrating7Image = (state) => state.showSurveyrating7Image;
 const getShowSurveyrating10Image = (state) => state.showSurveyrating10Image;
-const getShowSurveyinformationImage = (state) => state.showSurveyinformationImage;
+const getShowSurveyinformationImage = (state) =>
+  state.showSurveyinformationImage;
 
 const SurveyImageContainer = () => {
   const showSurveyinformationImage = useStore(getShowSurveyinformationImage);
@@ -30,6 +33,7 @@ const SurveyImageContainer = () => {
   const showSurveylikertImage = useStore(getShowSurveylikertImage);
   const showSurveyrating2Image = useStore(getShowSurveyrating2Image);
   const showSurveyrating5Image = useStore(getShowSurveyrating5Image);
+  const showSurveyrating7Image = useStore(getShowSurveyrating7Image);
   const showSurveyrating10Image = useStore(getShowSurveyrating10Image);
 
   return (
@@ -94,6 +98,15 @@ const SurveyImageContainer = () => {
           src={Scale5Image}
           className=" w-12/12 justify-self-center border-2 border-gray-300 rounded-md"
           alt="Survey Scale 5"
+        />
+        // </FadeIn>
+      )}
+      {showSurveyrating7Image && (
+        // <FadeIn delay={150} duration={450}>
+        <img
+          src={Scale7Image}
+          className=" w-12/12 justify-self-center border-2 border-gray-300 rounded-md"
+          alt="Survey Scale 7"
         />
         // </FadeIn>
       )}

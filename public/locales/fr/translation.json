@@ -718,6 +718,7 @@
   "checkbox": "Case à cocher",
   "rating2": "Évaluation 2",
   "rating5": "Évaluation 5",
+  "rating7": "Évaluation 7",
   "rating10": "Évaluation 10",
   "question": "Question",
   "questionnaireSummaryResults": "Résultats récapitulatifs du questionnaire",
@@ -779,5 +780,23 @@
   "netlifyStep13": "Dans la boîte « Deploys », cliquez sur le lien « browse to upload » et sélectionnez le {{{b}}}DOSSIER{{{/b}}} de votre projet. Dans quelques minutes, votre projet sera mis à jour sur le web.",
   "netlifySetupComplete": "Configuration de l'hébergement web terminée !",
   "netlifySetupCompleteMessage": "Félicitations ! Vous avez configuré avec succès votre projet sur le web. Votre site web est maintenant prêt à être utilisé.",
-  "checkInternetMessage": "Message de vérification de la connexion Internet"
+  "checkInternetMessage": "Message de vérification de la connexion Internet",
+
+  "*** CLOUDFLARE ***": "*** CLOUDFLARE ***",
+  "cloudflareTitleText": "Configuration de l'hébergement web",
+  "cloudflareIntro1": "Suivez ce guide visuel pour créer une page web pour votre projet Quince",
+  "cloudflareIntroText": "{{{b}}}Quince recommande d'utiliser 'Cloudflare Pages' pour héberger votre projet sur le web (niveau gratuit). {{{/b}}} Vous n'avez besoin d'aucune compétence en programmation pour l'utiliser.{{{br /}}}{{{br /}}}Ce guide vous montrera comment {{{b}}}configurer{{{/b}}}, {{{b}}}mettre à jour{{{/b}}} (étape 6) ou {{{b}}}supprimer{{{/b}}} (étape 10) votre projet Quince{{{/b}}}.",
+  "cloudflareStep1": "Visitez {{{u}}}{{{a href='https://www.cloudflare.com/products/pages/' rel='noopener noreferrer' target='_blank'}}}{{{strong}}}Cloudflare Pages{{{/strong}}}{{{/a}}}{{{/u}}} et créez un nouveau compte en cliquant sur le bouton 'Start building for free' en bas de la page.",
+  "cloudflareStep2": "Lors de votre première connexion, on vous demandera de sélectionner une méthode. Choisissez 'Upload your static files'.",
+  "cloudflareStep3": "Cliquez sur le lien 'folder' et sélectionnez le {{{b}}}DOSSIER du modèle Quince{{{/b}}} de votre projet (et non les fichiers individuels).",
+  "cloudflareStep4": "Une fois vos fichiers chargés, cliquez sur la case 'Worker name', supprimez le nom généré automatiquement et saisissez le nom de votre projet (celui-ci fera partie de l'URL du projet, donc n'utilisez pas de majuscules ni d'espaces). (Cloudflare désigne les pages web par le terme 'workers'.) Cliquez ensuite sur le bouton 'Deploy'.",
+  "cloudflareStep5": "Votre projet est maintenant déployé sur le web. L'URL de votre projet se trouve sur le côté gauche de l'écran. Vous pouvez cliquer sur cette URL ou sur le bouton bleu en haut à droite de l'écran pour visiter votre projet sur le web.",
+  "cloudflareStep6": "COMMENT METTRE À JOUR VOTRE PROJET : Si vous devez mettre à jour votre projet, connectez-vous au tableau de bord Cloudflare et cliquez sur le nom de votre projet.",
+  "cloudflareStep7": "Ensuite, cliquez sur le bouton 'New deployment' en haut à droite de l'écran.",
+  "cloudflareStep8": "Cliquez sur le lien 'Folder' et sélectionnez le {{{b}}}DOSSIER du modèle Quince{{{/b}}} de votre projet (et non les fichiers individuels).",
+  "cloudflareStep9": "Une fois vos fichiers téléchargés, cliquez sur le bouton 'Deploy' en bas à gauche de l'écran.",
+  "cloudflareStep10": "COMMENT SUPPRIMER VOTRE PROJET : Si vous souhaitez supprimer votre projet, accédez au tableau de bord Cloudflare et cliquez sur 'Compute' sur le côté gauche de l'écran. Cliquez ensuite sur 'Workers & Pages'.",
+  "cloudflareStep11": "Dans la section portant le nom de votre projet, cliquez sur les trois points (…) et sélectionnez 'Delete'.",
+  "cloudflareStep12": "Saisissez le nom de votre projet dans la case et cliquez sur le bouton 'Delete'. Votre projet sera désormais supprimé du web.",
+  "cloudflareStep13": "Si vous souhaitez {{{b}}}METTRE À JOUR{{{/b}}} votre projet après avoir effectué une modification avec le Configurateur, connectez-vous à votre compte Cloudflare et cliquez sur le nom de votre projet. Cliquez ensuite sur 'Pages' sur le côté gauche de la page."
 }

@@ -717,6 +717,7 @@
   "checkbox": "Kontrollkästchen",
   "rating2": "Bewertung 2",
   "rating5": "Bewertung 5",
+  "rating7": "Bewertung 7",
   "rating10": "Bewertung 10",
   "question": "Frage",
   "questionnaireSummaryResults": "Zusammenfassung der Fragebogenergebnisse",
@@ -778,6 +779,23 @@
   "netlifyStep13": "Klicken Sie im Feld 'Deploys' auf den Link 'browse to upload' und wählen Sie den {{{b}}}ORDNER{{{/b}}} Ihres Projekts aus. In wenigen Minuten wird Ihr Projekt im Web aktualisiert.",
   "netlifySetupComplete": "Webhosting-Einrichtung abgeschlossen!",
   "netlifySetupCompleteMessage": "Herzlichen Glückwunsch! Sie haben Ihr Projekt erfolgreich im Web eingerichtet. Ihre Website ist jetzt einsatzbereit.",
+  "checkInternetMessage": "Internetverbindung prüfen Nachricht",
 
-  "checkInternetMessage": "Internetverbindung prüfen Nachricht"
+  "*** CLOUDFLARE ***": "*** CLOUDFLARE ***",
+  "cloudflareTitleText": "Webhosting-Einrichtung",
+  "cloudflareIntro1": "Folgen Sie dieser visuellen Anleitung, um eine Webseite für Ihr Q-Sort-Projekt zu erstellen",
+  "cloudflareIntroText": "{{{b}}}Quince empfiehlt die Verwendung von 'Cloudflare Pages', um Ihr Projekt im Web zu hosten (kostenlose Stufe). {{{/b}}} Sie benötigen keine Programmierkenntnisse, um es zu nutzen.{{{br /}}}{{{br /}}}Diese Anleitung zeigt Ihnen, wie Sie Ihr Quince-Projekt {{{b}}}einrichten{{{/b}}}, {{{b}}}aktualisieren{{{/b}}} (Schritt 6) oder {{{b}}}löschen{{{/b}}} (Schritt 10){{{/b}}}.",
+  "cloudflareStep1": "Besuchen Sie {{{u}}}{{{a href='https://www.cloudflare.com/products/pages/' rel='noopener noreferrer' target='_blank'}}}{{{strong}}}Cloudflare Pages{{{/strong}}}{{{/a}}}{{{/u}}} und erstellen Sie ein neues Konto, indem Sie unten auf der Seite auf die Schaltfläche 'Start building for free' klicken.",
+  "cloudflareStep2": "Wenn Sie sich zum ersten Mal anmelden, werden Sie aufgefordert, eine Methode auszuwählen. Wählen Sie 'Upload your static files'.",
+  "cloudflareStep3": "Klicken Sie auf den Link 'folder' und wählen Sie den {{{b}}}Quince-Vorlagenordner{{{/b}}} Ihres Projekts aus (nicht die einzelnen Dateien).",
+  "cloudflareStep4": "Wenn Ihre Dateien geladen sind, klicken Sie auf das Feld 'Worker name', löschen Sie den automatisch generierten Namen und geben Sie den Namen Ihres Projekts ein (dieser wird Teil der URL für das Projekt sein, verwenden Sie also keine Großbuchstaben oder Leerzeichen). (Cloudflare bezeichnet Webseiten als 'Worker'.) Klicken Sie dann auf die Schaltfläche 'Deploy'.",
+  "cloudflareStep5": "Ihr Projekt ist jetzt im Web veröffentlicht. Die URL für Ihr Projekt befindet sich auf der linken Seite des Bildschirms. Sie können auf diese URL oder auf die blaue Schaltfläche oben rechts auf dem Bildschirm klicken, um Ihr Projekt im Web zu besuchen.",
+  "cloudflareStep6": "SO AKTUALISIEREN SIE IHR PROJEKT: Wenn Sie Ihr Projekt aktualisieren müssen, melden Sie sich beim Cloudflare-Dashboard an und klicken Sie auf den Namen Ihres Projekts.",
+  "cloudflareStep7": "Klicken Sie als Nächstes auf die Schaltfläche 'New deployment' oben rechts auf dem Bildschirm.",
+  "cloudflareStep8": "Klicken Sie auf den Link 'Folder' und wählen Sie den {{{b}}}Quince-Vorlagenordner{{{/b}}} Ihres Projekts aus (nicht die einzelnen Dateien).",
+  "cloudflareStep9": "Nachdem Ihre Dateien hochgeladen wurden, klicken Sie auf die Schaltfläche 'Deploy' unten links auf dem Bildschirm.",
+  "cloudflareStep10": "SO LÖSCHEN SIE IHR PROJEKT: Wenn Sie Ihr Projekt löschen möchten, gehen Sie zum Cloudflare-Dashboard und klicken Sie links auf dem Bildschirm auf 'Compute'. Klicken Sie dann auf 'Workers & Pages'.",
+  "cloudflareStep11": "Klicken Sie im Bereich mit dem Namen Ihres Projekts auf die drei Punkte (…) und wählen Sie 'Delete'.",
+  "cloudflareStep12": "Geben Sie den Namen Ihres Projekts in das Feld ein und klicken Sie auf die Schaltfläche 'Delete'. Ihr Projekt wird nun aus dem Web gelöscht.",
+  "cloudflareStep13": "Wenn Sie Ihr Projekt nach einer Änderung mit dem Configurator {{{b}}}AKTUALISIEREN{{{/b}}} möchten, melden Sie sich bei Ihrem Cloudflare-Konto an und klicken Sie auf den Namen Ihres Projekts. Klicken Sie dann links auf der Seite auf 'Pages'."
 }

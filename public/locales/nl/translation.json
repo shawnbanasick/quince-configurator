@@ -718,6 +718,7 @@
   "checkbox": "Checkbox",
   "rating2": "Beoordeling 2",
   "rating5": "Beoordeling 5",
+  "rating7": "Beoordeling 7",
   "rating10": "Beoordeling 10",
   "question": "Vraag",
   "questionnaireSummaryResults": "Vragenlijst samenvattingsresultaten",
@@ -779,5 +780,23 @@
   "netlifyStep13": "Klik in het vak 'Deploys' op de link 'browse to upload' en selecteer de {{{b}}}MAP{{{/b}}} van uw project. Binnen enkele minuten zal uw project op het web worden bijgewerkt.",
   "netlifySetupComplete": "Webhosting instellingen voltooid!",
   "netlifySetupCompleteMessage": "Gefeliciteerd! U heeft uw project succesvol op het web ingesteld. Uw website is nu klaar voor gebruik.",
-  "checkInternetMessage": "Controleer internet bericht"
+  "checkInternetMessage": "Controleer internet bericht",
+
+  "*** CLOUDFLARE ***": "*** CLOUDFLARE ***",
+  "cloudflareTitleText": "Webhosting instellen",
+  "cloudflareIntro1": "Volg deze visuele handleiding om een webpagina voor uw Quince-project te maken",
+  "cloudflareIntroText": "{{{b}}}Quince raadt aan om 'Cloudflare Pages' te gebruiken om uw project op het web te hosten (gratis niveau). {{{/b}}} U heeft geen programmeervaardigheden nodig om het te gebruiken.{{{br /}}}{{{br /}}}Deze handleiding laat u zien hoe u uw Quince-project {{{b}}}instelt{{{/b}}}, {{{b}}}bijwerkt{{{/b}}} (stap 6), of {{{b}}}verwijdert{{{/b}}} (stap 10){{{/b}}}.",
+  "cloudflareStep1": "Bezoek {{{u}}}{{{a href='https://www.cloudflare.com/products/pages/' rel='noopener noreferrer' target='_blank'}}}{{{strong}}}Cloudflare Pages{{{/strong}}}{{{/a}}}{{{/u}}} en maak een nieuw account aan door onderaan de pagina op de knop 'Start building for free' te klikken.",
+  "cloudflareStep2": "Wanneer u voor het eerst inlogt, wordt u gevraagd een methode te selecteren. Kies 'Upload your static files'.",
+  "cloudflareStep3": "Klik op de link 'folder' en selecteer de {{{b}}}Quince Template MAP{{{/b}}} van uw project (niet de afzonderlijke bestanden).",
+  "cloudflareStep4": "Zodra uw bestanden zijn geladen, klikt u op het vak 'Worker name', verwijdert u de automatisch gegenereerde naam en voert u de naam van uw project in (dit wordt deel van de URL voor het project, gebruik dus geen hoofdletters of spaties). (Cloudflare noemt webpagina's 'workers'.) Klik vervolgens op de knop 'Deploy'.",
+  "cloudflareStep5": "Uw project is nu op het web geïmplementeerd. De URL voor uw project staat aan de linkerkant van het scherm. U kunt op deze URL klikken of op de blauwe knop rechtsboven in het scherm om uw project op het web te bezoeken.",
+  "cloudflareStep6": "HOE U UW PROJECT BIJWERKT: Als u uw project moet bijwerken, logt u in op het Cloudflare-dashboard en klikt u op de naam van uw project.",
+  "cloudflareStep7": "Klik vervolgens op de knop 'New deployment' rechtsboven in het scherm.",
+  "cloudflareStep8": "Klik op de link 'Folder' en selecteer de {{{b}}}Quince Template MAP{{{/b}}} van uw project (niet de afzonderlijke bestanden).",
+  "cloudflareStep9": "Nadat uw bestanden zijn geüpload, klikt u op de knop 'Deploy' linksonder in het scherm.",
+  "cloudflareStep10": "HOE U UW PROJECT VERWIJDERT: Als u uw project wilt verwijderen, gaat u naar het Cloudflare-dashboard en klikt u op 'Compute' aan de linkerkant van het scherm. Klik vervolgens op 'Workers & Pages'.",
+  "cloudflareStep11": "Klik in de sectie met de naam van uw project op de drie puntjes (…) en selecteer 'Delete'.",
+  "cloudflareStep12": "Typ de naam van uw project in het vak en klik op de knop 'Delete'. Uw project wordt nu van het web verwijderd.",
+  "cloudflareStep13": "Als u uw project wilt {{{b}}}BIJWERKEN{{{/b}}} nadat u een wijziging heeft aangebracht met de Configurator, logt u in op uw Cloudflare-account en klikt u op de naam van uw project. Klik vervolgens op 'Pages' aan de linkerkant van de pagina."
 }
