@@ -437,6 +437,7 @@
   "preventMobileAccess": "モバイルアクセスを防止",
   "preventMobileTitle": "モバイルアクセス制限タイトル",
   "preventMobileMessage": "モバイルアクセス制限メッセージ",
+  "preventMobileAccessSubTitle": "プロジェクトへのモバイルからのアクセスを禁止する",
 
   "*** Language 2. Consent Screen ***": "***  LANGUAGE PAGE ***",
   "consentScreen": "同意画面",
@@ -634,6 +635,9 @@
   "fallbackMessage": "送信失敗フォールバックメッセージ",
   "btnTransferEmail": "メール送信ボタンテキスト",
   "submitFailMessage": "メールを送信のメールメッセージ",
+  "submitFailMessage2": "データのコピー＆ペーストに関するメッセージ",
+  "submitFailMessage3": "データのダウンロードに関するメッセージ",
+  "unableToConnect": "接続できない場合のメッセージ",
   "defaultEmailClientFail": "デフォルトメール失敗モーダルテキスト",
   "clipboardEmail": "メールアドレスをクリップボードにコピーするボタンテキスト",
   "clipboardResults": "結果をクリップボードにコピーするボタンテキスト",

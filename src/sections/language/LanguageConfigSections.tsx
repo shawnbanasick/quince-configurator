@@ -36,14 +36,18 @@ const LanguageConfigSections: React.FC = () => {
         id="cards"
         className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden w-[83vw] max-w-[1500px] mb-8"
       >
-        <div className={`bg-gradient-to-r from-blue-600 to-blue-700 text-white p-6`}>
+        <div
+          className={`bg-gradient-to-r from-blue-600 to-blue-700 text-white p-6`}
+        >
           <div className="flex items-center space-x-4">
             <div className="w-10 h-10 bg-white bg-opacity-20 rounded-lg flex items-center justify-center">
               <div className="w-6 h-6 text-white">{icon}</div>
             </div>
             <div>
               <h2 className="text-2xl font-semibold mb-1">{title}</h2>
-              <p className="text-white text-opacity-90 text-sm">{description}</p>
+              <p className="text-white text-opacity-90 text-sm">
+                {description}
+              </p>
             </div>
           </div>
         </div>
@@ -71,8 +75,8 @@ const LanguageConfigSections: React.FC = () => {
       variant: "primary" as const,
     },
     {
-      title: "Prevent Mobile Access",
-      description: "Prevent mobile access to the study",
+      title: t("preventMobileAccess"),
+      description: t("preventMobileAccessSubTitle"),
       icon: (
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
@@ -99,7 +103,10 @@ const LanguageConfigSections: React.FC = () => {
           />
         </svg>
       ),
-      components: [<ConsentPageTextInput key="consent" />, <AccessControlTextInput key="access" />],
+      components: [
+        <ConsentPageTextInput key="consent" />,
+        <AccessControlTextInput key="access" />,
+      ],
       variant: "secondary" as const,
     },
     {
@@ -172,7 +179,10 @@ const LanguageConfigSections: React.FC = () => {
           />
         </svg>
       ),
-      components: [<SortTextInput key="sort" />, <MobileSortTextInput key="mobile-sort" />],
+      components: [
+        <SortTextInput key="sort" />,
+        <MobileSortTextInput key="mobile-sort" />,
+      ],
       variant: "primary" as const,
     },
     {
@@ -207,7 +217,10 @@ const LanguageConfigSections: React.FC = () => {
           />
         </svg>
       ),
-      components: [<SurveyTextInput key="survey" />, <MobileSurveyTextInput key="mobile-survey" />],
+      components: [
+        <SurveyTextInput key="survey" />,
+        <MobileSurveyTextInput key="mobile-survey" />,
+      ],
       variant: "accent" as const,
     },
     {
@@ -223,7 +236,10 @@ const LanguageConfigSections: React.FC = () => {
           />
         </svg>
       ),
-      components: [<SubmitTextInput key="submit" />, <MobileSubmitTextInput key="mobile-submit" />],
+      components: [
+        <SubmitTextInput key="submit" />,
+        <MobileSubmitTextInput key="mobile-submit" />,
+      ],
       variant: "primary" as const,
     },
     {
@@ -245,7 +261,10 @@ const LanguageConfigSections: React.FC = () => {
           />
         </svg>
       ),
-      components: [<FailureTextInput key="failure" />, <ProjectLinkingTextInput key="linking" />],
+      components: [
+        <FailureTextInput key="failure" />,
+        <ProjectLinkingTextInput key="linking" />,
+      ],
       variant: "secondary" as const,
     },
   ];

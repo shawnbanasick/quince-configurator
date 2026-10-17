@@ -111,7 +111,8 @@ const showSectionDefaults_FR = () => {
     sortOverloadedColumnModalHead: `Navigation désactivée`,
     sortOverloadedColumnModalText: `L'une des colonnes contient trop de cartes (elle sera entourée en orange et aura une bordure en pointillés). Veuillez ajuster le placement des cartes afin que toutes les colonnes aient le nombre correct.`,
     mobileSortSwapModalHead: `Échanger les classements des énoncés ?`,
-    mobileSortSwapModalSuccessMessage: "Les positions des énoncés ont été échangées avec succès.",
+    mobileSortSwapModalSuccessMessage:
+      "Les positions des énoncés ont été échangées avec succès.",
     mobileSortSwapModalText: `Cliquez sur "Confirmer" pour échanger.`,
     mobileSortSwapModalConfirmButton: `Échanger`,
     mobileSortConditionsOfInstruction: `Classez les énoncés selon votre expérience d'utilisation des iPads en classe`,
@@ -155,17 +156,29 @@ const showSectionDefaults_FR = () => {
     btnDownload: `Télécharger`,
     goodbyeMessage: `<div>Merci !</div> <br /><div>Vous pouvez maintenant fermer l'onglet du navigateur</div>`,
     mobileSortTitleBar: `Soumettre les données`,
-    btnTransferEmail: "Ouvrir le client de messagerie et envoyer les résultats",
+
+    checkInternetMessage: `*** Erreur - Échec de la transmission*** <br/><br/>Veuillez vérifier votre connexion Internet et cliquer à nouveau sur le bouton « Envoyer les données ».`,
+    unableToConnect:
+      "Impossible de se connecter au serveur de la base de données",
+    submitFailMessage2:
+      "Tout d'abord, veuillez utiliser le bouton ci-dessous pour copier vos résultats dans le presse-papiers.",
     clipboardResults: "Copier les résultats dans le presse-papiers",
-    clipboardEmail: "Copier l'adresse e-mail dans le presse-papiers",
     copiedText: "Copié !",
-    downloadResultsButtonText: "Télécharger les résultats",
+    submitFailMessage:
+      "Ensuite, cliquez sur le bouton ci-dessous pour ouvrir votre client de messagerie, puis collez vos résultats dans le corps du message.",
+    btnTransferEmail: "Ouvrir le client de messagerie",
+    submitFailMessage3:
+      "Après l'envoi de l'e-mail, veuillez également télécharger vos résultats sur votre ordinateur à titre de sauvegarde.",
+    downloadResultsButtonText: `Télécharger les résultats`,
+    emailSubjectText: `Résultats du Q-sort Quince`,
+
     copyFailMessage: "Erreur : Veuillez réessayer.",
     defaultEmailClientFail:
       "Votre client de messagerie par défaut aurait dû s'ouvrir automatiquement avec les résultats dans le corps de l'e-mail. Si ce n'est pas le cas, veuillez utiliser les boutons ci-dessous pour copier et coller vos informations dans un e-mail.",
     emailBodyMessage:
       "Vous n'avez rien à ajouter à cet e-mail. Veuillez simplement cliquer sur le bouton ENVOYER.",
-    linkingFallbackMessage: "Veuillez cliquer sur le bouton pour commencer le prochain tri Q",
+    linkingFallbackMessage:
+      "Veuillez cliquer sur le bouton pour commencer le prochain tri Q",
     linkingBtnText: "Commencer le prochain tri Q",
     localHeader: "Panneau de contrôle du tri Q hors ligne",
     partIdText: "Nom du participant",
@@ -178,7 +191,8 @@ const showSectionDefaults_FR = () => {
       "Cela supprimera les données du tri Q du participant actuellement stockées dans le navigateur. Vous ne feriez généralement cela que lorsque vous démarrez un nouveau projet.<br/><br/><b>ATTENTION - Les données supprimées ne peuvent pas être récupérées.</b> <br/><br/> <center></center>",
     localDeleteModalHead: "Supprimer les données stockées dans le navigateur ?",
     localParticipantsText: "Participants",
-    localSaveDataButton: "Enregistrer les données du participant dans la mémoire du navigateur",
+    localSaveDataButton:
+      "Enregistrer les données du participant dans la mémoire du navigateur",
     localSubmitSuccessModalHeader: "Succès",
     localSubmitSuccessModalText:
       "Les données du tri Q du participant ont été enregistrées avec succès dans la mémoire du navigateur",
@@ -186,11 +200,7 @@ const showSectionDefaults_FR = () => {
     localSaveBeforeDeleteModalText:
       "Enregistrez les données du tri Q sur le disque avant de les supprimer.",
     returnToLocalPanelButtonText: "Retourner au panneau de contrôle",
-    emailSubjectText: `Résultats de Quince Q-sort`,
-    submitFailMessage:
-      "Impossible de se connecter à la base de données.<br/><br/>Cliquez sur le bouton pour ouvrir votre client de messagerie par défaut et envoyer un e-mail contenant les données à l'équipe de recherche.",
-    checkInternetMessage:
-      "*** Erreur - Échec de transmission ***<br/><br/>Veuillez vérifier votre connexion internet et cliquer à nouveau sur le bouton 'Soumettre les données'.",
+
     press1: "(appuyer 1)",
     press2: "(appuyer 2)",
     press3: "(appuyer 3)",

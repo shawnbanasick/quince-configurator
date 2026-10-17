@@ -437,6 +437,7 @@
   "preventMobileAccess": "阻止移动访问",
   "preventMobileTitle": "移动访问限制标题",
   "preventMobileMessage": "移动访问限制消息",
+  "preventMobileAccessSubTitle": "禁止通过移动设备访问该项目",
 
   "*** LANGUAGE 2. Consent Screen ***": "***  语言页面  ***",
   "consentScreen": "同意屏幕",
@@ -634,6 +635,9 @@
   "fallbackMessage": "数据库连接失败提示",
   "btnTransferEmail": "电子邮件提交按钮文本",
   "submitFailMessage": "发送电子邮件提示",
+  "submitFailMessage2": "复制并粘贴数据消息",
+  "submitFailMessage3": "下载数据消息",
+  "unableToConnect": "无法连接消息",
   "defaultEmailClientFail": "默认电子邮件客户端失败提示文本",
   "clipboardEmail": "复制电子邮件地址到剪贴板按钮文本",
   "clipboardResults": "复制结果到剪贴板按钮文本",

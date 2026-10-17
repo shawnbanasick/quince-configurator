@@ -437,6 +437,7 @@
   "preventMobileAccess": "Impedisci accesso mobile",
   "preventMobileTitle": "Titolo accesso mobile limitato",
   "preventMobileMessage": "Messaggio accesso mobile limitato",
+  "preventMobileAccessSubTitle": "Impedire l'accesso al progetto da dispositivi mobili",
 
   "*** LANGUAGE 2. Consent Screen ***": "***  PAGINA LINGUA  ***",
   "consentScreen": "Schermata di Consenso",
@@ -634,6 +635,9 @@
   "fallbackMessage": "Messaggio Errore Connessione Database",
   "btnTransferEmail": "Testo Pulsante Invio Email",
   "submitFailMessage": "Messaggio Invio Email",
+  "submitFailMessage2": "Messaggio di copia e incolla dei dati",
+  "submitFailMessage3": "Messaggio di download dei dati",
+  "unableToConnect": "Messaggio di impossibilità di connessione",
   "defaultEmailClientFail": "Testo Modale Errore Email Predefinita",
   "clipboardEmail": "Testo del pulsante Copia indirizzo email negli appunti",
   "clipboardResults": "Testo del pulsante Copia risultati negli appunti",

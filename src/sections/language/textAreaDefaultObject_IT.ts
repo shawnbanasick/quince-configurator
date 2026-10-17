@@ -156,17 +156,28 @@ const showSectionDefaults_IT = () => {
     btnDownload: `Scarica`,
     goodbyeMessage: `<div>Grazie!</div> <br /><div>Ora puoi chiudere la scheda del browser</div>`,
     mobileSortTitleBar: `Invia Dati`,
-    btnTransferEmail: "Apri Client Email e Invia Risultati",
-    clipboardResults: "Copia Risultati negli Appunti",
-    clipboardEmail: "Copia Indirizzo Email negli Appunti",
+
+    checkInternetMessage: `*** Errore - Trasmissione non riuscita*** <br/><br/>Verifica la tua connessione a Internet e fai di nuovo clic sul pulsante "Invia dati".`,
+    unableToConnect: "Impossibile connettersi al server del database",
+    submitFailMessage2:
+      "Per prima cosa, utilizza il pulsante qui sotto per copiare i tuoi risultati negli appunti.",
+    clipboardResults: "Copia i risultati negli appunti",
     copiedText: "Copiato!",
-    downloadResultsButtonText: "Scarica Risultati",
+    submitFailMessage:
+      "Poi, fai clic sul pulsante qui sotto per aprire il tuo client di posta elettronica e incolla i tuoi risultati nel corpo dell'e-mail.",
+    btnTransferEmail: "Apri il client di posta elettronica",
+    submitFailMessage3:
+      "Dopo aver inviato l'e-mail, scarica anche i tuoi risultati sul tuo computer come copia di backup.",
+    downloadResultsButtonText: `Scarica i risultati`,
+    emailSubjectText: `Risultati del Q-sort Quince`,
+
     copyFailMessage: "Errore: Riprova.",
     defaultEmailClientFail:
       "Il tuo client email predefinito dovrebbe essersi aperto automaticamente con i risultati nel corpo dell'email. Se non è successo, utilizza i pulsanti qui sotto per copiare e incollare le tue informazioni in un'email.",
     emailBodyMessage:
       "Non devi aggiungere nulla a questa email. Fai semplicemente clic sul pulsante INVIA.",
-    linkingFallbackMessage: "Fai clic sul pulsante per iniziare il prossimo Q sort",
+    linkingFallbackMessage:
+      "Fai clic sul pulsante per iniziare il prossimo Q sort",
     linkingBtnText: "Inizia Prossimo Q sort",
     localHeader: "Pannello di Controllo Q-sort Offline",
     partIdText: "Nome Partecipante",
@@ -184,13 +195,9 @@ const showSectionDefaults_IT = () => {
     localSubmitSuccessModalText:
       "I dati del Q sort del partecipante sono stati salvati con successo nella memoria del browser",
     localSaveBeforeDeleteModalHeader: "Eliminazione Disabilitata",
-    localSaveBeforeDeleteModalText: "Salva i Dati Q sort su Disco prima di eliminarli.",
+    localSaveBeforeDeleteModalText:
+      "Salva i Dati Q sort su Disco prima di eliminarli.",
     returnToLocalPanelButtonText: "Torna al Pannello di Controllo",
-    emailSubjectText: `Risultati di Quince Q-sort`,
-    submitFailMessage:
-      "Impossibile connettersi al database.<br/><br/>Fare clic sul pulsante per aprire il client di posta elettronica predefinito e inviare un'email contenente i dati al team di ricerca.",
-    checkInternetMessage:
-      "*** Errore - Trasmissione fallita ***<br/><br/>Si prega di controllare la connessione internet e fare clic nuovamente sul pulsante 'Invia dati'.",
     press1: "(premere 1)",
     press2: "(premere 2)",
     press3: "(premere 3)",

@@ -22,7 +22,8 @@ const showSectionDefaults_ES = () => {
     loginHeaderText: `Iniciar Sesión`,
     loginPartIdText: `Por favor ingrese su nombre o ID de participante`,
     accessCodeText: `Código de Acceso`,
-    accessInputText: "Por favor ingrese el código de acceso para esta encuesta.",
+    accessInputText:
+      "Por favor ingrese el código de acceso para esta encuesta.",
     partIdWarning: `Nombre o ID inválido`,
     accessCodeWarning: `Código de acceso inválido`,
     loginSubmitButtonText: `Enviar`,
@@ -156,16 +157,21 @@ const showSectionDefaults_ES = () => {
     btnDownload: `Descargar`,
     goodbyeMessage: `<div>¡Gracias!</div> <br /><div>Ahora puede cerrar la pestaña del navegador</div>`,
     mobileSortTitleBar: `Enviar Datos`,
-    btnTransferEmail: "Abrir Cliente de Correo Electrónico y Enviar Resultados",
-    clipboardResults: "Copiar Resultados al Portapapeles",
-    clipboardEmail: "Copiar Dirección de Correo Electrónico al Portapapeles",
+
+    checkInternetMessage: `*** Error - Fallo de transmisión*** <br/><br/>Por favor, compruebe su conexión a Internet y haga clic de nuevo en el botón «Enviar datos».`,
+    unableToConnect: "No se puede conectar con el servidor de la base de datos",
+    submitFailMessage2:
+      "Primero, utilice el botón de abajo para copiar sus resultados en el portapapeles.",
+    clipboardResults: "Copiar resultados al portapapeles",
     copiedText: "¡Copiado!",
-    downloadResultsButtonText: "Descargar Resultados",
-    copyFailMessage: "Error: Por favor intente de nuevo.",
-    defaultEmailClientFail:
-      "Su cliente de correo electrónico predeterminado debería haberse abierto automáticamente con los resultados en el cuerpo del correo. Si no fue así, por favor use los botones a continuación para copiar y pegar su información en un correo electrónico.",
-    emailBodyMessage:
-      "No tiene que agregar nada a este correo electrónico. Por favor solo haga clic en el botón ENVIAR.",
+    submitFailMessage:
+      "A continuación, haga clic en el botón de abajo para abrir su cliente de correo electrónico y pegue sus resultados en el cuerpo del mensaje.",
+    btnTransferEmail: "Abrir cliente de correo electrónico",
+    submitFailMessage3:
+      "Después de enviar el correo electrónico, descargue también sus resultados en su ordenador como copia de seguridad.",
+    downloadResultsButtonText: `Descargar resultados`,
+    emailSubjectText: `Resultados de la Q-sort de Quince`,
+
     linkingFallbackMessage:
       "Por favor haga clic en el botón para comenzar la siguiente clasificación Q",
     linkingBtnText: "Comenzar Siguiente Clasificación Q",
@@ -180,7 +186,8 @@ const showSectionDefaults_ES = () => {
       "Esto eliminará los datos de clasificación Q del participante que están almacenados actualmente en el navegador. Normalmente solo haría esto cuando esté comenzando un nuevo proyecto.<br/><br/><b>PRECAUCIÓN - Los datos eliminados no se pueden recuperar.</b> <br /><br /> <center></center>",
     localDeleteModalHead: "¿Eliminar Datos Almacenados en el Navegador?",
     localParticipantsText: "Participantes",
-    localSaveDataButton: "Guardar Datos del Participante en la Memoria del Navegador",
+    localSaveDataButton:
+      "Guardar Datos del Participante en la Memoria del Navegador",
     localSubmitSuccessModalHeader: "Éxito",
     localSubmitSuccessModalText:
       "Los datos de clasificación Q del participante se han guardado exitosamente en la memoria del navegador",
@@ -188,11 +195,6 @@ const showSectionDefaults_ES = () => {
     localSaveBeforeDeleteModalText:
       "Guarde los Datos de Clasificación Q en el Disco antes de eliminar.",
     returnToLocalPanelButtonText: "Volver al Panel de Control",
-    emailSubjectText: `Resultados de Quince Q-sort`,
-    submitFailMessage:
-      "No se puede conectar a la base de datos.<br/><br/>Haga clic en el botón para abrir su cliente de correo electrónico predeterminado y enviar un correo con los datos al equipo de investigación.",
-    checkInternetMessage:
-      "*** Error - Fallo en la transmisión ***<br/><br/>Por favor, verifique su conexión a internet y haga clic nuevamente en el botón 'Enviar datos'.",
     press1: "(presionar 1)",
     press2: "(presionar 2)",
     press3: "(presionar 3)",

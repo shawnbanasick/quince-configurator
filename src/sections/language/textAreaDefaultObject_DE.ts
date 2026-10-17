@@ -93,7 +93,8 @@ const showSectionDefaults_DE = () => {
     thinningHelpModalText:
       "Bitte schauen Sie sich die Aussagen, die Sie in der vorherigen Phase bewertet haben, noch einmal an. Wählen Sie diejenigen aus, von denen Sie glauben, dass sie der beste Ausdruck Ihrer Perspektive sind.",
     thinningConfirmModalHead: "Unvollständige Auswahl",
-    thinningConfirmModalText: "Bitte wählen Sie die erforderliche Anzahl von Aussagen aus.",
+    thinningConfirmModalText:
+      "Bitte wählen Sie die erforderliche Anzahl von Aussagen aus.",
     initialInstructionPart1:
       "Unten sehen Sie die Aussagen, die Sie im vorherigen Schritt positiv bewertet haben. Wählen Sie nun die Anzahl der Aussagen aus, denen Sie <b>AM MEISTEN ZUSTIMMEN</b>.<br /><br />",
     initialInstructionPart2:
@@ -107,7 +108,8 @@ const showSectionDefaults_DE = () => {
     finalInstructions:
       "Verfeinerungsprozess abgeschlossen. Klicken Sie auf die Navigationsschaltfläche unten rechts, um zur nächsten Phase zu gelangen.",
     moveTopMobileHead: "Verschieben bestätigen",
-    moveAllTopMobileText: "Alle ausgewählten Aussagen an den Anfang der Liste verschieben?",
+    moveAllTopMobileText:
+      "Alle ausgewählten Aussagen an den Anfang der Liste verschieben?",
     moveTopMobileButtonOK: "Ja",
     mobileThinConditionsOfInstruction: "Verfeinern Sie Ihre Bewertungen",
     mobileThinSubmitButtonText: "Absenden",
@@ -152,7 +154,8 @@ const showSectionDefaults_DE = () => {
     sortOverloadedColumnModalText:
       "Eine der Spalten enthält zu viele Karten (sie wird orange umrandet und hat einen gestrichelten Rahmen). Bitte passen Sie die Platzierung der Karten so an, dass alle Spalten die korrekte Anzahl aufweisen.",
     mobileSortSwapModalHead: "Aussagen-Rankings tauschen?",
-    mobileSortSwapModalSuccessMessage: "Die Positionen der Aussagen wurden erfolgreich getauscht.",
+    mobileSortSwapModalSuccessMessage:
+      "Die Positionen der Aussagen wurden erfolgreich getauscht.",
     mobileSortSwapModalText: 'Klicken Sie auf "Bestätigen", um zu tauschen.',
     mobileSortSwapModalConfirmButton: "Tauschen",
     mobileSortConditionsOfInstruction:
@@ -181,9 +184,12 @@ const showSectionDefaults_DE = () => {
     mobilePostsortPreventNavModalText:
       "Bitte fügen Sie Kommentare zu allen Aussagen hinzu, bevor Sie zum nächsten Schritt gehen.",
     mobilePostsortSortbarText: "Kommentare nach der Sortierung",
-    mobilePostsortPlaceholder: "Klicken Sie hier, um einen Kommentar hinzuzufügen",
-    mobilePostsortHelpModalHead: "Phase 4 von 5<br/> Kommentare nach der Rangfolge",
-    mobilePostsortHelpModalText: "Bitte kommentieren Sie Ihre Rangfolge dieser Aussagen.",
+    mobilePostsortPlaceholder:
+      "Klicken Sie hier, um einen Kommentar hinzuzufügen",
+    mobilePostsortHelpModalHead:
+      "Phase 4 von 5<br/> Kommentare nach der Rangfolge",
+    mobilePostsortHelpModalText:
+      "Bitte kommentieren Sie Ihre Rangfolge dieser Aussagen.",
     surveyHeader: "Fragebogen nach der Sortierung",
     surveyModalHead: "Schritt 5 von 5",
     surveyModalText:
@@ -191,7 +197,8 @@ const showSectionDefaults_DE = () => {
     surveyPreventNavModalHead: "Navigation deaktiviert",
     surveyPreventNavModalText:
       "Bitte beantworten Sie die Pflichtfragen (gelb umrandet), bevor Sie zum nächsten Schritt gehen.",
-    mobileSurveyHelpModalHead: "Phase 5 von 5<br/> Befragung nach der Rangfolge",
+    mobileSurveyHelpModalHead:
+      "Phase 5 von 5<br/> Befragung nach der Rangfolge",
     mobileSurveyHelpModalText:
       "Bitte beantworten Sie diese Hintergrundfragen.<br/><br/>Bei einigen Fragen müssen Sie möglicherweise eine Antwort angeben, bevor Sie zum letzten Schritt gehen können.",
     btnTransfer: "Daten übermitteln",
@@ -211,16 +218,21 @@ const showSectionDefaults_DE = () => {
     goodbyeMessage:
       "<div>Vielen Dank!</div> <br /><div>Sie können nun den Browser-Tab schließen</div>",
     mobileSortTitleBar: "Daten übermitteln",
-    btnTransferEmail: "E-Mail-Client öffnen und Ergebnisse senden",
-    clipboardResults: "Ergebnisse in Zwischenablage kopieren",
-    clipboardEmail: "E-Mail-Adresse in Zwischenablage kopieren",
+
+    checkInternetMessage: `*** Fehler - Übertragung fehlgeschlagen*** <br/><br/>Bitte überprüfen Sie Ihre Internetverbindung und klicken Sie erneut auf die Schaltfläche „Daten absenden".`,
+    unableToConnect: "Verbindung zum Datenbankserver nicht möglich",
+    submitFailMessage2:
+      "Bitte kopieren Sie zunächst Ihre Ergebnisse mit der Schaltfläche unten in die Zwischenablage.",
+    clipboardResults: "1. Ergebnisse in die Zwischenablage kopieren",
     copiedText: "Kopiert!",
-    downloadResultsButtonText: "Ergebnisse herunterladen",
-    copyFailMessage: "Fehler: Bitte versuchen Sie es erneut.",
-    defaultEmailClientFail:
-      "Ihr Standard-E-Mail-Client sollte automatisch mit den Ergebnissen im E-Mail-Text geöffnet worden sein. Falls nicht, verwenden Sie bitte die Schaltflächen unten, um Ihre Informationen zu kopieren und in eine E-Mail einzufügen.",
-    emailBodyMessage:
-      "Sie müssen dieser E-Mail nichts hinzufügen. Bitte klicken Sie einfach auf die SENDEN-Schaltfläche.",
+    submitFailMessage:
+      "Klicken Sie anschließend auf die Schaltfläche unten, um Ihr E-Mail-Programm zu öffnen, und fügen Sie Ihre Ergebnisse in den Text der E-Mail ein.",
+    btnTransferEmail: "2. E-Mail-Programm öffnen",
+    submitFailMessage3:
+      "Laden Sie nach dem Versenden der E-Mail bitte zusätzlich Ihre Ergebnisse als Sicherungskopie auf Ihren Computer herunter.",
+    downloadResultsButtonText: `3. Ergebnisse herunterladen`,
+    emailSubjectText: `Quince-Q-Sort-Ergebnisse`,
+
     linkingFallbackMessage:
       "Bitte klicken Sie auf die Schaltfläche, um mit dem nächsten Q-Sort zu beginnen",
     linkingBtnText: "Nächsten Q-Sort beginnen",
@@ -243,11 +255,6 @@ const showSectionDefaults_DE = () => {
     localSaveBeforeDeleteModalText:
       "Speichern Sie Q-Sort-Daten auf der Festplatte, bevor Sie löschen.",
     returnToLocalPanelButtonText: "Zum Kontrollfeld zurückkehren",
-    emailSubjectText: `Quince Q-sort Ergebnisse`,
-    submitFailMessage:
-      "Verbindung zur Datenbank nicht möglich.<br/><br/>Klicken Sie auf die Schaltfläche, um Ihr Standard-E-Mail-Programm zu öffnen und eine E-Mail mit den Daten an das Forschungsteam zu senden.",
-    checkInternetMessage:
-      "*** Fehler - Übertragung fehlgeschlagen ***<br/><br/>Bitte überprüfen Sie Ihre Internetverbindung und klicken Sie erneut auf die Schaltfläche 'Daten übermitteln'.",
     press1: "(1 drücken)",
     press2: "(2 drücken)",
     press3: "(3 drücken)",

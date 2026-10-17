@@ -437,6 +437,7 @@
   "preventMobileAccess": "모바일 접근 방지",
   "preventMobileTitle": "모바일 접근 제한 제목",
   "preventMobileMessage": "모바일 접근 제한 메시지",
+  "preventMobileAccessSubTitle": "프로젝트에 대한 모바일 접근 차단",
 
   "*** LANGUAGE 2. Consent Screen ***": "***  언어 페이지  ***",
   "consentScreen": "동의 화면",
@@ -634,6 +635,9 @@
   "fallbackMessage": "데이터베이스 연결 실패 메시지",
   "btnTransferEmail": "이메일 제출 버튼 텍스트",
   "submitFailMessage": "이메일 전송 메시지",
+  "submitFailMessage2": "데이터 복사 및 붙여넣기 메시지",
+  "submitFailMessage3": "데이터 다운로드 메시지",
+  "unableToConnect": "연결 불가 메시지",
   "defaultEmailClientFail": "기본 이메일 실패 모달 텍스트",
   "clipboardEmail": "이메일 주소 클립보드에 복사",
   "clipboardResults": "결과 클립보드에 복사",

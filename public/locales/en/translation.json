@@ -437,6 +437,7 @@
   "preventMobileAccess": "Prevent Mobile Access",
   "preventMobileTitle": "Mobile Access Restricted Title",
   "preventMobileMessage": "Mobile Access Restricted Message",
+  "preventMobileAccessSubTitle": "Prevent Mobile Access to the Study",
 
   "*** LANGUAGE 3. Consent Screen ***": "***  LANGUAGE PAGE  ***",
   "consentScreen": "Consent Screen",
@@ -634,6 +635,10 @@
   "fallbackMessage": "Database Connection Failure Message",
   "btnTransferEmail": "Email Submit Button Text",
   "submitFailMessage": "Send Email Message",
+  "submitFailMessage2": "Copy and Paste Data Message",
+  "submitFailMessage3": "Download Data Message",
+  "unableToConnect": "Unable to Connect Message",
+  "unableToSendEmail": "Unable to Send Email Message",
   "defaultEmailClientFail": "Default Email Fail Modal Text",
   "clipboardEmail": "Copy Email Address to Clipboard Button Text",
   "clipboardResults": "Copy Results to Clipboard Button Text",

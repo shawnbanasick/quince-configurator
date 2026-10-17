@@ -92,7 +92,8 @@ const showSectionDefaults_PT = () => {
     thinningHelpModalText:
       "Por favor, observe novamente as afirmações que você avaliou na etapa anterior. Escolha aquelas que você sente que são a melhor expressão da sua perspectiva.",
     thinningConfirmModalHead: "Seleção Incompleta",
-    thinningConfirmModalText: "Por favor, selecione o número necessário de afirmações.",
+    thinningConfirmModalText:
+      "Por favor, selecione o número necessário de afirmações.",
     initialInstructionPart1:
       "Abaixo estão as afirmações que você avaliou positivamente na etapa anterior. Agora, escolha o número de afirmações com as quais você <b>MAIS CONCORDA</b>.<br /><br />",
     initialInstructionPart2:
@@ -106,7 +107,8 @@ const showSectionDefaults_PT = () => {
     finalInstructions:
       "Processo de refinamento concluído. Clique no botão de navegação no canto inferior direito para ir para a próxima etapa.",
     moveTopMobileHead: "Confirmar Movimento",
-    moveAllTopMobileText: "Mover todas as afirmações selecionadas para o topo da lista?",
+    moveAllTopMobileText:
+      "Mover todas as afirmações selecionadas para o topo da lista?",
     moveTopMobileButtonOK: "Sim",
     mobileThinConditionsOfInstruction: "Refine Suas Avaliações",
     mobileThinSubmitButtonText: "Enviar",
@@ -119,10 +121,12 @@ const showSectionDefaults_PT = () => {
       "Por favor, complete o processo de refinamento antes de navegar para a próxima página.",
     mobileThinProcessCompleteMessage:
       "O processo de refinamento está completo. <br/><br/> Por favor, clique no botão de navegação no canto inferior direito para ir para a próxima etapa.",
-    mobileGuidanceModalRight1Header: "Etapa 2 de 5<br/> Processo de Refinamento",
+    mobileGuidanceModalRight1Header:
+      "Etapa 2 de 5<br/> Processo de Refinamento",
     mobileGuidanceModalRight1Text:
       "Existem várias etapas nesta Fase. <br/><br/>Passo 1. Por favor, observe todas as afirmações que você avaliou <b>positivamente</b> e selecione aquelas que estão <b>mais próximas da sua perspectiva</b>.<br/><br/>Você pode precisar <b>rolar</b> para baixo para ver todas as afirmações.",
-    mobileGuidanceModalRight2Header: "Etapa 2 de 5<br/> Processo de Refinamento",
+    mobileGuidanceModalRight2Header:
+      "Etapa 2 de 5<br/> Processo de Refinamento",
     mobileGuidanceModalRight2Text:
       "Em seguida, mais uma vez observe as afirmações restantes que você avaliou <b>positivamente</b> e selecione o <b>próximo conjunto</b> de afirmações que estão <b>mais próximas da sua perspectiva</b>.",
     mobileGuidanceModalLeft1Header: "Etapa 2 de 5<br/> Processo de Refinamento",
@@ -139,7 +143,8 @@ const showSectionDefaults_PT = () => {
       "Neste passo, por favor, clique e arraste os cartões de afirmação para a coluna apropriada com base na sua perspectiva e nas instruções do pesquisador no topo da página. <br/>",
     sortAgreement: "Concordo",
     sortDisagreement: "Discordo",
-    condOfInst: "Ordene os cartões de acordo com sua experiência com os iPads neste semestre",
+    condOfInst:
+      "Ordene os cartões de acordo com sua experiência com os iPads neste semestre",
     sortingCompleteModalHead: "Ordenação Completa",
     sortingCompleteModalText:
       'Você completou a ordenação inicial. Por favor, reserve um momento para confirmar a colocação dos cartões.<br/><br/>Quando estiver satisfeito com a colocação deles, por favor, clique no <b>botão azul "Continuar"</b> no canto inferior direito da sua tela para ir para o próximo passo.',
@@ -150,12 +155,14 @@ const showSectionDefaults_PT = () => {
     sortOverloadedColumnModalText:
       "Uma das colunas tem muitos cartões (ela será destacada em laranja e terá uma borda tracejada). Por favor, ajuste a colocação dos cartões para que todas as colunas tenham o número correto.",
     mobileSortSwapModalHead: "Trocar Classificações das Afirmações?",
-    mobileSortSwapModalSuccessMessage: "As posições das afirmações foram trocadas com sucesso.",
+    mobileSortSwapModalSuccessMessage:
+      "As posições das afirmações foram trocadas com sucesso.",
     mobileSortSwapModalText: 'Clique em "Confirmar" para trocar.',
     mobileSortSwapModalConfirmButton: "Trocar",
     mobileSortConditionsOfInstruction:
       "Classifique as Afirmações de Acordo com Sua Experiência de Uso dos iPads na Aula",
-    mobileSortHelpModalHead: "Etapa 3 de 5<br/> Classificação Final das Afirmações",
+    mobileSortHelpModalHead:
+      "Etapa 3 de 5<br/> Classificação Final das Afirmações",
     mobileSortHelpModalText:
       "As afirmações foram classificadas com base em suas avaliações anteriores.<br/><br/> Aquelas afirmações que estão mais próximas da sua perspectiva devem estar no topo da lista. Aquelas que estão mais distantes da sua perspectiva devem estar na parte inferior da lista.<br/><br/>Você precisará <b>rolar para baixo</b> para ver todas as afirmações.<br/><br/>Por favor, <b>revise as classificações</b> e faça quaisquer mudanças necessárias na classificação das afirmações para que a ordenação <b>reflita com precisão sua perspectiva</b>. <br/><br/><mark>Esta é a etapa mais crítica da pesquisa, portanto, revise as classificações das afirmações com cuidado.</mark><br/><br/> Para <b>trocar as posições de afirmações vizinhas</b>, toque nas setas para cima ou para baixo no lado direito ou esquerdo da afirmação.<br/><br/>Para <b>trocar as posições de afirmações que estão separadas</b>, toque em duas afirmações (a cor da afirmação mudará para amarelo) e uma mensagem de confirmação de troca aparecerá.<br/><br/>Quando estiver satisfeito com todas as classificações, toque no botão de navegação no canto inferior direito.",
     mobileSortScrollBottomModalHead: "Navegação Desabilitada",
@@ -180,8 +187,10 @@ const showSectionDefaults_PT = () => {
       "Por favor, adicione comentários a todas as afirmações antes de ir para o próximo passo.",
     mobilePostsortSortbarText: "Comentários Pós-Ordenação",
     mobilePostsortPlaceholder: "Clique aqui para adicionar comentário",
-    mobilePostsortHelpModalHead: "Etapa 4 de 5<br/> Comentários Pós-Classificação",
-    mobilePostsortHelpModalText: "Por favor, comente sobre suas classificações destas afirmações.",
+    mobilePostsortHelpModalHead:
+      "Etapa 4 de 5<br/> Comentários Pós-Classificação",
+    mobilePostsortHelpModalText:
+      "Por favor, comente sobre suas classificações destas afirmações.",
     surveyHeader: "Questionário Pós-Ordenação",
     surveyModalHead: "Passo 5 de 5",
     surveyModalText:
@@ -189,7 +198,8 @@ const showSectionDefaults_PT = () => {
     surveyPreventNavModalHead: "Navegação Desabilitada",
     surveyPreventNavModalText:
       "Por favor, responda às perguntas obrigatórias (destacadas em amarelo) antes de ir para o próximo passo.",
-    mobileSurveyHelpModalHead: "Etapa 5 de 5<br/> Questionário Pós-Classificação",
+    mobileSurveyHelpModalHead:
+      "Etapa 5 de 5<br/> Questionário Pós-Classificação",
     mobileSurveyHelpModalText:
       "Por favor, responda a estas perguntas de histórico.<br/><br/>Algumas das perguntas podem exigir que você forneça uma resposta antes de poder ir para o passo final.",
     btnTransfer: "Enviar Dados",
@@ -209,17 +219,27 @@ const showSectionDefaults_PT = () => {
     goodbyeMessage:
       "<div>Obrigado!</div> <br /><div>Você pode agora fechar a aba do navegador</div>",
     mobileSortTitleBar: "Enviar Dados",
-    btnTransferEmail: "Abrir Cliente de Email e Enviar Resultados",
-    clipboardResults: "Copiar Resultados para a Área de Transferência",
-    clipboardEmail: "Copiar Endereço de Email para a Área de Transferência",
+    checkInternetMessage: `*** Erro - Falha na transmissão*** <br/><br/>Verifique a sua ligação à Internet e clique novamente no botão «Enviar dados».`,
+    unableToConnect: "Não é possível ligar ao servidor da base de dados",
+    submitFailMessage2:
+      "Primeiro, utilize o botão abaixo para copiar os seus resultados para a área de transferência.",
+    clipboardResults: "Copiar resultados para a área de transferência",
     copiedText: "Copiado!",
-    downloadResultsButtonText: "Baixar Resultados",
+    submitFailMessage:
+      "De seguida, clique no botão abaixo para abrir a sua aplicação de correio eletrónico e cole os seus resultados no corpo da mensagem.",
+    btnTransferEmail: "Abrir aplicação de correio eletrónico",
+    submitFailMessage3:
+      "Depois de enviar a mensagem, transfira também os seus resultados para o seu computador como cópia de segurança.",
+    downloadResultsButtonText: `Transferir resultados`,
+    emailSubjectText: `Resultados do Q-sort Quince`,
+
     copyFailMessage: "Erro: Por favor, tente novamente.",
     defaultEmailClientFail:
       "Seu cliente de email padrão deveria ter aberto automaticamente com os resultados no corpo do email. Se não abriu, por favor, use os botões abaixo para copiar e colar suas informações em um email.",
     emailBodyMessage:
       "Você não precisa adicionar nada a este email. Por favor, apenas clique no botão ENVIAR.",
-    linkingFallbackMessage: "Por favor, clique no botão para iniciar a próxima ordenação Q",
+    linkingFallbackMessage:
+      "Por favor, clique no botão para iniciar a próxima ordenação Q",
     linkingBtnText: "Iniciar Próxima Ordenação Q",
     localHeader: "Painel de Controle de Ordenação Q Offline",
     partIdText: "Nome do Participante",
@@ -237,13 +257,9 @@ const showSectionDefaults_PT = () => {
     localSubmitSuccessModalText:
       "Os dados da ordenação Q do participante foram salvos com sucesso na memória do navegador",
     localSaveBeforeDeleteModalHeader: "Exclusão Desabilitada",
-    localSaveBeforeDeleteModalText: "Salve os Dados da Ordenação Q em Disco antes de excluir.",
+    localSaveBeforeDeleteModalText:
+      "Salve os Dados da Ordenação Q em Disco antes de excluir.",
     returnToLocalPanelButtonText: "Retornar ao Painel de Controle",
-    emailSubjectText: `Resultados do Quince Q-sort`,
-    submitFailMessage:
-      "Não foi possível conectar ao banco de dados.<br/><br/>Clique no botão para abrir seu cliente de e-mail padrão e enviar um e-mail contendo os dados para a equipe de pesquisa.",
-    checkInternetMessage:
-      "*** Erro - Falha na transmissão ***<br/><br/>Por favor, verifique sua conexão com a internet e clique novamente no botão 'Enviar dados'.",
     press1: "(pressionar 1)",
     press2: "(pressionar 2)",
     press3: "(pressionar 3)",

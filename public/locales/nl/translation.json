@@ -437,6 +437,7 @@
   "preventMobileAccess": "Mobiele toegang voorkomen",
   "preventMobileTitle": "Titel beperkte mobiele toegang",
   "preventMobileMessage": "Bericht beperkte mobiele toegang",
+  "preventMobileAccessSubTitle": "Mobiele toegang tot het project blokkeren",
 
   "*** LANGUAGE 2. Consent Screen ***": "***  LANGUAGE PAGE  ***",
   "consentScreen": "Toestemmingsscherm",
@@ -634,6 +635,9 @@
   "fallbackMessage": "Bericht databaseverbinding mislukt",
   "btnTransferEmail": "Tekst verzendknop e-mail",
   "submitFailMessage": "Bericht e-mail verzenden",
+  "submitFailMessage2": "Bericht voor gegevens kopiëren en plakken",
+  "submitFailMessage3": "Bericht voor gegevens downloaden",
+  "unableToConnect": "Bericht bij mislukte verbinding",
   "defaultEmailClientFail": "Tekst venster standaard e-mailclient mislukt",
   "clipboardEmail": "Kopieer e-mailadres naar klembord knoptekst",
   "clipboardResults": "Kopieer resultaten naar klembord knoptekst",

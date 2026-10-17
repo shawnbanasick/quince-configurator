@@ -436,6 +436,7 @@
   "preventMobileAccess": "Mobilen Zugriff verhindern",
   "preventMobileTitle": "Titel für eingeschränkten mobilen Zugriff",
   "preventMobileMessage": "Nachricht für eingeschränkten mobilen Zugriff",
+  "preventMobileAccessSubTitle": "Den mobilen Zugriff auf das Projekt verhindernt",
 
   "*** LANGUAGE 2. Consent Screen ***": "***  LANGUAGE PAGE  ***",
   "consentScreen": "Einwilligungsbildschirm",
@@ -633,6 +634,9 @@
   "fallbackMessage": "Fehlermeldung bei Datenbankverbindung",
   "btnTransferEmail": "Text der E-Mail-Absenden-Schaltfläche",
   "submitFailMessage": "Nachricht zum Versenden der E-Mail",
+  "submitFailMessage2": "Nachricht zum Kopieren und Einfügen der Daten",
+  "submitFailMessage3": "Nachricht zum Herunterladen der Daten",
+  "unableToConnect": "Nachricht bei fehlgeschlagener Verbindung",
   "defaultEmailClientFail": "Text des Modals bei fehlgeschlagenem Standard-E-Mail-Client",
   "clipboardEmail": "E-Mail-Adresse in Zwischenablage kopieren",
   "clipboardResults": "Ergebnisse in Zwischenablage kopieren",

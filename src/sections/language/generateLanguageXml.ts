@@ -493,30 +493,30 @@ const generateLanguageXml = () => {
         <item order="19-1" id="checkInternetMessage">${encodeHTML(
           useStore.getState().checkInternetMessage,
         )}</item>
-        <item order="19-2" id="btnTransferEmail">${encodeHTML(
-          useStore.getState().btnTransferEmail,
+        <item order="19-2" id="unableToConnect">${encodeHTML(
+          useStore.getState().unableToConnect,
         )}</item>
-        <item order="19-3" id="submitFailMessage">${encodeHTML(
+        <item order="19-3" id="submitFailMessage2">${encodeHTML(
+          useStore.getState().submitFailMessage2,
+        )}</item>  
+        <item order="19-4" id="clipboardResults">${encodeHTML(
+          useStore.getState().clipboardResults,
+        )}</item>   
+        <item order="19-5" id="copiedText">${encodeHTML(
+          useStore.getState().copiedText,
+        )}</item>  
+        <item order="19-6" id="submitFailMessage">${encodeHTML(
           useStore.getState().submitFailMessage,
         )}</item>  
-        <item order="19-4" id="defaultEmailClientFail">${encodeHTML(
-          useStore.getState().defaultEmailClientFail,
-        )}</item>   
-        <item order="19-5" id="clipboardEmail">${encodeHTML(
-          useStore.getState().clipboardEmail,
+        <item order="19-7" id="btnTransferEmail">${encodeHTML(useStore.getState().btnTransferEmail)}</item>  
+        <item order="19-8" id="submitFailMessage3">${encodeHTML(
+          useStore.getState().submitFailMessage3,
         )}</item>  
-        <item order="19-6" id="clipboardResults">${encodeHTML(
-          useStore.getState().clipboardResults,
-        )}</item>  
-        <item order="19-7" id="copiedText">${encodeHTML(useStore.getState().copiedText)}</item>  
-        <item order="19-8" id="downloadResultsButtonText">${encodeHTML(
+        <item order="19-9" id="downloadResultsButtonText">${encodeHTML(
           useStore.getState().downloadResultsButtonText,
-        )}</item>  
-        <item order="19-9" id="emailSubjectText">${encodeHTML(
-          useStore.getState().emailSubjectText,
         )}</item>
-        <item order="19-10" id="emailBodyMessage">${encodeHTML(
-          useStore.getState().emailBodyMessage,
+        <item order="19-10" id="emailSubjectText">${encodeHTML(
+          useStore.getState().emailSubjectText,
         )}</item>
 
         <!-- 20. LINKING -->

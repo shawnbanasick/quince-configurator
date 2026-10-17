@@ -20,8 +20,13 @@ const showSectionDefaults = (section) => {
   if (currentLang === "ja") {
     defObj = defObject_JA();
   }
+  if (currentLang === "en-US") {
+    console.log("showSectionDefaults: currentLang is en-US");
+    defObj = { ...defObject() };
+  }
   if (currentLang === "en") {
-    defObj = defObject();
+    console.log("showSectionDefaults: currentLang is en");
+    defObj = { ...defObject() };
   }
   if (currentLang === "de") {
     defObj = defObject_DE();
@@ -55,8 +60,8 @@ const showSectionDefaults = (section) => {
 
   const setDefaults = (array) => {
     array.forEach((item) => {
-      localStorage.setItem(item, defObj[item]);
-      useStore.setState((state) => ({ ...state, [item]: defObj[item] }));
+      localStorage.setItem(item, defObj?.[item]);
+      useStore.setState((state) => ({ ...state, [item]: defObj?.[item] }));
       //   appState[item] = defObj[item];
     });
   };
@@ -364,14 +369,14 @@ const showSectionDefaults = (section) => {
   if (section === "emailDef") {
     selectorArray = [
       "checkInternetMessage",
-      "btnTransferEmail",
-      "submitFailMessage",
-      "defaultEmailClientFail",
-      "clipboardEmail",
+      "unableToConnect",
+      "submitFailMessage2",
       "clipboardResults",
       "copiedText",
+      "submitFailMessage",
+      "btnTransferEmail",
+      "submitFailMessage3",
       "downloadResultsButtonText",
-      "emailBodyMessage",
       "emailSubjectText",
     ];
 

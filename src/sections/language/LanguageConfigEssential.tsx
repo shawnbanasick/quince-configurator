@@ -6,8 +6,12 @@ import { MobilePresortTextInput } from "./MobilePresortTextInput.js";
 import { SortTextInput } from "./SortTextInput.js";
 import { MobileSortTextInput } from "./MobileSortTextInput.js";
 import { PreventMobileAccess } from "./PreventMobileAccess.js";
+import { FailureTextInput } from "./EmailTextInput.js";
+import { ProjectLinkingTextInput } from "./ProjectLinkingTextInput.js";
+import { useTranslation } from "react-i18next";
 
 const LanguageConfigEssential: React.FC = () => {
+  const { t } = useTranslation();
   const ConfigSection: React.FC<{
     title: string;
     description: string;
@@ -20,14 +24,18 @@ const LanguageConfigEssential: React.FC = () => {
         id="cards"
         className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden w-[83vw] max-w-[1500px] mb-8"
       >
-        <div className={`bg-gradient-to-r from-blue-600 to-blue-700 text-white p-6`}>
+        <div
+          className={`bg-gradient-to-r from-blue-600 to-blue-700 text-white p-6`}
+        >
           <div className="flex items-center space-x-4">
             <div className="w-10 h-10 bg-white bg-opacity-20 rounded-lg flex items-center justify-center">
               <div className="w-6 h-6 text-white">{icon}</div>
             </div>
             <div>
               <h2 className="text-2xl font-semibold mb-1">{title}</h2>
-              <p className="text-white text-opacity-90 text-sm">{description}</p>
+              <p className="text-white text-opacity-90 text-sm">
+                {description}
+              </p>
             </div>
           </div>
         </div>
@@ -39,8 +47,8 @@ const LanguageConfigEssential: React.FC = () => {
   // Organize components by categories
   const screenSections = [
     {
-      title: "Prevent Mobile Access",
-      description: "Prevent mobile access to the study",
+      title: t("preventMobileAccess"),
+      description: t("preventMobileAccessSubTitle"),
       icon: (
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
@@ -55,8 +63,8 @@ const LanguageConfigEssential: React.FC = () => {
       variant: "secondary" as const,
     },
     {
-      title: "Access & Consent",
-      description: "Configure access control and consent page content",
+      title: t("accessAndConsent"),
+      description: t("accessAndConsentSubTitle"),
       icon: (
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
@@ -71,8 +79,8 @@ const LanguageConfigEssential: React.FC = () => {
       variant: "secondary" as const,
     },
     {
-      title: "Welcome Screens",
-      description: "Configure welcome messages for desktop and mobile",
+      title: t("welcomeScreens"),
+      description: t("welcomeScreensSubTitle"),
       icon: (
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
@@ -90,8 +98,8 @@ const LanguageConfigEssential: React.FC = () => {
       variant: "primary" as const,
     },
     {
-      title: "Pre-sort Configuration",
-      description: "Set up pre-sorting instructions and interface",
+      title: t("presortConfiguration"),
+      description: t("presortConfigurationSubTitle"),
       icon: (
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
@@ -106,8 +114,8 @@ const LanguageConfigEssential: React.FC = () => {
       variant: "secondary" as const,
     },
     {
-      title: "Sorting Interface",
-      description: "Configure the main Q-sort sorting interface",
+      title: t("sortingInterface"),
+      description: t("sortingInterfaceSubTitle"),
       icon: (
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
@@ -118,8 +126,36 @@ const LanguageConfigEssential: React.FC = () => {
           />
         </svg>
       ),
-      components: [<SortTextInput key="sort" />, <MobileSortTextInput key="mobile-sort" />],
+      components: [
+        <SortTextInput key="sort" />,
+        <MobileSortTextInput key="mobile-sort" />,
+      ],
       variant: "primary" as const,
+    },
+    {
+      title: t("errorsAndLinking"),
+      description: t("errorsAndLinkingSubTitle"),
+      icon: (
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+          />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+          />
+        </svg>
+      ),
+      components: [
+        <FailureTextInput key="failure" />,
+        <ProjectLinkingTextInput key="linking" />,
+      ],
+      variant: "secondary" as const,
     },
   ];
 

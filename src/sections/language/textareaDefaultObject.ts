@@ -219,19 +219,19 @@ const showSectionDefaults = () => {
     mobileSortTitleBar: `Submit Data`,
 
     /*
-     ******** 18. FAILURE  ****************** */
+     ******** 19. FAILURE  ****************** */
     checkInternetMessage: `*** Error - Transmission Failure*** <br/><br/>Please check your internet connection and click the "Submit Data" button again.`,
-    btnTransferEmail: "Open Email Client and Send Results",
-    submitFailMessage:
-      "Unable to connect with the database.<br/><br/>Please click the button to open your default email client and send an email with your data to the research team.",
-    defaultEmailClientFail:
-      "Your default email client should have automatically opened with the results in the email body. If it didn't, please use the buttons below to copy and paste your information into an email.<br><br/>There is also a button to download your results to your computer as a backup.",
-    clipboardEmail: "Copy Email Address to Clipboard",
-    clipboardResults: "Copy Results to Clipboard",
+    unableToConnect: "Unable to connect to the database server",
+    submitFailMessage2:
+      "First, please use the button below to copy your results to the clipboard.",
+    clipboardResults: "1. Copy Results to Clipboard",
     copiedText: "Copied!",
-    downloadResultsButtonText: `Download Results`,
-    emailBodyMessage:
-      "You don't have to add anything to this email. Please just click the 'Send' button.",
+    submitFailMessage:
+      "Next, click the button below to open your email client and then paste your results into the body of the email.",
+    btnTransferEmail: "2. Open Email Client",
+    submitFailMessage3:
+      "After sending the email, please also download your results to your computer as a backup.",
+    downloadResultsButtonText: `3. Download Results`,
     emailSubjectText: `Quince Q sort Results`,
 
     /*

@@ -437,6 +437,7 @@
   "preventMobileAccess": "阻止行動存取",
   "preventMobileTitle": "行動存取限制標題",
   "preventMobileMessage": "行動存取限制訊息",
+  "preventMobileAccessSubTitle": "禁止透過行動裝置存取該專案",
 
   "*** LANGUAGE 2. Consent Screen ***": "***  語言頁面  ***",
   "consentScreen": "同意螢幕",
@@ -634,6 +635,9 @@
   "fallbackMessage": "資料庫連線失敗訊息",
   "btnTransferEmail": "電子郵件提交按鈕文字",
   "submitFailMessage": "傳送電子郵件訊息",
+  "submitFailMessage2": "複製並貼上資料訊息",
+  "submitFailMessage3": "下載資料訊息",
+  "unableToConnect": "無法連線訊息",
   "defaultEmailClientFail": "預設電子郵件失敗模態文字",
   "clipboardEmail": "複製電子郵件地址到剪貼簿按鈕文字",
   "clipboardResults": "複製結果到剪貼簿按鈕文字",

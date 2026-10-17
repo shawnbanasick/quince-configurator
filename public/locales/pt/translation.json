@@ -437,6 +437,7 @@
   "preventMobileAccess": "Prevenir acesso móvel",
   "preventMobileTitle": "Título de acesso móvel restrito",
   "preventMobileMessage": "Mensagem de acesso móvel restrito",
+  "preventMobileAccessSubTitle": "Impedir o acesso móvel ao projeto",
 
   "*** LANGUAGE 2. Consent Screen ***": "***  PÁGINA DE IDIOMA  ***",
   "consentScreen": "Tela de Consentimento",
@@ -634,6 +635,9 @@
   "fallbackMessage": "Mensagem de Falha de Conexão com Banco de Dados",
   "btnTransferEmail": "Texto do Botão de Envio por Email",
   "submitFailMessage": "Mensagem de Envio por Email",
+  "submitFailMessage2": "Mensagem de copiar e colar dados",
+  "submitFailMessage3": "Mensagem de transferência de dados",
+  "unableToConnect": "Mensagem de impossibilidade de ligação",
   "defaultEmailClientFail": "Texto do Modal de Falha no Email Padrão",
   "clipboardEmail": "Texto do Botão Copiar Endereço de Email para a Área de Transferência",
   "clipboardResults": "Texto do Botão Copiar Resultados para a Área de Transferência",

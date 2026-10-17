@@ -4,7 +4,8 @@ const showSectionDefaults_zhHant = () => {
     fontSizeText: "文字大小",
     cardHeightText: "卡片高度",
     btnNext: "繼續",
-    stepCompletedMessage: "您已完成此步驟。請點擊螢幕右下方的<b>藍色「繼續」按鈕</b>以進入下一步。",
+    stepCompletedMessage:
+      "您已完成此步驟。請點擊螢幕右下方的<b>藍色「繼續」按鈕</b>以進入下一步。",
     screenOrientationText: "請使用直向方向！",
     mobileTextSize: "文字",
     mobileViewSize: "檢視",
@@ -51,12 +52,14 @@ const showSectionDefaults_zhHant = () => {
     presortPreventNavModalHead: "導航已停用",
     presortPreventNavModalText: "請在進入下一步之前完成初步分類。",
     presortFinishedModalHead: "初步分類完成",
-    presortFinishedModalText: "您已完成此步驟。請點擊頁面右下方的「繼續」按鈕以進入下一步。",
+    presortFinishedModalText:
+      "您已完成此步驟。請點擊頁面右下方的「繼續」按鈕以進入下一步。",
     presortOnPageInstructions:
       '<div style="font-size: 24px">點擊並拖動卡片或按「1」、「2」或「3」鍵來分類陳述句。</div>',
     presortImageSortInstructions:
       "要放大圖片，將滑鼠指標懸停在其上並雙擊。<br/><br/>要比較圖片，<u>按住</u>鍵盤上的<b><i>Shift</i></b>鍵，然後用滑鼠雙擊兩張圖片。",
-    mobilePresortConditionsOfInstruction: "根據您在課堂上使用iPad的經驗評估陳述句",
+    mobilePresortConditionsOfInstruction:
+      "根據您在課堂上使用iPad的經驗評估陳述句",
     mobilePresortCompletedLabel: "已完成的評估",
     mobilePresortAssignLeft: "與我的觀點不同",
     mobilePresortAssignRight: "與我的觀點相似",
@@ -89,10 +92,12 @@ const showSectionDefaults_zhHant = () => {
     initialInstructionPart1:
       "以下是您在上一步中評分為正向的陳述句。現在，選擇您<b>最同意</b>的陳述句數量。<br /><br />",
     initialInstructionPart2: "接下來，繼續選擇最接近您觀點的陳述句",
-    initialInstructionPart3: "點擊橘色「提交」按鈕後，螢幕上將出現另一組陳述句。",
+    initialInstructionPart3:
+      "點擊橘色「提交」按鈕後，螢幕上將出現另一組陳述句。",
     initialInstructionPartNeg1:
       "以下是您在上一步中評分為正向的陳述句。現在，選擇<mark><b>與您的觀點最不同</b></mark>的陳述句。",
-    initialInstructionPartNeg2: "接下來，繼續選擇與您的觀點<mark>最不同</mark>的陳述句。",
+    initialInstructionPartNeg2:
+      "接下來，繼續選擇與您的觀點<mark>最不同</mark>的陳述句。",
     finalInstructions: "精煉過程完成。點擊右下方的導航按鈕以進入下一階段。",
     moveTopMobileHead: "確認移動",
     moveAllTopMobileText: "將所有選定的陳述句移到清單頂部？",
@@ -172,15 +177,22 @@ const showSectionDefaults_zhHant = () => {
     btnDownload: `下載`,
     goodbyeMessage: `<div>謝謝您！</div> <br /><div>您現在可以關閉瀏覽器分頁</div>`,
     mobileSortTitleBar: `提交資料`,
-    btnTransferEmail: "開啟電子郵件客戶端並傳送結果",
+    checkInternetMessage: `*** 錯誤 - 傳輸失敗*** <br/><br/>請檢查您的網際網路連線，然後再次點擊「提交資料」按鈕。`,
+    unableToConnect: "無法連線至資料庫伺服器",
+    submitFailMessage2: "首先，請使用下方的按鈕將您的結果複製到剪貼簿。",
     clipboardResults: "將結果複製到剪貼簿",
-    clipboardEmail: "將電子郵件地址複製到剪貼簿",
     copiedText: "已複製！",
-    downloadResultsButtonText: "下載結果",
+    submitFailMessage:
+      "接下來，請點擊下方的按鈕開啟您的電子郵件用戶端，然後將結果貼到郵件內文中。",
+    btnTransferEmail: "開啟電子郵件用戶端",
+    submitFailMessage3: "寄出郵件後，請同時將結果下載到您的電腦中作為備份。",
+    downloadResultsButtonText: `下載結果`,
+    emailSubjectText: `Quince Q 分類法結果`,
     copyFailMessage: "錯誤：請再試一次。",
     defaultEmailClientFail:
       "您的預設電子郵件客戶端應該會自動開啟，結果會顯示在郵件本文中。如果沒有，請使用下方的按鈕將您的資訊複製並貼上到電子郵件中。",
-    emailBodyMessage: "您不需要在此電子郵件中新增任何內容。請直接點擊傳送按鈕。",
+    emailBodyMessage:
+      "您不需要在此電子郵件中新增任何內容。請直接點擊傳送按鈕。",
     linkingFallbackMessage: "請點擊按鈕以開始下一個Q排序",
     linkingBtnText: "開始下一個Q排序",
     localHeader: "離線Q排序控制面板",
@@ -200,11 +212,6 @@ const showSectionDefaults_zhHant = () => {
     localSaveBeforeDeleteModalHeader: "刪除已停用",
     localSaveBeforeDeleteModalText: "刪除前請先將Q排序資料儲存至磁碟。",
     returnToLocalPanelButtonText: "返回控制面板",
-    emailSubjectText: `Quince Q-sort 結果`,
-    submitFailMessage:
-      "無法連接到資料庫。<br/><br/>請點擊按鈕開啟您的預設郵件客戶端，並向研究團隊發送包含資料的電子郵件。",
-    checkInternetMessage:
-      "*** 錯誤 - 傳輸失敗 ***<br/><br/>請檢查您的網路連線，然後再次點擊「提交資料」按鈕。",
     press1: "按 1",
     press2: "按 2",
     press3: "按 3",

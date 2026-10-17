@@ -111,7 +111,8 @@ const showSectionDefaults_KO = () => {
     sortOverloadedColumnModalHead: `탐색 비활성화`,
     sortOverloadedColumnModalText: `열 중 하나에 너무 많은 카드가 있습니다(주황색으로 윤곽선이 표시되고 점선 테두리가 있습니다). 모든 열이 올바른 수를 갖도록 카드 배치를 조정해 주세요.`,
     mobileSortSwapModalHead: `진술문 순위를 교환하시겠습니까?`,
-    mobileSortSwapModalSuccessMessage: "진술문의 위치가 성공적으로 교환되었습니다.",
+    mobileSortSwapModalSuccessMessage:
+      "진술문의 위치가 성공적으로 교환되었습니다.",
     mobileSortSwapModalText: `교환하려면 "확인"을 클릭하세요.`,
     mobileSortSwapModalConfirmButton: `교환`,
     mobileSortConditionsOfInstruction: `수업에서 iPad를 사용한 경험에 따라 진술문의 순위를 매기세요`,
@@ -155,11 +156,21 @@ const showSectionDefaults_KO = () => {
     btnDownload: `다운로드`,
     goodbyeMessage: `<div>감사합니다!</div> <br /><div>이제 브라우저 탭을 닫으실 수 있습니다</div>`,
     mobileSortTitleBar: `데이터 제출`,
-    btnTransferEmail: `이메일 클라이언트를 열고 결과 보내기`,
-    clipboardResults: `결과를 클립보드에 복사`,
-    clipboardEmail: `이메일 주소를 클립보드에 복사`,
-    copiedText: `복사됨!`,
+
+    checkInternetMessage: `*** 오류 - 전송 실패*** <br/><br/>인터넷 연결을 확인하신 후 "데이터 제출" 버튼을 다시 클릭해 주세요.`,
+    unableToConnect: "데이터베이스 서버에 연결할 수 없습니다",
+    submitFailMessage2:
+      "먼저, 아래 버튼을 사용하여 결과를 클립보드에 복사해 주세요.",
+    clipboardResults: "결과를 클립보드에 복사",
+    copiedText: "복사되었습니다!",
+    submitFailMessage:
+      "다음으로, 아래 버튼을 클릭하여 이메일 프로그램을 열고 결과를 이메일 본문에 붙여넣어 주세요.",
+    btnTransferEmail: "이메일 프로그램 열기",
+    submitFailMessage3:
+      "이메일을 보낸 후에는 백업을 위해 결과를 컴퓨터에도 다운로드해 주세요.",
     downloadResultsButtonText: `결과 다운로드`,
+    emailSubjectText: `Quince Q 분류 결과`,
+
     copyFailMessage: `오류: 다시 시도해 주세요.`,
     defaultEmailClientFail:
       "기본 이메일 클라이언트가 이메일 본문에 결과와 함께 자동으로 열렸어야 합니다. 열리지 않았다면, 아래 버튼을 사용하여 정보를 복사하여 이메일에 붙여넣으세요.",
@@ -183,13 +194,9 @@ const showSectionDefaults_KO = () => {
     localSubmitSuccessModalText:
       "참여자 Q 분류 데이터가 브라우저 메모리에 성공적으로 저장되었습니다",
     localSaveBeforeDeleteModalHeader: "삭제 비활성화",
-    localSaveBeforeDeleteModalText: "삭제하기 전에 Q 분류 데이터를 디스크에 저장하세요.",
+    localSaveBeforeDeleteModalText:
+      "삭제하기 전에 Q 분류 데이터를 디스크에 저장하세요.",
     returnToLocalPanelButtonText: "제어판으로 돌아가기",
-    emailSubjectText: `Quince Q-sort 결과`,
-    submitFailMessage:
-      "데이터베이스에 연결할 수 없습니다.<br/><br/>버튼을 클릭하여 기본 이메일 클라이언트를 열고 연구팀에 데이터가 포함된 이메일을 보내주세요.",
-    checkInternetMessage:
-      "*** 오류 - 전송 실패 ***<br/><br/>인터넷 연결을 확인하시고 '데이터 제출' 버튼을 다시 클릭해주세요.",
     press1: "(1번 누르기)",
     press2: "(2번 누르기)",
     press3: "(3번 누르기)",

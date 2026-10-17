@@ -437,6 +437,7 @@
   "preventMobileAccess": "Empêcher l'accès mobile",
   "preventMobileTitle": "Titre d'accès mobile restreint",
   "preventMobileMessage": "Message d'accès mobile restreint",
+  "preventMobileAccessSubTitle": "Empêcher l'accès au projet depuis un appareil mobile",
 
   "*** LANGUAGE 2. Consent Screen ***": "***  PAGE DE LANGUE  ***",
   "consentScreen": "Écran de consentement",
@@ -634,6 +635,9 @@
   "fallbackMessage": "Message d'échec de connexion à la base de données",
   "btnTransferEmail": "Texte du bouton de soumission par courriel",
   "submitFailMessage": "Message d'envoi de courriel",
+  "submitFailMessage2": "Message de copier-coller des données",
+  "submitFailMessage3": "Message de téléchargement des données",
+  "unableToConnect": "Message d'impossibilité de connexion",
   "defaultEmailClientFail": "Texte de la fenêtre modale d'échec du client de messagerie par défaut",
   "clipboardEmail": "Texte du bouton Copier l'adresse e-mail dans le presse-papiers",
   "clipboardResults": "Texte du bouton Copier les résultats dans le presse-papiers",

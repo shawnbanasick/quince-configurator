@@ -73,13 +73,15 @@ const showSectionDefaults_NL = () => {
     mobilePresortHelpModalHead: "Fase 1 van 5<br />Evaluatie van uitspraken",
     mobilePresortHelpModalText:
       'Tik op de juiste knop om een waarde aan elke uitspraak toe te kennen. <br /><br /> Als u het gevoel heeft dat de uitspraak <b>vergelijkbaar is met uw perspectief</b>, tik dan op de groene "+" knop.<br /><br /> Als u het gevoel heeft dat de uitspraak <b>verschilt van uw perspectief</b>, tik dan op de rode "-" knop. <br /><br />Als u onzeker bent, tik dan op de "?" knop. <br /><br /> Er zijn <b>33 uitspraken</b> in deze enquête. <br /><br /> Als u uw evaluatie wilt <b>wijzigen</b>, tik dan op het <b>opnieuw-pictogram</b> naast de uitspraak.',
-    mobilePresortFinishedModalHead: "Fase 1 van 5<br />Evaluatie van uitspraken",
+    mobilePresortFinishedModalHead:
+      "Fase 1 van 5<br />Evaluatie van uitspraken",
     mobilePresortFinishedModalText:
       'Het evaluatieproces is voltooid. <br/><br/> <b>Bekijk de uitspraken</b> om uw evaluaties te bevestigen.  <br /><br />Als u een wijziging wilt aanbrengen, tik dan op het "opnieuw" pictogram links van de uitspraak.<br /><br />Wanneer u tevreden bent met al uw evaluaties, tik dan op de <b>navigatieknop</b> rechtsonder.',
     mobilePresortProcessCompleteMessage:
       "Het evaluatieproces is voltooid. <br/><br/> Klik op de navigatieknop rechtsonder om naar de volgende fase te gaan.",
     mobilePresortPreventNavModalHead: "Navigatie uitgeschakeld",
-    mobilePresortPreventNavModalText: "Voltooi de evaluaties voordat u naar de volgende fase gaat.",
+    mobilePresortPreventNavModalText:
+      "Voltooi de evaluaties voordat u naar de volgende fase gaat.",
     thinPageTitle: "Verfijn uw evaluaties",
     thinPageSubmitButton: "Verzenden",
     numStatementsToSelect: "Aantal te selecteren uitspraken",
@@ -139,22 +141,26 @@ const showSectionDefaults_NL = () => {
       "Klik en sleep in deze stap de uitspraakkaarten naar de juiste kolom op basis van uw perspectief en de instructies van de onderzoeker bovenaan de pagina. <br/>",
     sortAgreement: "Eens",
     sortDisagreement: "Oneens",
-    condOfInst: "Sorteer de kaarten volgens uw ervaring met de iPads dit semester",
+    condOfInst:
+      "Sorteer de kaarten volgens uw ervaring met de iPads dit semester",
     sortingCompleteModalHead: "Sortering voltooid",
     sortingCompleteModalText:
       'U heeft de initiële sortering voltooid. Neem een moment om de plaatsing van de kaarten te bevestigen.<br/><br/>Wanneer u tevreden bent met hun plaatsing, klik dan op de <b>blauwe knop "Doorgaan"</b> rechtsonder op uw scherm om naar de volgende stap te gaan.',
     sortPreventNavModalHead: "Navigatie uitgeschakeld",
-    sortPreventNavModalText: "Voltooi de rastersortering voordat u naar de volgende stap gaat.",
+    sortPreventNavModalText:
+      "Voltooi de rastersortering voordat u naar de volgende stap gaat.",
     sortOverloadedColumnModalHead: "Navigatie uitgeschakeld",
     sortOverloadedColumnModalText:
       "Een van de kolommen heeft te veel kaarten (deze wordt omlijnd in oranje en heeft een gestreepte rand). Pas de plaatsing van de kaarten aan zodat alle kolommen het juiste aantal hebben.",
     mobileSortSwapModalHead: "Rankings van uitspraken verwisselen?",
-    mobileSortSwapModalSuccessMessage: "De posities van de uitspraken zijn succesvol verwisseld.",
+    mobileSortSwapModalSuccessMessage:
+      "De posities van de uitspraken zijn succesvol verwisseld.",
     mobileSortSwapModalText: 'Klik op "Bevestigen" om te verwisselen.',
     mobileSortSwapModalConfirmButton: "Verwisselen",
     mobileSortConditionsOfInstruction:
       "Rangschik de uitspraken volgens uw ervaring met het gebruik van de iPads in de klas",
-    mobileSortHelpModalHead: "Fase 3 van 5<br/> Definitieve rangschikking van uitspraken",
+    mobileSortHelpModalHead:
+      "Fase 3 van 5<br/> Definitieve rangschikking van uitspraken",
     mobileSortHelpModalText:
       "De uitspraken zijn gerangschikt op basis van uw eerdere evaluaties.<br/><br/> Die uitspraken die het dichtst bij uw perspectief liggen, moeten bovenaan de lijst staan. Die het verst van uw perspectief verwijderd zijn, moeten onderaan de lijst staan.<br/><br/>U moet <b>naar beneden scrollen</b> om alle uitspraken te zien.<br/><br/>Gelieve de rangschikkingen te <b>bekijken</b> en eventuele noodzakelijke wijzigingen aan te brengen in de rangschikking van de uitspraken zodat de volgorde <b>uw perspectief nauwkeurig weerspiegelt</b>. <br/><br/><mark>Dit is de meest kritieke fase van de enquête, dus bekijk de rangschikkingen van de uitspraken zorgvuldig.</mark><br/><br/> Om <b>de posities van naburige uitspraken te verwisselen</b>, tik op de pijlen omhoog of omlaag aan de rechter- of linkerkant van de uitspraak.<br/><br/>Om <b>de posities van uitspraken die gescheiden zijn te verwisselen</b>, tik op twee uitspraken (de kleur van de uitspraak verandert in geel) en er verschijnt een bevestigingsbericht voor verwisseling.<br/><br/>Wanneer u tevreden bent met alle rangschikkingen, tik dan op de navigatieknop rechtsonder.",
     mobileSortScrollBottomModalHead: "Navigatie uitgeschakeld",
@@ -179,7 +185,8 @@ const showSectionDefaults_NL = () => {
       "Voeg opmerkingen toe aan alle uitspraken voordat u naar de volgende stap gaat.",
     mobilePostsortSortbarText: "Opmerkingen na sortering",
     mobilePostsortPlaceholder: "Klik hier om een opmerking toe te voegen",
-    mobilePostsortHelpModalHead: "Fase 4 van 5<br/> Opmerkingen na rangschikking",
+    mobilePostsortHelpModalHead:
+      "Fase 4 van 5<br/> Opmerkingen na rangschikking",
     mobilePostsortHelpModalText:
       "Gelieve commentaar te geven op uw rangschikkingen van deze uitspraken.",
     surveyHeader: "Vragenlijst na sortering",
@@ -198,7 +205,8 @@ const showSectionDefaults_NL = () => {
       '<h1>Klaar om te verzenden</h1><br/><br/> <h2>Klik op de knop "Gegevens verzenden" om uw resultaten te verzenden.</h2>',
     transferTextBelow:
       "Wacht op het bevestigingsbericht dat aangeeft dat uw gegevens succesvol naar de server zijn verzonden.",
-    transferOkModalHeader: "Succes - De gegevens zijn naar de server verzonden.",
+    transferOkModalHeader:
+      "Succes - De gegevens zijn naar de server verzonden.",
     transferOkModalText:
       "Bedankt voor het gebruik van Quince!<br/><br/>U kunt nu uw browsertabblad sluiten.",
     transferFailModalHeader: "Verbinding met server mislukt",
@@ -206,19 +214,31 @@ const showSectionDefaults_NL = () => {
     fallbackMessage:
       '*** Fout - Transmissiefout*** <br/><br/>Controleer uw internetverbinding en klik opnieuw op de knop "Gegevens verzenden".',
     btnDownload: "Downloaden",
-    goodbyeMessage: "<div>Bedankt!</div> <br /><div>U kunt nu het browsertabblad sluiten</div>",
+    goodbyeMessage:
+      "<div>Bedankt!</div> <br /><div>U kunt nu het browsertabblad sluiten</div>",
     mobileSortTitleBar: "Gegevens verzenden",
-    btnTransferEmail: "Open e-mailclient en verzend resultaten",
-    clipboardResults: "Kopieer resultaten naar klembord",
-    clipboardEmail: "Kopieer e-mailadres naar klembord",
+
+    checkInternetMessage: `*** Fout - Verzending mislukt*** <br/><br/>Controleer uw internetverbinding en klik opnieuw op de knop "Gegevens verzenden".`,
+    unableToConnect: "Kan geen verbinding maken met de databaseserver",
+    submitFailMessage2:
+      "Gebruik eerst de knop hieronder om uw resultaten naar het klembord te kopiëren.",
+    clipboardResults: "Resultaten naar klembord kopiëren",
     copiedText: "Gekopieerd!",
-    downloadResultsButtonText: "Download resultaten",
+    submitFailMessage:
+      "Klik daarna op de knop hieronder om uw e-mailprogramma te openen en plak uw resultaten in de hoofdtekst van de e-mail.",
+    btnTransferEmail: "E-mailprogramma openen",
+    submitFailMessage3:
+      "Download na het verzenden van de e-mail uw resultaten ook naar uw computer als back-up.",
+    downloadResultsButtonText: `Resultaten downloaden`,
+    emailSubjectText: `Resultaten Quince Q-sort`,
+
     copyFailMessage: "Fout: Probeer het opnieuw.",
     defaultEmailClientFail:
       "Uw standaard e-mailclient had automatisch moeten openen met de resultaten in de e-mailtekst. Als dit niet is gebeurd, gebruik dan de onderstaande knoppen om uw informatie te kopiëren en in een e-mail te plakken.",
     emailBodyMessage:
       "U hoeft niets aan deze e-mail toe te voegen. Klik gewoon op de knop VERZENDEN.",
-    linkingFallbackMessage: "Klik op de knop om de volgende Q-sortering te beginnen",
+    linkingFallbackMessage:
+      "Klik op de knop om de volgende Q-sortering te beginnen",
     linkingBtnText: "Begin volgende Q-sortering",
     localHeader: "Offline Q-sortering configuratiescherm",
     partIdText: "Naam deelnemer",
@@ -239,11 +259,6 @@ const showSectionDefaults_NL = () => {
     localSaveBeforeDeleteModalText:
       "Sla Q-sorteringsgegevens op naar schijf voordat u ze verwijdert.",
     returnToLocalPanelButtonText: "Keer terug naar configuratiescherm",
-    emailSubjectText: `Quince Q-sort resultaten`,
-    submitFailMessage:
-      "Kan geen verbinding maken met de database.<br/><br/>Klik op de knop om uw standaard e-mailprogramma te openen en een e-mail met de gegevens naar het onderzoeksteam te sturen.",
-    checkInternetMessage:
-      "*** Fout - Verzending mislukt ***<br/><br/>Controleer uw internetverbinding en klik opnieuw op de knop 'Gegevens verzenden'.",
     press1: "(druk 1)",
     press2: "(druk 2)",
     press3: "(druk 3)",

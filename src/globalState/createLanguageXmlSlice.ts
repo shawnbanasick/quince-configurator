@@ -215,8 +215,13 @@ const createLangXmlSlice = (set) => ({
    ******** 18. FAILURE  ****************** */
   checkInternetMessage: `*** Error - Transmission Failure*** <br/><br/>Please check your internet connection and click the "Submit Data" button again.`,
   btnTransferEmail: "Open Email Client and Send Results",
+  unableToConnect: "Unable to connect to the database server",
   submitFailMessage:
-    "Unable to connect with the database.<br/><br/>Please click the button to open your default email client and send an email with your data to the research team.",
+    "Please click the button below to send your results by email.",
+  submitFailMessage2:
+    "Next, use the buttons below to copy and paste your information into the body of the email.",
+  submitFailMessage3:
+    "As a backup, please also download your results to your computer as a text file.",
   defaultEmailClientFail:
     "Your default email client should have automatically opened with the results in the email body. If it didn't, please use the buttons below to copy and paste your information into an email.<br><br/>There is also a button to download your results to your computer as a backup.",
   clipboardEmail: "Copy Email Address to Clipboard",

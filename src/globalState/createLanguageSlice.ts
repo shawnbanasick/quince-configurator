@@ -9,7 +9,8 @@ const createLanguageSlice = (set) => ({
 
   /*
    ******** GENERIC STATE CHANGE  ****************** */
-  setText: (stateDesig, text) => set(() => ({ [stateDesig]: text })),
+  setText: (stateDesig, text) =>
+    set((prev) => ({ ...prev, [stateDesig]: text })),
 
   /*
    ******** SET VALUES  ****************** */

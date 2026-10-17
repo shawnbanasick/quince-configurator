@@ -167,7 +167,8 @@ const showSectionDefaults_JA = () => {
     mobileSortHelpModalText: `文は、以前の評価に基づいてランク付けされています。<br/><br/> あなたの見解に最も近い文はリストの上部に、最も遠い文は下部に配置してください。<br/><br/>すべてのコメントを確認するには、<b>下にスクロール</b>してください。<br/><br/><b>ランキングを確認</b>し、必要に応じてコメントの順位を変更して、順序が<b>あなたの見解を正確に反映</b>するようにしてください。<br/><br/><mark>これは調査で最も重要な段階です。コメントのランキングを慎重に確認してください。</mark><br/><br/> 隣接する文書の位置を交換するには、文書の右または左にある上下の矢印をタップしてください。<br/><br/>分離された文書の位置を交換するには、2つの文書をタップ（文書の色が黄色に変わります）し、交換確認メッセージが表示されます。<br/><br/>すべての順位に満足したら、画面右下のナビゲーションボタンをタップしてください。`,
     mobileSortScrollBottomModalHead: `ナビゲーション無効`,
     mobileSortScrollBottomModalText: `次の段階に進む前に、画面下までスクロールしてすべての文の順位を確認してください。`,
-    mobileSortSwapModalSuccessMessage: "ステートメントの位置の入れ替えは正常に完了しました。",
+    mobileSortSwapModalSuccessMessage:
+      "ステートメントの位置の入れ替えは正常に完了しました。",
 
     /*
      ******** #12 POSTSORT  ****************** */
@@ -227,20 +228,19 @@ const showSectionDefaults_JA = () => {
 
     /*
      ******** 18. FAILURE  ****************** */
-    checkInternetMessage: `*** Error - Transmission Failure*** <br/><br/>Please check your internet connection and click the "Submit Data" button again.`,
-    btnTransferEmail: `メールクライアントを開いて結果を送信`,
+    checkInternetMessage: `*** エラー - 送信に失敗しました*** <br/><br/>インターネット接続をご確認のうえ、「データを送信」ボタンをもう一度クリックしてください。`,
+    unableToConnect: "データベースサーバーに接続できません",
+    submitFailMessage2:
+      "まず、下のボタンを使って結果をクリップボードにコピーしてください。",
+    clipboardResults: "結果をクリップボードにコピー",
+    copiedText: "コピーしました！",
     submitFailMessage:
-      "データベースに接続できませんでした。<br/><br/>ボタンをクリックしてデフォルトのメールクライアントを開き、データを記載したメールを研究チームに送信してください。",
-    defaultEmailClientFail:
-      "「デフォルトのメールクライアントが自動的に起動し、結果がメール本文に表示されているはずです。起動しなかった場合は、以下のボタンを使用して情報をコピーし、メールに貼り付けてください。<br><br/>結果をバックアップとしてコンピュータにダウンロードするボタンもあります。」",
-
-    clipboardEmail: `メールアドレスをクリップボードにコピー`,
-    clipboardResults: `結果をクリップボードにコピー`,
-    copiedText: `コピー完了！`,
+      "次に、下のボタンをクリックしてメールソフトを開き、結果をメール本文に貼り付けてください。",
+    btnTransferEmail: "メールソフトを開く",
+    submitFailMessage3:
+      "メールを送信した後、バックアップとして結果をお使いのコンピューターにもダウンロードしてください。",
     downloadResultsButtonText: `結果をダウンロード`,
-    emailBodyMessage:
-      "このメールに何も追加する必要はありません。「送信」ボタンをクリックしてください。",
-    emailSubjectText: `QuinceのQソート結果`,
+    emailSubjectText: `Quince Q分類法の結果`,
 
     // コピー失敗メッセージ: `エラー: もう一度お試しください。`,
     // デフォルトメール失敗モーダルテキスト: `デフォルトのメールクライアントが自動的に開くはずでした。結果がメール本文に表示されていない場合は、以下のボタンを使用して情報をコピーし、メールに貼り付けてください。`,

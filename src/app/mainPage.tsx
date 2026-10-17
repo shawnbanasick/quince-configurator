@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import clsx from "clsx";
 import { useTranslation } from "react-i18next";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
@@ -29,12 +30,25 @@ import { useStore } from "../globalState/useStore.js";
 import { ErrorBoundary, FallbackProps } from "react-error-boundary";
 import getLangAbbreviation from "./getLangAbbreviation.js";
 
-const languages = ["de", "en", "es", "fr", "it", "ja", "ko", "nl", "pt", "zh-Hans", "zh-Hant"];
+const languages = [
+  "de",
+  "en",
+  "es",
+  "fr",
+  "it",
+  "ja",
+  "ko",
+  "nl",
+  "pt",
+  "zh-Hans",
+  "zh-Hant",
+];
 
 const getShowDescriptionPro = (state) => state.showDescriptionPro;
 const getShowDescriptionBeginner = (state) => state.showDescriptionBeginner;
 const getSetShowDescriptionPro = (state) => state.setShowDescriptionPro;
-const getSetShowDescriptionBeginner = (state) => state.setShowDescriptionBeginner;
+const getSetShowDescriptionBeginner = (state) =>
+  state.setShowDescriptionBeginner;
 const getSetDisplayMode = (state) => state.setDisplayMode;
 
 export const MainPage = () => {
@@ -59,51 +73,54 @@ export const MainPage = () => {
     }
   };
 
-  if (currentLanguage === "ja") {
-    setLanguageSection_JA(currentLanguage);
-    setLanguageDefaults("ja");
-  }
-  if (currentLanguage === "en") {
-    setLanguageSection_EN(currentLanguage);
-    setLanguageDefaults("en");
-  }
-  if (currentLanguage === "es") {
-    setLanguageSection_ES(currentLanguage);
-    setLanguageDefaults("es");
-  }
+  useEffect(() => {
+    if (currentLanguage === "ja") {
+      setLanguageSection_JA(currentLanguage);
+      setLanguageDefaults("ja");
+    }
+    if (currentLanguage === "en") {
+      setLanguageSection_EN(currentLanguage);
+      setLanguageDefaults("en");
+    }
+    if (currentLanguage === "es") {
+      setLanguageSection_ES(currentLanguage);
+      setLanguageDefaults("es");
+    }
 
-  if (currentLanguage === "ko") {
-    setLanguageSection_KO(currentLanguage);
-    setLanguageDefaults("ko");
-  }
-  if (currentLanguage === "zh-Hans") {
-    setLanguageSection_zhHans(currentLanguage);
-    setLanguageDefaults("zh-Hans");
-  }
-  if (currentLanguage === "zh-Hant") {
-    setLanguageSection_zhHant(currentLanguage);
-    setLanguageDefaults("zh-Hant");
-  }
-  if (currentLanguage === "it") {
-    setLanguageSection_IT(currentLanguage);
-    setLanguageDefaults("it");
-  }
-  if (currentLanguage === "fr") {
-    setLanguageSection_FR(currentLanguage);
-    setLanguageDefaults("fr");
-  }
-  if (currentLanguage === "nl") {
-    setLanguageSection_NL(currentLanguage);
-    setLanguageDefaults("nl");
-  }
-  if (currentLanguage === "de") {
-    setLanguageSection_DE(currentLanguage);
-    setLanguageDefaults("de");
-  }
-  if (currentLanguage === "pt") {
-    setLanguageSection_PT(currentLanguage);
-    setLanguageDefaults("pt");
-  }
+    if (currentLanguage === "ko") {
+      setLanguageSection_KO(currentLanguage);
+      setLanguageDefaults("ko");
+    }
+    if (currentLanguage === "zh-Hans") {
+      setLanguageSection_zhHans(currentLanguage);
+      setLanguageDefaults("zh-Hans");
+    }
+    if (currentLanguage === "zh-Hant") {
+      setLanguageSection_zhHant(currentLanguage);
+      setLanguageDefaults("zh-Hant");
+    }
+    if (currentLanguage === "it") {
+      setLanguageSection_IT(currentLanguage);
+      setLanguageDefaults("it");
+    }
+    if (currentLanguage === "fr") {
+      setLanguageSection_FR(currentLanguage);
+      setLanguageDefaults("fr");
+    }
+    if (currentLanguage === "nl") {
+      setLanguageSection_NL(currentLanguage);
+      setLanguageDefaults("nl");
+    }
+    if (currentLanguage === "de") {
+      setLanguageSection_DE(currentLanguage);
+      setLanguageDefaults("de");
+    }
+    if (currentLanguage === "pt") {
+      setLanguageSection_PT(currentLanguage);
+      setLanguageDefaults("pt");
+    }
+  }, [currentLanguage]);
+
   console.log("language: ", navigator.language);
 
   const onChangeLanguage = (lng: string) => {
@@ -117,16 +134,16 @@ export const MainPage = () => {
     const email = "ken.q.tools@gmail.com";
     const subject = "Quince Configurator Error";
     const body = `${t("PleaseProvideAnEmailAddress")}:\n\n\n${t(
-      "PleaseDescribeTheEventsPriorToTheError"
+      "PleaseDescribeTheEventsPriorToTheError",
     )}:\n\n\n${t("ForFasterDiagnosisOfTheError")}:\n- config.XML\n- map.XML\n- language.XML\n- ${t(
-      "QSortResultsCsvFileFromBaserow"
+      "QSortResultsCsvFileFromBaserow",
     )}\n\n\n** Start Error Info**\nError Name:\n${error.name}\n\nError Message:\n${
       error.message
     }\n\nError Stack:\n${error.stack}\n** End Error Info**`;
 
     // Encode the subject and body to handle special characters
     const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-      subject
+      subject,
     )}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
   };
@@ -143,7 +160,9 @@ export const MainPage = () => {
           {t("ClickToSendErrorReportEmailToDeveloper")}
         </button>
         <pre style={{ color: "red", marginTop: "50px" }}>{error.name}</pre>
-        <pre style={{ color: "red", marginTop: "10px", marginBottom: "50px" }}>{error.message}</pre>
+        <pre style={{ color: "red", marginTop: "10px", marginBottom: "50px" }}>
+          {error.message}
+        </pre>
       </div>
     );
   };
@@ -186,7 +205,7 @@ export const MainPage = () => {
                             {
                               "bg-opacity-100": lng === currentLanguage,
                               "bg-opacity-50": lng !== currentLanguage,
-                            }
+                            },
                           )}
                         >
                           <div className="flex flex-row gap-2 justify-center">
@@ -198,12 +217,16 @@ export const MainPage = () => {
                   </div>
                 </div>
                 <div id="displayModeDiv" className="">
-                  <div className="text-center">{t("selectConfiguratorDisplayMode")}</div>
+                  <div className="text-center">
+                    {t("selectConfiguratorDisplayMode")}
+                  </div>
                   <div className="flex flex-row justify-self-center">
                     <Button
                       id="beginner"
                       styleClass={`bg-blue-500 text-white hover:bg-blue-700 ${
-                        showDescriptionBeginner ? "bg-opacity-100" : "bg-opacity-50"
+                        showDescriptionBeginner
+                          ? "bg-opacity-100"
+                          : "bg-opacity-50"
                       }`}
                       label={t("novice")}
                       onClick={setMode}
@@ -218,7 +241,9 @@ export const MainPage = () => {
                     ></Button>
                   </div>
                   <div className="justify-self-center">
-                    {showDescriptionPro && <div>{t("displaysEssentialInformation")}</div>}
+                    {showDescriptionPro && (
+                      <div>{t("displaysEssentialInformation")}</div>
+                    )}
                     {showDescriptionBeginner && (
                       <div>{t("displaysIndepthDescriptionsAndDirections")}</div>
                     )}
