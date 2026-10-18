@@ -54,9 +54,17 @@ const VersionHistory: React.FC = () => {
 
   const versionHistory: Version[] = [
     {
+      version: "1.0.12",
+      date: "2026-10-18",
+      changes: [{ type: "improvement", description: t("version1012a") }],
+    },
+    {
       version: "1.0.11",
       date: "2026-10-03",
-      changes: [{ type: "improvement", description: t("version1011a") }],
+      changes: [
+        { type: "improvement", description: t("version1011a") },
+        { type: "fix", description: t("version1011b") },
+      ],
     },
     {
       version: "1.0.10",
@@ -185,7 +193,7 @@ const VersionHistory: React.FC = () => {
           <div className="border-t border-gray-200">
             <div className="px-5 py-3 bg-gray-50 flex justify-between items-center border-b border-gray-200">
               <span className="text-sm font-medium text-gray-700">
-                v0.0.1 - v1.0.11
+                v0.0.1 - v1.0.12
               </span>
               <button
                 onClick={toggleAll}
@@ -200,7 +208,7 @@ const VersionHistory: React.FC = () => {
             <div className="divide-y divide-gray-200">
               {versionHistory.map((version) => {
                 const isExpanded = expandedVersions.has(version.version);
-                const isLatest = version.version === "1.0.11";
+                const isLatest = version.version === "1.0.12";
 
                 return (
                   <div key={version.version}>
