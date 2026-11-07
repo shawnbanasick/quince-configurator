@@ -13,7 +13,7 @@ const extractResponseText = (entry: any): string => {
     return split?.[1]?.trim() ?? "";
   }
   if (typeof entry === "string") {
-    return entry.trim();
+    return entry?.trim() ?? "";
   }
   return entry === undefined || entry === null ? "" : String(entry);
 };
@@ -27,26 +27,26 @@ const processTextQuestion = (
 ) => {
   let addIndentValue = +indentValue + 100;
 
-  let cleanedNote = stripTags(question.note);
+  let cleanedNote = stripTags(question?.note);
   let responseText = extractResponseText(entry);
 
   if (responseText === "no response") {
-    responseText = surveyLangObj.noResponse;
+    responseText = surveyLangObj?.noResponse;
   }
 
   let response = [
     new Paragraph({
       children: [
         new TextRun({
-          text: `${surveyLangObj.item} ${index + 1} - `,
+          text: `${surveyLangObj?.item} ${index + 1} - `,
           bold: true,
         }),
         new TextRun({
-          text: `${surveyLangObj.shortText}: `,
+          text: `${surveyLangObj?.shortText}: `,
           bold: false,
         }),
         new TextRun({
-          text: `${stripHtml(stripTags(question.label))}`,
+          text: `${stripHtml(stripTags(question?.label))}`,
           bold: false,
           underline: { type: UnderlineType.SINGLE },
         }),
@@ -61,7 +61,7 @@ const processTextQuestion = (
     new Paragraph({
       children: [
         new TextRun({
-          text: question.note
+          text: question?.note
             ? `Note: ${stripHtml(stripTags(cleanedNote))}`
             : `Note: n/a`,
           bold: false,
@@ -74,7 +74,7 @@ const processTextQuestion = (
     new Paragraph({
       children: [
         new TextRun({
-          text: `${surveyLangObj.response}: `,
+          text: `${surveyLangObj?.response}: `,
           bold: false,
         }),
         new TextRun({

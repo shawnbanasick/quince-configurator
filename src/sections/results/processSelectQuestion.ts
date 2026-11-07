@@ -33,28 +33,28 @@ const processSelectQuestion = (
   if (isLegacyPrefixed) {
     let entry2 = safeSplit(response1, ":", { maxParts: 2 });
     if (entry2?.[1]?.trim() === "no response") {
-      entry2[1] = surveyLangObj.noResponse;
+      entry2[1] = surveyLangObj?.noResponse;
     }
     rawListText = entry2?.[1] ?? "";
 
     let response3 = response1.split(":");
     let response2 = (response3[1] ?? "").split(",");
     response2.forEach((value) => {
-      let value2 = +value.trim();
+      let value2 = +value?.trim();
       let value3 = cleanOptions[value2 - 1];
       respondentResponse2.push(value3);
     });
 
-    let entry1 = response1.split(":");
-    indicator = entry1[1]?.trim() !== surveyLangObj.noResponse;
+    let entry1 = response1?.split(":");
+    indicator = entry1[1]?.trim() !== surveyLangObj?.noResponse;
   } else {
-    let tail = response1.trim();
+    let tail = response1?.trim() ?? "";
     indicator = tail !== "no response";
     rawListText = tail;
 
     if (indicator) {
       tail.split(",").forEach((value) => {
-        let value2 = +value.trim();
+        let value2 = +value?.trim();
         let value3 = cleanOptions[value2 - 1];
         respondentResponse2.push(value3);
       });
@@ -67,15 +67,15 @@ const processSelectQuestion = (
     new Paragraph({
       children: [
         new TextRun({
-          text: `${surveyLangObj.item} ${index + 1} - `,
+          text: `${surveyLangObj?.item} ${index + 1} - `,
           bold: true,
         }),
         new TextRun({
-          text: `${surveyLangObj.select}: `,
+          text: `${surveyLangObj?.select}: `,
           bold: false,
         }),
         new TextRun({
-          text: `${stripHtml(stripTags(question.label))}`,
+          text: `${stripHtml(stripTags(question?.label))}`,
           bold: false,
           underline: { type: UnderlineType.SINGLE },
         }),
@@ -90,8 +90,8 @@ const processSelectQuestion = (
     new Paragraph({
       children: [
         new TextRun({
-          text: question.note
-            ? `Note: ${stripHtml(stripTags(question.note))}`
+          text: question?.note
+            ? `Note: ${stripHtml(stripTags(question?.note))}`
             : `Note: n/a`,
           bold: false,
         }),
@@ -115,12 +115,12 @@ const processSelectQuestion = (
       children: [
         new TextRun({
           text: indicator
-            ? `${surveyLangObj.response}: ${stripHtml(stripTags(rawListText))} - `
-            : `${surveyLangObj.response}: - `,
+            ? `${surveyLangObj?.response}: ${stripHtml(stripTags(rawListText))} - `
+            : `${surveyLangObj?.response}: - `,
           bold: false,
         }),
         new TextRun({
-          text: indicator ? `${respondentResponse}` : surveyLangObj.noResponse,
+          text: indicator ? `${respondentResponse}` : surveyLangObj?.noResponse,
           bold: false,
         }),
       ],

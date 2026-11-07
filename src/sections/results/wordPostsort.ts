@@ -83,7 +83,8 @@ const parseStructuredColumns = (
   Object.entries(columns).forEach(([key, entries]) => {
     const slotEntries = (entries as ColumnSlotEntry[]) || [];
     if (key.startsWith("columnN")) {
-      const id = Math.abs(parseInt(key.replace("columnN", ""), 10));
+      let id = Math.abs(parseInt(key.replace("columnN", ""), 10));
+      id = isNaN(id) ? 0 : -id; // fallback to 0 if parsing fails
       negColumns.push([id, slotEntries]);
     } else if (key.startsWith("column")) {
       const id = parseInt(key.replace("column", ""), 10);
@@ -128,6 +129,7 @@ const buildLegacyParagraphs = (
   indentValue: number,
 ): Paragraph[] => {
   const prepArray: any[] = [];
+
   entries.forEach((entry) => {
     const copy = stripHtml(stripTags(entry));
     let id = copy.slice(6, 9);

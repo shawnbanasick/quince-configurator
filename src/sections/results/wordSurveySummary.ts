@@ -249,7 +249,6 @@ const wordSurveySummary = (
           console.error("Error processing Rating 7 item:", error);
         }
       }
-
       if (item.surveyQuestionType === "rating10") {
         let text = surveySummaryLangObj.rating10;
         try {

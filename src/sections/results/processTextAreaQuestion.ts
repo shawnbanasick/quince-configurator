@@ -26,26 +26,26 @@ const processTextAreaQuestion = (
   surveyLangObj,
 ) => {
   let addIndentValue = +indentValue + 200;
-  let cleanedNote = stripTags(question.note);
+  let cleanedNote = stripTags(question?.note);
   let responseText = extractResponseText(entry);
 
   if (responseText === "no response") {
-    responseText = surveyLangObj.noResponse;
+    responseText = surveyLangObj?.noResponse;
   }
 
   let response = [
     new Paragraph({
       children: [
         new TextRun({
-          text: `${surveyLangObj.item} ${index + 1} - `,
+          text: `${surveyLangObj?.item} ${index + 1} - `,
           bold: true,
         }),
         new TextRun({
-          text: `${surveyLangObj.longText}: `,
+          text: `${surveyLangObj?.longText}: `,
           bold: false,
         }),
         new TextRun({
-          text: `${stripHtml(stripTags(question.label))}`,
+          text: `${stripHtml(stripTags(question?.label))}`,
           bold: false,
           underline: { type: UnderlineType.SINGLE },
         }),
@@ -60,7 +60,9 @@ const processTextAreaQuestion = (
     new Paragraph({
       children: [
         new TextRun({
-          text: question.note ? `Note: ${stripHtml(cleanedNote)}` : `Note: n/a`,
+          text: question?.note
+            ? `Note: ${stripHtml(cleanedNote)}`
+            : `Note: n/a`,
           bold: false,
         }),
       ],
@@ -71,7 +73,7 @@ const processTextAreaQuestion = (
     new Paragraph({
       children: [
         new TextRun({
-          text: `${surveyLangObj.response}: `,
+          text: `${surveyLangObj?.response}: `,
           bold: false,
         }),
         new TextRun({

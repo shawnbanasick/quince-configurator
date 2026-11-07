@@ -12,14 +12,14 @@ const processRadioQuestion = (
   surveyLangObj,
 ) => {
   let addIndentValue = +indentValue + 200;
-  let options = question.options;
-  options = options.split(";;;");
+  let options = question?.options;
+  options = options?.split(";;;");
 
   let cleanOptions = options.map((element) => {
     return stripHtml(stripTags(element));
   });
 
-  let cleanedNote = stripTags(question.note);
+  let cleanedNote = stripTags(question?.note);
 
   let response1 = stripHtml(stripTags(String(entry ?? "")));
 
@@ -38,7 +38,7 @@ const processRadioQuestion = (
     tail = entry3[1] ?? "";
   } else {
     tail = response1;
-    const trimmed = response1.trim();
+    const trimmed = response1?.trim();
     const parsed = parseInt(trimmed, 10);
     cleanOptionNumber =
       !Number.isNaN(parsed) && String(parsed) === trimmed ? parsed : 999;
@@ -50,11 +50,11 @@ const processRadioQuestion = (
   if (cleanOptionNumber === 999) {
     if (tail && tail.includes("-")) {
       let tempArray = safeSplit(tail, "-", { maxParts: 2 });
-      let responseNumber: number = +tempArray[0].trim();
+      let responseNumber: number = +tempArray[0]?.trim();
       let responseText = cleanOptions[responseNumber - 1];
       respondentResponse = `${responseNumber} - ${responseText}: ${tempArray[1]}`;
     } else {
-      respondentResponse = surveyLangObj.noResponse;
+      respondentResponse = surveyLangObj?.noResponse;
     }
   } else {
     // normal response
@@ -65,15 +65,15 @@ const processRadioQuestion = (
     new Paragraph({
       children: [
         new TextRun({
-          text: `${surveyLangObj.item} ${index + 1} - `,
+          text: `${surveyLangObj?.item} ${index + 1} - `,
           bold: true,
         }),
         new TextRun({
-          text: `${surveyLangObj.radio}: `,
+          text: `${surveyLangObj?.radio}: `,
           bold: false,
         }),
         new TextRun({
-          text: `${stripHtml(stripTags(question.label))}`,
+          text: `${stripHtml(stripTags(question?.label))}`,
           bold: false,
           underline: { type: UnderlineType.SINGLE },
         }),
@@ -99,7 +99,7 @@ const processRadioQuestion = (
     new Paragraph({
       children: [
         new TextRun({
-          text: `Options: ${stripHtml(stripTags(question.options))}`,
+          text: `Options: ${stripHtml(stripTags(question?.options))}`,
           bold: false,
         }),
       ],
@@ -110,7 +110,7 @@ const processRadioQuestion = (
     new Paragraph({
       children: [
         new TextRun({
-          text: `${surveyLangObj.response}: ${cleanOptionNumber} - `,
+          text: `${surveyLangObj?.response}: ${cleanOptionNumber} - `,
           bold: false,
         }),
         new TextRun({

@@ -10,8 +10,8 @@ const processCheckboxQuestion = (
   surveyLangObj,
 ) => {
   let addIndentValue = +indentValue + 200;
-  let options = stripHtml(stripTags(question.options));
-  options = options.split(",");
+  let options = stripHtml(stripTags(question?.options));
+  options = options?.split(",");
 
   let response1 = stripHtml(stripTags(String(entry ?? "")));
 
@@ -22,7 +22,7 @@ const processCheckboxQuestion = (
 
   let tail: string;
   if (isLegacyPrefixed) {
-    let response3 = response1.split(":");
+    let response3 = response1?.split(":");
     tail = response3[1] ?? "";
   } else {
     tail = response1;
@@ -44,7 +44,7 @@ const processCheckboxQuestion = (
     let response2 = tail.slice(0, dashIndex);
 
     response4 = tail.slice(dashIndex + 1);
-    let response5 = response2.split(",").map((str) => str.trim());
+    let response5 = response2.split(",").map((str) => str?.trim() ?? "");
     if (response5.length > 1) {
       response6 = response5.map((item) => {
         return parseInt(item);
@@ -53,7 +53,7 @@ const processCheckboxQuestion = (
       response6.push(response5[0]);
     }
   } else {
-    response6.push(parseInt(tail.trim()));
+    response6.push(parseInt(tail?.trim() ?? ""));
   }
 
   let value1;
@@ -75,15 +75,15 @@ const processCheckboxQuestion = (
     new Paragraph({
       children: [
         new TextRun({
-          text: `${surveyLangObj.item} ${index + 1} - `,
+          text: `${surveyLangObj?.item} ${index + 1} - `,
           bold: true,
         }),
         new TextRun({
-          text: `${surveyLangObj.checkbox}: `,
+          text: `${surveyLangObj?.checkbox}: `,
           bold: false,
         }),
         new TextRun({
-          text: `${stripHtml(stripTags(question.label))}`,
+          text: `${stripHtml(stripTags(question?.label))}`,
           bold: false,
           underline: { type: UnderlineType.SINGLE },
         }),
@@ -98,8 +98,8 @@ const processCheckboxQuestion = (
     new Paragraph({
       children: [
         new TextRun({
-          text: question.note
-            ? `Note: ${stripHtml(stripTags(question.note))}`
+          text: question?.note
+            ? `Note: ${stripHtml(stripTags(question?.note))}`
             : `Note: n/a`,
           bold: false,
         }),
@@ -123,14 +123,14 @@ const processCheckboxQuestion = (
       children: [
         new TextRun({
           text: addOtherText
-            ? `${surveyLangObj.response}: `
-            : `${surveyLangObj.response}: ${stripHtml(stripTags(displayTail))} - `,
+            ? `${surveyLangObj?.response}: `
+            : `${surveyLangObj?.response}: ${stripHtml(stripTags(displayTail))} - `,
           bold: false,
         }),
         new TextRun({
           text: entry
             ? `${stripHtml(stripTags(respondentResponse))}`
-            : surveyLangObj.noResponse,
+            : surveyLangObj?.noResponse,
           bold: false,
         }),
       ],
